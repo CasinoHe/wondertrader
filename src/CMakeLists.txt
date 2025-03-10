@@ -20,7 +20,7 @@ set(SRC_ROOT_DIR ${PROJECT_ROOT_DIR}/src)
 
 #basic libraries
 ADD_SUBDIRECTORY(WTSUtils)
-ADD_SUBDIRECTORY(WTSTools)
+# ADD_SUBDIRECTORY(WTSTools)
 
 #contract Loade through ctp channel
 # ADD_SUBDIRECTORY(CTPLoader)

@@ -5,7 +5,7 @@
  * \author Wesley
  * \date 2020/03/30
  * 
- * \brief 数据压缩辅助类,利用zstdlib压缩
+ * \brief Data compression helper class, using zstdlib for compression
  */
 #pragma once
 #include <string>

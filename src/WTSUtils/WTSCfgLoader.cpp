@@ -196,12 +196,12 @@ WTSVariant* WTSCfgLoader::load_from_yaml(const char* content)
 
 WTSVariant* WTSCfgLoader::load_from_content(const std::string& content, bool isYaml /* = false */)
 {
-	//加一个自动检测编码的逻辑
+	//Add logic to automatically detect encoding
 	bool isUTF8 = EncodingHelper::isUtf8((unsigned char*)content.data(), content.size());
 
 	std::string buffer;
-	//Linux下得是UTF8
-	//Win下得是GBK
+	//Linux must be UTF8
+	//Windows must be GBK
 #ifdef _WIN32
 	if (isUTF8)
 		buffer = UTF8toChar(content);
@@ -229,12 +229,12 @@ WTSVariant* WTSCfgLoader::load_from_file(const char* filename)
 	if (content.empty())
 		return NULL;
 
-	//加一个自动检测编码的逻辑
+	//Add logic to automatically detect encoding
 	bool isUTF8 = EncodingHelper::isUtf8((unsigned char*)content.data(), content.size());
 
 	//By Wesley @ 2022.01.07
-	//Linux下得是UTF8
-	//Win下得是GBK
+	//Linux must be UTF8
+	//Windows must be GBK
 #ifdef _WIN32
 	if(isUTF8)
 		content = UTF8toChar(content);

@@ -189,7 +189,7 @@ public:
 	}
 
 	/*
-	 *	读取指定key的数据
+	 *	Read data for specified key
 	 */
 	std::string get(void* key, std::size_t klen)
 	{
@@ -214,7 +214,7 @@ public:
 	}
 
 	/*
-	 *	读取区间数据
+	 *	Read range data
 	 */
 	int get_range(const std::string& lower_key, const std::string& upper_key, LMDBQueryCallback cb)
 	{
@@ -260,11 +260,11 @@ public:
 	}
 
 	/*
-	 *	读取upper_key之前的数据，从upper_key往前找，找到以后在做一个reverse
-	 *	@lower_key	下边界，这个必须要有，因为如果多个合约存一个库的话，不加的话可能会读到别的合约的数据
-	 *	@upper_key	上边界
-	 *	@count		目标数据条数
-	 *	@cb			回调函数
+	 *	Read data before upper_key, search from upper_key backwards, then reverse the result
+	 *	@lower_key	Lower boundary, necessary because if multiple contracts are stored in one database, might read data from other contracts without it
+	 *	@upper_key	Upper boundary
+	 *	@count		Target number of data items
+	 *	@cb			Callback function
 	 */
 	int get_lowers(const std::string& lower_key, const std::string& upper_key, int count, LMDBQueryCallback cb)
 	{
@@ -324,11 +324,11 @@ public:
 	}
 
 	/*
-	 *	读取lower_key之后的数据，从lower_key往后找
-	 *	@lower_key	下边界
-	 *	@upper_key	上边界，这个必须要有，因为如果多个合约存一个库的话，不加的话可能会读到别的合约的数据
-	 *	@count		目标数据条数
-	 *	@cb			回调函数
+	 *	Read data after lower_key, search from lower_key forwards
+	 *	@lower_key	Lower boundary
+	 *	@upper_key	Upper boundary, necessary because if multiple contracts are stored in one database, might read data from other contracts without it
+	 *	@count		Target number of data items
+	 *	@cb			Callback function
 	 */
 	int get_uppers(const std::string& lower_key, const std::string& upper_key, int count, LMDBQueryCallback cb)
 	{

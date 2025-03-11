@@ -19,11 +19,19 @@
             "features": []
         },
         {
+            "name": "boost-pool",
+            "features": []
+        },
+        {
             "name": "intelrdfpmathlib",
             "features": []
         },
         {
             "name": "concurrentqueue",
+            "features": []
+        },
+        {
+            "name": "rapidjson",
             "features": []
         }
     ],

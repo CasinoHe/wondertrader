@@ -34,7 +34,7 @@ class BuildBase(object):
         else:
             command_list = [command] + args
 
-        print(f"Starting Run command: {command_list} {"".join(args)} under {workdir}")
+        print(f"Starting Run command: {command_list} under {workdir}")
         process = subprocess.Popen(command_list, stdout=subprocess.PIPE,
                                    stderr=subprocess.PIPE, text=True, shell=False, env=env)
 
@@ -150,11 +150,11 @@ class BuildProject(BuildBase):
 
         args = [
             f"-DCMAKE_TOOLCHAIN_FILE={self.vcpkg_dir}/scripts/buildsystems/vcpkg.cmake",
-            f"-DVCPKG_MANIFEST_ROOT={self.project_root}",
+            f"-DVCPKG_MANIFEST_ROOT={self.src_root}",
             f"-DVCPKG_TARGET_TRIPLET={triplet}",
             f"-DVCPKG_MANIFEST_INSTALL={manifest_install}",
             f"-DCMAKE_BUILD_TYPE={variant}",
-            f"{self.project_root}"
+            f"{self.src_root}"
         ]
 
         workdir = os.path.join(self.project_root, "build")
@@ -194,9 +194,6 @@ class BuildProject(BuildBase):
 
 
 def parse_args(args):
-    if args is None:
-        args = sys.argv[1:]
-
     parser = argparse.ArgumentParser(description="Build project", formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     sub_parser = parser.add_subparsers(help="sub-command help", dest="command")
 
@@ -217,12 +214,15 @@ def parse_args(args):
 
 
 def build_all():
-    args, parser = parse_args(None)
     # build dependencies first
+    sys.argv.append(BUILD_DEPENDENCIES)
+    args, parser = parse_args(None)
     build_dependencies = BuildDependencies(args, parser)
     build_dependencies.build()
 
-    # build project second
+    # build project then
+    sys.argv[1] = BUILD_PROJECT
+    args, parser = parse_args(None)
     build_project = BuildProject(args, parser)
     build_project.build()
 

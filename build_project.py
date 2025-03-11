@@ -6,8 +6,8 @@ import os
 import subprocess
 import shutil
 
-BUILD_DEPENDENCIES = "build_dependencies"
-BUILD_PROJECT = "build_project"
+BUILD_DEPENDENCIES = "build-dependencies"
+BUILD_PROJECT = "build-project"
 VCPKG_PATH = "thirdparties/vcpkg"
 
 
@@ -29,9 +29,14 @@ class BuildBase(object):
 
         cwd = os.getcwd()
         os.chdir(workdir)
-        print("Starting Run command: %s %s under %s" % (command, " ".join(args), workdir))
-        process = subprocess.Popen([command] + args, stdout=subprocess.PIPE,
-                                   stderr=subprocess.PIPE, text=True, shell=True, env=env)
+        if sys.platform == "win32":
+            command_list = ["cmd.exe", "/c", command] + args
+        else:
+            command_list = [command] + args
+
+        print(f"Starting Run command: {command_list} {"".join(args)} under {workdir}")
+        process = subprocess.Popen(command_list, stdout=subprocess.PIPE,
+                                   stderr=subprocess.PIPE, text=True, shell=False, env=env)
 
         while True:
             output = process.stdout.readline()
@@ -114,7 +119,7 @@ class BuildDependencies(BuildBase):
                 "--clean-buildtrees-after-build", "--clean-packages-after-build"]
         if self.args.dry_run:
             args.append("--dry-run")
-        if not self._run_command(self.project_root, self.vcpkg_path, args, env=env):
+        if not self._run_command(self.src_root, self.vcpkg_path, args, env=env):
             raise RuntimeError("Failed to install dependencies")
 
         print(f"Build dependencies for quanttrader {self.args.build_type} finished.")
@@ -203,7 +208,7 @@ def parse_args(args):
 
     project_parser = sub_parser.add_parser(BUILD_PROJECT, help="Build project")
     project_parser.add_argument("--build-variant", default="Release", choices=["Release", "Debug"], help="Build type")
-    project_parser.add_argument("--disable_vcpkg", action="store_true", default=False, help="Disable vcpkg use system libraries")
+    project_parser.add_argument("--disable-vcpkg", action="store_true", default=False, help="Disable vcpkg use system libraries")
     project_parser.add_argument("--enable-install", action="store_true", default=False, help="Enable auto install vcpkg dependencies")
     project_parser.add_argument("--triplet", type=str, required=False, help="Set vcpkg triplet, example: x64-windows-static")
     project_parser.add_argument("--clean", action="store_true", default=False, help="Clean build directory")

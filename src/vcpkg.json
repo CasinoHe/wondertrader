@@ -1,0 +1,48 @@
+{
+    "name": "quanttrader-server",
+    "version": "0.1.0",
+    "dependencies": [
+        {
+            "name": "fmt", 
+            "features": []
+        },
+        {
+            "name": "spdlog",
+            "features": []
+        },
+        {
+            "name": "boost-program-options",
+            "features": []
+        },
+        {
+            "name": "boost-algorithm",
+            "features": []
+        },
+        {
+            "name": "intelrdfpmathlib",
+            "features": []
+        },
+        {
+            "name": "concurrentqueue",
+            "features": []
+        }
+    ],
+    "overrides": [
+        {
+            "name": "fmt",
+            "version": "11.0.2"
+        },
+        {
+            "name": "spdlog",
+            "version": "1.15.0#1"
+        },
+        {
+            "name": "intelrdfpmathlib",
+            "version": "20U2#6"
+        },
+        {
+            "name": "concurrentqueue",
+            "version": "1.0.4"
+        }
+    ]
+}

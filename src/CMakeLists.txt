@@ -18,8 +18,10 @@ set(PROJECT_ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/..)
 get_filename_component(PROJECT_ROOT_DIR ${PROJECT_ROOT_DIR} ABSOLUTE)
 set(SRC_ROOT_DIR ${PROJECT_ROOT_DIR}/src)
 
+include_directories(${SRC_ROOT_DIR}/Includes)
+
 #basic libraries
-ADD_SUBDIRECTORY(WTSUtils)
+add_subdirectory(WTSUtils)
 # ADD_SUBDIRECTORY(WTSTools)
 
 #contract Loade through ctp channel

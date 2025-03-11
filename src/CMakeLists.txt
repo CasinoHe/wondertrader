@@ -18,6 +18,7 @@ set(PROJECT_ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/..)
 get_filename_component(PROJECT_ROOT_DIR ${PROJECT_ROOT_DIR} ABSOLUTE)
 set(SRC_ROOT_DIR ${PROJECT_ROOT_DIR}/src)
 
+# include directories
 include_directories(${SRC_ROOT_DIR}/Includes)
 
 #basic libraries

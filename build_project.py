@@ -122,7 +122,7 @@ class BuildDependencies(BuildBase):
         if not self._run_command(self.src_root, self.vcpkg_path, args, env=env):
             raise RuntimeError("Failed to install dependencies")
 
-        print(f"Build dependencies for quanttrader {self.args.build_type} finished.")
+        print(f"Build dependencies for quanttrader {self.args.build_variant} finished.")
 
     def build(self):
         self.prepare_vcpkg()

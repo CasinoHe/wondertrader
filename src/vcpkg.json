@@ -23,6 +23,14 @@
             "features": []
         },
         {
+            "name": "boost-locale",
+            "features": []
+        },
+        {
+            "name": "utfcpp",
+            "features": []
+        },
+        {
             "name": "intelrdfpmathlib",
             "features": []
         },

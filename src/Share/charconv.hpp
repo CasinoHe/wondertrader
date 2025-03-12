@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include <stdlib.h>
 #include <string>
+#include <boost/locale.hpp>
 #ifdef _MSC_VER
 #include <windows.h>
 #else
@@ -297,29 +298,6 @@ private:
 class EncodingHelper
 {
 public:
-	static bool isGBK(unsigned char* data, std::size_t len) {
-		std::size_t i = 0;
-		while (i < len) {
-			if (data[i] <= 0x7f) {
-				//编码小于等于127,只有一个字节的编码，兼容ASCII
-				i++;
-				continue;
-			}
-			else {
-				//大于127的使用双字节编码
-				if (data[i] >= 0x81 &&
-					data[i] <= 0xfe &&
-					data[i + 1] >= 0x40 &&
-					data[i + 1] <= 0xfe &&
-					data[i + 1] != 0xf7) 
-				{
-					//如果有GBK编码的，就算整个字符串都是GBK编码
-					return true;
-				}
-			}
-		}
-		return false;
-	}
 
 	static int preNUm(unsigned char byte) {
 		unsigned char mask = 0x80;

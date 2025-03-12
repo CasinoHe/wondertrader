@@ -1,8 +1,7 @@
 ﻿#include "WTSCfgLoader.h"
 #include "../Share/StrUtil.hpp"
 #include "../Share/StdUtils.hpp"
-
-#include "../Share/charconv.hpp"
+#include "../Share/LocaleHelper.hpp"
 
 #include "../Includes/WTSVariant.hpp"
 #include <rapidjson/document.h>
@@ -19,10 +18,10 @@ bool json_to_variant(const rj::Value& root, WTSVariant* params)
 
 	if (root.IsObject())
 	{
-		for (auto& m : root.GetObject())
+		for (auto iter = root.MemberBegin(); iter != root.MemberEnd(); iter++)
 		{
-			const char* key = m.name.GetString();
-			const rj::Value& item = m.value;
+			const char* key = iter->name.GetString();
+			const rj::Value& item = iter->value;
 			switch (item.GetType())
 			{
 			case rj::kObjectType:
@@ -197,18 +196,18 @@ WTSVariant* WTSCfgLoader::load_from_yaml(const char* content)
 WTSVariant* WTSCfgLoader::load_from_content(const std::string& content, bool isYaml /* = false */)
 {
 	//Add logic to automatically detect encoding
-	bool isUTF8 = EncodingHelper::isUtf8((unsigned char*)content.data(), content.size());
+	bool is_utf8 = quanttrader::EncodingHelper::is_valid_utf8(content.data());
 
 	std::string buffer;
-	//Linux must be UTF8
-	//Windows must be GBK
-#ifdef _WIN32
-	if (isUTF8)
-		buffer = UTF8toChar(content);
-#else
-	if (!isUTF8)
-		buffer = ChartoUTF8(content);
-#endif
+	// Keeps utf-8 on all platforms avoid inconsistency
+	if (!is_utf8) {
+		try {
+			buffer = quanttrader::EncodingHelper::locale_to_utf8(content, std::locale(""));
+		}
+		catch (const std::exception& e) {
+			return NULL;
+		}
+	}
 
 	if (buffer.empty())
 		buffer = content;
@@ -230,18 +229,17 @@ WTSVariant* WTSCfgLoader::load_from_file(const char* filename)
 		return NULL;
 
 	//Add logic to automatically detect encoding
-	bool isUTF8 = EncodingHelper::isUtf8((unsigned char*)content.data(), content.size());
+	bool is_utf8 = quanttrader::EncodingHelper::is_valid_utf8(content.data());
 
-	//By Wesley @ 2022.01.07
-	//Linux must be UTF8
-	//Windows must be GBK
-#ifdef _WIN32
-	if(isUTF8)
-		content = UTF8toChar(content);
-#else
-	if (!isUTF8)
-		content = ChartoUTF8(content);
-#endif
+	// Keeps utf-8 on all platforms avoid inconsistency
+	if (!is_utf8) {
+		try {
+			content = quanttrader::EncodingHelper::locale_to_utf8(content, std::locale(""));
+		}
+		catch (const std::exception& e) {
+			return NULL;
+		}
+	}
 
 	if (StrUtil::endsWith(filename, ".json"))
 		return load_from_json(content.c_str());

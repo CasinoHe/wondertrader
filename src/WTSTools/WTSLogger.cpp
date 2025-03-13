@@ -5,7 +5,7 @@
  * \author Wesley
  * \date 2020/03/30
  * 
- * \brief 
+ * \brief Logger implementation for the WonderTrader system
  */
 #include <stdio.h>
 #include <iostream>
@@ -128,8 +128,12 @@ inline void print_timetag(bool bWithSpace = true)
 void WTSLogger::print_message(const char* buffer)
 {
 	print_timetag(true);
-	fmt::print(buffer);
+	fmt::print("{}", buffer);
+#ifdef _WIN32
 	fmt::print("\r\n");
+#else
+	fmt::print("\n");
+#endif
 }
 
 void WTSLogger::initLogger(const char* catName, WTSVariant* cfgLogger)
@@ -364,8 +368,12 @@ void WTSLogger::log_raw_by_cat(const char* catName, WTSLogLevel ll, const char* 
 	if (!m_bInited)
 	{
 		print_timetag(true);
-		fmt::print(message);
+		fmt::print("{}", message);
+#ifdef _WIN32
+		fmt::print("\r\n");
+#else
 		fmt::print("\n");
+#endif
 		return;
 	}
 
@@ -406,8 +414,12 @@ void WTSLogger::log_dyn_raw(const char* patttern, const char* catName, WTSLogLev
 	if (!m_bInited)
 	{
 		print_timetag(true);
-		fmt::print(m_buffer);
+		fmt::print("{}", m_buffer);
+#ifdef _WIN32
+		fmt::print("\r\n");
+#else
 		fmt::print("\n");
+#endif
 		return;
 	}
 
@@ -439,7 +451,7 @@ SpdLoggerPtr WTSLogger::getLogger(const char* logger, const char* pattern /* = "
 	SpdLoggerPtr ret = spdlog::get(logger);
 	if (ret == NULL && strlen(pattern) > 0)
 	{
-		//当成动态的日志来处理
+		// treat as a dynamic logger
 		if (m_mapPatterns == NULL)
 			return SpdLoggerPtr();
 

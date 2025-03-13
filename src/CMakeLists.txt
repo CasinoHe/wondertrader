@@ -38,6 +38,9 @@ add_subdirectory(WTSUtils)
 add_subdirectory(WTSTools)
 add_subdirectory(WtMsgQue)
 
+# uft engine
+# add_subdirectory(WtUftCore)
+
 #contract Loade through ctp channel
 # ADD_SUBDIRECTORY(CTPLoader)
 # ADD_SUBDIRECTORY(CTPOptLoader)
@@ -84,10 +87,7 @@ add_subdirectory(WtMsgQue)
 # ADD_SUBDIRECTORY(WtExecMon)
 # ADD_SUBDIRECTORY(WtRunner)
 
-
-
 # #uft
-# ADD_SUBDIRECTORY(WtUftCore)
 # ADD_SUBDIRECTORY(WtUftStraFact)
 # ADD_SUBDIRECTORY(WtUftRunner)
 

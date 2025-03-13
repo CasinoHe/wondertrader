@@ -35,6 +35,18 @@
             "features": []
         },
         {
+            "name": "boost-asio",
+            "features": ["ssl"]
+        },
+        {
+            "name": "boost-interprocess",
+            "features": []
+        },
+        {
+            "name": "boost-circular-buffer",
+            "features": []
+        },
+        {
             "name": "utfcpp",
             "features": []
         },

@@ -24,7 +24,7 @@ include_directories(${SRC_ROOT_DIR}/Includes)
 # find all dependencies and add them to the project
 # the dependencies is built by vcpkg or custom build
 set(THIRDPARTY_DIR ${PROJECT_ROOT_DIR}/thirdparties)
-find_package(Boost 1.86.0 REQUIRED COMPONENTS program_options algorithm pool locale filesystem xpressive)
+find_package(Boost 1.86.0 REQUIRED COMPONENTS program_options algorithm pool locale filesystem xpressive asio interprocess circular_buffer)
 find_package(RapidJSON CONFIG REQUIRED)
 find_package(spdlog CONFIG REQUIRED)
 find_package(fmt CONFIG REQUIRED)
@@ -37,6 +37,7 @@ include_directories(${Boost_INCLUDE_DIRS})
 add_subdirectory(WTSUtils)
 add_subdirectory(WTSTools)
 add_subdirectory(WtMsgQue)
+add_subdirectory(WtCore)
 
 # uft engine
 # add_subdirectory(WtUftCore)
@@ -82,7 +83,6 @@ add_subdirectory(WtMsgQue)
 # ADD_SUBDIRECTORY(WtExeFact)
 # ADD_SUBDIRECTORY(WtRiskMonFact)
 
-# ADD_SUBDIRECTORY(WtCore)
 # ADD_SUBDIRECTORY(WtPorter)
 # ADD_SUBDIRECTORY(WtExecMon)
 # ADD_SUBDIRECTORY(WtRunner)

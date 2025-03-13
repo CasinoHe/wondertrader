@@ -16,4 +16,5 @@ endif()
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/yamlcpp)
 
 # Compile into a static library and generate the library file
-add_library(XYYUtils STATIC ${SRCS} ${HDRS})
+add_library(${PROJECT_NAME} STATIC ${SRCS} ${HDRS})
+target_link_libraries(${PROJECT_NAME} PRIVATE rapidjson Boost::locale Boost::pool utf8::cpp utf8cpp::utf8cpp)

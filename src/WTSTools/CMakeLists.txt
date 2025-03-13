@@ -5,4 +5,5 @@ project(XYYTools)
 file(GLOB SRCS "*.cpp")
 file(GLOB HDRS "*.h")
 
-add_library(XYYTools STATIC ${SRCS} ${HDRS})
+add_library(${PROJECT_NAME} STATIC ${SRCS} ${HDRS})
+target_link_libraries(${PROJECT_NAME} PRIVATE spdlog::spdlog fmt::fmt Boost::filesystem Boost::xpressive)

@@ -27,6 +27,14 @@
             "features": []
         },
         {
+            "name": "boost-xpressive",
+            "features": []
+        },
+        {
+            "name": "boost-filesystem",
+            "features": []
+        },
+        {
             "name": "utfcpp",
             "features": []
         },

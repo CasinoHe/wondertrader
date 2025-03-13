@@ -5,7 +5,7 @@
  * \author Wesley
  * \date 2021/04/13
  * 
- * \brief 堆栈查看器
+ * \brief Stack Tracer
  */
 #pragma once
 

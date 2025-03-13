@@ -29,17 +29,21 @@ find_package(RapidJSON CONFIG REQUIRED)
 find_package(spdlog CONFIG REQUIRED)
 find_package(fmt CONFIG REQUIRED)
 find_package(utf8cpp CONFIG REQUIRED)
+find_package(nanomsg CONFIG REQUIRED)
 
 include_directories(${Boost_INCLUDE_DIRS})
 
 #basic libraries
 add_subdirectory(WTSUtils)
 add_subdirectory(WTSTools)
+add_subdirectory(WtMsgQue)
 
 #contract Loade through ctp channel
 # ADD_SUBDIRECTORY(CTPLoader)
 # ADD_SUBDIRECTORY(CTPOptLoader)
 # ADD_SUBDIRECTORY(LoaderRunner)
+# ADD_SUBDIRECTORY(TraderDumper)
+# ADD_SUBDIRECTORY(WtShareHelper)
 
 # #parser for quote date from ctp channel
 # ADD_SUBDIRECTORY(ParserCTP)
@@ -75,15 +79,12 @@ add_subdirectory(WTSTools)
 # ADD_SUBDIRECTORY(WtExeFact)
 # ADD_SUBDIRECTORY(WtRiskMonFact)
 
-# ADD_SUBDIRECTORY(WtMsgQue)
 # ADD_SUBDIRECTORY(WtCore)
 # ADD_SUBDIRECTORY(WtPorter)
 # ADD_SUBDIRECTORY(WtExecMon)
 # ADD_SUBDIRECTORY(WtRunner)
 
-# ADD_SUBDIRECTORY(TraderDumper)
 
-# ADD_SUBDIRECTORY(WtShareHelper)
 
 # #uft
 # ADD_SUBDIRECTORY(WtUftCore)

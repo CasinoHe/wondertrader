@@ -93,7 +93,7 @@ void WtSelEngine::on_tick(const char* stdCode, WTSTickData* curTick)
 
 	_data_mgr->handle_push_quote(stdCode, curTick);
 
-	//如果是真实代码, 则要传递给执行器
+	//If it is real code, it must be passed to the executor
 	{
 		_exec_mgr.handle_tick(stdCode, curTick);
 	}
@@ -118,10 +118,10 @@ void WtSelEngine::on_tick(const char* stdCode, WTSTickData* curTick)
 
 	/*
 	 *	By Wesley @ 2022.02.07
-	 *	这里做了一个彻底的调整
-	 *	第一，检查订阅标记，如果标记为0，即无复权模式，则直接按照原始代码触发ontick
-	 *	第二，如果标记为1，即前复权模式，则将代码转成xxxx-，再触发ontick
-	 *	第三，如果标记为2，即后复权模式，则将代码转成xxxx+，再把tick数据做一个修正，再触发ontick
+	 *	Here is a complete adjustment
+	 *	First, check the subscription flag. If the flag is 0, that is, no ex-right mode, the ontick is directly triggered according to the original code
+	 *	Second, if the flag is 1, that is, the forward ex-right mode, the code is converted to xxxx- and then ontick is triggered
+	 *	Third, if the flag is 2, that is, the backward ex-right mode, the code is converted to xxxx+, and then the tick data is corrected before triggering ontick
 	 */
 	if(_ready)
 	{
@@ -160,7 +160,7 @@ void WtSelEngine::on_tick(const char* stdCode, WTSTickData* curTick)
 							WTSTickStruct& newTS = newTick->getTickStruct();
 							newTick->setContractInfo(curTick->getContractInfo());
 
-							//这里做一个复权因子的处理
+							 //Here to do a right factor processing
 							double factor = get_exright_factor(stdCode);
 							newTS.open *= factor;
 							newTS.high *= factor;
@@ -169,7 +169,7 @@ void WtSelEngine::on_tick(const char* stdCode, WTSTickData* curTick)
 
 							/*
 							 *	By Wesley @ 2022.08.15
-							 *	这里对tick的复权做一个完善
+							 *	Here to do a perfect ex-right of tick
 							 */
 							if (flag & 1)
 							{

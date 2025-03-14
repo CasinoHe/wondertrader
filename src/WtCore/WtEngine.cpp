@@ -118,7 +118,7 @@ void WtEngine::on_tick(const char* stdCode, WTSTickData* curTick)
 {
 	_price_map[stdCode] = curTick->price();
 
-	//先检查是否要信号要触发
+	//First check if the signal needs to be triggered
 	{
 		bool bTriggered = false;
 		auto it = _sig_map.find(stdCode);
@@ -142,7 +142,7 @@ void WtEngine::on_tick(const char* stdCode, WTSTickData* curTick)
 			save_datas();
 	}
 
-	//如果成交量为0，价格也不会有变动
+	//If the volume is 0, the price will not change
 	if (curTick->volume() == 0)
 		return;
 
@@ -184,7 +184,7 @@ void WtEngine::update_fund_dynprofit()
 	WTSFundStruct& fundInfo = _port_fund->fundInfo();
 	if (fundInfo._last_date == _cur_tdate)
 	{
-		//上次结算日期等于当前交易日,说明已经结算,不再更新了
+		 //The last settlement date is equal to the current trading day, indicating that it has been settled and will not be updated
 		return;
 	}
 
@@ -304,8 +304,8 @@ void WtEngine::init(WTSVariant* cfg, IBaseDataMgr* bdMgr, WtDtMgr* dataMgr, IHot
 	}
 	else
 	{
-		//如果没有配置风控线程，则需要自己更新浮动盈亏
-		//把更新时间间隔设置为5s
+		 //If risk control thread is not configured, you need to update the floating profit and loss yourself
+		 //Set the update interval to 5s
 		_fund_udt_span = 5;
 		WTSLogger::log_raw(LL_WARN, "RiskMon is not configured, portfilio fund will be updated every 5s");
 	}
@@ -313,7 +313,7 @@ void WtEngine::init(WTSVariant* cfg, IBaseDataMgr* bdMgr, WtDtMgr* dataMgr, IHot
 
 void WtEngine::on_session_end()
 {
-	//资金结算
+	//Fund settlement
 	WTSFundStruct& fundInfo = _port_fund->fundInfo();
 	if (fundInfo._last_date < _cur_tdate)
 	{
@@ -333,7 +333,7 @@ void WtEngine::on_session_end()
 			}
 		}
 
-		//可能这里还需要写一条资金记录
+		//Maybe a fund record needs to be written here
 		//date,predynbalance,prebalance,balance,closeprofit,dynprofit,fee,maxdynbalance,maxtime,mindynbalance,mintime,mdmaxbalance,mdmaxdate,mdminbalance,mdmindate
 		fund_log->write_file(fmt::format("{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}\n", 
 			_cur_tdate, fundInfo._predynbal, fundInfo._prebalance, fundInfo._balance, 
@@ -366,7 +366,7 @@ void WtEngine::save_datas()
 	rj::Document::AllocatorType &allocator = root.GetAllocator();
 
 	if (_port_fund != NULL)
-	{//保存资金数据
+	{//Save fund data
 		const WTSFundStruct& fundInfo = _port_fund->fundInfo();
 		rj::Value jFund(rj::kObjectType);
 		jFund.AddMember("predynbal", fundInfo._predynbal, allocator);
@@ -400,7 +400,7 @@ void WtEngine::save_datas()
 		root.AddMember("fund", jFund, allocator);
 	}
 
-	{//持仓数据保存
+	{//Save position data
 		rj::Value jPos(rj::kArrayType);
 
 		for (auto it = _pos_map.begin(); it != _pos_map.end(); it++)
@@ -440,7 +440,7 @@ void WtEngine::save_datas()
 		root.AddMember("positions", jPos, allocator);
 	}
 
-	//风控参数设置
+	//Risk control parameter settings
 	{
 		rj::Value jRisk(rj::kObjectType);
 
@@ -489,7 +489,7 @@ void WtEngine::load_datas()
 	if (root.HasParseError())
 		return;
 
-	//读取资金
+	//Read fund
 	{
 		const rj::Value& jFund = root["fund"];
 		if (!jFund.IsNull() && jFund.IsObject())
@@ -522,7 +522,7 @@ void WtEngine::load_datas()
 		}
 	}
 
-	{//读取仓位
+	{//Read position
 		double total_profit = 0;
 		double total_dynprofit = 0;
 		const rj::Value& jPos = root["positions"];
@@ -575,7 +575,7 @@ void WtEngine::load_datas()
 
 	if(root.HasMember("riskmon"))
 	{
-		//读取风控参数
+		//Read risk control parameters
 		const rj::Value& jRisk = root["riskmon"];
 		if (!jRisk.IsNull() && jRisk.IsObject())
 		{
@@ -668,14 +668,14 @@ double WtEngine::get_cur_price(const char* stdCode)
 {
 	auto len = strlen(stdCode);
 	char lastChar = stdCode[len - 1];
-	//前复权直接读取标准合约代码
+	//Forward adjustment directly reads the standard contract code
 	bool bAdjusted = (lastChar == SUFFIX_QFQ || lastChar == SUFFIX_HFQ);
-	//前复权需要去掉－，后复权和未复权都直接查找
+	//Forward adjustment needs to remove -, backward adjustment and unadjusted are directly searched
 	std::string sCode = (lastChar == SUFFIX_QFQ) ? std::string(stdCode, len - 1) : stdCode;
 	auto it = _price_map.find(sCode);
 	if(it == _price_map.end())
 	{
-		//找不到的时候，先读取未复权的tick数据
+		//If not found, first read the unadjusted tick data
 		std::string fCode = bAdjusted ? std::string(stdCode, len - 1) : stdCode;
 		WTSTickData* lastTick = _data_mgr->grab_last_tick(fCode.c_str());
 		if (lastTick == NULL)
@@ -686,7 +686,7 @@ double WtEngine::get_cur_price(const char* stdCode)
 		double ret = lastTick->price();
 		lastTick->release();
 
-		//如果是后复权，则进行复权处理
+		//If it is a backward adjustment, perform the adjustment
 		if (lastChar == SUFFIX_HFQ)
 		{
 			ret *= get_exright_factor(stdCode, cInfo->getCommInfo());
@@ -705,12 +705,12 @@ double WtEngine::get_day_price(const char* stdCode, int flag /* = 0 */)
 {
 	auto len = strlen(stdCode);
 	char lastChar = stdCode[len - 1];
-	//前复权直接读取标准合约代码
+	//Forward adjustment directly reads the standard contract code
 	bool bAdjusted = (lastChar == SUFFIX_QFQ || lastChar == SUFFIX_HFQ);
-	//前复权需要去掉－，后复权和未复权都直接查找
+	//Forward adjustment needs to remove -, backward adjustment and unadjusted are directly searched
 	std::string sCode = (lastChar == SUFFIX_QFQ) ? std::string(stdCode, len - 1) : stdCode;
 
-	//找不到的时候，先读取未复权的tick数据
+	//If not found, first read the unadjusted tick data
 	std::string fCode = bAdjusted ? std::string(stdCode, len - 1) : stdCode;
 	WTSTickData* lastTick = _data_mgr->grab_last_tick(fCode.c_str());
 	if (lastTick == NULL)
@@ -734,7 +734,7 @@ double WtEngine::get_day_price(const char* stdCode, int flag /* = 0 */)
 	}
 	lastTick->release();
 
-	//如果是后复权，则进行复权处理
+	//If it is a backward adjustment, perform the adjustment
 	if (lastChar == SUFFIX_HFQ)
 	{
 		ret *= get_exright_factor(stdCode, commInfo);
@@ -773,8 +773,8 @@ uint32_t WtEngine::get_adjusting_flag()
 
 void WtEngine::sub_tick(uint32_t sid, const char* stdCode)
 {
-	//如果是主力合约代码, 如SHFE.ag.HOT, 那么要转换成原合约代码, SHFE.ag.1912
-	//因为执行器只识别原合约代码
+	//If it is the main contract code, such as SHFE.ag.HOT, then it needs to be converted to the original contract code, SHFE.ag.1912
+	//Because the executor only recognizes the original contract code
 	const char* ruleTag = _hot_mgr->getRuleTag(stdCode);
 	if(strlen(ruleTag) > 0)
 	{
@@ -914,12 +914,12 @@ void WtEngine::append_signal(const char* stdCode, double qty, bool bStandBy /* =
 {
 	/*
 	 *	By Wesley @ 2021.12.16
-	 *	这里发现一个问题，就是组合的理论成交价和策略的理论成交价不一致
-	 *	检查以后发现，策略的理论成交价会在下一个tick更新
-	 *	但是组合的理论成交价这一个tick就直接更新了
-	 *	这就导致组合成交价永远比策略提前一个tick
-	 *	这里做一个修正，等下一个tick进来，触发signal
-	 *	如果是bar内触发的，bStandBy为false，则直接修改持仓
+	 *	Here we found a problem, that is, the theoretical transaction price of the portfolio is inconsistent with the theoretical transaction price of the strategy
+	 *	After checking, it was found that the theoretical transaction price of the strategy will be updated in the next tick
+	 *	But the theoretical transaction price of the portfolio is directly updated in this tick
+	 *	This leads to the portfolio transaction price always being one tick ahead of the strategy
+	 *	Here is a correction, wait for the next tick to come in and trigger the signal
+	 *	If it is triggered within the bar, bStandBy is false, then directly modify the position
 	 */
 	double curPx = get_cur_price(stdCode);
 	if(bStandBy || decimal::eq(curPx, 0.0))
@@ -972,7 +972,7 @@ void WtEngine::do_set_position(const char* stdCode, double qty, double curPx /* 
 
 	WTSFundStruct& fundInfo = _port_fund->fundInfo();
 
-	if (decimal::gt(pInfo->_volume*diff, 0))//当前持仓和目标仓位方向一致, 增加一条明细, 增加数量即可
+	if (decimal::gt(pInfo->_volume*diff, 0))//The current position and the target position are in the same direction, add a detail, and increase the quantity
 	{
 		pInfo->_volume = qty;
 
@@ -991,7 +991,7 @@ void WtEngine::do_set_position(const char* stdCode, double qty, double curPx /* 
 		log_trade(stdCode, dInfo._long, true, curTm, curPx, abs(diff), fee);
 	}
 	else
-	{//持仓方向和目标仓位方向不一致, 需要平仓
+	{//The position direction is inconsistent with the target position direction, and it needs to be closed
 		double left = abs(diff);
 
 		pInfo->_volume = qty;
@@ -1022,7 +1022,7 @@ void WtEngine::do_set_position(const char* stdCode, double qty, double curPx /* 
 			if (!dInfo._long)
 				profit *= -1;
 			pInfo->_closeprofit += profit;
-			pInfo->_dynprofit = pInfo->_dynprofit*dInfo._volume / (dInfo._volume + maxQty);//浮盈也要做等比缩放
+			pInfo->_dynprofit = pInfo->_dynprofit*dInfo._volume / (dInfo._volume + maxQty);//Floating profit and loss also need to be scaled proportionally
 			fundInfo._profit += profit;
 			fundInfo._balance += profit;
 
@@ -1030,16 +1030,16 @@ void WtEngine::do_set_position(const char* stdCode, double qty, double curPx /* 
 			fundInfo._fees += fee;
 			fundInfo._balance -= fee;
 
-			//这里写成交记录
+			//Write transaction records here
 			log_trade(stdCode, dInfo._long, false, curTm, curPx, maxQty, fee);
-			//这里写平仓记录
+			//Write closing records here
 			log_close(stdCode, dInfo._long, dInfo._opentime, dInfo._price, curTm, curPx, maxQty, profit, pInfo->_closeprofit);
 
 			if (left == 0)
 				break;
 		}
 
-		//需要清理掉已经平仓完的明细
+		//Need to clean up the details that have been closed
 		while (count > 0)
 		{
 			auto it = pInfo->_details.begin();
@@ -1047,7 +1047,7 @@ void WtEngine::do_set_position(const char* stdCode, double qty, double curPx /* 
 			count--;
 		}
 
-		//最后, 如果还有剩余的, 则需要反手了
+		//Finally, if there is still remaining, it needs to be reversed
 		//if (left > 0)
 		if(decimal::gt(left, 0))
 		{
@@ -1061,7 +1061,7 @@ void WtEngine::do_set_position(const char* stdCode, double qty, double curPx /* 
 			dInfo._opentdate = curTDate;
 			pInfo->_details.emplace_back(dInfo);
 
-			//这里还需要写一笔成交记录
+			//Here you need to write another transaction record
 			double fee = commInfo->calcFee(curPx, abs(qty), 0);
 			fundInfo._fees += fee;
 			fundInfo._balance -= fee;
@@ -1126,9 +1126,9 @@ bool WtEngine::init_riskmon(WTSVariant* cfg)
 		return false;
 
 	std::string module = DLLHelper::wrap_module(cfg->getCString("module"));
-	//先看工作目录下是否有对应模块
+	//First check if there is a corresponding module in the working directory
 	std::string dllpath = WtHelper::getCWD() + module;
-	//如果没有,则再看模块目录,即dll同目录下
+	//If not, then look at the module directory, that is, the same directory as the dll
 	if (!StdFile::exists(dllpath.c_str()))
 		dllpath = WtHelper::getInstDir() + module;
 

@@ -101,19 +101,19 @@ void WtHftRtTicker::on_tick(WTSTickData* curTick)
 
 	if (_cur_pos == 0)
 	{
-		//如果当前时间是0, 则直接赋值即可
+		 //If the current time is 0, you can directly assign a value
 		_cur_pos = minutes;
 	}
 	else if (_cur_pos < minutes)
 	{
-		//如果已记录的分钟小于新的分钟, 则需要触发闭合事件
-		//这个时候要先触发闭合, 再修改平台时间和价格
+		//If the recorded minute is less than the new minute, a closing event needs to be triggered
+		//At this time, you must first trigger the closing and then modify the platform time and price
 		if (_last_emit_pos < _cur_pos)
 		{
-			//触发数据回放模块
+			//Trigger the data playback module
 			StdUniqueLock lock(_mtx);
 
-			//优先修改时间标记
+			//First modify the time mark
 			_last_emit_pos = _cur_pos;
 
 			uint32_t thisMin = _s_info->minuteToTime(_cur_pos);
@@ -142,7 +142,7 @@ void WtHftRtTicker::on_tick(WTSTickData* curTick)
 	}
 	else
 	{
-		//如果分钟数还是一致的, 则直接触发行情和时间即可
+		 //If the number of minutes is still the same, you can directly trigger the market and time
 		trigger_price(curTick);
 		if (_engine)
 			_engine->set_date_time(_date, curMin, curSec, rawMin);

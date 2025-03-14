@@ -21,19 +21,19 @@ class WTSVariant;
 typedef enum tagActionType
 {
 	AT_Unknown = 8888,
-	AT_Open = 9999,		//开仓
-	AT_Close,			//平仓
-	AT_CloseToday,		//平今
-	AT_CloseYestoday	//平昨
+	AT_Open = 9999,		// Open
+	AT_Close,			// Close
+	AT_CloseToday,		// CloseToday
+	AT_CloseYestoday	// CloseYestoday
 } ActionType;
 
 typedef struct _ActionRule
 {
-	ActionType	_atype;		//动作类型
-	uint32_t	_limit;		//手数限制
-	uint32_t	_limit_l;	//多头手数限制
-	uint32_t	_limit_s;	//空头手数限制
-	bool		_pure;		//主要针对AT_CloseToday和AT_CloseYestoday，用于判断是否是净今仓或者净昨仓
+	ActionType	_atype;		// Action Type
+	uint32_t	_limit;		// Limit
+	uint32_t	_limit_l;	// Long Limit
+	uint32_t	_limit_s;	// Short Limit
+	bool		_pure;		// Used to determine whether it is a net today or net yesterday for AT_CloseToday and AT_CloseYestoday
 
 	_ActionRule()
 	{
@@ -56,9 +56,9 @@ public:
 
 private:
 	typedef wt_hashmap<std::string, ActionRuleGroup> RulesMap;
-	RulesMap	_rules;	//规则表
+	RulesMap	_rules;
 
-	wt_hashmap<std::string, std::string> _comm_rule_map;	//品种规则映射
+	wt_hashmap<std::string, std::string> _comm_rule_map;	// Corresponing to the rules of the variety
 };
 
 NS_WTP_END

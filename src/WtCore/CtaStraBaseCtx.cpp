@@ -1,11 +1,11 @@
 ﻿/*!
  * \file CtaStraBaseCtx.cpp
- * \project	WonderTrader
+ * \project WonderTrader
  *
  * \author Wesley
  * \date 2020/03/30
- * 
- * \brief 
+ *
+ * \brief
  */
 #include "CtaStraBaseCtx.h"
 #include "WtCtaEngine.h"
@@ -300,7 +300,7 @@ void CtaStraBaseCtx::load_data(uint32_t flag /* = 0xFFFFFFFF */)
 
 	if(root.HasMember("fund"))
 	{
-		//读取资金
+		// get fund value
 		const rj::Value& jFund = root["fund"];
 		if(!jFund.IsNull() && jFund.IsObject())
 		{
@@ -311,7 +311,8 @@ void CtaStraBaseCtx::load_data(uint32_t flag /* = 0xFFFFFFFF */)
 		}
 	}
 
-	{//读取仓位
+	{
+		// get position value
 		double total_profit = 0;
 		double total_dynprofit = 0;
 		const rj::Value& jPos = root["positions"];
@@ -340,9 +341,9 @@ void CtaStraBaseCtx::load_data(uint32_t flag /* = 0xFFFFFFFF */)
 				if (pInfo._volume == 0 || isExpired)
 				{
 					//By Wesley @ 2023.02.21
-					//加这一行的原因是，有些期权合约经常会持有到交割日
-					//所以如果合约过期了，那么需要把浮动盈亏当做平仓盈亏累加一下
-					//处理完以后，下一次加载，浮动盈亏就是0了
+					// The reason for adding this line is that some option contracts often hold until the delivery date
+					// So if the contract expires, then the floating profit and loss should be accumulated as the closing profit and loss
+					// After processing, the next load, the floating profit and loss is 0
 					pInfo._closeprofit += pInfo._dynprofit;
 
 					pInfo._dynprofit = 0;
@@ -408,7 +409,8 @@ void CtaStraBaseCtx::load_data(uint32_t flag /* = 0xFFFFFFFF */)
 		_fund_info._total_dynprofit = total_dynprofit;
 	}
 
-	{//读取条件单
+	{
+		// get condition contract
 		uint32_t count = 0;
 		const rj::Value& jCond = root["conditions"];
 		if (!jCond.IsNull() && jCond.IsObject())
@@ -455,7 +457,7 @@ void CtaStraBaseCtx::load_data(uint32_t flag /* = 0xFFFFFFFF */)
 
 	if (root.HasMember("signals"))
 	{
-		//读取信号
+		// read all signals
 		const rj::Value& jSignals = root["signals"];
 		if (!jSignals.IsNull() && jSignals.IsObject())
 		{
@@ -485,12 +487,12 @@ void CtaStraBaseCtx::load_data(uint32_t flag /* = 0xFFFFFFFF */)
 
 	if (root.HasMember("utils"))
 	{
-		//读取杂项
-		const rj::Value& jUtils = root["utils"];
-		if (!jUtils.IsNull() && jUtils.IsObject())
-		{
-			_last_barno = jUtils["lastbarno"].GetUint();
-		}
+	    // Read miscellaneous data
+	    const rj::Value& jUtils = root["utils"];
+	    if (!jUtils.IsNull() && jUtils.IsObject())
+	    {
+	        _last_barno = jUtils["lastbarno"].GetUint();
+	    }
 	}
 }
 
@@ -498,7 +500,8 @@ void CtaStraBaseCtx::save_data(uint32_t flag /* = 0xFFFFFFFF */)
 {
 	rj::Document root(rj::kObjectType);
 
-	{//持仓数据保存
+	{
+		// save position data
 		rj::Value jPos(rj::kArrayType);
 
 		rj::Document::AllocatorType &allocator = root.GetAllocator();
@@ -548,7 +551,8 @@ void CtaStraBaseCtx::save_data(uint32_t flag /* = 0xFFFFFFFF */)
 		root.AddMember("positions", jPos, allocator);
 	}
 
-	{//资金保存
+	{
+		// save fund data
 		rj::Value jFund(rj::kObjectType);
 		rj::Document::AllocatorType &allocator = root.GetAllocator();
 
@@ -560,7 +564,8 @@ void CtaStraBaseCtx::save_data(uint32_t flag /* = 0xFFFFFFFF */)
 		root.AddMember("fund", jFund, allocator);
 	}
 
-	{//信号保存
+	{
+		// save signal data
 		rj::Value jSigs(rj::kObjectType);
 		rj::Document::AllocatorType &allocator = root.GetAllocator();
 
@@ -582,7 +587,8 @@ void CtaStraBaseCtx::save_data(uint32_t flag /* = 0xFFFFFFFF */)
 		root.AddMember("signals", jSigs, allocator);
 	}
 
-	{//条件单保存
+	{
+		// save condition data
 		rj::Value jCond(rj::kObjectType);
 		rj::Value jItems(rj::kObjectType);
 
@@ -617,7 +623,8 @@ void CtaStraBaseCtx::save_data(uint32_t flag /* = 0xFFFFFFFF */)
 		root.AddMember("conditions", jCond, allocator);
 	}
 
-	{//杂项保存
+	{
+		// save miscellaneous data
 		rj::Value jUtils(rj::kObjectType);
 
 		rj::Document::AllocatorType &allocator = root.GetAllocator();
@@ -645,7 +652,7 @@ void CtaStraBaseCtx::save_data(uint32_t flag /* = 0xFFFFFFFF */)
 }
 
 //////////////////////////////////////////////////////////////////////////
-//回调函数
+// callback functions
 void CtaStraBaseCtx::on_bar(const char* stdCode, const char* period, uint32_t times, WTSBarStruct* newBar)
 {
 	if (newBar == NULL)
@@ -671,10 +678,8 @@ void CtaStraBaseCtx::on_init()
 {
 	init_outputs();
 
-	//读取数据
 	load_data();
 
-	//加载用户数据
 	load_userdata();
 }
 
@@ -686,7 +691,7 @@ void CtaStraBaseCtx::dump_chart_info()
 	rj::Value klineItem(rj::kObjectType);
 	if (_chart_code.empty())
 	{
-		//如果没有设置主K线，就用主K线落地
+		// if no main kline, use main kline to dump
 		klineItem.AddMember("code", rj::Value(_main_code.c_str(), allocator), allocator);
 		klineItem.AddMember("period", rj::Value(_main_period.c_str(), allocator), allocator);
 	}

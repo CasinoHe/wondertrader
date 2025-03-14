@@ -1,11 +1,11 @@
 ﻿/*!
- * \file EventCaster.cpp
- * \project	WonderTrader
+ * \file EventNotifier.cpp
+ * \project WonderTrader
  *
  * \author Wesley
  * \date 2020/03/30
- * 
- * \brief 
+ *
+ * \brief
  */
 #include "EventNotifier.h"
 #include "WtHelper.h"

@@ -1,11 +1,11 @@
 ﻿/*!
  * \file ActionPolicyMgr.cpp
- * \project	WonderTrader
+ * \project WonderTrader
  *
  * \author Wesley
  * \date 2020/03/30
- * 
- * \brief 
+ *
+ * \brief
  */
 #include "ActionPolicyMgr.h"
 
@@ -91,7 +91,8 @@ const ActionRuleGroup& ActionPolicyMgr::getActionRules(const char* pid)
 {
 	std::string gpName = "default";
 
-	{//先找到品种对应的规则组名称
+	{
+		// Find the rule group name corresponding to the variety first
 		auto it = _comm_rule_map.find(pid);
 		if (it != _comm_rule_map.end())
 			gpName = it->second;

@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file HftStraBaseCtx.cpp
  * \project	WonderTrader
  *
@@ -187,7 +187,7 @@ bool HftStraBaseCtx::stra_cancel(uint32_t localid)
 
 OrderIDs HftStraBaseCtx::stra_cancel(const char* stdCode, bool isBuy, double qty)
 {
-	//撤单频率检查
+	//Cancel order frequency check
 	if (!_trader->checkCancelLimits(stdCode))
 		return OrderIDs();
 
@@ -207,7 +207,7 @@ OrderIDs HftStraBaseCtx::stra_buy(const char* stdCode, double price, double qty,
 {
 	/*
 	 *	By Wesley @ 2022.05.26
-	 *	如果找到匹配自定义规则，则进行映射处理
+	 *	If a matching custom rule is found, perform mapping processing
 	 */
 	 //const char* ruleTag = _engine->get_hot_mgr()->getRuleTag(stdCode);
 	CodeHelper::CodeInfo cInfo = CodeHelper::extractStdCode(stdCode, _engine->get_hot_mgr());
@@ -259,10 +259,10 @@ OrderIDs HftStraBaseCtx::stra_sell(const char* stdCode, double price, double qty
 	CodeHelper::CodeInfo cInfo = CodeHelper::extractStdCode(stdCode, _engine->get_hot_mgr());
 	WTSCommodityInfo* commInfo = _engine->get_basedata_mgr()->getCommodity(cInfo._exchg, cInfo._product);
 
-	//如果不能做空，则要看可用持仓
+	//If short selling is not allowed, check available positions
 	if (!commInfo->canShort())
 	{
-		double curPos = stra_get_position(stdCode, true);//只读可用持仓
+		double curPos = stra_get_position(stdCode, true);//Read only available positions
 		if (decimal::gt(qty, curPos))
 		{
 			log_error("No enough position of {} to sell", stdCode);
@@ -272,7 +272,7 @@ OrderIDs HftStraBaseCtx::stra_sell(const char* stdCode, double price, double qty
 
 	/*
 	 *	By Wesley @ 2022.05.26
-	 *	如果找到匹配自定义规则，则进行映射处理
+	 *	If a matching custom rule is found, perform mapping processing
 	 */
 	
 	if (strlen(cInfo._ruletag) > 0)
@@ -481,8 +481,8 @@ void HftStraBaseCtx::stra_sub_ticks(const char* stdCode)
 {
 	/*
 	 *	By Wesley @ 2022.03.01
-	 *	主动订阅tick会在本地记一下
-	 *	tick数据回调的时候先检查一下
+	 *	Actively subscribing to ticks will be recorded locally
+	 *	When the tick data is called back, check it first
 	 */
 	_tick_subs.insert(stdCode);
 
@@ -557,7 +557,7 @@ void HftStraBaseCtx::on_order(uint32_t localid, const char* stdCode, bool isBuy,
 
 	if(isCanceled || decimal::eq(leftQty, 0))
 	{
-		//订单结束了，要把订单号清理掉，不然开销太大
+		//Orders are over, order numbers should be cleared, otherwise the overhead is too large
 	}
 }
 
@@ -786,7 +786,7 @@ void HftStraBaseCtx::do_set_position(const char* stdCode, double qty, double pri
 	uint64_t curTm = (uint64_t)_engine->get_date() * 1000000000 + (uint64_t)_engine->get_raw_time() * 100000 + _engine->get_secs();
 	uint32_t curTDate = _engine->get_trading_date();
 
-	//手数相等则不用操作了
+	//The number of hands is equal, no operation is required
 	if (decimal::eq(pInfo._volume, qty))
 		return;
 
@@ -794,12 +794,12 @@ void HftStraBaseCtx::do_set_position(const char* stdCode, double qty, double pri
 
 	WTSCommodityInfo* commInfo = _engine->get_commodity_info(stdCode);
 
-	//成交价
+	//Transaction price
 	double trdPx = curPx;
 
 	double diff = qty - pInfo._volume;
 	bool isBuy = decimal::gt(diff, 0.0);
-	if (decimal::gt(pInfo._volume*diff, 0))//当前持仓和仓位变化方向一致, 增加一条明细, 增加数量即可
+	if (decimal::gt(pInfo._volume*diff, 0))//The current position and the direction of the position change are the same, add a detail, and increase the quantity
 	{
 		pInfo._volume = qty;
 
@@ -823,7 +823,7 @@ void HftStraBaseCtx::do_set_position(const char* stdCode, double qty, double pri
 		log_trade(stdCode, dInfo._long, true, curTm, trdPx, abs(diff), fee, userTag);
 	}
 	else
-	{//持仓方向和仓位变化方向不一致,需要平仓
+	{//The position direction and the position change direction are inconsistent, and it needs to be closed
 		double left = abs(diff);
 
 		if (_slippage != 0)
@@ -853,21 +853,21 @@ void HftStraBaseCtx::do_set_position(const char* stdCode, double qty, double pri
 			if (!dInfo._long)
 				profit *= -1;
 			pInfo._closeprofit += profit;
-			pInfo._dynprofit = pInfo._dynprofit*dInfo._volume / (dInfo._volume + maxQty);//浮盈也要做等比缩放
+			pInfo._dynprofit = pInfo._dynprofit*dInfo._volume / (dInfo._volume + maxQty);//Floating profit and loss also need to be scaled proportionally
 			_fund_info._total_profit += profit;
 
 			double fee = commInfo->calcFee(trdPx, maxQty, dInfo._opentdate == curTDate ? 2 : 1);
 			_fund_info._total_fees += fee;
-			//这里写成交记录
+			//Write transaction records here
 			log_trade(stdCode, dInfo._long, false, curTm, trdPx, maxQty, fee, userTag);
-			//这里写平仓记录
+			//Write closing records here
 			log_close(stdCode, dInfo._long, dInfo._opentime, dInfo._price, curTm, trdPx, maxQty, profit, maxProf, maxLoss, pInfo._closeprofit, dInfo._usertag, userTag);
 
 			if (left == 0)
 				break;
 		}
 
-		//需要清理掉已经平仓完的明细
+		//Need to clean up the details that have been closed
 		while (count > 0)
 		{
 			auto it = pInfo._details.begin();
@@ -875,7 +875,7 @@ void HftStraBaseCtx::do_set_position(const char* stdCode, double qty, double pri
 			count--;
 		}
 
-		//最后,如果还有剩余的,则需要反手了
+		//Finally, if there is still a surplus, it needs to be reversed
 		if (left > 0)
 		{
 			left = left * qty / abs(qty);
@@ -889,7 +889,7 @@ void HftStraBaseCtx::do_set_position(const char* stdCode, double qty, double pri
 			wt_strcpy(dInfo._usertag, userTag);
 			pInfo._details.emplace_back(dInfo);
 
-			//这里还需要写一笔成交记录
+			//Here we need to write another transaction record
 			double fee = commInfo->calcFee(trdPx, abs(left), 0);
 			_fund_info._total_fees += fee;
 			//_engine->mutate_fund(fee, FFT_Fee);
@@ -953,8 +953,8 @@ void HftStraBaseCtx::on_session_end(uint32_t uTDate)
 		total_dynprofit += pInfo._dynprofit;
 	}
 
-	//这里要把当日结算的数据写到日志文件里
-	//而且这里回测和实盘写法不同, 先留着, 后面来做
+	//Here we need to write the settlement data of the day into the log file
+	//Moreover, the backtest and real disk writing methods are different, so keep them first and do them later
 	if (_fund_logs && _data_agent)
 		_fund_logs->write_file(fmt::format("{},{:.2f},{:.2f},{:.2f},{:.2f}\n", curDate,
 			_fund_info._total_profit, _fund_info._total_dynprofit,

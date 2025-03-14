@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file HftStraBaseCtx.h
  * \project WonderTrader
  *
@@ -33,7 +33,7 @@ public:
 
 public:
 	//////////////////////////////////////////////////////////////////////////
-	//IHftStraCtx 接口
+	//IHftStraCtx interface
 	virtual uint32_t id() override;
 
 	virtual void on_init() override;
@@ -57,64 +57,64 @@ public:
 	virtual OrderIDs stra_cancel(const char* stdCode, bool isBuy, double qty) override;
 
 	/*
-	 *	下单接口: 买入
+	 *	Order interface: Buy
 	 *
-	 *	@stdCode	合约代码
-	 *	@price		下单价格，0则是市价单
-	 *	@qty		下单数量
-	 *	@flag		下单标志: 0-normal，1-fak，2-fok，默认0
+	 *	@stdCode	Contract code
+	 *	@price		Order price, 0 for market order
+	 *	@qty		Order quantity
+	 *	@flag		Order flag: 0-normal, 1-fak, 2-fok, default 0
 	 */
 	virtual OrderIDs stra_buy(const char* stdCode, double price, double qty, const char* userTag, int flag = 0, bool bForceClose = false) override;
 
 	/*
-	 *	下单接口: 卖出
+	 *	Order interface: Sell
 	 *
-	 *	@stdCode	合约代码
-	 *	@price		下单价格，0则是市价单
-	 *	@qty		下单数量
-	 *	@flag		下单标志: 0-normal，1-fak，2-fok，默认0
+	 *	@stdCode	Contract code
+	 *	@price		Order price, 0 for market order
+	 *	@qty		Order quantity
+	 *	@flag		Order flag: 0-normal, 1-fak, 2-fok, default 0
 	 */
 	virtual OrderIDs stra_sell(const char* stdCode, double price, double qty, const char* userTag, int flag = 0, bool bForceClose = false) override;
 
 	/*
-	 *	下单接口: 开多
+	 *	Order interface: Open long
 	 *
-	 *	@stdCode	合约代码
-	 *	@price		下单价格，0则是市价单
-	 *	@qty		下单数量
-	 *	@flag		下单标志: 0-normal，1-fak，2-fok
+	 *	@stdCode	Contract code
+	 *	@price		Order price, 0 for market order
+	 *	@qty		Order quantity
+	 *	@flag		Order flag: 0-normal, 1-fak, 2-fok
 	 */
 	virtual uint32_t	stra_enter_long(const char* stdCode, double price, double qty, const char* userTag, int flag = 0) override;
 
 	/*
-	 *	下单接口: 开空
+	 *	Order interface: Open short
 	 *
-	 *	@stdCode	合约代码
-	 *	@price		下单价格，0则是市价单
-	 *	@qty		下单数量
-	 *	@flag		下单标志: 0-normal，1-fak，2-fok
+	 *	@stdCode	Contract code
+	 *	@price		Order price, 0 for market order
+	 *	@qty		Order quantity
+	 *	@flag		Order flag: 0-normal, 1-fak, 2-fok
 	 */
 	virtual uint32_t	stra_enter_short(const char* stdCode, double price, double qty, const char* userTag, int flag = 0) override;
 
 	/*
-	 *	下单接口: 平多
+	 *	Order interface: Close long
 	 *
-	 *	@stdCode	合约代码
-	 *	@price		下单价格，0则是市价单
-	 *	@qty		下单数量
-	 *	@isToday	是否今仓，默认false
-	 *	@flag		下单标志: 0-normal，1-fak，2-fok，默认0
+	 *	@stdCode	Contract code
+	 *	@price		Order price, 0 for market order
+	 *	@qty		Order quantity
+	 *	@isToday	Is today's position, default false
+	 *	@flag		Order flag: 0-normal, 1-fak, 2-fok, default 0
 	 */
 	virtual uint32_t	stra_exit_long(const char* stdCode, double price, double qty, const char* userTag, bool isToday = false, int flag = 0) override;
 
 	/*
-	 *	下单接口: 平空
+	 *	Order interface: Close short
 	 *
-	 *	@stdCode	合约代码
-	 *	@price		下单价格，0则是市价单
-	 *	@qty		下单数量
-	 *	@isToday	是否今仓，默认false
-	 *	@flag		下单标志: 0-normal，1-fak，2-fok，默认0
+	 *	@stdCode	Contract code
+	 *	@price		Order price, 0 for market order
+	 *	@qty		Order quantity
+	 *	@isToday	Is today's position, default false
+	 *	@flag		Order flag: 0-normal, 1-fak, 2-fok, default 0
 	 */
 	virtual uint32_t	stra_exit_short(const char* stdCode, double price, double qty, const char* userTag, bool isToday = false, int flag = 0) override;
 
@@ -133,7 +133,7 @@ public:
 	virtual WTSTickData* stra_get_last_tick(const char* stdCode) override;
 
 	/*
-	 *	获取分月合约代码
+	 *	Get monthly contract code
 	 */
 	virtual std::string		stra_get_rawcode(const char* stdCode) override;
 
@@ -258,14 +258,14 @@ protected:
 	BoostFilePtr	_trade_logs;
 	BoostFilePtr	_fund_logs;
 
-	//用户数据
+	//User data
 	typedef wt_hashmap<std::string, std::string> StringHashMap;
 	StringHashMap	_user_datas;
 	bool			_ud_modified;
 
-	bool			_data_agent;	//数据托管
+	bool			_data_agent;	//Data agent
 
-	//tick订阅列表
+	//Tick subscription list
 	wt_hashset<std::string> _tick_subs;
 
 private:

@@ -803,7 +803,7 @@ void CtaStraBaseCtx::on_tick(const char* stdCode, WTSTickData* newTick, bool bEm
 {
 	_price_map[stdCode] = newTick->price();
 
-	//先检查是否要信号要触发
+	// Check if a signal needs to be triggered first
 	{
 		auto it = _sig_map.find(stdCode);
 		if(it != _sig_map.end())
@@ -812,11 +812,11 @@ void CtaStraBaseCtx::on_tick(const char* stdCode, WTSTickData* newTick, bool bEm
 			if (sInfo->isInTradingTime(_engine->get_raw_time(), true))
 			{
 				const SigInfo sInfo = it->second;
-				//只有当信号类型不为0，即bar内信号或者条件单触发信号时，且信号没有触发过
+				 // Only when the signal type is not 0, i.e., it is an intra-bar signal or a conditional order trigger signal, and the signal has not been triggered
 				do_set_position(stdCode, sInfo._volume, sInfo._usertag.c_str(), (sInfo._sigtype != 0 && !sInfo._triggered));
 				_sig_map.erase(it);
 
-				//如果是条件单触发，则回调on_condition_triggered
+				 // If it is a conditional order trigger, call back on_condition_triggered
 				if(sInfo._sigtype == 2)
 					on_condition_triggered(stdCode, sInfo._volume, newTick->price(), sInfo._usertag.c_str());
 			}
@@ -824,11 +824,11 @@ void CtaStraBaseCtx::on_tick(const char* stdCode, WTSTickData* newTick, bool bEm
 		}
 	}
 
-	//更新浮动盈亏
+	// Update floating profit and loss
 	update_dyn_profit(stdCode, newTick->price());
 
 	//////////////////////////////////////////////////////////////////////////
-	//检查条件单
+	// Check conditional orders
 	if(!_condtions.empty())
 	{
 		auto it = _condtions.find(stdCode);
@@ -923,8 +923,8 @@ void CtaStraBaseCtx::on_tick(const char* stdCode, WTSTickData* newTick, bool bEm
 				default: break;
 				}
 
-				//同一个bar设置针对同一个合约的条件单, 只可能触发一条
-				//所以这里直接清理掉即可
+				// For the same bar, only one condition order for the same contract can be triggered
+				// So it can be cleared directly here
 				_condtions.erase(it);
 				break;
 			}
@@ -1122,7 +1122,7 @@ CondList& CtaStraBaseCtx::get_cond_entrusts(const char* stdCode)
 }
 
 //////////////////////////////////////////////////////////////////////////
-//策略接口
+// interface for strategy
 void CtaStraBaseCtx::stra_enter_long(const char* stdCode, double qty, const char* userTag /* = "" */, double limitprice, double stopprice)
 {
 	WTSCommodityInfo* commInfo = _engine->get_commodity_info(stdCode);
@@ -1431,10 +1431,11 @@ void CtaStraBaseCtx::do_set_position(const char* stdCode, double qty, const char
 	if (commInfo == NULL)
 		return;
 
-	//成交价
+	// Price of the transaction
 	double trdPx = curPx;
 	/* By HeJ @ 2023.03.14
-	 * 设置理论持仓时，要加个锁，避免出现组合轧差同步与信号同时触发，导致的反复发单和信号覆盖
+	 * When holding a position theoretically, a lock should be added to avoid the combination of netting synchronization and signal triggering at the same time, 
+	 * resulting in repeated orders and signal coverage
 	 */
 	SpinLock lock(_mutex);
 	bool isBuy = decimal::gt(diff, 0.0);
@@ -1564,14 +1565,13 @@ void CtaStraBaseCtx::do_set_position(const char* stdCode, double qty, const char
 			pInfo._details.emplace_back(dInfo);
 			pInfo._last_entertime = curTm;
 
-			//这里还需要写一笔成交记录
+			// should be a transaction record here
 			double fee = commInfo->calcFee(trdPx, abs(left), 0);
 			_fund_info._total_fees += fee;
 			log_trade(stdCode, dInfo._long, true, curTm, trdPx, abs(left), userTag, fee, _last_barno);
 		}
 	}
 
-	//存储数据
 	save_data();
 
 	if (bFireAtOnce)	//If it is triggered by a conditional order, submit the change to the engine
@@ -1669,8 +1669,8 @@ void CtaStraBaseCtx::stra_sub_ticks(const char* code)
 {
 	/*
 	 *	By Wesley @ 2022.03.01
-	 *	主动订阅tick会在本地记一下
-	 *	tick数据回调的时候先检查一下
+	 *	Record the subscription of tick data
+	 *	When the tick data callback is triggered, check first
 	 */
 	_tick_subs.insert(code);
 
@@ -1845,11 +1845,11 @@ double CtaStraBaseCtx::stra_get_position(const char* stdCode, bool bOnlyValid /*
 	totalPos = pInfo._volume;
 	if (strlen(userTag) == 0)
 	{
-		//只有userTag为空的时候时候，才会用bOnlyValid
+		//only userTag is empty, bOnlyValid will be used
 		if (bOnlyValid)
 		{
-			//这里理论上，只有多头才会进到这里
-			//其他地方要保证，空头持仓的话，_frozen要为0
+			//In theory, only long positions will enter here
+			//Other places have to ensure that _frozen is 0 for short positions
 			return totalPos - pInfo._frozen;
 		}
 		else

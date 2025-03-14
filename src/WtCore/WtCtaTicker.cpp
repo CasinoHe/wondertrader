@@ -69,7 +69,7 @@ void WtCtaRtTicker::on_tick(WTSTickData* curTick)
 
 	if (_date != 0 && (uDate < _date || (uDate == _date && uTime < _time)))
 	{
-		//WTSLogger::info("行情时间{}小于本地时间{}", uTime, _time);
+		//WTSLogger::info("The market time {} is less than the local time {}", uTime, _time);
 		trigger_price(curTick);
 		return;
 	}
@@ -87,8 +87,8 @@ void WtCtaRtTicker::on_tick(WTSTickData* curTick)
 	static uint32_t wrapMin = UINT_MAX;
 
 	//By Wesley @ 2023.11.01
-	//如果新的分钟和上一次处理的分钟数不同，才进行处理
-	//否则就不用处理，减少一些开销
+	//If the new minute is different from the last processed minute, then process it
+	//Otherwise, you don't need to process it to reduce some overhead
 	if(prevMin != curMin)
 	{
 		minutes = _s_info->timeToMinutes(curMin);
@@ -106,19 +106,19 @@ void WtCtaRtTicker::on_tick(WTSTickData* curTick)
 
 	if (_cur_pos == 0)
 	{
-		//如果当前时间是0, 则直接赋值即可
+		 //If the current time is 0, just assign it directly
 		_cur_pos = minutes;
 	}
 	else if (_cur_pos < minutes)
 	{
-		//如果已记录的分钟小于新的分钟, 则需要触发闭合事件
-		//这个时候要先触发闭合, 再修改平台时间和价格
+		//If the recorded minute is less than the new minute, then the closing event needs to be triggered
+		//At this time, the closing must be triggered first, and then the platform time and price are modified
 		if (_last_emit_pos < _cur_pos)
 		{
-			//触发数据回放模块
+			//Trigger the data playback module
 			StdUniqueLock lock(_mtx);
 
-			//优先修改时间标记
+			//First modify the time mark
 			_last_emit_pos = _cur_pos;
 
 			uint32_t thisMin = _s_info->minuteToTime(_cur_pos);
@@ -132,7 +132,7 @@ void WtCtaRtTicker::on_tick(WTSTickData* curTick)
 			if (_store)
 				_store->onMinuteEnd(_date, thisMin, bEndingTDate ? _engine->getTradingDate() : 0);
 
-			//任务调度
+			 //Task scheduling
 			_engine->on_schedule(_date, thisMin);
 
 			if(bEndingTDate)
@@ -140,8 +140,8 @@ void WtCtaRtTicker::on_tick(WTSTickData* curTick)
 		}
 
 		//By Wesley @ 2022.02.09
-		//这里先修改时间，再调用trigger_price
-		//无论分钟线是否切换，先修改时间都是对的
+		 //Here, modify the time first, and then call trigger_price
+		 //It is correct to modify the time first regardless of whether the minute line is switched
 		if (_engine)
 		{
 			_engine->set_date_time(_date, wrapMin, curSec, prevMin);
@@ -153,7 +153,7 @@ void WtCtaRtTicker::on_tick(WTSTickData* curTick)
 	}
 	else
 	{
-		//如果分钟数还是一致的, 则直接触发行情和时间即可
+		//If the number of minutes is still the same, then directly trigger the market and time
 		trigger_price(curTick);
 		if (_engine)
 			_engine->set_date_time(_date, wrapMin, curSec, prevMin);
@@ -172,8 +172,8 @@ void WtCtaRtTicker::run()
 
 	/*
 	 *	By Wesley @ 2022.12.06
-	 *	这里一定要在初始化之前把交易日确定下来
-	 *	不然如果策略在on_init的时候调用一些依赖交易日的接口就会出错
+	 *	Here, the trading day must be determined before initialization
+	 *	Otherwise, if the strategy calls some interfaces that depend on the trading day during on_init, it will be wrong
 	 */
 	uint32_t curTDate = _engine->get_basedata_mgr()->calcTradingDate(_s_info->id(), _engine->get_date(), _engine->get_min_time(), true);
 	_engine->set_trading_date(curTDate);
@@ -181,7 +181,7 @@ void WtCtaRtTicker::run()
 	_engine->on_init();
 	_engine->on_session_begin();
 
-	//先检查当前时间, 如果大于
+	//First check the current time, if it is greater than
 
 	_thrd.reset(new StdThread([this](){
 		while(!_stopped)
@@ -195,18 +195,18 @@ void WtCtaRtTicker::run()
 
 				if (now >= _next_check_time && _last_emit_pos < _cur_pos)
 				{
-					//触发数据回放模块
+					//Trigger the data playback module
 					StdUniqueLock lock(_mtx);
 
-					//优先修改时间标记
+					//First modify the time mark
 					_last_emit_pos = _cur_pos;
 
 					uint32_t thisMin = _s_info->minuteToTime(_cur_pos);
-					_time = thisMin*100000;//这里要还原成毫秒为单位
+					_time = thisMin*100000;//Here, it must be restored to milliseconds
 
-					//如果thisMin是0, 说明换日了
-					//这里是本地计时导致的换日, 说明日期其实还是老日期, 要自动+1
-					//同时因为时间是235959xxx, 所以也要手动置为0
+					//If thisMin is 0, it means the date has changed
+					//Here, the date change is caused by local timing, which means that the date is actually the old date, which should be automatically +1
+					//At the same time, because the time is 235959xxx, it must also be manually set to 0
 					if (thisMin == 0)
 					{
 						uint32_t lastDate = _date;
@@ -224,7 +224,7 @@ void WtCtaRtTicker::run()
 					if (_store)
 						_store->onMinuteEnd(_date, thisMin, bEndingTDate ? _engine->getTradingDate() : 0);
 
-					//任务调度
+					//Task scheduling
 					_engine->on_schedule(_date, thisMin);
 
 					if (bEndingTDate)
@@ -237,16 +237,16 @@ void WtCtaRtTicker::run()
 			}
 			else //if(offTime >= _s_info->getOpenTime(true) && offTime <= _s_info->getCloseTime(true))
 			{
-				//收盘以后，如果发现上次触发的位置不等于总的分钟数，说明少了最后一分钟的闭合逻辑
+				//After the market closes, if it is found that the last triggered position is not equal to the total number of minutes, it means that the closing logic of the last minute is missing
 				uint32_t total_mins = _s_info->getTradingMins();
 				if(_time != UINT_MAX && _last_emit_pos != 0 && _last_emit_pos < total_mins && offTime >= _s_info->getCloseTime(true))
 				{
 					WTSLogger::warn("Tradingday {} will be ended forcely, last_emit_pos: {}, time: {}", _engine->getTradingDate(), _last_emit_pos.fetch_add(0), _time);
 
-					//触发数据回放模块
+					//Trigger the data playback module
 					StdUniqueLock lock(_mtx);
 
-					//优先修改时间标记
+					//First modify the time mark
 					_last_emit_pos = total_mins;
 
 					bool bEndingTDate = true;
@@ -257,7 +257,7 @@ void WtCtaRtTicker::run()
 					if (_store)
 						_store->onMinuteEnd(_date, thisMin, _engine->getTradingDate());
 
-					//任务调度
+					//Task scheduling
 					_engine->on_schedule(_date, thisMin);
 
 					_engine->on_session_end();

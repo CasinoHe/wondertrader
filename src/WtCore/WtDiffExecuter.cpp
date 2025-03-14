@@ -49,7 +49,7 @@ WtDiffExecuter::~WtDiffExecuter()
 void WtDiffExecuter::setTrader(TraderAdapter* adapter)
 {
 	_trader = adapter;
-	//设置的时候读取一下trader的状态
+	//Read the status of the trader when setting
 	if(_trader)
 		_channel_ready = _trader->isReady();
 }
@@ -79,7 +79,7 @@ bool WtDiffExecuter::init(WTSVariant* params)
 
 void WtDiffExecuter::load_data()
 {
-	//读取执行器的理论部位，以及待执行的差量
+	//Read the theoretical position of the executer and the delta to be executed
 	std::string filename = WtHelper::getExecDataDir();
 	filename += _name + ".json";
 
@@ -348,7 +348,7 @@ void WtDiffExecuter::on_position_changed(const char* stdCode, double diffPos)
 	if (unit == NULL)
 		return;
 
-	//如果差量为0，则直接返回
+	//If the delta is 0, return directly
 	if (decimal::eq(diffPos, 0))
 		return;
 
@@ -360,7 +360,7 @@ void WtDiffExecuter::on_position_changed(const char* stdCode, double diffPos)
 
 	/*
 	 *	By Sunseeeeeker @ 2023.01.10
-	 *	更新差量
+	 *	Update the difference
 	*/
 	double& thisDiff = _diff_pos[stdCode];
 	double prevDiff = thisDiff;

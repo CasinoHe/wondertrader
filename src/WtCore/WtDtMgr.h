@@ -41,7 +41,7 @@ public:
 	void	handle_push_quote(const char* stdCode, WTSTickData* newTick);
 
 	//////////////////////////////////////////////////////////////////////////
-	//IDataManager 接口
+	//IDataManager interface
 	virtual WTSTickSlice* get_tick_slice(const char* stdCode, uint32_t count, uint64_t etime = 0) override;
 	virtual WTSOrdQueSlice* get_order_queue_slice(const char* stdCode, uint32_t count, uint64_t etime = 0) override;
 	virtual WTSOrdDtlSlice* get_order_detail_slice(const char* stdCode, uint32_t count, uint64_t etime = 0) override;
@@ -73,17 +73,17 @@ private:
 	IHisDataLoader*	_loader;
 	WtEngine*		_engine;
 
-	bool			_align_by_section;	//强制小节对齐
-	bool			_force_cache;		//强制缓存K线
+	bool			_align_by_section;	//Force section alignment
+	bool			_force_cache;		//Force cache K-line
 
 	wt_hashset<std::string> _subed_basic_bars;
 	typedef WTSHashMap<std::string> DataCacheMap;
-	DataCacheMap*	_bars_cache;	//K线缓存
-	DataCacheMap*	_rt_tick_map;	//实时tick缓存
+	DataCacheMap*	_bars_cache;	//K-line cache
+	DataCacheMap*	_rt_tick_map;	//Real-time tick cache
 	//By Wesley @ 2022.02.11
-	//这个只有后复权tick数据
-	//因为前复权和不复权，都不需要缓存
-	DataCacheMap*	_ticks_adjusted;	//复权tick缓存
+	//This is only the post-right tick data
+	//Because the pre-right and non-right, do not need to cache
+	DataCacheMap*	_ticks_adjusted;	//Adjusted tick cache
 
 	typedef struct _NotifyItem
 	{

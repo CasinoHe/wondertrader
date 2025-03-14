@@ -115,7 +115,7 @@ bool TraderAdapter::init(const char* id, WTSVariant* params, IBaseDataMgr* bdMgr
 	if (_save_data)
 		initSaveData();
 
-	//这里解析流量风控参数
+	//Here parse the flow control parameters
 	WTSVariant* cfgRisk = params->get("riskmon");
 	if (cfgRisk)
 	{
@@ -1816,12 +1816,12 @@ bool TraderAdapter::checkSelfMatch(const char* stdCode, WTSTradeInfo* tInfo)
 	{
 		/*
 		 *	By Wesley @ 2022.03.07
-		 *	如果成交单号已经存在，则检查关联订单号是否相同
+		 *	If the trade ID already exists, check if the associated order ID is the same
 		 */
 		const std::string& oid = it->second;
 		if (oid.compare(refid) != 0)
 		{
-			//同一个成交单的关联订单ID不同，这一定是自成交了
+			//The associated order ID of the same trade order is different, this must be self-matching
 			WTSLogger::log_dyn("trader", _id.c_str(), LL_FATAL, 
 				"[{0}] Self matching detected on {1}!!! Instructions on {1} will be forbidden!!!", _id.c_str(), stdCode);
 			_self_matches.insert(stdCode);
@@ -1829,7 +1829,7 @@ bool TraderAdapter::checkSelfMatch(const char* stdCode, WTSTradeInfo* tInfo)
 		}
 		else
 		{
-			//关联订单一样，说明是重复推送，不用管了
+			//The associated order is the same, indicating that it is a repeated push, ignore it
 		}
 	}
 	else

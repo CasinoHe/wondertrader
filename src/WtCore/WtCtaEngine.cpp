@@ -56,7 +56,7 @@ void WtCtaEngine::run()
 	WTSVariant* cfgProd = _cfg->get("product");
 	_tm_ticker->init(_data_mgr->reader(), cfgProd->getCString("session"));
 
-	//启动之前,先把运行中的策略落地
+	//Start before, first put the running strategy on the ground
 	{
 		rj::Document root(rj::kObjectType);
 		rj::Document::AllocatorType &allocator = root.GetAllocator();
@@ -156,7 +156,7 @@ void WtCtaEngine::on_init()
 			{
 				if (!decimal::eq(qty, oldQty))
 				{
-					//输出日志
+					 //Output log
 					WTSLogger::info("[Filters] Target position of {} of strategy {} reset by strategy filter: {} -> {}", 
 						stdCode, ctx->name(), oldQty, qty);
 				}
@@ -174,7 +174,7 @@ void WtCtaEngine::on_init()
 			}
 			else
 			{
-				//输出日志
+				 //Output log
 				WTSLogger::info("[Filters] Target position of {} of strategy {} ignored by strategy filter", stdCode, ctx->name());
 			}
 		}, true);
@@ -187,7 +187,7 @@ void WtCtaEngine::on_init()
 		bRiskEnabled = true;
 	}
 
-	////初始化仓位打印出来
+	////Initialize the position and print it out
 	//for (auto it = target_pos.begin(); it != target_pos.end(); it++)
 	//{
 	//	const auto& stdCode = it->first;
@@ -240,7 +240,7 @@ void WtCtaEngine::on_session_end()
 
 void WtCtaEngine::on_schedule(uint32_t curDate, uint32_t curTime)
 {
-	//去检查一下过滤器
+	//Go check the filter
 	_filter_mgr.load_filters();
 	_exec_mgr.clear_cached_targets();
 	wt_hashmap<std::string, double> target_pos;
@@ -248,10 +248,10 @@ void WtCtaEngine::on_schedule(uint32_t curDate, uint32_t curTime)
 	{
 		/*
 		 *	By Wesley @ 2023.06.27
-		 *	如果通过线程池并发
-		 *	先并发所有的on_schedule
-		 *	然后再wait所有任务结束
-		 *	最后再统一读取全部持仓
+		 *	If concurrent through the thread pool
+		 *	First concurrent all on_schedule
+		 *	Then wait for all tasks to end
+		 *	Finally, uniformly read all positions
 		 */
 		for (auto it = _ctx_map.begin(); it != _ctx_map.end(); it++)
 		{
@@ -263,7 +263,7 @@ void WtCtaEngine::on_schedule(uint32_t curDate, uint32_t curTime)
 
 		/*
 		 *	By Wesley @ 2023.06.27
-		 *	等待全部on_schedule执行完成
+		 *	Wait for all on_schedule to complete
 		 */
 		_pool->wait();
 		
@@ -279,7 +279,7 @@ void WtCtaEngine::on_schedule(uint32_t curDate, uint32_t curTime)
 				{
 					if (!decimal::eq(qty, oldQty))
 					{
-						//输出日志
+						//Output log
 						WTSLogger::info("[Filters] Target position of {} of strategy {} reset by strategy filter: {} -> {}",
 							stdCode, ctx->name(), oldQty, qty);
 					}
@@ -299,7 +299,7 @@ void WtCtaEngine::on_schedule(uint32_t curDate, uint32_t curTime)
 				}
 				else
 				{
-					//输出日志
+					//Output log
 					WTSLogger::info("[Filters] Target position of {} of strategy {} ignored by strategy filter", stdCode, ctx->name());
 				}
 			}, true);
@@ -320,7 +320,7 @@ void WtCtaEngine::on_schedule(uint32_t curDate, uint32_t curTime)
 				{
 					if (!decimal::eq(qty, oldQty))
 					{
-						//输出日志
+						//Output log
 						WTSLogger::info("[Filters] Target position of {} of strategy {} reset by strategy filter: {} -> {}",
 							stdCode, ctx->name(), oldQty, qty);
 					}
@@ -340,7 +340,7 @@ void WtCtaEngine::on_schedule(uint32_t curDate, uint32_t curTime)
 				}
 				else
 				{
-					//输出日志
+					//Output log
 					WTSLogger::info("[Filters] Target position of {} of strategy {} ignored by strategy filter", stdCode, ctx->name());
 				}
 			}, true);
@@ -355,7 +355,7 @@ void WtCtaEngine::on_schedule(uint32_t curDate, uint32_t curTime)
 		bRiskEnabled = true;
 	}
 
-	//处理组合理论部位
+	//Process portfolio theoretical positions
 	for (auto it = target_pos.begin(); it != target_pos.end(); it++)
 	{
 		const auto& stdCode = it->first;
@@ -377,13 +377,13 @@ void WtCtaEngine::on_schedule(uint32_t curDate, uint32_t curTime)
 		{
 			if(!decimal::eq(m.second->_volume, 0))
 			{
-				//这里是通知WtEngine去更新组合持仓数据
+				//Here is to notify WtEngine to update the portfolio position data
 				append_signal(stdCode.c_str(), 0, true);
 
 				WTSLogger::error("Instrument {} not in target positions, setup to 0 automatically", stdCode.c_str());
 			}
 
-			//因为组合持仓里会有过期的合约代码存在，所以这里在丢给执行以前要做一个检查
+			//Because there will be expired contract codes in the portfolio position, a check must be done here before throwing it to execution
 			auto cInfo = get_contract_info(stdCode.c_str());
 			if (cInfo != NULL)
 			{
@@ -397,7 +397,7 @@ void WtCtaEngine::on_schedule(uint32_t curDate, uint32_t curTime)
 		update_fund_dynprofit();
 		/*
 		 *	By Wesley @ 2023.01.30
-		 *	增加一个定时刷新交易账号资金的入口
+		 *	Add an entry to refresh the trading account funds regularly
 		 */
 		_adapter_mgr->refresh_funds();
 	});
@@ -420,10 +420,10 @@ void WtCtaEngine::handle_push_quote(WTSTickData* newTick)
 
 void WtCtaEngine::handle_pos_change(const char* straName, const char* stdCode, double diffPos)
 {
-	//这里是持仓增量,所以不用处理未过滤的情况,因为增量情况下,不会改变目标diffQty
+	//Here is the position increment, so there is no need to process the unfiltered situation, because in the incremental situation, the target diffQty will not be changed
 	if(_filter_mgr.is_filtered_by_strategy(straName, diffPos, true))
 	{
-		//输出日志
+		//Output log
 		WTSLogger::info("[Filters] Target position of {} of strategy {} ignored by strategy filter", stdCode, straName);
 		return;
 	}
@@ -438,7 +438,7 @@ void WtCtaEngine::handle_pos_change(const char* straName, const char* stdCode, d
 	}
 
 	/*
-	 *	这里必须要算一个总的目标仓位
+	 *	Here you must calculate a total target position
 	 */
 	PosInfoPtr& pInfo = _pos_map[realCode];	
 	if (pInfo == NULL)
@@ -463,9 +463,9 @@ void WtCtaEngine::handle_pos_change(const char* straName, const char* stdCode, d
 	save_datas();
 
 	/*
-	 *	如果策略绑定了执行通道
-	 *	那么就只提交增量
-	 *	如果策略没有绑定执行通道，就提交全量
+	 *	If the strategy is bound to the execution channel
+	 *	Then only submit the increment
+	 *	If the strategy is not bound to the execution channel, submit the full amount
 	 */
 	const auto& exec_ids = _exec_mgr.get_route(straName);
 	for(auto& execid : exec_ids)
@@ -478,23 +478,23 @@ void WtCtaEngine::on_tick(const char* stdCode, WTSTickData* curTick)
 
 	_data_mgr->handle_push_quote(stdCode, curTick);
 
-	//如果是真实代码, 则要传递给执行器
+	//If it is a real code, it must be passed to the executor
 	/*
-	 *	这里不再做判断，直接全部传递给执行器管理器，因为执行器可能会处理未订阅的合约
-	 *	主要场景为主力合约换月期间
+	 *	Here no longer make judgments, directly pass all to the executor manager, because the executor may process unsubscribed contracts
+	 *	The main scenario is during the main contract month change period
 	 *	By Wesley @ 2021.08.19
 	 */
 	{
-		//是否主力合约代码的标记, 主要用于给执行器发数据的
+		//Is it the main contract code mark, mainly used to send data to the executor
 		_exec_mgr.handle_tick(stdCode, curTick);
 	}
 
 	/*
 	 *	By Wesley @ 2022.02.07
-	 *	这里做了一个彻底的调整
-	 *	第一，检查订阅标记，如果标记为0，即无复权模式，则直接按照原始代码触发ontick
-	 *	第二，如果标记为1，即前复权模式，则将代码转成xxxx-，再触发ontick
-	 *	第三，如果标记为2，即后复权模式，则将代码转成xxxx+，再把tick数据做一个修正，再触发ontick
+	 *	Here is a thorough adjustment
+	 *	First, check the subscription mark. If the mark is 0, that is, the non-right mode, then directly trigger ontick according to the original code
+	 *	Second, if the mark is 1, that is, the pre-right mode, then convert the code to xxxx-, and then trigger ontick
+	 *	Third, if the mark is 2, that is, the post-right mode, then convert the code to xxxx+, then correct the tick data, and then trigger ontick
 	 */
 	if(_ready)
 	{
@@ -506,7 +506,7 @@ void WtCtaEngine::on_tick(const char* stdCode, WTSTickData* curTick)
 		WTSTickData* adjTick = nullptr;
 
 		//By Wesley
-		//这里做一个拷贝，虽然有点开销，但是可以规避掉一些问题，比如ontick的时候订阅tick
+		//Here to make a copy, although there is some overhead, it can avoid some problems, such as subscribing to tick during ontick
 		SubList sids = sit->second;
 		for (auto it = sids.begin(); it != sids.end(); it++)
 		{
@@ -523,7 +523,7 @@ void WtCtaEngine::on_tick(const char* stdCode, WTSTickData* curTick)
 				{
 					/*
 					 *	By Wesley @ 2023.06.27
-					 *	如果使用线程池，则到线程池里去调度
+					 *	If using a thread pool, schedule it to the thread pool
 					 */
 					if(_pool)
 					{
@@ -557,7 +557,7 @@ void WtCtaEngine::on_tick(const char* stdCode, WTSTickData* curTick)
 							WTSTickStruct& adjTS = adjTick->getTickStruct();
 							adjTick->setContractInfo(curTick->getContractInfo());
 
-							//这里做一个复权因子的处理
+							//Here to do a processing of the right factor
 							double factor = get_exright_factor(stdCode);
 							adjTS.open *= factor;
 							adjTS.high *= factor;
@@ -571,7 +571,7 @@ void WtCtaEngine::on_tick(const char* stdCode, WTSTickData* curTick)
 
 							/*
 							 *	By Wesley @ 2022.08.15
-							 *	这里对tick的复权做一个完善
+							 *	Here to do a perfecting of the tick right
 							 */
 							if (flag & 1)
 							{
@@ -613,7 +613,7 @@ void WtCtaEngine::on_tick(const char* stdCode, WTSTickData* curTick)
 			adjTick->release();
 		/*
 		 *	By Wesley @ 223.06.27
-		 *	这里一定要等待线程池全部调度完成
+		 *	Here, you must wait for all thread pools to complete scheduling
 		 */
 		if (_pool)
 			_pool->wait();
@@ -647,7 +647,7 @@ void WtCtaEngine::on_bar(const char* stdCode, const char* period, uint32_t times
 
 	/*
 	 *	By Wesley @ 223.06.27
-	 *	这里一定要等待线程池全部调度完成
+	 *	Here, you must wait for all thread pools to complete scheduling
 	 */
 	if (_pool)
 		_pool->wait();

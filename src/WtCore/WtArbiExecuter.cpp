@@ -67,10 +67,10 @@ bool WtArbiExecuter::init(WTSVariant* params)
 
 	/*
 	 *	By Wesley @ 2021.12.14
-	 *	从配置文件中读取自动清理的策略
-	 *	active: 是否启用
-	 *	includes: 包含列表，格式如CFFEX.IF
-	 *	excludes: 排除列表，格式如CFFEX.IF
+	 *	Read the automatic cleaning strategy from the configuration file
+	 *	active: whether to enable
+	 *	includes: include list, format such as CFFEX.IF
+	 *	excludes: exclude list, format such as CFFEX.IF
 	 */
 	WTSVariant* cfgClear = params->get("clear");
 	if(cfgClear)
@@ -306,7 +306,7 @@ void WtArbiExecuter::on_position_changed(const char* stdCode, double diffPos)
 void WtArbiExecuter::set_position(const wt_hashmap<std::string, double>& targets)
 {
 	/*
-	 *	先要把目标头寸进行组合匹配
+	 *	First, the target position must be combined and matched
 	 */
 	auto real_targets = targets;
 	for(auto& v : _groups)
@@ -326,7 +326,7 @@ void WtArbiExecuter::set_position(const wt_hashmap<std::string, double>& targets
 			else
 			{
 				bHit = true;
-				//计算最小的组合单位数量
+				 //Calculate the minimum number of combined units
 				gpQty = std::min(gpQty, decimal::mod(it->second, unit));
 			}
 		}
@@ -410,8 +410,8 @@ void WtArbiExecuter::set_position(const wt_hashmap<std::string, double>& targets
 		pos = 0;
 	}
 
-	//如果开启了严格同步，则需要检查通道持仓
-	//如果通道持仓不在管理中，则直接平掉
+	//If strict synchronization is enabled, you need to check the channel position
+	//If the channel position is not in management, it will be closed directly
 	if(_strict_sync)
 	{
 		for(const std::string& stdCode : _channel_holds)
@@ -600,13 +600,13 @@ void WtArbiExecuter::on_position(const char* stdCode, bool isLong, double prevol
 
 	/*
 	 *	By Wesley @ 2021.12.14
-	 *	先检查自动清理过期主力合约的标记是否为true
-	 *	如果不为true，则直接退出该逻辑
+	 *	First check whether the automatic cleaning of expired main contracts is marked as true
+	 *	If it is not true, exit the logic directly
 	 */
 	if (!_auto_clear)
 		return;
 
-	//如果不是分月期货合约，直接退出
+	//If it is not a monthly futures contract, exit directly
 	if (!CodeHelper::isStdMonthlyFutCode(stdCode))
 		return;
 

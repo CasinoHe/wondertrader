@@ -170,13 +170,13 @@ void WtDtMgr::on_bar(const char* code, WTSKlinePeriod period, WTSBarStruct* newB
 
 	if(_subed_basic_bars.find(key_pattern) != _subed_basic_bars.end())
 	{
-		//如果是基础周期, 直接触发on_bar事件
+		 //If it is a basic cycle, directly trigger the on_bar event
 		//_engine->on_bar(code, speriod.c_str(), times, newBar);
-		//更新完K线以后, 统一通知交易引擎
+		//After updating the K-line, uniformly notify the trading engine
 		_bar_notifies.emplace_back(NotifyItem(code, speriod, times, newBar));
 	}
 
-	//然后再处理非基础周期
+	//Then process non-basic cycles
 	if (_bars_cache == NULL || _bars_cache->size() == 0)
 		return;
 	
@@ -194,17 +194,17 @@ void WtDtMgr::on_bar(const char* code, WTSKlinePeriod period, WTSBarStruct* newB
 			g_dataFact.updateKlineData(kData, newBar, sInfo, _align_by_section);
 			if (kData->isClosed())
 			{
-				//如果基础周期K线的时间和自定义周期K线的时间一致, 说明K线关闭了
-				//这里也要触发on_bar事件
+				 //If the time of the basic cycle K-line is the same as the time of the custom cycle K-line, it means that the K-line is closed
+				//Here also trigger the on_bar event
 				WTSBarStruct* lastBar = kData->at(-1);
 				//_engine->on_bar(code, speriod.c_str(), times, lastBar);
-				//更新完K线以后, 统一通知交易引擎
+				//After updating the K-line, uniformly notify the trading engine
 				_bar_notifies.emplace_back(NotifyItem(code, speriod, times*kData->times(), lastBar));
 			}
 		}
 		else
 		{
-			//如果是强制缓存的一倍周期，直接压到缓存队列里
+			 //If it is a forced cache of one-time cycle, directly press into the cache queue
 			kData->getDataRef().emplace_back(*newBar);
 			_bar_notifies.emplace_back(NotifyItem(code, speriod, times, newBar));
 		}
@@ -282,21 +282,21 @@ WTSTickSlice* WtDtMgr::get_tick_slice(const char* stdCode, uint32_t count, uint6
 	auto len = strlen(stdCode);
 	bool isHFQ = (stdCode[len - 1] == SUFFIX_HFQ);
 
-	//不是后复权，缓存直接用底层缓存
+	//Not post-right, the cache directly uses the underlying cache
 	if(!isHFQ)
 		return _reader->readTickSlice(stdCode, count, etime);
 
-	//先转成不带+的标准代码
+	//First convert to a standard code without +
 	std::string pureStdCode(stdCode, len - 1);
 
 	if (_ticks_adjusted == NULL)
 		_ticks_adjusted = DataCacheMap::create();
 
-	//如果缓存没有，先重新生成一下缓存
+	//If there is no cache, regenerate the cache first
 	auto it = _ticks_adjusted->find(pureStdCode);
 	if (it == _ticks_adjusted->end())
 	{
-		//先读取全部tick数据
+		//First read all tick data
 		double factor = _engine->get_exright_factor(stdCode, NULL);
 		WTSTickSlice* slice = _reader->readTickSlice(pureStdCode.c_str(), 999999, etime);
 		std::vector<WTSTickStruct> ayTicks;
@@ -308,7 +308,7 @@ WTSTickSlice* WtDtMgr::get_tick_slice(const char* stdCode, uint32_t count, uint6
 			offset += slice->get_block_size(bIdx);
 		}
 
-		//缓存的数据做一个复权处理
+		 //The cached data is adjusted for right
 		for (WTSTickStruct& tick : ayTicks)
 		{
 			tick.price *= factor;
@@ -317,7 +317,7 @@ WTSTickSlice* WtDtMgr::get_tick_slice(const char* stdCode, uint32_t count, uint6
 			tick.low *= factor;
 		}
 
-		//添加到缓存中
+		//Add to the cache
 		WTSHisTickData* hisTick = WTSHisTickData::create(stdCode, false, factor);
 		hisTick->getDataRef().swap(ayTicks);
 		_ticks_adjusted->add(pureStdCode, hisTick, false);
@@ -357,7 +357,7 @@ WTSTickSlice* WtDtMgr::get_tick_slice(const char* stdCode, uint32_t count, uint6
 
 	uint32_t eIdx = pTick - &ticks.front();
 
-	//如果光标定位的tick时间比目标时间打, 则全部回退一个
+	//If the tick time of the cursor positioning is earlier than the target time, then all go back one
 	if (pTick->action_date > eTick.action_date || pTick->action_time > eTick.action_time)
 	{
 		pTick--;
@@ -402,7 +402,7 @@ WTSKlineSlice* WtDtMgr::get_kline_slice(const char* stdCode, WTSKlinePeriod peri
 	thread_local static char key[64] = { 0 };
 	fmtutil::format_to(key, "{}-{}", stdCode, (uint32_t)period);
 
-	// 如果不强制缓存，并且重采样倍数为1，则直接读取slice返回
+	// If you do not force the cache, and the resampling multiple is 1, then directly read the slice and return
 	if (times == 1 && !_force_cache)
 	{
 		_subed_basic_bars.insert(key);
@@ -410,7 +410,7 @@ WTSKlineSlice* WtDtMgr::get_kline_slice(const char* stdCode, WTSKlinePeriod peri
 		return _reader->readKlineSlice(stdCode, period, count, etime);
 	}
 
-	//只有非基础周期的会进到下面的步骤
+	//Only non-basic cycles will enter the following steps
 	WTSSessionInfo* sInfo = _engine->get_session_info(stdCode, true);
 
 	if (_bars_cache == NULL)
@@ -419,7 +419,7 @@ WTSKlineSlice* WtDtMgr::get_kline_slice(const char* stdCode, WTSKlinePeriod peri
 	fmtutil::format_to(key, "{}-{}-{}", stdCode, (uint32_t)period, times);
 
 	WTSKlineData* kData = (WTSKlineData*)_bars_cache->get(key);
-	//如果缓存里的K线条数大于请求的条数, 则直接返回
+	// if the number of K-lines in the cache is greater than the requested number, return directly
 	if (kData == NULL || kData->size() < count)
 	{
 		uint32_t realCount = times==1 ? count: (count*times + times);
@@ -461,11 +461,11 @@ WTSKlineSlice* WtDtMgr::get_kline_slice(const char* stdCode, WTSKlinePeriod peri
 
 	/*
 	 *	By Wesley @ 2023.03.03
-	 *	当多周期K线跨越小节时，如果重启了组合
-	 *	这个时候就会在启动的时候拉到一条未闭合的K线
-	 *	但是未闭合的K线等一下还会重新推一遍
-	 *	所以这里必须要做一个修正
-	 *	只处理已经闭合的K线
+	 *	When the multi-cycle K-line crosses the section, if the combination is restarted
+	 *	At this time, an unclosed K-line will be pulled at startup
+	 *	But the unclosed K-line will be pushed again later
+	 *	So here must be a correction
+	 *	Only process closed K-lines
 	 */
 	uint32_t closedSz = kData->size();
 	if (closedSz > 0 && !kData->isClosed())

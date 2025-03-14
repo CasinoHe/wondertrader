@@ -69,7 +69,7 @@ protected:
 public:
 	virtual uint32_t id() { return _context_id; }
 
-	//回调函数
+	//callback function
 	virtual void on_init() override;
 	virtual void on_session_begin(uint32_t uTDate) override;
 	virtual void on_session_end(uint32_t uTDate) override;
@@ -80,13 +80,13 @@ public:
 	virtual void enum_position(FuncEnumSelPositionCallBack cb) override;
 
 	//////////////////////////////////////////////////////////////////////////
-	//策略接口
+	//strategy interface
 	virtual double stra_get_position(const char* stdCode, bool bOnlyValid = false, const char* userTag = "") override;
 	virtual void stra_set_position(const char* stdCode, double qty, const char* userTag = "") override;
 	virtual double stra_get_price(const char* stdCode) override;
 
 	/*
-	 *	读取当日价格
+	 *	read the price of the day
 	 */
 	virtual double stra_get_day_price(const char* stdCode, int flag = 0) override;
 
@@ -117,7 +117,7 @@ public:
 	virtual WTSTickData*	stra_get_last_tick(const char* stdCode) override;
 
 	/*
-	 *	获取分月合约代码
+	 *	get monthly contract code
 	 */
 	virtual std::string		stra_get_rawcode(const char* stdCode) override;
 
@@ -137,8 +137,8 @@ protected:
 	WtSelEngine*	_engine;
 	int32_t			_slippage;
 
-	uint64_t		_total_calc_time;	//总计算时间
-	uint32_t		_emit_times;		//总计算次数
+	uint64_t		_total_calc_time;	//total calculation time
+	uint32_t		_emit_times;		//total calculation times
 
 	uint32_t		_schedule_date;
 	uint32_t		_schedule_time;
@@ -229,10 +229,10 @@ protected:
 	BoostFilePtr	_sig_logs;
 	BoostFilePtr	_pos_logs;
 
-	//是否处于调度中的标记
-	bool			_is_in_schedule;	//是否在自动调度中
+	//flag indicating whether it is in schedule
+	bool			_is_in_schedule;	//whether in auto schedule
 
-	//用户数据
+	//user data
 	typedef wt_hashmap<std::string, std::string> StringHashMap;
 	StringHashMap	_user_datas;
 	bool			_ud_modified;
@@ -251,7 +251,7 @@ protected:
 
 	StraFundInfo		_fund_info;
 
-	//tick订阅列表
+	//tick subscription list
 	wt_hashset<std::string> _tick_subs;
 };
 

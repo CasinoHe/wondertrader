@@ -251,7 +251,7 @@ void SelStraBaseCtx::load_data(uint32_t flag /* = 0xFFFFFFFF */)
 
 	if (root.HasMember("fund"))
 	{
-		//读取资金
+		 //read fund data
 		const rj::Value& jFund = root["fund"];
 		if (!jFund.IsNull() && jFund.IsObject())
 		{
@@ -263,7 +263,7 @@ void SelStraBaseCtx::load_data(uint32_t flag /* = 0xFFFFFFFF */)
 		}
 	}
 
-	{//读取仓位
+	{//read position data
 		double total_profit = 0;
 		double total_dynprofit = 0;
 		const rj::Value& jPos = root["positions"];
@@ -348,7 +348,7 @@ void SelStraBaseCtx::load_data(uint32_t flag /* = 0xFFFFFFFF */)
 
 	if (root.HasMember("signals"))
 	{
-		//读取信号
+		 //read signals
 		const rj::Value& jSignals = root["signals"];
 		if (!jSignals.IsNull() && jSignals.IsObject())
 		{
@@ -381,7 +381,7 @@ void SelStraBaseCtx::save_data(uint32_t flag /* = 0xFFFFFFFF */)
 {
 	rj::Document root(rj::kObjectType);
 
-	{//持仓数据保存
+	{//position data save
 		rj::Value jPos(rj::kArrayType);
 
 		rj::Document::AllocatorType &allocator = root.GetAllocator();
@@ -430,7 +430,7 @@ void SelStraBaseCtx::save_data(uint32_t flag /* = 0xFFFFFFFF */)
 		root.AddMember("positions", jPos, allocator);
 	}
 
-	{//资金保存
+	{//fund data save
 		rj::Value jFund(rj::kObjectType);
 		rj::Document::AllocatorType &allocator = root.GetAllocator();
 
@@ -442,7 +442,7 @@ void SelStraBaseCtx::save_data(uint32_t flag /* = 0xFFFFFFFF */)
 		root.AddMember("fund", jFund, allocator);
 	}
 
-	{//信号保存
+	{//signal data save
 		rj::Value jSigs(rj::kObjectType);
 		rj::Document::AllocatorType &allocator = root.GetAllocator();
 
@@ -482,7 +482,7 @@ void SelStraBaseCtx::save_data(uint32_t flag /* = 0xFFFFFFFF */)
 }
 
 //////////////////////////////////////////////////////////////////////////
-//回调函数
+//callback functions
 void SelStraBaseCtx::on_bar(const char* stdCode, const char* period, uint32_t times, WTSBarStruct* newBar)
 {
 	if (newBar == NULL)
@@ -504,7 +504,7 @@ void SelStraBaseCtx::on_init()
 {
 	init_outputs();
 
-	//读取数据
+	//read data
 	load_data();
 
 	load_userdata();
@@ -557,7 +557,7 @@ void SelStraBaseCtx::on_tick(const char* stdCode, WTSTickData* newTick, bool bEm
 {
 	_price_map[stdCode] = newTick->price();
 
-	//先检查是否要信号要触发
+	//check if signal needs to be triggered
 	{
 		auto it = _sig_map.find(stdCode);
 		if (it != _sig_map.end())
@@ -591,9 +591,9 @@ bool SelStraBaseCtx::on_schedule(uint32_t curDate, uint32_t curTime, uint32_t fi
 	_schedule_date = curDate;
 	_schedule_time = curTime;
 
-	_is_in_schedule = true;//开始调度, 修改标记	
+	_is_in_schedule = true;//start scheduling, modify flag	
 
-	//主要用于保存浮动盈亏的
+	//mainly used to save floating profit and loss
 	save_data();
 
 	TimeUtils::Ticker ticker;
@@ -607,7 +607,7 @@ bool SelStraBaseCtx::on_schedule(uint32_t curDate, uint32_t curTime, uint32_t fi
 		const char* code = v.first.c_str();
 		if (_sig_map.find(code) == _sig_map.end() && !decimal::eq(pInfo._volume, 0.0))
 		{
-			//新的信号中没有该持仓,则要清空
+			//if the new signal does not have this position, it needs to be cleared
 			to_clear.insert(code);
 		}
 	}
@@ -630,13 +630,13 @@ bool SelStraBaseCtx::on_schedule(uint32_t curDate, uint32_t curTime, uint32_t fi
 		_ud_modified = false;
 	}
 
-	_is_in_schedule = false;//调度结束, 修改标记
+	_is_in_schedule = false;//end scheduling, modify flag
 	return true;
 }
 
 void SelStraBaseCtx::on_session_begin(uint32_t uTDate)
 {
-	//每个交易日开始，要把冻结持仓置零
+	//at the beginning of each trading day, the frozen position should be set to zero
 	for (auto& it : _pos_map)
 	{
 		const char* stdCode = it.first.c_str();
@@ -718,8 +718,8 @@ void SelStraBaseCtx::on_session_end(uint32_t uTDate)
 
 
 //////////////////////////////////////////////////////////////////////////
-//策略接口
-#pragma region "策略接口"
+//strategy interface
+#pragma region "strategy interface"
 double SelStraBaseCtx::stra_get_price(const char* stdCode)
 {
 	auto it = _price_map.find(stdCode);
@@ -741,7 +741,7 @@ void SelStraBaseCtx::stra_set_position(const char* stdCode, double qty, const ch
 		return;
 	}
 
-	//如果不能做空，则目标仓位不能设置负数
+	//if it cannot short, the target position cannot be set to a negative number
 	if (!commInfo->canShort() && decimal::lt(qty, 0))
 	{
 		log_error("Cannot short on {}", stdCode);
@@ -749,7 +749,7 @@ void SelStraBaseCtx::stra_set_position(const char* stdCode, double qty, const ch
 	}
 
 	double total = stra_get_position(stdCode, false);
-	//如果目标仓位和当前仓位是一致的，直接退出
+	//if the target position is the same as the current position, exit directly
 	if (decimal::eq(total, qty))
 		return;
 
@@ -757,7 +757,7 @@ void SelStraBaseCtx::stra_set_position(const char* stdCode, double qty, const ch
 	{
 		double valid = stra_get_position(stdCode, true);
 		double frozen = total - valid;
-		//如果是T+1规则，则目标仓位不能小于冻结仓位
+		//if it is T+1 rule, the target position cannot be less than the frozen position
 		if (decimal::lt(qty, frozen))
 		{
 			log_error("New position of {} cannot be set to {} due to {} being frozen", stdCode, qty, frozen);
@@ -800,14 +800,14 @@ void SelStraBaseCtx::do_set_position(const char* stdCode, double qty, const char
 	if (commInfo == NULL)
 		return;
 
-	//成交价
+	//transaction price
 	double trdPx = curPx;
 
 	bool isBuy = decimal::gt(diff, 0.0);
-	if (decimal::gt(pInfo._volume*diff, 0))//当前持仓和目标仓位方向一致, 增加一条明细, 增加数量即可
+	if (decimal::gt(pInfo._volume*diff, 0))//current position and target position are in the same direction, add a detail, just increase the quantity
 	{
 		pInfo._volume = qty;
-		//如果T+1，则冻结仓位要增加
+		//if it is T+1, the frozen position should be increased
 		if (commInfo->isT1())
 		{
 			//ASSERT(diff>0);
@@ -839,7 +839,7 @@ void SelStraBaseCtx::do_set_position(const char* stdCode, double qty, const char
 		log_trade(stdCode, dInfo._long, true, curTm, trdPx, abs(qty), userTag, fee);
 	}
 	else
-	{//持仓方向和目标仓位方向不一致, 需要平仓
+	{//current position and target position are in different directions, need to close the position
 		double left = abs(diff);
 
 		if (_slippage != 0)
@@ -867,15 +867,15 @@ void SelStraBaseCtx::do_set_position(const char* stdCode, double qty, const char
 			if (!dInfo._long)
 				profit *= -1;
 			pInfo._closeprofit += profit;
-			pInfo._dynprofit = pInfo._dynprofit*dInfo._volume / (dInfo._volume + maxQty);//浮盈也要做等比缩放
+			pInfo._dynprofit = pInfo._dynprofit*dInfo._volume / (dInfo._volume + maxQty);//floating profit should also be scaled proportionally
 			pInfo._last_exittime = curTm;
 			_fund_info._total_profit += profit;
 
 			double fee = commInfo->calcFee(trdPx, maxQty, dInfo._opentdate == curTDate ? 2 : 1);
 			_fund_info._total_fees += fee;
-			//这里写成交记录
+			//write transaction record here
 			log_trade(stdCode, dInfo._long, false, curTm, trdPx, maxQty, userTag, fee);
-			//这里写平仓记录
+			//write close position record here
 			log_close(stdCode, dInfo._long, dInfo._opentime, dInfo._price, curTm, trdPx, maxQty, profit, pInfo._closeprofit, dInfo._opentag, userTag);
 
 			//if (left == 0)
@@ -883,7 +883,7 @@ void SelStraBaseCtx::do_set_position(const char* stdCode, double qty, const char
 				break;
 		}
 
-		//需要清理掉已经平仓完的明细
+		//need to clean up the details that have been closed
 		while (count > 0)
 		{
 			auto it = pInfo._details.begin();
@@ -891,13 +891,13 @@ void SelStraBaseCtx::do_set_position(const char* stdCode, double qty, const char
 			count--;
 		}
 
-		//最后, 如果还有剩余的, 则需要反手了
+		//finally, if there is still remaining, it needs to be reversed
 		//if (left > 0)
 		if (decimal::gt(left, 0))
 		{
 			left = left * qty / abs(qty);
 
-			//如果T+1，则冻结仓位要增加
+			//if it is T+1, the frozen position should be increased
 			if (commInfo->isT1())
 			{
 				//ASSERT(diff>0);
@@ -918,7 +918,7 @@ void SelStraBaseCtx::do_set_position(const char* stdCode, double qty, const char
 			pInfo._details.push_back(dInfo);
 			pInfo._last_entertime = curTm;
 
-			//这里还需要写一笔成交记录
+			//need to write a transaction record here
 			double fee = commInfo->calcFee(trdPx, abs(qty), 0);
 			_fund_info._total_fees += fee;
 			//_engine->mutate_fund(fee, FFT_Fee);
@@ -926,7 +926,7 @@ void SelStraBaseCtx::do_set_position(const char* stdCode, double qty, const char
 		}
 	}
 
-	//存储数据
+	//store data
 	save_data();
 
 	_engine->handle_pos_change(_name.c_str(), stdCode, diff);
@@ -980,8 +980,8 @@ void SelStraBaseCtx::stra_sub_ticks(const char* stdCode)
 {
 	/*
 	 *	By Wesley @ 2022.03.01
-	 *	主动订阅tick会在本地记一下
-	 *	tick数据回调的时候先检查一下
+	 *	Active subscription to tick will be recorded locally
+	 *	Check it first when tick data is called back
 	 */
 	_tick_subs.insert(stdCode);
 
@@ -1151,11 +1151,11 @@ double SelStraBaseCtx::stra_get_position(const char* stdCode, bool bOnlyValid /*
 	const PosInfo& pInfo = it->second;
 	if (strlen(userTag) == 0)
 	{
-		//只有userTag为空的时候时候，才会用bOnlyValid
+		//only when userTag is empty, bOnlyValid will be used
 		if (bOnlyValid)
 		{
-			//这里理论上，只有多头才会进到这里
-			//其他地方要保证，空头持仓的话，_frozen要为0
+			//theoretically, only long positions will enter here
+			//other places should ensure that if it is a short position, _frozen should be 0
 			return pInfo._volume - pInfo._frozen;
 		}
 		else
@@ -1273,4 +1273,4 @@ double SelStraBaseCtx::stra_get_detail_profit(const char* stdCode, const char* u
 	return 0.0;
 }
 
-#pragma endregion 
+#pragma endregion

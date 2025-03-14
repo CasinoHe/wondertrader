@@ -21,7 +21,7 @@ class IDataManager;
 class TraderAdapter;
 class IHotMgr;
 
-//本地执行器
+//Local executor
 class WtArbiExecuter : public ExecuteContext,
 	public ITrdNotifySink, public IExecCommand
 {
@@ -31,8 +31,8 @@ public:
 
 public:
 	/*
-	 *	初始化执行器
-	 *	传入初始化参数
+	 *	Initialize executer
+	 *	Pass in initialization parameters
 	 */
 	bool init(WTSVariant* params);
 
@@ -65,28 +65,28 @@ public:
 
 public:
 	/*
-	 *	设置目标仓位
+	 *	Set target position
 	 */
 	virtual void set_position(const wt_hashmap<std::string, double>& targets) override;
 
 
 	/*
-	 *	合约仓位变动
+	 *	Contract position change
 	 */
 	virtual void on_position_changed(const char* stdCode, double diffPos) override;
 
 	/*
-	 *	实时行情回调
+	 *	Real-time market callback
 	 */
 	virtual void on_tick(const char* stdCode, WTSTickData* newTick) override;
 
 	/*
-	 *	成交回报
+	 *	Transaction report
 	 */
 	virtual void on_trade(uint32_t localid, const char* stdCode, bool isBuy, double vol, double price) override;
 
 	/*
-	 *	订单回报
+	 *	Order report
 	 */
 	virtual void on_order(uint32_t localid, const char* stdCode, bool isBuy, double totalQty, double leftQty, double price, bool isCanceled = false) override;
 
@@ -101,17 +101,17 @@ public:
 	virtual void on_entrust(uint32_t localid, const char* stdCode, bool bSuccess, const char* message) override;
 
 	/*
-	 *	交易通道就绪
+	 *	Trading channel ready
 	 */
 	virtual void on_channel_ready() override;
 
 	/*
-	 *	交易通道丢失
+	 *	Trading channel lost
 	 */
 	virtual void on_channel_lost() override;
 
 	/*
-	 *	资金回报
+	 *	Capital report
 	 */
 	virtual void on_account(const char* currency, double prebalance, double balance, double dynbalance, 
 		double avaliable, double closeprofit, double dynprofit, double margin, double fee, double deposit, double withdraw) override;
@@ -123,9 +123,9 @@ private:
 	IDataManager*		_data_mgr;
 	WTSVariant*			_config;
 
-	double				_scale;				//放大倍数
-	bool				_auto_clear;		//是否自动清理上一期的主力合约头寸
-	bool				_strict_sync;		//是否严格同步目标仓位
+	double				_scale;				//Amplification factor
+	bool				_auto_clear;		//Whether to automatically clear the main contract position of the previous period
+	bool				_strict_sync;		//Whether to strictly synchronize the target position
 	bool				_channel_ready;
 
 	SpinMutex			_mtx_units;
@@ -137,13 +137,13 @@ private:
 	} CodeGroup;
 	typedef std::shared_ptr<CodeGroup> CodeGroupPtr;
 	typedef wt_hashmap<std::string, CodeGroupPtr>	CodeGroups;
-	CodeGroups				_groups;			//合约组合（组合名称到组合的映射）
-	CodeGroups				_code_to_groups;	//合约代码到组合的映射
+	CodeGroups				_groups;			//Contract combination (mapping from combination name to combination)
+	CodeGroups				_code_to_groups;	//Mapping from contract code to combination
 
-	wt_hashset<std::string>	_clear_includes;	//自动清理包含品种
-	wt_hashset<std::string>	_clear_excludes;	//自动清理排除品种
+	wt_hashset<std::string>	_clear_includes;	//Automatically clear included varieties
+	wt_hashset<std::string>	_clear_excludes;	//Automatically clear excluded varieties
 
-	wt_hashset<std::string> _channel_holds;		//通道持仓
+	wt_hashset<std::string> _channel_holds;		//Channel holdings
 
 	wt_hashmap<std::string, double> _target_pos;
 

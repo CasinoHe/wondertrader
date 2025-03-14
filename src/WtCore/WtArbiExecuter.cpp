@@ -43,7 +43,7 @@ WtArbiExecuter::~WtArbiExecuter()
 void WtArbiExecuter::setTrader(TraderAdapter* adapter)
 {
 	_trader = adapter;
-	//设置的时候读取一下trader的状态
+	//Read the status of the trader when setting
 	if(_trader)
 		_channel_ready = _trader->isReady();
 }
@@ -159,7 +159,7 @@ ExecuteUnitPtr WtArbiExecuter::getUnit(const char* stdCode, bool bAutoCreate /* 
 			_unit_map[stdCode] = unit;
 			unit->self()->init(this, stdCode, cfg);
 
-			//如果通道已经就绪，则直接通知执行单元
+			//If the channel is ready, notify the execution unit directly
 			if (_channel_ready)
 				unit->self()->on_channel_ready();
 		}
@@ -174,7 +174,7 @@ ExecuteUnitPtr WtArbiExecuter::getUnit(const char* stdCode, bool bAutoCreate /* 
 
 //////////////////////////////////////////////////////////////////////////
 //ExecuteContext
-#pragma region Context回调接口
+#pragma region Context callback interface
 WTSTickSlice* WtArbiExecuter::getTicks(const char* stdCode, uint32_t count, uint64_t etime /* = 0 */)
 {
 	if (_data_mgr == NULL)
@@ -271,12 +271,12 @@ uint64_t WtArbiExecuter::getCurTime()
 	//return TimeUtils::makeTime(_stub->get_date(), _stub->get_raw_time() * 100000 + _stub->get_secs());
 }
 
-#pragma endregion Context回调接口
+#pragma endregion Context callback interface
 //ExecuteContext
 //////////////////////////////////////////////////////////////////////////
 
 
-#pragma region 外部接口
+#pragma region External interface
 void WtArbiExecuter::on_position_changed(const char* stdCode, double diffPos)
 {
 	ExecuteUnitPtr unit = getUnit(stdCode);
@@ -380,7 +380,7 @@ void WtArbiExecuter::set_position(const wt_hashmap<std::string, double>& targets
 		}
 	}
 
-	//在原来的目标头寸中，但是不在新的目标头寸中，则需要自动设置为0
+	//In the original target position, but not in the new target position, it needs to be automatically set to 0
 	for (auto it = _target_pos.begin(); it != _target_pos.end(); it++)
 	{
 		const char* code = it->first.c_str();
@@ -612,10 +612,10 @@ void WtArbiExecuter::on_position(const char* stdCode, bool isLong, double prevol
 
 	IHotMgr* hotMgr = _stub->get_hot_mon();
 	CodeHelper::CodeInfo cInfo = CodeHelper::extractStdCode(stdCode, NULL);
-	//获取上一期的主力合约
+	//Get the previous main contract
 	std::string prevCode = hotMgr->getPrevRawCode(cInfo._exchg, cInfo._product, tradingday);
 
-	//如果当前合约不是上一期的主力合约，则直接退出
+	//If the current contract is not the previous main contract, exit directly
 	if (prevCode != cInfo._code)
 		return;
 
@@ -624,8 +624,8 @@ void WtArbiExecuter::on_position(const char* stdCode, bool isLong, double prevol
 	thread_local static char fullPid[64] = { 0 };
 	fmtutil::format_to(fullPid, "{}.{}", cInfo._exchg, cInfo._product);
 
-	//先检查排除列表
-	//如果在排除列表中，则直接退出
+	//Check the exclusion list first
+	//If it is in the exclusion list, exit directly
 	auto it = _clear_excludes.find(fullPid);
 	if(it != _clear_excludes.end())
 	{
@@ -633,8 +633,8 @@ void WtArbiExecuter::on_position(const char* stdCode, bool isLong, double prevol
 		return;
 	}
 
-	//如果包含列表不为空，再检查是否在包含列表中
-	//如果为空，则全部清理，不再进入该逻辑
+	//If the include list is not empty, check whether it is in the include list
+	//If it is empty, all will be cleaned up and will not enter this logic again
 	if(!_clear_includes.empty())
 	{
 		it = _clear_includes.find(fullPid);
@@ -645,7 +645,7 @@ void WtArbiExecuter::on_position(const char* stdCode, bool isLong, double prevol
 		}
 	}
 
-	//最后再进行自动清理
+	//Finally, perform automatic cleaning
 	WTSLogger::log_dyn("executer", _name.c_str(), LL_INFO, "Position of {}, as prev hot contract, will be cleared", stdCode);
 	ExecuteUnitPtr unit = getUnit(stdCode);
 	if (unit)
@@ -664,4 +664,4 @@ void WtArbiExecuter::on_position(const char* stdCode, bool isLong, double prevol
 	}
 }
 
-#pragma endregion 外部接口
+#pragma endregion External interface

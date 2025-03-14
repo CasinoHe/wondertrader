@@ -943,9 +943,9 @@ void CtaStraBaseCtx::on_tick(const char* stdCode, WTSTickData* newTick, bool bEm
 
 bool CtaStraBaseCtx::on_schedule(uint32_t curDate, uint32_t curTime)
 {
-	_is_in_schedule = true;//开始调度, 修改标记
+	_is_in_schedule = true; // Start scheduling, modify the flag
 
-	//主要用于保存浮动盈亏的
+	// Mainly used to save floating profit and loss
 	save_data();
 
 	bool isMainUdt = false;
@@ -1017,14 +1017,14 @@ bool CtaStraBaseCtx::on_schedule(uint32_t curDate, uint32_t curTime)
 		}
 	}
 
-	_is_in_schedule = false;//调度结束, 修改标记
-	_last_barno++;	//每次计算，barno加1
+	_is_in_schedule = false;//Scheduling ends, modify the flag
+	_last_barno++;	//Each calculation, barno plus 1
 	return emmited;
 }
 
 void CtaStraBaseCtx::on_session_begin(uint32_t uTDate)
 {
-	//每个交易日开始，要把冻结持仓置零
+	//Each trading day begins, the frozen position should be set to zero
 	for (auto& it : _pos_map)
 	{
 		const char* stdCode = it.first.c_str();
@@ -1048,7 +1048,7 @@ void CtaStraBaseCtx::on_session_begin(uint32_t uTDate)
 void CtaStraBaseCtx::enum_position(FuncEnumCtaPosCallBack cb, bool bForExecute /* = false */)
 {
 	/* By HeJ @ 2023.03.14
-	 * 读取理论持仓时，要加个锁，避免出现组合轧差同步与信号同时触发，导致的反复发单和信号覆盖
+	 * When reading the theoretical position, a lock must be added to avoid repeated order placement and signal coverage caused by the simultaneous triggering of combined cross-product synchronization and signals
 	 */
 	std::unordered_map<std::string, double> desPos;
 	{
@@ -1099,8 +1099,8 @@ void CtaStraBaseCtx::on_session_end(uint32_t uTDate)
 				pInfo._volume, pInfo._closeprofit, pInfo._dynprofit));
 	}
 
-	//这里要把当日结算的数据写到日志文件里
-	//而且这里回测和实盘写法不同, 先留着, 后面来做
+	//Here, the settlement data of the day should be written into the log file
+	//Moreover, the writing methods of backtesting and real trading are different here, so keep it first and do it later
 	if (_fund_logs)
 		_fund_logs->write_file(fmt::format("{},{:.2f},{:.2f},{:.2f},{:.2f}\n", curDate, 
 		_fund_info._total_profit, _fund_info._total_dynprofit, 
@@ -1134,17 +1134,17 @@ void CtaStraBaseCtx::stra_enter_long(const char* stdCode, double qty, const char
 
 	_engine->sub_tick(id(), stdCode);
 	
-	if (decimal::eq(limitprice, 0.0) && decimal::eq(stopprice, 0.0))	//如果不是动态下单模式, 则直接触发
+	if (decimal::eq(limitprice, 0.0) && decimal::eq(stopprice, 0.0))	//If it is not a dynamic order placement mode, it will be triggered directly
 	{
 		double curQty = stra_get_position(stdCode);
 		if (decimal::lt(curQty, 0))
 		{
-			//当前持仓小于0,逻辑是反手到qty,所以设置信号目标仓位为qty
+			//If the current position is less than 0, the logic is to reverse to qty, so set the signal target position to qty
 			append_signal(stdCode, qty, userTag, _is_in_schedule ? 0 : 1);
 		}
 		else
 		{
-			//当前持仓大于等于0,则要增加多仓qty
+			//If the current position is greater than or equal to 0, it is necessary to increase the long position qty
 			append_signal(stdCode, curQty + qty, userTag, _is_in_schedule ? 0 : 1);
 		}
 	}
@@ -1192,17 +1192,17 @@ void CtaStraBaseCtx::stra_enter_short(const char* stdCode, double qty, const cha
 
 	_engine->sub_tick(id(), stdCode);
 	
-	if (decimal::eq(limitprice, 0.0) && decimal::eq(stopprice, 0.0))	//如果不是动态下单模式, 则直接触发
+	if (decimal::eq(limitprice, 0.0) && decimal::eq(stopprice, 0.0))	//If it is not a dynamic order placement mode, it will be triggered directly
 	{
 		double curQty = stra_get_position(stdCode);
 		if (decimal::gt(curQty, 0))
 		{
-			//当前仓位大于0,逻辑是反手到qty手,所以设置信号目标仓位为-qty手
+			//If the current position is greater than 0, the logic is to reverse to qty hands, so set the signal target position to -qty hands
 			append_signal(stdCode, -qty, userTag, _is_in_schedule ? 0 : 1);
 		}
 		else
 		{
-			//当前仓位小于等于0,则是追加空方手数
+			//If the current position is less than or equal to 0, it is to add short positions
 			append_signal(stdCode, curQty - qty, userTag, _is_in_schedule ? 0 : 1);
 		}
 	}
@@ -1246,12 +1246,12 @@ void CtaStraBaseCtx::stra_exit_long(const char* stdCode, double qty, const char*
 	uint32_t offTime = sInfo->offsetTime(_engine->get_min_time(), true);
 	bool isLastBarOfDay = (offTime == sInfo->getCloseTime(true));
 
-	//读取可平持仓,如果是收盘那根bar，则直接读取全部持仓
+	//Read the available positions, if it is the closing bar, read all positions directly
 	double curQty = stra_get_position(stdCode, !isLastBarOfDay);
 	if (decimal::le(curQty, 0))
 		return;
 	
-	if (decimal::eq(limitprice, 0.0) && decimal::eq(stopprice, 0.0))	//如果不是动态下单模式, 则直接触发
+	if (decimal::eq(limitprice, 0.0) && decimal::eq(stopprice, 0.0))	//If it is not a dynamic order placement mode, it will be triggered directly
 	{
 		double maxQty = min(curQty, qty);
 		double totalQty = stra_get_position(stdCode, false);
@@ -1300,11 +1300,11 @@ void CtaStraBaseCtx::stra_exit_short(const char* stdCode, double qty, const char
 	}
 
 	double curQty = stra_get_position(stdCode);
-	//如果持仓是多,则不需要执行退出空头的逻辑了
+	//If the position is long, there is no need to execute the logic of exiting the short position
 	if (decimal::ge(curQty, 0))
 		return;
 	
-	if (decimal::eq(limitprice, 0.0) && decimal::eq(stopprice, 0.0))	//如果不是动态下单模式, 则直接触发
+	if (decimal::eq(limitprice, 0.0) && decimal::eq(stopprice, 0.0))	//If it is not a dynamic order placement mode, it will be triggered directly
 	{
 		double maxQty = min(abs(curQty), qty);
 		append_signal(stdCode, curQty + maxQty, userTag, _is_in_schedule ? 0 : 1);
@@ -1360,7 +1360,7 @@ void CtaStraBaseCtx::stra_set_position(const char* stdCode, double qty, const ch
 {
 	_engine->sub_tick(id(), stdCode);
 
-	if (decimal::eq(limitprice, 0.0) && decimal::eq(stopprice, 0.0))	//如果不是动态下单模式, 则直接触发
+	if (decimal::eq(limitprice, 0.0) && decimal::eq(stopprice, 0.0))	//If it is not a dynamic order placement mode, it will be triggered directly
 	{
 		append_signal(stdCode, qty, userTag, _is_in_schedule ? 0 : 1);
 	}
@@ -1369,11 +1369,11 @@ void CtaStraBaseCtx::stra_set_position(const char* stdCode, double qty, const ch
 		CondList& condList = get_cond_entrusts(stdCode);
 
 		double curVol = stra_get_position(stdCode);
-		//如果目标仓位和当前仓位是一致的，则不再设置条件单
+		//If the target position is the same as the current position, the conditional order will not be set
 		if (decimal::eq(curVol, qty))
 			return;
 
-		//根据目标仓位和当前仓位,判断是买还是卖
+		//According to the target position and the current position, determine whether to buy or sell
 		bool isBuy = decimal::gt(qty, curVol);
 
 		CondEntrust entrust;
@@ -1439,10 +1439,10 @@ void CtaStraBaseCtx::do_set_position(const char* stdCode, double qty, const char
 	SpinLock lock(_mutex);
 	bool isBuy = decimal::gt(diff, 0.0);
 	if (decimal::gt(pInfo._volume*diff, 0))
-	{//当前持仓和仓位变化方向一致, 增加一条明细, 增加数量即可
+	{//The current position is consistent with the direction of position change, add a detail, just increase the quantity
 		pInfo._volume = qty;
 
-		//如果T+1，则冻结仓位要增加
+		//If T+1, the frozen position should be increased
 		if (commInfo->isT1())
 		{
 			//ASSERT(diff>0);
@@ -1475,7 +1475,7 @@ void CtaStraBaseCtx::do_set_position(const char* stdCode, double qty, const char
 		log_trade(stdCode, dInfo._long, true, curTm, trdPx, abs(diff), userTag, fee, _last_barno);
 	}
 	else
-	{//持仓方向和仓位变化方向不一致, 需要平仓
+	{//The direction of the position is inconsistent with the direction of the position change, and the position needs to be closed
 		double left = abs(diff);
 
 		if (_slippage != 0)
@@ -1504,33 +1504,33 @@ void CtaStraBaseCtx::do_set_position(const char* stdCode, double qty, const char
 			if (decimal::eq(dInfo._volume, 0))
 				count++;
 
-			//计算平仓盈亏
+			//Calculate the profit and loss of closing the position
 			double profit = (trdPx - dInfo._price) * maxQty * commInfo->getVolScale();
 			if (!dInfo._long)
 				profit *= -1;
 			pInfo._closeprofit += profit;
 
-			//浮盈也要做等比缩放
+			//Floating profit and loss should also be scaled proportionally
 			pInfo._dynprofit = pInfo._dynprofit*dInfo._volume / (dInfo._volume + maxQty);
 			pInfo._last_exittime = curTm;
 			_fund_info._total_profit += profit;
 
-			//计算手续费
+			//Calculate the handling fee
 			//double fee = _engine->calc_fee(stdCode, trdPx, maxQty, dInfo._opentdate == curTDate ? 2 : 1);
 			double fee = commInfo->calcFee(trdPx, maxQty, dInfo._opentdate == curTDate ? 2 : 1);
 			_fund_info._total_fees += fee;
 
-			//这里写平仓记录
+			//Write the closing record here
 			log_close(stdCode, dInfo._long, dInfo._opentime, dInfo._price, curTm, trdPx, maxQty, profit, pInfo._closeprofit, dInfo._opentag, userTag, dInfo._open_barno, _last_barno);
 
-			//这里写成交记录
+			//Write the transaction record here
 			log_trade(stdCode, dInfo._long, false, curTm, trdPx, maxQty, userTag, fee, _last_barno);
 
 			if (decimal::eq(left,0))
 				break;
 		}
 
-		//需要清理掉已经平仓完的明细
+		//Need to clean up the details that have been closed
 		while (count > 0)
 		{
 			auto it = pInfo._details.begin();
@@ -1538,12 +1538,12 @@ void CtaStraBaseCtx::do_set_position(const char* stdCode, double qty, const char
 			count--;
 		}
 
-		//最后, 如果还有剩余的, 则需要反手了
+		//Finally, if there is any remaining, you need to reverse it
 		if (decimal::gt(left, 0))
 		{
 			left = left * qty / abs(qty);
 
-			//如果T+1，则冻结仓位要增加
+			//If T+1, the frozen position should be increased
 			if (commInfo->isT1())
 			{
 				pInfo._frozen += left;
@@ -1571,11 +1571,10 @@ void CtaStraBaseCtx::do_set_position(const char* stdCode, double qty, const char
 		}
 	}
 
-
 	//存储数据
 	save_data();
 
-	if (bFireAtOnce)	//如果是条件单触发, 则向引擎提交变化量
+	if (bFireAtOnce)	//If it is triggered by a conditional order, submit the change to the engine
 	{
 		_engine->handle_pos_change(_name.c_str(), stdCode, diff);
 	}
@@ -1615,8 +1614,8 @@ WTSKlineSlice* CtaStraBaseCtx::stra_get_bars(const char* stdCode, const char* pe
 	WTSKlineSlice* kline = _engine->get_kline_slice(_context_id, stdCode, basePeriod, count, times);
 	if(kline)
 	{
-		//如果K线获取不到,说明也不会有闭合事件发生,所以不更新本地标记
-		bool isFirst = (_kline_tags.find(key) == _kline_tags.end());	//如果没有保存标记,说明是第一次拉取该K线
+		//If the K-line cannot be obtained, it means that there will be no closing event, so the local flag will not be updated
+		bool isFirst = (_kline_tags.find(key) == _kline_tags.end());	//If the tag is not saved, it means that this K-line is pulled for the first time
 		KlineTag& tag = _kline_tags[key];
 		tag._closed = false;
 
@@ -1625,13 +1624,13 @@ WTSKlineSlice* CtaStraBaseCtx::stra_get_bars(const char* stdCode, const char* pe
 
 		if(isMain && isFirst && !_condtions.empty())
 		{
-			//如果是第一次拉取主K线,则检查条件单触发时间
+			//If it is the first time to pull the main K-line, check the condition order trigger time
 			bool isDay = basePeriod[0] == 'd';
 			uint64_t lastBartime = isDay ? kline->at(-1)->date : kline->at(-1)->time;
 			if(!isDay)
 				lastBartime += 199000000000;
 
-			//如果最后一条已闭合的K线的时间大于条件单设置时间，说明条件单已经过期了，则需要清理
+			//If the time of the last closed K-line is greater than the condition order setup time, it means the condition order has expired, so it needs to be cleared
 			if(lastBartime > _last_cond_min)
 			{
 				log_info("Conditions expired, setup time: {}, time of last bar of main kbars: {}, all cleared", _last_cond_min, lastBartime);
@@ -1641,8 +1640,8 @@ WTSKlineSlice* CtaStraBaseCtx::stra_get_bars(const char* stdCode, const char* pe
 
 		_engine->sub_tick(id(), stdCode);
 
-		//如果是主K线，并且最后一根bar的编号为0
-		//则将最后一根bar的编号设置为主K线的长度
+		//If it is the main K-line, and the number of the last bar is 0
+		//Then set the number of the last bar to the length of the main K-line
 		if(isMain && _last_barno == 0)
 		{
 			_last_barno = kline->size();

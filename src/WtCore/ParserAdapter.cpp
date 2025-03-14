@@ -101,15 +101,15 @@ bool ParserAdapter::init(const char* id, WTSVariant* cfg, IParserStub* stub, IBa
 	_check_time = cfg->getBoolean("check_time");
 
 	{
-		//加载模块
+		 //load module
 		if (cfg->getString("module").empty())
 			return false;
 
 		std::string module = DLLHelper::wrap_module(cfg->getCString("module"), "lib");;
 
-		//先看工作目录下是否有交易模块
+		 //first check if there is a trading module in the working directory
 		std::string dllpath = WtHelper::getModulePath(module.c_str(), "parsers", true);
-		//如果没有,则再看模块目录,即dll同目录下
+		 //if not, then look at the module directory, which is in the same directory as the dll
 		if (!StdFile::exists(dllpath.c_str()))
 			dllpath = WtHelper::getModulePath(module.c_str(), "parsers", false);
 
@@ -171,12 +171,12 @@ bool ParserAdapter::init(const char* id, WTSVariant* cfg, IParserStub* stub, IBa
 		if (_parser_api->init(cfg))
 		{
 			ContractSet contractSet;
-			if (!_code_filter.empty())//优先判断合约过滤器
+			if (!_code_filter.empty())//first determine the contract filter
 			{
 				ExchgFilter::iterator it = _code_filter.begin();
 				for (; it != _code_filter.end(); it++)
 				{
-					//全代码,形式如SSE.600000,期货代码为CFFEX.IF2005
+					 //full code, in the form of SSE.600000, the futures code is CFFEX.IF2005
 					std::string code, exchg;
 					auto ay = StrUtil::split((*it).c_str(), ".");
 					if (ay.size() == 1)
@@ -195,8 +195,8 @@ bool ParserAdapter::init(const char* id, WTSVariant* cfg, IParserStub* stub, IBa
 					if(contract)
 						contractSet.insert(contract->getFullCode());
 					else
-					{
-						//如果是品种ID，则将该品种下全部合约都加到订阅列表
+					 {
+						 //If it is a commodity ID, add all contracts under the commodity to the subscription list
 						WTSCommodityInfo* commInfo = _bd_mgr->getCommodity(exchg.c_str(), code.c_str());
 						if(commInfo)
 						{
@@ -279,7 +279,7 @@ bool ParserAdapter::run()
 	return true;
 }
 
-//合理毫秒数时间差
+//reasonable millisecond time difference
 const int RESONABLE_MILLISECS = 60 * 60 * 1000;
 void ParserAdapter::handleQuote(WTSTickData *quote, uint32_t procFlag)
 {
@@ -309,9 +309,9 @@ void ParserAdapter::handleQuote(WTSTickData *quote, uint32_t procFlag)
 
 		/*
 		 *	By Wesley @ 2022.04.20
-		 *	如果最新的tick时间，和本地时间相差太大
-		 *	则认为tick的时间戳是错误的
-		 *	这里要求本地时间是要时常进行校准的
+		 *	If the latest tick time is too different from the local time
+		 *	then the tick timestamp is considered wrong
+		 *	This requires that the local time be calibrated frequently
 		 */
 		if (tick_time - local_time > RESONABLE_MILLISECS)
 		{
@@ -327,7 +327,7 @@ void ParserAdapter::handleQuote(WTSTickData *quote, uint32_t procFlag)
 	}
 	else if(CodeHelper::isMonthlyCode(quote->code()))
 	{
-		//如果是分月合约，则进行主力和次主力的判断
+		 //If it is a monthly contract, then determine the main and secondary contracts
 		stdCode = CodeHelper::rawMonthCodeToStdCode(cInfo->getCode(), cInfo->getExchg());
 	}
 	else

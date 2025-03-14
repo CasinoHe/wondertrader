@@ -1,4 +1,4 @@
-﻿#include "SelStraContext.h"
+#include "SelStraContext.h"
 #include "../Includes/SelStrategyDefs.h"
 
 

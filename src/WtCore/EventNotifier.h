@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file EventNotifier.h
  * \project WonderTrader
  *

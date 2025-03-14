@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include "IExecCommand.h"
 
 NS_WTP_BEGIN

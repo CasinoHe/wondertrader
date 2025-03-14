@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file CtaStraBaseCtx.h
  * \project	WonderTrader
  *

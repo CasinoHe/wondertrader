@@ -1,4 +1,4 @@
-﻿/*!
+/*!
 * \file MfStraBaseCtx.h
 * \project	WonderTrader
 *

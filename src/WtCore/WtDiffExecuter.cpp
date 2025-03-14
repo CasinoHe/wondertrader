@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file WtExecuter.cpp
  * \project	WonderTrader
  *

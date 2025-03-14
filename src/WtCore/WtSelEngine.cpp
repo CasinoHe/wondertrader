@@ -1,4 +1,4 @@
-﻿#include "WtSelEngine.h"
+#include "WtSelEngine.h"
 #include "WtDtMgr.h"
 #include "WtSelTicker.h"
 #include "TraderAdapter.h"

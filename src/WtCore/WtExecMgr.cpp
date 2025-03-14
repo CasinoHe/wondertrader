@@ -1,4 +1,4 @@
-﻿#include "WtExecMgr.h"
+#include "WtExecMgr.h"
 #include "WtFilterMgr.h"
 
 #include "../Share/decimal.h"

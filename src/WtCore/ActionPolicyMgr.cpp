@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file ActionPolicyMgr.cpp
  * \project WonderTrader
  *

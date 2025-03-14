@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include "IExecCommand.h"
 #include "../Includes/ExecuteDefs.h"
 #include "../Share/DLLHelper.hpp"

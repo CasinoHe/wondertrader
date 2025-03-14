@@ -1,4 +1,4 @@
-﻿#include "WtDistExecuter.h"
+#include "WtDistExecuter.h"
 
 #include "../Includes/WTSVariant.hpp"
 

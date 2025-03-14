@@ -1,4 +1,4 @@
-﻿#include "WtFilterMgr.h"
+#include "WtFilterMgr.h"
 #include "EventNotifier.h"
 
 #include "../Share/CodeHelper.hpp"

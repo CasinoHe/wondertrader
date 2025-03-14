@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file WtHftEngine.h
  * \project	WonderTrader
  *

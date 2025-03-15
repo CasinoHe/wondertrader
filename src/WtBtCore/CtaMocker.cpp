@@ -231,7 +231,7 @@ void CtaMocker::dump_chartdata()
 	rj::Value klineItem(rj::kObjectType);
 	if(_chart_code.empty())
 	{
-		//如果没有设置主K线，就用主K线落地
+			//If there is no main K-line set, use the main K-line for landing
 		klineItem.AddMember("code", rj::Value(_main_code.c_str(), allocator), allocator);
 		klineItem.AddMember("period", rj::Value(_main_period.c_str(), allocator), allocator);
 	}
@@ -461,7 +461,7 @@ void CtaMocker::load_incremental_data(const char* incremental_backtest_base)
 	{
 		std::ifstream tradesFile(tradesFilename);
 		std::string str;
-		// 跳过标题行
+			// Skip the title line
 		std::getline(tradesFile, str);
 		while (std::getline(tradesFile, str))
 		{
@@ -474,7 +474,7 @@ void CtaMocker::load_incremental_data(const char* incremental_backtest_base)
 	{
 		std::ifstream closesFile(closesFilename);
 		std::string str;
-		// 跳过标题行
+			// Skip the title line
 		std::getline(closesFile, str);
 		while (std::getline(closesFile, str))
 		{
@@ -487,7 +487,7 @@ void CtaMocker::load_incremental_data(const char* incremental_backtest_base)
 	{
 		std::ifstream fundsFile(fundsFilename);
 		std::string str;
-		// 跳过标题行
+			// Skip the title line
 		std::getline(fundsFile, str);
 		while (std::getline(fundsFile, str))
 		{
@@ -500,7 +500,7 @@ void CtaMocker::load_incremental_data(const char* incremental_backtest_base)
 	{
 		std::ifstream positionsFile(positionsFilename);
 		std::string str;
-		// 跳过标题行
+			// Skip the title line
 		std::getline(positionsFile, str);
 		while (std::getline(positionsFile, str))
 		{
@@ -513,7 +513,7 @@ void CtaMocker::load_incremental_data(const char* incremental_backtest_base)
 	{
 		std::ifstream signalsFile(signalsFilename);
 		std::string str;
-		// 跳过标题行
+			// Skip the title line
 		std::getline(signalsFile, str);
 		while (std::getline(signalsFile, str))
 		{
@@ -591,7 +591,7 @@ void CtaMocker::load_incremental_data(const char* incremental_backtest_base)
 
 		if (d.HasMember("conditions") && d["conditions"].HasMember("items"))
 		{
-			// conditions -> items 下面的内容是两层嵌套   items[CODE] is a list
+				// conditions -> items The following content is nested in two layers items[CODE] is a list
 			rj::Value& conditionItemsEntry = d["conditions"]["items"];
 
 			for (rj::Value::ConstMemberIterator itr = conditionItemsEntry.MemberBegin(); itr != conditionItemsEntry.MemberEnd(); ++itr)
@@ -650,8 +650,8 @@ void CtaMocker::handle_section_end(uint32_t curTDate, uint32_t curTime)
 {
 	/*
 	 *	By Wesley @ 2022.05.16
-	 *	如果小节结束，也需要清理掉价格缓存，防止小节跳空
-	 *	这种主要是针对夜盘交易
+	 *	If the section ends, the price cache also needs to be cleaned up to prevent section gaps
+	 *	This is mainly for night trading
 	 */
 	_price_map.clear();
 }
@@ -706,7 +706,7 @@ void CtaMocker::proc_tick(const char* stdCode, double last_px, double cur_px)
 					price = sInfo._desprice;
 				do_set_position(stdCode, sInfo._volume, price, sInfo._usertag.c_str());
 
-				//如果是条件单触发，则回调on_condition_triggered
+				//If it is a conditional order trigger, call back on_condition_triggered
 				if (sInfo._sigtype == 2)
 					on_condition_triggered(stdCode, sInfo._volume, cur_px, sInfo._usertag.c_str());
 				_sig_map.erase(it);
@@ -717,7 +717,7 @@ void CtaMocker::proc_tick(const char* stdCode, double last_px, double cur_px)
 	update_dyn_profit(stdCode, cur_px);
 
 	//////////////////////////////////////////////////////////////////////////
-	//检查条件单
+	//Check conditional orders
 	if (!_condtions.empty())
 	{
 		auto it = _condtions.find(stdCode);
@@ -730,14 +730,14 @@ void CtaMocker::proc_tick(const char* stdCode, double last_px, double cur_px)
 		for (const CondEntrust& entrust : condList)
 		{
 			/*
-			 * 如果开启了tick模式，就正常比较
-			 * 但是如果没有开启tick模式，逻辑就非常复杂
-			 * 因为不开回测的时候tick是用开高低收模拟出来的，如果直接按照目标价格触发，可能是有问题的
-			 * 首先要拿到上一笔价格，和当前最新价格做一个比价，得到左边界和右边界
-			 * 这里只能假设前后两笔价格之间是连续的，这样需要将两笔价格都加入判断
-			 * 当条件是等于时，如果目标价格在左右边界之间，说明目标价格在这期间是出现过的，则认为价格匹配
-			 * 当条件是大于的时候，我们需要判断右边界，即稍大的值是否满足条件，并取左边界与目标价中稍大的作为当前价
-			 * 当条件是小于的时候，我们需要判断左边界，即稍小的值是否满足条件，并取右边界与目标价中稍小的作为当前价
+			 * If tick mode is enabled, compare normally
+			 * But if tick mode is not enabled, the logic is very complicated
+			 * Because when tick is not enabled, tick is simulated with OHLC, and it may be problematic if the target price is directly triggered
+			 * First, get the previous price and compare it with the current latest price to get the left and right boundaries
+			 * Here we can only assume that the prices between the two prices before and after are continuous, so we need to add both prices to the judgment
+			 * When the condition is equal, if the target price is between the left and right boundaries, it means that the target price has appeared during this period, and the price is considered to be matched
+			 * When the condition is greater, we need to judge the right boundary, that is, whether the slightly larger value meets the condition, and take the slightly larger value between the left boundary and the target price as the current price
+			 * When the condition is less than, we need to judge the left boundary, that is, whether the slightly smaller value meets the condition, and take the slightly smaller value between the right boundary and the target price as the current price
 			 */
 
 			double left_px = min(last_px, cur_px);
@@ -746,7 +746,7 @@ void CtaMocker::proc_tick(const char* stdCode, double last_px, double cur_px)
 			bool isMatched = false;
 			if (!_replayer->is_tick_simulated())
 			{
-				//如果tick数据不是模拟的，则使用最新价格
+				//If the tick data is not simulated, use the latest price
 				switch (entrust._alg)
 				{
 				case WCT_Equal:
@@ -776,7 +776,7 @@ void CtaMocker::proc_tick(const char* stdCode, double last_px, double cur_px)
 			}
 			else
 			{
-				//如果tick数据是模拟的，则要处理一下
+				//If the tick data is simulated, it needs to be processed
 				switch (entrust._alg)
 				{
 				case WCT_Equal:
@@ -802,9 +802,9 @@ void CtaMocker::proc_tick(const char* stdCode, double last_px, double cur_px)
 				{
 					/*
 					* By HeJ @ 2023.02.27
-					* 在bar回测中，经常会出现同一个价格触发了多个条件单时，要选出一个作为最终的触发价，遵循以下规则：
-					* 1 alg不同的条件单，或者alg为WCT_Equal，以最先设置的那个为准
-					* 2 alg一样的调价单，如果是WCT_Larger与WCT_LargerOrEqual，取触发价较小的，WCT_Smaller与WCT_SmallerOrEqual，取触发价较大的
+					* In bar backtesting, it often happens that multiple conditional orders are triggered by the same price. One must be selected as the final trigger price, following these rules:
+					* 1 Conditional orders with different algs, or algs with WCT_Equal, the one set first shall prevail
+					* 2 Conditional orders with the same alg, if it is WCT_Larger and WCT_LargerOrEqual, take the smaller trigger price, WCT_Smaller and WCT_SmallerOrEqual, take the larger trigger price
 					*/
 					if (matchedEntrust == NULL)
 					{
@@ -844,7 +844,7 @@ void CtaMocker::proc_tick(const char* stdCode, double last_px, double cur_px)
 			const CondEntrust& entrust = *matchedEntrust;
 			double price = curPrice;
 			double curQty = stra_get_position(stdCode);
-			//_replayer->is_tick_enabled() ? newTick->price() : entrust._target;	//如果开启了tick回测,则用tick数据的价格,如果没有开启,则只能用条件单价格
+			//_replayer->is_tick_enabled() ? newTick->price() : entrust._target;	//If tick backtesting is enabled, use the price of tick data, if not enabled, use the conditional order price
 			WTSLogger::log_dyn("strategy", _name.c_str(), LL_INFO,
 				"Condition order triggered[newprice: {}{}{}], instrument: {}, {} {}",
 				curPrice, CMP_ALG_NAMES[entrust._alg], entrust._target, stdCode, ACTION_NAMES[entrust._action], entrust._qty);
@@ -885,8 +885,8 @@ void CtaMocker::proc_tick(const char* stdCode, double last_px, double cur_px)
 			default: break;
 			}
 
-			//同一个bar设置针对同一个合约的条件单,只可能触发一条
-			//所以这里直接清理掉即可
+			//The same bar sets a conditional order for the same contract, and only one can be triggered
+			//So just clean it up here
 			_condtions.erase(it);
 		}
 	}
@@ -899,9 +899,9 @@ void CtaMocker::handle_tick(const char* stdCode, WTSTickData* newTick, uint32_t 
 
 	/*
 	 *	By Wesley @ 2022.04.19
-	 *	这里的逻辑改了一下
-	 *	如果缓存的价格不存在，则上一笔价格就用最新价
-	 *	这里主要是为了应对跨日价格跳空的情况
+	 *	The logic here has been changed
+	 *	If the cached price does not exist, the previous price will be the latest price
+	 *	This is mainly to deal with price jumps across days
 	 */
 	double last_px = cur_px;
 	if(pxType != 0)
@@ -917,21 +917,21 @@ void CtaMocker::handle_tick(const char* stdCode, WTSTickData* newTick, uint32_t 
 	_price_map[stdCode] = cur_px;
 	_ticks[stdCode] = newTick->getTickStruct();
 
-	//先检查是否要信号要触发
+	//Check if the signal needs to be triggered first
 	//By Wesley @ 2022.04.19
-	//虽然这段逻辑下面也根据isBarEnd复制了一段
-	//但是这一段还是要保留
+	//Although this logic is also copied below according to isBarEnd
+	//But this paragraph still needs to be retained
 	proc_tick(stdCode, last_px, cur_px);
 
 	on_tick_updated(stdCode, newTick);
 
 	/*
 	 *	By Wesley @ 2022.04.19
-	 *	isBarEnd，如果是逐tick回放，这个永远都是true，永远也不会触发下面这段逻辑
-	 *	如果是模拟的tick数据，用收盘价模拟tick的时候，isBarEnd才会为true
-	 *	如果不是收盘价模拟的tick，那么直接在当前tick触发撮合逻辑
-	 *	这样做的目的是为了让在模拟tick触发的ontick中下单的信号能够正常处理
-	 *	而不至于在回测的时候成交价偏离太远
+	 *	isBarEnd, if it is tick-by-tick replay, this will always be true, and the following logic will never be triggered
+	 *	If it is simulated tick data, isBarEnd will be true when simulating tick data with the closing price
+	 *	If it is not a tick simulated by the closing price, then the matching logic is directly triggered in the current tick
+	 *	The purpose of this is to allow the signals placed in ontick triggered by simulated ticks to be processed normally
+	 *	So as not to deviate too far from the transaction price during backtesting
 	 */
 	if(pxType != 3)
 		proc_tick(stdCode, last_px, cur_px);
@@ -939,7 +939,7 @@ void CtaMocker::handle_tick(const char* stdCode, WTSTickData* newTick, uint32_t 
 
 
 //////////////////////////////////////////////////////////////////////////
-//回调函数
+//Callback function
 void CtaMocker::on_bar(const char* stdCode, const char* period, uint32_t times, WTSBarStruct* newBar)
 {
 	if (newBar == NULL)
@@ -1013,7 +1013,7 @@ void CtaMocker::update_dyn_profit(const char* stdCode, double price)
 
 void CtaMocker::on_tick(const char* stdCode, WTSTickData* newTick, bool bEmitStrategy /* = true */)
 {
-	//这个逻辑全部迁移到handle_tick里去了
+	//This logic has been moved to handle_tick
 }
 
 void CtaMocker::on_bar_close(const char* code, const char* period, WTSBarStruct* newBar)
@@ -1059,9 +1059,9 @@ bool CtaMocker::step_calc()
 		return false;
 	}
 
-	//总共分为4个状态
-	//0-初始状态，1-oncalc，2-oncalc结束，3-oncalcdone
-	//所以，如果出于0/2，则说明没有在执行中，需要notify
+	//There are a total of 4 states
+	//0-initial state, 1-oncalc, 2-end of oncalc, 3-oncalcdone
+	//So, if it is 0/2, it means that it is not being executed and needs to be notified
 	bool bNotify = false;
 	while (_in_backtest && (_cur_step == 0 || _cur_step == 2))
 	{
@@ -1093,7 +1093,7 @@ bool CtaMocker::step_calc()
 
 bool CtaMocker::on_schedule(uint32_t curDate, uint32_t curTime)
 {
-	_is_in_schedule = true;//开始调度,修改标记
+	_is_in_schedule = true;//Start scheduling, modify the flag
 
 	_schedule_times++;
 
@@ -1169,9 +1169,9 @@ bool CtaMocker::on_schedule(uint32_t curDate, uint32_t curTime)
 
 				/*
 				 *	By Wesley @ 2022.07.16
-				 *	策略计算完成，需要把指标数据做一个检查
-				 *	如果策略在本轮没有设置指标值，则用上一个数据补齐
-				 *	如果是开始，则用默认值补齐
+				 *	After the strategy calculation is completed, the indicator data needs to be checked
+				 *	If the strategy does not set the indicator value in this round, use the previous data to fill it
+				 *	If it is the beginning, use the default value to fill it
 				 */
 				//for(auto& v : _chart_indice)
 				//{
@@ -1205,7 +1205,7 @@ bool CtaMocker::on_schedule(uint32_t curDate, uint32_t curTime)
 		}
 	}
 
-	_is_in_schedule = false;//调度结束,修改标记
+	_is_in_schedule = false;//End of scheduling, modify the flag
 	return emmited;
 }
 
@@ -1214,7 +1214,7 @@ void CtaMocker::on_session_begin(uint32_t curTDate)
 {
 	_cur_tdate = curTDate;
 
-	//每个交易日开始，要把冻结持仓置零
+	//At the beginning of each trading day, the frozen positions should be reset to zero
 	for (auto& it : _pos_map)
 	{
 		const char* stdCode = it.first.c_str();
@@ -1228,7 +1228,7 @@ void CtaMocker::on_session_begin(uint32_t curTDate)
 
 	/*
 	 *	By Wesley @ 2022.04.19
-	 *	新交易日开始的时候，价格缓存清掉，要重新处理
+	 *	New trading day starts, the price cache is cleared, and it needs to be reprocessed
 	 */
 	_price_map.clear();
 
@@ -1299,7 +1299,7 @@ CondList& CtaMocker::get_cond_entrusts(const char* stdCode)
 }
 
 //////////////////////////////////////////////////////////////////////////
-//策略接口
+//Strategy interface
 void CtaMocker::stra_enter_long(const char* stdCode, double qty, const char* userTag /* = "" */, double limitprice, double stopprice)
 {
 	WTSCommodityInfo* commInfo = _replayer->get_commodity_info(stdCode);
@@ -1310,7 +1310,7 @@ void CtaMocker::stra_enter_long(const char* stdCode, double qty, const char* use
 	}
 
 	_replayer->sub_tick(_context_id, stdCode);
-	if (decimal::eq(limitprice, 0.0) && decimal::eq(stopprice, 0.0))	//如果不是动态下单模式,则直接触发
+	if (decimal::eq(limitprice, 0.0) && decimal::eq(stopprice, 0.0))	//If it is not a dynamic order mode, it will be triggered directly
 	{
 		double curQty = stra_get_position(stdCode);
 		if(decimal::lt(curQty, 0))
@@ -1361,7 +1361,7 @@ void CtaMocker::stra_enter_short(const char* stdCode, double qty, const char* us
 	}
 
 	_replayer->sub_tick(_context_id, stdCode);
-	if (decimal::eq(limitprice, 0.0) && decimal::eq(stopprice, 0.0))	//如果不是动态下单模式,则直接触发
+	if (decimal::eq(limitprice, 0.0) && decimal::eq(stopprice, 0.0))	//If it is not a dynamic order mode, it will be triggered directly
 	{
 		double curQty = stra_get_position(stdCode);
 		if(decimal::gt(curQty, 0))
@@ -1410,12 +1410,12 @@ void CtaMocker::stra_exit_long(const char* stdCode, double qty, const char* user
 	uint32_t offTime = sInfo->offsetTime(_replayer->get_min_time(), true);
 	bool isLastBarOfDay = (offTime == sInfo->getCloseTime(true));
 
-	//读取可平持仓,如果是收盘那根bar，则直接读取全部持仓
+	//Read the available positions, if it is the closing bar, read all positions directly
 	double curQty = stra_get_position(stdCode, !isLastBarOfDay);
 	if (decimal::le(curQty, 0))
 		return;
 
-	if (decimal::eq(limitprice, 0.0) && decimal::eq(stopprice, 0.0))	//如果不是动态下单模式,则直接触发
+	if (decimal::eq(limitprice, 0.0) && decimal::eq(stopprice, 0.0))	//If it is not a dynamic order mode, it will be triggered directly
 	{
 		double maxQty = min(curQty, qty);
 		double totalQty = stra_get_position(stdCode, false);
@@ -1467,7 +1467,7 @@ void CtaMocker::stra_exit_short(const char* stdCode, double qty, const char* use
 	if (decimal::ge(curQty, 0))
 		return;
 
-	if (decimal::eq(limitprice, 0.0) && decimal::eq(stopprice, 0.0))	//如果不是动态下单模式,则直接触发
+	if (decimal::eq(limitprice, 0.0) && decimal::eq(stopprice, 0.0))	//If it is not a dynamic order mode, it will be triggered directly
 	{
 		double maxQty = min(abs(curQty), qty);
 		append_signal(stdCode, curQty + maxQty, userTag, 0.0, _is_in_schedule ? 0 : 1);
@@ -1524,7 +1524,7 @@ void CtaMocker::stra_set_position(const char* stdCode, double qty, const char* u
 		return;
 	}
 
-	//如果不能做空，则目标仓位不能设置负数
+	//If you cannot short, the target position cannot be set to a negative number
 	if (!commInfo->canShort() && decimal::lt(qty, 0))
 	{
 		log_error("Cannot short on {}", stdCode);
@@ -1532,7 +1532,7 @@ void CtaMocker::stra_set_position(const char* stdCode, double qty, const char* u
 	}
 
 	double total = stra_get_position(stdCode, false);
-	//如果目标仓位和当前仓位是一致的，直接退出
+	//If the target position is the same as the current position, exit directly
 	if (decimal::eq(total, qty))
 		return;
 
@@ -1540,7 +1540,7 @@ void CtaMocker::stra_set_position(const char* stdCode, double qty, const char* u
 	{
 		double valid = stra_get_position(stdCode, true);
 		double frozen = total - valid;
-		//如果是T+1规则，则目标仓位不能小于冻结仓位
+		//If it is T+1 rule, the target position cannot be less than the frozen position
 		if(decimal::lt(qty, frozen))
 		{
 			WTSLogger::log_dyn("strategy", _name.c_str(), LL_ERROR, "New position of {} cannot be set to {} due to {} being frozen", stdCode, qty, frozen);
@@ -1549,7 +1549,7 @@ void CtaMocker::stra_set_position(const char* stdCode, double qty, const char* u
 	}
 
 	_replayer->sub_tick(_context_id, stdCode);
-	if (decimal::eq(limitprice, 0.0) && decimal::eq(stopprice, 0.0))	//没有设置触发条件，则直接添加信号
+	if (decimal::eq(limitprice, 0.0) && decimal::eq(stopprice, 0.0))	//If no trigger condition is set, the signal is added directly
 	{
 		append_signal(stdCode, qty, userTag, 0.0, _is_in_schedule ? 0 : 1);
 	}
@@ -1607,7 +1607,7 @@ void CtaMocker::do_set_position(const char* stdCode, double qty, double price /*
 	uint64_t curTm = (uint64_t)_replayer->get_date() * 10000 + _replayer->get_min_time();
 	uint32_t curTDate = _replayer->get_trading_date();
 
-	//手数相等则不用操作了
+	//If the number of hands is equal, there is no need to operate
 	if (decimal::eq(pInfo._volume, qty))
 		return;
 
@@ -1615,16 +1615,16 @@ void CtaMocker::do_set_position(const char* stdCode, double qty, double price /*
 	if (commInfo == NULL)
 		return;
 
-	//成交价
+	//Transaction price
 	double trdPx = curPx;
 
 	double diff = qty - pInfo._volume;
 	bool isBuy = decimal::gt(diff, 0.0);
-	if (decimal::gt(pInfo._volume*diff, 0))//当前持仓和仓位变化方向一致, 增加一条明细, 增加数量即可
+	if (decimal::gt(pInfo._volume*diff, 0))//The current position is consistent with the direction of the position change, add a detail, and increase the quantity
 	{
 		pInfo._volume = qty;
 
-		//如果T+1，则冻结仓位要增加
+		//If T+1, the frozen position should be increased
 		if (commInfo->isT1())
 		{
 			//ASSERT(diff>0);
@@ -1637,8 +1637,8 @@ void CtaMocker::do_set_position(const char* stdCode, double qty, double price /*
 			if (_ratio_slippage)
 			{
 				//By Wesley @ 2023.05.05
-				//如果是比率滑点，则要根据目标成交价计算
-				//得到滑点以后，再根据pricetick做一个修正
+				//If it is a ratio slippage, it needs to be calculated based on the target transaction price
+				//After getting the slippage, make a correction based on the pricetick
 				double slp = (_slippage * trdPx / 10000.0);
 				slp = round(slp / commInfo->getPriceTick())*commInfo->getPriceTick();
 
@@ -1667,15 +1667,15 @@ void CtaMocker::do_set_position(const char* stdCode, double qty, double price /*
 		log_trade(stdCode, dInfo._long, true, curTm, trdPx, abs(diff), userTag, fee, _schedule_times);
 	}
 	else
-	{//持仓方向和仓位变化方向不一致,需要平仓
+	{//The position direction is inconsistent with the direction of the position change, and it needs to be closed
 		double left = abs(diff);
 		if (_slippage != 0)
 		{
 			if (_ratio_slippage)
 			{
 				//By Wesley @ 2023.05.05
-				//如果是比率滑点，则要根据目标成交价计算
-				//得到滑点以后，再根据pricetick做一个修正
+				//If it is a ratio slippage, it needs to be calculated based on the target transaction price
+				//After getting the slippage, make a correction based on the pricetick
 				double slp = (_slippage * trdPx / 10000.0);
 				slp = round(slp / commInfo->getPriceTick())*commInfo->getPriceTick();
 
@@ -1710,15 +1710,15 @@ void CtaMocker::do_set_position(const char* stdCode, double qty, double price /*
 				profit *= -1;
 			pInfo._closeprofit += profit;
 			_total_closeprofit += profit;
-			pInfo._dynprofit = pInfo._dynprofit*dInfo._volume / (dInfo._volume + maxQty);//浮盈也要做等比缩放
+			pInfo._dynprofit = pInfo._dynprofit*dInfo._volume / (dInfo._volume + maxQty);//Floating profit and loss also need to be scaled proportionally
 			pInfo._last_exittime = curTm;
 			_fund_info._total_profit += profit;
 
 			double fee = _replayer->calc_fee(stdCode, trdPx, maxQty, dInfo._opentdate == curTDate ? 2 : 1);
 			_fund_info._total_fees += fee;
-			//这里写成交记录
+			//Write transaction records here
 			log_trade(stdCode, dInfo._long, false, curTm, trdPx, maxQty, userTag, fee, _schedule_times);
-			//这里写平仓记录
+			//Write closing records here
 			log_close(stdCode, dInfo._long, dInfo._opentime, dInfo._price, curTm, trdPx, maxQty, profit, maxProf, maxLoss, 
 				_total_closeprofit - _fund_info._total_fees, dInfo._opentag, userTag, dInfo._open_barno, _schedule_times);
 
@@ -1726,7 +1726,7 @@ void CtaMocker::do_set_position(const char* stdCode, double qty, double price /*
 				break;
 		}
 
-		//需要清理掉已经平仓完的明细
+		//Need to clean up the details that have been closed
 		while (count > 0)
 		{
 			auto it = pInfo._details.begin();
@@ -1734,12 +1734,12 @@ void CtaMocker::do_set_position(const char* stdCode, double qty, double price /*
 			count--;
 		}
 
-		//最后,如果还有剩余的,则需要反手了
+		//Finally, if there is still remaining, it needs to be reversed
 		if (left > 0)
 		{
 			left = left * qty / abs(qty);
 
-			//如果T+1，则冻结仓位要增加
+			//If T+1, the frozen position should be increased
 			if (commInfo->isT1())
 			{
 				pInfo._frozen += left;
@@ -1758,7 +1758,7 @@ void CtaMocker::do_set_position(const char* stdCode, double qty, double price /*
 			strcpy(dInfo._opentag, userTag);
 			pInfo._details.emplace_back(dInfo);
  
-			//这里还需要写一笔成交记录
+			//Here you also need to write a transaction record
 			double fee = _replayer->calc_fee(stdCode, trdPx, abs(left), 0);
 			_fund_info._total_fees += fee;
 			log_trade(stdCode, dInfo._long, true, curTm, trdPx, abs(left), userTag, fee, _schedule_times);
@@ -1838,8 +1838,8 @@ void CtaMocker::stra_sub_ticks(const char* code)
 {
 	/*
 	 *	By Wesley @ 2022.03.01
-	 *	主动订阅tick会在本地记一下
-	 *	tick数据回调的时候先检查一下
+	 *	Actively subscribing to tick will be recorded locally
+	 *	Check it first when the tick data is called back
 	 */
 	_tick_subs.insert(code);
 
@@ -1997,7 +1997,7 @@ double CtaMocker::stra_get_last_enterprice(const char* stdCode)
 double CtaMocker::stra_get_position(const char* stdCode, bool bOnlyValid /* = false */, const char* userTag /* = "" */)
 {
 	//By Wesley @ 2022.05.22
-	//如果有信号，说明刚下了指令，还没等到下一个tick进来，用户就在读取仓位
+	//If there is a signal, it means that the instruction has just been issued, and the user is reading the position before the next tick comes in
 	double totalPos = 0;
 	auto sit = _sig_map.find(stdCode);
 	if (sit != _sig_map.end())
@@ -2016,9 +2016,9 @@ double CtaMocker::stra_get_position(const char* stdCode, bool bOnlyValid /* = fa
 	{
 		if (bOnlyValid)
 		{
-			//只有userTag为空的时候时候，才会用bOnlyValid
-			//这里理论上，只有多头才会进到这里
-			//其他地方要保证，空头持仓的话，_frozen要为0
+			//Only when userTag is empty, bOnlyValid will be used
+			//Here in theory, only long positions will come in here
+			//Other places need to ensure that if it is a short position, _frozen should be 0
 			return totalPos - pInfo._frozen;
 		}
 		else

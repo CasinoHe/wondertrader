@@ -59,46 +59,46 @@ public:
 };
 
 /*
- *	历史数据加载器的回调函数
- *	@obj	回传用的，原样返回即可
- *	@bars	K线数据
- *	@count	K线条数
+ *	Historical data loader callback function
+ *	@obj	For returning, just return as is
+ *	@bars	K-line data
+ *	@count	Number of K-lines
  */
 typedef void(*FuncReadBars)(void* obj, WTSBarStruct* firstBar, uint32_t count);
 
 /*
- *	加载复权因子回调
- *	@obj	回传用的，原样返回即可
- *	@stdCode	合约代码
+ *	Load ex-right factor callback
+ *	@obj	For returning, just return as is
+ *	@stdCode	Instrument code
  *	@dates
  */
 typedef void(*FuncReadFactors)(void* obj, const char* stdCode, uint32_t* dates, double* factors, uint32_t count);
 
 /*
- *	加载tick数据回调
- *	@firstItem	数据
- *	@count		条数
+ *	Load tick data callback
+ *	@firstItem	Data
+ *	@count		Number of items
  */
 typedef void(*FuncReadTicks)(void* obj, WTSTickStruct* firstItem, uint32_t count);
 
 /*
- *	加载委托明细数据回调
- *	@firstItem	数据
- *	@count		条数
+ *	Load order detail data callback
+ *	@firstItem	Data
+ *	@count		Number of items
  */
 typedef void(*FuncReadOrdDtl)(void* obj, WTSOrdDtlStruct* firstItem, uint32_t count);
 
 /*
- *	加载委托队列数据回调
- *	@firstItem	数据
- *	@count		条数
+ *	Load order queue data callback
+ *	@firstItem	Data
+ *	@count		Number of items
  */
 typedef void(*FuncReadOrdQue)(void* obj, WTSOrdQueStruct* firstItem, uint32_t count);
 
 /*
- *	加载逐笔成交数据回调
- *	@firstItem	数据
- *	@count		条数
+ *	Load transaction data callback
+ *	@firstItem	Data
+ *	@count		Number of items
  */
 typedef void(*FuncReadTrans)(void* obj, WTSTransStruct* firstItem, uint32_t count);
 
@@ -106,46 +106,46 @@ class IBtDataLoader
 {
 public:
 	/*
-	 *	加载最终历史K线数据
-	 *	和loadRawHisBars的区别在于，loadFinalHisBars，系统认为是最终所需数据，不在进行加工，例如复权数据、主力合约数据
-	 *	loadRawHisBars是加载未加工的原始数据的接口
+	 *	Load final historical K-line data
+	 *	The difference from loadRawHisBars is that loadFinalHisBars is considered by the system as the final required data and will not be processed, such as ex-right data and main contract data.
+	 *	loadRawHisBars is the interface to load unprocessed raw data
 	 *
-	 *	@obj	回传用的，原样返回即可
-	 *	@stdCode	合约代码
-	 *	@period	K线周期
-	 *	@cb		回调函数
+	 *	@obj	For returning, just return as is
+	 *	@stdCode	Instrument code
+	 *	@period	K-line period
+	 *	@cb		Callback function
 	 */
 	virtual bool loadFinalHisBars(void* obj, const char* stdCode, WTSKlinePeriod period, FuncReadBars cb) = 0;
 
 	/*
-	 *	加载原始历史K线数据
+	 *	Load raw historical K-line data
 	 *
-	 *	@obj	回传用的，原样返回即可
-	 *	@stdCode	合约代码
-	 *	@period	K线周期
-	 *	@cb		回调函数
+	 *	@obj	For returning, just return as is
+	 *	@stdCode	Instrument code
+	 *	@period	K-line period
+	 *	@cb		Callback function
 	 */
 	virtual bool loadRawHisBars(void* obj, const char* stdCode, WTSKlinePeriod period, FuncReadBars cb) = 0;
 
 	/*
-	 *	加载全部除权因子
+	 *	Load all ex-right factors
 	 */
 	virtual bool loadAllAdjFactors(void* obj, FuncReadFactors cb) = 0;
 
 	/*
-	 *	根据合约加载除权因子
+	 *	Load ex-right factors by instrument
 	 *
-	 *	@stdCode	合约代码
+	 *	@stdCode	Instrument code
 	 */
 	virtual bool loadAdjFactors(void* obj, const char* stdCode, FuncReadFactors cb) = 0;
 
 	/*
-	 *	加载历史Tick数据
+	 *	Load historical Tick data
 	 */
 	virtual bool loadRawHisTicks(void* obj, const char* stdCode, uint32_t uDate, FuncReadTicks cb) = 0;
 
 	/*
-	 *	是否自动转储为dsb
+	 *	Whether to automatically trans to dsb
 	 */
 	virtual bool isAutoTrans() { return true; }
 };
@@ -162,8 +162,8 @@ private:
 		uint32_t		_date;
 		/*
 		 * By Wesley @ 2022.03.21
-		 * 游标，用于标记下一条数据的位置，或者说已经回放过的条数
-		 * 未初始化时，游标为UINT_MAX，一旦初始化，游标必然是大于0的
+		 * Cursor, used to mark the position of the next data, or the number of items that have been replayed
+		 * When uninitialized, the cursor is UINT_MAX. Once initialized, the cursor must be greater than 0
 		 */
 		std::size_t		_cursor;
 		std::size_t		_count;
@@ -185,8 +185,8 @@ private:
 		WTSKlinePeriod	_period;
 		/*
 		 * By Wesley @ 2022.03.21
-		 * 游标，用于标记下一条数据的位置，或者说已经回放过的条数
-		 * 未初始化时，游标为UINT_MAX，一旦初始化，游标必然是大于0的
+		 * Cursor, used to mark the position of the next data, or the number of items that have been replayed
+		 * When uninitialized, the cursor is UINT_MAX. Once initialized, the cursor must be greater than 0
 		 */
 		uint32_t		_cursor;
 		uint32_t		_count;
@@ -212,13 +212,13 @@ private:
 
 	/*
 	 *	By Wesley @ 2022.03.13
-	 *	这里把缓存改成智能指针
-	 *	因为有用户发现如果在oncalc的时候获取未在oninit中订阅的K线的时候
-	 *	因为使用BarList的引用，当K线缓存的map重新插入新的K线以后
-	 *	引用的地方失效了，会引用到错误地址
-	 *	我怀疑这里有可能是重新拷贝了一下数据
-	 *	这里改成智能指针就能避免这个问题，因为不管map自己的内存如何组织
-	 *	智能指针指向的地址都是不会变的
+	 *	Here the cache is changed to a smart pointer
+	 *	Because some users found that when getting K-lines that were not subscribed in oninit during oncalc
+	 *	Because the reference of BarList is used, after the map of the K-line cache reinserts a new K-line
+	 *	The place where the reference is invalid will refer to the wrong address
+	 *	I suspect that the data may have been copied again here
+	 *	Changing this to a smart pointer can avoid this problem, because no matter how the map's own memory is organized
+	 *	The address pointed to by the smart pointer will not change
 	 */
 	typedef std::shared_ptr<BarsList> BarsListPtr;
 	typedef wt_hashmap<std::string, BarsListPtr>	BarsCache;
@@ -258,57 +258,57 @@ public:
 
 private:
 	/*
-	 *	从自定义数据文件缓存历史数据
+	 *	Cache historical data from custom data files
 	 */
 	bool		cacheRawBarsFromBin(const std::string& key, const char* stdCode, WTSKlinePeriod period, bool bForBars = true);
 
 	/*
-	 *	从csv文件缓存历史数据
+	 *	Cache historical data from csv files
 	 */
 	bool		cacheRawBarsFromCSV(const std::string& key, const char* stdCode, WTSKlinePeriod period, bool bSubbed = true);
 
 	/*
-	 *	从自定义数据文件缓存历史tick数据
+	 *	Cache historical tick data from custom data files
 	 */
 	bool		cacheRawTicksFromBin(const std::string& key, const char* stdCode, uint32_t uDate);
 
 	/*
-	 *	从自定义数据文件缓存历史委托明细数据
+	 *	Cache historical order detail data from custom data files
 	 */
 	bool		cacheRawOrdDtlFromBin(const std::string& key, const char* stdCode, uint32_t uDate);
 
 	/*
-	 *	从自定义数据文件缓存历史委托队列
+	 *	Cache historical order queue data from custom data files
 	 */
 	bool		cacheRawOrdQueFromBin(const std::string& key, const char* stdCode, uint32_t uDate);
 
 	/*
-	 *	从自定义数据文件缓存历史成交明细数据
+	 *	Cache historical transaction data from custom data files
 	 */
 	bool		cacheRawTransFromBin(const std::string& key, const char* stdCode, uint32_t uDate);
 
 	/*
-	 *	从csv文件缓存历史tick数据
+	 *	Cache historical tick data from csv files
 	 */
 	bool		cacheRawTicksFromCSV(const std::string& key, const char* stdCode, uint32_t uDate);
 
 	/*
-	 *	从外部加载器缓存历史数据
+	 *	Cache historical data from external loader
 	 */
 	bool		cacheFinalBarsFromLoader(const std::string& key, const char* stdCode, WTSKlinePeriod period, bool bSubbed = true);
 
 	/*
-	 *	从外部加载器缓存历史tick数据
+	 *	Cache historical tick data from external loader
 	 */
 	bool		cacheRawTicksFromLoader(const std::string& key, const char* stdCode, uint32_t uDate);
 
 	/*
-	 *	缓存整合的期货合约历史K线（针对.HOT//2ND）
+	 *	Cache integrated futures contract historical K-line (for .HOT//2ND)
 	 */
 	bool		cacheIntegratedFutBarsFromBin(void* codeInfo, const std::string& key, const char* stdCode, WTSKlinePeriod period, bool bSubbed = true);
 
 	/*
-	 *	缓存复权股票K线数据
+	 *	Cache adjusted stock K-line data
 	 */
 	bool		cacheAdjustedStkBarsFromBin(void* codeInfo, const std::string& key, const char* stdCode, WTSKlinePeriod period, bool bSubbed = true);
 
@@ -354,23 +354,23 @@ private:
 	uint32_t	locate_barindex(const std::string& key, uint64_t curTime, bool bUpperBound = false);
 
 	/*
-	 *	按照K线进行回测
+	 *	Run backtest by K-line
 	 *
-	 *	@bNeedDump	是否将回测进度落地到文件中
+	 *	@bNeedDump	Whether to dump the backtest progress to a file
 	 */
 	void	run_by_bars(bool bNeedDump = false);
 
 	/*
-	 *	按照定时任务进行回测
+	 *	Run backtest by scheduled tasks
 	 *
-	 *	@bNeedDump	是否将回测进度落地到文件中
+	 *	@bNeedDump	Whether to dump the backtest progress to a file
 	 */
 	void	run_by_tasks(bool bNeedDump = false);
 
 	/*
-	 *	按照tick进行回测
+	 *	Run backtest by tick
 	 *
-	 *	@bNeedDump	是否将回测进度落地到文件中
+	 *	@bNeedDump	Whether to dump the backtest progress to a file
 	 */
 	void	run_by_ticks(bool bNeedDump = false);
 
@@ -382,9 +382,9 @@ public:
 	bool prepare();
 
 	/*
-	 *	运行回测
+	 *	Run backtest
 	 *
-	 *	@bNeedDump	是否将回测进度落地到文件中
+	 *	@bNeedDump	Whether to dump the backtest progress to a file
 	 */
 	void run(bool bNeedDump = false);
 	
@@ -410,10 +410,10 @@ public:
 	}
 
 	/*
-	 *	注册任务
-	 *	@date 日期,根据周期变化,每日为0,每周为0~6,对应周日到周六,每月为1~31,每年为0101~1231
-	 *	@time 时间,精确到分钟
-	 *	@period	时间周期，可以是分钟、天、周、月、年
+	 *	Register task
+	 *	@date Date, changes according to the period, daily is 0, weekly is 0~6, corresponding to Sunday to Saturday, monthly is 1~31, yearly is 0101~1231
+	 *	@time Time, accurate to the minute
+	 *	@period	Time period, can be minute, day, week, month, year
 	 */
 	void register_task(uint32_t taskid, uint32_t date, uint32_t time, const char* period, const char* trdtpl = "CHINA", const char* session = "TRADING");
 
@@ -485,19 +485,19 @@ private:
 	
 	/*
 	 *	By Wesley @ 2023.05.05
-	 *	如果K线没有成交量，则不模拟tick
-	 *	默认为false，主要是针对涨跌停的行情，也适用于不活跃的合约
+	 *	If the K-line has no volume, do not simulate tick
+	 *	The default is false, mainly for limit-up and limit-down markets, and also for inactive contracts
 	 */
 	bool			_nosim_if_notrade;
 	std::map<std::string, WTSTickStruct>	_day_cache;	//每日Tick缓存,当tick回放未开放时,会用到该缓存
 	std::map<std::string, std::string>		_ticker_keys;
 
 	//By Wesley @ 2022.06.01
-	//这个主要是针对不订阅而直接指定合约下单的场景
-	wt_hashset<std::string>		_unsubbed_in_need;	//未订阅但需要的K线
+	//This is mainly for scenarios where orders are placed for contracts that are not subscribed directly
+	wt_hashset<std::string>		_unsubbed_in_need;	//K-lines that are not subscribed but needed
 
 	//By Wesley @ 2022.08.15
-	//复权标记，采用位运算表示，1|2|4,1表示成交量复权，2表示成交额复权，4表示总持复权，其他待定
+	//Ex-right flag, expressed by bit operation, 1|2|4, 1 means volume ex-right, 2 means turnover ex-right, 4 means total holding ex-right, others to be determined
 	uint32_t		_adjust_flag; 
 
 	uint32_t		_cur_date;
@@ -545,7 +545,7 @@ private:
 	//////////////////////////////////////////////////////////////////////////
 	//
 	//By Wesley @ 2022.02.07
-	//tick数据订阅项，first是contextid，second是订阅选项，0-原始订阅，1-前复权，2-后复权
+	//tick data subscription item, first is contextid, second is subscription option, 0-original subscription, 1-forward ex-right, 2-backward ex-right
 	typedef std::pair<uint32_t, uint32_t> SubOpt;
 	typedef wt_hashmap<uint32_t, SubOpt> SubList;
 	typedef wt_hashmap<std::string, SubList>	StraSubMap;

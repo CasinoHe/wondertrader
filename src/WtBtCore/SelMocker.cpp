@@ -315,9 +315,9 @@ void SelMocker::handle_tick(const char* stdCode, WTSTickData* newTick, uint32_t 
 
 	/*
 	 *	By Wesley @ 2022.04.19
-	 *	这里的逻辑改了一下
-	 *	如果缓存的价格不存在，则上一笔价格就用最新价
-	 *	这里主要是为了应对跨日价格跳空的情况
+	 *	The logic here has been changed
+	 *	If the cached price does not exist, the previous price will be the latest price
+	 *	This is mainly to deal with price jumps across days
 	 */
 	double last_px = cur_px;
 	if (pxType != 0)
@@ -339,11 +339,11 @@ void SelMocker::handle_tick(const char* stdCode, WTSTickData* newTick, uint32_t 
 
 	/*
 	 *	By Wesley @ 2022.04.19
-	 *	isBarEnd，如果是逐tick回放，这个永远都是true，永远也不会触发下面这段逻辑
-	 *	如果是模拟的tick数据，用收盘价模拟tick的时候，isBarEnd才会为true
-	 *	如果不是收盘价模拟的tick，那么直接在当前tick触发撮合逻辑
-	 *	这样做的目的是为了让在模拟tick触发的ontick中下单的信号能够正常处理
-	 *	而不至于在回测的时候成交价偏离太远
+	 *	isBarEnd, if it is tick-by-tick replay, this will always be true, and the following logic will never be triggered
+	 *	If it is simulated tick data, isBarEnd will be true when simulating tick data with the closing price
+	 *	If it is not a tick simulated by the closing price, then the matching logic is directly triggered in the current tick
+	 *	The purpose of this is to allow the signals placed in ontick triggered by simulated ticks to be processed normally
+	 *	So as not to deviate too far from the transaction price during backtesting
 	 */
 	if (pxType != 3)
 		proc_tick(stdCode, last_px, cur_px);

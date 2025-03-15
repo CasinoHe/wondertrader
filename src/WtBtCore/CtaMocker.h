@@ -32,11 +32,11 @@ USING_NS_WTP;
 class HisDataReplayer;
 class CtaStrategy;
 
-const char COND_ACTION_OL = 0;	//开多
-const char COND_ACTION_CL = 1;	//平多
-const char COND_ACTION_OS = 2;	//开空
-const char COND_ACTION_CS = 3;	//平空
-const char COND_ACTION_SP = 4;	//直接设置仓位
+const char COND_ACTION_OL = 0;	//Open Long
+const char COND_ACTION_CL = 1;	//Close Long
+const char COND_ACTION_OS = 2;	//Open Short
+const char COND_ACTION_CS = 3;	//Close Short
+const char COND_ACTION_SP = 4;	//Set Position Directly
 
 typedef struct _CondEntrust
 {
@@ -46,7 +46,7 @@ typedef struct _CondEntrust
 
 	double			_qty;
 
-	char			_action;	//0-开多,1-平多,2-开空,3-平空
+	char			_action;	//0-Open Long,1-Close Long,2-Open Short,3-Close Short
 
 	char			_code[MAX_INSTRUMENT_LENGTH];
 	char			_usertag[32];
@@ -113,7 +113,7 @@ public:
 	//ICtaStraCtx
 	virtual uint32_t id() { return _context_id; }
 
-	//回调函数
+	//Callback functions
 	virtual void on_init() override;
 	virtual void on_session_begin(uint32_t curTDate) override;
 	virtual void on_session_end(uint32_t curTDate) override;
@@ -128,7 +128,7 @@ public:
 
 
 	//////////////////////////////////////////////////////////////////////////
-	//策略接口
+	//Strategy interfaces
 	virtual void stra_enter_long(const char* stdCode, double qty, const char* userTag = "", double limitprice = 0.0, double stopprice = 0.0) override;
 	virtual void stra_enter_short(const char* stdCode, double qty, const char* userTag = "", double limitprice = 0.0, double stopprice = 0.0) override;
 	virtual void stra_exit_long(const char* stdCode, double qty, const char* userTag = "", double limitprice = 0.0, double stopprice = 0.0) override;
@@ -139,7 +139,7 @@ public:
 	virtual double stra_get_price(const char* stdCode) override;
 
 	/*
-	 *	读取当日价格
+	 *	Read today's price
 	 */
 	virtual double stra_get_day_price(const char* stdCode, int flag = 0) override;
 
@@ -170,7 +170,7 @@ public:
 	virtual void stra_sub_bar_events(const char* stdCode, const char* period) override;
 
 	/*
-	 *	获取分月合约代码
+	 *	Get the monthly contract code
 	 */
 	virtual std::string		stra_get_rawcode(const char* stdCode) override;
 
@@ -183,35 +183,35 @@ public:
 	virtual const char* stra_load_user_data(const char* key, const char* defVal = "") override;
 
 	/*
-	 *	设置图表K线
+	 *	Set chart K-line
 	 */
 	virtual void set_chart_kline(const char* stdCode, const char* period) override;
 
 	/*
-	 *	添加信号
+	 *	Add signal
 	 */
 	virtual void add_chart_mark(double price, const char* icon, const char* tag) override;
 
 	/*
-	 *	添加指标
+	 *	Add indicator
 	 */
 	virtual void register_index(const char* idxName, uint32_t indexType) override;
 
 	/*
-	 *	添加指标线
+	 *	Add indicator line
 	 */
 	virtual bool register_index_line(const char* idxName, const char* lineName, uint32_t lineType) override;
 
 	/*
-	 *	添加基准线
-	 *	@idxName	指标名称
-	 *	@lineName	线条名称
-	 *	@val		数值
+	 *	Add baseline
+	 *	@idxName	Indicator name
+	 *	@lineName	Line name
+	 *	@val		Value
 	 */
 	virtual bool add_index_baseline(const char* idxName, const char* lineName, double val) override;
 
 	/*
-	 *	设置指标值
+	 *	Set indicator value
 	 */
 	virtual bool set_index_value(const char* idxName, const char* lineName, double val) override;
 
@@ -241,13 +241,13 @@ protected:
 	uint32_t			_context_id;
 	HisDataReplayer*	_replayer;
 
-	uint64_t		_total_calc_time;	//总计算时间
-	uint32_t		_emit_times;		//总计算次数
+	uint64_t		_total_calc_time;	//Total calculation time
+	uint32_t		_emit_times;		//Total calculation times
 
-	int32_t			_slippage;			//成交滑点， 如果是比例滑点，则为万分比
-	bool			_ratio_slippage;	//是否比例滑点
+	int32_t			_slippage;			//Transaction slippage, if it is proportional slippage, it is in ten thousandths
+	bool			_ratio_slippage;	//Whether it is proportional slippage
 
-	uint32_t		_schedule_times;	//调度次数
+	uint32_t		_schedule_times;	//Schedule times
 
 	std::string		_main_key;
 
@@ -347,10 +347,10 @@ protected:
 
 	CondEntrustMap		_condtions;
 
-	//是否处于调度中的标记
-	bool			_is_in_schedule;	//是否在自动调度中
+	//Whether it is in scheduling
+	bool			_is_in_schedule;	//Whether it is in automatic scheduling
 
-	//用户数据
+	//User data
 	typedef wt_hashmap<std::string, std::string> StringHashMap;
 	StringHashMap	_user_datas;
 	bool			_ud_modified;
@@ -396,21 +396,21 @@ protected:
 
 	StdUniqueMutex	_mtx_calc;
 	StdCondVariable	_cond_calc;
-	bool			_has_hook;		//这是人为控制是否启用钩子
-	bool			_hook_valid;	//这是根据是否是异步回测模式而确定钩子是否可用
-	std::atomic<uint32_t>		_cur_step;	//临时变量，用于控制状态
+	bool			_has_hook;		//This is to manually control whether to enable the hook
+	bool			_hook_valid;	//This is to determine whether the hook is available based on whether it is in asynchronous backtest mode
+	std::atomic<uint32_t>		_cur_step;	//Temporary variable, used to control the state
 
 	bool			_in_backtest;
 	bool			_wait_calc;
 
-	//是否对回测结果持久化
+	//Whether to persist backtest results
 	bool			_persist_data;
 
 	uint32_t		_cur_tdate;
 	uint32_t		_cur_bartime;
 	uint64_t		_last_cond_min;
 
-	//tick订阅列表
+	//Tick subscription list
 	wt_hashset<std::string> _tick_subs;
 
 	std::string		_chart_code;

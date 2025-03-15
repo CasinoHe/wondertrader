@@ -417,9 +417,9 @@ void CtaStraBaseCtx::load_data(uint32_t flag /* = 0xFFFFFFFF */)
 		{
 			_last_cond_min = jCond["settime"].GetUint64();
 			const rj::Value& jItems = jCond["items"];
-			for (auto& m : jItems.GetObject())
+			for (auto iter = jItems.MemberBegin(); iter != jItems.MemberEnd(); iter++)	
 			{
-				const char* stdCode = m.name.GetString();
+				const char* stdCode = iter->name.GetString();
 				const char* ruleTag = _engine->get_hot_mgr()->getRuleTag(stdCode);
 				if (strlen(ruleTag) == 0 && _engine->get_contract_info(stdCode) == NULL)
 				{
@@ -427,7 +427,7 @@ void CtaStraBaseCtx::load_data(uint32_t flag /* = 0xFFFFFFFF */)
 					continue;
 				}
 
-				const rj::Value& cListItem = m.value;
+				const rj::Value& cListItem = iter->value;
 
 				CondList& condList = _condtions[stdCode];
 
@@ -461,9 +461,9 @@ void CtaStraBaseCtx::load_data(uint32_t flag /* = 0xFFFFFFFF */)
 		const rj::Value& jSignals = root["signals"];
 		if (!jSignals.IsNull() && jSignals.IsObject())
 		{
-			for (auto& m : jSignals.GetObject())
+			for (auto iter = jSignals.MemberBegin(); iter != jSignals.MemberEnd(); iter++)	
 			{
-				const char* stdCode = m.name.GetString();
+				const char* stdCode = iter->name.GetString();
 				const char* ruleTag = _engine->get_hot_mgr()->getRuleTag(stdCode);
 				if (strlen(ruleTag) == 0 && _engine->get_contract_info(stdCode) == NULL)
 				{
@@ -471,7 +471,7 @@ void CtaStraBaseCtx::load_data(uint32_t flag /* = 0xFFFFFFFF */)
 					continue;
 				}
 
-				const rj::Value& jItem = m.value;
+				const rj::Value& jItem = iter->value;
 
 				SigInfo& sInfo = _sig_map[stdCode];
 				sInfo._usertag = jItem["usertag"].GetString();

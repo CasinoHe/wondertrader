@@ -769,10 +769,10 @@ void HftStraBaseCtx::load_userdata()
 	if (root.HasParseError())
 		return;
 
-	for (auto& m : root.GetObject())
+	for (auto iter = root.MemberBegin(); iter != root.MemberEnd(); iter++)
 	{
-		const char* key = m.name.GetString();
-		const char* val = m.value.GetString();
+		const char* key = iter->name.GetString();
+		const char* val = iter->value.GetString();
 		_user_datas[key] = val;
 	}
 }

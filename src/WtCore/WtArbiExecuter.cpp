@@ -7,6 +7,7 @@
  *
  * \brief
  */
+
 #include "WtArbiExecuter.h"
 #include "TraderAdapter.h"
 #include "WtEngine.h"
@@ -353,7 +354,7 @@ void WtArbiExecuter::set_position(const wt_hashmap<std::string, double>& targets
 
 		double oldVol = _target_pos[stdCode];
 		_target_pos[stdCode] = newVol;
-		// 账户的理论持仓要经过修正
+		// the theoretical position of the account needs to be corrected
 		double traderTarget = round(newVol * _scale);
 
 		if(!decimal::eq(oldVol, newVol))

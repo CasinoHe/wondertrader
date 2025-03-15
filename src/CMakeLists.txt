@@ -13,6 +13,13 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+# Fix for ambiguous 'byte' symbol when compiling with MSVC
+if(MSVC)
+  add_definitions(-D_HAS_STD_BYTE=0)
+  # Add Windows API version target for Windows 10/11
+  add_definitions(-D_WIN32_WINNT=0x0A00)
+endif()
+
 # Set the project root directory
 set(PROJECT_ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/..)
 get_filename_component(PROJECT_ROOT_DIR ${PROJECT_ROOT_DIR} ABSOLUTE)

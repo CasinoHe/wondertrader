@@ -41,7 +41,7 @@ namespace rj = rapidjson;
 using namespace std;
 
 /*
- *	处理块数据
+ *	Process block data
  */
 bool proc_block_data(const char* tag, std::string& content, bool isBar, bool bKeepHead = true)
 {
@@ -50,7 +50,7 @@ bool proc_block_data(const char* tag, std::string& content, bool isBar, bool bKe
 	bool bCmped = header->is_compressed();
 	bool bOldVer = header->is_old_version();
 
-	//如果既没有压缩，也不是老版本结构体，则直接返回
+	//If neither compressed nor old version structure, return directly
 	if (!bCmped && !bOldVer)
 	{
 		if (!bKeepHead)
@@ -69,14 +69,14 @@ bool proc_block_data(const char* tag, std::string& content, bool isBar, bool bKe
 			return false;
 		}
 
-		//将文件头后面的数据进行解压
+		//Uncompress the data after the file header
 		buffer = WTSCmpHelper::uncompress_data(content.data() + BLOCK_HEADERV2_SIZE, blkV2->_size);
 	}
 	else
 	{
 		if (!bOldVer)
 		{
-			//如果不是老版本，直接返回
+			//If not old version, return directly
 			if (!bKeepHead)
 				content.erase(0, BLOCK_HEADER_SIZE);
 			return true;
@@ -123,17 +123,17 @@ bool proc_block_data(const char* tag, std::string& content, bool isBar, bool bKe
 
 	if (bKeepHead)
 	{
-		//原来的缓存，resize到文件头大小，再追加最终的数据
+		//Resize the original cache to the file header size, then append the final data
 		content.resize(BLOCK_HEADER_SIZE);
 		content.append(buffer);
 
-		//修改数据块的版本号
+		//Modify the version number of the data block
 		header = (BlockHeader*)content.data();
 		header->_version = BLOCK_VERSION_RAW_V2;
 	}
 	else
 	{
-		//不保留块头，直接跟数据做一个swap
+		//If not keeping the block header, directly swap with the data
 		content.swap(buffer);
 	}
 
@@ -174,8 +174,8 @@ bool HisDataReplayer::init(WTSVariant* cfg, EventNotifier* notifier /* = NULL */
 	_mode = cfg->getCString("mode");
 	/*
 	 *	By Wesley @ 2022.01.11
-	 *	因为store可能会变复杂，所以这里做一个兼容处理
-	 *	如果有store就读取store的path，如果没有store，就还读取root的path
+	 *	Because the store may become more complex, a compatibility handling is done here
+	 *	If there is a store, read the path of the store, if there is no store, still read the path of the root
 	 */
 	if (cfg->has("store"))
 	{
@@ -201,7 +201,7 @@ bool HisDataReplayer::init(WTSVariant* cfg, EventNotifier* notifier /* = NULL */
 		}
 	}
 	
-	bool isRangeCfg = (_begin_time == 0 || _end_time == 0);//是否从配置文件读取回测区间
+	bool isRangeCfg = (_begin_time == 0 || _end_time == 0);//Whether to read the backtest interval from the configuration file
 	if(_begin_time == 0)
 		_begin_time = cfg->getUInt64("stime");
 
@@ -225,7 +225,7 @@ bool HisDataReplayer::init(WTSVariant* cfg, EventNotifier* notifier /* = NULL */
 	_nosim_if_notrade = cfg->getBoolean("dont_simtick_if_notrade");
 	WTSLogger::info("nosim_if_notrade is {}", _nosim_if_notrade);
 
-	//基础数据文件
+	//Basic data files
 	WTSVariant* cfgBF = cfg->get("basefiles");
 	if (cfgBF->get("session"))
 		_bd_mgr.loadSessions(cfgBF->getCString("session"));
@@ -286,8 +286,8 @@ bool HisDataReplayer::init(WTSVariant* cfg, EventNotifier* notifier /* = NULL */
 
 	/*
 	 *	By Wesley @ 2021.12.20
-	 *	先从extloader加载除权因子
-	 *	如果加载失败，并且配置了除权因子文件，再加载除权因子文件
+	 *	First load the adjustment factors from extloader
+	 *	If loading fails, and the adjustment factor file is configured, then load the adjustment factor file
 	 */
 	bool bLoaded = loadStkAdjFactorsFromLoader();
 
@@ -315,7 +315,7 @@ bool HisDataReplayer::loadStkAdjFactorsFromLoader()
 			fctrLst.emplace_back(adjFact);
 		}
 
-		//一定要把第一条加进去，不然如果是前复权的话，可能会漏处理最早的数据
+		//Be sure to add the first one, otherwise if it is pre-rights, the earliest data may be missed
 		AdjFactor adjFact;
 		adjFact._date = 19900101;
 		adjFact._factor = 1;
@@ -361,8 +361,8 @@ bool HisDataReplayer::loadStkAdjFactorsFromFile(const char* adjfile)
 
 			/*
 			 *	By Wesley @ 2021.12.21
-			 *	先检查code的格式是不是包含PID，如STK.600000
-			 *	如果包含PID，则直接格式化，如果不包含，则强制为STK
+			 *	First check whether the format of the code contains PID, such as STK.600000
+			 *	If it contains PID, format it directly, if it does not contain it, force it to be STK
 			 */
 			bool bHasPID = (code.find('.') != std::string::npos);
 
@@ -385,7 +385,7 @@ bool HisDataReplayer::loadStkAdjFactorsFromFile(const char* adjfile)
 				fct_cnt++;
 			}
 
-			//一定要把第一条加进去，不然如果是前复权的话，可能会漏处理最早的数据
+			//Be sure to add the first one, otherwise if it is pre-rights, the earliest data may be missed
 			AdjFactor adjFact;
 			adjFact._date = 19900101;
 			adjFact._factor = 1;
@@ -456,7 +456,7 @@ void HisDataReplayer::clear_cache()
 
 void HisDataReplayer::reset()
 {
-	//重置不会清除掉缓存，而是将读取的标记还原，这样不用重复加载主句
+	//Reset will not clear the cache, but restore the read flag, so that the main sentence does not need to be reloaded
 	for(auto& m : _ticks_cache)
 	{
 		HftDataList<WTSTickStruct>& cacheItem = (HftDataList<WTSTickStruct>&)m.second;
@@ -616,7 +616,7 @@ uint32_t HisDataReplayer::locate_barindex(const std::string& key, uint64_t now, 
 	else
 	{
 		if(bUpperBound)
-		{//如果是找上边界，则要比较时间向下修正，因为lower_bound函数找的是大于等于curTime的K线
+		{//If it is to find the upper bound, you need to compare the time and correct it downwards, because the lower_bound function finds the K-line greater than or equal to curTime
 			if ((isDay && it->date > bar.date) || (!isDay && it->time > bar.time))
 			{
 				it--;
@@ -676,9 +676,9 @@ void HisDataReplayer::run(bool bNeedDump/* = false*/)
 {
 	if(_task == NULL)
 	{
-		//如果没有时间调度任务,则采用主K线回放的模式
+		//If there is no time scheduling task, use the main K-line playback mode
 
-		//如果没有确定主K线,则确定一个周期最短的主K线
+		//If the main K-line is not determined, determine a main K-line with the shortest period
 		if (_main_key.empty() && !_bars_cache.empty())
 		{
 			WTSKlinePeriod minPeriod = KP_DAY;
@@ -700,7 +700,7 @@ void HisDataReplayer::run(bool bNeedDump/* = false*/)
 						minTimes = barsList->_times;
 					}
 					//By Wesley @ 2022.11.03
-					//这里主要修复了只用日线的时候不能正确判断主K线的bug
+					//This mainly fixes the bug that the main K-line cannot be correctly judged when only the daily line is used
 					else if(_main_key.empty())
 					{
 						_main_key = m.first;
@@ -713,7 +713,7 @@ void HisDataReplayer::run(bool bNeedDump/* = false*/)
 
 		if(!_main_key.empty())
 		{
-			//如果订阅了K线，则按照主K线进行回放
+			//If the K-line is subscribed, play back according to the main K-line
 			run_by_bars(bNeedDump);
 		}
 		else if(_tick_enabled)
@@ -738,7 +738,7 @@ void HisDataReplayer::run(bool bNeedDump/* = false*/)
 
 void HisDataReplayer::run_by_ticks(bool bNeedDump /* = false */)
 {
-	//如果没有订阅K线，且tick回测是打开的，则按照每日的tick进行回放
+	//If the K-line is not subscribed, and the tick backtest is turned on, play back according to the daily tick
 	uint32_t edt = (uint32_t)(_end_time / 10000);
 	uint32_t etime = (uint32_t)(_end_time % 10000);
 	uint64_t end_tdate = _bd_mgr.calcTradingDate(DEFAULT_SESSIONID, edt, etime, true);
@@ -812,8 +812,8 @@ void HisDataReplayer::run_by_bars(bool bNeedDump /* = false */)
 			uint32_t nextTime = (uint32_t)(nextBarTime % 10000);
 
 			//By Wesley @ 2022.01.10
-			//如果和收盘时间一样，进行这个判断
-			//主要针对7*24小时的品种，其他的品种不需要
+			//If it is the same as the closing time, make this judgment
+			//Mainly for 7*24 hour varieties, other varieties are not needed
 			uint32_t nextTDate = _opened_tdate;
 			if(isDay || (!isDay && sInfo->offsetTime(nextTime, false) != sInfo->getCloseTime(true)))
 			{
@@ -830,8 +830,8 @@ void HisDataReplayer::run_by_bars(bool bNeedDump /* = false */)
 
 					/*
 					 *	By Wesley @ 2022.06.23
-					 *	因为可能会有人在on_session_begin下单，所以这里把时间戳改成开盘时间
-					 *	这样signals里看起来比较容易理解一些
+					 *	Because someone may place an order in on_session_begin, the timestamp is changed to the opening time here
+					 *	In this way, it is easier to understand in signals
 					 */
 					uint64_t beginTimeofDay = _bd_mgr.getBoundaryTime(sInfo->id(), nextTDate, true, true);
 
@@ -850,8 +850,8 @@ void HisDataReplayer::run_by_bars(bool bNeedDump /* = false */)
 			uint64_t curBarTime = (uint64_t)_cur_date * 10000 + _cur_time;
 			if (_tick_enabled)
 			{
-				//如果开启了tick回放,则直接回放tick数据
-				//如果tick回放失败，说明tick数据不存在，则需要模拟tick
+				//If tick playback is enabled, play back tick data directly
+				//If the tick playback fails, it means that the tick data does not exist, and the tick needs to be simulated
 				_tick_simulated = !replayHftDatas(curBarTime, nextBarTime);
 			}
 
@@ -868,12 +868,12 @@ void HisDataReplayer::run_by_bars(bool bNeedDump /* = false */)
 
 			/*
 			 *	By Wesley @ 2022.06.23
-			 *	tick数据模拟的机制完善
-			 *	主要将所有当前应该闭合的bar，按照开高低收的顺序同步模拟tick
-			 *	但是这样也是有漏洞的，那就是如果K线周期不统一，如m1和m5同时订阅
-			 *	会出现m5在最后一分钟才模拟tick的问题
-			 *	不过，真的要精确回测，请使用逐tick回测
-			 *	目前这个方案已经算是比较好的了
+			 *	Perfect the mechanism of tick data simulation
+			 *	Mainly simulate ticks synchronously according to the order of opening, high, low and close for all bars that should be closed at present
+			 *	But there are also loopholes in this, that is, if the K-line cycle is not uniform, such as m1 and m5 are subscribed at the same time
+			 *	There will be a problem that m5 will only simulate ticks in the last minute
+			 *	However, if you really want to accurately backtest, please use tick-by-tick backtesting
+			 *	This solution is already relatively good at present
 			 */
 			for(int i = 0; i < 4; i++)
 			{
@@ -937,13 +937,13 @@ void HisDataReplayer::run_by_bars(bool bNeedDump /* = false */)
 
 void HisDataReplayer::run_by_tasks(bool bNeedDump /* = false */)
 {
-	//时间调度任务不为空,则按照时间调度任务回放
+	//Time scheduling task is not empty, then play back according to the time scheduling task
 	WTSSessionInfo* sInfo = NULL;
 	const char* DEF_SESS = (strlen(_task->_session) == 0) ? DEFAULT_SESSIONID : _task->_session;
 	sInfo = _bd_mgr.getSession(DEF_SESS);
 	WTSLogger::info("Start to backtest with task frequency from {}...", _begin_time);
 
-	//分钟即任务和日级别任务分开写
+	//Minute-level tasks and daily-level tasks are written separately
 	if (_task->_period != TPT_Minute)
 	{
 		uint32_t endtime = TimeUtils::getNextMinute(_task->_time, -1);
@@ -954,7 +954,7 @@ void HisDataReplayer::run_by_tasks(bool bNeedDump /* = false */)
 		for (; !_terminated;)
 		{
 			bool fired = false;
-			//获取上一个交易日的日期
+			//Get the date of the previous trading day
 			uint32_t preTDate = TimeUtils::getNextDate(_cur_tdate, -1);
 			if (_cur_time == endtime)
 			{
@@ -987,15 +987,15 @@ void HisDataReplayer::run_by_tasks(bool bNeedDump /* = false */)
 							fired = true;
 						else if (bHasHoliday)
 						{
-							//上一个交易日在上个月,且当前日期大于触发日期
-							//说明这个月的开始日期在节假日内,顺延到今天
+							//The previous trading day is in the previous month, and the current date is greater than the trigger date
+							//Indicates that the start date of this month is within the holiday, and it is postponed to today
 							if ((preTDate % 10000 / 100 < _cur_date % 10000 / 100) && _cur_date % 1000000 > _task->_day)
 							{
 								fired = true;
 							}
 							else if (preTDate % 1000000 < _task->_day && _cur_date % 1000000 > _task->_day)
 							{
-								//上一个交易日在同一个月,且小于触发日期,但是今天大于触发日期,说明正确触发日期到节假日内,顺延到今天
+								//The previous trading day is in the same month and less than the trigger date, but today is greater than the trigger date, indicating that the correct trigger date is within the holiday and postponed to today
 								fired = true;
 							}
 						}
@@ -1013,7 +1013,7 @@ void HisDataReplayer::run_by_tasks(bool bNeedDump /* = false */)
 							}
 							else if (preWD > weekDay && weekDay > _task->_day)
 							{
-								//上一个交易日的星期大于今天的星期,说明换了一周了
+								//The week of the previous trading day is greater than the week of today, indicating that it has changed a week
 								fired = true;
 							}
 							else if (preWD < _task->_day && weekDay > _task->_day)
@@ -1032,9 +1032,9 @@ void HisDataReplayer::run_by_tasks(bool bNeedDump /* = false */)
 
 			if (!fired)
 			{
-				//调整时间
-				//如果当前时间小于任务时间,则直接赋值即可
-				//如果当前时间大于任务时间,则至少要等下一天
+				//Adjust the time
+				//If the current time is less than the task time, just assign it directly
+				//If the current time is greater than the task time, it will take at least the next day
 				if (_cur_time < endtime)
 				{
 					_cur_time = endtime;
@@ -1055,7 +1055,7 @@ void HisDataReplayer::run_by_tasks(bool bNeedDump /* = false */)
 			}
 			else
 			{
-				//用前一分钟作为结束时间
+				//Use the previous minute as the end time
 				uint32_t curDate = _cur_date;
 				uint32_t curTime = endtime;
 				bool bEndSession = sInfo->offsetTime(curTime, true) >= sInfo->getCloseTime(true);
@@ -1064,7 +1064,7 @@ void HisDataReplayer::run_by_tasks(bool bNeedDump /* = false */)
 				check_cache_days();
 				onMinuteEnd(curDate, curTime, bEndSession ? _cur_tdate : preTDate);
 				if (_listener)
-					_listener->handle_session_end(_cur_tdate);
+						_listener->handle_session_end(_cur_tdate);
 			}
 
 			_cur_date = TimeUtils::getNextDate(_cur_date);
@@ -1096,9 +1096,9 @@ void HisDataReplayer::run_by_tasks(bool bNeedDump /* = false */)
 
 		for (; !_terminated;)
 		{
-			//要考虑到跨日的情况
+			//Consider the situation of cross-day
 			uint32_t mins = sInfo->timeToMinutes(_cur_time);
-			//如果一开始不能整除,则直接修正一下
+			//If it cannot be divisible at the beginning, correct it directly
 			if (mins % _task->_time != 0 && mins < sInfo->getTradingMins())
 			{
 				mins = mins / _task->_time + _task->_time;
@@ -1110,12 +1110,12 @@ void HisDataReplayer::run_by_tasks(bool bNeedDump /* = false */)
 			{
 				/*
 				 *	By Wesley @ 2022.06.23
-				 *	tick数据模拟的机制完善
-				 *	主要将所有当前应该闭合的bar，按照开高低收的顺序同步模拟tick
-				 *	但是这样也是有漏洞的，那就是如果K线周期不统一，如m1和m5同时订阅
-				 *	会出现m5在最后一分钟才模拟tick的问题
-				 *	不过，真的要精确回测，请使用逐tick回测
-				 *	目前这个方案已经算是比较好的了
+				 *	Perfect the mechanism of tick data simulation
+				 *	Simulate ticks synchronously according to the order of opening, high, low and close for all bars that should be closed at present
+				 *	But there are also loopholes in this, that is, if the K-line cycle is not uniform, such as m1 and m5 are subscribed at the same time
+				 *	There will be a problem that m5 will only simulate ticks in the last minute
+				 *	However, if you really want to accurately backtest, please use tick-by-tick backtesting
+				 *	This solution is already relatively good at present
 				 */
 				for (int i = 0; i < 4; i++)
 				{
@@ -1132,12 +1132,12 @@ void HisDataReplayer::run_by_tasks(bool bNeedDump /* = false */)
 
 				/*
 				 *	By Wesley @ 2022.06.23
-				 *	tick数据模拟的机制完善
-				 *	主要将所有当前应该闭合的bar，按照开高低收的顺序同步模拟tick
-				 *	但是这样也是有漏洞的，那就是如果K线周期不统一，如m1和m5同时订阅
-				 *	会出现m5在最后一分钟才模拟tick的问题
-				 *	不过，真的要精确回测，请使用逐tick回测
-				 *	目前这个方案已经算是比较好的了
+				 *	Perfect the mechanism of tick data simulation
+				 *	Simulate ticks synchronously according to the order of opening, high, low and close for all bars that should be closed at present
+				 *	But there are also loopholes in this, that is, if the K-line cycle is not uniform, such as m1 and m5 are subscribed at the same time
+				 *	There will be a problem that m5 will only simulate ticks in the last minute
+				 *	However, if you really want to accurately backtest, please use tick-by-tick backtesting
+				 *	This solution is already relatively good at present
 				 */
 				for (int i = 0; i < 4; i++)
 				{
@@ -1152,7 +1152,7 @@ void HisDataReplayer::run_by_tasks(bool bNeedDump /* = false */)
 
 			if (bNewTDate)
 			{
-				//换日了
+				//It's a new day
 				mins = _task->_time;
 				uint32_t nextTDate = _bd_mgr.getNextTDate(_task->_trdtpl, _cur_tdate, 1, true);
 
@@ -1160,13 +1160,13 @@ void HisDataReplayer::run_by_tasks(bool bNeedDump /* = false */)
 				{
 					if (sInfo->getOffsetMins() > 0)
 					{
-						//真实时间后移,说明夜盘算作下一天的
+						//The real time is moved back, indicating that the night market is counted as the next day
 						_cur_date = _cur_tdate;
 						_cur_tdate = nextTDate;
 					}
 					else
 					{
-						//真实时间前移,说明夜盘是上一天的,这种情况就不需要动了
+						//The real time is moved forward, indicating that the night market is the previous day, this situation does not need to be moved
 						_cur_tdate = nextTDate;
 						_cur_date = _cur_tdate;
 					}
@@ -1193,7 +1193,7 @@ void HisDataReplayer::run_by_tasks(bool bNeedDump /* = false */)
 				uint32_t dayMins = _cur_time / 100 * 60 + _cur_time % 100;
 				uint32_t nextDMins = newTime / 100 * 60 + newTime % 100;
 
-				//是否到了一个新的小节
+				//Whether it is a new section
 				bool bNewSec = (nextDMins - dayMins > _task->_time) && !bNewDay;
 
 				while (bNewSec && _bd_mgr.isHoliday(_task->_trdtpl, _cur_date, true))
@@ -1221,7 +1221,7 @@ void HisDataReplayer::run_by_tasks(bool bNeedDump /* = false */)
 
 void HisDataReplayer::simTicks(uint32_t uDate, uint32_t uTime, uint32_t endTDate /* = 0 */, int pxType /* = 0 */)
 {
-	//这里应该触发检查
+	//Check here
 	uint64_t nowTime = (uint64_t)uDate * 10000 + uTime;
 
 	for (auto it = _bars_cache.begin(); it != _bars_cache.end(); it++)
@@ -1237,7 +1237,7 @@ void HisDataReplayer::simTicks(uint32_t uDate, uint32_t uTime, uint32_t endTDate
 
 					/*
 					 *	By Wesley @ 2023.05.05
-					 *	如果没有禁止0成交模拟tick，或者K线成交量不为0，就可以模拟tick
+					 *	If 0 transaction simulation tick is not prohibited, or the K-line transaction volume is not 0, the tick can be simulated
 					 */
 					bool bCanSim = !_nosim_if_notrade || !decimal::eq(nextBar.vol, 0.0);
 
@@ -1247,7 +1247,7 @@ void HisDataReplayer::simTicks(uint32_t uDate, uint32_t uTime, uint32_t endTDate
 						const std::string& ticker = _ticker_keys[barsList->_code];
 						if (ticker == it->first)
 						{
-							//开高低收
+							//Open, high, low, close
 							WTSTickStruct& curTS = _day_cache[barsList->_code];
 							strcpy(curTS.code, barsList->_code.c_str());
 							curTS.action_date = _cur_date;
@@ -1267,7 +1267,7 @@ void HisDataReplayer::simTicks(uint32_t uDate, uint32_t uTime, uint32_t endTDate
 							curTS.volume = nextBar.vol;
 							curTS.total_volume += nextBar.vol;
 
-							//更新开高低三个字段
+							//Update the three fields of open, high and low
 							if (decimal::eq(curTS.open, 0))
 								curTS.open = curTS.price;
 							curTS.high = max(curTS.price, curTS.high);
@@ -1322,7 +1322,7 @@ void HisDataReplayer::simTicks(uint32_t uDate, uint32_t uTime, uint32_t endTDate
 
 							WTSSessionInfo* sInfo = get_session_info(realCode.c_str(), true);
 							uint32_t curTime = sInfo->getCloseTime();
-							//开高低收
+							//Open, high, low, close
 							WTSTickStruct curTS;
 							strcpy(curTS.code, realCode.c_str());
 							curTS.action_date = _cur_date;
@@ -1375,7 +1375,7 @@ void HisDataReplayer::simTickWithUnsubBars(uint64_t stime, uint64_t nowTime, uin
 		BarsListPtr& barsList = (BarsListPtr&)item.second;
 		if (barsList->_period != KP_DAY)
 		{
-			//如果历史数据指标不在尾部, 说明是回测模式, 要继续回放历史数据
+			//If the historical data indicator is not at the end, it means it is in backtest mode and needs to continue to play back historical data
 			if (barsList->_bars.size() > barsList->_cursor)
 			{
 				for (;;)
@@ -1384,14 +1384,14 @@ void HisDataReplayer::simTickWithUnsubBars(uint64_t stime, uint64_t nowTime, uin
 
 					/*
 					 *	By Wesley @ 2023.05.05
-					 *	如果没有禁止0成交模拟tick，或者K线成交量不为0，就可以模拟tick
+					 *	If 0 transaction simulation tick is not prohibited, or the K-line transaction volume is not 0, the tick can be simulated
 					 */
 					bool bCanSim = !_nosim_if_notrade || !decimal::eq(nextBar.vol, 0.0);
 
 					uint64_t barTime = 199000000000 + nextBar.time;
 					if (barTime == nowTime && bCanSim)
 					{
-						//开高低收
+						//Open, high, low, close
 						WTSTickStruct& curTS = _day_cache[barsList->_code];
 						strcpy(curTS.code, barsList->_code.c_str());
 						curTS.action_date = _cur_date;
@@ -1409,7 +1409,7 @@ void HisDataReplayer::simTickWithUnsubBars(uint64_t stime, uint64_t nowTime, uin
 							newPx = nextBar.close;
 
 						curTS.price = newPx;
-						//更新开高低三个字段
+						//Update the three fields of open, high and low
 						if (decimal::eq(curTS.open, 0))
 							curTS.open = curTS.price;
 						curTS.high = max(curTS.price, curTS.high);
@@ -1459,7 +1459,7 @@ void HisDataReplayer::simTickWithUnsubBars(uint64_t stime, uint64_t nowTime, uin
 
 						WTSSessionInfo* sInfo = get_session_info(realCode.c_str(), true);
 						uint32_t curTime = sInfo->getOpenTime();
-						//开高低收
+						//Open, high, low, close
 						WTSTickStruct curTS;
 						strcpy(curTS.code, realCode.c_str());
 						curTS.action_date = _cur_date;
@@ -1477,7 +1477,7 @@ void HisDataReplayer::simTickWithUnsubBars(uint64_t stime, uint64_t nowTime, uin
 							newPx = nextBar.close;
 
 						curTS.price = newPx;
-						//更新开高低三个字段
+						//Update the three fields of open, high and low
 						if (decimal::eq(curTS.open, 0))
 							curTS.open = curTS.price;
 						curTS.high = max(curTS.price, curTS.high);
@@ -1529,13 +1529,13 @@ uint64_t HisDataReplayer::getNextTickTime(uint32_t curTDate, uint64_t stime /* =
 			if (stime == UINT64_MAX)
 			{
 				/*
-				 *	如果stime为UINT64_MAX
-				 *	则说明还没有初始化
-				 *	所以要确定第一笔是什么
+				 *	If stime is UINT64_MAX
+				 *	It means that it has not been initialized yet
+				 *	So we need to determine what the first one is
 				 */
 				for(tickList._cursor = 1; ; tickList._cursor++)
 				{
-					//如果时间一直不满足，则直接跳出循环
+					//If the time is not satisfied, just jump out of the loop
 					if(tickList._cursor > tickList._count)
 						break;
 
@@ -1572,17 +1572,17 @@ uint64_t HisDataReplayer::getNextTickTime(uint32_t curTDate, uint64_t stime /* =
 
 		uint32_t nextActionTime = tickList._items[tickList._cursor - 1].action_time;
 		//By Wesley @ 2022.03.06
-		//检查一下时间戳，如果不是交易时间的，就不回放了
+		//Check the timestamp, if it is not trading time, do not play back
 		uint32_t nextMinTime = nextActionTime / 100000;
 		/*
 		 *	By Wesley @ 2023.05.05
-		 *	这里做了一个调整，主要是针对小节中间出现的tick数据
-		 *	部分数据源可能会落地小节中间的数据，导致时间戳不在交易时间
-		 *	因此先判断时间戳是否超出收盘时间，如果超出也不回放tick了
-		 *	然后如果tick数据处于小节之间，但是不在交易时间，则指针一直步进
-		 *	这次修改主要针对Issue#104
+		 *	Here is an adjustment, mainly for the tick data that appears in the middle of the section
+		 *	Some data sources may land data in the middle of the section, resulting in timestamps not being in trading time
+		 *	Therefore, first determine whether the timestamp exceeds the closing time, and if it exceeds, do not play back the tick
+		 *	Then, if the tick data is between sections, but not in trading time, the pointer keeps stepping
+		 *	This modification is mainly for Issue#104
 		 */
-		//超过收盘时间就跳过了
+		//Skip if it exceeds the closing time
 		if(sInfo->offsetTime(nextMinTime, false) > sInfo->getCloseTime(true))
 			continue;
 
@@ -1750,7 +1750,7 @@ uint64_t HisDataReplayer::replayHftDatasByDay(uint32_t curTDate)
 	uint64_t total_ticks = 0;
 	for (;!_terminated;)
 	{
-		//先确定下一笔tick的时间
+		//First determine the time of the next tick
 		uint64_t nextTime = min(UINT64_MAX, getNextTickTime(curTDate));
 		nextTime = min(nextTime, getNextOrdDtlTime(curTDate));
 		nextTime = min(nextTime, getNextOrdQueTime(curTDate));
@@ -1761,23 +1761,23 @@ uint64_t HisDataReplayer::replayHftDatasByDay(uint32_t curTDate)
 
 		/*
 		 *	By Wesley @ 2022.03.06
-		 *	下面的回放逻辑，都改成先修改光标cursor，再触发回调
-		 *	这个逻辑也符合实盘情况
+		 *	The following playback logic is changed to first modify the cursor, and then trigger the callback
+		 *	This logic also conforms to the actual situation
 		 */
 
-		//再根据时间回放tick数据
+		//Then play back the tick data according to the time
 		_cur_date = (uint32_t)(nextTime / 1000000000);
 		_cur_time = nextTime % 1000000000 / 100000;
 		_cur_secs = nextTime % 100000;
 
-		//1、首先回放委托明细
+		//1. First play back the order details
 		for (auto& v : _orddtl_sub_map)
 		{
 			const char* stdCode = v.first.c_str();
 			auto& itemList = _orddtl_cache[stdCode];
 			//By Wesley @ 2022.03.06 
-			//这里加了一个数据的判断
-			//如果数据为空，则不再进行回放
+			//Added a data judgment here
+			//If the data is empty, no playback will be performed
 			if (itemList._items.empty() || itemList._cursor > itemList._count)
 				continue;
 
@@ -1796,14 +1796,14 @@ uint64_t HisDataReplayer::replayHftDatasByDay(uint32_t curTDate)
 			}
 		}
 
-		//2、其次再回放成交明细
+		//2. Then play back the transaction details
 		for (auto& v : _trans_sub_map)
 		{
 			const char* stdCode = v.first.c_str();
 			auto& itemList = _trans_cache[stdCode];
 			//By Wesley @ 2022.03.06 
-			//这里加了一个数据的判断
-			//如果数据为空，则不再进行回放
+			//Added a data judgment here
+			//If the data is empty, no playback will be performed
 			if (itemList._items.empty() || itemList._cursor > itemList._count)
 				continue;
 
@@ -1822,15 +1822,15 @@ uint64_t HisDataReplayer::replayHftDatasByDay(uint32_t curTDate)
 			}
 		}
 
-		//3、第三步再回放tick数据
+		//3. Thirdly, play back the tick data
 		for (auto& v : _tick_sub_map)
 		{
 			//std::string stdCode = v.first;
 			const char* stdCode = v.first.c_str();
 			HftDataList<WTSTickStruct>& tickList = _ticks_cache[stdCode];
 			//By Wesley @ 2022.03.06 
-			//这里加了一个数据的判断
-			//如果数据为空，则不再进行回放
+			//Added a data judgment here
+			//If the data is empty, no playback will be performed
 			if(tickList._items.empty() || tickList._cursor > tickList._count)
 				continue;
 
@@ -1850,14 +1850,14 @@ uint64_t HisDataReplayer::replayHftDatasByDay(uint32_t curTDate)
 			}
 		}
 		
-		//4、最后回放委托队列
+		//4. Finally, play back the order queue
 		for (auto& v : _ordque_sub_map)
 		{
 			const char* stdCode = v.first.c_str();
 			auto& itemList = _ordque_cache[stdCode];
 			//By Wesley @ 2022.03.06 
-			//这里加了一个数据的判断
-			//如果数据为空，则不再进行回放
+			//Added a data judgment here
+			//If the data is empty, no playback will be performed
 			if (itemList._items.empty() || itemList._cursor > itemList._count)
 				continue;
 
@@ -1900,7 +1900,7 @@ bool HisDataReplayer::replayHftDatas(uint64_t stime, uint64_t etime)
 		_cur_time = nextTime % 1000000000 / 100000;
 		_cur_secs = nextTime % 100000;
 		
-		//1、首先回放委托明细
+		//1. First play back the order details
 		for (auto& v : _orddtl_sub_map)
 		{
 			const char* stdCode = v.first.c_str();
@@ -1921,7 +1921,7 @@ bool HisDataReplayer::replayHftDatas(uint64_t stime, uint64_t etime)
 			}
 		}
 
-		//2、其次再回放成交明细
+		//2. Then play back the transaction details
 		for (auto& v : _trans_sub_map)
 		{
 			const char* stdCode = v.first.c_str();
@@ -1942,7 +1942,7 @@ bool HisDataReplayer::replayHftDatas(uint64_t stime, uint64_t etime)
 			}
 		}
 
-		//3、第三步再回放tick数据
+		//3. Thirdly, play back the tick data
 		for (auto& v : _tick_sub_map)
 		{
 			const char* stdCode = v.first.c_str();
@@ -1964,7 +1964,7 @@ bool HisDataReplayer::replayHftDatas(uint64_t stime, uint64_t etime)
 			}
 		}
 
-		//4、最后回放委托队列
+		//4. Finally, play back the order queue
 		for (auto& v : _ordque_sub_map)
 		{
 			const char* stdCode = v.first.c_str();
@@ -1991,7 +1991,7 @@ bool HisDataReplayer::replayHftDatas(uint64_t stime, uint64_t etime)
 
 void HisDataReplayer::onMinuteEnd(uint32_t uDate, uint32_t uTime, uint32_t endTDate /* = 0 */, bool tickSimulated /* = true */)
 {
-	//这里应该触发检查
+	//Check here
 	uint64_t nowTime = (uint64_t)uDate * 10000 + uTime;
 
 	for (auto it = _bars_cache.begin(); it != _bars_cache.end(); it++)
@@ -2112,7 +2112,7 @@ WTSKlineSlice* HisDataReplayer::get_kline_slice(const char* stdCode, const char*
 	}
 
 	//if(!_tick_enabled)
-	//不做判断,主要为了防止没有tick数据,而采用第二方案
+	//Do not make judgments, mainly to prevent the use of the second scheme if there is no tick data
 	{
 		if(_ticker_keys.find(stdCode) == _ticker_keys.end())
 			_ticker_keys[stdCode] = key;
@@ -2136,7 +2136,7 @@ WTSKlineSlice* HisDataReplayer::get_kline_slice(const char* stdCode, const char*
 		char lastCh = stdCode[len - 1];
 		if(lastCh == SUFFIX_HFQ || lastCh == SUFFIX_QFQ)
 		{
-			//如果是复权数据，则要把原始数据放到需要的列表中，最后再做检查
+			//If it is ex-right data, put the original data in the required list, and finally check again
 			std::string tickCode(stdCode, len - 1);
 			_unsubbed_in_need.insert(tickCode);
 		}
@@ -2175,7 +2175,7 @@ WTSKlineSlice* HisDataReplayer::get_kline_slice(const char* stdCode, const char*
 			{
 				/*
 				 *	By Wesley @ 2021.12.20
-				 *	先从extloader加载数据，如果加载不到，再走原来的历史数据存储引擎加载
+				 *	First load the data from extloader, if it cannot be loaded, then load it from the original historical data storage engine
 				 */
 				if(NULL != _bt_loader)
 					bHasHisData = cacheFinalBarsFromLoader(rawKey, stdCode, kp);
@@ -2202,7 +2202,7 @@ WTSKlineSlice* HisDataReplayer::get_kline_slice(const char* stdCode, const char*
 		{
 			/*
 			 *	By Wesley @ 2021.12.20
-			 *	先从extloader加载数据，如果加载不到，再走原来的历史数据存储引擎加载
+			 *	First load the data from extloader, if it cannot be loaded, then load it from the original historical data storage engine
 			 */
 			if (NULL != _bt_loader)
 			{
@@ -2279,7 +2279,7 @@ WTSKlineSlice* HisDataReplayer::get_kline_slice(const char* stdCode, const char*
 
 	if (kBlkPair->_cursor == UINT_MAX)
 	{
-		//还没有经过初始定位
+		//Not yet initially located
 		WTSBarStruct bar;
 		bar.date = _cur_tdate;
 		if(kp != KP_DAY)
@@ -2322,8 +2322,8 @@ WTSKlineSlice* HisDataReplayer::get_kline_slice(const char* stdCode, const char*
 
 				/*
 				 *	By Wesley @ 2022.11.04
-				 *	根据Issue#122，加了一个兜底的判断
-				 *	主要防止日线回测漏掉第一根bar
+				 *	Added a bottom-up judgment based on Issue#122
+				 *	Mainly to prevent the first bar from being missed in the daily line backtest
 				 */
 				if(eIdx == 0 && curBar.date > _cur_tdate)
 				{
@@ -2468,8 +2468,8 @@ WTSTickSlice* HisDataReplayer::get_tick_slice(const char* stdCode, uint32_t coun
 		}
 	}
 	
-	//cursor是下一笔tick的index+1，大于当前截止时间的
-	//所以要获取当前截止时间之前的最后一笔tick，需要-2
+	//cursor is the index+1 of the next tick, greater than the current end time
+	//So to get the last tick before the current end time, you need to -2
 	if (tickList._cursor < 2)
 		return NULL;
 	uint32_t eIdx = tickList._cursor - 2;
@@ -3105,17 +3105,17 @@ void HisDataReplayer::checkUnbars()
 {
 	for(const std::string& stdCode : _unsubbed_in_need)
 	{
-		//先检查是否已经在未订阅K线中
+		//First check whether it is already in the unsubscribed K-line
 		bool bHasBars = _codes_in_unsubbed.find(stdCode) != _codes_in_unsubbed.end();
 		if(bHasBars)
 			continue;
 
-		//再检查是否在已订阅K线中
+		//Then check whether it is in the subscribed K-line
 		bHasBars = _codes_in_subbed.find(stdCode) != _codes_in_subbed.end();
 		if (bHasBars)
 			continue;
 
-		//如果订阅了tick,但是没有对应的K线数据,则自动加载主K线周期的数据
+		//If the tick is subscribed, but there is no corresponding K-line data, the main K-line cycle data is automatically loaded
 		bool bHasHisData = false;
 		std::string key = fmt::format("{}#{}", stdCode, _main_period);
 
@@ -3137,8 +3137,8 @@ void HisDataReplayer::checkUnbars()
 
 		/*
 		 *	By Wesley @ 2021.12.20
-		 *	先从extloader加载最终的K线数据
-		 *	如果加载不到，再从配置的历史数据存储引擎加载数据
+		 *	First load the final K-line data from extloader
+		 *	If it cannot be loaded, then load the data from the configured historical data storage engine
 		 */
 		if (NULL != _bt_loader)
 		{
@@ -3166,7 +3166,7 @@ void HisDataReplayer::checkUnbars()
 
 		_codes_in_unsubbed.insert(stdCode);
 		
-		//还没有经过初始定位
+		//Not yet initially located
 		WTSBarStruct bar;
 		bar.date = _cur_tdate;
 		bar.time = (_cur_date - 19900000) * 10000 + _cur_time;
@@ -3247,7 +3247,7 @@ bool HisDataReplayer::cacheRawTicksFromBin(const std::string& key, const char* s
 
 	std::string content;
 	bool bHit = false;
-	//先检查有没有HOT、SND的主力次主力的tick文件
+	//First check if there are tick files for the main and secondary contracts of HOT and SND
 	const char* ruleTag = cInfo._ruletag;
 	if(strlen(ruleTag) > 0)
 	{
@@ -3258,12 +3258,12 @@ bool HisDataReplayer::cacheRawTicksFromBin(const std::string& key, const char* s
 		});
 	}
 
-	//如果没有找到，则读取分月合约
+	//If not found, read the monthly contract
 	if (!bHit)
 	{
 		/*
 		 *	By Wesley @ 2022.01.11
-		 *	这里将直接从文件读取，改成从HisDtMgr封装的接口加载
+		 *	Here, directly reading from the file is changed to loading from the HisDtMgr encapsulated interface
 		 */
 		bHit = _his_dt_mgr.load_raw_ticks(cInfo._exchg, rawCode.c_str(), uDate, [&content](std::string& data) {
 			content.swap(data);
@@ -3418,7 +3418,7 @@ bool HisDataReplayer::cacheRawTicksFromCSV(const std::string& key, const char* s
 	std::string filename = ss.str();
 	if (StdFile::exists(filename.c_str()))
 	{
-		//如果有格式化的历史数据文件, 则直接读取
+		//If there is a formatted historical data file, read it directly
 		WTSLogger::info("Reading data from {}...", filename);
 		std::string content;
 		StdFile::read_file_content(filename.c_str(), content);
@@ -3447,9 +3447,9 @@ bool HisDataReplayer::cacheRawTicksFromCSV(const std::string& key, const char* s
 
 		/*
 		 *	By Wesley @ 2023.05.18
-		 *	回测的tick数据不再支持从csv读取，因为tick数据维度更多，有处理csv的时间，直接生成dsb了
+		 *	Tick data for backtesting no longer supports reading from csv, because tick data has more dimensions, and it is better to directly generate dsb with the time to process csv
 		 */
-		//如果没有格式化的历史数据文件, 则从csv加载
+		//If there is no formatted historical data file, load it from csv
 		//std::stringstream ss;
 		//ss << _base_dir << "csv/ticks/" << stdCode << "_tick_" << uDate << ".csv";
 		//std::string csvfile = ss.str();
@@ -3476,14 +3476,14 @@ bool HisDataReplayer::cacheRawTicksFromCSV(const std::string& key, const char* s
 		//	if (strlen(buffer) == 0)
 		//		continue;
 
-		//	//跳过头部
+		//	//Skip the header
 		//	if (!headerskipped)
 		//	{
 		//		headerskipped = true;
 		//		continue;
 		//	}
 
-		//	//逐行读取
+		//	//Read line by line
 		//	StringVector ay = StrUtil::split(buffer, ",");
 		//	WTSTickStruct ticks;
 		//	ticks.action_date = strToDate(ay[0].c_str());
@@ -3503,7 +3503,7 @@ bool HisDataReplayer::cacheRawTicksFromCSV(const std::string& key, const char* s
 
 		/*
 		 *	By Wesley @ 2021.12.14
-		 *	这一段之前有bug，之前没有把文件头写到文件里，所以转储的dsb解析的时候会抛出异常
+		 *	This section had a bug before, the file header was not written to the file before, so the dsb of the transfer will throw an exception when parsing
 		 */
 		//std::string content;
 		//content.resize(sizeof(HisTickBlockV2));
@@ -3560,7 +3560,7 @@ bool HisDataReplayer::cacheFinalBarsFromLoader(const std::string& key, const cha
 	}
 	else if (cInfo.isExright() && commInfo->isStock())
 	{
-		//复权数据，采用SSE.600000+.dsb这样的文件名
+		//Ex-right data, using file names like SSE.600000+.dsb
 		ss << cInfo._exchg << "." << cInfo._code << (cInfo._exright == 1 ? SUFFIX_QFQ : SUFFIX_HFQ) << ".dsb";
 	}
 	else
@@ -3570,7 +3570,7 @@ bool HisDataReplayer::cacheFinalBarsFromLoader(const std::string& key, const cha
 	bool bHit = false;
 	if(_bt_loader->isAutoTrans() && StdFile::exists(filename.c_str()))
 	{
-		//如果支持自动转储，则先读取已经转储的dsb文件
+		//If automatic transfer is supported, read the already transferred dsb file first
 		std::string content;
 		StdFile::read_file_content(filename.c_str(), content);
 		if (content.size() < sizeof(HisKlineBlockV2))
@@ -3606,7 +3606,7 @@ bool HisDataReplayer::cacheFinalBarsFromLoader(const std::string& key, const cha
 
 	if(!bHit)
 	{
-		//如果没有转储的历史数据文件, 则从csv加载
+		//If there is no transferred historical data file, load it from csv
 		WTSLogger::log_raw(LL_INFO, "Reading data via extended loader...");
 
 		if (bSubbed)
@@ -3650,7 +3650,7 @@ bool HisDataReplayer::cacheFinalBarsFromLoader(const std::string& key, const cha
 
 			/*
 			 *	By Wesley @ 2021.12.14
-			 *	这一段之前有bug，之前没有把文件头写到文件里，所以转储的dsb解析的时候会抛出异常
+			 *	This section had a bug before, the file header was not written to the file before, so the dsb of the transfer will throw an exception when parsing
 			 */
 			std::string content;
 			content.resize(sizeof(HisKlineBlockV2));
@@ -3692,7 +3692,7 @@ bool HisDataReplayer::cacheRawBarsFromCSV(const std::string& key, const char* st
 	std::stringstream ss;
 	ss << _base_dir << "his/" << dirname << "/" << cInfo._exchg << "/";
 
-	//这里自动创建，是因为后面转储需要
+	//Automatically create here, because it is needed for subsequent transfer
 	if (!StdFile::exists(ss.str().c_str()))
 		boost::filesystem::create_directories(ss.str().c_str());
 
@@ -3708,7 +3708,7 @@ bool HisDataReplayer::cacheRawBarsFromCSV(const std::string& key, const char* st
 	}
 	else if (cInfo.isExright() && commInfo->isStock())
 	{
-		//复权数据，采用SSE.600000+.dsb这样的文件名
+		//Ex-right data, using file names like SSE.600000+.dsb
 		ss << cInfo._exchg << "." << cInfo._code << (cInfo._exright == 1 ? SUFFIX_QFQ : SUFFIX_HFQ) << ".dsb";
 	}
 	else
@@ -3716,7 +3716,7 @@ bool HisDataReplayer::cacheRawBarsFromCSV(const std::string& key, const char* st
 	std::string filename = ss.str();
 	if (StdFile::exists(filename.c_str()))
 	{
-		//如果有格式化的历史数据文件, 则直接读取
+		//If there is a formatted historical data file, read it directly
 		std::string content;
 		StdFile::read_file_content(filename.c_str(), content);
 		if (content.size() < sizeof(HisKlineBlockV2))
@@ -3726,7 +3726,7 @@ bool HisDataReplayer::cacheRawBarsFromCSV(const std::string& key, const char* st
 		}
 
 		//By Wesley @ 2021.12.30
-		//转储的数据不做检查，直接重新生成即可
+		//The transferred data is not checked, just regenerate it directly
 		proc_block_data(filename.c_str(), content, true, false);
 		uint32_t barcnt = content.size() / sizeof(WTSBarStruct);
 
@@ -3750,7 +3750,7 @@ bool HisDataReplayer::cacheRawBarsFromCSV(const std::string& key, const char* st
 	}
 	else
 	{
-		//如果没有格式化的历史数据文件, 则从csv加载
+		//If there is no formatted historical data file, load it from csv
 		std::stringstream ss;
 		ss << _base_dir << "csv/" << stdCode << "_" << p_suffix << ".csv";
 		std::string csvfile = ss.str();
@@ -3776,7 +3776,7 @@ bool HisDataReplayer::cacheRawBarsFromCSV(const std::string& key, const char* st
 		barsList->_period = period;
 		while (reader.next_row())
 		{
-			//逐行读取
+			//Read line by line
 			WTSBarStruct bs;
 			bs.date = strToDate(reader.get_string("date"));
 			if (period != KP_DAY)
@@ -3814,7 +3814,7 @@ bool HisDataReplayer::cacheRawBarsFromCSV(const std::string& key, const char* st
 
 		/*
 		 *	By Wesley @ 2021.12.14
-		 *	这一段之前有bug，之前没有把文件头写到文件里，所以转储的dsb解析的时候会抛出异常
+		 *	This section had a bug before, the file header was not written to the file before, so the dsb of the transfer will throw an exception when parsing
 		 */
 		std::string content;
 		content.resize(sizeof(HisKlineBlockV2));
@@ -3874,11 +3874,11 @@ bool HisDataReplayer::cacheIntegratedFutBarsFromBin(void* codeInfo, const std::s
 	{
 		/*
 		 *	By Wesley @ 2021.12.20
-		 *	本来这里是要先调用_loader->loadRawHisBars从外部加载器读取主力合约数据的
-		 *	但是上层会调用一次loadFinalHisBars，这里再调用loadRawHisBars就冗余了，所以直接跳过
+		 *	Originally, the _loader->loadRawHisBars was called to read the main contract data from the external loader
+		 *	But the upper layer will call loadFinalHisBars once, and it is redundant to call loadRawHisBars here, so just skip it
 		 *
 		 *	@ 2022.01.11
-		 *	将直接从文件读取，改成从HisDtMgr读取
+		 *	Change direct file reading to reading from the HisDtMgr interface
 		 */
 		std::string content;
 		std::string wrappCode = StrUtil::printf("%s.%s_%s", cInfo->_exchg, cInfo->_product, ruleTag);
@@ -3948,7 +3948,7 @@ bool HisDataReplayer::cacheIntegratedFutBarsFromBin(void* codeInfo, const std::s
 		uint32_t rightDt = hotSec._e_date;
 		uint32_t leftDt = hotSec._s_date;
 
-		//要先将日期转换为边界时间
+		//First convert the date to boundary time
 		WTSBarStruct sBar, eBar;
 		if (period != KP_DAY)
 		{
@@ -3958,7 +3958,7 @@ bool HisDataReplayer::cacheIntegratedFutBarsFromBin(void* codeInfo, const std::s
 			sBar.date = leftDt;
 			sBar.time = ((uint32_t)(sTime / 10000) - 19900000) * 10000 + (uint32_t)(sTime % 10000);
 
-			if (sBar.time < lastHotTime)	//如果边界时间小于主力的最后一根Bar的时间, 说明已经有交叉了, 则不需要再处理了
+			if (sBar.time < lastHotTime)	//If the boundary time is less than the time of the last bar of the main force, it means that there is already an intersection, so there is no need to deal with it
 			{
 				bAllCovered = true;
 				sBar.time = lastHotTime + 1;
@@ -3967,13 +3967,13 @@ bool HisDataReplayer::cacheIntegratedFutBarsFromBin(void* codeInfo, const std::s
 			eBar.date = rightDt;
 			eBar.time = ((uint32_t)(eTime / 10000) - 19900000) * 10000 + (uint32_t)(eTime % 10000);
 
-			if (eBar.time <= lastHotTime)	//右边界时间小于最后一条Hot时间, 说明全部交叉了, 没有再找的必要了
+			if (eBar.time <= lastHotTime)	//The right boundary time is less than the last hot time, indicating that all intersections are crossed, and there is no need to find it again
 				break;
 		}
 		else
 		{
 			sBar.date = leftDt;
-			if (sBar.date < lastHotTime)	//如果边界时间小于主力的最后一根Bar的时间, 说明已经有交叉了, 则不需要再处理了
+			if (sBar.date < lastHotTime)	//If the boundary time is less than the time of the last bar of the main force, it means that there is already an intersection, so there is no need to deal with it
 			{
 				bAllCovered = true;
 				sBar.date = (uint32_t)lastHotTime + 1;
@@ -3987,14 +3987,14 @@ bool HisDataReplayer::cacheIntegratedFutBarsFromBin(void* codeInfo, const std::s
 
 		/*
 		 *	By Wesley @ 2021.12.20
-		 *	先从extloader读取分月合约的K线数据
-		 *	如果没有读到，再从文件读取
+		 *	First read the K-line data of the monthly contract from extloader
+		 *	If it is not read, read it from the file
 		 */
 		bool bLoaded = false;
 		std::string buffer;
 		if (NULL != _bt_loader)
 		{
-			//分月合约代码
+			//Monthly contract code
 			std::string wCode = StrUtil::printf("%s.%s.%s", cInfo->_exchg, cInfo->_product, (char*)curCode + strlen(cInfo->_product));
 			bLoaded = _bt_loader->loadRawHisBars(&buffer, wCode.c_str(), period, [](void* obj, WTSBarStruct* bars, uint32_t count) {
 				std::string* buff = (std::string*)obj;
@@ -4036,9 +4036,9 @@ bool HisDataReplayer::cacheIntegratedFutBarsFromBin(void* codeInfo, const std::s
 		});
 
 		std::size_t sIdx = pBar - firstBar;
-		if ((period == KP_DAY && pBar->date < sBar.date) || (period != KP_DAY && pBar->time < sBar.time))	//早于边界时间
+		if ((period == KP_DAY && pBar->date < sBar.date) || (period != KP_DAY && pBar->time < sBar.time))	//Earlier than boundary time
 		{
-			//早于边界时间, 说明没有数据了, 因为lower_bound会返回大于等于目标位置的数据
+			//Earlier than the boundary time, it means that there is no data, because lower_bound will return data greater than or equal to the target position
 			continue;
 		}
 
@@ -4135,7 +4135,7 @@ const HisDataReplayer::AdjFactorList& HisDataReplayer::getAdjFactors(const char*
 	if (it == _adj_factors.end())
 	{
 		//By Wesley @ 2021.12.21
-		//如果没有复权因子，就从extloader按需读一次
+		//If there is no adjustment factor, read it once on demand from extloader
 		if (_bt_loader)
 		{
             WTSLogger::info("No adjusting factors of {} cached, searching via extented loader...", key);
@@ -4152,7 +4152,7 @@ const HisDataReplayer::AdjFactorList& HisDataReplayer::getAdjFactors(const char*
 					fctrLst.emplace_back(adjFact);
 				}
 
-				//一定要把第一条加进去，不然如果是前复权的话，可能会漏处理最早的数据
+				//Be sure to add the first one, otherwise if it is pre-rights, the earliest data may be missed
 				AdjFactor adjFact;
 				adjFact._date = 19900101;
 				adjFact._factor = 1;
@@ -4195,15 +4195,15 @@ bool HisDataReplayer::cacheAdjustedStkBarsFromBin(void* codeInfo, const std::str
 	WTSLogger::info("Loading adjusted bars of {}...", stdCode);
 	do
 	{
-		//先直接读取复权过的历史数据,路径如/his/day/sse/SH600000Q.dsb
+		//First directly read the adjusted historical data, the path is like /his/day/sse/SH600000Q.dsb
 
 		/*
 		 *	By Wesley @ 2021.12.20
-		 *	本来这里是要先调用_loader->loadRawHisBars从外部加载器读取主力合约数据的
-		 *	但是上层会调用一次loadFinalHisBars，这里再调用loadRawHisBars就冗余了，所以直接跳过
+		 *	Originally, the _loader->loadRawHisBars was called to read the main contract data from the external loader
+		 *	But the upper layer will call loadFinalHisBars once, and it is redundant to call loadRawHisBars here, so just skip it
 		 *	
 		 *	@ 2022.01.11
-		 *	这里将文件读取改为从HisDtMgr封装的接口读取
+		 *	Change direct file reading to reading from the HisDtMgr interface
 		 */
 		std::string wrappCode = fmt::format("{}{}", cInfo->_code, (cInfo->_exright == 1 ? SUFFIX_QFQ : SUFFIX_HFQ));
 		std::string content;
@@ -4238,7 +4238,7 @@ bool HisDataReplayer::cacheAdjustedStkBarsFromBin(void* codeInfo, const std::str
 	{
 		const char* curCode = cInfo->_code;
 
-		//要先将日期转换为边界时间
+		//First convert the date to boundary time
 		WTSBarStruct sBar;
 		if (period != KP_DAY)
 		{
@@ -4253,8 +4253,8 @@ bool HisDataReplayer::cacheAdjustedStkBarsFromBin(void* codeInfo, const std::str
 
 		/*
 		 *	By Wesley @ 2021.12.20
-		 *	先从extloader读取未复权K线数据
-		 *	如果没有读到，再从文件读取
+		 *	First read the unadjusted K-line data from extloader
+		 *	If it is not read, read it from the file
 		 */
 		bool bLoaded = false;
 		std::string buffer;
@@ -4275,7 +4275,7 @@ bool HisDataReplayer::cacheAdjustedStkBarsFromBin(void* codeInfo, const std::str
 		{
 			/*
 			 *	By Wesley @ 2022.01.11
-			 *	这里将文件读取改为从HisDtMgr封装的接口读取
+			 *	Change direct file reading to reading from the HisDtMgr interface
 			 */
 			bLoaded = _his_dt_mgr.load_raw_bars(cInfo->_exchg, curCode, period, [&buffer](std::string& data) {
 				buffer.swap(data);
@@ -4319,14 +4319,14 @@ bool HisDataReplayer::cacheAdjustedStkBarsFromBin(void* codeInfo, const std::str
 			if (!ayFactors.empty())
 			{
 				WTSLogger::info("Adjusting bars of {} with adjusting factors...", stdCode);
-				//做复权处理
+				//Do the right adjustment
 				std::size_t lastIdx = curCnt;
 				WTSBarStruct bar;
 				firstBar = tempAy->data();
 
-				//根据复权类型确定基础因子
-				//如果是前复权，则历史数据会变小，以最后一个复权因子为基础因子
-				//如果是后复权，则新数据会变大，基础因子为1
+				//Determine the base factor according to the type of rights adjustment
+				//If it is pre-rights, the historical data will become smaller, and the last adjustment factor will be used as the base factor
+				//If it is post-rights, the new data will become larger, and the base factor is 1
 				double baseFactor = 1.0;
 				if (cInfo->_exright == 1)
 					baseFactor = ayFactors.back()._factor;
@@ -4338,7 +4338,7 @@ bool HisDataReplayer::cacheAdjustedStkBarsFromBin(void* codeInfo, const std::str
 					const AdjFactor& adjFact = *it;
 					bar.date = adjFact._date;
 
-					//调整因子
+					//Adjustment factor
 					double factor = adjFact._factor / baseFactor;
 
 					WTSBarStruct* pBar = NULL;
@@ -4444,11 +4444,11 @@ bool HisDataReplayer::cacheRawBarsFromBin(const std::string& key, const char* st
 
 	uint32_t realCnt = 0;
 	const char* ruleTag = cInfo._ruletag;
-	if (strlen(ruleTag) > 0)//如果是读取期货主力连续数据
+	if (strlen(ruleTag) > 0)//If it is to read the main continuous data of futures
 	{
 		return cacheIntegratedFutBarsFromBin(&cInfo, key, stdCode, period, bSubbed);
 	}
-	else if (cInfo.isExright() && commInfo->isStock())//如果是读取股票复权数据
+	else if (cInfo.isExright() && commInfo->isStock())//If it is to read the adjusted data of stocks
 	{
 		return cacheAdjustedStkBarsFromBin(&cInfo, key, stdCode, period, bSubbed);
 	}
@@ -4456,8 +4456,8 @@ bool HisDataReplayer::cacheRawBarsFromBin(const std::string& key, const char* st
 
 	/*
 	 *	By Wesley @ 2021.12.20
-	 *	先从extloader读取
-	 *	如果没有读到，再从文件读取
+	 *	First read from extloader
+	 *	If it is not read, read it from the file
 	 */
 	bool bLoaded = false;
 	std::string buffer;
@@ -4472,13 +4472,13 @@ bool HisDataReplayer::cacheRawBarsFromBin(const std::string& key, const char* st
 
 	if(!bLoaded)
 	{
-		//读取历史的
+		//Read historical
 		//std::stringstream ss;
 		//ss << _base_dir << "his/" << pname << "/" << cInfo._exchg << "/" << cInfo._code << ".dsb";
 		//std::string filename = ss.str();
 		//if (StdFile::exists(filename.c_str()))
 		//{
-		//	//如果有格式化的历史数据文件, 则直接读取
+		//	//If there is a formatted historical data file, read it directly
 		//	std::string content;
 		//	StdFile::read_file_content(filename.c_str(), content);
 		//	if (content.size() < sizeof(HisKlineBlock))
@@ -4490,6 +4490,7 @@ bool HisDataReplayer::cacheRawBarsFromBin(const std::string& key, const char* st
 		//	proc_block_data(filename.c_str(), content, true, false);
 		//	buffer.swap(content);
 		//}
+
 		bLoaded = _his_dt_mgr.load_raw_bars(cInfo._exchg, cInfo._code, period, [&buffer](std::string& data) {
 			buffer.swap(data);
 		});

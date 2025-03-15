@@ -45,6 +45,7 @@ add_subdirectory(WTSUtils)
 add_subdirectory(WTSTools)
 add_subdirectory(WtMsgQue)
 add_subdirectory(WtCore)
+add_subdirectory(WtBtCore)
 
 # uft engine
 # add_subdirectory(WtUftCore)
@@ -73,8 +74,6 @@ add_subdirectory(WtCore)
 # #quote date processor
 # ADD_SUBDIRECTORY(QuoteFactory)
 
-# #back test core library
-# ADD_SUBDIRECTORY(WtBtCore)
 # #back test c porter for outter libraries
 # ADD_SUBDIRECTORY(WtBtPorter)
 # ADD_SUBDIRECTORY(WtBtRunner)

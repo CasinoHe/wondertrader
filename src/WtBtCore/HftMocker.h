@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file HftMocker.h
  * \project	WonderTrader
  *

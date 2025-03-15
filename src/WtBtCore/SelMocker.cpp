@@ -1,4 +1,4 @@
-﻿/*!
+/*!
 * \file MfMocker.cpp
 * \project	WonderTrader
 *

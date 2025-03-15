@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file ExecMocker.h
  * \project	WonderTrader
  *

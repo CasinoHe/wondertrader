@@ -1,4 +1,4 @@
-﻿#include "MatchEngine.h"
+#include "MatchEngine.h"
 #include "../Includes/WTSDataDef.hpp"
 #include "../Includes/WTSVariant.hpp"
 

@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file CtaMocker.cpp
  * \project	WonderTrader
  *

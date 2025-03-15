@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file HisDataReplayer.h
  * \project	WonderTrader
  *

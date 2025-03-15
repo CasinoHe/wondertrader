@@ -4,3 +4,5 @@ dist/*
 .vs
 *.code-workspace
 build
+
+convert_to_utf8.py

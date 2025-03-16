@@ -91,9 +91,9 @@ add_subdirectory(WtShareHelper)
 # ADD_SUBDIRECTORY(WtExeFact)
 # ADD_SUBDIRECTORY(WtRiskMonFact)
 
-# ADD_SUBDIRECTORY(WtPorter)
+add_subdirectory(WtPorter)
 # ADD_SUBDIRECTORY(WtExecMon)
-# ADD_SUBDIRECTORY(WtRunner)
+add_subdirectory(WtRunner)
 
 # #uft
 # ADD_SUBDIRECTORY(WtUftStraFact)

@@ -32,7 +32,7 @@ void MatchEngine::fire_orders(const char* stdCode, OrderIDs& to_erase)
 		uint32_t localid = v.first;
 		OrderInfo& ordInfo = (OrderInfo&)v.second;
 
-		if (ordInfo._state == 0)	//需要激活
+		if (ordInfo._state == 0)	//需要激活 to activate
 		{
 			_sink->handle_entrust(localid, stdCode, true, "", ordInfo._time);
 			_sink->handle_order(localid, stdCode, ordInfo._buy, ordInfo._left, ordInfo._limit, false, ordInfo._time);
@@ -51,7 +51,7 @@ void MatchEngine::match_orders(WTSTickData* curTick, OrderIDs& to_erase)
 		uint32_t localid = v.first;
 		OrderInfo& ordInfo = (OrderInfo&)v.second;
 
-		if (ordInfo._state == 9)//要撤单
+		if (ordInfo._state == 9)//要撤单cancel order
 		{
 			_sink->handle_order(localid, ordInfo._code, ordInfo._buy, 0, ordInfo._limit, true, ordInfo._time);
 			ordInfo._state = 99;
@@ -71,7 +71,7 @@ void MatchEngine::match_orders(WTSTickData* curTick, OrderIDs& to_erase)
 			double price;
 			double volume;
 
-			//主动订单就按照对手价
+			//主动订单就按照对手价er follows the counterparty price
 			if (ordInfo._positive)
 			{
 				price = curTick->askprice(0);
@@ -85,12 +85,12 @@ void MatchEngine::match_orders(WTSTickData* curTick, OrderIDs& to_erase)
 
 			if (decimal::le(price, ordInfo._limit))
 			{
-				//如果价格相等,需要先看排队位置,如果价格不等说明已经全部被大单吃掉了
+				//如果价格相等,需要先看排队位置,如果价格不等说明已经全部被大单吃掉了 queue position first. If the prices are not equal, it means they have been fully consumed by large orders.
 				if (!ordInfo._positive && decimal::eq(price, ordInfo._limit))
 				{
 					double& quepos = ordInfo._queue;
 
-					//如果成交量小于排队位置,则不能成交
+					//如果成交量小于排队位置,则不能成交lume is less than the queue position, it cannot be traded
 					if (volume <= quepos)
 					{
 						quepos -= volume;
@@ -98,7 +98,7 @@ void MatchEngine::match_orders(WTSTickData* curTick, OrderIDs& to_erase)
 					}
 					else if (quepos != 0)
 					{
-						//如果成交量大于排队位置,则可以成交
+						//如果成交量大于排队位置,则可以成交lume is greater than the queue position, it can be traded
 						volume -= quepos;
 						quepos = 0;
 					}
@@ -129,7 +129,7 @@ void MatchEngine::match_orders(WTSTickData* curTick, OrderIDs& to_erase)
 			double price;
 			double volume;
 
-			//主动订单就按照对手价
+			//主动订单就按照对手价er follows the counterparty price
 			if (ordInfo._positive)
 			{
 				price = curTick->bidprice(0);
@@ -143,12 +143,12 @@ void MatchEngine::match_orders(WTSTickData* curTick, OrderIDs& to_erase)
 
 			if (decimal::ge(price, ordInfo._limit))
 			{
-				//如果价格相等,需要先看排队位置,如果价格不等说明已经全部被大单吃掉了
+				//如果价格相等,需要先看排队位置,如果价格不等说明已经全部被大单吃掉了 queue position first. If the prices are not equal, it means they have been fully consumed by large orders.
 				if (!ordInfo._positive && decimal::eq(price, ordInfo._limit))
 				{
 					double& quepos = ordInfo._queue;
 
-					//如果成交量小于排队位置,则不能成交
+					//如果成交量小于排队位置,则不能成交lume is less than the queue position, it cannot be traded
 					if (volume <= quepos)
 					{
 						quepos -= volume;
@@ -156,7 +156,7 @@ void MatchEngine::match_orders(WTSTickData* curTick, OrderIDs& to_erase)
 					}
 					else if (quepos != 0)
 					{
-						//如果成交量大于排队位置,则可以成交
+						//如果成交量大于排队位置,则可以成交lume is greater than the queue position, it can be traded
 						volume -= quepos;
 						quepos = 0;
 					}
@@ -211,7 +211,7 @@ void MatchEngine::update_lob(WTSTickData* curTick)
 		}
 	}
 
-	//卖一和买一之间的报价必须全部清除掉
+	//卖一和买一之间的报价必须全部清除掉n the best ask and best bid must be cleared
 	if (!curBook._items.empty())
 	{
 		auto sit = curBook._items.lower_bound(curBook._bid_px);
@@ -241,8 +241,8 @@ OrderIDs MatchEngine::buy(const char* stdCode, double price, double qty, uint64_
 	ordInfo._left = qty;
 	ordInfo._price = lastTick->price();
 
-	//订单排队,如果是对手价,则按照对手价的挂单量来排队
-	//如果是最新价,则按照买一卖一的加权平均
+	//订单排队,如果是对手价,则按照对手价的挂单量来排队he counterparty price, queue according to the counterparty's order volume
+	//如果是最新价,则按照买一卖一的加权平均 price, queue according to the weighted average of the best bid and best ask
 	if (decimal::ge(price, lastTick->askprice(0)))
 		ordInfo._positive = true;
 	else if (decimal::eq(price, lastTick->bidprice(0)))
@@ -250,7 +250,7 @@ OrderIDs MatchEngine::buy(const char* stdCode, double price, double qty, uint64_
 	if (decimal::eq(price, lastTick->price()))
 		ordInfo._queue = (uint32_t)round((lastTick->askqty(0)*lastTick->askprice(0) + lastTick->bidqty(0)*lastTick->bidprice(0)) / (lastTick->askprice(0) + lastTick->bidprice(0)));
 
-	//排队位置按照平均撤单率,撤销掉部分
+	//排队位置按照平均撤单率,撤销掉部分 partially canceled according to the average cancellation rate
 	ordInfo._queue -= (uint32_t)round(ordInfo._queue*_cancelrate);
 	ordInfo._time = curTime;
 
@@ -276,8 +276,8 @@ OrderIDs MatchEngine::sell(const char* stdCode, double price, double qty, uint64
 	ordInfo._left = qty;
 	ordInfo._price = lastTick->price();
 
-	//订单排队,如果是对手价,则按照对手价的挂单量来排队
-	//如果是最新价,则按照买一卖一的加权平均
+	//订单排队,如果是对手价,则按照对手价的挂单量来排队he counterparty price, queue according to the counterparty's order volume
+	//如果是最新价,则按照买一卖一的加权平均 price, queue according to the weighted average of the best bid and best ask
 	if (decimal::eq(price, lastTick->askprice(0)))
 		ordInfo._queue = lastTick->askqty(0);
 	else if (decimal::le(price, lastTick->bidprice(0)))
@@ -350,10 +350,10 @@ void MatchEngine::handle_tick(const char* stdCode, WTSTickData* curTick)
 	update_lob(curTick);
 
 	OrderIDs to_erase;
-	//检查订单状态
+	//检查订单状态order status
 	fire_orders(stdCode, to_erase);
 
-	//撮合
+	//撮合tch orders
 	match_orders(curTick, to_erase);
 
 	for (uint32_t localid : to_erase)

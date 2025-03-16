@@ -47,9 +47,9 @@ bool EventNotifier::init(WTSVariant* cfg)
 
 	m_strURL = cfg->getCString("url");
 	std::string module = DLLHelper::wrap_module("WtMsgQue", "lib");
-	//先看工作目录下是否有对应模块
+	/*First check if there is a corresponding module in the working directory*/f the corresponding module is in the working directory
 	std::string dllpath = WtHelper::getCWD() + module;
-	//如果没有,则再看模块目录,即dll同目录下
+	/*If not, then look at the module directory, that is, under the same directory as dll*/e module directory, i.e., the same directory as the dll
 	if (!StdFile::exists(dllpath.c_str()))
 		dllpath = WtHelper::getInstDir() + module;
 
@@ -72,10 +72,10 @@ bool EventNotifier::init(WTSVariant* cfg)
 	_publisher = (FundPublishMessage)DLLHelper::get_symbol(dllInst, "publish_message");
 	_register = (FuncRegCallbacks)DLLHelper::get_symbol(dllInst, "regiter_callbacks");
 
-	//注册回调函数
+	/*Register callback function*/er callback function
 	_register(on_mq_log);
 	
-	//创建一个MQServer
+	/*Create a MQServer*/Server
 	_mq_sid = _creator(m_strURL.c_str(), true);
 
 	WTSLogger::info("EventNotifier initialized with channel {}", m_strURL.c_str());

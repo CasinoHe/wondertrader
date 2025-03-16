@@ -116,7 +116,7 @@ public:
 	virtual WTSTickData* stra_get_last_tick(const char* stdCode) override;
 
 	/*
-	 *	获取分月合约代码
+	 *	Get the code of the monthly contract
 	 */
 	virtual std::string		stra_get_rawcode(const char* stdCode) override;
 
@@ -188,7 +188,7 @@ private:
 
 	bool			_use_newpx;
 	uint32_t		_error_rate;
-	bool			_match_this_tick;	//是否在当前tick撮合
+	bool			_match_this_tick;	//Whether to match at the current tick
 
 	typedef wt_hashmap<std::string, double> PriceMap;
 	PriceMap		_price_map;
@@ -234,7 +234,7 @@ private:
 		
 		uint32_t	_localid;
 
-		bool	_proced_after_placed;	//下单后是否处理过			
+		bool	_proced_after_placed;	//Whether it has been processed after placing an order			
 
 		_OrderInfo()
 		{
@@ -261,7 +261,7 @@ private:
 	typedef WTSHashMap<std::string> CommodityMap;
 	CommodityMap*	_commodities;
 
-	//用户数据
+	//User data
 	typedef wt_hashmap<std::string, std::string> StringHashMap;
 	StringHashMap	_user_datas;
 	bool			_ud_modified;
@@ -331,11 +331,11 @@ protected:
 
 	StdUniqueMutex	_mtx_calc;
 	StdCondVariable	_cond_calc;
-	bool			_has_hook;		//这是人为控制是否启用钩子
-	bool			_hook_valid;	//这是根据是否是异步回测模式而确定钩子是否可用
-	std::atomic<bool>	_resumed;	//临时变量，用于控制状态
+	bool			_has_hook;		//This is manually controlled to enable or disable the hook
+	bool			_hook_valid;	//This is determined by whether it is an asynchronous backtest mode
+	std::atomic<bool>	_resumed;	//Temporary variable to control state
 
-	//tick订阅列表
+	//Tick subscription list
 	wt_hashset<std::string> _tick_subs;
 
 	typedef WTSHashMap<std::string>	TickCache;

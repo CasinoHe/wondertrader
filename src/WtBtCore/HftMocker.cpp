@@ -352,8 +352,8 @@ void HftMocker::on_tick(const char* stdCode, WTSTickData* newTick)
 	OrderIDs all_ids;
 	for (auto it = _orders.begin(); it != _orders.end(); it++)
 		all_ids.push_back(it->first);
-	//如果开启了同tick撮合，则先触发策略的ontick，再处理订单
-	//如果没开启同tick撮合，则先处理订单，再触发策略的ontick
+	// If the same tick matching is enabled, trigger the strategy's ontick first, then process the order
+	// If the same tick matching is not enabled, process the order first, then trigger the strategy's ontick
 	if (_match_this_tick)
 	{
 		if (_has_hook && _hook_valid)
@@ -484,7 +484,7 @@ void HftMocker::on_init()
 
 void HftMocker::on_session_begin(uint32_t curTDate)
 {
-	//每个交易日开始，要把冻结持仓置零
+	// At the beginning of each trading day, the frozen position should be set to zero
 	for (auto& it : _pos_map)
 	{
 		const char* stdCode = it.first.c_str();
@@ -626,7 +626,7 @@ OrderIDs HftMocker::stra_buy(const char* stdCode, double price, double qty, cons
 
 	postTask([this, localid](){
 		const OrderInfoPtr& ordInfo = _orders[localid];
-		on_entrust(localid, ordInfo->_code, true, "下单成功", ordInfo->_usertag);
+		on_entrust(localid, ordInfo->_code, true, "Order placed successfully", ordInfo->_usertag);
 	});
 
 	OrderIDs ids;
@@ -704,7 +704,7 @@ bool HftMocker::procOrder(uint32_t localid)
 
 	OrderInfoPtr ordInfo = it->second;
 
-	//第一步,如果在撤单概率中,则执行撤单
+	// First step, if within the cancellation probability, execute the cancellation
 	if(_error_rate>0 && genRand(10000)<=_error_rate)
 	{
 		on_order(localid, ordInfo->_code, ordInfo->_isBuy, ordInfo->_total, ordInfo->_left, ordInfo->_price, true, ordInfo->_usertag);
@@ -713,7 +713,7 @@ bool HftMocker::procOrder(uint32_t localid)
 	}
 	else if(!ordInfo->_proced_after_placed)
 	{
-		//如果下单以后，还没处理过，则触发on_order
+		// If the order has not been processed after being placed, trigger on_order
 		on_order(localid, ordInfo->_code, ordInfo->_isBuy, ordInfo->_total, ordInfo->_left, ordInfo->_price, false, ordInfo->_usertag);
 		ordInfo->_proced_after_placed = true;
 	}
@@ -723,7 +723,7 @@ bool HftMocker::procOrder(uint32_t localid)
 		return false;
 
 	double curPx = curTick->price();
-	double orderQty = ordInfo->_isBuy ? curTick->askqty(0) : curTick->bidqty(0);	//看对手盘的数量
+	double orderQty = ordInfo->_isBuy ? curTick->askqty(0) : curTick->bidqty(0);	// Look at the quantity of the counterparty
 	if (decimal::eq(orderQty, 0.0))
 		return false;
 
@@ -739,24 +739,24 @@ bool HftMocker::procOrder(uint32_t localid)
 	}
 	curTick->release();
 
-	//如果没有成交条件,则退出逻辑
+	// If there are no trading conditions, exit the logic
 	if(!decimal::eq(ordInfo->_price, 0.0))
 	{
 		if(ordInfo->_isBuy && decimal::gt(curPx, ordInfo->_price))
 		{
-			//买单,但是当前价大于限价,不成交
+			// Buy order, but the current price is higher than the limit price, no transaction
 			return false;
 		}
 
 		if (!ordInfo->_isBuy && decimal::lt(curPx, ordInfo->_price))
 		{
-			//卖单,但是当前价小于限价,不成交
+			// Sell order, but the current price is lower than the limit price, no transaction
 			return false;
 		}
 	}
 
 	/*
-	 *	下面就要模拟成交了
+	 *	Now we need to simulate the transaction
 	 */
 	double maxQty = min(orderQty, ordInfo->_left);
 	auto vols = splitVolume((uint32_t)maxQty);
@@ -797,10 +797,10 @@ OrderIDs HftMocker::stra_sell(const char* stdCode, double price, double qty, con
 		return OrderIDs();
 	}
 
-	//如果不能做空，则要看可用持仓
+	// If short selling is not allowed, check the available position
 	if(!commInfo->canShort())
 	{
-		double curPos = stra_get_position(stdCode, true);//只读可用持仓
+		double curPos = stra_get_position(stdCode, true);// Read only available positions
 		if(decimal::gt(qty, curPos))
 		{
 			log_error("No enough position of {} to sell", stdCode);
@@ -826,7 +826,7 @@ OrderIDs HftMocker::stra_sell(const char* stdCode, double price, double qty, con
 
 	postTask([this, localid]() {
 		const OrderInfoPtr& ordInfo = _orders[localid];
-		on_entrust(localid, ordInfo->_code, true, "下单成功", ordInfo->_usertag);
+		on_entrust(localid, ordInfo->_code, true, "Order placed successfully", ordInfo->_usertag);
 	});
 
 	OrderIDs ids;
@@ -897,8 +897,8 @@ double HftMocker::stra_get_position(const char* stdCode, bool bOnlyValid/* = fal
 	const PosInfo& pInfo = _pos_map[stdCode];
 	if (bOnlyValid)
 	{
-		//这里理论上，只有多头才会进到这里
-		//其他地方要保证，空头持仓的话，_frozen要为0
+		// In theory, only long positions will enter here
+		// Other places should ensure that if there is a short position, _frozen should be 0
 		return pInfo._volume - pInfo._frozen;
 	}
 	else
@@ -959,8 +959,8 @@ void HftMocker::stra_sub_ticks(const char* stdCode)
 {
 	/*
 	 *	By Wesley @ 2022.03.01
-	 *	主动订阅tick会在本地记一下
-	 *	tick数据回调的时候先检查一下
+	 *	Actively subscribing to ticks will be recorded locally
+	 *	Check when tick data is called back
 	 */
 	_tick_subs.insert(stdCode);
 
@@ -1081,7 +1081,7 @@ void HftMocker::log_close(const char* stdCode, bool isLong, uint64_t openTime, d
 	double totalprofit /* = 0 */, const char* enterTag/* = ""*/, const char* exitTag/* = ""*/)
 {
 	_close_logs << stdCode << "," << (isLong ? "LONG" : "SHORT") << "," << openTime << "," << openpx
-		<< "," << closeTime << "," << closepx << "," << qty << "," << profit << "," << maxprofit << "," << maxloss << ","
+		<< "," << closeTime << "," << closepx << "," << qty << "," << profit << "," << maxprofit << "," << maxloss << "," 
 		<< totalprofit << "," << enterTag << "," << exitTag << "\n";
 }
 
@@ -1094,7 +1094,7 @@ void HftMocker::do_set_position(const char* stdCode, double qty, double price /*
 	uint64_t curTm = (uint64_t)_replayer->get_date() * 1000000000 + (uint64_t)_replayer->get_min_time()*100000 + _replayer->get_secs();
 	uint32_t curTDate = _replayer->get_trading_date();
 
-	//手数相等则不用操作了
+	// If the number of hands is equal, no operation is required
 	if (decimal::eq(pInfo._volume, qty))
 		return;
 
@@ -1104,15 +1104,15 @@ void HftMocker::do_set_position(const char* stdCode, double qty, double price /*
 	if (commInfo == NULL)
 		return;
 
-	//成交价
+	// Transaction price
 	double trdPx = curPx;
 
 	double diff = qty - pInfo._volume;
 	bool isBuy = decimal::gt(diff, 0.0);
-	if (decimal::gt(pInfo._volume*diff, 0))//当前持仓和仓位变化方向一致, 增加一条明细, 增加数量即可
+	if (decimal::gt(pInfo._volume*diff, 0))// The current position and the direction of the position change are the same, add a detail, just increase the quantity
 	{
 		pInfo._volume = qty;
-		//如果T+1，则冻结仓位要增加
+		// If T+1, the frozen position should be increased
 		if (commInfo->isT1())
 		{
 			//ASSERT(diff>0);
@@ -1135,7 +1135,7 @@ void HftMocker::do_set_position(const char* stdCode, double qty, double price /*
 		log_trade(stdCode, dInfo._long, true, curTm, trdPx, abs(diff), fee, userTag);
 	}
 	else
-	{//持仓方向和仓位变化方向不一致,需要平仓
+	{// The direction of the position and the direction of the position change are inconsistent, and it needs to be closed
 		double left = abs(diff);
 
 		pInfo._volume = qty;
@@ -1162,21 +1162,21 @@ void HftMocker::do_set_position(const char* stdCode, double qty, double price /*
 			if (!dInfo._long)
 				profit *= -1;
 			pInfo._closeprofit += profit;
-			pInfo._dynprofit = pInfo._dynprofit*dInfo._volume / (dInfo._volume + maxQty);//浮盈也要做等比缩放
+			pInfo._dynprofit = pInfo._dynprofit*dInfo._volume / (dInfo._volume + maxQty);// Floating profit and loss should also be scaled proportionally
 			_fund_info._total_profit += profit;
 
 			double fee = _replayer->calc_fee(stdCode, trdPx, maxQty, dInfo._opentdate == curTDate ? 2 : 1);
 			_fund_info._total_fees += fee;
-			//这里写成交记录
+			// Write transaction records here
 			log_trade(stdCode, dInfo._long, false, curTm, trdPx, maxQty, fee, userTag);
-			//这里写平仓记录
+			// Write closing records here
 			log_close(stdCode, dInfo._long, dInfo._opentime, dInfo._price, curTm, trdPx, maxQty, profit, maxProf, maxLoss, pInfo._closeprofit, dInfo._usertag, userTag);
 
 			if (left == 0)
 				break;
 		}
 
-		//需要清理掉已经平仓完的明细
+		// Need to clean up the details that have been closed
 		while (count > 0)
 		{
 			auto it = pInfo._details.begin();
@@ -1184,12 +1184,12 @@ void HftMocker::do_set_position(const char* stdCode, double qty, double price /*
 			count--;
 		}
 
-		//最后,如果还有剩余的,则需要反手了
+		// Finally, if there is still a surplus, it needs to be reversed
 		if (left > 0)
 		{
 			left = left * qty / abs(qty);
 
-			//如果T+1，则冻结仓位要增加
+			// If T+1, the frozen position should be increased
 			if (commInfo->isT1())
 			{
 				pInfo._frozen += left;
@@ -1205,7 +1205,7 @@ void HftMocker::do_set_position(const char* stdCode, double qty, double price /*
 			strcpy(dInfo._usertag, userTag);
 			pInfo._details.emplace_back(dInfo);
 
-			//这里还需要写一笔成交记录
+			// A transaction record needs to be written here
 			double fee = _replayer->calc_fee(stdCode, trdPx, abs(left), 0);
 			_fund_info._total_fees += fee;
 			log_trade(stdCode, dInfo._long, true, curTm, trdPx, abs(left), fee, userTag);

@@ -232,8 +232,8 @@ void UftMocker::on_tick(const char* stdCode, WTSTickData* newTick)
 
 	update_dyn_profit(stdCode, newTick);
 	
-	//如果开启了同tick撮合，则先触发策略的ontick，再处理订单
-	//如果没开启同tick撮合，则先处理订单，再触发策略的ontick
+	//If the same tick matching is enabled, trigger the strategy's ontick first, and then process the order
+	//If the same tick matching is not enabled, process the order first, and then trigger the strategy's ontick
 	if(_match_this_tick)
 	{
 		on_tick_updated(stdCode, newTick);
@@ -346,7 +346,7 @@ void UftMocker::on_init()
 
 void UftMocker::on_session_begin(uint32_t curTDate)
 {
-	//每个交易日开始，要把冻结持仓置零
+	//At the beginning of each trading day, the frozen position should be set to zero
 	for (auto& it : _pos_map)
 	{
 		const char* stdCode = it.first.c_str();
@@ -432,7 +432,7 @@ bool UftMocker::stra_cancel(uint32_t localid)
 			}
 			else
 			{
-				//如果不分平昨平今，则先释放今仓
+				 //If there is no distinction between closing yesterday and closing today, release today's position first
 				double maxQty = std::min(ordInfo._left, pItem._newvol - pItem._newavail);
 				pItem._newavail += maxQty;
 				pItem._preavail += ordInfo._left - maxQty;
@@ -483,7 +483,7 @@ OrderIDs UftMocker::stra_buy(const char* stdCode, double price, double qty, int 
 	const PosInfo& pInfo = _pos_map[stdCode];
 
 	double left = qty;
-	//先检查空头
+	//Check the short position first
 	const PosItem& pItem = pInfo._short;
 	if(decimal::gt(pItem.valid(), 0.0))
 	{
@@ -517,7 +517,7 @@ OrderIDs UftMocker::stra_buy(const char* stdCode, double price, double qty, int 
 		}
 	}
 
-	//还有剩余则开仓
+	//If there is still remaining, open a position
 	if(decimal::gt(left, 0.0))
 	{
 		ids.emplace_back(stra_enter_long(stdCode, price, left));
@@ -545,7 +545,7 @@ OrderIDs UftMocker::stra_sell(const char* stdCode, double price, double qty, int
 	const PosInfo& pInfo = _pos_map[stdCode];
 
 	double left = qty;
-	//先检查空头
+	//Check the short position first
 	const PosItem& pItem = pInfo._long;
 	if (decimal::gt(pItem.valid(), 0.0))
 	{
@@ -580,7 +580,7 @@ OrderIDs UftMocker::stra_sell(const char* stdCode, double price, double qty, int
 		}
 	}
 
-	//还有剩余则开仓
+	//If there is still remaining, open a position
 	if (decimal::gt(left, 0.0))
 	{
 		ids.emplace_back(stra_enter_short(stdCode, price, left));
@@ -889,7 +889,7 @@ bool UftMocker::procOrder(uint32_t localid)
 
 	OrderInfo ordInfo = (OrderInfo&)it->second;
 
-	//第一步,如果在撤单概率中,则执行撤单
+	//First step, if it is within the cancellation probability, then execute the cancellation
 	if(_error_rate>0 && genRand(10000)<=_error_rate)
 	{
 		on_order(localid, ordInfo._code, ordInfo._isLong, ordInfo._offset, ordInfo._total, ordInfo._left, ordInfo._price, true);
@@ -906,7 +906,7 @@ bool UftMocker::procOrder(uint32_t localid)
 		return false;
 
 	double curPx = curTick->price();
-	double orderQty = ordInfo._isLong ? curTick->askqty(0) : curTick->bidqty(0);	//看对手盘的数量
+	double orderQty = ordInfo._isLong ? curTick->askqty(0) : curTick->bidqty(0);	//Check the quantity of the counterparty
 	if (decimal::eq(orderQty, 0.0))
 		return false;
 
@@ -922,24 +922,24 @@ bool UftMocker::procOrder(uint32_t localid)
 	}
 	curTick->release();
 
-	//如果没有成交条件,则退出逻辑
+	//If there are no trading conditions, then exit the logic
 	if(!decimal::eq(ordInfo._price, 0.0))
 	{
 		if(ordInfo._isLong && decimal::gt(curPx, ordInfo._price))
 		{
-			//买单,但是当前价大于限价,不成交
+			//Buy order, but the current price is higher than the limit price, no transaction
 			return false;
 		}
 
 		if (!ordInfo._isLong && decimal::lt(curPx, ordInfo._price))
 		{
-			//卖单,但是当前价小于限价,不成交
+			//Sell order, but the current price is lower than the limit price, no transaction
 			return false;
 		}
 	}
 
 	/*
-	 *	下面就要模拟成交了
+	 *	Next, we need to simulate the transaction
 	 */
 	double maxQty = min(orderQty, ordInfo._left);
 	auto vols = splitVolume((uint32_t)maxQty);
@@ -1061,8 +1061,8 @@ void UftMocker::stra_sub_ticks(const char* stdCode)
 {
 	/*
 	 *	By Wesley @ 2022.03.01
-	 *	主动订阅tick会在本地记一下
-	 *	tick数据回调的时候先检查一下
+	 *	Actively subscribing to ticks will be recorded locally
+	 *	When the tick data is called back, check it first
 	 */
 	_tick_subs.insert(stdCode);
 
@@ -1147,14 +1147,14 @@ void UftMocker::update_position(const char* stdCode, bool isLong, uint32_t offse
 {
 	PosItem& pItem = isLong ? _pos_map[stdCode]._long : _pos_map[stdCode]._short;
 
-	//先确定成交价格
+	//First determine the transaction price
 	double curPx = price;
 	if (decimal::eq(price, 0.0))
 		curPx = _price_map[stdCode];
 
 	const char* pos_dir = isLong ? "long" : "short";
 
-	//获取时间
+	//Get time
 	uint64_t curTm = (uint64_t)_replayer->get_date() * 1000000000 + (uint64_t)_replayer->get_min_time()*100000 + _replayer->get_secs();
 	uint32_t curTDate = _replayer->get_trading_date();
 
@@ -1162,14 +1162,14 @@ void UftMocker::update_position(const char* stdCode, bool isLong, uint32_t offse
 	if (commInfo == NULL)
 		return;
 
-	//成交价
+	//Transaction price
 	double trdPx = curPx;
 
 	if (offset == 0)
 	{
-		//如果是开仓，则直接增加明细即可
+		//If it is an open position, directly increase the details
 		pItem._newvol += qty;
-		//如果T+1，则冻结仓位要增加
+		//If it is T+1, the frozen position should be increased
 		if (commInfo->isT1())
 		{
 			//ASSERT(diff>0);
@@ -1194,7 +1194,7 @@ void UftMocker::update_position(const char* stdCode, bool isLong, uint32_t offse
 	}
 	else if(offset == 1)
 	{
-		//如果是平仓（平昨也是这个），则根据明细的时间先后处理平仓
+		//If it is a close position (including closing yesterday), process the close position according to the time of the details
 		double maxQty = min(pItem._prevol, qty);
 		pItem._prevol -= maxQty;
 		pItem._newvol -= qty - maxQty;
@@ -1222,30 +1222,30 @@ void UftMocker::update_position(const char* stdCode, bool isLong, uint32_t offse
 				profit *= -1;
 			pItem._closeprofit += profit;
 
-			//等比缩放明细的相关浮盈
+			//Proportionally scale the related floating profit of the details
 			dInfo._profit = dInfo._profit*dInfo._volume / (dInfo._volume + maxQty);
 			dInfo._max_profit = dInfo._max_profit*dInfo._volume / (dInfo._volume + maxQty);
 			dInfo._max_loss = dInfo._max_loss*dInfo._volume / (dInfo._volume + maxQty);
 			_fund_info._total_profit += profit;
 			double fee = _replayer->calc_fee(stdCode, trdPx, maxQty, dInfo._opentdate == curTDate ? 2 : 1);
 			_fund_info._total_fees += fee;
-			//这里写成交记录
+			//Write the transaction record here
 			log_trade(stdCode, isLong, offset, curTm, trdPx, maxQty, fee);
-			//这里写平仓记录
+			//Write the close position record here
 			log_close(stdCode, isLong, dInfo._opentime, dInfo._price, curTm, trdPx, maxQty, profit, maxProf, maxLoss, pItem._closeprofit);
 
 			if (left == 0)
 				break;
 		}
 
-		//需要清理掉已经平仓完的明细
+		//Need to clean up the details that have been closed
 		if (eit != pItem._details.end())
 			pItem._details.erase(pItem._details.begin(), eit);
 
 	}
 	else if (offset == 2)
 	{
-		//如果是平今，只更新今仓，先找到今仓起始的位置，再开始处理
+		//If it is a close today, only update today's position, first find the starting position of today's position, and then start processing
 		pItem._newvol -= qty;
 		std::vector<DetailInfo>::iterator sit = pItem._details.end();
 		std::vector<DetailInfo>::iterator eit = pItem._details.end();
@@ -1255,7 +1255,7 @@ void UftMocker::update_position(const char* stdCode, bool isLong, uint32_t offse
 		for (auto it = pItem._details.begin(); it != pItem._details.end(); it++)
 		{
 			DetailInfo& dInfo = *it;
-			//如果不是今仓，就直接跳过
+			//If it is not today's position, just skip it
 			if(dInfo._opentdate != curTDate)
 				continue;
 
@@ -1281,22 +1281,22 @@ void UftMocker::update_position(const char* stdCode, bool isLong, uint32_t offse
 			if (!isLong)
 				profit *= -1;
 			pItem._closeprofit += profit;
-			pItem._dynprofit = pItem._dynprofit*dInfo._volume / (dInfo._volume + maxQty);//浮盈也要做等比缩放
+			pItem._dynprofit = pItem._dynprofit*dInfo._volume / (dInfo._volume + maxQty);//Floating profit also needs to be proportionally scaled
 			_fund_info._total_profit += profit;
 
 			uint32_t offset = dInfo._opentdate == curTDate ? 2 : 1;
 			double fee = _replayer->calc_fee(stdCode, trdPx, maxQty, dInfo._opentdate == curTDate ? 2 : 1);
 			_fund_info._total_fees += fee;
-			//这里写成交记录
+			//Write the transaction record here
 			log_trade(stdCode, isLong, offset, curTm, trdPx, maxQty, fee);
-			//这里写平仓记录
+			//Write the close position record here
 			log_close(stdCode, isLong, dInfo._opentime, dInfo._price, curTm, trdPx, maxQty, profit, maxProf, maxLoss, pItem._closeprofit);
 
 			if (left == 0)
 				break;
 		}
 
-		//需要清理掉已经平仓完的明细
+		//Need to clean up the details that have been closed
 		if (sit != pItem._details.end())
 			pItem._details.erase(sit, eit);
 	}

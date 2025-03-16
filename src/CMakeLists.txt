@@ -51,7 +51,7 @@ add_subdirectory(WtBtCore)
 add_subdirectory(LoaderRunner)
 
 # uft engine
-# add_subdirectory(WtUftCore)
+add_subdirectory(WtUftCore)
 
 #contract Loade through ctp channel
 # ADD_SUBDIRECTORY(CTPLoader)

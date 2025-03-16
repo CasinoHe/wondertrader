@@ -57,7 +57,7 @@ add_subdirectory(LoaderRunner)
 # ADD_SUBDIRECTORY(CTPLoader)
 # ADD_SUBDIRECTORY(CTPOptLoader)
 add_subdirectory(TraderDumper)
-# ADD_SUBDIRECTORY(WtShareHelper)
+add_subdirectory(WtShareHelper)
 
 # #parser for quote date from ctp channel
 # ADD_SUBDIRECTORY(ParserCTP)

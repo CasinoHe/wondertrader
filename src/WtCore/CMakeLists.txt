@@ -11,3 +11,6 @@ target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt-header-only
                                               Boost::interprocess
                                               Boost::circular_buffer
                                               )
+if(MSVC)
+	target_compile_options(${PROJECT_NAME} PRIVATE "/MT")
+endif(MSVC)

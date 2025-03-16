@@ -25,3 +25,6 @@ include_directories(${LUA_ROOT})
 # Compile into a static library and generate the library file
 add_library(${PROJECT_NAME} STATIC ${SRCS} ${LUA_SOURCES} ${HDRS})
 target_link_libraries(${PROJECT_NAME} PRIVATE rapidjson Boost::locale Boost::pool utf8::cpp utf8cpp::utf8cpp)
+if(MSVC)
+	target_compile_options(${PROJECT_NAME} PRIVATE "/MT")
+endif(MSVC)

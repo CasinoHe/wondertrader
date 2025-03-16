@@ -47,13 +47,15 @@ add_subdirectory(WtMsgQue)
 add_subdirectory(WtCore)
 add_subdirectory(WtBtCore)
 
+# loader runner executable file
+add_subdirectory(LoaderRunner)
+
 # uft engine
 # add_subdirectory(WtUftCore)
 
 #contract Loade through ctp channel
 # ADD_SUBDIRECTORY(CTPLoader)
 # ADD_SUBDIRECTORY(CTPOptLoader)
-# ADD_SUBDIRECTORY(LoaderRunner)
 # ADD_SUBDIRECTORY(TraderDumper)
 # ADD_SUBDIRECTORY(WtShareHelper)
 

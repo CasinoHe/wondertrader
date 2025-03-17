@@ -15,7 +15,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt-header-only XYYCore XYYTo
 if(MSVC)
 	target_link_libraries(${PROJECT_NAME} PRIVATE  ws2_32)
 	target_compile_options(${PROJECT_NAME} PRIVATE "/MT")
-elseif(GNUCC)
+elseif(GCC)
 	target_link_libraries(${PROJECT_NAME} PRIVATE  dl pthread Boost::filesystem Boost::thread)
 	SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES LINK_FLAGS_RELEASE -s)
 	IF(WIN32)

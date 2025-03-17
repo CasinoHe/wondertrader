@@ -45,7 +45,6 @@ add_subdirectory(WTSUtils)
 add_subdirectory(WTSTools)
 add_subdirectory(WtMsgQue)
 add_subdirectory(WtCore)
-add_subdirectory(WtBtCore)
 
 # executable file
 add_subdirectory(LoaderRunner)
@@ -58,6 +57,11 @@ add_subdirectory(WtUftCore)
 # ADD_SUBDIRECTORY(CTPOptLoader)
 add_subdirectory(TraderDumper)
 add_subdirectory(WtShareHelper)
+
+# backtesting and live trading
+add_subdirectory(WtBtCore)
+add_subdirectory(WtBtPorter)
+# ADD_SUBDIRECTORY(WtBtRunner)
 
 # #parser for quote date from ctp channel
 # ADD_SUBDIRECTORY(ParserCTP)
@@ -75,10 +79,6 @@ add_subdirectory(WtShareHelper)
 # ADD_SUBDIRECTORY(WtDtServo)
 # #quote date processor
 # ADD_SUBDIRECTORY(QuoteFactory)
-
-# #back test c porter for outter libraries
-# ADD_SUBDIRECTORY(WtBtPorter)
-# ADD_SUBDIRECTORY(WtBtRunner)
 
 # ADD_SUBDIRECTORY(ParserUDP)
 # ADD_SUBDIRECTORY(TraderCTP)

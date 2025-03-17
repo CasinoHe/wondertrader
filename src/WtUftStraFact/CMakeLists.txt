@@ -1,32 +1,23 @@
-#1. 确定CMake的最低版本需求
-CMAKE_MINIMUM_REQUIRED(VERSION 3.0.0)
+cmake_minimum_required(VERSION 3.28.3)
 
-#2. 确定工程名
-PROJECT(WtUftStraFact LANGUAGES CXX)
-SET(CMAKE_CXX_STANDARD 17)
+PROJECT(XYYUftStraFact)
 
-#7. 添加源码
 file(GLOB SRCS "*.cpp")
 file(GLOB HDRS "*.h")
 
-SET(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/build_${PLATFORM}/${CMAKE_BUILD_TYPE}/bin/WtUftRunner)
+file(GLOB SRCS *.cpp)
+file(GLOB HDRS *.h)
 
-INCLUDE_DIRECTORIES(${INCS})
-LINK_DIRECTORIES(${LNKS})
-ADD_LIBRARY(WtUftStraFact SHARED ${SRCS} ${HDRS})
+add_library(${PROJECT_NAME} SHARED ${SRCS} ${HDRS})
+target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt-header-only Boost::filesystem)
 
-SET(LIBS
-	boost_filesystem
-	dl
-)
-
-IF (WIN32)
-ELSE (UNIX)
-	TARGET_LINK_LIBRARIES(WtUftStraFact ${LIBS})
-	SET_TARGET_PROPERTIES(WtUftStraFact PROPERTIES
-		CXX_VISIBILITY_PRESET hidden
-		C_VISIBILITY_PRESET hidden
-		VISIBILITY_INLINES_HIDDEN 1
-        LINK_FLAGS_RELEASE -s)
-ENDIF ()
-
+if(MSVC)
+	target_link_libraries(${PROJECT_NAME} PRIVATE  ws2_32)
+	target_compile_options(${PROJECT_NAME} PRIVATE "/MT")
+elseif(GCC)
+	target_link_libraries(${PROJECT_NAME} PRIVATE  dl pthread)
+	set_target_properties(${PROJECT_NAME} PROPERTIES CXX_VISIBILITY_PRESET hidden VISIBILITY_INLINES_HIDDEN 1 LINK_FLAGS_RELEASE -s)
+	if(WIN32)
+		target_link_libraries(${PROJECT_NAME} PRIVATE iconv)
+	endif(WIN32)
+endif(MSVC)

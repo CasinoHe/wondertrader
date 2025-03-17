@@ -96,8 +96,8 @@ add_subdirectory(WtPorter)
 add_subdirectory(WtRunner)
 
 # #uft
-# ADD_SUBDIRECTORY(WtUftStraFact)
-# ADD_SUBDIRECTORY(WtUftRunner)
+add_subdirectory(WtUftStraFact)
+add_subdirectory(WtUftRunner)
 
 # ADD_SUBDIRECTORY(WtLatencyHFT)
 # ADD_SUBDIRECTORY(WtLatencyUFT)

@@ -11,7 +11,7 @@
 #include "../Share/StdUtils.hpp"
 #include "../Share/DLLHelper.hpp"
 #include "../Share/StrUtil.hpp"
-#include "../Share/charconv.hpp"
+#include "../Share/LocaleHelper.hpp"
 
 #include "../WTSTools/WTSBaseDataMgr.h"
 #include "../WTSTools/WTSLogger.h"
@@ -28,7 +28,7 @@ std::set<std::string>	g_blkList;
 template<typename... Args>
 inline void encoding_print(const char* format, const Args& ...args)
 {
-	fmt::print(format, args...);
+	fmt::print(FMT_RUNTIME(format), args...);
 	//printf(fmtutil::format(format, args...));
 //#ifdef _MSC_VER
 //	printf(UTF8toChar(s).c_str());

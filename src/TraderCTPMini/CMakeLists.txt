@@ -1,37 +1,20 @@
-#1. 确定CMake的最低版本需求
-CMAKE_MINIMUM_REQUIRED(VERSION 3.0.0)
+cmake_minimum_required(VERSION 3.28.3)
 
-#2. 确定工程名
-PROJECT(TraderCTPMini LANGUAGES CXX)
-SET(CMAKE_CXX_STANDARD 17)
+PROJECT(TraderCTPMini)
 
-SET(SRC  
-	${PROJECT_SOURCE_DIR}/TraderCTPMini.cpp
-	${PROJECT_SOURCE_DIR}/TraderCTPMini.h
-)
+file(GLOB SRCS *.cpp)
+file(GLOB HDRS *.h)
 
-SET(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/build_${PLATFORM}/${CMAKE_BUILD_TYPE}/bin)
+add_library(${PROJECT_NAME} SHARED ${SRCS} ${HDRS})
+target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt-header-only Boost::filesystem)
 
-INCLUDE_DIRECTORIES(${INCS})
-LINK_DIRECTORIES(${LNKS})
-ADD_LIBRARY(TraderCTPMini SHARED ${SRC})
-
-IF(MSVC)
-ELSE(GNUCC)
-	SET(LIBS
-		pthread
-		boost_filesystem
-		dl
-		)
-	TARGET_LINK_LIBRARIES(TraderCTPMini ${LIBS})
-ENDIF()
-
-IF (MSVC)
-ELSE (GNUCC)
-	SET_TARGET_PROPERTIES(TraderCTPMini PROPERTIES
-		CXX_VISIBILITY_PRESET hidden
-		C_VISIBILITY_PRESET hidden
-		VISIBILITY_INLINES_HIDDEN 1
-        LINK_FLAGS_RELEASE -s)
-ENDIF ()
-
+if(MSVC)
+	target_link_libraries(${PROJECT_NAME} PRIVATE  ws2_32)
+	target_compile_options(${PROJECT_NAME} PRIVATE "/MT")
+elseif(GCC)
+	target_link_libraries(${PROJECT_NAME} PRIVATE  dl pthread)
+	set_target_properties(${PROJECT_NAME} PROPERTIES CXX_VISIBILITY_PRESET hidden VISIBILITY_INLINES_HIDDEN 1 LINK_FLAGS_RELEASE -s)
+	if(WIN32)
+		target_link_libraries(${PROJECT_NAME} PRIVATE iconv)
+	endif(WIN32)
+endif(MSVC)

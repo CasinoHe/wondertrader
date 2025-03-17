@@ -66,6 +66,7 @@ add_subdirectory(WtRunner)
 add_subdirectory(WtCtaStraFact)
 add_subdirectory(WtUftStraFact)
 add_subdirectory(WtSelStraFact)
+add_subdirectory(WtHftStraFact)
 add_subdirectory(WtExeFact)
 add_subdirectory(WtRiskMonFact)
 

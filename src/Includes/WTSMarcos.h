@@ -5,7 +5,7 @@
  * \author Wesley
  * \date 2020/03/30
  * 
- * \brief WonderTrader基础宏定义文件
+ * \brief WonderTrader basic macro definition file
  */
 #pragma once
 #include <limits.h>
@@ -82,14 +82,14 @@ typedef const char*			WtString;
 
 /*
  *	By Wesley @ 2022.03.17
- *	重写一个strcpy
- *	核心的要点就是不用strcpy
- *	字符串比较长的时候，会优于strcpy
+ *	Rewrite a strcpy
+ *	The core point is not to use strcpy
+ *	When the string is long, it will be better than strcpy
  */
 /*
  *	By Wesley @ 2023.10.09
- *	重新和strcpy进行了性能测试，发现性能上并没有提升，甚至还有一些下降
- *	可能和早期测试环境有很大关系，用到的地方很多，暂时先保留
+ *	The performance test was re-conducted with strcpy, and it was found that the performance was not improved, and even some decline
+ *	It may have a lot to do with the early test environment, and it is used in many places, so keep it for now
  */
 inline size_t wt_strcpy(char* des, const char* src, size_t len = 0)
 {

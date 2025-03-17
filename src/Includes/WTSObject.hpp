@@ -5,7 +5,7 @@
  * \author Wesley
  * \date 2020/03/30
  * 
- * \brief Wt基础Object定义
+ * \brief Wt Base Object Definition
  */
 #pragma once
 #include <stdint.h>
@@ -70,12 +70,12 @@ public:
 	{
 		/*
 		 *	By Wesley @ 2022.06.14
-		 *	有用户反馈，这里使用了thread_local，线程销毁的话，内存池也销毁了
-		 *	该用户在Trader里复现了这个bug，如果Trader底层销毁了一个API对象实例
-		 *	那么这里内存池就已经析构了，如果有在系统中存储（retain）Trader创建的对象（WTSOrderInfo等），则会出现访问越界的问题
-		 *	这里如果去掉thread_local，改成纯静态的，可能多线程并发的场景下也会有一些问题
-		 *	总之如果要彻底安全，那么可能需要加一把锁才行，但是这样会带来性能开销
-		 *	所以注释一下，如果有问题的可以参考一下
+		 *	Some users reported that thread_local is used here, and the memory pool is also destroyed when the thread is destroyed.
+		 *	The user reproduced this bug in Trader. If Trader destroys an API object instance at the bottom layer
+		 *	Then the memory pool has been destructed here. If there is storage (retain) of objects created by Trader (WTSOrderInfo, etc.) in the system, an out-of-bounds access problem will occur.
+		 *	If thread_local is removed here and changed to pure static, there may be some problems in multi-threaded concurrent scenarios.
+		 *	In short, if you want to be completely safe, you may need to add a lock, but this will bring performance overhead.
+		 *	So comment it out, if there is a problem, you can refer to it
 		 */
 		thread_local static MyPool		pool;
 		thread_local static SpinMutex	mtx;

@@ -54,7 +54,7 @@ add_subdirectory(WtUftCore)
 
 #contract Loade through ctp channel
 add_subdirectory(CTPLoader)
-# ADD_SUBDIRECTORY(CTPOptLoader)
+add_subdirectory(CTPOptLoader)
 add_subdirectory(TraderDumper)
 add_subdirectory(WtShareHelper)
 

@@ -5,6 +5,7 @@
 #endif
 #include <fmt/format.h>
 #include "../Includes/WTSTypes.h"
+#include <atomic>
 
 // Add formatter specialization for WTSKlinePeriod enum
 template<>
@@ -21,6 +22,14 @@ struct fmt::formatter<wtp::WTSKlinePeriod> : formatter<const char*> {
             default:             period_name = "unknown"; break;
         }
         return formatter<const char*>::format(period_name, ctx);
+    }
+};
+
+// Add formatter specialization for std::atomic types
+template <typename T>
+struct fmt::formatter<std::atomic<T>> : formatter<T> {
+    auto format(const std::atomic<T>& value, format_context& ctx) const {
+        return formatter<T>::format(value.load(), ctx);
     }
 };
 

@@ -82,7 +82,7 @@ add_subdirectory(WtDtHelper)
 add_subdirectory(WtDtPorter)
 add_subdirectory(WtDtServo)
 # #quote date processor
-# ADD_SUBDIRECTORY(QuoteFactory)
+add_subdirectory(QuoteFactory)
 
 # ADD_SUBDIRECTORY(ParserUDP)
 # ADD_SUBDIRECTORY(TraderCTP)

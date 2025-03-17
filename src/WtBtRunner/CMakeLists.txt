@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.28.3)
 
-#2. 确定工程名
 PROJECT(XYYBtRunner)
 
 file(GLOB SRCS *.cpp)

@@ -298,7 +298,7 @@ void TraderYD::notifyFinishInit()
 			if (contract)
 			{
 				WTSCommodityInfo* commInfo = contract->getCommInfo();
-				std::string key = fmt::format("{}-{}", contract->getCode(), wrapPosDirection(pInfo->PositionDirection));
+				std::string key = fmt::format("{}-{}", contract->getCode(), static_cast<int>(pInfo->PositionDirection));
 				WTSPositionItem* pos = (WTSPositionItem*)m_mapPosition->get(key);
 				if (pos == NULL)
 				{
@@ -352,7 +352,7 @@ void TraderYD::notifyOrder(const YDOrder *pOrder, const YDInstrument *pInstrumen
 			//如果是平仓委托，需要调整冻结手数
 			if (orderInfo->getOffsetType() != WOT_OPEN)
 			{
-				const char* key = fmtutil::format("{}-{}", orderInfo->getCode(), orderInfo->getDirection());
+				const char* key = fmtutil::format("{}-{}", orderInfo->getCode(), static_cast<int>(orderInfo->getDirection()));
 				WTSPositionItem* pos = (WTSPositionItem*)m_mapPosition->get(key);
 				double preQty = pos->getPrePosition();
 				double newQty = pos->getNewPosition();
@@ -389,7 +389,7 @@ void TraderYD::notifyOrder(const YDOrder *pOrder, const YDInstrument *pInstrumen
 			//如果是撤单，并且之间订单状态还是有效的，则对平仓委托要释放冻结的手数
 			if(preOrd->isAlive() && orderInfo->getOrderState() == WOS_Canceled && orderInfo->getOffsetType() != WOT_OPEN)
 			{
-				std::string key = fmt::format("{}-{}", orderInfo->getCode(), orderInfo->getDirection());
+				std::string key = fmt::format("{}-{}", orderInfo->getCode(), static_cast<int>(orderInfo->getDirection()));
 				WTSPositionItem* pos = (WTSPositionItem*)m_mapPosition->get(key);
 				double preQty = pos->getPrePosition();
 				double newQty = pos->getNewPosition();
@@ -450,7 +450,7 @@ void TraderYD::notifyTrade(const YDTrade *pTrade, const YDInstrument *pInstrumen
 			m_mapTrades->add(tid, trdInfo, false);
 
 			//成交回报，主要更新持仓
-			std::string key = fmt::format("{}-{}", trdInfo->getCode(), trdInfo->getDirection());
+			std::string key = fmt::format("{}-{}", trdInfo->getCode(), static_cast<int>(trdInfo->getDirection()));
 			WTSPositionItem* pos = (WTSPositionItem*)m_mapPosition->get(key);
 			if(pos == NULL)
 			{

@@ -531,7 +531,7 @@ void TraderXTPXAlgo::OnQueryPosition(XTPQueryStkPositionRsp *position, XTPRI *er
 		if (contract)
 		{
 			WTSCommodityInfo* commInfo = contract->getCommInfo();
-			std::string key = fmt::format("{}-{}", code.c_str(), position->position_direction);
+			std::string key = fmt::format("{}-{}", code.c_str(), static_cast<int>(position->position_direction));
 			WTSPositionItem* pos = (WTSPositionItem*)_positions->get(key);
 			if (pos == NULL)
 			{

@@ -7,7 +7,7 @@ file(GLOB SRCS *.cpp)
 file(GLOB HDRS *.h)
 
 add_library(${PROJECT_NAME} SHARED ${SRCS} ${HDRS})
-target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt-header-only XYYUtils)
+target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt-header-only XYYUtils Boost::filesystem)
 
 if(MSVC)
 	target_link_libraries(${PROJECT_NAME} PRIVATE  ws2_32)

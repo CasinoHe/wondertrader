@@ -16,7 +16,7 @@
 #include "../Includes/WTSVariant.hpp"
 USING_NS_WTP;
 
-#include "../Share/charconv.hpp"
+#include "../Share/LocaleHelper.hpp" // Replacing charconv.hpp with LocaleHelper.hpp
 
 // UserApi对象
 CThostFtdcTraderApi* pUserApi;
@@ -61,6 +61,48 @@ extern "C"
 #ifdef __cplusplus
 }
 #endif
+
+void readMapFiles(const std::string& map_files)
+{
+	if (!map_files.empty())
+	{
+		StringVector ayFiles = StrUtil::split(map_files, ",");
+		for (const std::string& fName : ayFiles)
+		{
+			printf("Reading mapping file %s...\r\n", fName.c_str());
+			IniHelper iniMap;
+			if (!StdFile::exists(fName.c_str()))
+				continue;
+
+			iniMap.load(fName.c_str());
+			FieldArray ayKeys, ayVals;
+			int cout = iniMap.readSecKeyValArray("Name", ayKeys, ayVals);
+			for (int i = 0; i < cout; i++)
+			{
+				std::string pName = ayVals[i];
+				bool isUTF8 = quanttrader::EncodingHelper::is_valid_utf8(pName); // using EncodingHelper instead of isUtf8
+				if (!isUTF8)
+					pName = quanttrader::EncodingHelper::locale_to_utf8(ayVals[i], "GBK"); // using EncodingHelper instead of ChartoUTF8
+				//保存的时候全部转成UTF8
+				MAP_NAME[ayKeys[i]] = pName;
+#ifdef _WIN32
+				printf("Commodity name mapping: %s - %s\r\n", ayKeys[i].c_str(), isUTF8 ? pName.c_str() : ayVals[i].c_str());
+#else
+				printf("Commodity name mapping: %s - %s\r\n", ayKeys[i].c_str(), isUTF8 ? ayVals[i].c_str() : pName.c_str());
+#endif
+			}
+
+			ayKeys.clear();
+			ayVals.clear();
+			cout = iniMap.readSecKeyValArray("Session", ayKeys, ayVals);
+			for (int i = 0; i < cout; i++)
+			{
+				MAP_SESSION[ayKeys[i]] = ayVals[i];
+				printf("Trading session mapping: %s - %s\r\n", ayKeys[i].c_str(), ayVals[i].c_str());
+			}
+		}
+	}
+}
 
 int run(const char* cfgfile, bool bAsync = false, bool isFile = true)
 {
@@ -192,45 +234,8 @@ int run(const char* cfgfile, bool bAsync = false, bool isFile = true)
 	}
 
 	SAVEPATH = StrUtil::standardisePath(SAVEPATH);
-
-	if (!map_files.empty())
-	{
-		StringVector ayFiles = StrUtil::split(map_files, ",");
-		for (const std::string& fName : ayFiles)
-		{
-			printf("Reading mapping file %s...\r\n", fName.c_str());
-			IniHelper iniMap;
-			if (!StdFile::exists(fName.c_str()))
-				continue;
-
-			iniMap.load(fName.c_str());
-			FieldArray ayKeys, ayVals;
-			int cout = iniMap.readSecKeyValArray("Name", ayKeys, ayVals);
-			for (int i = 0; i < cout; i++)
-			{
-				std::string pName = ayVals[i];
-				bool isUTF8 = EncodingHelper::isUtf8((unsigned char*)pName.c_str(), pName.size());
-				if (!isUTF8)
-					pName = ChartoUTF8(ayVals[i]);
-				//保存的时候全部转成UTF8
-				MAP_NAME[ayKeys[i]] = pName;
-#ifdef _WIN32
-				printf("Commodity name mapping: %s - %s\r\n", ayKeys[i].c_str(), isUTF8 ? UTF8toChar(ayVals[i]).c_str() : ayVals[i].c_str());
-#else
-				printf("Commodity name mapping: %s - %s\r\n", ayKeys[i].c_str(), isUTF8 ? ayVals[i].c_str() : ChartoUTF8(ayVals[i]).c_str());
-#endif
-			}
-
-			ayKeys.clear();
-			ayVals.clear();
-			cout = iniMap.readSecKeyValArray("Session", ayKeys, ayVals);
-			for (int i = 0; i < cout; i++)
-			{
-				MAP_SESSION[ayKeys[i]] = ayVals[i];
-				printf("Trading session mapping: %s - %s\r\n", ayKeys[i].c_str(), ayVals[i].c_str());
-			}
-		}
-	}
+	
+	readMapFiles(map_files);
 
 	// 初始化UserApi
 	DllHandle dllInst = DLLHelper::load_library(MODULE_NAME.c_str());

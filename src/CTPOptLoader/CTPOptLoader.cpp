@@ -1,4 +1,4 @@
-﻿#include <string>
+#include <string>
 #include <map>
 
 #include "../API/CTPOpt3.5.8/ThostFtdcTraderApi.h"

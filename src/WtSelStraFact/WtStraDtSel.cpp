@@ -1,4 +1,4 @@
-﻿#include "WtStraDtSel.h"
+#include "WtStraDtSel.h"
 
 #include "../Includes/ISelStraCtx.h"
 

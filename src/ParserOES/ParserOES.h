@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file ParserOES.h
  * \project	WonderTrader
  *

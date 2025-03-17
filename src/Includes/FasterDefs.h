@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include <string.h>
 #include "WTSMarcos.h"
 #include "../FasterLibs/tsl/robin_map.h"

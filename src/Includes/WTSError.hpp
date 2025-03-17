@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file WTSError.hpp
  * \project	WonderTrader
  *

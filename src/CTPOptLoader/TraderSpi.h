@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 //v3.5.8P4
 #include "../API/CTPOpt3.5.8/ThostFtdcTraderApi.h"
 

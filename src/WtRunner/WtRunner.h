@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * /file WtRunner.h
  * /project	WonderTrader
  *

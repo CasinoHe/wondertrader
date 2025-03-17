@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file WTSTypes.h
  * \project	WonderTrader
  *

@@ -1,4 +1,4 @@
-﻿#include "gtest/gtest/gtest.h"
+#include "gtest/gtest/gtest.h"
 #include "../Includes/FasterDefs.h"
 #include "../Share/TimeUtils.hpp"
 #include "../Share/fmtlib.h"

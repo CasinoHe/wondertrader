@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include "DataDefineAD.h"
 
 #include "../WTSUtils/WtLMDB.hpp"

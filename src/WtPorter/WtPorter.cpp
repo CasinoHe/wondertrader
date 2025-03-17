@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file WtPorter.cpp
  * \project	WonderTrader
  *

@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file ParserXeleSkt.h
  * \project	WonderTrader
  *

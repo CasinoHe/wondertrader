@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file UftStrategyDefs.h
  * \project	WonderTrader
  *

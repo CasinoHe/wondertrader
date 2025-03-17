@@ -1,4 +1,4 @@
-﻿#include "gtest/gtest/gtest.h"
+#include "gtest/gtest/gtest.h"
 #include "../WtShareHelper/WtShareHelper.h"
 
 TEST(test_shm, test_sharehelper)

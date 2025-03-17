@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file WtMinImpactExeUnit.h
  *
  * \author Wesley

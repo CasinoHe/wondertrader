@@ -1,4 +1,4 @@
-﻿#include "WtRdmDtReaderAD.h"
+#include "WtRdmDtReaderAD.h"
 #include "LMDBKeys.h"
 
 #include "../Includes/WTSVariant.hpp"

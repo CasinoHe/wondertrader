@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file TraderYD.cpp
  * \project	WonderTrader
  *

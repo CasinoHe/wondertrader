@@ -1,4 +1,4 @@
-﻿#include "WtDataWriter.h"
+#include "WtDataWriter.h"
 
 #include "../Includes/WTSSessionInfo.hpp"
 #include "../Includes/WTSContractInfo.hpp"

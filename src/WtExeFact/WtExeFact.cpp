@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file WtExeFact.cpp
  *
  * \author Wesley

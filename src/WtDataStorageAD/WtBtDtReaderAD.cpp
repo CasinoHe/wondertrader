@@ -1,4 +1,4 @@
-﻿#include "WtBtDtReaderAD.h"
+#include "WtBtDtReaderAD.h"
 #include "LMDBKeys.h"
 
 #include "../Includes/WTSStruct.h"

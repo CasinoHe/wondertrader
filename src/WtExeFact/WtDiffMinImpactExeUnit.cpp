@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file WtDiffMinImpactExeUnit.cpp
  *
  * \author Wesley

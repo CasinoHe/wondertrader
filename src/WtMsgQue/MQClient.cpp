@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file EventCaster.cpp
  * \project	WonderTrader
  *

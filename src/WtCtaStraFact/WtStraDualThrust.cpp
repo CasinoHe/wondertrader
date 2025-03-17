@@ -1,4 +1,4 @@
-﻿#include "WtStraDualThrust.h"
+#include "WtStraDualThrust.h"
 
 #include "../Includes/ICtaStraCtx.h"
 

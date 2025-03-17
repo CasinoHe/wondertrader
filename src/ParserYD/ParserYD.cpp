@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file ParserYD.cpp
  * \project	WonderTrader
  *

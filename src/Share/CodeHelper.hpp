@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file CodeHelper.hpp
  * \project	WonderTrader
  *

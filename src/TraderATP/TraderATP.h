@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file TraderATP.h
  * \project	WonderTrader
  *

@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file WTSBaseDataMgr.h
  * \project	WonderTrader
  *

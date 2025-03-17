@@ -1,4 +1,4 @@
-﻿#include "WtDataReader.h"
+#include "WtDataReader.h"
 
 #include "../Includes/WTSVariant.hpp"
 #include "../Share/TimeUtils.hpp"

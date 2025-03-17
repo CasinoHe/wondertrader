@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file IParserApi.h
  * \project	WonderTrader
  *

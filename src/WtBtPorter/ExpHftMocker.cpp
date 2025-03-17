@@ -1,4 +1,4 @@
-﻿#include "ExpHftMocker.h"
+#include "ExpHftMocker.h"
 #include "WtBtRunner.h"
 
 #include "../Share/StrUtil.hpp"

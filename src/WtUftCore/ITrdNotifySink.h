@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file ITrdNotifySink.h
  * \project	WonderTrader
  *

@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file decimal.h
  * \project	WonderTrader
  *

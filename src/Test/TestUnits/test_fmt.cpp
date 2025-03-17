@@ -1,4 +1,4 @@
-﻿#include "gtest/gtest/gtest.h"
+#include "gtest/gtest/gtest.h"
 #include "../Share/fmtlib.h"
 #include "../Share/TimeUtils.hpp"
 #include "../Includes/WTSMarcos.h"

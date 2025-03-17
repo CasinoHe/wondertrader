@@ -1,4 +1,4 @@
-﻿#include "WTSCfgLoader.h"
+#include "WTSCfgLoader.h"
 #include "../Share/StrUtil.hpp"
 #include "../Share/StdUtils.hpp"
 #include "../Share/LocaleHelper.hpp"

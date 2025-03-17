@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file HftStraContext.h
  * \project	WonderTrader
  *

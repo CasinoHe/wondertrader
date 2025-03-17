@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file WTSVariant.hpp
  * \project	WonderTrader
  *

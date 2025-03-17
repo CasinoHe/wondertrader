@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file ActionPolicyMgr.h
  * \project	WonderTrader
  *

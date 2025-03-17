@@ -1,4 +1,4 @@
-﻿#include "WtOrdMon.h"
+#include "WtOrdMon.h"
 
 void WtOrdMon::push_order(const uint32_t* ids, uint32_t cnt, uint64_t curTime, bool bCanCancel /* = true */)
 {

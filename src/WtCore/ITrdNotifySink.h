@@ -17,37 +17,37 @@ class ITrdNotifySink
 {
 public:
 	/*
-	 *	成交回报
+	 *	鎴愪氦鍥炴姤
 	 */
 	virtual void on_trade(uint32_t localid, const char* stdCode, bool isBuy, double vol, double price) = 0;
 
 	/*
-	 *	订单回报
+	 *	璁㈠崟鍥炴姤
 	 */
 	virtual void on_order(uint32_t localid, const char* stdCode, bool isBuy, double totalQty, double leftQty, double price, bool isCanceled = false) = 0;
 
 	/*
-	 *	持仓更新回调
+	 *	鎸佷粨鏇存柊鍥炶皟
 	 */
 	virtual void on_position(const char* stdCode, bool isLong, double prevol, double preavail, double newvol, double newavail, uint32_t tradingday) {}
 
 	/*
-	 *	交易通道就绪
+	 *	浜ゆ槗閫氶亾灏辩华
 	 */
 	virtual void on_channel_ready() = 0;
 
 	/*
-	 *	交易通道丢失
+	 *	浜ゆ槗閫氶亾涓㈠け
 	 */
 	virtual void on_channel_lost() = 0;
 
 	/*
-	 *	下单回报
+	 *	涓嬪崟鍥炴姤
 	 */
 	virtual void on_entrust(uint32_t localid, const char* stdCode, bool bSuccess, const char* message){}
 
 	/*
-	 *	资金回调
+	 *	璧勯噾鍥炶皟
 	 */
 	virtual void on_account(const char* currency, double prebalance, double balance, double dynbalance, double avaliable, double closeprofit, double dynprofit, double margin, double fee, double deposit, double withdraw){}
 };

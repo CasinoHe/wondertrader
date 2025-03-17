@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file ParserXTP.h
  * \project	WonderTrader
  *

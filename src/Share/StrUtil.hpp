@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file StrUtil.hpp
  * \project	WonderTrader
  *

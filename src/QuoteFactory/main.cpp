@@ -1,4 +1,4 @@
-﻿#include "../WtDtCore/ParserAdapter.h"
+#include "../WtDtCore/ParserAdapter.h"
 #include "../WtDtCore/DataManager.h"
 #include "../WtDtCore/StateMonitor.h"
 #include "../WtDtCore/UDPCaster.h"

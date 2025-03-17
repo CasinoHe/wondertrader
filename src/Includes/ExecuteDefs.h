@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file ExecuteDefs.h
  * \project	WonderTrader
  *

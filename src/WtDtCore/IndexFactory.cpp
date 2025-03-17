@@ -1,4 +1,4 @@
-﻿#include "IndexFactory.h"
+#include "IndexFactory.h"
 #include "DataManager.h"
 #include "../Includes/WTSVariant.hpp"
 #include "../Includes/WTSDataDef.hpp"

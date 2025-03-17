@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #define WT_VER_MAJOR 0
 #define WT_VER_MINOR 9

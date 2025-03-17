@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file IBtDtReader.h
  * \project	WonderTrader
  *

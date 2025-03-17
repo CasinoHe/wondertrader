@@ -1,4 +1,4 @@
-﻿#include "ExpHftContext.h"
+#include "ExpHftContext.h"
 #include "WtRtRunner.h"
 #include "../Share/StrUtil.hpp"
 

@@ -1,4 +1,4 @@
-﻿#include "ShareManager.h"
+#include "ShareManager.h"
 #include "WtUftEngine.h"
 #include "../WTSTools/WTSLogger.h"
 

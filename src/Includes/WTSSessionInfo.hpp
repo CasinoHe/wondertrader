@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file WTSSessionInfo.hpp
  * \project	WonderTrader
  *

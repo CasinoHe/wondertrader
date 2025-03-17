@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file TraderXTP.h
  * \project	WonderTrader
  *

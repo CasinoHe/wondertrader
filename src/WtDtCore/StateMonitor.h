@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file StateMonitor.h
  * \project	WonderTrader
  *

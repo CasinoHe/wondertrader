@@ -48,7 +48,7 @@ public:
 
 public:
 	//////////////////////////////////////////////////////////////////////////
-	//WtEngine接口
+	//WtEngine鎺ュ彛
 	virtual void init(WTSVariant* cfg, IBaseDataMgr* bdMgr, WtDtMgr* dataMgr, IHotMgr* hotMgr, EventNotifier* notifier) override;
 
 	virtual void run() override;
@@ -66,7 +66,7 @@ public:
 	virtual void on_session_end() override;
 
 	///////////////////////////////////////////////////////////////////////////
-	//IExecuterStub 接口
+	//IExecuterStub 鎺ュ彛
 	virtual uint64_t get_real_time() override;
 	virtual WTSCommodityInfo* get_comm_info(const char* stdCode) override;
 	virtual WTSSessionInfo* get_sess_info(const char* stdCode) override;

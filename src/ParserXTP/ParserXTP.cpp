@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file ParserXTP.cpp
  * \project	WonderTrader
  *

@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file WTSContractInfo.hpp
  * \project	WonderTrader
  *

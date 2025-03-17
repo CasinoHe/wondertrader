@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file WtStockMinImpactExeUnit.h
  *
  * \author Wesley

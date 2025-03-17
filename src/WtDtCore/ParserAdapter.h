@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file ParserAdapter.h
  * \project	WonderTrader
  *

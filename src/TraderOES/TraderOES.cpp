@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file TraderOES.cpp
  * \project	WonderTrader
  *

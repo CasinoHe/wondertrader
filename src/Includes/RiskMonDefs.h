@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file RiskMonDefs.h
  * \project	WonderTrader
  *

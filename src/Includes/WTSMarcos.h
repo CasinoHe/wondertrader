@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file WTSMarcos.h
  * \project	WonderTrader
  *

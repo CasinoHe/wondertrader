@@ -1,4 +1,4 @@
-﻿/*
+/*
 23.6.2--zhaoyk--StockVWAP
 */
 #include "WtStockVWapExeUnit.h"

@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file IBaseDataMgr.h
  * \project	WonderTrader
  *

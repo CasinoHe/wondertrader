@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file TraderHTS.h
  * \project	WonderTrader
  *

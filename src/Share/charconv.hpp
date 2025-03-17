@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include <stdlib.h>
 #include <string>
 #include <boost/locale.hpp>

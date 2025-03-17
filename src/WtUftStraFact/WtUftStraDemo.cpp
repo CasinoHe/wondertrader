@@ -1,4 +1,4 @@
-﻿#include "WtUftStraDemo.h"
+#include "WtUftStraDemo.h"
 #include "../Includes/IUftStraCtx.h"
 
 #include "../Includes/WTSVariant.hpp"

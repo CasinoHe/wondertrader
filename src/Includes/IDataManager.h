@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include "../Includes/WTSTypes.h"
 
 NS_WTP_BEGIN

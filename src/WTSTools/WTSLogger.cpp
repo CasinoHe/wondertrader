@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file WTSLogger.cpp
  * \project	WonderTrader
  *

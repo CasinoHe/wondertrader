@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file BoostMappingFile.hpp
  * \project	WonderTrader
  *

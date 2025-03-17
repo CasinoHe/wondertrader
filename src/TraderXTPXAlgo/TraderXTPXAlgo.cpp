@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file TraderXTPXAlgo.cpp
  * \project	WonderTrader
  *

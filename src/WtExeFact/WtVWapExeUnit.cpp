@@ -1,4 +1,4 @@
-﻿/*
+/*
 23.5.23--zhaoyk--VWAP
 */
 #include "WtVWapExeUnit.h"

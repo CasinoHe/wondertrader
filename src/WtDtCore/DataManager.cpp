@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file DataManager.cpp
  * \project	WonderTrader
  *

@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file ILogHandler.h
  * \project	WonderTrader
  *

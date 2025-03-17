@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file ParserFemas.cpp
  * \project	WonderTrader
  *

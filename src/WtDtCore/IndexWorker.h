@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include "../Includes/WTSMarcos.h"
 #include "../Includes/WTSStruct.h"
 #include "../Includes/FasterDefs.h"

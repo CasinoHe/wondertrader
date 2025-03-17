@@ -1,4 +1,4 @@
-﻿#include "ExpSelMocker.h"
+#include "ExpSelMocker.h"
 #include "WtBtRunner.h"
 
 extern WtBtRunner& getRunner();

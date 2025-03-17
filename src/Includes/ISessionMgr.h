@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file ISessionMgr.h
  * \project	WonderTrader
  *

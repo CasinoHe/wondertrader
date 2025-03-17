@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file IDataFactory.h
  * \project	WonderTrader
  *

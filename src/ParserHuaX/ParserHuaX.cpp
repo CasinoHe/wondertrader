@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file ParserHuaX.cpp
  * \project	WonderTrader
  *

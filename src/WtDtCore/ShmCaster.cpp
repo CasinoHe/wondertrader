@@ -1,4 +1,4 @@
-﻿#include "ShmCaster.h"
+#include "ShmCaster.h"
 #include "../Includes/WTSVariant.hpp"
 #include "../Includes/WTSDataDef.hpp"
 #include "../Share/StdUtils.hpp"

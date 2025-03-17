@@ -1,4 +1,4 @@
-﻿#include "Dumper.h"
+#include "Dumper.h"
 #include "WtHelper.h"
 #include "TraderAdapter.h"
 

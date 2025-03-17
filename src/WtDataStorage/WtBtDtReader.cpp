@@ -1,4 +1,4 @@
-﻿#include "WtBtDtReader.h"
+#include "WtBtDtReader.h"
 
 #include "../Includes/WTSVariant.hpp"
 #include "../Share/StrUtil.hpp"

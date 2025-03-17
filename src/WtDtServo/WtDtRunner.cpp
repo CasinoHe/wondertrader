@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file WtDtRunner.cpp
  * \project	WonderTrader
  *

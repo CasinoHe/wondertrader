@@ -1,4 +1,4 @@
-﻿#include <string>
+#include <string>
 #include <map>
 //v6.3.15
 #include "../API/CTP6.3.15/ThostFtdcTraderApi.h"

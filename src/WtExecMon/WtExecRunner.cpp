@@ -1,4 +1,4 @@
-﻿#include "WtExecRunner.h"
+#include "WtExecRunner.h"
 
 #include "../WtCore/WtHelper.h"
 #include "../WtCore/WtDiffExecuter.h"

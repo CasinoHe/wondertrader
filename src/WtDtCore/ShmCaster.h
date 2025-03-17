@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include "IDataCaster.h"
 #include <stdint.h>
 #include "../Includes/WTSStruct.h"

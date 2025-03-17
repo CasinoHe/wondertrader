@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file TraderHuaX.CPP
  * \project	WonderTrader
  *

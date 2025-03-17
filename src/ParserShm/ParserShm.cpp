@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file ParserShm.cpp
  * \project	WonderTrader
  *

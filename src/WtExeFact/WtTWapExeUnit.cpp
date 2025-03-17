@@ -1,4 +1,4 @@
-﻿#include "WtTWapExeUnit.h"
+#include "WtTWapExeUnit.h"
 
 #include "../Share/TimeUtils.hpp"
 #include "../Includes/WTSVariant.hpp"

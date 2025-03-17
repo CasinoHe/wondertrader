@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file WtSimpDataMgr.cpp
  * \project	WonderTrader
  *

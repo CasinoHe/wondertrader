@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file IHotMgr.h
  * \project	WonderTrader
  *

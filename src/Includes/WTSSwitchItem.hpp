@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file WTSSwitchItem.hpp
  * \project	WonderTrader
  *

@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file ParserHuaX.h
  * \project	WonderTrader
  *

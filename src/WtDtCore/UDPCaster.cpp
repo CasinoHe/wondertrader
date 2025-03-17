@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file UDPCaster.cpp
  * \project	WonderTrader
  *

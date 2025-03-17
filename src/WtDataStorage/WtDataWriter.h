@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include "DataDefine.h"
 
 #include "../Includes/FasterDefs.h"

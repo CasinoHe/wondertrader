@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file TraderFemas.h
  * \project	WonderTrader
  *

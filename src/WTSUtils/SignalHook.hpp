@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include <signal.h>
 #include "./StackTracer/StackTracer.h"
 TracerLogCallback g_cbSignalLog = NULL;

@@ -30,7 +30,7 @@ public:
 	CtaStrategy* get_stragety() { return _strategy; }
 
 public:
-	//»Øµ÷º¯Êý
+	//禄脴碌梅潞炉脢媒
 	virtual void on_init() override;
 	virtual void on_session_begin(uint32_t uTDate) override;
 	virtual void on_session_end(uint32_t uTDate) override;

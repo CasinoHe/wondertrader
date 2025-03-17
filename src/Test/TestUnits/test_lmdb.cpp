@@ -1,4 +1,4 @@
-﻿#include "../WTSUtils/WtLMDB.hpp"
+#include "../WTSUtils/WtLMDB.hpp"
 #include "../Share/StrUtil.hpp"
 #include "gtest/gtest/gtest.h"
 

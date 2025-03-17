@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file DLLHelper.hpp
  * \project	WonderTrader
  *

@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <set>
 #include <stdint.h>
 #include <fstream>

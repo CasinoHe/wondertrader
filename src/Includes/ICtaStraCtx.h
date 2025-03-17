@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file ICtaStraCtx.h
  * \project	WonderTrader
  *

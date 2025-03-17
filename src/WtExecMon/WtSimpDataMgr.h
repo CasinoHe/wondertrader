@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include <vector>
 #include "../Includes/IDataReader.h"
 #include "../Includes/IDataManager.h"

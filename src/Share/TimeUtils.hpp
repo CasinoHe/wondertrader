@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file TimeUtils.hpp
  * \project	WonderTrader
  *

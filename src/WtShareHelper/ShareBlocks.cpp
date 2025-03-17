@@ -1,4 +1,4 @@
-﻿#include "ShareBlocks.h"
+#include "ShareBlocks.h"
 #include "../Share/BoostFile.hpp"
 #include "../Share/TimeUtils.hpp"
 #include "../Share/StdUtils.hpp"

@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file IniHelper.hpp
  * \project	WonderTrader
  *

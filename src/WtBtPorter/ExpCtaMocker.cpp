@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file PyCtaMocker.cpp
  * \project	WonderTrader
  *

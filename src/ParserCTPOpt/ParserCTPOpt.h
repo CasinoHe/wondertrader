@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file ParserCTPOpt.h
  * \project	WonderTrader
  *

@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include "SpinMutex.hpp"
 #include "BoostFile.hpp"
 #include "BoostMappingFile.hpp"

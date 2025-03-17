@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include <boost/pool/pool.hpp>
 #include <atomic>
 

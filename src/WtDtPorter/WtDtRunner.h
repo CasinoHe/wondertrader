@@ -41,7 +41,7 @@ public:
 
 
 //////////////////////////////////////////////////////////////////////////
-//扩展Parser
+//鎵╁睍Parser
 public:
 	void registerParserPorter(FuncParserEvtCallback cbEvt, FuncParserSubCallback cbSub);
 
@@ -55,7 +55,7 @@ public:
 	void on_ext_parser_quote(const char* id, WTSTickStruct* curTick, uint32_t uProcFlag);
 
 //////////////////////////////////////////////////////////////////////////
-//扩展Dumper
+//鎵╁睍Dumper
 public:
 	bool createExtDumper(const char* id);
 

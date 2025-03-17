@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file ParserUDP.cpp
  * \project	WonderTrader
  *

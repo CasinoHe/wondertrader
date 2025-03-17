@@ -1,4 +1,4 @@
-﻿/*!
+/*!
 * \file MfStrategyDefs.h
 * \project	WonderTrader
 *

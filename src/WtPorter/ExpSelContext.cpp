@@ -1,4 +1,4 @@
-﻿#include "ExpSelContext.h"
+#include "ExpSelContext.h"
 #include "WtRtRunner.h"
 
 extern WtRtRunner& getRunner();

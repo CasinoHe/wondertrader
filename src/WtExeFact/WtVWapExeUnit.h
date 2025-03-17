@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 /*
 23.5.23--zhaoyv--VWAP
 */

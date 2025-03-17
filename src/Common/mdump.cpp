@@ -1,4 +1,4 @@
-﻿/*
+/*
 * $Id: mdump.cpp 5561 2009-12-25 07:23:59Z wangmeng $
 *
 * this file is part of eMule

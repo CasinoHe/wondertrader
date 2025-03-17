@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 /*
 23.6.2--zhaoyk--StockVWAP
 */

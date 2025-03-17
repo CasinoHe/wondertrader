@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include "WtOrdMon.h"
 #include "../Includes/ExecuteDefs.h"
 #include "../Share/StdUtils.hpp"

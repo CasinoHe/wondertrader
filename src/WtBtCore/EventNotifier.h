@@ -5,7 +5,7 @@
  * \author Wesley
  * \date 2020/03/30
  * 
- * \brief UDP广播对象定义
+ * \brief UDP骞挎挱瀵硅薄瀹氫箟
  */
 #pragma once
 

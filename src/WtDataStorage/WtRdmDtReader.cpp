@@ -1,4 +1,4 @@
-﻿#include "WtRdmDtReader.h"
+#include "WtRdmDtReader.h"
 
 #include "../Includes/WTSVariant.hpp"
 #include "../Share/TimeUtils.hpp"

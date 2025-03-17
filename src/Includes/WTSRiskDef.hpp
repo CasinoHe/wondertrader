@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file WTSRiskDef.hpp
  * \project	WonderTrader
  *

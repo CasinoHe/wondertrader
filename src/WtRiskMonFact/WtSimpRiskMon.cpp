@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file WtSimpRiskMon.cpp
  * \project	WonderTrader
  *

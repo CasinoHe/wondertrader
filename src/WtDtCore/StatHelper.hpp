@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file StatHelper.hpp
  * \project	WonderTrader
  *

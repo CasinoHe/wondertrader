@@ -1,4 +1,4 @@
-﻿#include "../Share/WtKVCache.hpp"
+#include "../Share/WtKVCache.hpp"
 #include "../Share/IniHelper.hpp"
 #include "../Share/TimeUtils.hpp"
 #include "../Share/fmtlib.h"

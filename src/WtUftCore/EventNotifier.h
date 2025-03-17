@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file EventCaster.h
  * \project	WonderTrader
  *

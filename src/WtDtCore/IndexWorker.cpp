@@ -1,4 +1,4 @@
-﻿#include "IndexWorker.h"
+#include "IndexWorker.h"
 #include "IndexFactory.h"
 
 #include "../Includes/IBaseDataMgr.h"

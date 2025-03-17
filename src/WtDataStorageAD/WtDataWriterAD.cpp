@@ -1,4 +1,4 @@
-﻿#include "WtDataWriterAD.h"
+#include "WtDataWriterAD.h"
 #include "LMDBKeys.h"
 
 #include "../Includes/WTSSessionInfo.hpp"

@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * \file WTSExpressData.hpp
  * \project	WonderTrader
  *

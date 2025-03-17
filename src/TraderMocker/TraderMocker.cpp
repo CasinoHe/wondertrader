@@ -1,4 +1,4 @@
-﻿#include "TraderMocker.h"
+#include "TraderMocker.h"
 
 #include "../Includes/WTSVariant.hpp"
 #include "../Includes/WTSDataDef.hpp"

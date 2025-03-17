@@ -1,4 +1,4 @@
-﻿#include "WtExecPorter.h"
+#include "WtExecPorter.h"
 #include "WtExecRunner.h"
 
 #include "../WtCore/WtHelper.h"

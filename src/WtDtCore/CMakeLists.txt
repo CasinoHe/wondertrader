@@ -1,23 +1,19 @@
+cmake_minimum_required(VERSION 3.28.3)
 
-#1. 确定CMake的最低版本需求
-cmake_minimum_required(VERSION 3.0.0)
+project(XYYDtCore)
 
-#2. 确定工程名
-project(WtDtCore LANGUAGES CXX)
-SET(CMAKE_CXX_STANDARD 17)
+file(GLOB SRCS *.cpp)
+file(GLOB HDRS *.h)
 
-IF(MSVC)
-ELSE(GNUCC)
-	SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
-ENDIF()
+add_library(${PROJECT_NAME} STATIC ${SRCS} ${HDRS})
+target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt-header-only)
 
-SET(LIBRARY_OUTPUT_PATH  ${CMAKE_BINARY_DIR}/build_${PLATFORM}/${CMAKE_BUILD_TYPE}/libs)
-
-#7. 添加源码
-FILE(GLOB SRCS *.cpp)
-FILE( GLOB HDRS *.h *.hpp)
-
-INCLUDE_DIRECTORIES(${INCS})
-LINK_DIRECTORIES(${LNKS})
-
-ADD_LIBRARY(WtDtCore STATIC ${SRCS} ${HDRS})
+if(MSVC)
+	target_link_libraries(${PROJECT_NAME} PRIVATE  ws2_32)
+	target_compile_options(${PROJECT_NAME} PRIVATE "/MT")
+elseif(GCC)
+	target_link_libraries(${PROJECT_NAME} PRIVATE  dl pthread)
+	if(WIN32)
+		target_link_libraries(${PROJECT_NAME} PRIVATE iconv)
+	endif(WIN32)
+endif(MSVC)

@@ -872,12 +872,12 @@ public:
         tsl_rh_assert(ito_move_closer_value > icloser_bucket);
         
         const std::size_t ireturn_bucket = ito_move_closer_value - 
-                                           std::min(ito_move_closer_value - icloser_bucket, 
+                                           std::min<std::size_t>(ito_move_closer_value - icloser_bucket, 
                                                     std::size_t(m_buckets[ito_move_closer_value].dist_from_ideal_bucket()));
         
         while(ito_move_closer_value < m_bucket_count && m_buckets[ito_move_closer_value].dist_from_ideal_bucket() > 0) {
             icloser_bucket = ito_move_closer_value - 
-                             std::min(ito_move_closer_value - icloser_bucket, 
+                             std::min<std::size_t>(ito_move_closer_value - icloser_bucket, 
                                       std::size_t(m_buckets[ito_move_closer_value].dist_from_ideal_bucket()));
             
             

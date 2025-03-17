@@ -6,7 +6,7 @@
 
 #include "../Share/StrUtil.hpp"
 #include "../Share/fmtlib.h"
-#include "../Share/charconv.hpp"
+#include "../Share/LocaleHelper.hpp"
 #include "../Includes/LoaderDef.hpp"
 #include "../Includes/WTSVariant.hpp"
 
@@ -24,7 +24,7 @@ inline const char* encode_text(const char* s)
 	return s;
 #else
 	static std::string ret;
-	ret = ChartoUTF8(s);
+	ret = quanttrader::EncodingHelper::locale_to_utf8(s, "gbk");
 	return ret.c_str();
 #endif
 }
@@ -275,8 +275,8 @@ void CTraderSpi::OnRspQryInstrument(CThostFtdcInstrumentField *pInstrument, CTho
 
 					//合约名称转成UTF8
 					cname = StrUtil::trim(cname.c_str());
-					if (!EncodingHelper::isUtf8((unsigned char*)cname.c_str(), cname.size()))
-						cname = ChartoUTF8(cname);
+					if (!quanttrader::EncodingHelper::is_valid_utf8(cname))
+						cname = quanttrader::EncodingHelper::locale_to_utf8(cname, "gbk");
 
 					Contract contract;
 					contract.m_strCode = pInstrument->InstrumentID;
@@ -306,8 +306,8 @@ void CTraderSpi::OnRspQryInstrument(CThostFtdcInstrumentField *pInstrument, CTho
 					{
 						//品种名称也转成UTF8
 						pname = StrUtil::trim(pname.c_str());
-						if (!EncodingHelper::isUtf8((unsigned char*)pname.c_str(), pname.size()))
-							pname = ChartoUTF8(pname);
+						if (!quanttrader::EncodingHelper::is_valid_utf8(pname))
+							pname = quanttrader::EncodingHelper::locale_to_utf8(pname, "gbk");
 
 						Commodity commInfo;
 						commInfo.m_strProduct = pInstrument->ProductID;

@@ -9,7 +9,7 @@
 #include "../Share/DLLHelper.hpp"
 #include "../Share/StdUtils.hpp"
 
-#include "../Share/charconv.hpp"
+#include "../Share/LocaleHelper.hpp"
 #include "../Share/fmtlib.h"
 
 #include "../WTSUtils/WTSCfgLoader.h"
@@ -205,15 +205,15 @@ int run(const char* cfgfile, bool bAsync = false, bool isFile = true)
 			for (int i = 0; i < cout; i++)
 			{
 				std::string pName = ayVals[i];
-				bool isUTF8 = EncodingHelper::isUtf8((unsigned char*)pName.c_str(), pName.size());
+				bool isUTF8 = quanttrader::EncodingHelper::is_valid_utf8(pName);
 				if (!isUTF8)
-					pName = ChartoUTF8(ayVals[i]);
+					pName = quanttrader::EncodingHelper::locale_to_utf8(pName, "gbk");
 				//保存的时候全部转成UTF8
 				MAP_NAME[ayKeys[i]] = pName;
 #ifdef _WIN32
-				printf("Commodity name mapping: %s - %s\r\n", ayKeys[i].c_str(), isUTF8 ? UTF8toChar(ayVals[i]).c_str() : ayVals[i].c_str());
+				printf("Commodity name mapping: %s - %s\r\n", ayKeys[i].c_str(), isUTF8 ? pName.c_str() : ayVals[i].c_str());
 #else
-				printf("Commodity name mapping: %s - %s\r\n", ayKeys[i].c_str(), isUTF8 ? ayVals[i].c_str() : ChartoUTF8(ayVals[i]).c_str());
+				printf("Commodity name mapping: %s - %s\r\n", ayKeys[i].c_str(), isUTF8 ? ayVals[i].c_str() : pName.c_str());
 #endif
 			}
 

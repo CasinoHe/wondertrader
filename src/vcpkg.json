@@ -47,6 +47,10 @@
             "features": []
         },
         {
+            "name": "boost-property-tree",
+            "features": []
+        },
+        {
             "name": "utfcpp",
             "features": []
         },

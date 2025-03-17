@@ -31,7 +31,7 @@ include_directories(${SRC_ROOT_DIR}/Includes)
 # find all dependencies and add them to the project
 # the dependencies is built by vcpkg or custom build
 set(THIRDPARTY_DIR ${PROJECT_ROOT_DIR}/thirdparties)
-find_package(Boost 1.86.0 REQUIRED COMPONENTS program_options algorithm pool locale filesystem xpressive asio interprocess circular_buffer)
+find_package(Boost 1.86.0 REQUIRED COMPONENTS program_options algorithm pool locale filesystem xpressive asio interprocess circular_buffer property_tree)
 find_package(RapidJSON CONFIG REQUIRED)
 find_package(spdlog CONFIG REQUIRED)
 find_package(fmt CONFIG REQUIRED)
@@ -53,7 +53,7 @@ add_subdirectory(LoaderRunner)
 add_subdirectory(WtUftCore)
 
 #contract Loade through ctp channel
-# ADD_SUBDIRECTORY(CTPLoader)
+add_subdirectory(CTPLoader)
 # ADD_SUBDIRECTORY(CTPOptLoader)
 add_subdirectory(TraderDumper)
 add_subdirectory(WtShareHelper)

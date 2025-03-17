@@ -1,47 +1,20 @@
+cmake_minimum_required(VERSION 3.28.3)
 
-#1. 确定CMake的最低版本需求
-cmake_minimum_required(VERSION 3.0.0)
+project(CTPLoader)
 
-#2. 确定工程名
-project(CTPLoader LANGUAGES CXX)
-SET(CMAKE_CXX_STANDARD 17)
+file(GLOB SRCS *.cpp)
+file(GLOB HDRS *.h)
 
-SET(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/build_${PLATFORM}/${CMAKE_BUILD_TYPE}/bin/Loader)
+add_library(${PROJECT_NAME} SHARED ${SRCS} ${HDRS})
+target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt-header-only XYYUtils Boost::filesystem Boost::property_tree)
 
-#7. 添加源码
-SET(SRC  
-	${PROJECT_SOURCE_DIR}/CTPLoader.cpp
-	${PROJECT_SOURCE_DIR}/TraderSpi.cpp
-	${PROJECT_SOURCE_DIR}/TraderSpi.h
-)
-
-INCLUDE_DIRECTORIES(${INCS})
-LINK_DIRECTORIES(${LNKS})
-
-SET(LIBS
-	boost_filesystem
-    WTSUtils
-	dl
-)
-
-IF(WIN32)
-LIST(APPEND LIBS iconv)
-ENDIF()
-
-#9. 生成可执行文件
-ADD_LIBRARY(CTPLoader SHARED ${SRC})
-IF (MSVC)
-ELSE (GNUCC)
-	TARGET_LINK_LIBRARIES(CTPLoader ${LIBS})
-ENDIF ()
-
-IF (MSVC)
-ELSE (GNUCC)
-	SET_TARGET_PROPERTIES(CTPLoader PROPERTIES
-		CXX_VISIBILITY_PRESET hidden
-		C_VISIBILITY_PRESET hidden
-		VISIBILITY_INLINES_HIDDEN 1
-        LINK_FLAGS_RELEASE -s)
-ENDIF ()
-
-
+if(MSVC)
+	target_link_libraries(${PROJECT_NAME} PRIVATE  ws2_32)
+	target_compile_options(${PROJECT_NAME} PRIVATE "/MT")
+elseif(GCC)
+	target_link_libraries(${PROJECT_NAME} PRIVATE  dl pthread)
+	set_target_properties(${PROJECT_NAME} PROPERTIES CXX_VISIBILITY_PRESET hidden VISIBILITY_INLINES_HIDDEN 1 LINK_FLAGS_RELEASE -s)
+	if(WIN32)
+		target_link_libraries(${PROJECT_NAME} PRIVATE iconv)
+	endif(WIN32)
+endif(MSVC)

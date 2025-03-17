@@ -24,6 +24,14 @@ public:
         }
     }
 
+    static std::string locale_to_utf8(const std::string& locale_str, const std::string& encoding_name) {
+        try {
+            return boost::locale::conv::to_utf<char>(locale_str, encoding_name);
+        } catch (const std::exception& e) {
+            throw std::runtime_error("Failed to convert locale to UTF-8: " + std::string(e.what()));
+        }
+    }
+
 	static bool is_likely_gbk(const unsigned char* data, std::size_t len) {
 		std::size_t i = 0;
 		while (i < len) {

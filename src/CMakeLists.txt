@@ -61,7 +61,7 @@ add_subdirectory(WtShareHelper)
 # backtesting and live trading
 add_subdirectory(WtBtCore)
 add_subdirectory(WtBtPorter)
-# ADD_SUBDIRECTORY(WtBtRunner)
+add_subdirectory(WtBtRunner)
 
 # #parser for quote date from ctp channel
 # ADD_SUBDIRECTORY(ParserCTP)

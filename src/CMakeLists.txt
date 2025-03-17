@@ -92,12 +92,13 @@ add_subdirectory(QuoteFactory)
 # ADD_SUBDIRECTORY(TraderMocker)
 # ADD_SUBDIRECTORY(TraderXTP)
 # ADD_SUBDIRECTORY(TraderYD)
-# ADD_SUBDIRECTORY(WtExeFact)
 # ADD_SUBDIRECTORY(WtRiskMonFact)
 
 add_subdirectory(WtPorter)
-# ADD_SUBDIRECTORY(WtExecMon)
 add_subdirectory(WtRunner)
+
+add_subdirectory(WtExeFact)
+add_subdirectory(WtExecMon)
 
 # #uft
 add_subdirectory(WtUftStraFact)

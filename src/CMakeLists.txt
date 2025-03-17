@@ -13,6 +13,8 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+option(BUILD_TEST "Build test projects" OFF)
+
 # Fix for ambiguous 'byte' symbol when compiling with MSVC
 if(MSVC)
   add_definitions(-D_HAS_STD_BYTE=0)
@@ -115,10 +117,12 @@ add_subdirectory(WtLatencyHFT)
 add_subdirectory(WtLatencyUFT)
 
 # test projects
-# ADD_SUBDIRECTORY(TestBtPorter)
-# ADD_SUBDIRECTORY(TestDtPorter)
-# ADD_SUBDIRECTORY(TestExecPorter)
-# ADD_SUBDIRECTORY(TestPorter)
-# ADD_SUBDIRECTORY(TestTrader)
-# ADD_SUBDIRECTORY(TestParser)
-# ADD_SUBDIRECTORY(TestUnits)
+if (BUILD_TEST)
+  add_subdirectory(test/TestBtPorter)
+  add_subdirectory(test/TestDtPorter)
+  # ADD_SUBDIRECTORY(test/TestExecPorter)
+  # ADD_SUBDIRECTORY(test/TestPorter)
+  # ADD_SUBDIRECTORY(test/TestTrader)
+  # ADD_SUBDIRECTORY(test/TestParser)
+  # ADD_SUBDIRECTORY(test/TestUnits)
+endif (BUILD_TEST)

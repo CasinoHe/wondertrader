@@ -43,29 +43,33 @@ include_directories(${Boost_INCLUDE_DIRS})
 #basic libraries
 add_subdirectory(WTSUtils)
 add_subdirectory(WTSTools)
-add_subdirectory(WtMsgQue)
-add_subdirectory(WtCore)
-
-# executable file
-add_subdirectory(LoaderRunner)
 
 # uft engine
 add_subdirectory(WtUftCore)
-add_subdirectory(WtUftStraFact)
 add_subdirectory(WtUftRunner)
 
-#contract Loade through ctp channel
+# tools
 add_subdirectory(CTPLoader)
 add_subdirectory(CTPOptLoader)
 add_subdirectory(TraderDumper)
+add_subdirectory(LoaderRunner)
+add_subdirectory(WtMsgQue)
 add_subdirectory(WtShareHelper)
 
-# backtesting and live trading
-add_subdirectory(WtBtCore)
-add_subdirectory(WtBtPorter)
-add_subdirectory(WtBtRunner)
+# product
+add_subdirectory(WtCore)
+add_subdirectory(WtExecMon)
+add_subdirectory(WtPorter)
+add_subdirectory(WtRunner)
 
-# #parser for quote date from ctp channel
+# plugins
+add_subdirectory(WtCtaStraFact)
+add_subdirectory(WtUftStraFact)
+add_subdirectory(WtSelStraFact)
+add_subdirectory(WtExeFact)
+add_subdirectory(WtRiskMonFact)
+
+# Parsers
 add_subdirectory(ParserCTP)
 add_subdirectory(ParserCTPMini)
 add_subdirectory(ParserCTPOpt)
@@ -77,15 +81,22 @@ add_subdirectory(ParserUDP)
 add_subdirectory(ParserXeleSkt)
 add_subdirectory(ParserXTP)
 add_subdirectory(ParserYD)
+
+# DataKit
+add_subdirectory(QuoteFactory)
 add_subdirectory(WtDataStorage)
 add_subdirectory(WtDataStorageAD)
 add_subdirectory(WtDtCore)
 add_subdirectory(WtDtHelper)
 add_subdirectory(WtDtPorter)
 add_subdirectory(WtDtServo)
-# #quote date processor
-add_subdirectory(QuoteFactory)
 
+# backtest
+add_subdirectory(WtBtCore)
+add_subdirectory(WtBtPorter)
+add_subdirectory(WtBtRunner)
+
+# traders
 # add_subdirectory(TraderATP)
 add_subdirectory(TraderCTP)
 add_subdirectory(TraderCTPMini)
@@ -98,18 +109,11 @@ add_subdirectory(TraderMocker)
 add_subdirectory(TraderXTP)
 add_subdirectory(TraderXTPXAlgo)
 add_subdirectory(TraderYD)
-add_subdirectory(WtRiskMonFact)
-
-add_subdirectory(WtPorter)
-add_subdirectory(WtRunner)
-
-add_subdirectory(WtExeFact)
-add_subdirectory(WtExecMon)
 
 add_subdirectory(WtLatencyHFT)
 add_subdirectory(WtLatencyUFT)
 
-# #test projects
+# test projects
 # ADD_SUBDIRECTORY(TestBtPorter)
 # ADD_SUBDIRECTORY(TestDtPorter)
 # ADD_SUBDIRECTORY(TestExecPorter)

@@ -5,7 +5,7 @@
  * \author Wesley
  * \date 2020/03/30
  * 
- * \brief Wt集合组件定义文件
+ * \brief Wt collection component definition file
  */
 #pragma once
 #include "WTSObject.hpp"
@@ -23,17 +23,17 @@ NS_WTP_BEGIN
 //WTSArray
 
 /*
- *	平台数组容器
- *	内部使用vector实现
- *	数据使用WTSObject指针对象
- *	所有WTSObject的派生类都可以使用
- *	用于平台内使用
+ *	Platform array container
+ *	Implemented using vector internally
+ *	Data uses WTSObject pointer objects
+ *	All derived classes of WTSObject can use it
+ *	Used within the platform
  */
 class WTSArray : public WTSObject
 {
 public:
 	/*
-	 *	数组迭代器
+	 *	Array iterator
 	 */
 	typedef std::vector<WTSObject*>::iterator Iterator;
 	typedef std::vector<WTSObject*>::const_iterator ConstIterator;
@@ -44,7 +44,7 @@ public:
 	typedef std::function<bool(WTSObject*, WTSObject*)>	SortFunc;
 
 	/*
-	 *	创建数组对象
+	 *	Create array object
 	 */
 	static WTSArray* create()
 	{
@@ -53,15 +53,15 @@ public:
 	}
 
 	/*
-	 *	读取数组长度
+	 *	Read array length
 	 */
 	inline
 	uint32_t size() const{ return (uint32_t)_vec.size(); }
 
 	/*
-	 *	清空数组,并重新分配空间
-	 *	调用该函数会预先分配长度
-	 *	预先分配好的数据都是NULL
+	 *	Clear array and reallocate space
+	 *	Calling this function will pre-allocate length
+	 *	Pre-allocated data are all NULL
 	 */
 	void resize(uint32_t _size)
 	{
@@ -72,10 +72,10 @@ public:
 	}
 
 	/*
-	 *	读取数组指定位置的数据
-	 *	对比grab接口,at接口只取得数据
-	 *	不增加数据的引用计数
-	 *	grab接口读取数据以后,增加引用计数
+	 *	Read data at the specified position of the array
+	 *	Compared to the grab interface, the at interface only gets the data
+	 *	Does not increase the reference count of the data
+	 *	After the grab interface reads the data, the reference count is increased
 	 */
 	inline
 	WTSObject* at(uint32_t idx)
@@ -115,8 +115,8 @@ public:
 	}
 
 	/*
-	 *	[]操作符重载
-	 *	用法同at函数
+	 *	[] operator overload
+	 *	Usage is the same as the at function
 	 */
 	inline
 	WTSObject* operator [](uint32_t idx)
@@ -129,8 +129,8 @@ public:
 	}
 
 	/*
-	 *	读取数组指定位置的数据
-	 *	增加引用计数
+	 *	Read data at the specified position of the array
+	 *	Increase reference count
 	 */
 	inline
 	WTSObject*	grab(uint32_t idx)
@@ -146,8 +146,8 @@ public:
 	}
 
 	/*
-	 *	数组末尾追加数据
-	 *	数据自动增加引用计数
+	 *	Append data to the end of the array
+	 *	Data automatically increases the reference count
 	 */
 	inline
 	void append(WTSObject* obj, bool bAutoRetain = true)
@@ -159,9 +159,9 @@ public:
 	}
 
 	/*
-	 *	设置指定位置的数据
-	 *	如果该位置已有数据,则释放掉
-	 *	新数据引用计数增加
+	 *	Set the data at the specified position
+	 *	If there is already data at this position, it will be released
+	 *	The reference count of the new data is increased
 	 */
 	inline
 	void set(uint32_t idx, WTSObject* obj, bool bAutoRetain = true)
@@ -190,8 +190,8 @@ public:
 	}
 
 	/*
-	 *	数组清空
-	 *	数组内所有数据释放引用
+	 *	Array clearing
+	 *	All data in the array releases references
 	 */
 	void clear()
 	{
@@ -209,9 +209,9 @@ public:
 	}
 
 	/*
-	 *	释放数组对象,用法如WTSObject
-	 *	不同的是,如果引用计数为1时
-	 *	释放所有数据
+	 *	Release array object, usage is the same as WTSObject
+	 *	The difference is that if the reference count is 1
+	 *	Release all data
 	 */
 
 	virtual void release()
@@ -235,7 +235,7 @@ public:
 	}
 
 	/*
-	 *	取得数组对象起始位置的迭代器
+	 *	Get the iterator of the starting position of the array object
 	 */
 	inline
 	Iterator begin()
@@ -262,7 +262,7 @@ public:
 	}
 
 	/*
-	 *	取得数组对象末尾位置的迭代器
+	 *	Get the iterator of the ending position of the array object
 	 */
 	inline
 	Iterator end()
@@ -304,18 +304,18 @@ protected:
 
 
 /*
- *	map容器
- *	内部采用std:map实现
- *	模版类型为key类型
- *	数据使用WTSObject指针对象
- *	所有WTSObject的派生类都适用
+ *	map container
+ *	Implemented using std:map internally
+ *	The template type is the key type
+ *	Data uses WTSObject pointer objects
+ *	All derived classes of WTSObject are applicable
  */
 template <class T>
 class WTSMap : public WTSObject
 {
 public:
 	/*
-	 *	容器迭代器的定义
+	 *	Definition of container iterators
 	 */
 	typedef typename std::map<T, WTSObject*>	_MyType;
 	typedef typename _MyType::iterator			Iterator;
@@ -324,7 +324,7 @@ public:
 	typedef typename _MyType::const_reverse_iterator	ConstReverseIterator;
 
 	/*
-	 *	创建map容器
+	 *	Create map container
 	 */
 	static WTSMap<T>*	create()
 	{
@@ -333,15 +333,15 @@ public:
 	}
 
 	/*
-	 *	返回map容器的大小
+	 *	Returns the size of the map container
 	 */
 	inline
 	uint32_t size() const{ return (uint32_t)_map.size(); }
 
 	/*
-	 *	读取指定key对应的数据
-	 *	不增加数据的引用计数
-	 *	没有则返回NULL
+	 *	Read the data corresponding to the specified key
+	 *	Does not increase the reference count of the data
+	 *	Returns NULL if not found
 	 */
 	inline
 	WTSObject* get(const T &_key)
@@ -355,8 +355,8 @@ public:
 	}
 
 	/*
-	 *	[]操作符重载
-	 *	用法同get函数
+	 *	[] operator overload
+	 *	Usage is the same as the get function
 	 */
 	inline
 	WTSObject* operator[](const T &_key)
@@ -370,9 +370,9 @@ public:
 	}
 
 	/*
-	 *	读取指定key对应的数据
-	 *	增加数据的引用计数
-	 *	没有则返回NULL
+	 *	Read the data corresponding to the specified key
+	 *	Increase the reference count of the data
+	 *	Returns NULL if not found
 	 */
 	inline
 	WTSObject* grab(const T &_key)
@@ -389,8 +389,8 @@ public:
 	}
 
 	/*
-	 *	新增一个数据,并增加数据引用计数
-	 *	如果key存在,则将原有数据释放
+	 *	Add a new data, and increase the data reference count
+	 *	If the key exists, the original data will be released
 	 */
 	inline
 	void add(T _key, WTSObject* obj, bool bAutoRetain = true)
@@ -411,8 +411,8 @@ public:
 	}
 
 	/*
-	 *	根据key删除一个数据
-	 *	如果key存在,则对应数据引用计数-1
+	 *	Delete a data according to the key
+	 *	If the key exists, the corresponding data reference count -1
 	 */
 	inline
 	void remove(T _key)
@@ -427,7 +427,7 @@ public:
 	}
 
 	/*
-	 *	获取容器起始位置的迭代器
+	 *	Get the iterator of the starting position of the container
 	 */
 	Iterator begin()
 	{
@@ -440,7 +440,7 @@ public:
 	}
 
 	/*
-	 *	获取容易末尾位置的迭代器
+	 *	Get the iterator of the ending position of the container
 	 */
 	Iterator end()
 	{
@@ -453,7 +453,7 @@ public:
 	}
 
 	/*
-	 *	获取容器起始位置的迭代器
+	 *	Get the iterator of the starting position of the container
 	 */
 	ReverseIterator rbegin()
 	{
@@ -466,7 +466,7 @@ public:
 	}
 
 	/*
-	 *	获取容易末尾位置的迭代器
+	 *	Get the iterator of the ending position of the container
 	 */
 	ReverseIterator rend()
 	{
@@ -539,8 +539,8 @@ public:
 	
 
 	/*
-	 *	清空容器
-	 *	容器内所有数据引用计数-1
+	 *	Clear the container
+	 *	All data in the container reference count -1
 	 */
 	void clear()
 	{
@@ -553,8 +553,8 @@ public:
 	}
 
 	/*
-	 *	释放容器对象
-	 *	如果容器引用计数为1,则清空所有数据
+	 *	Release the container object
+	 *	If the container reference count is 1, clear all data
 	 */
 	virtual void release()
 	{
@@ -584,11 +584,11 @@ protected:
 };
 
 /*
- *	map容器
- *	内部采用std:map实现
- *	模版类型为key类型
- *	数据使用WTSObject指针对象
- *	所有WTSObject的派生类都适用
+ *	map container
+ *	Implemented using std:map internally
+ *	The template type is the key type
+ *	Data uses WTSObject pointer objects
+ *	All derived classes of WTSObject are applicable
  */
 template <typename T, class Hash = std::hash<T>>
 class WTSHashMap : public WTSObject
@@ -602,13 +602,13 @@ protected:
 
 public:
 	/*
-	 *	容器迭代器的定义
+	 *	Container iterator definition
 	 */
 	typedef wt_hashmap<T, WTSObject*, Hash>		_MyType;
 	typedef typename _MyType::const_iterator	ConstIterator;
 
 	/*
-	 *	创建map容器
+	 *	Create map container
 	 */
 	static WTSHashMap<T, Hash>*	create() noexcept
 	{
@@ -617,14 +617,14 @@ public:
 	}
 
 	/*
-	 *	返回map容器的大小
+	 *	Returns the size of the map container
 	 */
 	inline uint32_t size() const noexcept {return (uint32_t)_map.size();}
 
 	/*
-	 *	读取指定key对应的数据
-	 *	不增加数据的引用计数
-	 *	没有则返回NULL
+	 *	Read the data corresponding to the specified key
+	 *	Does not increase the reference count of the data
+	 *	Returns NULL if not found
 	 */
 	inline WTSObject* get(const T &_key) noexcept
 	{
@@ -637,9 +637,9 @@ public:
 	}
 
 	/*
-	 *	读取指定key对应的数据
-	 *	增加数据的引用计数
-	 *	没有则返回NULL
+	 *	Read the data corresponding to the specified key
+	 *	Increase the reference count of the data
+	 *	Returns NULL if not found
 	 */
 	inline WTSObject* grab(const T &_key) noexcept
 	{
@@ -653,8 +653,8 @@ public:
 	}
 
 	/*
-	 *	新增一个数据,并增加数据引用计数
-	 *	如果key存在,则将原有数据释放
+	 *	Add a new data, and increase the data reference count
+	 *	If the key exists, the original data will be released
 	 */
 	inline void add(const T &_key, WTSObject* obj, bool bAutoRetain = true) noexcept
 	{
@@ -674,8 +674,8 @@ public:
 	}
 
 	/*
-	 *	根据key删除一个数据
-	 *	如果key存在,则对应数据引用计数-1
+	 *	Delete a data according to the key
+	 *	If the key exists, the corresponding data reference count -1
 	 */
 	inline void remove(const T &_key) noexcept
 	{
@@ -690,7 +690,7 @@ public:
 
 
 	/*
-	 *	获取容器起始位置的迭代器
+	 *	Get the iterator of the starting position of the container
 	 */
 	inline ConstIterator begin() const noexcept
 	{
@@ -698,7 +698,7 @@ public:
 	}
 
 	/*
-	 *	获取容易末尾位置的迭代器
+	 *	Get the iterator of the ending position of the container
 	 */
 	inline ConstIterator end() const noexcept
 	{
@@ -711,8 +711,8 @@ public:
 	}
 
 	/*
-	 *	清空容器
-	 *	容器内所有数据引用计数-1
+	 *	Clear the container
+	 *	All data in the container reference count -1
 	 */
 	inline void clear() noexcept
 	{
@@ -725,8 +725,8 @@ public:
 	}
 
 	/*
-	 *	释放容器对象
-	 *	如果容器引用计数为1,则清空所有数据
+	 *	Release the container object
+	 *	If the container reference count is 1, clear all data
 	 */
 	virtual void release() 
 	{
@@ -835,7 +835,7 @@ public:
 	}
 
 	/*
-	 *	取得数组对象起始位置的迭代器
+	 *	Get the iterator of the starting position of the array object
 	 */
 	Iterator begin()
 	{
@@ -853,7 +853,7 @@ public:
 	}
 
 	/*
-	 *	取得数组对象末尾位置的迭代器
+	 *	Get the iterator of the ending position of the array object
 	 */
 	Iterator end()
 	{

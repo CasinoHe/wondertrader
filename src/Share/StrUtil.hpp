@@ -5,7 +5,7 @@
  * \author Wesley
  * \date 2020/03/30
  * 
- * \brief 字符串处理的封装
+ * \brief String processing package
  */
 #pragma once
 #include <string>
@@ -52,7 +52,7 @@ public:
 		return std::move(ret);
 	}
 
-	//去掉所有空格
+	//Remove all spaces
 	static inline void trimAllSpace(std::string &str)
 	{
 		std::string::iterator destEnd = std::remove_if(str.begin(), str.end(), [](const char& c){
@@ -61,7 +61,7 @@ public:
 		str.resize(destEnd-str.begin());
 	}
 
-	//去除所有特定字符
+	//Remove all specific characters
 	//static inline void trimAll(std::string &str,char ch)
 	//{
 	//	std::string::iterator destEnd=std::remove_if(str.begin(),str.end(),std::bind1st(std::equal_to<char>(),ch));
@@ -232,10 +232,10 @@ public:
 	}
 
 	/*
-	 *	检查是否以指定的字符串开始
-	 *	@str		要检查的字符串
-	 *	@pattern	要匹配的模板
-	 *	@ignroreCase是否忽略大小写
+	 *	Check if it starts with the specified string
+	 *	@str		The string to check
+	 *	@pattern	The template to match
+	 *	@ignroreCase	Whether to ignore case
 	 */
 	static inline bool startsWith(const char* str, const char* pattern, bool ignoreCase = true)
 	{
@@ -259,10 +259,10 @@ public:
 	}
 
 	/*
-	 *	检查是否以指定的字符串结束
-	 *	@str		要检查的字符串
-	 *	@pattern	要匹配的模板
-	 *	@ignroreCase是否忽略大小写
+	 *	Check if it ends with the specified string
+	 *	@str		The string to check
+	 *	@pattern	The template to match
+	 *	@ignroreCase	Whether to ignore case
 	 */
 	static inline bool endsWith(const char* str, const char* pattern, bool ignoreCase = true)
 	{
@@ -405,7 +405,7 @@ public:
 		return std::move(temp);
 	}
 
-	//地球人都知道,恶心的std::string是没有CString的Format这个函数的,所以我们自己造
+	//Everyone knows that the disgusting std::string does not have the Format function of CString, so we make it ourselves
 	static inline std::string printf(const char *pszFormat, ...)
 	{
 		va_list argptr;
@@ -415,7 +415,7 @@ public:
 		return std::move(result);
 	}
 
-	//地球人都知道,恶心的std::string是没有CString的Format这个函数的,所以我们自己造
+	//Everyone knows that the disgusting std::string does not have the Format function of CString, so we make it ourselves
 	static inline std::string printf2(const char *pszFormat, ...)
 	{
 		va_list argptr;
@@ -425,7 +425,7 @@ public:
 		return std::move(result);
 	}
 
-	//地球人都知道,恶心的std::string是没有CString的Format这个函数的,所以我们自己造
+	//Everyone knows that the disgusting std::string does not have the Format function of CString, so we make it ourselves
 	static inline std::string printf2(const char *pszFormat,va_list argptr)
 	{
 		int         size   = 1024;
@@ -476,7 +476,7 @@ public:
 		return std::move(ret);
 	}
 
-	//地球人都知道,恶心的std::string是没有CString的Format这个函数的,所以我们自己造
+	//Everyone knows that the disgusting std::string does not have the Format function of CString, so we make it ourselves
 	static inline std::string printf(const char* pszFormat, va_list argptr)
 	{
 		int size = 1024;
@@ -512,7 +512,7 @@ public:
 		return std::move(ret);
 	}
 
-	//取得右边的N个字符
+	//Get the N characters on the right
 	static inline std::string right(const std::string &src,size_t nCount)
 	{
 		if(nCount>src.length())
@@ -520,7 +520,7 @@ public:
 		return std::move(src.substr(src.length()-nCount,nCount));
 	}
 
-	//取左边的N个字符
+	//Get the N characters on the left
 	static inline std::string left(const std::string &src,size_t nCount)
 	{
 		return std::move(src.substr(0,nCount));

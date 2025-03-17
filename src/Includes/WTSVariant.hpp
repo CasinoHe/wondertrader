@@ -5,7 +5,7 @@
  * \author Wesley
  * \date 2020/03/30
  * 
- * \brief Wt通用变量对象定义
+ * \brief Wt general variable object definition
  */
 #pragma once
 
@@ -30,9 +30,9 @@
 NS_WTP_BEGIN
 
 /*
- *	WTSVariant是一个通用数据容器,设计目标是Json的Value类
- *	和Json不同的地方在于,WTSVariant满足WT系统内的派生关系
- *	可以通过引用计数管理数据,从而减少数据复制
+ *	WTSVariant is a general data container, and the design goal is the Value class of Json
+ *	The difference from Json is that WTSVariant satisfies the derivation relationship in the WT system
+ *	Data can be managed through reference counting, thereby reducing data copying
  */
 class WTSVariant : public WTSObject
 {

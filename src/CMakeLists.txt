@@ -92,7 +92,7 @@ add_subdirectory(QuoteFactory)
 # ADD_SUBDIRECTORY(TraderMocker)
 # ADD_SUBDIRECTORY(TraderXTP)
 # ADD_SUBDIRECTORY(TraderYD)
-# ADD_SUBDIRECTORY(WtRiskMonFact)
+add_subdirectory(WtRiskMonFact)
 
 add_subdirectory(WtPorter)
 add_subdirectory(WtRunner)
@@ -104,8 +104,8 @@ add_subdirectory(WtExecMon)
 add_subdirectory(WtUftStraFact)
 add_subdirectory(WtUftRunner)
 
-# ADD_SUBDIRECTORY(WtLatencyHFT)
-# ADD_SUBDIRECTORY(WtLatencyUFT)
+add_subdirectory(WtLatencyHFT)
+add_subdirectory(WtLatencyUFT)
 
 # #test projects
 # ADD_SUBDIRECTORY(TestBtPorter)

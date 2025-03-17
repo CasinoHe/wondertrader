@@ -1,17 +1,17 @@
 //----------------------------------------------------------------------------
-// °æÈ¨ÉùÃ÷£º±¾³ÌĞòÄ£¿éÊôÓÚ½ğÖ¤Î¢ÄÚºË¼Ü¹¹Æ½Ì¨(KMAP)µÄÒ»²¿·Ö
-//           ½ğÖ¤¿Æ¼¼¹É·İÓĞÏŞ¹«Ë¾  °æÈ¨ËùÓĞ
+// ç‰ˆæƒå£°æ˜ï¼šæœ¬ç¨‹åºæ¨¡å—å±äºé‡‘è¯å¾®å†…æ ¸æ¶æ„å¹³å°(KMAP)çš„ä¸€éƒ¨åˆ†
+//           é‡‘è¯ç§‘æŠ€è‚¡ä»½æœ‰é™å…¬å¸  ç‰ˆæƒæ‰€æœ‰
 //
-// ÎÄ¼şÃû³Æ£ºmaCliTradeApi.h
-// Ä£¿éÃû³Æ£ºmaÎ¢¼Ü¹¹C++ÓïÑÔAPI½Ó¿ÚµÄÀàCTP·â×°½Ó¿Ú
-// Ä£¿éÃèÊö£º
-// ¿ª·¢×÷Õß£ººÎÍò¸Õ
-// ´´½¨ÈÕÆÚ£º2015-06-25
-// Ä£¿é°æ±¾£º001.000.000
+// æ–‡ä»¶åç§°ï¼šmaCliTradeApi.h
+// æ¨¡å—åç§°ï¼šmaå¾®æ¶æ„C++è¯­è¨€APIæ¥å£çš„ç±»CTPå°è£…æ¥å£
+// æ¨¡å—æè¿°ï¼š
+// å¼€å‘ä½œè€…ï¼šä½•ä¸‡åˆš
+// åˆ›å»ºæ—¥æœŸï¼š2015-06-25
+// æ¨¡å—ç‰ˆæœ¬ï¼š001.000.000
 //----------------------------------------------------------------------------
-// ĞŞ¸ÄÈÕÆÚ      °æ±¾          ×÷Õß            ±¸×¢
+// ä¿®æ”¹æ—¥æœŸ      ç‰ˆæœ¬          ä½œè€…            å¤‡æ³¨
 //----------------------------------------------------------------------------
-// 2015-06-25    001.000.000   ºÎÍò¸Õ          Ô­´´
+// 2015-06-25    001.000.000   ä½•ä¸‡åˆš          åŸåˆ›
 //----------------------------------------------------------------------------
 #if !defined(__MA_CLI_TRADE_API_H__)
 #define __MA_CLI_TRADE_API_H__
@@ -50,211 +50,211 @@ BGN_NAMESPACE_MACLI
 #pragma pack(push, 1)
 #endif
 
-// ÏµÍ³Á¬½Ó²ÎÊı
+// ç³»ç»Ÿè¿æ¥å‚æ•°
 struct MATRADEAPI CReqSysField
 {
-  char          szSvrAddress[39 + 1];       // ·şÎñÆ÷IPµØÖ·
-  int           nSvrPort;                   // ·şÎñÆ÷¶Ë¿Ú
-  char          szLocalAddress[39 + 1];     // ±¾µØIPµØÖ·
-  int           nLocalPort;                 // ±¾µØ¶Ë¿Ú
-  int           iSsl;                       // ¼ÓÃÜÍ¨ĞÅ 0:·Ç¼ÓÃÜ 1:¼ÓÃÜ -1:°´ÅäÖÃ
-  char          szPktVer[2 + 1];            // ±¨ÎÄĞ­Òé°æ±¾ 01:Jason 02:PB
-  unsigned int  uiTimeout;                  // ³¬Ê±Ê±³¤(Ãë)
-  char          chDataSet;                  // ÍÆËÍ×Ô¶¯¶©ÔÄ '0':°´Á¬½Ó '1':°´ÕË»§ 0:²»¶©ÔÄ
-  int           iFlashModule;               // Èí¼ÓËÙÄ£¿éÀàĞÍ 0:Ä¬ÈÏÁ¬½Ó 1:ÆÕÍ¨Á¬½Ó 2:TCP_DIRECTÁ¬½Ó[Lnx64Ö§³Ö] 4:RDMAÁ¬½Ó[Lnx64Ö§³Ö]
-  char          chFlashPub;                 // Èí¼ÓËÙÍÆËÍÄ£Ê½ '0':°´ÕË»§ÆÕÍ¨  '1':°´ÕË»§¾«¼ò  '2':°´Á¬½ÓÆÕÍ¨ '3':°´Á¬½Ó¾«¼ò
+  char          szSvrAddress[39 + 1];       // æœåŠ¡å™¨IPåœ°å€
+  int           nSvrPort;                   // æœåŠ¡å™¨ç«¯å£
+  char          szLocalAddress[39 + 1];     // æœ¬åœ°IPåœ°å€
+  int           nLocalPort;                 // æœ¬åœ°ç«¯å£
+  int           iSsl;                       // åŠ å¯†é€šä¿¡ 0:éåŠ å¯† 1:åŠ å¯† -1:æŒ‰é…ç½®
+  char          szPktVer[2 + 1];            // æŠ¥æ–‡åè®®ç‰ˆæœ¬ 01:Jason 02:PB
+  unsigned int  uiTimeout;                  // è¶…æ—¶æ—¶é•¿(ç§’)
+  char          chDataSet;                  // æ¨é€è‡ªåŠ¨è®¢é˜… '0':æŒ‰è¿æ¥ '1':æŒ‰è´¦æˆ· 0:ä¸è®¢é˜…
+  int           iFlashModule;               // è½¯åŠ é€Ÿæ¨¡å—ç±»å‹ 0:é»˜è®¤è¿æ¥ 1:æ™®é€šè¿æ¥ 2:TCP_DIRECTè¿æ¥[Lnx64æ”¯æŒ] 4:RDMAè¿æ¥[Lnx64æ”¯æŒ]
+  char          chFlashPub;                 // è½¯åŠ é€Ÿæ¨é€æ¨¡å¼ '0':æŒ‰è´¦æˆ·æ™®é€š  '1':æŒ‰è´¦æˆ·ç²¾ç®€  '2':æŒ‰è¿æ¥æ™®é€š '3':æŒ‰è¿æ¥ç²¾ç®€
 };
 
-// ÇëÇó¹Ì¶¨²ÎÊı
+// è¯·æ±‚å›ºå®šå‚æ•°
 struct MATRADEAPI CReqFixField
 {
-  char          szOpUser[32 + 1];           // ²Ù×÷ÓÃ»§´úÂë
-  char          chOpRole;                   // ²Ù×÷ÓÃ»§½ÇÉ«
-  char          szOpSite[256 + 1];          // ²Ù×÷Õ¾µã
-  char          chChannel;                  // ²Ù×÷ÇşµÀ
-  char          szSession[128 + 1];         // »á»°Æ¾Ö¤
-  char          szFunction[16 + 1];         // ¹¦ÄÜ´úÂë
-  char          szRuntime[32 + 1];          // µ÷ÓÃÊ±¼ä YYYY-MM-DD HH24:MI:SS.nnnnnn
-  int           iOpOrg;                     // ²Ù×÷»ú¹¹
-  char          szCuacctCode[32 + 1];       // ²Ù×÷×Ê²úÕË»§
-  char          chCuacctType;               // ²Ù×÷ÕË»§ÀàĞÍ
-  char          szTrdPwd[32 + 1];           // ½»Ò×ÃÜÂë ¼¯ÖĞ½»Ò×½Ó¿ÚÊ¹ÓÃ
-  char          szSerChannel[8 + 1];        // ·şÎñÇşµÀ
+  char          szOpUser[32 + 1];           // æ“ä½œç”¨æˆ·ä»£ç 
+  char          chOpRole;                   // æ“ä½œç”¨æˆ·è§’è‰²
+  char          szOpSite[256 + 1];          // æ“ä½œç«™ç‚¹
+  char          chChannel;                  // æ“ä½œæ¸ é“
+  char          szSession[128 + 1];         // ä¼šè¯å‡­è¯
+  char          szFunction[16 + 1];         // åŠŸèƒ½ä»£ç 
+  char          szRuntime[32 + 1];          // è°ƒç”¨æ—¶é—´ YYYY-MM-DD HH24:MI:SS.nnnnnn
+  int           iOpOrg;                     // æ“ä½œæœºæ„
+  char          szCuacctCode[32 + 1];       // æ“ä½œèµ„äº§è´¦æˆ·
+  char          chCuacctType;               // æ“ä½œè´¦æˆ·ç±»å‹
+  char          szTrdPwd[32 + 1];           // äº¤æ˜“å¯†ç  é›†ä¸­äº¤æ˜“æ¥å£ä½¿ç”¨
+  char          szSerChannel[8 + 1];        // æœåŠ¡æ¸ é“
 };
 
-// ÖÕ¶ËĞÅÏ¢²ÎÊı
+// ç»ˆç«¯ä¿¡æ¯å‚æ•°
 struct MATRADEAPI CReqClientField
 {
-  char          szIip[39 + 1];              // ¹«ÍøIP
-  char          szIport[5 + 1];             // ¹«ÍøIP¶Ë¿ÚºÅ
-  char          szLip[39 + 1];              // ÄÚÍøIP
-  char          szMac[18 + 1];              // MACµØÖ·
-  char          szHd[32 + 1];               // Ó²ÅÌĞòÁĞºÅ
-  char          szPcn[20 + 1];              // PCÖÕ¶ËÉè±¸Ãû
-  char          szCpu[20 + 1];              // CPUĞòÁĞºÅ
-  char          szPi[20 + 1];               // Ó²ÅÌ·ÖÇøĞÅÏ¢
-  char          szVol[10 + 1];              // ÏµÍ³ÅÌ¾í±êºÅ
-  char          szExt[53 + 1];              // À©Õ¹ĞÅÏ¢ ÒÔ¡®;¡¯½øĞĞ·Ö¸ô
+  char          szIip[39 + 1];              // å…¬ç½‘IP
+  char          szIport[5 + 1];             // å…¬ç½‘IPç«¯å£å·
+  char          szLip[39 + 1];              // å†…ç½‘IP
+  char          szMac[18 + 1];              // MACåœ°å€
+  char          szHd[32 + 1];               // ç¡¬ç›˜åºåˆ—å·
+  char          szPcn[20 + 1];              // PCç»ˆç«¯è®¾å¤‡å
+  char          szCpu[20 + 1];              // CPUåºåˆ—å·
+  char          szPi[20 + 1];               // ç¡¬ç›˜åˆ†åŒºä¿¡æ¯
+  char          szVol[10 + 1];              // ç³»ç»Ÿç›˜å·æ ‡å·
+  char          szExt[53 + 1];              // æ‰©å±•ä¿¡æ¯ ä»¥â€˜;â€™è¿›è¡Œåˆ†éš”
 };
 
-// µÚ1½á¹û¼¯ÄÚÈİ
+// ç¬¬1ç»“æœé›†å†…å®¹
 struct MATRADEAPI CFirstSetField
 {
-  int           iMsgCode;                   // ĞÅÏ¢´úÂë
-  char          chMsgLevel;                 // ĞÅÏ¢¼¶±ğ
-  char          szMsgText[256 + 1];         // ĞÅÏ¢ÄÚÈİ
-  char          szMsgDebug[1024 + 1];       // ºóÌ¨¸ú×ÙĞÅÏ¢
+  int           iMsgCode;                   // ä¿¡æ¯ä»£ç 
+  char          chMsgLevel;                 // ä¿¡æ¯çº§åˆ«
+  char          szMsgText[256 + 1];         // ä¿¡æ¯å†…å®¹
+  char          szMsgDebug[1024 + 1];       // åå°è·Ÿè¸ªä¿¡æ¯
 };
 
-//-------------------------------00102012:¶©ÔÄÖ÷Ìâ------------------------------------
+//-------------------------------00102012:è®¢é˜…ä¸»é¢˜------------------------------------
 struct MATRADEAPI CReqSubTopicField
 {
-  char          szTopic[12 + 1];            // Ö÷Ìâ
-  char          szFilter[512 + 1];          // ¹ıÂËÌõ¼ş
-  char          chDataSet;                  // ³É½»Êı¾İ¼¯ '0':½öº¬±¾Á¬½Ó·¢ËÍÎ¯ÍĞµÄ³É½»ĞÅÏ¢ '1':º¬ËùÓĞÁ¬½Ó·¢ËÍÎ¯ÍĞµÄ³É½»ĞÅÏ¢
+  char          szTopic[12 + 1];            // ä¸»é¢˜
+  char          szFilter[512 + 1];          // è¿‡æ»¤æ¡ä»¶
+  char          chDataSet;                  // æˆäº¤æ•°æ®é›† '0':ä»…å«æœ¬è¿æ¥å‘é€å§”æ‰˜çš„æˆäº¤ä¿¡æ¯ '1':å«æ‰€æœ‰è¿æ¥å‘é€å§”æ‰˜çš„æˆäº¤ä¿¡æ¯
 };
 
 struct MATRADEAPI CRspSubTopicField
 {
-  char          szTopic[12 + 1];            // Ö÷Ìâ
-  char          szFilter[512 + 1];          // ¹ıÂËÌõ¼ş
-  LONGLONG      llAcceptSn;                 // ¶©ÔÄÊÜÀíºÅ
-  char          szChannel[64 + 1];          // ÍÆËÍÍ¨µÀ
-  char          chDataSet;                  // ³É½»Êı¾İ¼¯ '0':½öº¬±¾Á¬½Ó·¢ËÍÎ¯ÍĞµÄ³É½»ĞÅÏ¢ '1':º¬ËùÓĞÁ¬½Ó·¢ËÍÎ¯ÍĞµÄ³É½»ĞÅÏ¢
+  char          szTopic[12 + 1];            // ä¸»é¢˜
+  char          szFilter[512 + 1];          // è¿‡æ»¤æ¡ä»¶
+  LONGLONG      llAcceptSn;                 // è®¢é˜…å—ç†å·
+  char          szChannel[64 + 1];          // æ¨é€é€šé“
+  char          chDataSet;                  // æˆäº¤æ•°æ®é›† '0':ä»…å«æœ¬è¿æ¥å‘é€å§”æ‰˜çš„æˆäº¤ä¿¡æ¯ '1':å«æ‰€æœ‰è¿æ¥å‘é€å§”æ‰˜çš„æˆäº¤ä¿¡æ¯
 };
 
-//-------------------------------00102013:ÍË¶©Ö÷Ìâ------------------------------------
+//-------------------------------00102013:é€€è®¢ä¸»é¢˜------------------------------------
 struct MATRADEAPI CReqUnsubTopicField
 {
-  char          szTopic[12 + 1];            // Ö÷Ìâ
-  LONGLONG      llAcceptSn;                 // ¶©ÔÄÊÜÀíºÅ
+  char          szTopic[12 + 1];            // ä¸»é¢˜
+  LONGLONG      llAcceptSn;                 // è®¢é˜…å—ç†å·
 };
 
 struct MATRADEAPI CRspUnsubTopicField
 {
-  char          szTopic[12 + 1];            // Ö÷Ìâ
-  LONGLONG      llAcceptSn;                 // ¶©ÔÄÊÜÀíºÅ
+  char          szTopic[12 + 1];            // ä¸»é¢˜
+  LONGLONG      llAcceptSn;                 // è®¢é˜…å—ç†å·
 };
 
-//-------------------------------00102014:ÉÏ´«ÎÄ¼ş¹¦ÄÜ------------------------------------
+//-------------------------------00102014:ä¸Šä¼ æ–‡ä»¶åŠŸèƒ½------------------------------------
 struct MATRADEAPI CReqFileUploadField
 {
-  char            szFileId[32 + 1];           // ÎÄ¼şID
-  char            szLocalFileName[512 + 1];   // ±¾µØÎÄ¼şÃû
+  char            szFileId[32 + 1];           // æ–‡ä»¶ID
+  char            szLocalFileName[512 + 1];   // æœ¬åœ°æ–‡ä»¶å
 };
 
 struct MATRADEAPI CRspFileUploadField
 {
-  char            szFileName[512 + 1];        // ±¾µØÎÄ¼şÃû
+  char            szFileName[512 + 1];        // æœ¬åœ°æ–‡ä»¶å
 };
 
-//-------------------------------00102015:ÏÂÔØÎÄ¼ş¹¦ÄÜ------------------------------------
+//-------------------------------00102015:ä¸‹è½½æ–‡ä»¶åŠŸèƒ½------------------------------------
 struct MATRADEAPI CReqFileDownloadField
 {
-  char            szFileId[32 + 1];           // ÎÄ¼şID
-  char            szLocalFileName[512 + 1];   // ±¾µØÎÄ¼şÃû
+  char            szFileId[32 + 1];           // æ–‡ä»¶ID
+  char            szLocalFileName[512 + 1];   // æœ¬åœ°æ–‡ä»¶å
 };
 
 struct MATRADEAPI CRspFileDownloadField
 {
-  char            szFileName[512 + 1];        // ±¾µØÎÄ¼şÃû
+  char            szFileName[512 + 1];        // æœ¬åœ°æ–‡ä»¶å
 };
 
-//-------------------------------00102014:ÉÏ´«Ä¿Â¼ÎÄ¼ş¹¦ÄÜ------------------------------------
+//-------------------------------00102014:ä¸Šä¼ ç›®å½•æ–‡ä»¶åŠŸèƒ½------------------------------------
 struct MATRADEAPI CReqFolderUploadField
 {
-  char            szFileId[32 + 1];           // ÎÄ¼şID
-  char            szLocalFolder[512 + 1];     // Ïà¶ÔÄ¿Â¼Â·¾¶
+  char            szFileId[32 + 1];           // æ–‡ä»¶ID
+  char            szLocalFolder[512 + 1];     // ç›¸å¯¹ç›®å½•è·¯å¾„
 };
 
 struct MATRADEAPI CRspFolderUploadField
 {
-  char            szFileName[512 + 1];        // Ïà¶ÔÂ·¾¶ÎÄ¼şÃû
+  char            szFileName[512 + 1];        // ç›¸å¯¹è·¯å¾„æ–‡ä»¶å
 };
 
-//-------------------------------00102015:ÏÂÔØÄ¿Â¼ÎÄ¼ş¹¦ÄÜ------------------------------------
+//-------------------------------00102015:ä¸‹è½½ç›®å½•æ–‡ä»¶åŠŸèƒ½------------------------------------
 struct MATRADEAPI CReqFolderDownloadField
 {
-  char            szFileId[32 + 1];           // ÎÄ¼şID
-  char            szLocalFolder[512 + 1];     // Ïà¶ÔÄ¿Â¼Â·¾¶
+  char            szFileId[32 + 1];           // æ–‡ä»¶ID
+  char            szLocalFolder[512 + 1];     // ç›¸å¯¹ç›®å½•è·¯å¾„
 };
 
 struct MATRADEAPI CRspFolderDownloadField
 {
-  char            szFileName[512 + 1];        // Ïà¶ÔÂ·¾¶ÎÄ¼şÃû
+  char            szFileName[512 + 1];        // ç›¸å¯¹è·¯å¾„æ–‡ä»¶å
 };
 
-//-------------------------------00102016:ÎÄ¼şĞÅÏ¢²éÑ¯------------------------------------
+//-------------------------------00102016:æ–‡ä»¶ä¿¡æ¯æŸ¥è¯¢------------------------------------
 struct MATRADEAPI CReqQryFileInfoField
 {
-  char            szFileId[32 + 1];           // ÎÄ¼şID
-  char            szFilePath[512 + 1];        // Ïà¶ÔÂ·¾¶Ä¿Â¼
-  char            szFileFilter[32 + 1];       // ÎÄ¼ş¹ıÂË  ÀıÈç *.dll Ä¬ÈÏÎª¿Õ
+  char            szFileId[32 + 1];           // æ–‡ä»¶ID
+  char            szFilePath[512 + 1];        // ç›¸å¯¹è·¯å¾„ç›®å½•
+  char            szFileFilter[32 + 1];       // æ–‡ä»¶è¿‡æ»¤  ä¾‹å¦‚ *.dll é»˜è®¤ä¸ºç©º
 };
 
 struct MATRADEAPI CRspQryFileInfoField
 {
-  char            szFileId[32 + 1];           // ÎÄ¼şID
-  LONGLONG        llFileSize;                 // ÎÄ¼ş´óĞ¡
-  char            szFileMd5[32 + 1];          // ÎÄ¼şMD5
-  char            szFileTime[32 + 1];         // ¸üĞÂÊ±¼ä
-  char            szFileName[512 + 1];        // Ïà¶ÔÂ·¾¶ÎÄ¼şÃû
+  char            szFileId[32 + 1];           // æ–‡ä»¶ID
+  LONGLONG        llFileSize;                 // æ–‡ä»¶å¤§å°
+  char            szFileMd5[32 + 1];          // æ–‡ä»¶MD5
+  char            szFileTime[32 + 1];         // æ›´æ–°æ—¶é—´
+  char            szFileName[512 + 1];        // ç›¸å¯¹è·¯å¾„æ–‡ä»¶å
 };
 
-//-------------------------------00102017:²ßÂÔÆô¶¯¹¦ÄÜ------------------------------------
+//-------------------------------00102017:ç­–ç•¥å¯åŠ¨åŠŸèƒ½------------------------------------
 struct MATRADEAPI CReqStgyStartField
 {
-  char            szFileId[32 + 1];           // ÎÄ¼şID
-  char            szCuacctCode[32 + 1];       // ×Ê½ğÕË»§
-  char            szStgyId[32 + 1];           // ²ßÂÔID
-  char            szStgyParam[512 + 1];       // ²ßÂÔ²ÎÊı
+  char            szFileId[32 + 1];           // æ–‡ä»¶ID
+  char            szCuacctCode[32 + 1];       // èµ„é‡‘è´¦æˆ·
+  char            szStgyId[32 + 1];           // ç­–ç•¥ID
+  char            szStgyParam[512 + 1];       // ç­–ç•¥å‚æ•°
 };
 
 struct MATRADEAPI CRspStgyStartField
 {
-  char            szRunningId[32 + 1];        // ÔËĞĞÊµÀı
-  char            szFileId[32 + 1];           // ÎÄ¼şID
-  char            szCuacctCode[32 + 1];       // ×Ê½ğÕË»§
-  char            szStgyId[32 + 1];           // ²ßÂÔID
-  char            chRunningStatus;            // ÔËĞĞ×´Ì¬
+  char            szRunningId[32 + 1];        // è¿è¡Œå®ä¾‹
+  char            szFileId[32 + 1];           // æ–‡ä»¶ID
+  char            szCuacctCode[32 + 1];       // èµ„é‡‘è´¦æˆ·
+  char            szStgyId[32 + 1];           // ç­–ç•¥ID
+  char            chRunningStatus;            // è¿è¡ŒçŠ¶æ€
 };
 
-//-------------------------------00102018:²ßÂÔÍ£Ö¹¹¦ÄÜ------------------------------------
+//-------------------------------00102018:ç­–ç•¥åœæ­¢åŠŸèƒ½------------------------------------
 struct MATRADEAPI CReqStgyStopField
 {
-  char            szRunningId[32 + 1];        // ÔËĞĞÊµÀı
-  char            szFileId[32 + 1];           // ÎÄ¼şID
-  char            szCuacctCode[32 + 1];       // ×Ê½ğÕË»§
-  char            szStgyId[32 + 1];           // ²ßÂÔID
+  char            szRunningId[32 + 1];        // è¿è¡Œå®ä¾‹
+  char            szFileId[32 + 1];           // æ–‡ä»¶ID
+  char            szCuacctCode[32 + 1];       // èµ„é‡‘è´¦æˆ·
+  char            szStgyId[32 + 1];           // ç­–ç•¥ID
 };
 
 struct MATRADEAPI CRspStgyStopField
 {
-  char            szRunningId[32 + 1];        // ÔËĞĞÊµÀı
-  char            szFileId[32 + 1];           // ÎÄ¼şID
-  char            szCuacctCode[32 + 1];       // ×Ê½ğÕË»§
-  char            szStgyId[32 + 1];           // ²ßÂÔID
-  char            chRunningStatus;            // ÔËĞĞ×´Ì¬
+  char            szRunningId[32 + 1];        // è¿è¡Œå®ä¾‹
+  char            szFileId[32 + 1];           // æ–‡ä»¶ID
+  char            szCuacctCode[32 + 1];       // èµ„é‡‘è´¦æˆ·
+  char            szStgyId[32 + 1];           // ç­–ç•¥ID
+  char            chRunningStatus;            // è¿è¡ŒçŠ¶æ€
 };
 
-//-------------------------------00102019:²ßÂÔ×´Ì¬²éÑ¯------------------------------------
+//-------------------------------00102019:ç­–ç•¥çŠ¶æ€æŸ¥è¯¢------------------------------------
 struct MATRADEAPI CReqQryStgyStatField
 {
-  char            szRunningId[32 + 1];        // ÔËĞĞÊµÀı
-  char            szFileId[32 + 1];           // ÎÄ¼şID
-  char            szStgyId[32 + 1];           // ²ßÂÔID
+  char            szRunningId[32 + 1];        // è¿è¡Œå®ä¾‹
+  char            szFileId[32 + 1];           // æ–‡ä»¶ID
+  char            szStgyId[32 + 1];           // ç­–ç•¥ID
 };
 
 struct MATRADEAPI CRspQryStgyStatField
 {
-  char            szRunningId[32 + 1];        // ÔËĞĞÊµÀı
-  char            szFileId[32 + 1];           // ÎÄ¼şID
-  char            szCuacctCode[32 + 1];       // ×Ê½ğÕË»§
-  char            szStgyId[32 + 1];           // ²ßÂÔID
-  char            chRunningStatus;            // ÔËĞĞ×´Ì¬
+  char            szRunningId[32 + 1];        // è¿è¡Œå®ä¾‹
+  char            szFileId[32 + 1];           // æ–‡ä»¶ID
+  char            szCuacctCode[32 + 1];       // èµ„é‡‘è´¦æˆ·
+  char            szStgyId[32 + 1];           // ç­–ç•¥ID
+  char            chRunningStatus;            // è¿è¡ŒçŠ¶æ€
 };
 
-//-------------------------------00103003:Á¬½Ó±£»î------------------------------------
+//-------------------------------00103003:è¿æ¥ä¿æ´»------------------------------------
 struct MATRADEAPI CReqHeartBeatField
 {
   ;
@@ -262,101 +262,101 @@ struct MATRADEAPI CReqHeartBeatField
 
 struct MATRADEAPI CRspHeartBeatField
 {
-  char          szServerLocalNodeId[32 + 1];  // ±¾½Úµã±àºÅ
-  char          szServerNodeId[32 + 1];       // ½Úµã±àºÅ
-  char          szServerNodeGid[32 + 1];      // ½Úµã×éºÅ
-  char          szServerSiteName[32 + 1];     // ½ÓÈëÕ¾µãÃû
-  char          szServerNodeType[32 + 1];     // ½ÚµãÀàĞÍ
-  char          szServerSiteIP[32 + 1];       // Õ¾µãIP
-  char          szServerNodePwd[128 + 1];     // ½ÚµãÂ·¾¶
-  char          szServerNodeUse[4 + 1];       // ½ÚµãÓÃÍ¾ ¡®n¡¯:´ı»ú½Úµã ¡®s¡¯:±¸»ú½Úµã ¡®a¡¯:Ö÷ÓÃ½Úµã
-  char          szServerBackIp[32 + 1];       // ±¸·İÕ¾µãIP
+  char          szServerLocalNodeId[32 + 1];  // æœ¬èŠ‚ç‚¹ç¼–å·
+  char          szServerNodeId[32 + 1];       // èŠ‚ç‚¹ç¼–å·
+  char          szServerNodeGid[32 + 1];      // èŠ‚ç‚¹ç»„å·
+  char          szServerSiteName[32 + 1];     // æ¥å…¥ç«™ç‚¹å
+  char          szServerNodeType[32 + 1];     // èŠ‚ç‚¹ç±»å‹
+  char          szServerSiteIP[32 + 1];       // ç«™ç‚¹IP
+  char          szServerNodePwd[128 + 1];     // èŠ‚ç‚¹è·¯å¾„
+  char          szServerNodeUse[4 + 1];       // èŠ‚ç‚¹ç”¨é€” â€˜nâ€™:å¾…æœºèŠ‚ç‚¹ â€˜sâ€™:å¤‡æœºèŠ‚ç‚¹ â€˜aâ€™:ä¸»ç”¨èŠ‚ç‚¹
+  char          szServerBackIp[32 + 1];       // å¤‡ä»½ç«™ç‚¹IP
 };
 
-//-------------------------------00103004:°²È«¼ì²é------------------------------------
+//-------------------------------00103004:å®‰å…¨æ£€æŸ¥------------------------------------
 struct MATRADEAPI CReqSafeCheckField
 {
-  char          szCuacctCode[32 + 1];         // ×Ê½ğÕË»§
-  char          chPlainType;                  // Ã÷ÎÄÀàĞÍ ¡®2¡¯:¿Í»§¶ËIP ¡®3¡¯:Á¬½ÓMAC ¡®4¡¯:Ö÷³ÌĞòAPP
-  char          szCipherText[128 + 1];        // ÃÜÎÄÄÚÈİ RSA¼ÓÃÜÃÜÎÄ
+  char          szCuacctCode[32 + 1];         // èµ„é‡‘è´¦æˆ·
+  char          chPlainType;                  // æ˜æ–‡ç±»å‹ â€˜2â€™:å®¢æˆ·ç«¯IP â€˜3â€™:è¿æ¥MAC â€˜4â€™:ä¸»ç¨‹åºAPP
+  char          szCipherText[128 + 1];        // å¯†æ–‡å†…å®¹ RSAåŠ å¯†å¯†æ–‡
 };
 
 struct MATRADEAPI CRspSafeCheckField
 {
-  int           iEffectDate;                  // ÉúĞ§ÈÕÆÚ
-  int           iExpireDate;                  // Ê§Ğ§ÈÕÆÚ
+  int           iEffectDate;                  // ç”Ÿæ•ˆæ—¥æœŸ
+  int           iExpireDate;                  // å¤±æ•ˆæ—¥æœŸ
 };
 
-//-------------------------------00102028:·ç¿ØĞÅÏ¢ÍÆËÍÄÚÈİ------------------------------------
+//-------------------------------00102028:é£æ§ä¿¡æ¯æ¨é€å†…å®¹------------------------------------
 struct MATRADEAPI CRtnTradeRiskInfoField
 {
-  char            chRiskCls;                  // ·çÏÕÀà±ğ 
-  char            szRiskId[2 + 1];            // ·çÏÕ±êÊ¶ 
-  char            chRiskIdLevel;              // ·çÏÕ¼¶±ğ 
-  char            szRiskName[256 + 1];        // ·çÏÕÃû³Æ 
-  LONGLONG        llCustCode;                 // ¿Í»§´úÂë 
-  LONGLONG        llCuacctCode;               // ×Ê²úÕË»§ 
-  char            szStkbd[2 + 1];             // Ö¤È¯°å¿é ×Öµä[STKBD]
-  char            szContent[2048 + 1];        // Í¨ÖªÄÚÈİ 
+  char            chRiskCls;                  // é£é™©ç±»åˆ« 
+  char            szRiskId[2 + 1];            // é£é™©æ ‡è¯† 
+  char            chRiskIdLevel;              // é£é™©çº§åˆ« 
+  char            szRiskName[256 + 1];        // é£é™©åç§° 
+  LONGLONG        llCustCode;                 // å®¢æˆ·ä»£ç  
+  LONGLONG        llCuacctCode;               // èµ„äº§è´¦æˆ· 
+  char            szStkbd[2 + 1];             // è¯åˆ¸æ¿å— å­—å…¸[STKBD]
+  char            szContent[2048 + 1];        // é€šçŸ¥å†…å®¹ 
 };
 
-//-------------------------------00102021:ÏµÍ³×´Ì¬ÍÆËÍÄÚÈİ------------------------------------
+//-------------------------------00102021:ç³»ç»ŸçŠ¶æ€æ¨é€å†…å®¹------------------------------------
 struct MATRADEAPI CRtnSystemInfoField
 {
-  int             iSubsys;                    // ÏµÍ³ÀàĞÍ 
-  int             iSubsysSn;                  // ÏµÍ³½Úµã±àºÅ ÕË»§ËùÊôÏµÍ³±àºÅ
-  int             iTrdDate;                   // ½»Ò×ÈÕÆÚ 
-  int             iOrderDate;                 // Î¯ÍĞÈÕÆÚ 
-  char            chTrdStatus;                // ½»Ò××´Ì¬ ¡¯1¡¯:ÔÊĞíÏÂµ¥ ¡¯0¡¯:½ûÖ¹ÏÂµ¥
-  char            szRemark[128 + 1];          // ×´Ì¬ËµÃ÷ 
+  int             iSubsys;                    // ç³»ç»Ÿç±»å‹ 
+  int             iSubsysSn;                  // ç³»ç»ŸèŠ‚ç‚¹ç¼–å· è´¦æˆ·æ‰€å±ç³»ç»Ÿç¼–å·
+  int             iTrdDate;                   // äº¤æ˜“æ—¥æœŸ 
+  int             iOrderDate;                 // å§”æ‰˜æ—¥æœŸ 
+  char            chTrdStatus;                // äº¤æ˜“çŠ¶æ€ â€™1â€™:å…è®¸ä¸‹å• â€™0â€™:ç¦æ­¢ä¸‹å•
+  char            szRemark[128 + 1];          // çŠ¶æ€è¯´æ˜ 
 };
 
-//-------------------------------00102029:ÕË»§Í¨ÖªÍÆËÍÄÚÈİ--------------------------
+//-------------------------------00102029:è´¦æˆ·é€šçŸ¥æ¨é€å†…å®¹--------------------------
 struct MATRADEAPI CRtnNoticeInfoField
 {
-  int             iSubsys;                    // ÏµÍ³ÀàĞÍ 
-  char            chNotyType;                 // Í¨ÖªÀàĞÍ ¡¯0¡¯:µ½ÆÚÌáĞÑ ¡¯1¡¯:µ½ÆÚÖÕÖ¹ ¡¯2¡¯:¹É¼Û±ä¶¯ÖÕÖ¹
-  char            szNotyInfo[256 + 1];        // Í¨ÖªÄÚÈİ 
-  int             iSettDate;                  // ÇåËãÈÕÆÚ 
-  int             iOrderDate;                 // Î¯ÍĞÈÕÆÚ 
-  int             iOrderBsn;                  // Î¯ÍĞÅúºÅ 
-  LONGLONG        llOrderNo;                  // Î¯ÍĞ±àºÅ 
-  LONGLONG        llOrderGroupNo;             // ×éºÏ±àºÅ 
-  char            szOrderTime[32 + 1];        // Î¯ÍĞÊ±¼ä 
-  char            chExeStatus;                // Î¯ÍĞ×´Ì¬ 
-  int             iTrdDate;                   // ½»Ò×ÈÕÆÚ 
-  int             iOrderValidDate;            // ÓĞĞ§ÈÕÆÚ 
-  char            szCustCode[16 + 1];         // ¿Í»§´úÂë 
-  char            szCuacctCode[16 + 1];       // ×Ê²úÕË»§ 
-  char            chCuacctType;               // ÕË»§ÀàĞÍ 
-  char            szTrdCode[30 + 1];          // Æ·ÖÖ´úÂë 
-  int             iTrdBiz;                    // ½»Ò×ÒµÎñ 
-  int             iTrdBizAcction;             // ÒµÎñ»î¶¯ 
-  LONGLONG        llOrderQty;                 // Î¯ÍĞÊıÁ¿ 
-  char            szOrderPrice[21 + 1];       // Î¯ÍĞ¼Û¸ñ 
-  char            szOptUndlCode[8 + 1];       // ±êµÄÖ¤È¯´úÂë 
-  char            chStrategyType;             // ²ßÂÔÀàĞÍ 
-  char            szStrategyName[32 + 1];     // ²ßÂÔÃû³Æ 
-  char            chChannel;                  // ²Ù×÷ÇşµÀ
+  int             iSubsys;                    // ç³»ç»Ÿç±»å‹ 
+  char            chNotyType;                 // é€šçŸ¥ç±»å‹ â€™0â€™:åˆ°æœŸæé†’ â€™1â€™:åˆ°æœŸç»ˆæ­¢ â€™2â€™:è‚¡ä»·å˜åŠ¨ç»ˆæ­¢
+  char            szNotyInfo[256 + 1];        // é€šçŸ¥å†…å®¹ 
+  int             iSettDate;                  // æ¸…ç®—æ—¥æœŸ 
+  int             iOrderDate;                 // å§”æ‰˜æ—¥æœŸ 
+  int             iOrderBsn;                  // å§”æ‰˜æ‰¹å· 
+  LONGLONG        llOrderNo;                  // å§”æ‰˜ç¼–å· 
+  LONGLONG        llOrderGroupNo;             // ç»„åˆç¼–å· 
+  char            szOrderTime[32 + 1];        // å§”æ‰˜æ—¶é—´ 
+  char            chExeStatus;                // å§”æ‰˜çŠ¶æ€ 
+  int             iTrdDate;                   // äº¤æ˜“æ—¥æœŸ 
+  int             iOrderValidDate;            // æœ‰æ•ˆæ—¥æœŸ 
+  char            szCustCode[16 + 1];         // å®¢æˆ·ä»£ç  
+  char            szCuacctCode[16 + 1];       // èµ„äº§è´¦æˆ· 
+  char            chCuacctType;               // è´¦æˆ·ç±»å‹ 
+  char            szTrdCode[30 + 1];          // å“ç§ä»£ç  
+  int             iTrdBiz;                    // äº¤æ˜“ä¸šåŠ¡ 
+  int             iTrdBizAcction;             // ä¸šåŠ¡æ´»åŠ¨ 
+  LONGLONG        llOrderQty;                 // å§”æ‰˜æ•°é‡ 
+  char            szOrderPrice[21 + 1];       // å§”æ‰˜ä»·æ ¼ 
+  char            szOptUndlCode[8 + 1];       // æ ‡çš„è¯åˆ¸ä»£ç  
+  char            chStrategyType;             // ç­–ç•¥ç±»å‹ 
+  char            szStrategyName[32 + 1];     // ç­–ç•¥åç§° 
+  char            chChannel;                  // æ“ä½œæ¸ é“
 };
 
-//-------------------------------10388750:COSÏµÍ³µÇÂ¼¹¦ÄÜ--------------------------
+//-------------------------------10388750:COSç³»ç»Ÿç™»å½•åŠŸèƒ½--------------------------
 struct MATRADEAPI CReqCosLoginField
 {
-  char            szUserCode[16 + 1];         // ÓÃ»§´úÂë Ò²¿ÉÒÔÊÇÊÖ»úºÅµÇÂ¼
-  char            szAuthData[256 + 1];        // ÈÏÖ¤Êı¾İ 
-  char            szEncryptKey[32 + 1];       // ¼ÓÃÜÒò×Ó 
-  char            szThirdParty[1024 + 1];     // µÚÈı·½ Ê¹ÓÃµÚÈı·½¿Í»§¶ËµÄÓÃ»§´úÂë±ØÊä,×Ö¶ÎÄÚÈİÓÉÃÜÔ¿dllÖ¸¶¨½Ó¿Ú»ñÈ¡;
-  char            chChannel;                  // ²Ù×÷ÇşµÀ
-  char            szSerChannel[8 + 1];        // ·şÎñÇşµÀ
+  char            szUserCode[16 + 1];         // ç”¨æˆ·ä»£ç  ä¹Ÿå¯ä»¥æ˜¯æ‰‹æœºå·ç™»å½•
+  char            szAuthData[256 + 1];        // è®¤è¯æ•°æ® 
+  char            szEncryptKey[32 + 1];       // åŠ å¯†å› å­ 
+  char            szThirdParty[1024 + 1];     // ç¬¬ä¸‰æ–¹ ä½¿ç”¨ç¬¬ä¸‰æ–¹å®¢æˆ·ç«¯çš„ç”¨æˆ·ä»£ç å¿…è¾“,å­—æ®µå†…å®¹ç”±å¯†é’¥dllæŒ‡å®šæ¥å£è·å–;
+  char            chChannel;                  // æ“ä½œæ¸ é“
+  char            szSerChannel[8 + 1];        // æœåŠ¡æ¸ é“
 };
 
 struct MATRADEAPI CRspCosLoginField
 {
-  char            szUserCode[16 + 1];         // ÓÃ»§´úÂë 
-  char            szPhoneNum[16 + 1];         // ÊÖ»úºÅ 
-  char            szUserGroupRight[8 + 1];    // ÓÃ»§×éÈ¨ÏŞ 
-  char            szSessionId[128 + 1];       // »á»°Æ¾Ö¤ ¿Í»§¶ËĞè±£´æ£¬ºóĞøÇëÇóÌîĞ´µ½¹Ì¶¨Èë²Î»á»°Æ¾Ö¤(8814)ÖĞ£¬·ñÔòºóĞøÇëÇó½«±»¾Ü¾ø¡£
+  char            szUserCode[16 + 1];         // ç”¨æˆ·ä»£ç  
+  char            szPhoneNum[16 + 1];         // æ‰‹æœºå· 
+  char            szUserGroupRight[8 + 1];    // ç”¨æˆ·ç»„æƒé™ 
+  char            szSessionId[128 + 1];       // ä¼šè¯å‡­è¯ å®¢æˆ·ç«¯éœ€ä¿å­˜ï¼Œåç»­è¯·æ±‚å¡«å†™åˆ°å›ºå®šå…¥å‚ä¼šè¯å‡­è¯(8814)ä¸­ï¼Œå¦åˆ™åç»­è¯·æ±‚å°†è¢«æ‹’ç»ã€‚
 };
 
 #if defined(OS_IS_LINUX)
@@ -368,58 +368,58 @@ struct MATRADEAPI CRspCosLoginField
 class MATRADEAPI CCliTradeSpi
 {
 public:
-  // ¿Í»§¶ËÓë·şÎñÆ÷³É¹¦½¨Á¢Í¨ĞÅÁ¬½Óºó£¬¸Ã·½·¨±»µ÷ÓÃ
+  // å®¢æˆ·ç«¯ä¸æœåŠ¡å™¨æˆåŠŸå»ºç«‹é€šä¿¡è¿æ¥åï¼Œè¯¥æ–¹æ³•è¢«è°ƒç”¨
   virtual int OnConnected(void) {return 0;}
 
-  // ¿Í»§¶ËÓë·şÎñÆ÷³É¹¦µÄÍ¨ĞÅÁ¬½Ó¶Ï¿ªÊ±£¬¸Ã·½·¨±»µ÷ÓÃ
+  // å®¢æˆ·ç«¯ä¸æœåŠ¡å™¨æˆåŠŸçš„é€šä¿¡è¿æ¥æ–­å¼€æ—¶ï¼Œè¯¥æ–¹æ³•è¢«è°ƒç”¨
   virtual int OnDisconnected(int p_nReason, const char *p_pszErrInfo) {return 0;}
 
-  // ¿Í»§¶ËÉÏ´«ÎÄ¼şÊ±£¬¸Ã·½·¨±»µ÷ÓÃ p_nResult:½ø¶È°Ù·Ö±È
+  // å®¢æˆ·ç«¯ä¸Šä¼ æ–‡ä»¶æ—¶ï¼Œè¯¥æ–¹æ³•è¢«è°ƒç”¨ p_nResult:è¿›åº¦ç™¾åˆ†æ¯”
   virtual int OnFileUpload(const char *p_pszFileName, int p_nResult) {return 0;}
 
-  // ¿Í»§¶ËÏÂÔØÎÄ¼şÊ±£¬¸Ã·½·¨±»µ÷ÓÃ p_nResult:½ø¶È°Ù·Ö±È
+  // å®¢æˆ·ç«¯ä¸‹è½½æ–‡ä»¶æ—¶ï¼Œè¯¥æ–¹æ³•è¢«è°ƒç”¨ p_nResult:è¿›åº¦ç™¾åˆ†æ¯”
   virtual int OnFileDownload(const char *p_pszFileName, int p_nResult) {return 0;}
 
-  // ¿Í»§¶ËÉÏ´«Ä¿Â¼Ê±£¬Ã¿¸öÎÄ¼şÉÏ´«Ê±¸Ã·½·¨±»µ÷ÓÃ p_nResult:½ø¶È°Ù·Ö±È
+  // å®¢æˆ·ç«¯ä¸Šä¼ ç›®å½•æ—¶ï¼Œæ¯ä¸ªæ–‡ä»¶ä¸Šä¼ æ—¶è¯¥æ–¹æ³•è¢«è°ƒç”¨ p_nResult:è¿›åº¦ç™¾åˆ†æ¯”
   virtual int OnFolderUpload(const char *p_pszFileName, int p_nResult) {return 0;}
 
-  // ¿Í»§¶ËÏÂÔØÄ¿Â¼Ê±£¬Ã¿¸öÎÄ¼şÏÂÔØÊ±¸Ã·½·¨±»µ÷ÓÃ p_nResult:½ø¶È°Ù·Ö±È
+  // å®¢æˆ·ç«¯ä¸‹è½½ç›®å½•æ—¶ï¼Œæ¯ä¸ªæ–‡ä»¶ä¸‹è½½æ—¶è¯¥æ–¹æ³•è¢«è°ƒç”¨ p_nResult:è¿›åº¦ç™¾åˆ†æ¯”
   virtual int OnFolderDownload(const char *p_pszFileName, int p_nResult) {return 0;}
 
-  // Á¬½Ó±£»îÏìÓ¦
+  // è¿æ¥ä¿æ´»å“åº”
   virtual int OnRspHeartBeat(CFirstSetField *p_pFirstSetField, CRspHeartBeatField *p_pRspField, LONGLONG  p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // °²È«¼ì²éÏìÓ¦
+  // å®‰å…¨æ£€æŸ¥å“åº”
   virtual int OnRspSafeCheck(CFirstSetField *p_pFirstSetField, CRspSafeCheckField *p_pRspField, LONGLONG  p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ÎÄ¼şĞÅÏ¢²éÑ¯ÏìÓ¦
+  // æ–‡ä»¶ä¿¡æ¯æŸ¥è¯¢å“åº”
   virtual int OnRspQryFileInfo(CFirstSetField *p_pFirstSetField, CRspQryFileInfoField *p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ²ßÂÔÆô¶¯ÏìÓ¦
+  // ç­–ç•¥å¯åŠ¨å“åº”
   virtual int OnRspStgyStart(CFirstSetField *p_pFirstSetField, CRspStgyStartField *p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ²ßÂÔÍ£Ö¹ÏìÓ¦
+  // ç­–ç•¥åœæ­¢å“åº”
   virtual int OnRspStgyStop(CFirstSetField *p_pFirstSetField, CRspStgyStopField *p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ²ßÂÔ×´Ì¬²éÑ¯ÏìÓ¦
+  // ç­–ç•¥çŠ¶æ€æŸ¥è¯¢å“åº”
   virtual int OnRspQryStgyStat(CFirstSetField *p_pFirstSetField, CRspQryStgyStatField *p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // COSÏµÍ³µÇÂ¼¹¦ÄÜÏìÓ¦
+  // COSç³»ç»Ÿç™»å½•åŠŸèƒ½å“åº”
   virtual int OnRspCosLogin(CFirstSetField *p_pFirstSet, CRspCosLoginField *p_pRspField, LONGLONG  p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ¶©ÔÄÏìÓ¦
+  // è®¢é˜…å“åº”
   virtual int OnRtnSubTopic(CRspSubTopicField* p_pRspField) {return 0;}
 
-  // È¡Ïû¶©ÔÄÏìÓ¦
+  // å–æ¶ˆè®¢é˜…å“åº”
   virtual int OnRtnUnsubTopic(CRspUnsubTopicField* p_pRspField) {return 0;}
 
-  // ·ç¿ØĞÅÏ¢ÍÆËÍÏûÏ¢ Ö÷ÌâTRADERISK+X
+  // é£æ§ä¿¡æ¯æ¨é€æ¶ˆæ¯ ä¸»é¢˜TRADERISK+X
   virtual int OnRtnTradeRisk(CRtnTradeRiskInfoField* p_pRspField) {return 0;}
 
-  // ÏµÍ³×´Ì¬ÍÆËÍÏûÏ¢ Ö÷ÌâSYSTEM00
+  // ç³»ç»ŸçŠ¶æ€æ¨é€æ¶ˆæ¯ ä¸»é¢˜SYSTEM00
   virtual int OnRtnSystemInfo(CRtnSystemInfoField* p_pRspField) {return 0;}
 
-  // ÕË»§Í¨ÖªÍÆËÍÏûÏ¢ Ö÷ÌâNOTICE+XX
+  // è´¦æˆ·é€šçŸ¥æ¨é€æ¶ˆæ¯ ä¸»é¢˜NOTICE+XX
   virtual int OnRtnNoticeInfo(CRtnNoticeInfoField* p_pRspField) {return 0;}
 
 };
@@ -427,128 +427,128 @@ public:
 class MATRADEAPI CCliTradeApi
 {
 public:
-  // Ä¬ÈÏ¹¹Ôìº¯Êı
+  // é»˜è®¤æ„é€ å‡½æ•°
   CCliTradeApi(void);
 
-  // Îö¹¹º¯Êı
+  // ææ„å‡½æ•°
   virtual ~CCliTradeApi(void);
 
-  // ³õÊ¼»¯
+  // åˆå§‹åŒ–
   virtual int Init(void);
 
-  // ÍË³ö
+  // é€€å‡º
   virtual int Exit(void);
 
-  // ×¢²áÁ¬½ÓĞÅÏ¢
+  // æ³¨å†Œè¿æ¥ä¿¡æ¯
   virtual int RegisterServer(const char *p_pszIp, int p_iPort, unsigned int p_uiTimeout = 1, const char* p_pszPktVer = "01", bool p_bCos = false, int p_iSsl = -1);
 
-  // ×¢²áÁ¬½ÓĞÅÏ¢
+  // æ³¨å†Œè¿æ¥ä¿¡æ¯
   virtual int RegisterServer(CReqSysField* p_pstSysField);
 
-  ///×¢²á»Øµ÷½Ó¿Ú
+  ///æ³¨å†Œå›è°ƒæ¥å£
   virtual int RegisterSpi(CCliTradeSpi *p_pSpi);
 
-  // ×¢²áÕËºÅĞÅÏ¢
+  // æ³¨å†Œè´¦å·ä¿¡æ¯
   virtual int RegisterAcct(char p_chChannel, const char* p_pszOpSite = 0, int p_iSiteLen = 0);
 
-  // ×¢²áÕËºÅĞÅÏ¢
+  // æ³¨å†Œè´¦å·ä¿¡æ¯
   virtual int RegisterAcct(CReqFixField* p_pstFixField);
 
-  // ×¢²áÖÕ¶ËĞÅÏ¢
+  // æ³¨å†Œç»ˆç«¯ä¿¡æ¯
   virtual int RegisterClient(CReqClientField* p_pstClientField);
 
-  // Á¬½Ó±£»îÇëÇó
+  // è¿æ¥ä¿æ´»è¯·æ±‚
   virtual int ReqHeartBeat(CReqHeartBeatField *p_pReqField, LONGLONG p_llRequestId);
 
-  // °²È«¼ì²éÇëÇó
+  // å®‰å…¨æ£€æŸ¥è¯·æ±‚
   virtual int ReqSafeCheck(CReqSafeCheckField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ÉÏ´«ÎÄ¼şÇëÇó
+  // ä¸Šä¼ æ–‡ä»¶è¯·æ±‚
   virtual int ReqFileUpload(CReqFileUploadField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ÏÂÔØÎÄ¼şÇëÇó
+  // ä¸‹è½½æ–‡ä»¶è¯·æ±‚
   virtual int ReqFileDownload(CReqFileDownloadField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ÉÏ´«Ä¿Â¼ÇëÇó
+  // ä¸Šä¼ ç›®å½•è¯·æ±‚
   virtual int ReqFolderUpload(CReqFolderUploadField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ÏÂÔØÄ¿Â¼ÇëÇó
+  // ä¸‹è½½ç›®å½•è¯·æ±‚
   virtual int ReqFolderDownload(CReqFolderDownloadField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ÎÄ¼şĞÅÏ¢²éÑ¯ÇëÇó
+  // æ–‡ä»¶ä¿¡æ¯æŸ¥è¯¢è¯·æ±‚
   virtual int ReqQryFileInfo(CReqQryFileInfoField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ²ßÂÔÆô¶¯ÇëÇó
+  // ç­–ç•¥å¯åŠ¨è¯·æ±‚
   virtual int ReqStgyStart(CReqStgyStartField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ²ßÂÔÍ£Ö¹ÇëÇó
+  // ç­–ç•¥åœæ­¢è¯·æ±‚
   virtual int ReqStgyStop(CReqStgyStopField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ²ßÂÔ×´Ì¬²éÑ¯ÇëÇó
+  // ç­–ç•¥çŠ¶æ€æŸ¥è¯¢è¯·æ±‚
   virtual int ReqQryStgyStat(CReqQryStgyStatField *p_pReqField, LONGLONG p_llRequestId);
 
-  // COSÏµÍ³µÇÂ¼¹¦ÄÜÇëÇó
+  // COSç³»ç»Ÿç™»å½•åŠŸèƒ½è¯·æ±‚
   virtual int ReqCosLogin(CReqCosLoginField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ÉèÖÃÒµÎñ°üÍ·ĞÅÏ¢
+  // è®¾ç½®ä¸šåŠ¡åŒ…å¤´ä¿¡æ¯
   int SetBizPackHead(const char *p_pszFuncId, LONGLONG p_llRequestId, char *p_pszMsgId, char p_chPkgType, char p_chPkgVer = '2', char p_chFuncType = 0);
 
-  // ¶©ÔÄÖ÷Ìâ
+  // è®¢é˜…ä¸»é¢˜
   int SubTopic(const char *p_pszTopic, const char *p_pszFilter, char p_chDataSet = '0');
 
-  // ÍË¶©Ö÷Ìâ
+  // é€€è®¢ä¸»é¢˜
   int UnsubTopic(const char *p_pszTopic, LONGLONG llAcceptSn = 0);
 
-  // ¶©ÔÄÇëÇóÏìÓ¦
+  // è®¢é˜…è¯·æ±‚å“åº”
   void OnRspSubTopic(CFirstSetField *p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ÍË¶©ÇëÇóÏìÓ¦
+  // é€€è®¢è¯·æ±‚å“åº”
   void OnRspUnsubTopic(CFirstSetField *p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // Á¬½Ó±£»îÇëÇóÏìÓ¦
+  // è¿æ¥ä¿æ´»è¯·æ±‚å“åº”
   void OnRspHeartBeat(CFirstSetField *p_pFirstSetField, LONGLONG  p_llRequestId, int p_iFieldNum);
 
-  // °²È«¼ì²éÇëÇóÏìÓ¦
+  // å®‰å…¨æ£€æŸ¥è¯·æ±‚å“åº”
   void OnRspSafeCheck(CFirstSetField *p_pFirstSetField, LONGLONG  p_llRequestId, int p_iFieldNum);
 
-  // ÎÄ¼şĞÅÏ¢²éÑ¯ÇëÇóÏìÓ¦
+  // æ–‡ä»¶ä¿¡æ¯æŸ¥è¯¢è¯·æ±‚å“åº”
   void OnRspQryFileInfo(CFirstSetField *p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ²ßÂÔÆô¶¯ÇëÇóÏìÓ¦
+  // ç­–ç•¥å¯åŠ¨è¯·æ±‚å“åº”
   void OnRspStgyStart(CFirstSetField *p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ²ßÂÔÍ£Ö¹ÇëÇóÏìÓ¦
+  // ç­–ç•¥åœæ­¢è¯·æ±‚å“åº”
   void OnRspStgyStop(CFirstSetField *p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ²ßÂÔ×´Ì¬²éÑ¯ÇëÇóÏìÓ¦
+  // ç­–ç•¥çŠ¶æ€æŸ¥è¯¢è¯·æ±‚å“åº”
   void OnRspQryStgyStat(CFirstSetField *p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // Á¿»¯ÏµÍ³×¢²á¹¦ÄÜÏìÓ¦
+  // é‡åŒ–ç³»ç»Ÿæ³¨å†ŒåŠŸèƒ½å“åº”
   void OnRspCosLogin(CFirstSetField *p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // »ñÈ¡×îºó´íÎóĞÅÏ¢
+  // è·å–æœ€åé”™è¯¯ä¿¡æ¯
   const char* GetLastErrorText(void);
 
 public:
-  // Òì²½»Øµ÷º¯Êı
+  // å¼‚æ­¥å›è°ƒå‡½æ•°
   virtual void OnArCallback(const char *p_pszMsgId, const unsigned char *p_pszDataBuff, int p_iDataLen);
 
-  // ·¢²¼»Øµ÷º¯Êı
+  // å‘å¸ƒå›è°ƒå‡½æ•°
   virtual void OnPsCallback(const char *p_pszAcceptSn, const unsigned char *p_pszDataBuff, int p_iDataLen);
 
-  // Á¬½Ó»Øµ÷º¯Êı
+  // è¿æ¥å›è°ƒå‡½æ•°
   virtual void OnNetCallback(const char *p_pszNetState, const unsigned char *p_pszDataBuff, int p_iDataLen);
 
-  // ÎÄ¼şÉÏ´«»Øµ÷
+  // æ–‡ä»¶ä¸Šä¼ å›è°ƒ
   virtual void OnFileUpCallback(const char *p_pszFileName, const unsigned char *p_pszDataBuff, int p_iDataLen);
 
-  // ÎÄ¼şÏÂÔØ»Øµ÷
+  // æ–‡ä»¶ä¸‹è½½å›è°ƒ
   virtual void OnFileDownCallback(const char *p_pszFileName, const unsigned char *p_pszDataBuff, int p_iDataLen);
 
-  // Ä¿Â¼ÉÏ´«»Øµ÷
+  // ç›®å½•ä¸Šä¼ å›è°ƒ
   virtual void OnFolderUpCallback(const char *p_pszFileName, const unsigned char *p_pszDataBuff, int p_iDataLen);
 
-  // Ä¿Â¼ÏÂÔØ»Øµ÷
+  // ç›®å½•ä¸‹è½½å›è°ƒ
   virtual void OnFolderDownCallback(const char *p_pszFileName, const unsigned char *p_pszDataBuff, int p_iDataLen);
 
 protected:
@@ -558,16 +558,16 @@ protected:
   int OnCheckPointer(void* p_pVar, const char* p_pszVar);
   
 protected:
-  void             *m_hAsynCall;                 // ÏµÍ³µ÷ÓÃ¾ä±ú
-  void             *m_hAnsParse;                 // Ó¦´ğ½â°ü¾ä±ú
-  void             *m_hPubParse;                 // ÍÆËÍ½â°ü¾ä±ú
-  CReqSysField      m_stSysField;                // ÏµÍ³Á¬½Ó²ÎÊı
-  CReqFixField      m_stReqFixField;             // ÇëÇó¹Ì¶¨²ÎÊı
-  CReqClientField   m_stReqClientField;          // ÇëÇóÖÕ¶Ë²ÎÊı
-  CCliTradeSpi     *m_pTradeSpi;                 // »Øµ÷ÊµÀıÖ¸Õë
-  char              m_szLastErrorText[1024 + 1]; // ×îºó´íÎóĞÅÏ¢
-  char              m_szClientInfo[256 + 1];     // ÇëÇóÖÕ¶ËĞÅÏ¢
-  void             *m_pAcctInfo;                 // µÇÂ¼ÕË»§ĞÅÏ¢
+  void             *m_hAsynCall;                 // ç³»ç»Ÿè°ƒç”¨å¥æŸ„
+  void             *m_hAnsParse;                 // åº”ç­”è§£åŒ…å¥æŸ„
+  void             *m_hPubParse;                 // æ¨é€è§£åŒ…å¥æŸ„
+  CReqSysField      m_stSysField;                // ç³»ç»Ÿè¿æ¥å‚æ•°
+  CReqFixField      m_stReqFixField;             // è¯·æ±‚å›ºå®šå‚æ•°
+  CReqClientField   m_stReqClientField;          // è¯·æ±‚ç»ˆç«¯å‚æ•°
+  CCliTradeSpi     *m_pTradeSpi;                 // å›è°ƒå®ä¾‹æŒ‡é’ˆ
+  char              m_szLastErrorText[1024 + 1]; // æœ€åé”™è¯¯ä¿¡æ¯
+  char              m_szClientInfo[256 + 1];     // è¯·æ±‚ç»ˆç«¯ä¿¡æ¯
+  void             *m_pAcctInfo;                 // ç™»å½•è´¦æˆ·ä¿¡æ¯
 };
 
 END_NAMESPACE_MACLI

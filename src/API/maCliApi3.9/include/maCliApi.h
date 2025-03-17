@@ -1,29 +1,29 @@
 //----------------------------------------------------------------------------
-// °æÈ¨ÉùÃ÷£º±¾³ÌÐòÄ£¿éÊôÓÚ½ðÖ¤Î¢ÄÚºË¼Ü¹¹Æ½Ì¨(KMAP)µÄÒ»²¿·Ö
-//           ½ðÖ¤¿Æ¼¼¹É·ÝÓÐÏÞ¹«Ë¾  °æÈ¨ËùÓÐ
+// ç‰ˆæƒå£°æ˜Žï¼šæœ¬ç¨‹åºæ¨¡å—å±žäºŽé‡‘è¯å¾®å†…æ ¸æž¶æž„å¹³å°(KMAP)çš„ä¸€éƒ¨åˆ†
+//           é‡‘è¯ç§‘æŠ€è‚¡ä»½æœ‰é™å…¬å¸  ç‰ˆæƒæ‰€æœ‰
 //
-// ÎÄ¼þÃû³Æ£ºmaCliApi.h
-// Ä£¿éÃû³Æ£ºmaÎ¢¼Ü¹¹¿Í»§¶Ë(Client)µÄCÓïÑÔAPI½Ó¿Ú
-// Ä£¿éÃèÊö£º
-// ¿ª·¢×÷Õß£ººÎÍò¸Õ
-// ´´½¨ÈÕÆÚ£º2012-10-10
-// Ä£¿é°æ±¾£º001.000.000
+// æ–‡ä»¶åç§°ï¼šmaCliApi.h
+// æ¨¡å—åç§°ï¼šmaå¾®æž¶æž„å®¢æˆ·ç«¯(Client)çš„Cè¯­è¨€APIæŽ¥å£
+// æ¨¡å—æè¿°ï¼š
+// å¼€å‘ä½œè€…ï¼šä½•ä¸‡åˆš
+// åˆ›å»ºæ—¥æœŸï¼š2012-10-10
+// æ¨¡å—ç‰ˆæœ¬ï¼š001.000.000
 //----------------------------------------------------------------------------
-// ÐÞ¸ÄÈÕÆÚ      °æ±¾          ×÷Õß            ±¸×¢
+// ä¿®æ”¹æ—¥æœŸ      ç‰ˆæœ¬          ä½œè€…            å¤‡æ³¨
 //----------------------------------------------------------------------------
-// 2012-10-10    1.0          ºÎÍò¸Õ          Ô­´´
-// 2012-10-17    1.1          Â½Ã÷Æä          ÊµÏÖ¾ßÌå¹¦ÄÜ
-// 2013-09-16    1.2          ¶­½¨¾ü          µ÷Õû¾ßÌå¹¦ÄÜ
-// 2013-12-27    1.3          ¹ùÓñÕé          Ôö¼Ó¼ÓÃÜº¯Êý
-// 2014-11-21    1.4          ºÎÍò¸Õ          Ôö¼Ó¿Í»§¶ËÈÕÖ¾¹¦ÄÜ
-// 2015-01-26    1.5          ºÎÍò¸Õ          ÉèÖÃÄ¬ÈÏ»Øµ÷º¯ÊýÓëÍÆËÍÈ«²¿³É½»ÐÅÏ¢
-// 2015-03-28    1.6          ºÎÍò¸Õ          Ôö¼Ó»Øµ÷ÏìÓ¦º¯ÊýÏûºÄ¼àÊÓ/
-// 2015-07-17    1.7          ºÎÍò¸Õ          Ôö¼ÓÈÕÖ¾Ä£Ê½
-// 2016-08-16    2.0          ÕÅ¶«·½          Ö§³ÖSSLÍ¨ÐÅ¼ÓÃÜ
-// 2019-03-23    3.0          ºÎÍò¸Õ          Ôö¼ÓÎÄ¼þ´«Êä¹¦ÄÜ
-// 2019-08-15    3.1          ²·ÎÄ¾ü          É¾³ýÍ¨ÐÅÀàÐÍ1-KCXP/2-0MQ/4-SHMÀàÐÍ
-// 2019-08-15    3.2          ²·ÎÄ¾ü          Ôö¼ÓMACLI_OPTION_LPORT¡¢MACLI_OPTION_IPORTÑ¡Ïî
-// 2022-11-10    3.9          ºÎÍò¸Õ          Ôö¼ÓMACLI_HEAD_FID_REQTIME¡¢MACLI_HEAD_FID_ANSTIME¡¢MACLI_HEAD_FID_TRACEID¡¢MACLI_HEAD_FID_SPANDIDÍ¨ÐÅ°üÍ·×Ö¶ÎÓò£¬ÓÃÓÚÁ´Â·¸ú×Ù
+// 2012-10-10    1.0          ä½•ä¸‡åˆš          åŽŸåˆ›
+// 2012-10-17    1.1          é™†æ˜Žå…¶          å®žçŽ°å…·ä½“åŠŸèƒ½
+// 2013-09-16    1.2          è‘£å»ºå†›          è°ƒæ•´å…·ä½“åŠŸèƒ½
+// 2013-12-27    1.3          éƒ­çŽ‰è‡»          å¢žåŠ åŠ å¯†å‡½æ•°
+// 2014-11-21    1.4          ä½•ä¸‡åˆš          å¢žåŠ å®¢æˆ·ç«¯æ—¥å¿—åŠŸèƒ½
+// 2015-01-26    1.5          ä½•ä¸‡åˆš          è®¾ç½®é»˜è®¤å›žè°ƒå‡½æ•°ä¸ŽæŽ¨é€å…¨éƒ¨æˆäº¤ä¿¡æ¯
+// 2015-03-28    1.6          ä½•ä¸‡åˆš          å¢žåŠ å›žè°ƒå“åº”å‡½æ•°æ¶ˆè€—ç›‘è§†/
+// 2015-07-17    1.7          ä½•ä¸‡åˆš          å¢žåŠ æ—¥å¿—æ¨¡å¼
+// 2016-08-16    2.0          å¼ ä¸œæ–¹          æ”¯æŒSSLé€šä¿¡åŠ å¯†
+// 2019-03-23    3.0          ä½•ä¸‡åˆš          å¢žåŠ æ–‡ä»¶ä¼ è¾“åŠŸèƒ½
+// 2019-08-15    3.1          åœæ–‡å†›          åˆ é™¤é€šä¿¡ç±»åž‹1-KCXP/2-0MQ/4-SHMç±»åž‹
+// 2019-08-15    3.2          åœæ–‡å†›          å¢žåŠ MACLI_OPTION_LPORTã€MACLI_OPTION_IPORTé€‰é¡¹
+// 2022-11-10    3.9          ä½•ä¸‡åˆš          å¢žåŠ MACLI_HEAD_FID_REQTIMEã€MACLI_HEAD_FID_ANSTIMEã€MACLI_HEAD_FID_TRACEIDã€MACLI_HEAD_FID_SPANDIDé€šä¿¡åŒ…å¤´å­—æ®µåŸŸï¼Œç”¨äºŽé“¾è·¯è·Ÿè¸ª
 //----------------------------------------------------------------------------
 #if !defined(__MA_CLI_API_H__)
 #define __MA_CLI_API_H__
@@ -46,112 +46,112 @@
 #endif
 
 //////////////////////////////////////////////////////////////////////////
-//Í¨ÐÅ°üÍ·×Ö¶ÎÓò¶¨Òå
-#define MACLI_HEAD_FID_PKT_LEN              0         //(Ö»¶Á)  p_pvdValuePtr=(int *)                     p_iValueSize=sizeof(int)
-#define MACLI_HEAD_FID_PKT_CRC              1         //(Ö»¶Á)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[¶Á] >4
-#define MACLI_HEAD_FID_PKT_ID               2         //(Ö»¶Á)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[¶Á] >4
-#define MACLI_HEAD_FID_PKT_VER              3         //(Ö»¶Á)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[¶Á] >2
-#define MACLI_HEAD_FID_PKT_TYPE             4         //(Ö»¶Á)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[¶Á] >1
-#define MACLI_HEAD_FID_MSG_TYPE             5         //(Ö»¶Á)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[¶Á] >1
-#define MACLI_HEAD_FID_RESEND_FLAG          6         //(Ö»¶Á)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[¶Á] >1
-#define MACLI_HEAD_FID_TIMESTAMP            7         //(Ö»¶Á)  p_pvdValuePtr=(void *)(__int64 *)         p_iValueSize=sizeof(__int64)
-#define MACLI_HEAD_FID_MSG_ID               8         //(¶ÁÐ´)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[¶Á] >32 [Ð´] strlen(p_pvdValuePtr)
-#define MACLI_HEAD_FID_CORR_ID              9         //(Ö»¶Á)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[¶Á] >32
-//#define MACLI_HEAD_FID_MSG_INDEX          10        //(Ö»¶Á)
-#define MACLI_HEAD_FID_FUNC_ID              11        //(¶ÁÐ´)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[¶Á] >32 [Ð´] strlen(p_pvdValuePtr)
-#define MACLI_HEAD_FID_SRC_NODE             12        //(Ö»¶Á)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[¶Á] >4
-#define MACLI_HEAD_FID_DEST_NODE            13        //(Ö»¶Á)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[¶Á] >4
-#define MACLI_HEAD_FID_PAGE_FLAG            14        //(Ö»¶Á)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[¶Á] >1
-#define MACLI_HEAD_FID_PAGE_NO              15        //(Ö»¶Á)  p_pvdValuePtr=(void *)(int  *)            p_iValueSize=sizeof(int)
-#define MACLI_HEAD_FID_PAGE_CNT             16        //(Ö»¶Á)  p_pvdValuePtr=(void *)(int  *)            p_iValueSize=sizeof(int)
-#define MACLI_HEAD_FID_BODY_LEN             21        //(Ö»¶Á)  p_pvdValuePtr=(void *)(int  *)            p_iValueSize=sizeof(int)
-#define MACLI_HEAD_FID_PKT_HEAD_END         25        //(Ö»¶Á)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[¶Á] >4
-#define MACLI_HEAD_FID_PKT_HEAD_LEN         35        //(Ö»¶Á)  p_pvdValuePtr=(void *)(int  *)            p_iValueSize=sizeof(int)
-#define MACLI_HEAD_FID_PKT_HEAD_MSG         41        //(Ö»¶Á)  p_pvdValuePtr=(void *)(char  *)           p_iValueSize=[¶Á] > Í¨¹ýMACLI_HEAD_FID_PKT_HEAD_END»ñÈ¡µÃµ½µÄÊýÖµ
-#define MACLI_HEAD_FID_PKT_BODY_MSG         42        //(Ö»¶Á)  p_pvdValuePtr=(void *)(char  *)           p_iValueSize=[¶Á] > Í¨¹ýMACLI_HEAD_FID_PKT_LEN»ñÈ¡µÃµ½µÄÊýÖµ - Í¨¹ýMACLI_HEAD_FID_PKT_HEAD_END»ñÈ¡µÃµ½µÄÊýÖµ
-#define MACLI_HEAD_FID_PKT_MSG              43        //(Ö»¶Á)  p_pvdValuePtr=(void *)(char  *)           p_iValueSize=[¶Á] > Í¨¹ýMACLI_HEAD_FID_PKT_LEN»ñÈ¡µÃµ½µÄÊýÖµ
-#define MACLI_HEAD_FID_REQTIME              48        //(Ö»¶Á)  p_pvdValuePtr=(void *)(__int64 *)         p_iValueSize=sizeof(__int64)
-#define MACLI_HEAD_FID_ANSTIME              49        //(Ö»¶Á)  p_pvdValuePtr=(void *)(__int64 *)         p_iValueSize=sizeof(__int64)
-#define MACLI_HEAD_FID_TRACEID              50        //(¶ÁÐ´)  p_pvdValuePtr=(void *)(__int64 *)         p_iValueSize=sizeof(__int64)
-#define MACLI_HEAD_FID_SPANDID              51        //(¶ÁÐ´)  p_pvdValuePtr=(void *)(__int64 *)         p_iValueSize=sizeof(__int64)
-#define MACLI_HEAD_FID_FUNC_TYPE            1052672   //(Ö»¶Á)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[¶Á] >1
-#define MACLI_HEAD_FID_BIZ_CHANNEL          1052674   //(Ö»¶Á)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[¶Á] >2
-#define MACLI_HEAD_FID_TOKEN_FLAG           1069056   //(Ö»¶Á)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[¶Á] >1
-#define MACLI_HEAD_FID_PUB_TOPIC            1073152   //(Ö»¶Á)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[¶Á] >12
-#define MACLI_HEAD_FID_PUB_KEY1             1073153   //(Ö»¶Á)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[¶Á] >32
-#define MACLI_HEAD_FID_PUB_KEY2             1073154   //(Ö»¶Á)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[¶Á] >32
-#define MACLI_HEAD_FID_PUB_KEY3             1073155   //(Ö»¶Á)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[¶Á] >32
-#define MACLI_HEAD_FID_USER_SESSION         1871872   //(Ö»¶Á)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[¶Á] >64
+//é€šä¿¡åŒ…å¤´å­—æ®µåŸŸå®šä¹‰
+#define MACLI_HEAD_FID_PKT_LEN              0         //(åªè¯»)  p_pvdValuePtr=(int *)                     p_iValueSize=sizeof(int)
+#define MACLI_HEAD_FID_PKT_CRC              1         //(åªè¯»)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[è¯»] >4
+#define MACLI_HEAD_FID_PKT_ID               2         //(åªè¯»)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[è¯»] >4
+#define MACLI_HEAD_FID_PKT_VER              3         //(åªè¯»)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[è¯»] >2
+#define MACLI_HEAD_FID_PKT_TYPE             4         //(åªè¯»)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[è¯»] >1
+#define MACLI_HEAD_FID_MSG_TYPE             5         //(åªè¯»)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[è¯»] >1
+#define MACLI_HEAD_FID_RESEND_FLAG          6         //(åªè¯»)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[è¯»] >1
+#define MACLI_HEAD_FID_TIMESTAMP            7         //(åªè¯»)  p_pvdValuePtr=(void *)(__int64 *)         p_iValueSize=sizeof(__int64)
+#define MACLI_HEAD_FID_MSG_ID               8         //(è¯»å†™)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[è¯»] >32 [å†™] strlen(p_pvdValuePtr)
+#define MACLI_HEAD_FID_CORR_ID              9         //(åªè¯»)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[è¯»] >32
+//#define MACLI_HEAD_FID_MSG_INDEX          10        //(åªè¯»)
+#define MACLI_HEAD_FID_FUNC_ID              11        //(è¯»å†™)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[è¯»] >32 [å†™] strlen(p_pvdValuePtr)
+#define MACLI_HEAD_FID_SRC_NODE             12        //(åªè¯»)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[è¯»] >4
+#define MACLI_HEAD_FID_DEST_NODE            13        //(åªè¯»)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[è¯»] >4
+#define MACLI_HEAD_FID_PAGE_FLAG            14        //(åªè¯»)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[è¯»] >1
+#define MACLI_HEAD_FID_PAGE_NO              15        //(åªè¯»)  p_pvdValuePtr=(void *)(int  *)            p_iValueSize=sizeof(int)
+#define MACLI_HEAD_FID_PAGE_CNT             16        //(åªè¯»)  p_pvdValuePtr=(void *)(int  *)            p_iValueSize=sizeof(int)
+#define MACLI_HEAD_FID_BODY_LEN             21        //(åªè¯»)  p_pvdValuePtr=(void *)(int  *)            p_iValueSize=sizeof(int)
+#define MACLI_HEAD_FID_PKT_HEAD_END         25        //(åªè¯»)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[è¯»] >4
+#define MACLI_HEAD_FID_PKT_HEAD_LEN         35        //(åªè¯»)  p_pvdValuePtr=(void *)(int  *)            p_iValueSize=sizeof(int)
+#define MACLI_HEAD_FID_PKT_HEAD_MSG         41        //(åªè¯»)  p_pvdValuePtr=(void *)(char  *)           p_iValueSize=[è¯»] > é€šè¿‡MACLI_HEAD_FID_PKT_HEAD_ENDèŽ·å–å¾—åˆ°çš„æ•°å€¼
+#define MACLI_HEAD_FID_PKT_BODY_MSG         42        //(åªè¯»)  p_pvdValuePtr=(void *)(char  *)           p_iValueSize=[è¯»] > é€šè¿‡MACLI_HEAD_FID_PKT_LENèŽ·å–å¾—åˆ°çš„æ•°å€¼ - é€šè¿‡MACLI_HEAD_FID_PKT_HEAD_ENDèŽ·å–å¾—åˆ°çš„æ•°å€¼
+#define MACLI_HEAD_FID_PKT_MSG              43        //(åªè¯»)  p_pvdValuePtr=(void *)(char  *)           p_iValueSize=[è¯»] > é€šè¿‡MACLI_HEAD_FID_PKT_LENèŽ·å–å¾—åˆ°çš„æ•°å€¼
+#define MACLI_HEAD_FID_REQTIME              48        //(åªè¯»)  p_pvdValuePtr=(void *)(__int64 *)         p_iValueSize=sizeof(__int64)
+#define MACLI_HEAD_FID_ANSTIME              49        //(åªè¯»)  p_pvdValuePtr=(void *)(__int64 *)         p_iValueSize=sizeof(__int64)
+#define MACLI_HEAD_FID_TRACEID              50        //(è¯»å†™)  p_pvdValuePtr=(void *)(__int64 *)         p_iValueSize=sizeof(__int64)
+#define MACLI_HEAD_FID_SPANDID              51        //(è¯»å†™)  p_pvdValuePtr=(void *)(__int64 *)         p_iValueSize=sizeof(__int64)
+#define MACLI_HEAD_FID_FUNC_TYPE            1052672   //(åªè¯»)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[è¯»] >1
+#define MACLI_HEAD_FID_BIZ_CHANNEL          1052674   //(åªè¯»)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[è¯»] >2
+#define MACLI_HEAD_FID_TOKEN_FLAG           1069056   //(åªè¯»)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[è¯»] >1
+#define MACLI_HEAD_FID_PUB_TOPIC            1073152   //(åªè¯»)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[è¯»] >12
+#define MACLI_HEAD_FID_PUB_KEY1             1073153   //(åªè¯»)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[è¯»] >32
+#define MACLI_HEAD_FID_PUB_KEY2             1073154   //(åªè¯»)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[è¯»] >32
+#define MACLI_HEAD_FID_PUB_KEY3             1073155   //(åªè¯»)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[è¯»] >32
+#define MACLI_HEAD_FID_USER_SESSION         1871872   //(åªè¯»)  p_pvdValuePtr=(void *)(char *)            p_iValueSize=[è¯»] >64
 
 //////////////////////////////////////////////////////////////////////////
-//Ñ¡ÏîË÷Òý
-#define MACLI_OPTION_CONNECT_PARAM          1         //(¶ÁÐ´) p_pvdValuePtr=(ST_MACLI_CONNECT_OPTION *) p_iValueSize=sizeof(ST_MACLI_CONNECT_OPTION)
-#define MACLI_OPTION_SYNCCALL_TIMEOUT       2         //(¶ÁÐ´) p_pvdValuePtr=(int *)                     p_iValueSize=sizeof(int)
-#define MACLI_OPTION_ASYNCALL_TIMEOUT       3         //(¶ÁÐ´) p_pvdValuePtr=(int *)                     p_iValueSize=sizeof(int)
-#define MACLI_OPTION_WRITELOG_LEVEL         4         //(¶ÁÐ´) p_pvdValuePtr=(int *)                     p_iValueSize=sizeof(int)
-#define MACLI_OPTION_WRITELOG_PATH          5         //(¶ÁÐ´) p_pvdValuePtr=(void *)(char *)            p_iValueSize=[¶Á] >256 [Ð´] strlen(p_pvdValuePtr)
-#define MACLI_OPTION_WRITELOG_SIZE          6         //(¶ÁÐ´) p_pvdValuePtr=(int *)                     p_iValueSize=sizeof(int) [µ¥Î»MB]
-#define MACLI_OPTION_WRITELOG_TIME          7         //(¶ÁÐ´) p_pvdValuePtr=(int *)                     p_iValueSize=sizeof(int) [Ãë]
-#define MACLI_OPTION_WRITELOG_MODE          8         //(¶ÁÐ´) p_pvdValuePtr=(int *)                     p_iValueSize=sizeof(int)
-#define MACLI_OPTION_SSL_CONNECTION         9         //(¶ÁÐ´) p_pvdValuePtr=(int *)                     p_iValueSize=sizeof(int) [ÊÇ·ñÖ§³ÖSSL¼ÓÃÜÍ¨ÐÅ,1¼ÓÃÜ0Îª·Ç¼ÓÃÜ]
-#define MACLI_OPTION_LIP_ADDR               10        //(¶Á)  p_pvdValuePtr=(char *)                     p_iValueSize=[¶Á] >256
-#define MACLI_OPTION_MAC_ADDR               11        //(¶Á)  p_pvdValuePtr=(char *)                     p_iValueSize=[¶Á] >256
-#define MACLI_OPTION_APP_NAME               12        //(¶Á)  p_pvdValuePtr=(char *)                     p_iValueSize=[¶Á] >256
-#define MACLI_OPTION_HD_ID                  13        //(¶Á)  p_pvdValuePtr=(char *)                     p_iValueSize=[¶Á] >256
-#define MACLI_OPTION_CPU_INFO               14        //(¶Á)  p_pvdValuePtr=(char *)                     p_iValueSize=[¶Á] >256
-#define MACLI_OPTION_CPU_ID                 15        //(¶Á)  p_pvdValuePtr=(char *)                     p_iValueSize=[¶Á] >256
-#define MACLI_OPTION_PC_NAME                16        //(¶Á)  p_pvdValuePtr=(char *)                     p_iValueSize=[¶Á] >256
-#define MACLI_OPTION_HD_PART                17        //(¶Á)  p_pvdValuePtr=(char *)                     p_iValueSize=[¶Á] >256
-#define MACLI_OPTION_SYS_VOL                18        //(¶Á)  p_pvdValuePtr=(char *)                     p_iValueSize=[¶Á] >256
-#define MACLI_OPTION_OS_VER                 19        //(¶Á)  p_pvdValuePtr=(char *)                     p_iValueSize=[¶Á] >256
-#define MACLI_OPTION_SIP_ADDR               20        //(¶Á)  p_pvdValuePtr=(char *)                     p_iValueSize=[¶Á] >256
-#define MACLI_OPTION_LPORT                  21        //(¶Á)  p_pvdValuePtr=(char *)                     p_iValueSize=[¶Á] >256
-#define MACLI_OPTION_IPORT                  22        //(¶Á)  p_pvdValuePtr=(char *)                     p_iValueSize=[¶Á] >256
+//é€‰é¡¹ç´¢å¼•
+#define MACLI_OPTION_CONNECT_PARAM          1         //(è¯»å†™) p_pvdValuePtr=(ST_MACLI_CONNECT_OPTION *) p_iValueSize=sizeof(ST_MACLI_CONNECT_OPTION)
+#define MACLI_OPTION_SYNCCALL_TIMEOUT       2         //(è¯»å†™) p_pvdValuePtr=(int *)                     p_iValueSize=sizeof(int)
+#define MACLI_OPTION_ASYNCALL_TIMEOUT       3         //(è¯»å†™) p_pvdValuePtr=(int *)                     p_iValueSize=sizeof(int)
+#define MACLI_OPTION_WRITELOG_LEVEL         4         //(è¯»å†™) p_pvdValuePtr=(int *)                     p_iValueSize=sizeof(int)
+#define MACLI_OPTION_WRITELOG_PATH          5         //(è¯»å†™) p_pvdValuePtr=(void *)(char *)            p_iValueSize=[è¯»] >256 [å†™] strlen(p_pvdValuePtr)
+#define MACLI_OPTION_WRITELOG_SIZE          6         //(è¯»å†™) p_pvdValuePtr=(int *)                     p_iValueSize=sizeof(int) [å•ä½MB]
+#define MACLI_OPTION_WRITELOG_TIME          7         //(è¯»å†™) p_pvdValuePtr=(int *)                     p_iValueSize=sizeof(int) [ç§’]
+#define MACLI_OPTION_WRITELOG_MODE          8         //(è¯»å†™) p_pvdValuePtr=(int *)                     p_iValueSize=sizeof(int)
+#define MACLI_OPTION_SSL_CONNECTION         9         //(è¯»å†™) p_pvdValuePtr=(int *)                     p_iValueSize=sizeof(int) [æ˜¯å¦æ”¯æŒSSLåŠ å¯†é€šä¿¡,1åŠ å¯†0ä¸ºéžåŠ å¯†]
+#define MACLI_OPTION_LIP_ADDR               10        //(è¯»)  p_pvdValuePtr=(char *)                     p_iValueSize=[è¯»] >256
+#define MACLI_OPTION_MAC_ADDR               11        //(è¯»)  p_pvdValuePtr=(char *)                     p_iValueSize=[è¯»] >256
+#define MACLI_OPTION_APP_NAME               12        //(è¯»)  p_pvdValuePtr=(char *)                     p_iValueSize=[è¯»] >256
+#define MACLI_OPTION_HD_ID                  13        //(è¯»)  p_pvdValuePtr=(char *)                     p_iValueSize=[è¯»] >256
+#define MACLI_OPTION_CPU_INFO               14        //(è¯»)  p_pvdValuePtr=(char *)                     p_iValueSize=[è¯»] >256
+#define MACLI_OPTION_CPU_ID                 15        //(è¯»)  p_pvdValuePtr=(char *)                     p_iValueSize=[è¯»] >256
+#define MACLI_OPTION_PC_NAME                16        //(è¯»)  p_pvdValuePtr=(char *)                     p_iValueSize=[è¯»] >256
+#define MACLI_OPTION_HD_PART                17        //(è¯»)  p_pvdValuePtr=(char *)                     p_iValueSize=[è¯»] >256
+#define MACLI_OPTION_SYS_VOL                18        //(è¯»)  p_pvdValuePtr=(char *)                     p_iValueSize=[è¯»] >256
+#define MACLI_OPTION_OS_VER                 19        //(è¯»)  p_pvdValuePtr=(char *)                     p_iValueSize=[è¯»] >256
+#define MACLI_OPTION_SIP_ADDR               20        //(è¯»)  p_pvdValuePtr=(char *)                     p_iValueSize=[è¯»] >256
+#define MACLI_OPTION_LPORT                  21        //(è¯»)  p_pvdValuePtr=(char *)                     p_iValueSize=[è¯»] >256
+#define MACLI_OPTION_IPORT                  22        //(è¯»)  p_pvdValuePtr=(char *)                     p_iValueSize=[è¯»] >256
 
 //////////////////////////////////////////////////////////////////////////
-// ÈÕÖ¾Ä£Ê½¶¨Òå:Ä¬ÈÏÎªÑ­»·ÈÕÖ¾
-#define MACLI_WRITELOG_MODE_LOOP            0         //Ñ­»·Ä£Ê½£¨ÈÕÖ¾ÎÄ¼þ´ïµ½Ö¸¶¨´óÐ¡£¬Çå¿ÕÔÙÖØÐ´´ËÈÕÖ¾ÎÄ¼þ)[maCliApi.log]
-#define MACLI_WRITELOG_MODE_FORWARD         1         //µÝÔöÄ£Ê½£¨ÈÕÖ¾ÎÄ¼þ´ïµ½Ö¸¶¨´óÐ¡£¬ÁíÐ´Ò»¸öÈÕÖ¾ÎÄ¼þ£©   [maCliApixxxx.log] xxxx´Ó0000µ½9999µÝÔö
+// æ—¥å¿—æ¨¡å¼å®šä¹‰:é»˜è®¤ä¸ºå¾ªçŽ¯æ—¥å¿—
+#define MACLI_WRITELOG_MODE_LOOP            0         //å¾ªçŽ¯æ¨¡å¼ï¼ˆæ—¥å¿—æ–‡ä»¶è¾¾åˆ°æŒ‡å®šå¤§å°ï¼Œæ¸…ç©ºå†é‡å†™æ­¤æ—¥å¿—æ–‡ä»¶)[maCliApi.log]
+#define MACLI_WRITELOG_MODE_FORWARD         1         //é€’å¢žæ¨¡å¼ï¼ˆæ—¥å¿—æ–‡ä»¶è¾¾åˆ°æŒ‡å®šå¤§å°ï¼Œå¦å†™ä¸€ä¸ªæ—¥å¿—æ–‡ä»¶ï¼‰   [maCliApixxxx.log] xxxxä»Ž0000åˆ°9999é€’å¢ž
 
 //////////////////////////////////////////////////////////////////////////
-// ÈÕÖ¾¼¶±ð¶¨Òå£¨²ÉÓÃµþ¼Ó·½Ê½£©:ÀýÈç µ÷ÊÔÐÅÏ¢[1] + ´íÎóÐÅÏ¢[8] = 9
-#define MACLI_WRITELOG_LEVEL_NOLOG          0         //ÎÞÈÕÖ¾
-#define MACLI_WRITELOG_LEVEL_ALLLOG         63        //ËùÓÐÈÕÖ¾
-#define MACLI_WRITELOG_LEVEL_DEBUG          1         //µ÷ÊÔÐÅÏ¢(ÊÕ·¢°ü¾ßÌåÊý¾ÝÄÚÈÝ)
-#define MACLI_WRITELOG_LEVEL_INFO           2         //ÔËÐÐÐÅÏ¢(ÊÕ·¢°ü¼òÒªÄÚÈÝ£º¹¦ÄÜºÅ¡¢°ü´óÐ¡)
-#define MACLI_WRITELOG_LEVEL_WARN           4         //¾¯¸æÐÅÏ¢(ÊÕ·¢°üÍ¨ÐÅ¶Ï¿ªÖØÁ¬¡¢·þÎñÆ÷ÇÐ»»¡¢ÏûÏ¢³¬Ê±µÈ)
-#define MACLI_WRITELOG_LEVEL_ERROR          8         //´íÎóÐÅÏ¢(ÊÕ·¢°üÍ¨ÐÅÊ§°Ü)
-#define MACLI_WRITELOG_LEVEL_FATAL          16        //ÑÏÖØ´íÎó(³ÌÐòÒì³£ÍË³ö)
-#define MACLI_WRITELOG_LEVEL_IMPORTANT      32        //ÖØÒªÐÅÏ¢(Á¬½Ó½¨Á¢¡¢Á¬½Ó¹Ø±ÕµÈ)
+// æ—¥å¿—çº§åˆ«å®šä¹‰ï¼ˆé‡‡ç”¨å åŠ æ–¹å¼ï¼‰:ä¾‹å¦‚ è°ƒè¯•ä¿¡æ¯[1] + é”™è¯¯ä¿¡æ¯[8] = 9
+#define MACLI_WRITELOG_LEVEL_NOLOG          0         //æ— æ—¥å¿—
+#define MACLI_WRITELOG_LEVEL_ALLLOG         63        //æ‰€æœ‰æ—¥å¿—
+#define MACLI_WRITELOG_LEVEL_DEBUG          1         //è°ƒè¯•ä¿¡æ¯(æ”¶å‘åŒ…å…·ä½“æ•°æ®å†…å®¹)
+#define MACLI_WRITELOG_LEVEL_INFO           2         //è¿è¡Œä¿¡æ¯(æ”¶å‘åŒ…ç®€è¦å†…å®¹ï¼šåŠŸèƒ½å·ã€åŒ…å¤§å°)
+#define MACLI_WRITELOG_LEVEL_WARN           4         //è­¦å‘Šä¿¡æ¯(æ”¶å‘åŒ…é€šä¿¡æ–­å¼€é‡è¿žã€æœåŠ¡å™¨åˆ‡æ¢ã€æ¶ˆæ¯è¶…æ—¶ç­‰)
+#define MACLI_WRITELOG_LEVEL_ERROR          8         //é”™è¯¯ä¿¡æ¯(æ”¶å‘åŒ…é€šä¿¡å¤±è´¥)
+#define MACLI_WRITELOG_LEVEL_FATAL          16        //ä¸¥é‡é”™è¯¯(ç¨‹åºå¼‚å¸¸é€€å‡º)
+#define MACLI_WRITELOG_LEVEL_IMPORTANT      32        //é‡è¦ä¿¡æ¯(è¿žæŽ¥å»ºç«‹ã€è¿žæŽ¥å…³é—­ç­‰)
 
 
 //////////////////////////////////////////////////////////////////////////
-// Í¨ÐÅÀàÐÍ¶¨Òå
-//#define COMM_TYPE_KCXP                    1       // ×÷·Ï(maCliApi 3.1)
-//#define COMM_TYPE_ZMQ                     2       // ×÷·Ï(maCliApi 3.1)
+// é€šä¿¡ç±»åž‹å®šä¹‰
+//#define COMM_TYPE_KCXP                    1       // ä½œåºŸ(maCliApi 3.1)
+//#define COMM_TYPE_ZMQ                     2       // ä½œåºŸ(maCliApi 3.1)
 #define COMM_TYPE_SOCKET                    3
-//#define COMM_TYPE_SHM                     4       // ×÷·Ï(maCliApi 3.1)
+//#define COMM_TYPE_SHM                     4       // ä½œåºŸ(maCliApi 3.1)
 
 //////////////////////////////////////////////////////////////////////////
-// ³£ÓÃ¹¦ÄÜ¶¨Òå
-#define MA_FUNC_SUBSCRIBE                   "00102012"  //¶©ÔÄ
-#define MA_FUNC_UNSUBSCRIBE                 "00102013"  //È¡Ïû¶©ÔÄ
-#define MA_FUNC_PUB_CONTENT                 "00102020"  //·¢²¼
-#define MA_FUNC_LOGIN_API                   "10301105"  //ÓÃ»§µÇÂ¼(API)
-#define MA_FUNC_LOGIN_ACCREDIT              "10301104"  //¿Í»§ÊÚÐÅµÇÂ¼
+// å¸¸ç”¨åŠŸèƒ½å®šä¹‰
+#define MA_FUNC_SUBSCRIBE                   "00102012"  //è®¢é˜…
+#define MA_FUNC_UNSUBSCRIBE                 "00102013"  //å–æ¶ˆè®¢é˜…
+#define MA_FUNC_PUB_CONTENT                 "00102020"  //å‘å¸ƒ
+#define MA_FUNC_LOGIN_API                   "10301105"  //ç”¨æˆ·ç™»å½•(API)
+#define MA_FUNC_LOGIN_ACCREDIT              "10301104"  //å®¢æˆ·æŽˆä¿¡ç™»å½•
 
 //////////////////////////////////////////////////////////////////////////
-// ÍøÂçÁ¬½Ó×´Ì¬¶¨Òå
-#define MA_NET_CONNET                       "0"       //Á¬½Ó³É¹¦
-#define MA_NET_BREAK                        "1"       //Á¬½Ó¶Ï¿ª
+// ç½‘ç»œè¿žæŽ¥çŠ¶æ€å®šä¹‰
+#define MA_NET_CONNET                       "0"       //è¿žæŽ¥æˆåŠŸ
+#define MA_NET_BREAK                        "1"       //è¿žæŽ¥æ–­å¼€
 
 //////////////////////////////////////////////////////////////////////////
-//»Øµ÷ÉêÃ÷
+//å›žè°ƒç”³æ˜Ž
 typedef void *MACLIHANDLE;
-// ÍÆËÍÄÚÈÝº¯ÊýÔ­ÐÍÈç:OnPulish(const char *p_pszAcceptSn, const unsigned char *p_pszDataBuff, int p_iDataLen) 
-// Òì²½Ó¦´ðº¯ÊýÔ­ÐÍÈç:OnAnswer(const char *p_pszMsgId, const unsigned char *p_pszDataBuff, int p_iDataLen) 
-// ÎÄ¼þÉÏ´«º¯ÊýÔ­ÐÍÈç:OnFileUp(const char *p_pszFileName, const unsigned char *p_pszError, int p_iPercent)   // p_iPercent > 0 Õý³£´«Êä  p_iPercent < 0 Òì³£
-// ÎÄ¼þÏÂÔØº¯ÊýÔ­ÐÍÈç:OnFileDown(const char *p_pszFileName, const unsigned char *p_pszError, int p_iPercent) // p_iPercent > 0 Õý³£´«Êä  p_iPercent < 0 Òì³£
+// æŽ¨é€å†…å®¹å‡½æ•°åŽŸåž‹å¦‚:OnPulish(const char *p_pszAcceptSn, const unsigned char *p_pszDataBuff, int p_iDataLen) 
+// å¼‚æ­¥åº”ç­”å‡½æ•°åŽŸåž‹å¦‚:OnAnswer(const char *p_pszMsgId, const unsigned char *p_pszDataBuff, int p_iDataLen) 
+// æ–‡ä»¶ä¸Šä¼ å‡½æ•°åŽŸåž‹å¦‚:OnFileUp(const char *p_pszFileName, const unsigned char *p_pszError, int p_iPercent)   // p_iPercent > 0 æ­£å¸¸ä¼ è¾“  p_iPercent < 0 å¼‚å¸¸
+// æ–‡ä»¶ä¸‹è½½å‡½æ•°åŽŸåž‹å¦‚:OnFileDown(const char *p_pszFileName, const unsigned char *p_pszError, int p_iPercent) // p_iPercent > 0 æ­£å¸¸ä¼ è¾“  p_iPercent < 0 å¼‚å¸¸
 typedef void (MACLI_Callback) (const char *, const unsigned char *, int);
 typedef MACLI_Callback *MACLI_NOTIFY;
 
@@ -164,8 +164,8 @@ typedef MACLI_Callback *MACLI_NOTIFY;
 #define MACLI_TERM_CODE                     32
 #define MACLI_USERDATA_MAX                  256
 #define MACLI_USERINFO_MAX                  64
-#define MACLI_FUNC_ID_SIZE                  8   //¹¦ÄÜºÅ
-#define MACLI_PUB_TOPIC_SIZE                12  //Ö÷Ìâ
+#define MACLI_FUNC_ID_SIZE                  8   //åŠŸèƒ½å·
+#define MACLI_PUB_TOPIC_SIZE                12  //ä¸»é¢˜
 
 #if (defined(OS_IS_AIX) && defined(__xlC__))
 #pragma options align = packed
@@ -175,90 +175,90 @@ typedef MACLI_Callback *MACLI_NOTIFY;
 
 typedef struct
 {
-  char szServerName[MACLI_SERVERNAME_MAX + 1];  //·þÎñÆ÷±ðÃû
-  int nCommType;                                //Í¨ÐÅÀàÐÍ£º1-KCXP 2-0MQ 3-SOCKET 4-SHM
-  int nProtocal;                                //Í¨ÐÅÐ­Òé£º1-TCP 2-UDP 3-EPGM 4-IPC
-  char szSvrAddress[MACLI_ADRRESS_MAX + 1];     //·þÎñÆ÷µØÖ·
-  int nSvrPort;                                 //·þÎñÆ÷¶Ë¿Ú
-  char szLocalAddress[MACLI_ADRRESS_MAX + 1];   //±¾µØµØÖ·
-  int nLocalPort;                               //±¾µØ¶Ë¿Ú
+  char szServerName[MACLI_SERVERNAME_MAX + 1];  //æœåŠ¡å™¨åˆ«å
+  int nCommType;                                //é€šä¿¡ç±»åž‹ï¼š1-KCXP 2-0MQ 3-SOCKET 4-SHM
+  int nProtocal;                                //é€šä¿¡åè®®ï¼š1-TCP 2-UDP 3-EPGM 4-IPC
+  char szSvrAddress[MACLI_ADRRESS_MAX + 1];     //æœåŠ¡å™¨åœ°å€
+  int nSvrPort;                                 //æœåŠ¡å™¨ç«¯å£
+  char szLocalAddress[MACLI_ADRRESS_MAX + 1];   //æœ¬åœ°åœ°å€
+  int nLocalPort;                               //æœ¬åœ°ç«¯å£
 
-  int nReqId;                                   //ÇëÇó±êÊ¶£ºÍ¨ÐÅÀàÐÍÎª4-SHMÊ±ÎªÇëÇó¶ÓÁÐ±àºÅ
-  int nAnsId;                                   //Ó¦´ð±êÊ¶£ºÍ¨ÐÅÀàÐÍÎª4-SHMÊ±ÎªÓ¦´ð¶ÓÁÐ±àºÅ
+  int nReqId;                                   //è¯·æ±‚æ ‡è¯†ï¼šé€šä¿¡ç±»åž‹ä¸º4-SHMæ—¶ä¸ºè¯·æ±‚é˜Ÿåˆ—ç¼–å·
+  int nAnsId;                                   //åº”ç­”æ ‡è¯†ï¼šé€šä¿¡ç±»åž‹ä¸º4-SHMæ—¶ä¸ºåº”ç­”é˜Ÿåˆ—ç¼–å·
 
-  char szSubId[MACLI_SERVERNAME_MAX + 1];       //¶©ÔÄ±êÊ¶: Í¨ÐÅÀàÐÍÎªKCXPÊ±Îª¶©ÔÄ¶ÓÁÐ
+  char szSubId[MACLI_SERVERNAME_MAX + 1];       //è®¢é˜…æ ‡è¯†: é€šä¿¡ç±»åž‹ä¸ºKCXPæ—¶ä¸ºè®¢é˜…é˜Ÿåˆ—
 
-  char szProxy[MACLI_PROXY_MAX + 1];            //´úÀí·þÎñÆ÷(±£Áô)
-  char szSSL[MACLI_SSL_MAX + 1];                //SSL(±£Áô)
-  char szTermCode[MACLI_TERM_CODE + 1];         //ÖÕ¶ËÌØÕ÷Âë
+  char szProxy[MACLI_PROXY_MAX + 1];            //ä»£ç†æœåŠ¡å™¨(ä¿ç•™)
+  char szSSL[MACLI_SSL_MAX + 1];                //SSL(ä¿ç•™)
+  char szTermCode[MACLI_TERM_CODE + 1];         //ç»ˆç«¯ç‰¹å¾ç 
 
-  char szReqName[MACLI_SERVERNAME_MAX + 1];     //Í¨ÐÅÀàÐÍÎª4-SHMÊ±ÌîÐ´¹²ÏíÄÚ´æÇëÇó¶ÓÁÐÃû³Æ
-  char szAnsName[MACLI_SERVERNAME_MAX + 1];     //Í¨ÐÅÀàÐÍÎª4-SHMÊ±ÌîÐ´¹²ÏíÄÚ´æÓ¦´ð¶ÓÁÐÃû³Æ
-  char szReqConnstr[MACLI_ADRRESS_MAX + 1];     //Í¨ÐÅÀàÐÍÎª4-SHMÊ±ÌîÐ´¹²ÏíÄÚ´æÇëÇó¶ÓÁÐÁ¬½Ó´®, ÀýÈçIPC/@@IP
-  char szAnsConnstr[MACLI_ADRRESS_MAX + 1];     //Í¨ÐÅÀàÐÍÎª4-SHMÊ±ÌîÐ´¹²ÏíÄÚ´æÓ¦´ð¶ÓÁÐÁ¬½Ó´®
+  char szReqName[MACLI_SERVERNAME_MAX + 1];     //é€šä¿¡ç±»åž‹ä¸º4-SHMæ—¶å¡«å†™å…±äº«å†…å­˜è¯·æ±‚é˜Ÿåˆ—åç§°
+  char szAnsName[MACLI_SERVERNAME_MAX + 1];     //é€šä¿¡ç±»åž‹ä¸º4-SHMæ—¶å¡«å†™å…±äº«å†…å­˜åº”ç­”é˜Ÿåˆ—åç§°
+  char szReqConnstr[MACLI_ADRRESS_MAX + 1];     //é€šä¿¡ç±»åž‹ä¸º4-SHMæ—¶å¡«å†™å…±äº«å†…å­˜è¯·æ±‚é˜Ÿåˆ—è¿žæŽ¥ä¸², ä¾‹å¦‚IPC/@@IP
+  char szAnsConnstr[MACLI_ADRRESS_MAX + 1];     //é€šä¿¡ç±»åž‹ä¸º4-SHMæ—¶å¡«å†™å…±äº«å†…å­˜åº”ç­”é˜Ÿåˆ—è¿žæŽ¥ä¸²
 
-  char szMonitorReqName[MACLI_SERVERNAME_MAX + 1];     //¼àÌýÇëÇó¶ÓÁÐÃû³Æ
-  char szMonitorAnsName[MACLI_SERVERNAME_MAX + 1];     //¼àÌýÓ¦´ð¶ÓÁÐÃû³Æ
-  char szMonitorReqConnstr[MACLI_ADRRESS_MAX + 1];     //¼àÌýÇëÇó¶ÓÁÐÁ¬½Ó´®, ÀýÈçIPC/@@IP
-  char szMonitorAnsConnstr[MACLI_ADRRESS_MAX + 1];     //¼àÌýÓ¦´ð¶ÓÁÐÁ¬½Ó´®
+  char szMonitorReqName[MACLI_SERVERNAME_MAX + 1];     //ç›‘å¬è¯·æ±‚é˜Ÿåˆ—åç§°
+  char szMonitorAnsName[MACLI_SERVERNAME_MAX + 1];     //ç›‘å¬åº”ç­”é˜Ÿåˆ—åç§°
+  char szMonitorReqConnstr[MACLI_ADRRESS_MAX + 1];     //ç›‘å¬è¯·æ±‚é˜Ÿåˆ—è¿žæŽ¥ä¸², ä¾‹å¦‚IPC/@@IP
+  char szMonitorAnsConnstr[MACLI_ADRRESS_MAX + 1];     //ç›‘å¬åº”ç­”é˜Ÿåˆ—è¿žæŽ¥ä¸²
 
-  char szSocketSubConnstr[MACLI_ADRRESS_MAX + 1];      //SOCKET¶©ÔÄ¶ÓÁÐÁ¬½Ó´®
+  char szSocketSubConnstr[MACLI_ADRRESS_MAX + 1];      //SOCKETè®¢é˜…é˜Ÿåˆ—è¿žæŽ¥ä¸²
 
-  int nReqMaxDepth;                             //Í¨ÐÅÀàÐÍÎª4-SHMÊ±ÌîÐ´¹²ÏíÄÚ´æÇëÇó¶ÓÁÐ×î´óÉî¶È
-  int nAnsMaxDepth;                             //Í¨ÐÅÀàÐÍÎª4-SHMÊ±ÌîÐ´¹²ÏíÄÚ´æÓ¦´ð¶ÓÁÐ×î´óÉî¶È
+  int nReqMaxDepth;                             //é€šä¿¡ç±»åž‹ä¸º4-SHMæ—¶å¡«å†™å…±äº«å†…å­˜è¯·æ±‚é˜Ÿåˆ—æœ€å¤§æ·±åº¦
+  int nAnsMaxDepth;                             //é€šä¿¡ç±»åž‹ä¸º4-SHMæ—¶å¡«å†™å…±äº«å†…å­˜åº”ç­”é˜Ÿåˆ—æœ€å¤§æ·±åº¦
 } ST_MACLI_CONNECT_OPTION;
 
 typedef struct
 {
-  char szFuncId[MACLI_FUNC_ID_SIZE + 1];        //¹¦ÄÜºÅ
-  MACLI_NOTIFY pfnCallback;                     //Òì²½Ó¦´ð»Øµ÷º¯ÊýÖ¸Õë
+  char szFuncId[MACLI_FUNC_ID_SIZE + 1];        //åŠŸèƒ½å·
+  MACLI_NOTIFY pfnCallback;                     //å¼‚æ­¥åº”ç­”å›žè°ƒå‡½æ•°æŒ‡é’ˆ
 } ST_MACLI_ARCALLBACK;
 
 typedef struct
 {
-  char szTopic[MACLI_PUB_TOPIC_SIZE + 1];       //Ö÷Ìâ
-  MACLI_NOTIFY pfnCallback;                     //·¢²¼ÄÚÈÝ»Øµ÷º¯ÊýÖ¸Õë
+  char szTopic[MACLI_PUB_TOPIC_SIZE + 1];       //ä¸»é¢˜
+  MACLI_NOTIFY pfnCallback;                     //å‘å¸ƒå†…å®¹å›žè°ƒå‡½æ•°æŒ‡é’ˆ
 } ST_MACLI_PSCALLBACK;
 
 typedef struct
 {
-  MACLI_NOTIFY pfnCallback;                     //Á¬½ÓÐÅÏ¢»Øµ÷º¯ÊýÖ¸Õë
+  MACLI_NOTIFY pfnCallback;                     //è¿žæŽ¥ä¿¡æ¯å›žè°ƒå‡½æ•°æŒ‡é’ˆ
 } ST_MACLI_NETCALLBACK;
 
 typedef struct
 {
-  char szServerName[MACLI_USERINFO_MAX + 1];    //Á¬½ÓÃû³Æ
-  char szUserId    [MACLI_USERINFO_MAX + 1];    //ÓÃ»§Ãû  
-  char szPassword  [MACLI_USERINFO_MAX + 1];    //ÃÜÂë    
-  char szAppId     [MACLI_USERINFO_MAX + 1];    //APP±êÊ¶ 
-  char szAuthCode  [MACLI_USERINFO_MAX + 1];    //ÈÏÖ¤Âë  
+  char szServerName[MACLI_USERINFO_MAX + 1];    //è¿žæŽ¥åç§°
+  char szUserId    [MACLI_USERINFO_MAX + 1];    //ç”¨æˆ·å  
+  char szPassword  [MACLI_USERINFO_MAX + 1];    //å¯†ç     
+  char szAppId     [MACLI_USERINFO_MAX + 1];    //APPæ ‡è¯† 
+  char szAuthCode  [MACLI_USERINFO_MAX + 1];    //è®¤è¯ç   
 } ST_MACLI_USERINFO;
 
 typedef struct
 {
-  char szFuncId[MACLI_FUNC_ID_SIZE + 1];        //¹¦ÄÜºÅ
-  char szMsgId[MACLI_MSG_ID_SIZE + 1];          //ÏûÏ¢ID
-  int nTimeout;                                 //µ÷ÓÃ³¬Ê±
-  char szUserData1[MACLI_USERDATA_MAX + 1];     //ÓÃ»§Êý¾Ý1
-  char szUserData2[MACLI_USERDATA_MAX + 1];     //ÓÃ»§Êý¾Ý2
+  char szFuncId[MACLI_FUNC_ID_SIZE + 1];        //åŠŸèƒ½å·
+  char szMsgId[MACLI_MSG_ID_SIZE + 1];          //æ¶ˆæ¯ID
+  int nTimeout;                                 //è°ƒç”¨è¶…æ—¶
+  char szUserData1[MACLI_USERDATA_MAX + 1];     //ç”¨æˆ·æ•°æ®1
+  char szUserData2[MACLI_USERDATA_MAX + 1];     //ç”¨æˆ·æ•°æ®2
 } ST_MACLI_SYNCCALL;
 
 typedef struct
 {
-  char szFuncId[MACLI_FUNC_ID_SIZE + 1];        //¹¦ÄÜºÅ
-  char szMsgId[MACLI_MSG_ID_SIZE + 1];          //ÏûÏ¢ID
-  int nTimeout;                                 //µ÷ÓÃ³¬Ê±
-  char szUserData1[MACLI_USERDATA_MAX + 1];     //ÓÃ»§Êý¾Ý1
-  char szUserData2[MACLI_USERDATA_MAX + 1];     //ÓÃ»§Êý¾Ý2
+  char szFuncId[MACLI_FUNC_ID_SIZE + 1];        //åŠŸèƒ½å·
+  char szMsgId[MACLI_MSG_ID_SIZE + 1];          //æ¶ˆæ¯ID
+  int nTimeout;                                 //è°ƒç”¨è¶…æ—¶
+  char szUserData1[MACLI_USERDATA_MAX + 1];     //ç”¨æˆ·æ•°æ®1
+  char szUserData2[MACLI_USERDATA_MAX + 1];     //ç”¨æˆ·æ•°æ®2
 } ST_MACLI_ASYNCALL;
 
 typedef struct
 {
-  char szTopic[MACLI_PUB_TOPIC_SIZE + 1];       //Ö÷Ìâ
-  char szAcceptSn[MACLI_MSG_ID_SIZE + 1];       //¶©ÔÄÊÜÀíºÅ
-  int nTimeout;                                 //µ÷ÓÃ³¬Ê±
-  char szUserData1[MACLI_USERDATA_MAX + 1];     //ÓÃ»§Êý¾Ý1
-  char szUserData2[MACLI_USERDATA_MAX + 1];     //ÓÃ»§Êý¾Ý2
+  char szTopic[MACLI_PUB_TOPIC_SIZE + 1];       //ä¸»é¢˜
+  char szAcceptSn[MACLI_MSG_ID_SIZE + 1];       //è®¢é˜…å—ç†å·
+  int nTimeout;                                 //è°ƒç”¨è¶…æ—¶
+  char szUserData1[MACLI_USERDATA_MAX + 1];     //ç”¨æˆ·æ•°æ®1
+  char szUserData2[MACLI_USERDATA_MAX + 1];     //ç”¨æˆ·æ•°æ®2
 } ST_MACLI_PUBCALL;
 
 
@@ -273,11 +273,11 @@ extern "C"
 {
 #endif
 
-//³õÊ¼»¯/ÇåÀí
+//åˆå§‹åŒ–/æ¸…ç†
 MACLIAPI int MACLI_STDCALL maCli_Init(MACLIHANDLE *p_phHandle);
 MACLIAPI int MACLI_STDCALL maCli_Exit(MACLIHANDLE p_hHandle);
 
-//°æ±¾/²ÎÊý
+//ç‰ˆæœ¬/å‚æ•°
 MACLIAPI int MACLI_STDCALL maCli_GetVersion(MACLIHANDLE p_hHandle, char *p_pszVer, int p_iVerSize);
 MACLIAPI int MACLI_STDCALL maCli_GetOptions(MACLIHANDLE p_hHandle, int p_iOptionIdx, void *p_pvdValuePtr, int p_iValueSize);
 MACLIAPI int MACLI_STDCALL maCli_SetOptions(MACLIHANDLE p_hHandle, int p_iOptionIdx, void *p_pvdValuePtr, int p_iValueSize);
@@ -285,19 +285,19 @@ MACLIAPI int MACLI_STDCALL maCli_SetArCallback(MACLIHANDLE p_hHandle, ST_MACLI_A
 MACLIAPI int MACLI_STDCALL maCli_SetPsCallback(MACLIHANDLE p_hHandle, ST_MACLI_PSCALLBACK *p_pstPsCallback);
 MACLIAPI int MACLI_STDCALL maCli_SetNetCallback(MACLIHANDLE p_hHandle, ST_MACLI_NETCALLBACK *p_pstNetCallback);
 
-//Á¬½Ó
+//è¿žæŽ¥
 MACLIAPI int MACLI_STDCALL maCli_Open(MACLIHANDLE p_hHandle, ST_MACLI_USERINFO *p_pstUserInfo);
 MACLIAPI int MACLI_STDCALL maCli_MonitorOpen(MACLIHANDLE p_hHandle, ST_MACLI_USERINFO *p_pstUserInfo);
 MACLIAPI int MACLI_STDCALL maCli_Close(MACLIHANDLE p_hHandle);
 MACLIAPI int MACLI_STDCALL maCli_ReOpen(MACLIHANDLE p_hHandle);
 
-//µ÷ÓÃ1
+//è°ƒç”¨1
 MACLIAPI int MACLI_STDCALL maCli_SyncCall(MACLIHANDLE p_hHandle, ST_MACLI_SYNCCALL *p_pstSyncCall);
 MACLIAPI int MACLI_STDCALL maCli_AsynCall(MACLIHANDLE p_hHandle, ST_MACLI_ASYNCALL *p_pstAsynCall);
 MACLIAPI int MACLI_STDCALL maCli_AsynGetReply(MACLIHANDLE p_hHandle, ST_MACLI_ASYNCALL *p_pstAsynCall);
 MACLIAPI int MACLI_STDCALL maCli_GetPsContent(MACLIHANDLE p_hHandle, ST_MACLI_PUBCALL *p_pstPubCall);
 
-//µ÷ÓÃ2
+//è°ƒç”¨2
 MACLIAPI int MACLI_STDCALL maCli_SyncCall2(MACLIHANDLE p_hHandle, ST_MACLI_SYNCCALL *p_pstSyncCall,
   const unsigned char *p_pszReqData, int p_iReqDataLen, unsigned char **p_ppszAnsData, int *p_piAnsDataLen);
 MACLIAPI int MACLI_STDCALL maCli_AsynCall2(MACLIHANDLE p_hHandle, ST_MACLI_ASYNCALL *p_pstAsynCall,
@@ -312,7 +312,7 @@ MACLIAPI int MACLI_STDCALL maCli_AsynMonitorCall2(MACLIHANDLE p_hHandle, ST_MACL
 MACLIAPI int MACLI_STDCALL maCli_AsynMonitorGetReply2(MACLIHANDLE p_hHandle, ST_MACLI_ASYNCALL *p_pstAsynCall,
   unsigned char **p_ppszAnsData, int *p_piAnsDataLen);
 
-//×é°ü(ÇëÇó)
+//ç»„åŒ…(è¯·æ±‚)
 MACLIAPI int MACLI_STDCALL maCli_Make(MACLIHANDLE p_hHandle, unsigned char **p_ppszReqData, int *p_piReqDataLen);
 MACLIAPI int MACLI_STDCALL maCli_BeginWrite(MACLIHANDLE p_hHandle);
 MACLIAPI int MACLI_STDCALL maCli_EndWrite(MACLIHANDLE p_hHandle);
@@ -334,7 +334,7 @@ MACLIAPI int MACLI_STDCALL maCli_SetValueC(MACLIHANDLE p_hHandle, char p_chValue
 MACLIAPI int MACLI_STDCALL maCli_SetValueD(MACLIHANDLE p_hHandle, double p_dValue, const char *p_pszFieldIdx);
 MACLIAPI int MACLI_STDCALL maCli_SetValueL(MACLIHANDLE p_hHandle, __int64 p_i64Value, const char *p_pszFieldIdx);
 
-//½â°ü(Ó¦´ð)
+//è§£åŒ…(åº”ç­”)
 MACLIAPI int MACLI_STDCALL maCli_Parse(MACLIHANDLE p_hHandle, const unsigned char *p_pszAnsData, int p_iAnsDataLen);
 MACLIAPI int MACLI_STDCALL maCli_GetTableCount(MACLIHANDLE p_hHandle, int *p_piTableCount);
 MACLIAPI int MACLI_STDCALL maCli_OpenTable(MACLIHANDLE p_hHandle, int p_iTableIndex);
@@ -355,7 +355,7 @@ MACLIAPI int MACLI_STDCALL maCli_GetValueC(MACLIHANDLE p_hHandle, char *p_pchVal
 MACLIAPI int MACLI_STDCALL maCli_GetValueD(MACLIHANDLE p_hHandle, double *p_pdValue, const char *p_pszFieldIdx);
 MACLIAPI int MACLI_STDCALL maCli_GetValueL(MACLIHANDLE p_hHandle, __int64 *p_pi64Value, const char *p_pszFieldIdx);
 
-//¸¨Öú
+//è¾…åŠ©
 MACLIAPI int MACLI_STDCALL maCli_GetUuid(MACLIHANDLE p_hHandle, char *p_pszUuid, int p_iUuidSize);
 MACLIAPI int MACLI_STDCALL maCli_RestorePsList(MACLIHANDLE p_hHandle);
 MACLIAPI int MACLI_STDCALL maCli_GetLastErrorCode(MACLIHANDLE p_hHandle, int *p_piErrorCode);

@@ -8,124 +8,124 @@
 class ZSAPI CTradeCallback : virtual public CBaseCallback
 {
 public:
-    // Î¯ÍĞÏìÓ¦
+    // å§”æ‰˜å“åº”
     virtual int OnOrder(STFirstSet *p_pFirstSet, STRspOrder *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // ³·µ¥ÏìÓ¦
+    // æ’¤å•å“åº”
     virtual int OnCancelOrder(STFirstSet *p_pFirstSet, STRspCancelOrder *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // ×î´ó¿É½»Ò×Êı¼ÆËãÏìÓ¦
+    // æœ€å¤§å¯äº¤æ˜“æ•°è®¡ç®—å“åº”
     virtual int OnMaxTradeQty(STFirstSet *p_pFirstSet, STRspMaxTradeQty *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // ³Ö²Ö²éÑ¯ÏìÓ¦
+    // æŒä»“æŸ¥è¯¢å“åº”
     virtual int OnQryHolding(STFirstSet *p_pFirstSet, STRspQryHolding *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // ³É½»²éÑ¯ÏìÓ¦
+    // æˆäº¤æŸ¥è¯¢å“åº”
     virtual int OnQryFill(STFirstSet *p_pFirstSet, STRspQryFill *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // ×Ê½ğ²éÑ¯ÏìÓ¦
+    // èµ„é‡‘æŸ¥è¯¢å“åº”
     virtual int OnQryMoney(STFirstSet *p_pFirstSet, STRspQryMoney *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // Î¯ÍĞ²éÑ¯ÏìÓ¦
+    // å§”æ‰˜æŸ¥è¯¢å“åº”
     virtual int OnQryOrder(STFirstSet *p_pFirstSet, STRspQryOrder *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // ¹É¶«ÕË»§²éÑ¯ÏìÓ¦
+    // è‚¡ä¸œè´¦æˆ·æŸ¥è¯¢å“åº”
     virtual int OnQryHolder(STFirstSet *p_pFirstSet, STRspQryHolder *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // ¿É³·µ¥Î¯ÍĞ²éÑ¯ÏìÓ¦
+    // å¯æ’¤å•å§”æ‰˜æŸ¥è¯¢å“åº”
     virtual int OnQryWithdrawableOrder(STFirstSet *p_pFirstSet, STRspQryWithdrawableOrder *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // ²ßÂÔ½»Ò××¢²áÏìÓ¦
+    // ç­–ç•¥äº¤æ˜“æ³¨å†Œå“åº”
     virtual int OnAcctRegister(STFirstSet *p_pFirstSet, STRspAcctRegister *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // ½»Ò×ÕË»§µÇÂ¼ÏìÓ¦
+    // äº¤æ˜“è´¦æˆ·ç™»å½•å“åº”
     virtual int OnTradeLogin(STFirstSet *p_pFirstSet, STRspTradeLogin *p_pRsp, LONGLONG  p_llReqId, int p_iNum) {return 0;}
 
-    // ÏµÍ³ÓÃ»§µÇÂ¼ÏìÓ¦
+    // ç³»ç»Ÿç”¨æˆ·ç™»å½•å“åº”
     virtual int OnLogin(STFirstSet *p_pFirstSet, STRspLogin *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // È·ÈÏ»Ø±¨
+    // ç¡®è®¤å›æŠ¥
     virtual int OnRtnOrderConfirm(STRtnOrderConfirm *p_pRtnOrderConfirm) { return 0; }
 
-    // ³É½»»Ø±¨
+    // æˆäº¤å›æŠ¥
     virtual int OnRtnOrderFill(STRtnOrderFill *p_pRtnOrderFill) { return 0; }
 
 public:
-    // ÈÚ×ÊÈÚÈ¯Î¯ÍĞÏÂµ¥ÏìÓ¦
+    // èèµ„èåˆ¸å§”æ‰˜ä¸‹å•å“åº”
     virtual int OnOrderCredit(STFirstSet *p_pFirstSet, STRspOrderCredit *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // ÈÚ×ÊÈÚÈ¯Ö±½Ó»¹¿îÏìÓ¦
+    // èèµ„èåˆ¸ç›´æ¥è¿˜æ¬¾å“åº”
     virtual int OnRepay(STFirstSet *p_pFirstSet, STRspRepay *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // ÈÚ×ÊÈÚÈ¯³Ö²Ö²éÑ¯ÏìÓ¦
+    // èèµ„èåˆ¸æŒä»“æŸ¥è¯¢å“åº”
     virtual int OnQryHoldingCredit(STFirstSet *p_pFirstSet, STRspQryHoldingCredit *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // ÈÚ×ÊÈÚÈ¯±êµÄÈ¯ĞÅÏ¢²éÑ¯ÏìÓ¦
+    // èèµ„èåˆ¸æ ‡çš„åˆ¸ä¿¡æ¯æŸ¥è¯¢å“åº”
     virtual int OnQryUndlStkInfo(STFirstSet *p_pFirstSet, STRspQryUndlStkInfo *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // ÈÚ×ÊÈÚÈ¯µ£±£Ö¤È¯ĞÅÏ¢²éÑ¯ÏìÓ¦
+    // èèµ„èåˆ¸æ‹…ä¿è¯åˆ¸ä¿¡æ¯æŸ¥è¯¢å“åº”
     virtual int OnQryColStkInfo(STFirstSet *p_pFirstSet, STRspQryColStkInfo *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // ÈÚ×ÊÈÚÈ¯ºÏÔ¼²éÑ¯ÏìÓ¦
+    // èèµ„èåˆ¸åˆçº¦æŸ¥è¯¢å“åº”
     virtual int OnQryContract(STFirstSet *p_pFirstSet, STRspQryContract *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // ĞÅÓÃ¿Í»§×Ê²ú¸ºÕ®²éÑ¯ÏìÓ¦
+    // ä¿¡ç”¨å®¢æˆ·èµ„äº§è´Ÿå€ºæŸ¥è¯¢å“åº”
     virtual int OnQryCustDebts(STFirstSet *p_pFirstSet, STRspQryCustDebts *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
 public:
-    // Ö¤È¯ÊĞÖµ¶î¶È²éÑ¯ÏìÓ¦
+    // è¯åˆ¸å¸‚å€¼é¢åº¦æŸ¥è¯¢å“åº”
     virtual int OnQryMktQuota(STFirstSet *p_pFirstSet, STRspQryMktQuota *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // µ±ÈÕĞÂ¹ÉĞÅÏ¢²éÑ¯ÏìÓ¦
+    // å½“æ—¥æ–°è‚¡ä¿¡æ¯æŸ¥è¯¢å“åº”
     virtual int OnQryIpoInfo(STFirstSet *p_pFirstSet, STRspQryIpoInfo *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // ×ªÕÊÒøĞĞÒµÎñĞÅÏ¢²éÑ¯ÏìÓ¦
+    // è½¬å¸é“¶è¡Œä¸šåŠ¡ä¿¡æ¯æŸ¥è¯¢å“åº”
     virtual int OnQryBankInfo(STFirstSet *p_pFirstSet, STRspQryBankInfo *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // ÒøÖ¤×ªÕÊÏìÓ¦
+    // é“¶è¯è½¬å¸å“åº”
     virtual int OnBankStkTrans(STFirstSet *p_pFirstSet, STRspBankStkTrans *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // ÒøĞĞÕË»§Óà¶î²éÑ¯ÏìÓ¦
+    // é“¶è¡Œè´¦æˆ·ä½™é¢æŸ¥è¯¢å“åº”
     virtual int OnQryBankBalance(STFirstSet *p_pFirstSet, STRspQryBankBalance *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // ÒøÖ¤×ªÕÊ²éÑ¯ÏìÓ¦
+    // é“¶è¯è½¬å¸æŸ¥è¯¢å“åº”
     virtual int OnQryBankStkTransInfo(STFirstSet *p_pFirstSet, STRspQryBankStkTransInfo *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // ĞŞ¸Ä½»Ò×ÃÜÂëÏìÓ¦
+    // ä¿®æ”¹äº¤æ˜“å¯†ç å“åº”
     virtual int OnModifyTradePwd(STFirstSet *p_pFirstSet, STRspModifyTradePwd *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // ĞŞ¸Ä×Ê½ğÃÜÂëÏìÓ¦
+    // ä¿®æ”¹èµ„é‡‘å¯†ç å“åº”
     virtual int OnModifyFundPwd(STFirstSet *p_pFirstSet, STRspModifyFundPwd *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // ¼¯ÖĞ½»Ò×¹ñÌ¨×Ê½ğ²éÑ¯ÏìÓ¦
+    // é›†ä¸­äº¤æ˜“æŸœå°èµ„é‡‘æŸ¥è¯¢å“åº”
     virtual int OnQryRpcFund(STFirstSet *p_pFirstSet, STRspQryRpcFund *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // ×Ê½ğ»®²¦ÇëÇóÏìÓ¦
+    // èµ„é‡‘åˆ’æ‹¨è¯·æ±‚å“åº”
     virtual int OnFundTransfer(STFirstSet *p_pFirstSet, STRspFundTransfer *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // ÒøÖ¤×ªÕËÒøĞĞÕËºÅ²éÑ¯ÏìÓ¦
+    // é“¶è¯è½¬è´¦é“¶è¡Œè´¦å·æŸ¥è¯¢å“åº”
     virtual int OnQryBankAcct(STFirstSet *p_pFirstSet, STRspQryBankAcct *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
 public:
-    // ÆÚÈ¨Î¯ÍĞÉê±¨ÏìÓ¦
+    // æœŸæƒå§”æ‰˜ç”³æŠ¥å“åº”
     virtual int OnOrderOpt(STFirstSet *p_pFirstSet, STRspOrderOpt *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // ÆÚÈ¨Î¯ÍĞ³·µ¥ÏìÓ¦
+    // æœŸæƒå§”æ‰˜æ’¤å•å“åº”
     virtual int OnOptCancelOrder(STFirstSet *p_pFirstSet, STRspOptCancelOrder *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // ÆÚÈ¨¿ÉÓÃ×Ê½ğ²éÑ¯ÏìÓ¦
+    // æœŸæƒå¯ç”¨èµ„é‡‘æŸ¥è¯¢å“åº”
     virtual int OnOptQryMoney(STFirstSet *p_pFirstSet, STRspOptQryMoney *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // ÆÚÈ¨³Ö²Ö²éÑ¯ÏìÓ¦
+    // æœŸæƒæŒä»“æŸ¥è¯¢å“åº”
     virtual int OnOptQryHolding(STFirstSet *p_pFirstSet, STRspOptQryHolding *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // ÆÚÈ¨µ±ÈÕÎ¯ÍĞ²éÑ¯ÏìÓ¦
+    // æœŸæƒå½“æ—¥å§”æ‰˜æŸ¥è¯¢å“åº”
     virtual int OnOptQryOrder(STFirstSet *p_pFirstSet, STRspOptQryOrder *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // ÆÚÈ¨µ±ÈÕ³É½»²éÑ¯ÏìÓ¦
+    // æœŸæƒå½“æ—¥æˆäº¤æŸ¥è¯¢å“åº”
     virtual int OnOptQryFill(STFirstSet *p_pFirstSet, STRspOptQryFill *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
-    // ÆÚÈ¨¿É³·Î¯ÍĞ²éÑ¯ÏìÓ¦
+    // æœŸæƒå¯æ’¤å§”æ‰˜æŸ¥è¯¢å“åº”
     virtual int OnOptQryWithdrawableOrder(STFirstSet *p_pFirstSet, STRspOptQryWithdrawableOrder *p_pRsp, LONGLONG  p_llReqId, int p_iNum) { return 0; }
 
 private:
@@ -138,118 +138,118 @@ public:
     CTradeApi(void);
     virtual ~CTradeApi(void);
 
-    // Î¯ÍĞÇëÇó
+    // å§”æ‰˜è¯·æ±‚
     int Order(STReqOrder *p_pReq, LONGLONG p_llReqId);
 
-    // ³·µ¥ÇëÇó
+    // æ’¤å•è¯·æ±‚
     int CancelOrder(STReqCancelOrder *p_pReq, LONGLONG p_llReqId);
 
-    // ×î´ó¿É½»Ò×Êı¼ÆËãÇëÇó
+    // æœ€å¤§å¯äº¤æ˜“æ•°è®¡ç®—è¯·æ±‚
     int MaxTradeQty(STReqMaxTradeQty *p_pReq, LONGLONG p_llReqId);
 
-    // ³Ö²Ö²éÑ¯ÇëÇó
+    // æŒä»“æŸ¥è¯¢è¯·æ±‚
     int QryHolding(STReqQryHolding *p_pReq, LONGLONG p_llReqId);
 
-    // ³É½»²éÑ¯ÇëÇó
+    // æˆäº¤æŸ¥è¯¢è¯·æ±‚
     int QryFill(STReqQryFill *p_pReq, LONGLONG p_llReqId);
 
-    // ×Ê½ğ²éÑ¯ÇëÇó
+    // èµ„é‡‘æŸ¥è¯¢è¯·æ±‚
     int QryMoney(STReqQryMoney *p_pReq, LONGLONG p_llReqId);
 
-    // Î¯ÍĞ²éÑ¯ÇëÇó
+    // å§”æ‰˜æŸ¥è¯¢è¯·æ±‚
     int QryOrder(STReqQryOrder *p_pReq, LONGLONG p_llReqId);
 
-    // ¹É¶«ÕË»§²éÑ¯ÇëÇó
+    // è‚¡ä¸œè´¦æˆ·æŸ¥è¯¢è¯·æ±‚
     int QryHolder(STReqQryHolder *p_pReq, LONGLONG p_llReqId);
 
-    // ¿É³·µ¥Î¯ÍĞ²éÑ¯ÇëÇó
+    // å¯æ’¤å•å§”æ‰˜æŸ¥è¯¢è¯·æ±‚
     int QryWithdrawableOrder(STReqQryWithdrawableOrder *p_pReq, LONGLONG p_llReqId);
 
-    // ²ßÂÔ½»Ò××¢²áÇëÇó
+    // ç­–ç•¥äº¤æ˜“æ³¨å†Œè¯·æ±‚
     int AcctRegister(STReqAcctRegister *p_pReq, LONGLONG p_llReqId);
 
-    // ½»Ò×ÕË»§µÇÂ¼ÇëÇó
+    // äº¤æ˜“è´¦æˆ·ç™»å½•è¯·æ±‚
     int TradeLogin(STReqTradeLogin *p_pReq, LONGLONG p_llReqId);
 
-    // ÏµÍ³ÓÃ»§µÇÂ¼ÇëÇó
+    // ç³»ç»Ÿç”¨æˆ·ç™»å½•è¯·æ±‚
     int Login(STReqLogin *p_pReq, LONGLONG p_llReqId);
 
 public:
-    // ÈÚ×ÊÈÚÈ¯Î¯ÍĞÏÂµ¥ÇëÇó
+    // èèµ„èåˆ¸å§”æ‰˜ä¸‹å•è¯·æ±‚
     int OrderCredit(STReqOrderCredit *p_pReq, LONGLONG p_llReqId);
 
-    // ÈÚ×ÊÈÚÈ¯Ö±½Ó»¹¿îÇëÇó
+    // èèµ„èåˆ¸ç›´æ¥è¿˜æ¬¾è¯·æ±‚
     int Repay(STReqRepay *p_pReq, LONGLONG p_llReqId);
 
-    // ÈÚ×ÊÈÚÈ¯³Ö²Ö²éÑ¯ÇëÇó
+    // èèµ„èåˆ¸æŒä»“æŸ¥è¯¢è¯·æ±‚
     int QryHoldingCredit(STReqQryHoldingCredit *p_pReq, LONGLONG p_llReqId);
 
-    // ÈÚ×ÊÈÚÈ¯±êµÄÈ¯ĞÅÏ¢²éÑ¯ÇëÇó
+    // èèµ„èåˆ¸æ ‡çš„åˆ¸ä¿¡æ¯æŸ¥è¯¢è¯·æ±‚
     int QryUndlStkInfo(STReqQryUndlStkInfo *p_pReq, LONGLONG p_llReqId);
 
-    // ÈÚ×ÊÈÚÈ¯µ£±£Ö¤È¯ĞÅÏ¢²éÑ¯ÇëÇó
+    // èèµ„èåˆ¸æ‹…ä¿è¯åˆ¸ä¿¡æ¯æŸ¥è¯¢è¯·æ±‚
     int QryColStkInfo(STReqQryColStkInfo *p_pReq, LONGLONG p_llReqId);
 
-    // ÈÚ×ÊÈÚÈ¯ºÏÔ¼²éÑ¯ÇëÇó
+    // èèµ„èåˆ¸åˆçº¦æŸ¥è¯¢è¯·æ±‚
     int QryContract(STReqQryContract *p_pReq, LONGLONG p_llReqId);
 
-    // ĞÅÓÃ¿Í»§×Ê²ú¸ºÕ®²éÑ¯ÇëÇó
+    // ä¿¡ç”¨å®¢æˆ·èµ„äº§è´Ÿå€ºæŸ¥è¯¢è¯·æ±‚
     int QryCustDebts(STReqQryCustDebts *p_pReq, LONGLONG p_llReqId);
 
 public:
-    // Ö¤È¯ÊĞÖµ¶î¶È²éÑ¯ÇëÇó
+    // è¯åˆ¸å¸‚å€¼é¢åº¦æŸ¥è¯¢è¯·æ±‚
     int QryMktQuota(STReqQryMktQuota *p_pReq, LONGLONG p_llReqId);
 
-    // µ±ÈÕĞÂ¹ÉĞÅÏ¢²éÑ¯ÇëÇó
+    // å½“æ—¥æ–°è‚¡ä¿¡æ¯æŸ¥è¯¢è¯·æ±‚
     int QryIpoInfo(STReqQryIpoInfo *p_pReq, LONGLONG p_llReqId);
 
-    // ×ªÕÊÒøĞĞÒµÎñĞÅÏ¢²éÑ¯ÇëÇó
+    // è½¬å¸é“¶è¡Œä¸šåŠ¡ä¿¡æ¯æŸ¥è¯¢è¯·æ±‚
     int QryBankInfo(STReqQryBankInfo *p_pReq, LONGLONG p_llReqId);
 
-    // ÒøÖ¤×ªÕÊÇëÇó
+    // é“¶è¯è½¬å¸è¯·æ±‚
     int BankStkTrans(STReqBankStkTrans *p_pReq, LONGLONG p_llReqId);
 
-    // ÒøĞĞÕË»§Óà¶î²éÑ¯ÇëÇó
+    // é“¶è¡Œè´¦æˆ·ä½™é¢æŸ¥è¯¢è¯·æ±‚
     int QryBankBalance(STReqQryBankBalance *p_pReq, LONGLONG p_llReqId);
 
-    // ÒøÖ¤×ªÕÊ²éÑ¯ÇëÇó
+    // é“¶è¯è½¬å¸æŸ¥è¯¢è¯·æ±‚
     int QryBankStkTransInfo(STReqQryBankStkTransInfo *p_pReq, LONGLONG p_llReqId);
 
-    // ĞŞ¸Ä½»Ò×ÃÜÂëÇëÇó
+    // ä¿®æ”¹äº¤æ˜“å¯†ç è¯·æ±‚
     int ModifyTradePwd(STReqModifyTradePwd *p_pReq, LONGLONG p_llReqId);
 
-    // ĞŞ¸Ä×Ê½ğÃÜÂëÇëÇó
+    // ä¿®æ”¹èµ„é‡‘å¯†ç è¯·æ±‚
     int ModifyFundPwd(STReqModifyFundPwd *p_pReq, LONGLONG p_llReqId);
 
-    // ¼¯ÖĞ½»Ò×¹ñÌ¨×Ê½ğ²éÑ¯ÇëÇó
+    // é›†ä¸­äº¤æ˜“æŸœå°èµ„é‡‘æŸ¥è¯¢è¯·æ±‚
     int QryRpcFund(STReqQryRpcFund *p_pReq, LONGLONG p_llReqId);
 
-    // ×Ê½ğ»®²¦ÇëÇó
+    // èµ„é‡‘åˆ’æ‹¨è¯·æ±‚
     int FundTransfer(STReqFundTransfer *p_pReq, LONGLONG p_llReqId);
 
-    // ÒøÖ¤×ªÕËÒøĞĞÕËºÅ²éÑ¯ÇëÇó
+    // é“¶è¯è½¬è´¦é“¶è¡Œè´¦å·æŸ¥è¯¢è¯·æ±‚
     int QryBankAcct(STReqQryBankAcct *p_pReq, LONGLONG p_llReqId);
 
 public:
-    // ÆÚÈ¨Î¯ÍĞÉê±¨ÇëÇó
+    // æœŸæƒå§”æ‰˜ç”³æŠ¥è¯·æ±‚
     int OrderOpt(STReqOrderOpt *p_pReq, LONGLONG p_llReqId);
 
-    // ÆÚÈ¨Î¯ÍĞ³·µ¥ÇëÇó
+    // æœŸæƒå§”æ‰˜æ’¤å•è¯·æ±‚
     int OptCancelOrder(STReqOptCancelOrder *p_pReq, LONGLONG p_llReqId);
 
-    // ÆÚÈ¨¿ÉÓÃ×Ê½ğ²éÑ¯ÇëÇó
+    // æœŸæƒå¯ç”¨èµ„é‡‘æŸ¥è¯¢è¯·æ±‚
     int OptQryMoney(STReqOptQryMoney *p_pReq, LONGLONG p_llReqId);
 
-    // ÆÚÈ¨³Ö²Ö²éÑ¯ÇëÇó
+    // æœŸæƒæŒä»“æŸ¥è¯¢è¯·æ±‚
     int OptQryHolding(STReqOptQryHolding *p_pReq, LONGLONG p_llReqId);
 
-    // ÆÚÈ¨µ±ÈÕÎ¯ÍĞ²éÑ¯ÇëÇó
+    // æœŸæƒå½“æ—¥å§”æ‰˜æŸ¥è¯¢è¯·æ±‚
     int OptQryOrder(STReqOptQryOrder *p_pReq, LONGLONG p_llReqId);
 
-    // ÆÚÈ¨µ±ÈÕ³É½»²éÑ¯ÇëÇó
+    // æœŸæƒå½“æ—¥æˆäº¤æŸ¥è¯¢è¯·æ±‚
     int OptQryFill(STReqOptQryFill *p_pReq, LONGLONG p_llReqId);
 
-    // ÆÚÈ¨¿É³·Î¯ÍĞ²éÑ¯ÇëÇó
+    // æœŸæƒå¯æ’¤å§”æ‰˜æŸ¥è¯¢è¯·æ±‚
     int OptQryWithdrawableOrder(STReqOptQryWithdrawableOrder *p_pReq, LONGLONG p_llReqId);
 
 public:

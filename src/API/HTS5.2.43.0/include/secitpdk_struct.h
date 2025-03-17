@@ -4,842 +4,842 @@
 
 struct stStructMsg
 {
-    int16       nStructFunc;           //¹¦ÄÜºÅ
-    uint8       nStructVer;            //ÇëÇó±¨ÎÄ°æ±¾
-    uint64      nStructToken;          //°²È«ÁîÅÆ
-    int16       nStructRetCode;        //·µ»ØÖµ
-    char        AccountId[13];         //¿Í»§ºÅ
-    char        FundAccount[31];       //×Ê½ğÕËºÅ
-    int64       OrderId;               //Î¯ÍĞºÅ 
-    char        Department[5];         //ÓªÒµ²¿
-    char        Market[3];             //½»Ò×Ëù
-    char        SecuAccount[11];       //¹É¶«ºÅ 
-    char        BPSecuAccount[11];     //¹É¶«ºÅ 
-    char        StockCode[9];          //Ö¤È¯´úÂë
-    char        StockType[9];          //Ö¤È¯Àà±ğ
-    char        MarketingUnit[7];      //½»Ò×µ¥Ôª
-    char        TransType[3];          //ÒµÎñÀà±ğ
-    char        WithdrawFlag[2];       //³·Ïú±êÖ¾
-    char        MatchSerialNo[31];     //³É½»±àºÅ
-    char        MatchTime[13];         //³É½»Ê±¼ä
-    char        MoneyType[4];          //±ÒÖÖ
-    float64     OrderPrice;            //Î¯ÍĞ¼Û¸ñ
-    int64       OrderQty;              //Î¯ÍĞÊıÁ¿
-    int64       WithdrawQty;           //³·µ¥ÊıÁ¿
-    float64     FrozenBalance;         //¶³½á×Ê½ğ
-    int64       MatchQty;              //±¾´Î³É½»ÊıÁ¿
-    float64     MatchPrice;            //±¾´Î³É½»¼Û¸ñ
-    float64     MatchAmt;              //±¾´Î³É½»½ğ¶î
-    int64       TotalMatchQty;         //Î¯ÍĞ×Ü³É½»ÊıÁ¿
-    float64     TotalMatchAmt;         //Î¯ÍĞ×Ü³É½»½ğ¶î
-    float64     SettleBalance;         //ÇåËã×Ê½ğ
-    uint8       EntrustType;           //½»Ò×Àà±ğ
-    int32       OrderType;             //¶©µ¥ÀàĞÍ
-    int32       OrderStatus;           //Éê±¨½á¹û
-    char        ResultInfo[61];        //½á¹ûËµÃ÷
-    int64       CXOrderId;             //³·ÏúÎ¯ÍĞºÅ
-    int64       BatchNo;               //Î¯ÍĞÅú´ÎºÅ(Ô­Ñù»ØËÍ¿Í»§¶Ë²ÎÊı)
-    char        OrderClerk[9];         //Î¯ÍĞ¹ñÔ±
-    char        ETPSort[11];           //½»Ò×Ëù²úÆ··ÖÀà
-    char        ETPOrderNo[11];        //½»Ò×Ëù²úÆ·³É½»ĞòºÅ
+    int16       nStructFunc;           //åŠŸèƒ½å·
+    uint8       nStructVer;            //è¯·æ±‚æŠ¥æ–‡ç‰ˆæœ¬
+    uint64      nStructToken;          //å®‰å…¨ä»¤ç‰Œ
+    int16       nStructRetCode;        //è¿”å›å€¼
+    char        AccountId[13];         //å®¢æˆ·å·
+    char        FundAccount[31];       //èµ„é‡‘è´¦å·
+    int64       OrderId;               //å§”æ‰˜å· 
+    char        Department[5];         //è¥ä¸šéƒ¨
+    char        Market[3];             //äº¤æ˜“æ‰€
+    char        SecuAccount[11];       //è‚¡ä¸œå· 
+    char        BPSecuAccount[11];     //è‚¡ä¸œå· 
+    char        StockCode[9];          //è¯åˆ¸ä»£ç 
+    char        StockType[9];          //è¯åˆ¸ç±»åˆ«
+    char        MarketingUnit[7];      //äº¤æ˜“å•å…ƒ
+    char        TransType[3];          //ä¸šåŠ¡ç±»åˆ«
+    char        WithdrawFlag[2];       //æ’¤é”€æ ‡å¿—
+    char        MatchSerialNo[31];     //æˆäº¤ç¼–å·
+    char        MatchTime[13];         //æˆäº¤æ—¶é—´
+    char        MoneyType[4];          //å¸ç§
+    float64     OrderPrice;            //å§”æ‰˜ä»·æ ¼
+    int64       OrderQty;              //å§”æ‰˜æ•°é‡
+    int64       WithdrawQty;           //æ’¤å•æ•°é‡
+    float64     FrozenBalance;         //å†»ç»“èµ„é‡‘
+    int64       MatchQty;              //æœ¬æ¬¡æˆäº¤æ•°é‡
+    float64     MatchPrice;            //æœ¬æ¬¡æˆäº¤ä»·æ ¼
+    float64     MatchAmt;              //æœ¬æ¬¡æˆäº¤é‡‘é¢
+    int64       TotalMatchQty;         //å§”æ‰˜æ€»æˆäº¤æ•°é‡
+    float64     TotalMatchAmt;         //å§”æ‰˜æ€»æˆäº¤é‡‘é¢
+    float64     SettleBalance;         //æ¸…ç®—èµ„é‡‘
+    uint8       EntrustType;           //äº¤æ˜“ç±»åˆ«
+    int32       OrderType;             //è®¢å•ç±»å‹
+    int32       OrderStatus;           //ç”³æŠ¥ç»“æœ
+    char        ResultInfo[61];        //ç»“æœè¯´æ˜
+    int64       CXOrderId;             //æ’¤é”€å§”æ‰˜å·
+    int64       BatchNo;               //å§”æ‰˜æ‰¹æ¬¡å·(åŸæ ·å›é€å®¢æˆ·ç«¯å‚æ•°)
+    char        OrderClerk[9];         //å§”æ‰˜æŸœå‘˜
+    char        ETPSort[11];           //äº¤æ˜“æ‰€äº§å“åˆ†ç±»
+    char        ETPOrderNo[11];        //äº¤æ˜“æ‰€äº§å“æˆäº¤åºå·
     char        KFSDM[7];
     char        KFSBDBH[17];
     char        MsgCode[8];
-    char        ConfirmTime[13];        //È·ÈÏÊ±¼ä
+    char        ConfirmTime[13];        //ç¡®è®¤æ—¶é—´
     stStructMsg()
     {
         memset(this, 0, sizeof(stStructMsg));
     }
 };
 typedef void(*pStructMessageCallbackMethod)(const char* pTime, stStructMsg &stMsg, int nType);
-//Ö¤È¯ĞĞÇé
+//è¯åˆ¸è¡Œæƒ…
 typedef struct
 {
-    char     Market[4];           //½»Ò×Ëù
-    char     StockCode[12];       //Ö¤È¯´úÂë
-    char     StockName[31];       //Ö¤È¯Ãû³Æ
-    char     PhoneticCode[8];     //Æ´Òô´úÂë
-    char     StockType[4];        //Ö¤È¯Àà±ğ
-    double   PriceTick;           //½»Ò×¼ÛÎ»
-    double   TradeUnit;           //½»Ò×µ¥Î»
-    int      MaxTradeAmt;         //Î¯ÍĞÉÏÏŞ
-    int      MinTradeAmt;         //Î¯ÍĞÏÂÏŞ
-    char     MoneyType[4];        //±ÒÖÖ
-    double   LastPrice;           //×îĞÂ¼Û
-    double   HighLimitPrice;      //×î¸ß±¨¼Û--ÕÇÍ£¼Û
-    double   LowLimitPrice;       //×îµÍ±¨¼Û--µøÍ£¼Û
-    int      NetPriceFlag;        //¹úÕ®¾»¼Û±êÖ¾
-    int      QtyTick;             //ÕûÊÖÊı--¸Û¹É
-    double   LastClosePrice;      //×òÊÕÅÌ
-    double   OpenPrice;           //½ñ¿ªÅÌ
-    int      SuspendFlag;         //Í£ÅÆ±êÖ¾
-    double   MatchQty;            //³É½»ÊıÁ¿
-    double   MatchAmt;            //³É½»½ğ¶î
-    double   HighPrice;           //×î¸ß¼Û
-    double   LowPrice;            //×îµÍ¼Û
-    double   BidPrice1;           //ÂòÈë¼Û¸ñ1
-    double   BidPrice2;           //ÂòÈë¼Û¸ñ2
-    double   BidPrice3;           //ÂòÈë¼Û¸ñ3
-    double   BidPrice4;           //ÂòÈë¼Û¸ñ4
-    double   BidPrice5;           //ÂòÈë¼Û¸ñ5
-    double   AskPrice1;           //Âô³ö¼Û¸ñ1
-    double   AskPrice2;           //Âô³ö¼Û¸ñ2
-    double   AskPrice3;           //Âô³ö¼Û¸ñ3
-    double   AskPrice4;           //Âô³ö¼Û¸ñ4
-    double   AskPrice5;           //Âô³ö¼Û¸ñ5
-    int      BidQty1;             //ÂòÈëÊıÁ¿1
-    int      BidQty2;             //ÂòÈëÊıÁ¿2
-    int      BidQty3;             //ÂòÈëÊıÁ¿3
-    int      BidQty4;             //ÂòÈëÊıÁ¿4
-    int      BidQty5;             //ÂòÈëÊıÁ¿5
-    int      AskQty1;             //Âô³öÊıÁ¿1
-    int      AskQty2;             //Âô³öÊıÁ¿2
-    int      AskQty3;             //Âô³öÊıÁ¿3
-    int      AskQty4;             //Âô³öÊıÁ¿4
-    int      AskQty5;             //Âô³öÊıÁ¿5
-    double   InterestPrice;       //ÀûÏ¢±¨¼Û
-    double   FloatShareQty;       //Á÷Í¨¹ÉÊıÁ¿
-    int      ListDate;            //·¢ĞĞÈÕÆÚ
-    int      PaymentDate;         //¶Ò¸¶ÈÕÆÚ
-    double   StrikePrice;         //ĞĞÈ¨¼Û¸ñ--ÆÚÈ¨
-    char     StrikeCode[16];      //ĞĞÈ¨´úÂë--ÆÚÈ¨
-    char     OrderTypeAvl[64];    //¿ÉÓÃ¶©µ¥ÀàĞÍ
-    double   UpdateTime;          //¸üĞÂÊ±¼ä
+    char     Market[4];           //äº¤æ˜“æ‰€
+    char     StockCode[12];       //è¯åˆ¸ä»£ç 
+    char     StockName[31];       //è¯åˆ¸åç§°
+    char     PhoneticCode[8];     //æ‹¼éŸ³ä»£ç 
+    char     StockType[4];        //è¯åˆ¸ç±»åˆ«
+    double   PriceTick;           //äº¤æ˜“ä»·ä½
+    double   TradeUnit;           //äº¤æ˜“å•ä½
+    int      MaxTradeAmt;         //å§”æ‰˜ä¸Šé™
+    int      MinTradeAmt;         //å§”æ‰˜ä¸‹é™
+    char     MoneyType[4];        //å¸ç§
+    double   LastPrice;           //æœ€æ–°ä»·
+    double   HighLimitPrice;      //æœ€é«˜æŠ¥ä»·--æ¶¨åœä»·
+    double   LowLimitPrice;       //æœ€ä½æŠ¥ä»·--è·Œåœä»·
+    int      NetPriceFlag;        //å›½å€ºå‡€ä»·æ ‡å¿—
+    int      QtyTick;             //æ•´æ‰‹æ•°--æ¸¯è‚¡
+    double   LastClosePrice;      //æ˜¨æ”¶ç›˜
+    double   OpenPrice;           //ä»Šå¼€ç›˜
+    int      SuspendFlag;         //åœç‰Œæ ‡å¿—
+    double   MatchQty;            //æˆäº¤æ•°é‡
+    double   MatchAmt;            //æˆäº¤é‡‘é¢
+    double   HighPrice;           //æœ€é«˜ä»·
+    double   LowPrice;            //æœ€ä½ä»·
+    double   BidPrice1;           //ä¹°å…¥ä»·æ ¼1
+    double   BidPrice2;           //ä¹°å…¥ä»·æ ¼2
+    double   BidPrice3;           //ä¹°å…¥ä»·æ ¼3
+    double   BidPrice4;           //ä¹°å…¥ä»·æ ¼4
+    double   BidPrice5;           //ä¹°å…¥ä»·æ ¼5
+    double   AskPrice1;           //å–å‡ºä»·æ ¼1
+    double   AskPrice2;           //å–å‡ºä»·æ ¼2
+    double   AskPrice3;           //å–å‡ºä»·æ ¼3
+    double   AskPrice4;           //å–å‡ºä»·æ ¼4
+    double   AskPrice5;           //å–å‡ºä»·æ ¼5
+    int      BidQty1;             //ä¹°å…¥æ•°é‡1
+    int      BidQty2;             //ä¹°å…¥æ•°é‡2
+    int      BidQty3;             //ä¹°å…¥æ•°é‡3
+    int      BidQty4;             //ä¹°å…¥æ•°é‡4
+    int      BidQty5;             //ä¹°å…¥æ•°é‡5
+    int      AskQty1;             //å–å‡ºæ•°é‡1
+    int      AskQty2;             //å–å‡ºæ•°é‡2
+    int      AskQty3;             //å–å‡ºæ•°é‡3
+    int      AskQty4;             //å–å‡ºæ•°é‡4
+    int      AskQty5;             //å–å‡ºæ•°é‡5
+    double   InterestPrice;       //åˆ©æ¯æŠ¥ä»·
+    double   FloatShareQty;       //æµé€šè‚¡æ•°é‡
+    int      ListDate;            //å‘è¡Œæ—¥æœŸ
+    int      PaymentDate;         //å…‘ä»˜æ—¥æœŸ
+    double   StrikePrice;         //è¡Œæƒä»·æ ¼--æœŸæƒ
+    char     StrikeCode[16];      //è¡Œæƒä»£ç --æœŸæƒ
+    char     OrderTypeAvl[64];    //å¯ç”¨è®¢å•ç±»å‹
+    double   UpdateTime;          //æ›´æ–°æ—¶é—´
 } ITPDK_ZQHQ;
-//¿Í»§ĞÅÏ¢
+//å®¢æˆ·ä¿¡æ¯
 typedef struct
 {
-    char     AccountId[16];          //¿Í»§ºÅ
-    char     AccountName[32];        //¿Í»§ĞÕÃû
-    char     CertificateNo[32];      //Ö¤¼ş±àºÅ
-    int      CertificateType;        //Ö¤¼şÀà±ğ
-    char     OrgCode[8];             //»ú¹¹´úÂë
-    int      OrgAccFlag;             //»ú¹¹ÕË»§±êÖ¾
-    int      EntrustWayAvl;          //ÔÊĞíÎ¯ÍĞ·½Ê½
-    int      ServiceAvl;             //¿ªÍ¨²úÆ··şÎñ
+    char     AccountId[16];          //å®¢æˆ·å·
+    char     AccountName[32];        //å®¢æˆ·å§“å
+    char     CertificateNo[32];      //è¯ä»¶ç¼–å·
+    int      CertificateType;        //è¯ä»¶ç±»åˆ«
+    char     OrgCode[8];             //æœºæ„ä»£ç 
+    int      OrgAccFlag;             //æœºæ„è´¦æˆ·æ ‡å¿—
+    int      EntrustWayAvl;          //å…è®¸å§”æ‰˜æ–¹å¼
+    int      ServiceAvl;             //å¼€é€šäº§å“æœåŠ¡
 } ITPDK_KHH;
-//Êı¾İ×Öµä-ÊĞ³¡
+//æ•°æ®å­—å…¸-å¸‚åœº
 typedef struct
 {
-    char     Market[4];           //½»Ò×Ëù
-    char     MarketName[16];      //½»Ò×Ëù¼ò³Æ
-    char     MarketFullName[32];  //½»Ò×ËùÈ«³Æ
+    char     Market[4];           //äº¤æ˜“æ‰€
+    char     MarketName[16];      //äº¤æ˜“æ‰€ç®€ç§°
+    char     MarketFullName[32];  //äº¤æ˜“æ‰€å…¨ç§°
 } ITPDK_JYS;
-//Êı¾İ×Öµä-Ö¤È¯´úÂë
+//æ•°æ®å­—å…¸-è¯åˆ¸ä»£ç 
 typedef struct
 {
-    char     Market[4];           //½»Ò×Ëù
-    char     StockCode[12];       //Ö¤È¯´úÂë
-    char     StockName[31];       //Ö¤È¯Ãû³Æ
-    char     StockType[4];        //Ö¤È¯Àà±ğ
-    int      TradingStatus;       //½»Ò××´Ì¬
-    double   LastClosePrice;      //×òÊÕÅÌ
-    int64    MaxTradeAmt;         //Î¯ÍĞÉÏÏŞ
-    int      MinTradeAmt;         //Î¯ÍĞÏÂÏŞ
-    int64    TradeUnit;           //½»Ò×µ¥Î»
-    double   PriceTick;           //½»Ò×¼ÛÎ»
-    char     MoneyType[4];        //±ÒÖÖ
-    double   HighLimitPrice;      //×î¸ß±¨¼Û--ÕÇÍ£¼Û
-    double   LowLimitPrice;       //×îµÍ±¨¼Û--µøÍ£¼Û
-    char     BrowIndex[16];       //·ÖÒ³²éÑ¯¶¨Î»´®
-    char     BoardCode[4];        //°å¿é±êÊ¶
-    int64    SJMaxTradeAmt;       //ÊĞ¼ÛÎ¯ÍĞÉÏÏŞ
-    int      SJMinTradeAmt;       //ÊĞ¼ÛÎ¯ÍĞÏÂÏŞ
-    int64    PHMaxTradeAmt;       //ÅÌºóÎ¯ÍĞÉÏÏŞ
-    int      PHMinTradeAmt;       //ÅÌºóÎ¯ÍĞÏÂÏŞ
+    char     Market[4];           //äº¤æ˜“æ‰€
+    char     StockCode[12];       //è¯åˆ¸ä»£ç 
+    char     StockName[31];       //è¯åˆ¸åç§°
+    char     StockType[4];        //è¯åˆ¸ç±»åˆ«
+    int      TradingStatus;       //äº¤æ˜“çŠ¶æ€
+    double   LastClosePrice;      //æ˜¨æ”¶ç›˜
+    int64    MaxTradeAmt;         //å§”æ‰˜ä¸Šé™
+    int      MinTradeAmt;         //å§”æ‰˜ä¸‹é™
+    int64    TradeUnit;           //äº¤æ˜“å•ä½
+    double   PriceTick;           //äº¤æ˜“ä»·ä½
+    char     MoneyType[4];        //å¸ç§
+    double   HighLimitPrice;      //æœ€é«˜æŠ¥ä»·--æ¶¨åœä»·
+    double   LowLimitPrice;       //æœ€ä½æŠ¥ä»·--è·Œåœä»·
+    char     BrowIndex[16];       //åˆ†é¡µæŸ¥è¯¢å®šä½ä¸²
+    char     BoardCode[4];        //æ¿å—æ ‡è¯†
+    int64    SJMaxTradeAmt;       //å¸‚ä»·å§”æ‰˜ä¸Šé™
+    int      SJMinTradeAmt;       //å¸‚ä»·å§”æ‰˜ä¸‹é™
+    int64    PHMaxTradeAmt;       //ç›˜åå§”æ‰˜ä¸Šé™
+    int      PHMinTradeAmt;       //ç›˜åå§”æ‰˜ä¸‹é™
 } ITPDK_ZQDM;
-//Êı¾İ×Öµä-Í¶Æ±ĞÅÏ¢
+//æ•°æ®å­—å…¸-æŠ•ç¥¨ä¿¡æ¯
 typedef struct
 {
-    char     Market[4];           //½»Ò×Ëù
-    char     StockCode[12];       //Ö¤È¯´úÂë
-    char     StockType[4];        //Ö¤È¯Àà±ğ
-    char     CompanyCode[12];     //¹«Ë¾´úÂë
-    char     MeetingCode[22];     //´ó»á±àÂë
-    char     MeetingName[100];    //´ó»áÃû³Æ
-    char     MotionCode[12];      //Òé°¸±àºÅ
-    char     MotionName[1024];    //Òé°¸Ãû³Æ
-    char     MotionType[3];       //Òé°¸ÀàĞÍ
-    int      AlloweAbstention;    //ÔÊĞíÆúÈ¨
-    int      BeginDate;           //¿ªÊ¼ÈÕÆÚ
-    int      EndDate;             //½áÊøÈÕÆÚ
-    int64    BrowIndex;           //·ÖÒ³²éÑ¯¶¨Î»´®
+    char     Market[4];           //äº¤æ˜“æ‰€
+    char     StockCode[12];       //è¯åˆ¸ä»£ç 
+    char     StockType[4];        //è¯åˆ¸ç±»åˆ«
+    char     CompanyCode[12];     //å…¬å¸ä»£ç 
+    char     MeetingCode[22];     //å¤§ä¼šç¼–ç 
+    char     MeetingName[100];    //å¤§ä¼šåç§°
+    char     MotionCode[12];      //è®®æ¡ˆç¼–å·
+    char     MotionName[1024];    //è®®æ¡ˆåç§°
+    char     MotionType[3];       //è®®æ¡ˆç±»å‹
+    int      AlloweAbstention;    //å…è®¸å¼ƒæƒ
+    int      BeginDate;           //å¼€å§‹æ—¥æœŸ
+    int      EndDate;             //ç»“æŸæ—¥æœŸ
+    int64    BrowIndex;           //åˆ†é¡µæŸ¥è¯¢å®šä½ä¸²
 } ITPDK_TPXX;
-//Êı¾İ×Öµä-»ãÂÊ²ÎÊı
+//æ•°æ®å­—å…¸-æ±‡ç‡å‚æ•°
 typedef struct
 {
-    char     MoneyType1[4];       //±ÒÖÖ1
-    char     MoneyType2[4];       //±ÒÖÖ2
-    double   CashBuyRate;         //ÏÖ³®ÂòÈë¼Û
-    double   CashAskRate;         //ÏÖ³®Âô³ö¼Û
-    double   RemitBuyRate;        //ÏÖ»ãÂòÈë¼Û
-    double   RemitAskRate;        //ÏÖ»ãÂô³ö¼Û
-    double   GSBL;                //¹ÀËã±ÈÀı
-    double   JSPJJ;               //½ñÊÕÅÌ
-    int      UpdateTime;          //¸üĞÂÈÕÆÚ
+    char     MoneyType1[4];       //å¸ç§1
+    char     MoneyType2[4];       //å¸ç§2
+    double   CashBuyRate;         //ç°é’ä¹°å…¥ä»·
+    double   CashAskRate;         //ç°é’å–å‡ºä»·
+    double   RemitBuyRate;        //ç°æ±‡ä¹°å…¥ä»·
+    double   RemitAskRate;        //ç°æ±‡å–å‡ºä»·
+    double   GSBL;                //ä¼°ç®—æ¯”ä¾‹
+    double   JSPJJ;               //ä»Šæ”¶ç›˜
+    int      UpdateTime;          //æ›´æ–°æ—¥æœŸ
 } ITPDK_HLCS;
-//Êı¾İ×Öµä-ÏµÍ³´úÂë
+//æ•°æ®å­—å…¸-ç³»ç»Ÿä»£ç 
 typedef struct
 {
-    char     GroupId[32];   //·ÖÀà´úÂë
-    char     Code[8];       //±àÂë
-    char     CodeName[64];  //±àÂëËµÃ÷
+    char     GroupId[32];   //åˆ†ç±»ä»£ç 
+    char     Code[8];       //ç¼–ç 
+    char     CodeName[64];  //ç¼–ç è¯´æ˜
 } ITPDK_XTDM;
-//Êı¾İ×Öµä-½»Ò×Àà±ğ
+//æ•°æ®å­—å…¸-äº¤æ˜“ç±»åˆ«
 typedef struct
 {
-    char     EntrustType[4];         //½»Ò×Àà±ğ
-    char     EntrustTypeName[16];    //Àà±ğÃû³Æ
+    char     EntrustType[4];         //äº¤æ˜“ç±»åˆ«
+    char     EntrustTypeName[16];    //ç±»åˆ«åç§°
 } ITPDK_JYLB;
-//Êı¾İ×Öµä-Ö¤È¯½»Ò×ÊôĞÔ
+//æ•°æ®å­—å…¸-è¯åˆ¸äº¤æ˜“å±æ€§
 typedef struct
 {
-    char     Market[4];        //½»Ò×Ëù
-    char     StockType[4];     //Ö¤È¯Àà±ğ
-    int      EntrustType;      //½»Ò×Àà±ğ
-    int      QtyTick;          //½»Ò×»ùÊı
-    int      EntrustWay;       //Î¯ÍĞ·½Ê½
+    char     Market[4];        //äº¤æ˜“æ‰€
+    char     StockType[4];     //è¯åˆ¸ç±»åˆ«
+    int      EntrustType;      //äº¤æ˜“ç±»åˆ«
+    int      QtyTick;          //äº¤æ˜“åŸºæ•°
+    int      EntrustWay;       //å§”æ‰˜æ–¹å¼
 } ITPDK_ZQJYSX;
-//±ÒÖÖ
+//å¸ç§
 typedef struct
 {
-    char     MoneyType[4];        //±ÒÖÖ
-    char     MoneyTypeName[16];   //±ÒÖÖÃû³Æ
+    char     MoneyType[4];        //å¸ç§
+    char     MoneyTypeName[16];   //å¸ç§åç§°
 } ITPDK_BZ;
-//Êı¾İ×Öµä-»ú¹¹´úÂë
+//æ•°æ®å­—å…¸-æœºæ„ä»£ç 
 typedef struct
 {
-    char     OrgCode[8];    //»ú¹¹´úÂë
-    char     OrgName[32];   //»ú¹¹Ãû³Æ
+    char     OrgCode[8];    //æœºæ„ä»£ç 
+    char     OrgName[32];   //æœºæ„åç§°
 } ITPDK_JGDM;
-//Êı¾İ×Öµä-ÒøĞĞ²ÎÊı
+//æ•°æ®å­—å…¸-é“¶è¡Œå‚æ•°
 typedef struct
 {
-    char     BankCode[8];         //ÒøĞĞ´úÂë
-    char     MoneyType[4];        //±ÒÖÖ
-    char     BusinessAvl[64];     //ÔÊĞíÖ¤È¯·¢ÆğµÄÒµÎñÀà±ğ
-    char     CheckFundPwd[64];    //ĞèÒªĞ£Ñé×Ê½ğÃÜÂëµÄÒµÎñÀà±ğ
-    char     CheckBankPwd[64];    //ĞèÒªĞ£ÑéÒøĞĞÃÜÂëµÄÒµÎñÀà±ğ
+    char     BankCode[8];         //é“¶è¡Œä»£ç 
+    char     MoneyType[4];        //å¸ç§
+    char     BusinessAvl[64];     //å…è®¸è¯åˆ¸å‘èµ·çš„ä¸šåŠ¡ç±»åˆ«
+    char     CheckFundPwd[64];    //éœ€è¦æ ¡éªŒèµ„é‡‘å¯†ç çš„ä¸šåŠ¡ç±»åˆ«
+    char     CheckBankPwd[64];    //éœ€è¦æ ¡éªŒé“¶è¡Œå¯†ç çš„ä¸šåŠ¡ç±»åˆ«
 } ITPDK_YHCS;
-//±¾ÈÕĞÂ¹ÉÉê¹º
+//æœ¬æ—¥æ–°è‚¡ç”³è´­
 typedef struct
 {
-    int      Flag;             //Àà±ğ 1.µ±ÈÕĞÂ¹É·¢ĞĞ 2.µ±ÈÕ¿É×ªÕ®¡¢¿É½»»»Õ®·¢ĞĞ £¨A5ÎŞ¸Ã×Ö¶Î£©
-    char     Market[4];        //½»Ò×Ëù
-    char     StockCode[12];    //Ö¤È¯´úÂë
-    char     StockName[31];    //Ö¤È¯Ãû³Æ
-    char     RGCode[12];       //ÈÏ¹º´úÂë
-    int      RGRQ;             //ÈÏ¹ºÈÕÆÚ
-    double   IssuePrice;       //·¢ĞĞ¼Û¸ñ
-    int64    MaxTradeAmt;      //Î¯ÍĞÉÏÏŞ
-    int      MinTradeAmt;      //Î¯ÍĞÏÂÏŞ£¨A5ÎŞ¸Ã×Ö¶Î£©
-    char     MoneyType[4];     //±ÒÖÖ£¨A5ÎŞ¸Ã×Ö¶Î£©
-    int      UpdateTime;       //¸üĞÂÊ±¼ä
+    int      Flag;             //ç±»åˆ« 1.å½“æ—¥æ–°è‚¡å‘è¡Œ 2.å½“æ—¥å¯è½¬å€ºã€å¯äº¤æ¢å€ºå‘è¡Œ ï¼ˆA5æ— è¯¥å­—æ®µï¼‰
+    char     Market[4];        //äº¤æ˜“æ‰€
+    char     StockCode[12];    //è¯åˆ¸ä»£ç 
+    char     StockName[31];    //è¯åˆ¸åç§°
+    char     RGCode[12];       //è®¤è´­ä»£ç 
+    int      RGRQ;             //è®¤è´­æ—¥æœŸ
+    double   IssuePrice;       //å‘è¡Œä»·æ ¼
+    int64    MaxTradeAmt;      //å§”æ‰˜ä¸Šé™
+    int      MinTradeAmt;      //å§”æ‰˜ä¸‹é™ï¼ˆA5æ— è¯¥å­—æ®µï¼‰
+    char     MoneyType[4];     //å¸ç§ï¼ˆA5æ— è¯¥å­—æ®µï¼‰
+    int      UpdateTime;       //æ›´æ–°æ—¶é—´
 } ITPDK_XGSG;
-//Êı¾İ×Öµä-¸Û¹É½»Ò×¼ÛÎ»
+//æ•°æ®å­—å…¸-æ¸¯è‚¡äº¤æ˜“ä»·ä½
 typedef struct
 {
-    char     Market[4];        //½»Ò×Ëù
-    char     StockType[4];     //Ö¤È¯Àà±ğ
-    double   BeginPrice;       //¿ªÊ¼¼Û¸ñ
-    double   EndPrice;         //½áÊø¼Û¸ñ
-    double   PriceTick;        //ÊÊÓÃ¼ÛÎ»
-    int      UpdateTime;       //¸üĞÂÈÕÆÚ
+    char     Market[4];        //äº¤æ˜“æ‰€
+    char     StockType[4];     //è¯åˆ¸ç±»åˆ«
+    double   BeginPrice;       //å¼€å§‹ä»·æ ¼
+    double   EndPrice;         //ç»“æŸä»·æ ¼
+    double   PriceTick;        //é€‚ç”¨ä»·ä½
+    int      UpdateTime;       //æ›´æ–°æ—¥æœŸ
 } ITPDK_JYJW;
-//Êı¾İ×Öµä-ETF»ù±¾ĞÅÏ¢
+//æ•°æ®å­—å…¸-ETFåŸºæœ¬ä¿¡æ¯
 typedef struct
 {
-    char     Market[4];              //½»Ò×Ëù
-    char     FundCode[8];            //»ù½ğ´úÂë
-    char     FundName[16];           //»ù½ğÃû³Æ
-    char     SubsAndRedeCode[8];     //Éê¹ºÊê»Ø´úÂë
-    int      TradingDate;            //½»Ò×ÈÕÆÚ
-    int64    SubsAndRedeUnit;        //Éê¹ºÊê»Øµ¥Î»
-    double   CashDiff;               //Ô¤¹ÀÏÖ½ğ²î¶î
-    double   MaxCashRatio;           //ÏÖ½ğÌæ´ú±ÈÀıÉÏÏŞ
-    int64    SubsAndRedeState;       //Éê¹ºÊê»Ø×´Ì¬£¬-1=ÎŞÉêÊê×Ê¸ñ 0=½ûÖ¹ÉêÊê 1=ÔÊĞíÉêÊê 2=ÔÊĞíÉê¹º£¬½ûÖ¹Êê»Ø 3=½ûÖ¹Éê¹º£¬ÔÊĞíÊê»Ø
-    double   NetAssetValue;          //T-1»ù½ğµ¥Î»¾»Öµ
-    double   NAVperCU;               //Éê¹ºÊê»Øµ¥Î»¾»Öµ
-    double   CashComponent;          //TÈÕÃ¿¸öÀº×ÓÏÖ½ğ²î¶î
+    char     Market[4];              //äº¤æ˜“æ‰€
+    char     FundCode[8];            //åŸºé‡‘ä»£ç 
+    char     FundName[16];           //åŸºé‡‘åç§°
+    char     SubsAndRedeCode[8];     //ç”³è´­èµå›ä»£ç 
+    int      TradingDate;            //äº¤æ˜“æ—¥æœŸ
+    int64    SubsAndRedeUnit;        //ç”³è´­èµå›å•ä½
+    double   CashDiff;               //é¢„ä¼°ç°é‡‘å·®é¢
+    double   MaxCashRatio;           //ç°é‡‘æ›¿ä»£æ¯”ä¾‹ä¸Šé™
+    int64    SubsAndRedeState;       //ç”³è´­èµå›çŠ¶æ€ï¼Œ-1=æ— ç”³èµèµ„æ ¼ 0=ç¦æ­¢ç”³èµ 1=å…è®¸ç”³èµ 2=å…è®¸ç”³è´­ï¼Œç¦æ­¢èµå› 3=ç¦æ­¢ç”³è´­ï¼Œå…è®¸èµå›
+    double   NetAssetValue;          //T-1åŸºé‡‘å•ä½å‡€å€¼
+    double   NAVperCU;               //ç”³è´­èµå›å•ä½å‡€å€¼
+    double   CashComponent;          //Tæ—¥æ¯ä¸ªç¯®å­ç°é‡‘å·®é¢
 } ITPDK_ETFXX;
-//Êı¾İ×Öµä-ETF³É·Ö¹ÉĞÅÏ¢
+//æ•°æ®å­—å…¸-ETFæˆåˆ†è‚¡ä¿¡æ¯
 typedef struct
 {
-    char     FundCode[8];         //»ù½ğ´úÂë
-    char     Market[4];           //½»Ò×Ëù
-    char     StockCode[12];       //Ö¤È¯´úÂë
-    char     StockName[31];       //Ö¤È¯Ãû³Æ
-    int64    ComponentQty;        //³É·İ¹ÉÊıÁ¿
-    double   PremiumRatio;        //Òç¼Û±ÈÀı
-    double   CashSubstitute;      //Ìæ´ú½ğ¶î
-    int      SubstituteFlag;      //Ìæ´ú±êÖ¾£¬0=½ûÖ¹ÏÖ½ğÌæ´ú 1=ÔÊĞíÏÖ½ğÌæ´ú 2=±ØĞëÏÖ½ğÌæ´ú
-    char     StockType[4];        //Ö¤È¯Àà±ğ
+    char     FundCode[8];         //åŸºé‡‘ä»£ç 
+    char     Market[4];           //äº¤æ˜“æ‰€
+    char     StockCode[12];       //è¯åˆ¸ä»£ç 
+    char     StockName[31];       //è¯åˆ¸åç§°
+    int64    ComponentQty;        //æˆä»½è‚¡æ•°é‡
+    double   PremiumRatio;        //æº¢ä»·æ¯”ä¾‹
+    double   CashSubstitute;      //æ›¿ä»£é‡‘é¢
+    int      SubstituteFlag;      //æ›¿ä»£æ ‡å¿—ï¼Œ0=ç¦æ­¢ç°é‡‘æ›¿ä»£ 1=å…è®¸ç°é‡‘æ›¿ä»£ 2=å¿…é¡»ç°é‡‘æ›¿ä»£
+    char     StockType[4];        //è¯åˆ¸ç±»åˆ«
 } ITPDK_ETFMX;
-//Êı¾İ×Öµä-»ù½ğ´úÂë
+//æ•°æ®å­—å…¸-åŸºé‡‘ä»£ç 
 typedef struct
 {
-    char     Market[4];                 //½»Ò×Ëù
-    char     StockCode[12];             //Ö¤È¯´úÂë
-    char     FundCode[12];              //»ù½ğ´úÂë
-    char     FundName[44];              //»ù½ğÃû³Æ
-    int      DivideAndMergeStatus;      //»ù½ğ²ğ·Ö×´Ì¬
-    double   NetValue;                  //»ù½ğ¾»Öµ
-    double   TotalNAV;                  //ÀÛ¼Æ¾»Öµ
-    int      DivideRate;                //²ğ·Ö±ÈÀı
-    double   MinMergeQty;               //×îµÍºÏ²¢ÊıÁ¿
-    double   MinDivideQty;              //×îµÍ²ğ·ÖÊıÁ¿
+    char     Market[4];                 //äº¤æ˜“æ‰€
+    char     StockCode[12];             //è¯åˆ¸ä»£ç 
+    char     FundCode[12];              //åŸºé‡‘ä»£ç 
+    char     FundName[44];              //åŸºé‡‘åç§°
+    int      DivideAndMergeStatus;      //åŸºé‡‘æ‹†åˆ†çŠ¶æ€
+    double   NetValue;                  //åŸºé‡‘å‡€å€¼
+    double   TotalNAV;                  //ç´¯è®¡å‡€å€¼
+    int      DivideRate;                //æ‹†åˆ†æ¯”ä¾‹
+    double   MinMergeQty;               //æœ€ä½åˆå¹¶æ•°é‡
+    double   MinDivideQty;              //æœ€ä½æ‹†åˆ†æ•°é‡
 } ITPDK_JJHQ;
-//·Ö¼¶»ù½ğĞÅÏ¢
+//åˆ†çº§åŸºé‡‘ä¿¡æ¯
 typedef struct
 {
-    char     Market[4];                 //½»Ò×Ëù
-    char     FundCode_M[12];            //Ä¸»ù´úÂë
-    char     FundName_M[20];            //Ä¸»ùÃû³Æ
-    double   FundNetValue_M;            //Ä¸»ù¾»Öµ
-    double   FundPrice_M;               //Ä¸»ù¼Û¸ñ
-    char     IndexCode[12];             //Ö¸Êı´úÂë
-    char     IndexName[12];             //Ö¸ÊıÃû³Æ
-    double   IndexRate;                 //Ö¸ÊıÕÇµø·ù
-    char     FundManager[36];           //»ù½ğ¹ÜÀíÈË
-    double   SubscribeFeeRate;          //Éê¹º·ÑÂÊ
-    double   RedeemFeeRate;             //Êê»Ø·ÑÂÊ
-    char     DivideRate[20];            //AB±ÈÂÊ
-    int      DivideRate_A;              //A±ÈÂÊ
-    int      DivideRate_B;              //B±ÈÂÊ
-    int      RegularConvertFlag;        //¶¨ÕÛ±êÖ¾
-    double   UpConvertLimit;            //ÉÏÕÛ·§Öµ
-    double   DownConvertLimit;          //ÏÂÕÛ·§Öµ
-    char     NextConvertDate[12];       //ÏÂ´Î¶¨ÕÛ
-    int      ExpiryDate;                //ÖÕÖ¹ÈÕÆÚ
-    char     FundCode_A[12];            //A»ù´úÂë
-    char     FundName_A[20];            //A»ùÃû³Æ
-    double   FundPrice_A;               //A»ùÏÖ¼Û
-    double   FundNetValue_A;            //A»ù¾»Öµ
-    char     InterestRateRule[20];      //ÀûÂÊ¹æÔò
-    double   CurrentInterestRate;       //±¾ÆÚÀûÂÊ
-    double   NextInterestRate;          //±¾ÆÚÀûÂÊ
-    double   ForwardInterestRate;       //ÏÂÆÚÀûÂÊ
-    int      TradableFlag;              //¿É½»Ò×±êÖ¾
-    char     TradePrompt[260];          //½»Ò×ÌØ±ğÌáÊ¾
-    int      NetValueDate;              //¾»ÖµÈÕÆÚ
-    int      MinMergeQty;               //×îµÍ×éºÏÊıÁ¿
-    int      MinDivideQty;              //×îµÍ²ğ·ÖÊıÁ¿
-    char     FundCode_B[8];             //B»ù´úÂë
-    char     FundName_B[20];            //A»ùÃû³Æ
-    double   FundNetValue_B;            //A»ù¾»Öµ
-    double   FundProce_B;               //A»ùÏÖ¼Û
-    int      UpdateTime;                //¸üĞÂÊ±¼ä
-    int      PreTradeVolume_M;          //T-1Ä¸»ù½»Ò×Á¿
-    int      PreTradeVolume_A;          //T-1A»ù½»Ò×Á¿
-    int      PreTradeVolume_B;          //T-1B»ù½»Ò×Á¿
-    double   FundShares;                //·İ¶î
-    double   DateIncFundShares;         //±¾ÈÕÔö¼Ó·İ¶î
-    double   WholePremiumRate;          //T-1ÕûÌåÒç¼ÛÂÊ
-    double   PreWholePremiumRate;       //T-2ÕûÌåÒç¼ÛÂÊ
-    char     SubscribeStatus[68];       //»ù½ğÉê¹º×´Ì¬
-    char     RedeemStatus[68];          //»ù½ğÊê»Ø×´Ì¬
-    int      Status;                    //»ù½ğ×´Ì¬
-    double   PreNetValue;               //T-1»ù½ğ¾»Öµ
+    char     Market[4];                 //äº¤æ˜“æ‰€
+    char     FundCode_M[12];            //æ¯åŸºä»£ç 
+    char     FundName_M[20];            //æ¯åŸºåç§°
+    double   FundNetValue_M;            //æ¯åŸºå‡€å€¼
+    double   FundPrice_M;               //æ¯åŸºä»·æ ¼
+    char     IndexCode[12];             //æŒ‡æ•°ä»£ç 
+    char     IndexName[12];             //æŒ‡æ•°åç§°
+    double   IndexRate;                 //æŒ‡æ•°æ¶¨è·Œå¹…
+    char     FundManager[36];           //åŸºé‡‘ç®¡ç†äºº
+    double   SubscribeFeeRate;          //ç”³è´­è´¹ç‡
+    double   RedeemFeeRate;             //èµå›è´¹ç‡
+    char     DivideRate[20];            //ABæ¯”ç‡
+    int      DivideRate_A;              //Aæ¯”ç‡
+    int      DivideRate_B;              //Bæ¯”ç‡
+    int      RegularConvertFlag;        //å®šæŠ˜æ ‡å¿—
+    double   UpConvertLimit;            //ä¸ŠæŠ˜é˜€å€¼
+    double   DownConvertLimit;          //ä¸‹æŠ˜é˜€å€¼
+    char     NextConvertDate[12];       //ä¸‹æ¬¡å®šæŠ˜
+    int      ExpiryDate;                //ç»ˆæ­¢æ—¥æœŸ
+    char     FundCode_A[12];            //AåŸºä»£ç 
+    char     FundName_A[20];            //AåŸºåç§°
+    double   FundPrice_A;               //AåŸºç°ä»·
+    double   FundNetValue_A;            //AåŸºå‡€å€¼
+    char     InterestRateRule[20];      //åˆ©ç‡è§„åˆ™
+    double   CurrentInterestRate;       //æœ¬æœŸåˆ©ç‡
+    double   NextInterestRate;          //æœ¬æœŸåˆ©ç‡
+    double   ForwardInterestRate;       //ä¸‹æœŸåˆ©ç‡
+    int      TradableFlag;              //å¯äº¤æ˜“æ ‡å¿—
+    char     TradePrompt[260];          //äº¤æ˜“ç‰¹åˆ«æç¤º
+    int      NetValueDate;              //å‡€å€¼æ—¥æœŸ
+    int      MinMergeQty;               //æœ€ä½ç»„åˆæ•°é‡
+    int      MinDivideQty;              //æœ€ä½æ‹†åˆ†æ•°é‡
+    char     FundCode_B[8];             //BåŸºä»£ç 
+    char     FundName_B[20];            //AåŸºåç§°
+    double   FundNetValue_B;            //AåŸºå‡€å€¼
+    double   FundProce_B;               //AåŸºç°ä»·
+    int      UpdateTime;                //æ›´æ–°æ—¶é—´
+    int      PreTradeVolume_M;          //T-1æ¯åŸºäº¤æ˜“é‡
+    int      PreTradeVolume_A;          //T-1AåŸºäº¤æ˜“é‡
+    int      PreTradeVolume_B;          //T-1BåŸºäº¤æ˜“é‡
+    double   FundShares;                //ä»½é¢
+    double   DateIncFundShares;         //æœ¬æ—¥å¢åŠ ä»½é¢
+    double   WholePremiumRate;          //T-1æ•´ä½“æº¢ä»·ç‡
+    double   PreWholePremiumRate;       //T-2æ•´ä½“æº¢ä»·ç‡
+    char     SubscribeStatus[68];       //åŸºé‡‘ç”³è´­çŠ¶æ€
+    char     RedeemStatus[68];          //åŸºé‡‘èµå›çŠ¶æ€
+    int      Status;                    //åŸºé‡‘çŠ¶æ€
+    double   PreNetValue;               //T-1åŸºé‡‘å‡€å€¼
 } ITPDK_FJJJ;
-//¹É¶«ºÅ
+//è‚¡ä¸œå·
 typedef struct
 {
-    char     AccountId[16];    //¿Í»§ºÅ
-    char     Market[4];        //½»Ò×Ëù
-    char     SecuAccount[12];  //¹É¶«ºÅ
-    char     HolderName[16];   //¹É¶«ĞÕÃû
-    char     FundAccount[16];  //×Ê½ğÕÊºÅ
-    char     OrgCode[8];       //»ú¹¹´úÂë--½áËãÒøĞĞ
-    char     MoneyType[4];     //±ÒÖÖ
-    char     TradeAccess[16];  //½»Ò×È¨ÏŞ
-    int      HolderType;       //¹É¶«Àà±ğ
-    int      EquityQty;        //È¨ÒæÊıÁ¿(ĞÂ¹ÉÉê¹º)
+    char     AccountId[16];    //å®¢æˆ·å·
+    char     Market[4];        //äº¤æ˜“æ‰€
+    char     SecuAccount[12];  //è‚¡ä¸œå·
+    char     HolderName[16];   //è‚¡ä¸œå§“å
+    char     FundAccount[16];  //èµ„é‡‘å¸å·
+    char     OrgCode[8];       //æœºæ„ä»£ç --ç»“ç®—é“¶è¡Œ
+    char     MoneyType[4];     //å¸ç§
+    char     TradeAccess[16];  //äº¤æ˜“æƒé™
+    int      HolderType;       //è‚¡ä¸œç±»åˆ«
+    int      EquityQty;        //æƒç›Šæ•°é‡(æ–°è‚¡ç”³è´­)
 } ITPDK_GDH;
-//ÅäÊÛÈ¨Òæ
+//é…å”®æƒç›Š
 typedef struct
 {
-    char     AccountId[16];    //¿Í»§ºÅ
-    char     Market[4];        //½»Ò×Ëù
-    char     SecuAccount[12];  //¹É¶«ºÅ
-    int64    StarQty;          //¿Æ´´°æÊıÁ¿
-    int64    EquityQty;        //Ö¤È¯È¨ÒæÊıÁ¿
-    int      SettleMentDate;   //ÇåËãÈÕÆÚ
+    char     AccountId[16];    //å®¢æˆ·å·
+    char     Market[4];        //äº¤æ˜“æ‰€
+    char     SecuAccount[12];  //è‚¡ä¸œå·
+    int64    StarQty;          //ç§‘åˆ›ç‰ˆæ•°é‡
+    int64    EquityQty;        //è¯åˆ¸æƒç›Šæ•°é‡
+    int      SettleMentDate;   //æ¸…ç®—æ—¥æœŸ
 } ITPDK_PSQY;
-//×Ê½ğĞÅÏ¢
+//èµ„é‡‘ä¿¡æ¯
 typedef struct
 {
-    char     AccountId[16];             //¿Í»§ºÅ
-    char     FundAccount[16];           //×Ê½ğÕËºÅ
-    char     MoneyType[4];              //±ÒÖÖ
-    char     OrgCode[8];                //»ú¹¹´úÂë
-    int      MasterFlag;                //Ö÷ÕÊ»§±êÖ¾
-    int      AccountType;               //ÕÊ»§Àà±ğ
-    double   LastBalance;               //ÉÏÈÕÓà¶î
-    double   CurrentBalance;            //ÕË»§Óà¶î
-    double   FrozenBalance;             //¶³½á×Ê½ğ
-    double   UF_FrozenBalance;          //¶³½á×Ê½ğ£¨Î´Íê½á²¿·ÖUnFinished£©
-    double   T2_FrozenBalance;          //T+2¶³½á½ğ¶î
-    double   FundAvl;                   //¿ÉÓÃ×Ê½ğ
-    double   T2_FundAvl;                //T+2¿ÉÓÃ×Ê½ğ
-    double   TotalAsset;                //×Ü×Ê²ú
-    double   MarketValue;               //×îĞÂÊĞÖµ
-    double   DebtAmt;                   //¸ºÕ®½ğ¶î
-    double   CreditQuota;               //ĞÅÓÃ¶î¶È
-    double   CreditQuotaAvl;            //¿ÉÓÃĞÅÓÃ¶î¶È
-    double   UncomeBalance;             //Î´½»ÊÕ×Ê½ğ
-    double   CashBalance;               //ÏÖ½ğÓà¶î
-    double   CashAsset;                 //ÏÖ½ğ×Ê²ú
-    double   OtherAsset;                //ÆäËû×Ê²ú
-    double   FetchBalance;              //¿ÉÈ¡×Ê½ğ
-    double   DateProfit;                //±¾ÈÕÓ¯¿÷
-    double   UnclearProfit;             //¸¡¶¯Ó¯¿÷
-    double   DiluteUnclearProfit;       //Ì¯±¡¸¡¶¯Ó¯¿÷
-    double   UpdateTime;                //¸üĞÂÊ±¼ä
-    double   SettleBalance;             //ÊµÊ±ÇåËã×Ê½ğ
-    double   ContractPosiValue;         //ºÏÔ¼³Ö²ÖÊĞÖµ(ÆÚÈ¨À©Õ¹²éÑ¯)
-    double   LastPositionValue;         //×òÈÕ³Ö²ÖÊĞÖµ(ÆÚÈ¨À©Õ¹²éÑ¯)
+    char     AccountId[16];             //å®¢æˆ·å·
+    char     FundAccount[16];           //èµ„é‡‘è´¦å·
+    char     MoneyType[4];              //å¸ç§
+    char     OrgCode[8];                //æœºæ„ä»£ç 
+    int      MasterFlag;                //ä¸»å¸æˆ·æ ‡å¿—
+    int      AccountType;               //å¸æˆ·ç±»åˆ«
+    double   LastBalance;               //ä¸Šæ—¥ä½™é¢
+    double   CurrentBalance;            //è´¦æˆ·ä½™é¢
+    double   FrozenBalance;             //å†»ç»“èµ„é‡‘
+    double   UF_FrozenBalance;          //å†»ç»“èµ„é‡‘ï¼ˆæœªå®Œç»“éƒ¨åˆ†UnFinishedï¼‰
+    double   T2_FrozenBalance;          //T+2å†»ç»“é‡‘é¢
+    double   FundAvl;                   //å¯ç”¨èµ„é‡‘
+    double   T2_FundAvl;                //T+2å¯ç”¨èµ„é‡‘
+    double   TotalAsset;                //æ€»èµ„äº§
+    double   MarketValue;               //æœ€æ–°å¸‚å€¼
+    double   DebtAmt;                   //è´Ÿå€ºé‡‘é¢
+    double   CreditQuota;               //ä¿¡ç”¨é¢åº¦
+    double   CreditQuotaAvl;            //å¯ç”¨ä¿¡ç”¨é¢åº¦
+    double   UncomeBalance;             //æœªäº¤æ”¶èµ„é‡‘
+    double   CashBalance;               //ç°é‡‘ä½™é¢
+    double   CashAsset;                 //ç°é‡‘èµ„äº§
+    double   OtherAsset;                //å…¶ä»–èµ„äº§
+    double   FetchBalance;              //å¯å–èµ„é‡‘
+    double   DateProfit;                //æœ¬æ—¥ç›ˆäº
+    double   UnclearProfit;             //æµ®åŠ¨ç›ˆäº
+    double   DiluteUnclearProfit;       //æ‘Šè–„æµ®åŠ¨ç›ˆäº
+    double   UpdateTime;                //æ›´æ–°æ—¶é—´
+    double   SettleBalance;             //å®æ—¶æ¸…ç®—èµ„é‡‘
+    double   ContractPosiValue;         //åˆçº¦æŒä»“å¸‚å€¼(æœŸæƒæ‰©å±•æŸ¥è¯¢)
+    double   LastPositionValue;         //æ˜¨æ—¥æŒä»“å¸‚å€¼(æœŸæƒæ‰©å±•æŸ¥è¯¢)
 } ITPDK_ZJZH;
-//×Ê²ú»ã×Ü
+//èµ„äº§æ±‡æ€»
 typedef struct
 {
-    char     AccountId[16];          //¿Í»§ºÅ
-    char     MoneyType[4];           //±ÒÖÖ
-    char     CollectItem[16];        //²úÆ·ÏîÄ¿
-    char     AccountCode[16];        //ÕÊ»§´úÂë
-    double   AssetAmt;               //×Ê²úÓà¶î
-    double   DebtAmt;                //¸ºÕ®Óà¶î
-    double   NetAsset;               //¾»×Ê²ú
-    double   NoNegotiableValue;      //·ÇÁ÷Í¨ÊĞÖµ
-    double   UpdateTime;             //¸üĞÂÊ±¼ä
+    char     AccountId[16];          //å®¢æˆ·å·
+    char     MoneyType[4];           //å¸ç§
+    char     CollectItem[16];        //äº§å“é¡¹ç›®
+    char     AccountCode[16];        //å¸æˆ·ä»£ç 
+    double   AssetAmt;               //èµ„äº§ä½™é¢
+    double   DebtAmt;                //è´Ÿå€ºä½™é¢
+    double   NetAsset;               //å‡€èµ„äº§
+    double   NoNegotiableValue;      //éæµé€šå¸‚å€¼
+    double   UpdateTime;             //æ›´æ–°æ—¶é—´
 } ITPDK_ZCXX;
-//ÒøĞĞÕËºÅ
+//é“¶è¡Œè´¦å·
 typedef struct
 {
-    char     AccountId[16];    //¿Í»§ºÅ
-    char     BankAccount[32];  //ÒøĞĞÕËºÅ
-    char     FundAccount[16];  //×Ê½ğÕËºÅ
-    char     BankCode[8];      //ÒøĞĞ´úÂë
-    char     BankName[32];     //ÒøĞĞÃû³Æ
-    char     MoneyType[4];     //±ÒÖÖ
+    char     AccountId[16];    //å®¢æˆ·å·
+    char     BankAccount[32];  //é“¶è¡Œè´¦å·
+    char     FundAccount[16];  //èµ„é‡‘è´¦å·
+    char     BankCode[8];      //é“¶è¡Œä»£ç 
+    char     BankName[32];     //é“¶è¡Œåç§°
+    char     MoneyType[4];     //å¸ç§
 } ITPDK_YHZH;
-//²éÑ¯ÒøÖ¤ÒµÎñÁ÷Ë®Èë²Î½á¹¹Ìå
+//æŸ¥è¯¢é“¶è¯ä¸šåŠ¡æµæ°´å…¥å‚ç»“æ„ä½“
 typedef struct
 {
-    char lpKhh[16];     //¿Í»§ºÅ
-    char lpZjzh[16];    //×Ê½ğÕËºÅ
-    char lpJymm[40];    //½»Ò×ÃÜÂë
-    char lpScdm[4];     //ÊĞ³¡´úÂë
-    char lpYyb[5];      //ÓªÒµ²¿
-    char lpBz[4];       //±ÒÖÖ
-    char lpSqh[30];     //ÉêÇëºÅ
-    char lpYhdm[8];     //ÒøĞĞ´úÂë
-    char lpYhzh[41];    //ÒøĞĞÕËºÅ
-    int nRowCount;      //²éÑ¯ĞĞÊı£¨<=200£©
-    char lpBrowindex[64];//Ë÷ÒıÁ÷Ë®ºÅ
-    int nExFlag;        //ÊÇ·ñÈ¡¸¨ÕË»§Á÷Ë®£¨0:·ñ 1:ÊÇ£¬Ä¬ÈÏÎª 0£©
+    char lpKhh[16];     //å®¢æˆ·å·
+    char lpZjzh[16];    //èµ„é‡‘è´¦å·
+    char lpJymm[40];    //äº¤æ˜“å¯†ç 
+    char lpScdm[4];     //å¸‚åœºä»£ç 
+    char lpYyb[5];      //è¥ä¸šéƒ¨
+    char lpBz[4];       //å¸ç§
+    char lpSqh[30];     //ç”³è¯·å·
+    char lpYhdm[8];     //é“¶è¡Œä»£ç 
+    char lpYhzh[41];    //é“¶è¡Œè´¦å·
+    int nRowCount;      //æŸ¥è¯¢è¡Œæ•°ï¼ˆ<=200ï¼‰
+    char lpBrowindex[64];//ç´¢å¼•æµæ°´å·
+    int nExFlag;        //æ˜¯å¦å–è¾…è´¦æˆ·æµæ°´ï¼ˆ0:å¦ 1:æ˜¯ï¼Œé»˜è®¤ä¸º 0ï¼‰
 }ITPDK_REQ_YZYWLS;
-//²éÑ¯ÒøÖ¤ÒµÎñÁ÷Ë®³ö²Î½á¹¹Ìå
+//æŸ¥è¯¢é“¶è¯ä¸šåŠ¡æµæ°´å‡ºå‚ç»“æ„ä½“
 typedef struct
 {
-    char    sWTRQ[9];    //·¢ÉúÈÕÆÚ
-    char    sWTSJ[13];   //·¢ÉúÊ±¼ä
-    char    sZJZH[16];   //×Ê½ğÕËºÅ
-    char    sBZ[4];      //±ÒÖÖ
-    char    sJGDM[8];    //ÒøĞĞ´úÂë
-    char    sCLJG[30];   //´¦Àí½á¹û
-    char    sJGSM[128];  //½á¹ûËµÃ÷
-    char    sSQH[30];    //ÉêÇëºÅ
-    double  dZHYE;       //ÕË»§Óà¶î
-    char    sYWLB[8];    //ÒµÎñÀà±ğ
-    char    sYWLBMC[32]; //ÒµÎñÀà±ğÃû³Æ
-    double  dFSJE;       //·¢Éú½ğ¶î
-    char    sYHMC[32];   //ÒøĞĞÃû³Æ
+    char    sWTRQ[9];    //å‘ç”Ÿæ—¥æœŸ
+    char    sWTSJ[13];   //å‘ç”Ÿæ—¶é—´
+    char    sZJZH[16];   //èµ„é‡‘è´¦å·
+    char    sBZ[4];      //å¸ç§
+    char    sJGDM[8];    //é“¶è¡Œä»£ç 
+    char    sCLJG[30];   //å¤„ç†ç»“æœ
+    char    sJGSM[128];  //ç»“æœè¯´æ˜
+    char    sSQH[30];    //ç”³è¯·å·
+    double  dZHYE;       //è´¦æˆ·ä½™é¢
+    char    sYWLB[8];    //ä¸šåŠ¡ç±»åˆ«
+    char    sYWLBMC[32]; //ä¸šåŠ¡ç±»åˆ«åç§°
+    double  dFSJE;       //å‘ç”Ÿé‡‘é¢
+    char    sYHMC[32];   //é“¶è¡Œåç§°
 }ITPDK_YZYWLS;
-//²éÑ¯ÒøĞĞ´úÂëÈë²Î½á¹¹Ìå
+//æŸ¥è¯¢é“¶è¡Œä»£ç å…¥å‚ç»“æ„ä½“
 typedef struct
 {
-    char lpKhh[16];     //¿Í»§ºÅ
-    char lpJymm[40];    //½»Ò×ÃÜÂë
-    char lpScdm[4];     //ÊĞ³¡´úÂë
-    char lpYyb[5];      //ÓªÒµ²¿
-    int nYHLB;          //ÒøĞĞÀà±ğ
-    int nExFlag;        //ÊÇ·ñÈ¡¸¨ÕË»§Á÷Ë®£¨0:·ñ 1:ÊÇ£¬Ä¬ÈÏÎª 0£©
-    char lpWtfs[5];     //Î¯ÍĞ·½Ê½
-    char lpBz[4];       //±ÒÖÖ
-    char lpYhdm[8];     //ÒøĞĞ´úÂë
+    char lpKhh[16];     //å®¢æˆ·å·
+    char lpJymm[40];    //äº¤æ˜“å¯†ç 
+    char lpScdm[4];     //å¸‚åœºä»£ç 
+    char lpYyb[5];      //è¥ä¸šéƒ¨
+    int nYHLB;          //é“¶è¡Œç±»åˆ«
+    int nExFlag;        //æ˜¯å¦å–è¾…è´¦æˆ·æµæ°´ï¼ˆ0:å¦ 1:æ˜¯ï¼Œé»˜è®¤ä¸º 0ï¼‰
+    char lpWtfs[5];     //å§”æ‰˜æ–¹å¼
+    char lpBz[4];       //å¸ç§
+    char lpYhdm[8];     //é“¶è¡Œä»£ç 
 }ITPDK_REQ_YHDM;
-//²éÑ¯ÒøĞĞ´úÂë³ö²Î½á¹¹Ìå
+//æŸ¥è¯¢é“¶è¡Œä»£ç å‡ºå‚ç»“æ„ä½“
 typedef struct
 {
-    char    sYHDM[7];    //ÒøĞĞ´úÂë
-    char    sYHMC[81];   //ÒøĞĞÃû³Æ
-    char    sYHZH[41];   //ÒøĞĞÕËºÅ
-    char    sYHBZ[22];   //ÒøĞĞ±êÖ¾
-    char    sBZ[4];      //±ÒÖÖ
-    char    sZZYMMXX[2];    //Ö¤×ªÒøÃÜÂëÑ¡Ïî(0£º¶¼²»Êä£¬1£ºÖ»Êä×Ê½ğÃÜÂë£¬2£ºÖ»ÊäÒøĞĞÃÜÂë£¬3£ºÁ½¸öÃÜÂë¶¼ÒªÊä)
-    char    sYZZMMXX[2];    //Òø×ªÖ¤ÃÜÂëÑ¡Ïî(0£º¶¼²»Êä£¬1£ºÖ»Êä×Ê½ğÃÜÂë£¬2£ºÖ»ÊäÒøĞĞÃÜÂë£¬3£ºÁ½¸öÃÜÂë¶¼ÒªÊä)
-    char    sZHH[11];    //Ö÷/¸¨ÕË»§ºÅ
-    char    sZHLB[2];       //ÕË»§Àà±ğ(0-Ö÷ÕË»§£¬1-×ÓÕË»§)
-    char    sZHLBMC[31]; //ÕË»§Àà±ğÃû³Æ
-    int     nKSQX;       //ÊÇ·ñÖ§³Ö¿ìËÙÈ¡ÏÖ(1-Ö§³Ö£¬0 ²»Ö§³Ö)
-    char    sKHH[16];    //¿Í»§ºÅ
-    char    sZJZH[16];   //×Ê½ğÕËºÅ
-    char    sWBJGDM[8];  //Íâ²¿»ú¹¹´úÂë
+    char    sYHDM[7];    //é“¶è¡Œä»£ç 
+    char    sYHMC[81];   //é“¶è¡Œåç§°
+    char    sYHZH[41];   //é“¶è¡Œè´¦å·
+    char    sYHBZ[22];   //é“¶è¡Œæ ‡å¿—
+    char    sBZ[4];      //å¸ç§
+    char    sZZYMMXX[2];    //è¯è½¬é“¶å¯†ç é€‰é¡¹(0ï¼šéƒ½ä¸è¾“ï¼Œ1ï¼šåªè¾“èµ„é‡‘å¯†ç ï¼Œ2ï¼šåªè¾“é“¶è¡Œå¯†ç ï¼Œ3ï¼šä¸¤ä¸ªå¯†ç éƒ½è¦è¾“)
+    char    sYZZMMXX[2];    //é“¶è½¬è¯å¯†ç é€‰é¡¹(0ï¼šéƒ½ä¸è¾“ï¼Œ1ï¼šåªè¾“èµ„é‡‘å¯†ç ï¼Œ2ï¼šåªè¾“é“¶è¡Œå¯†ç ï¼Œ3ï¼šä¸¤ä¸ªå¯†ç éƒ½è¦è¾“)
+    char    sZHH[11];    //ä¸»/è¾…è´¦æˆ·å·
+    char    sZHLB[2];       //è´¦æˆ·ç±»åˆ«(0-ä¸»è´¦æˆ·ï¼Œ1-å­è´¦æˆ·)
+    char    sZHLBMC[31]; //è´¦æˆ·ç±»åˆ«åç§°
+    int     nKSQX;       //æ˜¯å¦æ”¯æŒå¿«é€Ÿå–ç°(1-æ”¯æŒï¼Œ0 ä¸æ”¯æŒ)
+    char    sKHH[16];    //å®¢æˆ·å·
+    char    sZJZH[16];   //èµ„é‡‘è´¦å·
+    char    sWBJGDM[8];  //å¤–éƒ¨æœºæ„ä»£ç 
 }ITPDK_YHDM;
-//²éÑ¯ÒøĞĞÓà¶îÈë²Î½á¹¹Ìå
+//æŸ¥è¯¢é“¶è¡Œä½™é¢å…¥å‚ç»“æ„ä½“
 typedef struct
 {
-    char lpKhh[16];     //¿Í»§ºÅ
-    char lpJymm[40];    //×Ê½ğÕËºÅ
-    char lpZjzh[16];    //½»Ò×ÃÜÂë
-    char lpZjmm[40];    //×Ê½ğÃÜÂë
-    char lpBz[4];       //±ÒÖÖ
-    char lpYhzh[41];    //ÒøĞĞÕÊºÅ
-    char lpYhdm[8];     //ÒøĞĞ´úÂë
-    char lpYhmm[40];    //ÒøĞĞÃÜÂë
-    char lpWbzhmm[40];  //Íâ²¿ÕËºÅÃÜÂë
+    char lpKhh[16];     //å®¢æˆ·å·
+    char lpJymm[40];    //èµ„é‡‘è´¦å·
+    char lpZjzh[16];    //äº¤æ˜“å¯†ç 
+    char lpZjmm[40];    //èµ„é‡‘å¯†ç 
+    char lpBz[4];       //å¸ç§
+    char lpYhzh[41];    //é“¶è¡Œå¸å·
+    char lpYhdm[8];     //é“¶è¡Œä»£ç 
+    char lpYhmm[40];    //é“¶è¡Œå¯†ç 
+    char lpWbzhmm[40];  //å¤–éƒ¨è´¦å·å¯†ç 
 }ITPDK_REQ_YHYE;
-//²éÑ¯ÒøĞĞÓà¶î³ö²Î½á¹¹Ìå
+//æŸ¥è¯¢é“¶è¡Œä½™é¢å‡ºå‚ç»“æ„ä½“
 typedef struct
 {
-    char    sLSH[31];    //Á÷Ë®ºÅ
-    double  dFSJE;       //ÕË»§Óà¶î
+    char    sLSH[31];    //æµæ°´å·
+    double  dFSJE;       //è´¦æˆ·ä½™é¢
 }ITPDK_YHYE;
-//²éÑ¯ĞÂ¹ÉÖĞÇ©Èë²Î½á¹¹Ìå
+//æŸ¥è¯¢æ–°è‚¡ä¸­ç­¾å…¥å‚ç»“æ„ä½“
 typedef struct
 {
-    char lpYybdm[5];    //ÓªÒµ²¿´úÂë
-    char lpScdm[4];     //ÊĞ³¡´úÂë
-    char lpKhh[16];     //¿Í»§ºÅ
-    char lpJymm[40];    //½»Ò×ÃÜÂë
-    char lpZqdm[9];     //Ö¤È¯´úÂë£¨Îª¿Õ¾Í²éÑ¯ËùÓĞ£©
-    char lpQsrq[9];     //ÆğÊ¼ÈÕÆÚ
-    char lpJsrq[9];     //½áÊøÈÕÆÚ
-    int nRowCount;      //²éÑ¯ĞĞÊı£¨<=200£©
-    char lpSyrq[9];     //Ë÷ÒıÈÕÆÚ
-    char lpSyYybdm[5];  //Ë÷ÒıÓªÒµ²¿´úÂë
-    char lpBrowindex[64];//Ë÷ÒıÁ÷Ë®ºÅ
-    char lpWtfs[5];     //Î¯ÍĞ·½Ê½
-    char sFXFS[2];      //·¢ĞĞ·½Ê½
+    char lpYybdm[5];    //è¥ä¸šéƒ¨ä»£ç 
+    char lpScdm[4];     //å¸‚åœºä»£ç 
+    char lpKhh[16];     //å®¢æˆ·å·
+    char lpJymm[40];    //äº¤æ˜“å¯†ç 
+    char lpZqdm[9];     //è¯åˆ¸ä»£ç ï¼ˆä¸ºç©ºå°±æŸ¥è¯¢æ‰€æœ‰ï¼‰
+    char lpQsrq[9];     //èµ·å§‹æ—¥æœŸ
+    char lpJsrq[9];     //ç»“æŸæ—¥æœŸ
+    int nRowCount;      //æŸ¥è¯¢è¡Œæ•°ï¼ˆ<=200ï¼‰
+    char lpSyrq[9];     //ç´¢å¼•æ—¥æœŸ
+    char lpSyYybdm[5];  //ç´¢å¼•è¥ä¸šéƒ¨ä»£ç 
+    char lpBrowindex[64];//ç´¢å¼•æµæ°´å·
+    char lpWtfs[5];     //å§”æ‰˜æ–¹å¼
+    char sFXFS[2];      //å‘è¡Œæ–¹å¼
 }ITPDK_REQ_XGZQ;
-//²éÑ¯ĞÂ¹ÉÖĞÇ©³ö²Î½á¹¹Ìå
+//æŸ¥è¯¢æ–°è‚¡ä¸­ç­¾å‡ºå‚ç»“æ„ä½“
 typedef struct
 {
-    char    sFSRQ[9];    //·¢ÉúÈÕÆÚ
-    char    sKHYYB[5];   //¿ª»§ÓªÒµ²¿
-    char    sKHH[16];    //¿Í»§ºÅ
-    char    sGDH[16];    //¹É¶«´úÂë
-    char    sGDXM[21];   //¹É¶«ĞÕÃû
-    char    sSCDM[4];    //ÊĞ³¡´úÂë
-    char    sSCMC[21];   //ÊĞ³¡Ãû³Æ
-    char    sZQDM[9];    //Ö¤È¯´úÂë
-    char    sZQMC[41];   //Ö¤È¯Ãû³Æ
-    int64   nSGSL;       //Éê¹ºÊıÁ¿
-    double  dCJJG;       //³É½»¼Û¸ñ
-    double  dCJJE;       //³É½»½ğ¶î
-    int     nZQSL;       //Ö¤È¯ÊıÁ¿
-    char    sLSH[31];    //Á÷Ë®ºÅ
-    char    sKKRQ[9];    //¿Û¿îÈÕÆÚ
-    char    sZQLB[4];    //Ö¤È¯Àà±ğ
-    char    sCLZT[3];    //´¦Àí×´Ì¬
-    char    sTQDJBZ;     //ÌáÇ°¶³½á±êÖ¾
-    double  dSJZQSL;     //Êµ¼ÊÖĞÇ©ÊıÁ¿
-    double  dSJZQJE;     //Êµ¼ÊÖĞÇ©½ğ¶î
-    double  dFQSL;       //·ÅÆúÊıÁ¿
-    double  dFQJE;       //·ÅÆú½ğ¶î
-    char    sWTRQ[9];    //Î¯ÍĞÈÕÆÚ
-    int     nPGSL;       //Åä¹ÉÊıÁ¿
-    double  dPGJKJE;     //Åä¹É½É¿î½ğ¶î
-    int     nJSSX;       //½»ÊÕË³Ğò
-    char    sFXFS[2];    //·¢ĞĞ·½Ê½
-    char    sLCZT[2];    //Á÷³Ì×´Ì¬
+    char    sFSRQ[9];    //å‘ç”Ÿæ—¥æœŸ
+    char    sKHYYB[5];   //å¼€æˆ·è¥ä¸šéƒ¨
+    char    sKHH[16];    //å®¢æˆ·å·
+    char    sGDH[16];    //è‚¡ä¸œä»£ç 
+    char    sGDXM[21];   //è‚¡ä¸œå§“å
+    char    sSCDM[4];    //å¸‚åœºä»£ç 
+    char    sSCMC[21];   //å¸‚åœºåç§°
+    char    sZQDM[9];    //è¯åˆ¸ä»£ç 
+    char    sZQMC[41];   //è¯åˆ¸åç§°
+    int64   nSGSL;       //ç”³è´­æ•°é‡
+    double  dCJJG;       //æˆäº¤ä»·æ ¼
+    double  dCJJE;       //æˆäº¤é‡‘é¢
+    int     nZQSL;       //è¯åˆ¸æ•°é‡
+    char    sLSH[31];    //æµæ°´å·
+    char    sKKRQ[9];    //æ‰£æ¬¾æ—¥æœŸ
+    char    sZQLB[4];    //è¯åˆ¸ç±»åˆ«
+    char    sCLZT[3];    //å¤„ç†çŠ¶æ€
+    char    sTQDJBZ;     //æå‰å†»ç»“æ ‡å¿—
+    double  dSJZQSL;     //å®é™…ä¸­ç­¾æ•°é‡
+    double  dSJZQJE;     //å®é™…ä¸­ç­¾é‡‘é¢
+    double  dFQSL;       //æ”¾å¼ƒæ•°é‡
+    double  dFQJE;       //æ”¾å¼ƒé‡‘é¢
+    char    sWTRQ[9];    //å§”æ‰˜æ—¥æœŸ
+    int     nPGSL;       //é…è‚¡æ•°é‡
+    double  dPGJKJE;     //é…è‚¡ç¼´æ¬¾é‡‘é¢
+    int     nJSSX;       //äº¤æ”¶é¡ºåº
+    char    sFXFS[2];    //å‘è¡Œæ–¹å¼
+    char    sLCZT[2];    //æµç¨‹çŠ¶æ€
 }ITPDK_XGZQ;
-//ÅäºÅ²éÑ¯Èë²Î½á¹¹Ìå
+//é…å·æŸ¥è¯¢å…¥å‚ç»“æ„ä½“
 typedef struct
 {
-    char lpYybdm[5];    //ÓªÒµ²¿´úÂë
-    char lpScdm[4];     //ÊĞ³¡´úÂë
-    char lpKhh[16];     //¿Í»§ºÅ
-    char lpJymm[40];    //½»Ò×ÃÜÂë
-    char lpGddm[16];    //¹É¶«´úÂë
-    char lpPhdm[9];     //ÅäºÅ´úÂë
-    char lpQsrq[9];     //ÆğÊ¼ÈÕÆÚ
-    char lpJsrq[9];     //½áÊøÈÕÆÚ
-    int nRowCount;      //²éÑ¯ĞĞÊı£¨<=200£©
-    char lpBrowindex[64];//Ë÷ÒıÁ÷Ë®ºÅ
-    char lpWtfs[5];     //Î¯ÍĞ·½Ê½
-    char lpZjzh[16];    //×Ê½ğÕËºÅ
+    char lpYybdm[5];    //è¥ä¸šéƒ¨ä»£ç 
+    char lpScdm[4];     //å¸‚åœºä»£ç 
+    char lpKhh[16];     //å®¢æˆ·å·
+    char lpJymm[40];    //äº¤æ˜“å¯†ç 
+    char lpGddm[16];    //è‚¡ä¸œä»£ç 
+    char lpPhdm[9];     //é…å·ä»£ç 
+    char lpQsrq[9];     //èµ·å§‹æ—¥æœŸ
+    char lpJsrq[9];     //ç»“æŸæ—¥æœŸ
+    int nRowCount;      //æŸ¥è¯¢è¡Œæ•°ï¼ˆ<=200ï¼‰
+    char lpBrowindex[64];//ç´¢å¼•æµæ°´å·
+    char lpWtfs[5];     //å§”æ‰˜æ–¹å¼
+    char lpZjzh[16];    //èµ„é‡‘è´¦å·
 }ITPDK_REQ_PHCX;
-//ÅäºÅ²éÑ¯³ö²Î½á¹¹Ìå
+//é…å·æŸ¥è¯¢å‡ºå‚ç»“æ„ä½“
 typedef struct
 {
-    char    sKHH[16];    //¿Í»§ºÅ
-    char    sSCDM[4];    //ÊĞ³¡´úÂë
-    char    sSCMC[21];   //ÊĞ³¡Ãû³Æ
-    char    sGDH[16];    //¹É¶«ÕËºÅ
-    char    sPHDM[9];    //ÅäºÅ´úÂë
-    char    sPHMC[41];   //ÅäºÅÃû³Æ
-    char    sQSPH[13];   //ÆğÊ¼ÅäºÅ
-    int64   nPHGS;       //ÅäºÅ¸öÊı
-    char    sPHRQ[9];    //ÅäºÅÈÕÆÚ
-    char    sLSH[31];    //Á÷Ë®ºÅ
-    char    sCLXX[81];   //´¦ÀíĞÅÏ¢
-    char    sWTRQ[9];    //Î¯ÍĞÈÕÆÚ
+    char    sKHH[16];    //å®¢æˆ·å·
+    char    sSCDM[4];    //å¸‚åœºä»£ç 
+    char    sSCMC[21];   //å¸‚åœºåç§°
+    char    sGDH[16];    //è‚¡ä¸œè´¦å·
+    char    sPHDM[9];    //é…å·ä»£ç 
+    char    sPHMC[41];   //é…å·åç§°
+    char    sQSPH[13];   //èµ·å§‹é…å·
+    int64   nPHGS;       //é…å·ä¸ªæ•°
+    char    sPHRQ[9];    //é…å·æ—¥æœŸ
+    char    sLSH[31];    //æµæ°´å·
+    char    sCLXX[81];   //å¤„ç†ä¿¡æ¯
+    char    sWTRQ[9];    //å§”æ‰˜æ—¥æœŸ
 }ITPDK_PHCX;
-//ÒøÖ¤×ªÕËÈë²Î½á¹¹Ìå
+//é“¶è¯è½¬è´¦å…¥å‚ç»“æ„ä½“
 typedef struct
 {
-    char lpKhh[16];     //¿Í»§ºÅ
-    int nYwlb;          //ÒµÎñÀà±ğ£¨YWLB_YHTOZQÒøĞĞ×ªÖ¤È¯¡¢YWLB_ZQTOYHÖ¤È¯×ªÒøĞĞ£©
-    char lpZjzh[16];    //×Ê½ğÕËºÅ
-    char lpJymm[40];    //½»Ò×ÃÜÂë
-    char lpZjmm[40];    //×Ê½ğÃÜÂë
-    char lpBz[4];       //±ÒÖÖ
-    char lpYhzh[41];    //ÒøĞĞÕÊºÅ
-    double lfZzje;      //×ªÕË½ğ¶î
-    char lpYhdm[8];     //ÒøĞĞ´úÂë
-    char lpYhmm[40];    //ÒøĞĞÃÜÂë
+    char lpKhh[16];     //å®¢æˆ·å·
+    int nYwlb;          //ä¸šåŠ¡ç±»åˆ«ï¼ˆYWLB_YHTOZQé“¶è¡Œè½¬è¯åˆ¸ã€YWLB_ZQTOYHè¯åˆ¸è½¬é“¶è¡Œï¼‰
+    char lpZjzh[16];    //èµ„é‡‘è´¦å·
+    char lpJymm[40];    //äº¤æ˜“å¯†ç 
+    char lpZjmm[40];    //èµ„é‡‘å¯†ç 
+    char lpBz[4];       //å¸ç§
+    char lpYhzh[41];    //é“¶è¡Œå¸å·
+    double lfZzje;      //è½¬è´¦é‡‘é¢
+    char lpYhdm[8];     //é“¶è¡Œä»£ç 
+    char lpYhmm[40];    //é“¶è¡Œå¯†ç 
 }ITPDK_REQ_YZZZ;
-//Ö¤È¯³Ö²Ö
+//è¯åˆ¸æŒä»“
 typedef struct
 {
-    char     AccountId[16];             //¿Í»§ºÅ
-    char     Market[4];                 //½»Ò×Ëù
-    char     StockCode[12];             //Ö¤È¯´úÂë
-    char     SecuAccount[12];           //¹É¶«ºÅ
-    char     FundAccount[16];           //×Ê½ğÕËºÅ
-    int      AccountType;               //ÕË»§Àà±ğ
-    char     MoneyType[4];              //±ÒÖÖ
-    char     StockName[31];             //Ö¤È¯Ãû³Æ
-    int64    CurrentQty;                //½ñ³Ö²ÖÁ¿
-    int64    QtyAvl;                    //¿ÉÂô³öÊıÁ¿
-    double   LastPrice;                 //×îĞÂ¼Û
-    double   MarketValue;               //×îĞÂÊĞÖµ
-    double   DateProfit;                //±¾ÈÕÓ¯¿÷
-    double   CostPrice;                 //³Ö²Ö¾ù¼Û
-    double   UnclearProfit;             //¸¡¶¯Ó¯¿÷
-    double   DividendAmt;               //ºìÀû½ğ¶î
-    double   RealizeProfit;             //ÊµÏÖÓ¯¿÷
-    int64    PreQty;                    //×ò³Ö²ÖÁ¿
-    int64    FrozenQty;                 //¶³½áÊıÁ¿
-    int64    UncomeQty;                 //Î´½»ÊÕÊıÁ¿
-    double   CostBalance;               //³Ö²Ö³É±¾
-    double   DiluteCostPrice;           //Ì¯±¡³É±¾¼Û
-    double   KeepCostPrice;             //±£±¾¼Û
-    double   AvgBuyPrice;               //ÂòÈë¾ù¼Û
-    int64    AllotmentQty;              //Åä¹ÉÊıÁ¿
-    int64    SubscribeQty;              //Éê¹ºÊıÁ¿
-    char     OpenDate[12];              //¿ª²ÖÈÕÆÚ
-    double   InterestPrice;             //ÀûÏ¢±¨¼Û
-    double   Dilutekeep_CostPrice;      //Ì¯±¡±£±¾¼Û
-    double   DiluteUnclearProfit;       //Ì¯±¡¸¡¶¯Ó¯¿÷
-    int64    TradeUnit;                 //½»Ò×µ¥Î»
-    int64    SubscribableQty;           //¿ÉÉê¹ºÊıÁ¿
-    int64    RedeemableQty;             //¿ÉÊê»ØÊıÁ¿
-    int64    RealSubsQty;               //Éê¹º³É½»ÊıÁ¿
-    int64    RealRedeQty;               //Êê»Ø³É½»ÊıÁ¿
-    int64    TotalSellQty;              //ÀÛ¼ÆÂô³öÊıÁ¿
-    int64    TotalBuyQty;               //ÀÛ¼ÆÂòÈëÊıÁ¿
-    double   TotalSellAmt;              //Âô³ö½ğ¶î
-    double   TotalBuyAmt;               //ÂòÈë½ğ¶î
-    double   AllotmentAmt;              //Åä¹É½ğ¶î
-    int64    RealBuyQty;                //µ±ÈÕÂòÈë³É½»ÊıÁ¿
-    int64    RealSellQty;               //µ±ÈÕÂô³ö³É½»ÊıÁ¿
-    double   RealBuyBalance;            //µ±ÈÕÂòÈë³É½»½ğ¶î
-    double   RealSellBalance;           //µ±ÈÕÂô³ö³É½»½ğ¶î
-    int64    BrowIndex;                 //·ÖÒ³²éÑ¯¶¨Î»´®
-    int64    OrderFrozenQty;            //Î¯ÍĞ¶³½áÊıÁ¿
+    char     AccountId[16];             //å®¢æˆ·å·
+    char     Market[4];                 //äº¤æ˜“æ‰€
+    char     StockCode[12];             //è¯åˆ¸ä»£ç 
+    char     SecuAccount[12];           //è‚¡ä¸œå·
+    char     FundAccount[16];           //èµ„é‡‘è´¦å·
+    int      AccountType;               //è´¦æˆ·ç±»åˆ«
+    char     MoneyType[4];              //å¸ç§
+    char     StockName[31];             //è¯åˆ¸åç§°
+    int64    CurrentQty;                //ä»ŠæŒä»“é‡
+    int64    QtyAvl;                    //å¯å–å‡ºæ•°é‡
+    double   LastPrice;                 //æœ€æ–°ä»·
+    double   MarketValue;               //æœ€æ–°å¸‚å€¼
+    double   DateProfit;                //æœ¬æ—¥ç›ˆäº
+    double   CostPrice;                 //æŒä»“å‡ä»·
+    double   UnclearProfit;             //æµ®åŠ¨ç›ˆäº
+    double   DividendAmt;               //çº¢åˆ©é‡‘é¢
+    double   RealizeProfit;             //å®ç°ç›ˆäº
+    int64    PreQty;                    //æ˜¨æŒä»“é‡
+    int64    FrozenQty;                 //å†»ç»“æ•°é‡
+    int64    UncomeQty;                 //æœªäº¤æ”¶æ•°é‡
+    double   CostBalance;               //æŒä»“æˆæœ¬
+    double   DiluteCostPrice;           //æ‘Šè–„æˆæœ¬ä»·
+    double   KeepCostPrice;             //ä¿æœ¬ä»·
+    double   AvgBuyPrice;               //ä¹°å…¥å‡ä»·
+    int64    AllotmentQty;              //é…è‚¡æ•°é‡
+    int64    SubscribeQty;              //ç”³è´­æ•°é‡
+    char     OpenDate[12];              //å¼€ä»“æ—¥æœŸ
+    double   InterestPrice;             //åˆ©æ¯æŠ¥ä»·
+    double   Dilutekeep_CostPrice;      //æ‘Šè–„ä¿æœ¬ä»·
+    double   DiluteUnclearProfit;       //æ‘Šè–„æµ®åŠ¨ç›ˆäº
+    int64    TradeUnit;                 //äº¤æ˜“å•ä½
+    int64    SubscribableQty;           //å¯ç”³è´­æ•°é‡
+    int64    RedeemableQty;             //å¯èµå›æ•°é‡
+    int64    RealSubsQty;               //ç”³è´­æˆäº¤æ•°é‡
+    int64    RealRedeQty;               //èµå›æˆäº¤æ•°é‡
+    int64    TotalSellQty;              //ç´¯è®¡å–å‡ºæ•°é‡
+    int64    TotalBuyQty;               //ç´¯è®¡ä¹°å…¥æ•°é‡
+    double   TotalSellAmt;              //å–å‡ºé‡‘é¢
+    double   TotalBuyAmt;               //ä¹°å…¥é‡‘é¢
+    double   AllotmentAmt;              //é…è‚¡é‡‘é¢
+    int64    RealBuyQty;                //å½“æ—¥ä¹°å…¥æˆäº¤æ•°é‡
+    int64    RealSellQty;               //å½“æ—¥å–å‡ºæˆäº¤æ•°é‡
+    double   RealBuyBalance;            //å½“æ—¥ä¹°å…¥æˆäº¤é‡‘é¢
+    double   RealSellBalance;           //å½“æ—¥å–å‡ºæˆäº¤é‡‘é¢
+    int64    BrowIndex;                 //åˆ†é¡µæŸ¥è¯¢å®šä½ä¸²
+    int64    OrderFrozenQty;            //å§”æ‰˜å†»ç»“æ•°é‡
 } ITPDK_ZQGL;
-//µ±ÈÕÎ¯ÍĞ
+//å½“æ—¥å§”æ‰˜
 typedef struct
 {
-    char     AccountId[16];       //¿Í»§ºÅ
-    int64    OrderId;             //Î¯ÍĞºÅ
-    int64    CXOrderId;           //³·ÏúÎ¯ÍĞºÅ
-    char     SBWTH[17];           //Éê±¨Î¯ÍĞºÅ
-    int64    KFSBDBH;             //¿ª·¢ÉÌ±¾µØ±àºÅ
-    char     Market[4];           //½»Ò×Ëù
-    char     StockCode[12];       //Ö¤È¯´úÂë
-    char     StockName[31];       //Ö¤È¯Ãû³Æ
-    char     StockType[4];        //Ö¤È¯Àà±ğ
-    int      EntrustType;         //½»Ò×Àà±ğ
-    double   OrderPrice;          //Î¯ÍĞ¼Û¸ñ
-    int64    OrderQty;            //Î¯ÍĞÊıÁ¿
-    double   MatchPrice;          //³É½»¼Û¸ñ
-    int64    MatchQty;            //³É½»ÊıÁ¿
-    int64    WithdrawQty;         //³·µ¥ÊıÁ¿
-    char     SecuAccount[12];     //¹É¶«ºÅ
-    int64    BatchNo;             //Î¯ÍĞÅú´ÎºÅ
-    int      EntrustDate;         //Î¯ÍĞÈÕÆÚ
-    int64    SerialNo;            //Á÷Ë®ºÅ
-    int      OrderType;           //¶©µ¥ÀàĞÍ
-    int      OrderType_HK;        //¸Û¹É¶©µ¥ÀàĞÍ
-    double   StopPrice;           //Ö¹ËğÏŞ¼Û
-    int      OrderStatus;         //Éê±¨½á¹û
-    char     EntrustNode[48];     //½»Ò×Õ¾µã
-    char     EntrustTime[13];     //Î¯ÍĞÊ±¼ä
-    char     ReportTime[13];      //Éê±¨Ê±¼ä
-    char     MatchTime[13];       //³É½»Ê±¼ä
-    char     WithdrawFlag[4];     //³·Ïú±êÖ¾
-    char     ResultInfo[128];     //½á¹ûËµÃ÷
-    double   MatchAmt;            //³É½»½ğ¶î
-    double   FrozenBalance;       //¶³½á×Ê½ğ
-    double   BailBalance;         //¶³½á±£Ö¤½ğ
-    double   HandingFee;          //¶³½áÊÖ¼Ì·Ñ
-    int64    BrowIndex;           //·ÖÒ³²éÑ¯¶¨Î»´®
+    char     AccountId[16];       //å®¢æˆ·å·
+    int64    OrderId;             //å§”æ‰˜å·
+    int64    CXOrderId;           //æ’¤é”€å§”æ‰˜å·
+    char     SBWTH[17];           //ç”³æŠ¥å§”æ‰˜å·
+    int64    KFSBDBH;             //å¼€å‘å•†æœ¬åœ°ç¼–å·
+    char     Market[4];           //äº¤æ˜“æ‰€
+    char     StockCode[12];       //è¯åˆ¸ä»£ç 
+    char     StockName[31];       //è¯åˆ¸åç§°
+    char     StockType[4];        //è¯åˆ¸ç±»åˆ«
+    int      EntrustType;         //äº¤æ˜“ç±»åˆ«
+    double   OrderPrice;          //å§”æ‰˜ä»·æ ¼
+    int64    OrderQty;            //å§”æ‰˜æ•°é‡
+    double   MatchPrice;          //æˆäº¤ä»·æ ¼
+    int64    MatchQty;            //æˆäº¤æ•°é‡
+    int64    WithdrawQty;         //æ’¤å•æ•°é‡
+    char     SecuAccount[12];     //è‚¡ä¸œå·
+    int64    BatchNo;             //å§”æ‰˜æ‰¹æ¬¡å·
+    int      EntrustDate;         //å§”æ‰˜æ—¥æœŸ
+    int64    SerialNo;            //æµæ°´å·
+    int      OrderType;           //è®¢å•ç±»å‹
+    int      OrderType_HK;        //æ¸¯è‚¡è®¢å•ç±»å‹
+    double   StopPrice;           //æ­¢æŸé™ä»·
+    int      OrderStatus;         //ç”³æŠ¥ç»“æœ
+    char     EntrustNode[48];     //äº¤æ˜“ç«™ç‚¹
+    char     EntrustTime[13];     //å§”æ‰˜æ—¶é—´
+    char     ReportTime[13];      //ç”³æŠ¥æ—¶é—´
+    char     MatchTime[13];       //æˆäº¤æ—¶é—´
+    char     WithdrawFlag[4];     //æ’¤é”€æ ‡å¿—
+    char     ResultInfo[128];     //ç»“æœè¯´æ˜
+    double   MatchAmt;            //æˆäº¤é‡‘é¢
+    double   FrozenBalance;       //å†»ç»“èµ„é‡‘
+    double   BailBalance;         //å†»ç»“ä¿è¯é‡‘
+    double   HandingFee;          //å†»ç»“æ‰‹ç»§è´¹
+    int64    BrowIndex;           //åˆ†é¡µæŸ¥è¯¢å®šä½ä¸²
 } ITPDK_DRWT;
-//·Ö±Ê³É½»
+//åˆ†ç¬”æˆäº¤
 typedef struct
 {
-    char     AccountId[16];       //¿Í»§ºÅ
-    char     Market[4];           //½»Ò×Ëù
-    char     SecuAccount[12];     //¹É¶«ºÅ
-    char     MatchSerialNo[32];   //³É½»±àºÅ
-    int64    OrderId;             //Î¯ÍĞºÅ
-    int      EntrustType;         //½»Ò×Àà±ğ
-    char     MatchTime[13];       //³É½»Ê±¼ä
-    char     StockCode[12];       //Ö¤È¯´úÂë
-    char     StockName[31];       //Ö¤È¯Ãû³Æ
-    int64    MatchQty;            //³É½»ÊıÁ¿
-    double   MatchPrice;          //³É½»¼Û¸ñ
-    double   MatchAmt;            //³É½»½ğ¶î
-    char     MoneyType[4];        //±ÒÖÖ
-    double   ClearBalance;        //ÇåËã½ğ¶î
-    int64    BatchNo;             //Î¯ÍĞÅú´ÎºÅ
-    int      EntrustDate;         //Î¯ÍĞÈÕÆÚ
-    int64    BrowIndex;           //ÆğÊ¼¼ÇÂ¼Ë÷ÒıÖµ
-    char     WithdrawFlag[4];     //³·Ïú±êÖ¾
-    int64    KFSBDBH;             //¿ª·¢ÉÌ±¾µØ±àºÅ
+    char     AccountId[16];       //å®¢æˆ·å·
+    char     Market[4];           //äº¤æ˜“æ‰€
+    char     SecuAccount[12];     //è‚¡ä¸œå·
+    char     MatchSerialNo[32];   //æˆäº¤ç¼–å·
+    int64    OrderId;             //å§”æ‰˜å·
+    int      EntrustType;         //äº¤æ˜“ç±»åˆ«
+    char     MatchTime[13];       //æˆäº¤æ—¶é—´
+    char     StockCode[12];       //è¯åˆ¸ä»£ç 
+    char     StockName[31];       //è¯åˆ¸åç§°
+    int64    MatchQty;            //æˆäº¤æ•°é‡
+    double   MatchPrice;          //æˆäº¤ä»·æ ¼
+    double   MatchAmt;            //æˆäº¤é‡‘é¢
+    char     MoneyType[4];        //å¸ç§
+    double   ClearBalance;        //æ¸…ç®—é‡‘é¢
+    int64    BatchNo;             //å§”æ‰˜æ‰¹æ¬¡å·
+    int      EntrustDate;         //å§”æ‰˜æ—¥æœŸ
+    int64    BrowIndex;           //èµ·å§‹è®°å½•ç´¢å¼•å€¼
+    char     WithdrawFlag[4];     //æ’¤é”€æ ‡å¿—
+    int64    KFSBDBH;             //å¼€å‘å•†æœ¬åœ°ç¼–å·
 } ITPDK_SSCJ;
-//×ªÕËÉêÇë
+//è½¬è´¦ç”³è¯·
 typedef struct
 {
-    char     AccountId[16];    //¿Í»§ºÅ
-    char     OrgCode[8];       //ÒøĞĞ´úÂë
-    char     BankAccount[32];  //ÒøĞĞÕÊºÅ
-    char     MoneyType[4];     //±ÒÖÖ
-    char     ReportNo[16];     //ÉêÇë±àºÅ
-    char     TransType[8];     //ÒµÎñÀà±ğ
-    int      ResultCode;       //´¦Àí½á¹û
-    double   OccurAmt;         //·¢Éú½ğ¶î
-    double   FundBalance;      //±¾´Î×Ê½ğÓà¶î
-    char     ResultInfo[64];   //½á¹ûËµÃ÷
-    char     ResultTime[13];   //´¦ÀíÊ±¼ä
-    char     ApplyTime[13];    //ÉêÇëÊ±¼ä
+    char     AccountId[16];    //å®¢æˆ·å·
+    char     OrgCode[8];       //é“¶è¡Œä»£ç 
+    char     BankAccount[32];  //é“¶è¡Œå¸å·
+    char     MoneyType[4];     //å¸ç§
+    char     ReportNo[16];     //ç”³è¯·ç¼–å·
+    char     TransType[8];     //ä¸šåŠ¡ç±»åˆ«
+    int      ResultCode;       //å¤„ç†ç»“æœ
+    double   OccurAmt;         //å‘ç”Ÿé‡‘é¢
+    double   FundBalance;      //æœ¬æ¬¡èµ„é‡‘ä½™é¢
+    char     ResultInfo[64];   //ç»“æœè¯´æ˜
+    char     ResultTime[13];   //å¤„ç†æ—¶é—´
+    char     ApplyTime[13];    //ç”³è¯·æ—¶é—´
 } ITPDK_ZZSQ;
-//½»¸îÁ÷Ë®
+//äº¤å‰²æµæ°´
 typedef struct
 {
-    char     AccountId[16];       //¿Í»§ºÅ
-    int      OccurDate;           //³É½»ÈÕÆÚ
-    char     browindex[64];       //·ÖÒ³²éÑ¯¶¨Î»´®
-    char     MatchTime[13];       //³É½»Ê±¼ä
-    char     Market[4];           //½»Ò×Ëù
-    char     StockName[31];       //Ö¤È¯Ãû³Æ
-    char     StockCode[12];       //Ö¤È¯´úÂë
-    int      EntrustType;         //½»Ò×Àà±ğ
-    int64    MatchQty;            //³É½»ÊıÁ¿
-    double   MatchPrice;          //³É½»¼Û¸ñ
-    double   MatchAmt;            //³É½»½ğ¶î
-    double   HolderQty;           //¹É·İÓà¶î
-    double   FundBalance;         //×Ê½ğÓà¶î
-    double   clearBalance;        //ÇåËã×Ê½ğ
-    double   HandingFee;          //Ó¶½ğ
-    double   StampTax;            //Ó¡»¨Ë°
-    double   TransferFee;         //¹ı»§·Ñ
-    double   FinalValueFee;       //³É½»·Ñ
-    double   ClearingFee;         //½áËã·Ñ
-    double   RegulatoryFee;       //¼à¹Ü¹æ·Ñ
-    char     MatchSerialNo[20];   //³É½»±àºÅ
-    char     SecuAccount[12];     //¹É¶«ºÅ
-    int64    OrderId;             //Î¯ÍĞºÅ
-    char     MoneyType[4];        //±ÒÖÖ
+    char     AccountId[16];       //å®¢æˆ·å·
+    int      OccurDate;           //æˆäº¤æ—¥æœŸ
+    char     browindex[64];       //åˆ†é¡µæŸ¥è¯¢å®šä½ä¸²
+    char     MatchTime[13];       //æˆäº¤æ—¶é—´
+    char     Market[4];           //äº¤æ˜“æ‰€
+    char     StockName[31];       //è¯åˆ¸åç§°
+    char     StockCode[12];       //è¯åˆ¸ä»£ç 
+    int      EntrustType;         //äº¤æ˜“ç±»åˆ«
+    int64    MatchQty;            //æˆäº¤æ•°é‡
+    double   MatchPrice;          //æˆäº¤ä»·æ ¼
+    double   MatchAmt;            //æˆäº¤é‡‘é¢
+    double   HolderQty;           //è‚¡ä»½ä½™é¢
+    double   FundBalance;         //èµ„é‡‘ä½™é¢
+    double   clearBalance;        //æ¸…ç®—èµ„é‡‘
+    double   HandingFee;          //ä½£é‡‘
+    double   StampTax;            //å°èŠ±ç¨
+    double   TransferFee;         //è¿‡æˆ·è´¹
+    double   FinalValueFee;       //æˆäº¤è´¹
+    double   ClearingFee;         //ç»“ç®—è´¹
+    double   RegulatoryFee;       //ç›‘ç®¡è§„è´¹
+    char     MatchSerialNo[20];   //æˆäº¤ç¼–å·
+    char     SecuAccount[12];     //è‚¡ä¸œå·
+    int64    OrderId;             //å§”æ‰˜å·
+    char     MoneyType[4];        //å¸ç§
 } ITPDK_JGMX;
-//ÀúÊ·Î¯ÍĞ
+//å†å²å§”æ‰˜
 typedef struct
 {
-    char     AccountId[16];       //¿Í»§ºÅ
-    int      OccurDate;           //Î¯ÍĞÈÕÆÚ
-    char     browindex[64];       //·ÖÒ³²éÑ¯¶¨Î»´®
-    char     EntrustTime[13];     //Î¯ÍĞÊ±¼ä
-    int      OrderId;             //Î¯ÍĞºÅ
-    char     ResultInfo[64];      //½á¹ûËµÃ÷
-    char     Market[4];           //½»Ò×Ëù
-    char     StockCode[12];       //Ö¤È¯´úÂë
-    char     StockName[31];       //Ö¤È¯Ãû³Æ
-    int      EntrustType;         //½»Ò×Àà±ğ
-    double   OrderPrice;          //Î¯ÍĞ¼Û¸ñ
-    int      OrderQty;            //Î¯ÍĞÊıÁ¿
-    double   MatchPrice;          //³É½»¼Û¸ñ
-    int      MatchQty;            //³É½»ÊıÁ¿
-    int      WithdrawQty;         //³·µ¥ÊıÁ¿
-    char     SecuAccount[12];     //¹É¶«ºÅ
-    char     EntrustNode[48];     //Î¯ÍĞµØÖ·
-    int      OrderType;           //¶©µ¥ÀàĞÍ
-    int      OrderType_HK;        //¸Û¹É¶©µ¥ÀàĞÍ
-    double   StopPrice;           //Ö¹ËğÏŞ¼Û
-    int      OrderStatus;         //Éê±¨½á¹û
-    char     WithdrawFlag[4];     //³·Ïú±êÖ¾
+    char     AccountId[16];       //å®¢æˆ·å·
+    int      OccurDate;           //å§”æ‰˜æ—¥æœŸ
+    char     browindex[64];       //åˆ†é¡µæŸ¥è¯¢å®šä½ä¸²
+    char     EntrustTime[13];     //å§”æ‰˜æ—¶é—´
+    int      OrderId;             //å§”æ‰˜å·
+    char     ResultInfo[64];      //ç»“æœè¯´æ˜
+    char     Market[4];           //äº¤æ˜“æ‰€
+    char     StockCode[12];       //è¯åˆ¸ä»£ç 
+    char     StockName[31];       //è¯åˆ¸åç§°
+    int      EntrustType;         //äº¤æ˜“ç±»åˆ«
+    double   OrderPrice;          //å§”æ‰˜ä»·æ ¼
+    int      OrderQty;            //å§”æ‰˜æ•°é‡
+    double   MatchPrice;          //æˆäº¤ä»·æ ¼
+    int      MatchQty;            //æˆäº¤æ•°é‡
+    int      WithdrawQty;         //æ’¤å•æ•°é‡
+    char     SecuAccount[12];     //è‚¡ä¸œå·
+    char     EntrustNode[48];     //å§”æ‰˜åœ°å€
+    int      OrderType;           //è®¢å•ç±»å‹
+    int      OrderType_HK;        //æ¸¯è‚¡è®¢å•ç±»å‹
+    double   StopPrice;           //æ­¢æŸé™ä»·
+    int      OrderStatus;         //ç”³æŠ¥ç»“æœ
+    char     WithdrawFlag[4];     //æ’¤é”€æ ‡å¿—
 } ITPDK_WTLS;
-//×Ê½ğÁ÷Ë®
+//èµ„é‡‘æµæ°´
 typedef struct
 {
-    int64   SerialNo;           //Á÷Ë®ºÅ
-    char    AccountId[16];      //¿Í»§ºÅ
-    char    FundAccount[16];    //×Ê½ğÕËºÅ
-    char    MoneyType[4];       //±ÒÖÖ
-    int     OccurDate;          //·¢ÉúÈÕÆÚ
-    int     FrozenType;         //¶³½áÀà±ğ
-    double  FrozenBalance;      //¶³½á½ğ¶î
-    char    ApplyTime[13];      //·¢ÉúÊ±¼ä
-    char    Summary[256];       //ÕªÒª
-    int64   BrowIndex;          //ÆğÊ¼¼ÇÂ¼Ë÷ÒıÖµ
+    int64   SerialNo;           //æµæ°´å·
+    char    AccountId[16];      //å®¢æˆ·å·
+    char    FundAccount[16];    //èµ„é‡‘è´¦å·
+    char    MoneyType[4];       //å¸ç§
+    int     OccurDate;          //å‘ç”Ÿæ—¥æœŸ
+    int     FrozenType;         //å†»ç»“ç±»åˆ«
+    double  FrozenBalance;      //å†»ç»“é‡‘é¢
+    char    ApplyTime[13];      //å‘ç”Ÿæ—¶é—´
+    char    Summary[256];       //æ‘˜è¦
+    int64   BrowIndex;          //èµ·å§‹è®°å½•ç´¢å¼•å€¼
 } ITPDK_ZJLS;
-//¹ñÌ¨×Ê½ğÁ÷Ë®
+//æŸœå°èµ„é‡‘æµæ°´
 typedef struct
 {
-    char    AccountId[16];      //¿Í»§ºÅ
-    char    FundAccount[16];    //×Ê½ğÕËºÅ
-    char    MoneyType[5];       //±ÒÖÖ
-    int     OccurDate;          //·¢ÉúÈÕÆÚ
-    char    ApplyTime[13];      //·¢ÉúÊ±¼ä
-    int     FrozenType;         //¶³½áÀà±ğ
-    double  FrozenBalance;      //¶³½á½ğ¶î
-    char    Summary[128];       //ÕªÒª
-    char    BrowIndex[25];      //·ÖÒ³²éÑ¯¶¨Î»´®
+    char    AccountId[16];      //å®¢æˆ·å·
+    char    FundAccount[16];    //èµ„é‡‘è´¦å·
+    char    MoneyType[5];       //å¸ç§
+    int     OccurDate;          //å‘ç”Ÿæ—¥æœŸ
+    char    ApplyTime[13];      //å‘ç”Ÿæ—¶é—´
+    int     FrozenType;         //å†»ç»“ç±»åˆ«
+    double  FrozenBalance;      //å†»ç»“é‡‘é¢
+    char    Summary[128];       //æ‘˜è¦
+    char    BrowIndex[25];      //åˆ†é¡µæŸ¥è¯¢å®šä½ä¸²
 } ITPDK_GTZJLS;
-//ÖĞÇ©½É¿î
+//ä¸­ç­¾ç¼´æ¬¾
 typedef struct
 {
-    char     AccountId[16];       //¿Í»§ºÅ
-    char     Market[4];           //½»Ò×Ëù
-    char     StockCode[12];       //Ö¤È¯´úÂë
-    char     SecuAccount[12];     //¹É¶«ºÅ
-    char     StockName[31];       //Ö¤È¯Ãû³Æ
-    int      LuckyQty;            //ÖĞÇ©ÊıÁ¿
-    double   IssuePrice;          //·¢ĞĞ¼Û¸ñ
-    int      PaymentQty;          //ÒÑÔ¤½É¿îÊıÁ¿
-    int      PaymentQtyAvl;       //¿É²¹½É¿îÊıÁ¿
-    int      T3_PaymentQty;       //T+3ÓĞĞ§²¹½ÉÊıÁ¿
-    int      T3_CancelQty;        //T+3È·ÈÏ·ÅÆúÊıÁ¿
+    char     AccountId[16];       //å®¢æˆ·å·
+    char     Market[4];           //äº¤æ˜“æ‰€
+    char     StockCode[12];       //è¯åˆ¸ä»£ç 
+    char     SecuAccount[12];     //è‚¡ä¸œå·
+    char     StockName[31];       //è¯åˆ¸åç§°
+    int      LuckyQty;            //ä¸­ç­¾æ•°é‡
+    double   IssuePrice;          //å‘è¡Œä»·æ ¼
+    int      PaymentQty;          //å·²é¢„ç¼´æ¬¾æ•°é‡
+    int      PaymentQtyAvl;       //å¯è¡¥ç¼´æ¬¾æ•°é‡
+    int      T3_PaymentQty;       //T+3æœ‰æ•ˆè¡¥ç¼´æ•°é‡
+    int      T3_CancelQty;        //T+3ç¡®è®¤æ”¾å¼ƒæ•°é‡
 } ITPDK_ZQJK;
 
-/////////////////////////////½Ó¿Ú³öÈë²Î½á¹¹/////////////////////////////
-//½Ó¿ÚÇëÇó - ¿Í»§ĞÅÏ¢
+/////////////////////////////æ¥å£å‡ºå…¥å‚ç»“æ„/////////////////////////////
+//æ¥å£è¯·æ±‚ - å®¢æˆ·ä¿¡æ¯
 struct ITPDK_CusReqInfo
 {
-    char     AccountId[16];       //¿Í»§ºÅ
-    char     SecuAccount[12];     //¹É¶«ºÅ
-    char     Password[40];        //½»Ò×ÃÜÂë
-    int      TradeNodeID;         //½»Ò×½Úµã
-    char     EntrustWay[10];       //Î¯ÍĞ·½Ê½
-    char     NodeInfo[256];       //²Ù×÷Õ¾µã
-    char     DevelCode[7];        //¿ª·¢ÉÌ´úÂë
-    int64    Token;               //µÇÂ¼ÁîÅÆ
+    char     AccountId[16];       //å®¢æˆ·å·
+    char     SecuAccount[12];     //è‚¡ä¸œå·
+    char     Password[40];        //äº¤æ˜“å¯†ç 
+    int      TradeNodeID;         //äº¤æ˜“èŠ‚ç‚¹
+    char     EntrustWay[10];       //å§”æ‰˜æ–¹å¼
+    char     NodeInfo[256];       //æ“ä½œç«™ç‚¹
+    char     DevelCode[7];        //å¼€å‘å•†ä»£ç 
+    int64    Token;               //ç™»å½•ä»¤ç‰Œ
 
-    int64    RetCode;             //·µ»ØÖµ
-    char     ErrMsg[256];         //´íÎóĞÅÏ¢
-    char     sKZLSH[9];           //À©Õ¹Á÷Ë®ºÅ
+    int64    RetCode;             //è¿”å›å€¼
+    char     ErrMsg[256];         //é”™è¯¯ä¿¡æ¯
+    char     sKZLSH[9];           //æ‰©å±•æµæ°´å·
     ITPDK_CusReqInfo()
         :AccountId{ 0 }
         , SecuAccount{ 0 }
@@ -855,75 +855,75 @@ struct ITPDK_CusReqInfo
     {
     }
 };
-//¿Í»§½ÚµãĞÅÏ¢
+//å®¢æˆ·èŠ‚ç‚¹ä¿¡æ¯
 struct ITPDK_KHJD
 {
-    char     AccountId[16];       //¿Í»§ºÅ
-    int      SystemType;          //ÏµÍ³ÀàĞÍ
-    char     Market[4];           //½»Ò×Ëù
-    int      NodeID;              //½Úµã±àºÅ
+    char     AccountId[16];       //å®¢æˆ·å·
+    int      SystemType;          //ç³»ç»Ÿç±»å‹
+    char     Market[4];           //äº¤æ˜“æ‰€
+    int      NodeID;              //èŠ‚ç‚¹ç¼–å·
 };
-//ÆÕÍ¨½»Ò×ÅúÁ¿Î¯ÍĞ
+//æ™®é€šäº¤æ˜“æ‰¹é‡å§”æ‰˜
 struct BatchOrderInfo
 {
-    char    Jys[3];     //½»Ò×Ëù
-    char    Zqdm[7];    //Ö¤È¯´úÂë
-    int     Jylb;       //½»Ò×Àà±ğ(JYLB_BUY¡¢JYLB_SALE)
-    double  Wtjg;       //Î¯ÍĞ¼Û¸ñ
-    int64   Wtsl;       //Î¯ÍĞÊıÁ¿
-    int     Ddlx;       //¶©µ¥ÀàĞÍ(DDLX_XJWT,DDLX_SJWT)
+    char    Jys[3];     //äº¤æ˜“æ‰€
+    char    Zqdm[7];    //è¯åˆ¸ä»£ç 
+    int     Jylb;       //äº¤æ˜“ç±»åˆ«(JYLB_BUYã€JYLB_SALE)
+    double  Wtjg;       //å§”æ‰˜ä»·æ ¼
+    int64   Wtsl;       //å§”æ‰˜æ•°é‡
+    int     Ddlx;       //è®¢å•ç±»å‹(DDLX_XJWT,DDLX_SJWT)
     char    Gdh[11];
 
-    //ÒÔÏÂÎª´¦Àí½á¹û·µ»Ø×Ö¶Î
-    int64   Wth;        //³É¹¦Ê±ÎªÎ¯ÍĞºÅ>0£¬Ê§°ÜÊ±Îª´íÎóÂë<=0
-    char    Msg[128];   //Ê§°ÜĞÅÏ¢
+    //ä»¥ä¸‹ä¸ºå¤„ç†ç»“æœè¿”å›å­—æ®µ
+    int64   Wth;        //æˆåŠŸæ—¶ä¸ºå§”æ‰˜å·>0ï¼Œå¤±è´¥æ—¶ä¸ºé”™è¯¯ç <=0
+    char    Msg[128];   //å¤±è´¥ä¿¡æ¯
 };
 
-//ETFÀº×Ó¹ÉÂòÂô
+//ETFç¯®å­è‚¡ä¹°å–
 struct ETFBasket
 {
-    int64   Wth;           //³É¹¦Ê±ÎªÎ¯ÍĞºÅ>0£¬Ê§°ÜÊ±Îª´íÎóÂë<=0
-    char    Cfgdm[10];     //³É·Ö¹É´úÂë
-    char    Jys[3];        //½»Ò×Ëù
-    int64   Wtsl;          //Î¯ÍĞÊıÁ¿
-    char    Msg[128];      //Ê§°ÜĞÅÏ¢
+    int64   Wth;           //æˆåŠŸæ—¶ä¸ºå§”æ‰˜å·>0ï¼Œå¤±è´¥æ—¶ä¸ºé”™è¯¯ç <=0
+    char    Cfgdm[10];     //æˆåˆ†è‚¡ä»£ç 
+    char    Jys[3];        //äº¤æ˜“æ‰€
+    int64   Wtsl;          //å§”æ‰˜æ•°é‡
+    char    Msg[128];      //å¤±è´¥ä¿¡æ¯
 };
 
-//ÅäÊÛÈ¨ÒæĞÅÏ¢
+//é…å”®æƒç›Šä¿¡æ¯
 struct ITPDK_PSQYInfo
 {
-    char    AccountId[16];      //¿Í»§ºÅ
-    char    Market[4];          //½»Ò×Ëù
-    char    SecuAccount[12];    //¹É¶«ºÅ
-    int64   BallotQty;          //ĞÂ¹É¶î¶È
-    int64   StartQty;           //¿Æ´´°å¶î¶È
+    char    AccountId[16];      //å®¢æˆ·å·
+    char    Market[4];          //äº¤æ˜“æ‰€
+    char    SecuAccount[12];    //è‚¡ä¸œå·
+    int64   BallotQty;          //æ–°è‚¡é¢åº¦
+    int64   StartQty;           //ç§‘åˆ›æ¿é¢åº¦
 };
 
-//Ò»»§Á½µØ-»®²¦²ßÂÔĞÅÏ¢
+//ä¸€æˆ·ä¸¤åœ°-åˆ’æ‹¨ç­–ç•¥ä¿¡æ¯
 struct ITPDK_ZJHBCL
 {
-    char    AccountId[16];     //¿Í»§ºÅ
-    char    FundAccount[16];   //×Ê½ğÕËºÅ
-    char    MoneyType[4];      //±ÒÖÖ
-    int64   NodeId;            //½Úµã±àºÅ
-    char    Market[4];         //½»Ò×Ëù
-    double  Rate;              //·ÑÂÊ
+    char    AccountId[16];     //å®¢æˆ·å·
+    char    FundAccount[16];   //èµ„é‡‘è´¦å·
+    char    MoneyType[4];      //å¸ç§
+    int64   NodeId;            //èŠ‚ç‚¹ç¼–å·
+    char    Market[4];         //äº¤æ˜“æ‰€
+    double  Rate;              //è´¹ç‡
 };
 
-//Ò»»§Á½µØ-½Úµã¼ä×Ê½ğ»®²¦Ã÷Ï¸
+//ä¸€æˆ·ä¸¤åœ°-èŠ‚ç‚¹é—´èµ„é‡‘åˆ’æ‹¨æ˜ç»†
 struct ITPDK_JDJZJHBMX
 {
-    char    AccountId[16];      //¿Í»§ºÅ
-    char    FundAccount[16];    //×Ê½ğÕËºÅ
-    char    MoneyType[4];       //±ÒÖÖ
-    int     NodeId1;            //»®³ö½Úµã
-    int     NodeId2;            //»®Èë½Úµã
-    int     TradeDate;          //½»Ò×ÈÕÆÚ
-    int     TransDate;          //»®²¦ÈÕÆÚ
-    char    ApplyTime[13];      //ÉêÇëÊ±¼ä
-    double  OccurAmt;           //·¢Éú½ğ¶î
-    char    Summary[128];       //ÕªÒª
-    char    BrowIndex[25];      //·ÖÒ³²éÑ¯¶¨Î»´®
+    char    AccountId[16];      //å®¢æˆ·å·
+    char    FundAccount[16];    //èµ„é‡‘è´¦å·
+    char    MoneyType[4];       //å¸ç§
+    int     NodeId1;            //åˆ’å‡ºèŠ‚ç‚¹
+    int     NodeId2;            //åˆ’å…¥èŠ‚ç‚¹
+    int     TradeDate;          //äº¤æ˜“æ—¥æœŸ
+    int     TransDate;          //åˆ’æ‹¨æ—¥æœŸ
+    char    ApplyTime[13];      //ç”³è¯·æ—¶é—´
+    double  OccurAmt;           //å‘ç”Ÿé‡‘é¢
+    char    Summary[128];       //æ‘˜è¦
+    char    BrowIndex[25];      //åˆ†é¡µæŸ¥è¯¢å®šä½ä¸²
 };
 
 

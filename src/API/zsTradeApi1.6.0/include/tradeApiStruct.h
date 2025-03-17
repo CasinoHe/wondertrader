@@ -3,304 +3,304 @@
 
 #include "baseDefine.h"
 
-//-------------------------------²ßÂÔ½»Ò××¢²á------------------------------------
+//-------------------------------ç­–ç•¥äº¤æ˜“æ³¨å†Œ------------------------------------
 struct STReqAcctRegister
 {
-    char          szUserName[16];               // ÓÃ»§Ãû
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
+    char          szUserName[16];               // ç”¨æˆ·å
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
 };
 
 struct STRspAcctRegister
 {
-    char          szSessionId[128];             // »á»°Æ¾Ö¤
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
-    char          chLoginStatus;                // µÇÂ¼×´Ì¬
-    int           iAllowStrategy;               // ÊÇ·ñÔÊĞí²ßÂÔ½»Ò×
+    char          szSessionId[128];             // ä¼šè¯å‡­è¯
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
+    char          chLoginStatus;                // ç™»å½•çŠ¶æ€
+    int           iAllowStrategy;               // æ˜¯å¦å…è®¸ç­–ç•¥äº¤æ˜“
 };
 
-//-------------------------------×Ê²úÕË»§µÇÂ¼------------------------------------
+//-------------------------------èµ„äº§è´¦æˆ·ç™»å½•------------------------------------
 struct STReqTradeLogin
 {
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
-    char          chAcctType;                   // ÕË»§ÀàĞÍ '0':¹ÉÆ± '1':ĞÅÓÃ
-    char          szAuthData[64];               // ÈÏÖ¤Êı¾İ-ÃÜÂë
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
+    char          chAcctType;                   // è´¦æˆ·ç±»å‹ '0':è‚¡ç¥¨ '1':ä¿¡ç”¨
+    char          szAuthData[64];               // è®¤è¯æ•°æ®-å¯†ç 
 };
 
 struct STRspTradeLogin
 {
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
 };
 
-//-------------------------------ÓÃ»§µÇÂ¼------------------------------------
+//-------------------------------ç”¨æˆ·ç™»å½•------------------------------------
 struct STReqLogin
 {
-    char          szUserName[16];               // ÓÃ»§Ãû
-    char          chLoginType;                  // ÀàĞÍ 'X':µÇ³ö ÆäËû£ºµÇÂ¼
-    char          szPassword[256];              // ÃÜÂë
+    char          szUserName[16];               // ç”¨æˆ·å
+    char          chLoginType;                  // ç±»å‹ 'X':ç™»å‡º å…¶ä»–ï¼šç™»å½•
+    char          szPassword[256];              // å¯†ç 
 };
 
 struct STRspLogin
 {
 };
 
-//-------------------------------¹É¶«ÕË»§²éÑ¯--------------------------
+//-------------------------------è‚¡ä¸œè´¦æˆ·æŸ¥è¯¢--------------------------
 struct STReqQryHolder
 {
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
 };
 
 struct STRspQryHolder
 {
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
-    char          szStkbd[2 + 1];               // ½»Ò×°å¿é
-    char          szTrdacct[10 + 1];            // Ö¤È¯ÕË»§
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
+    char          szStkbd[2 + 1];               // äº¤æ˜“æ¿å—
+    char          szTrdacct[10 + 1];            // è¯åˆ¸è´¦æˆ·
 };
 
-//-------------------------------Î¯ÍĞÏÂµ¥------------------------------------
+//-------------------------------å§”æ‰˜ä¸‹å•------------------------------------
 struct STReqOrder
 {
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
-    char          szStkbd[2 + 1];               // ½»Ò×°å¿é SZ SH
-    char          szStkCode[8 + 1];             // Ö¤È¯´úÂë
-    char          szOrderPrice[21 + 1];         // Î¯ÍĞ¼Û¸ñ
-    LONGLONG      llOrderQty;                   // Î¯ÍĞÊıÁ¿
-    int           iStkBiz;                      // Ö¤È¯ÒµÎñ Âò(100)Âô(101)
-    short         iStrategySn;                  // ²ßÂÔ±àºÅ
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
+    char          szStkbd[2 + 1];               // äº¤æ˜“æ¿å— SZ SH
+    char          szStkCode[8 + 1];             // è¯åˆ¸ä»£ç 
+    char          szOrderPrice[21 + 1];         // å§”æ‰˜ä»·æ ¼
+    LONGLONG      llOrderQty;                   // å§”æ‰˜æ•°é‡
+    int           iStkBiz;                      // è¯åˆ¸ä¸šåŠ¡ ä¹°(100)å–(101)
+    short         iStrategySn;                  // ç­–ç•¥ç¼–å·
 };
 
 struct STRspOrder
 {
-    int           iOrderBsn;                    // Î¯ÍĞÅúºÅ
-    char          szOrderId[10 + 1];            // ºÏÍ¬ĞòºÅ
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
-    char          szOrderPrice[21 + 1];         // Î¯ÍĞ¼Û¸ñ
-    LONGLONG      llOrderQty;                   // Î¯ÍĞÊıÁ¿
-    char          szOrderAmt[21 + 1];           // Î¯ÍĞ½ğ¶î
-    char          szOrderFrzAmt[21 + 1];        // ¶³½á½ğ¶î
-    char          szStkbd[2 + 1];               // ½»Ò×°å¿é SZ SH
-    char          szStkCode[8 + 1];             // Ö¤È¯´úÂë
-    char          szStkName[16 + 1];            // Ö¤È¯Ãû³Æ
-    int           iStkBiz;                      // Ö¤È¯ÒµÎñ Âò(100)Âô(101)
-    char          szTrdacct[10 + 1];            // Ö¤È¯ÕË»§
-    short         iStrategySn;                  // ²ßÂÔ±àºÅ
+    int           iOrderBsn;                    // å§”æ‰˜æ‰¹å·
+    char          szOrderId[10 + 1];            // åˆåŒåºå·
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
+    char          szOrderPrice[21 + 1];         // å§”æ‰˜ä»·æ ¼
+    LONGLONG      llOrderQty;                   // å§”æ‰˜æ•°é‡
+    char          szOrderAmt[21 + 1];           // å§”æ‰˜é‡‘é¢
+    char          szOrderFrzAmt[21 + 1];        // å†»ç»“é‡‘é¢
+    char          szStkbd[2 + 1];               // äº¤æ˜“æ¿å— SZ SH
+    char          szStkCode[8 + 1];             // è¯åˆ¸ä»£ç 
+    char          szStkName[16 + 1];            // è¯åˆ¸åç§°
+    int           iStkBiz;                      // è¯åˆ¸ä¸šåŠ¡ ä¹°(100)å–(101)
+    char          szTrdacct[10 + 1];            // è¯åˆ¸è´¦æˆ·
+    short         iStrategySn;                  // ç­–ç•¥ç¼–å·
 };
 
-//-------------------------------Î¯ÍĞ³·µ¥------------------------------------
+//-------------------------------å§”æ‰˜æ’¤å•------------------------------------
 struct STReqCancelOrder
 {
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
-    char          szStkbd[2 + 1];               // ½»Ò×°å¿é  SZ SH
-    char          szOrderId[10 + 1];            // ºÏÍ¬ĞòºÅ
-    int           iOrderBsn;                    // Î¯ÍĞÅúºÅ
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
+    char          szStkbd[2 + 1];               // äº¤æ˜“æ¿å—  SZ SH
+    char          szOrderId[10 + 1];            // åˆåŒåºå·
+    int           iOrderBsn;                    // å§”æ‰˜æ‰¹å·
 };
 
 struct STRspCancelOrder
 {
-    int           iOrderBsn;                    // Î¯ÍĞÅúºÅ
-    char          szOrderId[10 + 1];            // ºÏÍ¬ĞòºÅ
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
-    char          szOrderPrice[21 + 1];         // Î¯ÍĞ¼Û¸ñ
-    LONGLONG      llOrderQty;                   // Î¯ÍĞÊıÁ¿
-    char          szOrderAmt[21 + 1];           // Î¯ÍĞ½ğ¶î
-    char          szOrderFrzAmt[21 + 1];        // ¶³½á½ğ¶î
-    char          szStkbd[2 + 1];               // ½»Ò×°å¿é
-    char          szStkCode[8 + 1];             // Ö¤È¯´úÂë
-    char          szStkName[16 + 1];            // Ö¤È¯Ãû³Æ
-    int           iStkBiz;                      // Ö¤È¯ÒµÎñ Âò(100)Âô(101)
-    char          szTrdacct[10 + 1];            // Ö¤È¯ÕË»§
-    char          szMsgOk[32 + 1];              // ÄÚ³·ĞÅÏ¢
-    char          szCancelList[256 + 1];        // ³·µ¥ÁĞ±í
+    int           iOrderBsn;                    // å§”æ‰˜æ‰¹å·
+    char          szOrderId[10 + 1];            // åˆåŒåºå·
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
+    char          szOrderPrice[21 + 1];         // å§”æ‰˜ä»·æ ¼
+    LONGLONG      llOrderQty;                   // å§”æ‰˜æ•°é‡
+    char          szOrderAmt[21 + 1];           // å§”æ‰˜é‡‘é¢
+    char          szOrderFrzAmt[21 + 1];        // å†»ç»“é‡‘é¢
+    char          szStkbd[2 + 1];               // äº¤æ˜“æ¿å—
+    char          szStkCode[8 + 1];             // è¯åˆ¸ä»£ç 
+    char          szStkName[16 + 1];            // è¯åˆ¸åç§°
+    int           iStkBiz;                      // è¯åˆ¸ä¸šåŠ¡ ä¹°(100)å–(101)
+    char          szTrdacct[10 + 1];            // è¯åˆ¸è´¦æˆ·
+    char          szMsgOk[32 + 1];              // å†…æ’¤ä¿¡æ¯
+    char          szCancelList[256 + 1];        // æ’¤å•åˆ—è¡¨
 };
 
-//-------------------------------Î¯ÍĞ²éÑ¯--------------------------
+//-------------------------------å§”æ‰˜æŸ¥è¯¢--------------------------
 struct STReqQryOrder
 {
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
-    char          chQueryFlag;                  // ²éÑ¯·½Ïò
-    char          szQueryPos[32 + 1];           // ¶¨Î»´®
-    int           iQueryNum;                    // ²éÑ¯ĞĞÊı ×î´óÖµ1000
-    char          szStkbd[2 + 1];               // ½»Ò×°å¿é
-    char          szStkCode[8 + 1];             // Ö¤È¯´úÂë
-    char          szOrderId[10 + 1];            // ºÏÍ¬ĞòºÅ
-    int           iOrderBsn;                    // Î¯ÍĞÅúºÅ
-    char          szTrdacct[10 + 1];            // ½»Ò×ÕË»§
-    short         iStrategySn;                  // ²ßÂÔ±àºÅ
-    char          chFlag;                       // ²éÑ¯±êÖ¾ '0':²éÑ¯³·µ¥Î¯ÍĞĞÅÏ¢ '1':²éÑ¯Õı³£Î¯ÍĞĞÅÏ¢ ÆäËû:È«²¿
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
+    char          chQueryFlag;                  // æŸ¥è¯¢æ–¹å‘
+    char          szQueryPos[32 + 1];           // å®šä½ä¸²
+    int           iQueryNum;                    // æŸ¥è¯¢è¡Œæ•° æœ€å¤§å€¼1000
+    char          szStkbd[2 + 1];               // äº¤æ˜“æ¿å—
+    char          szStkCode[8 + 1];             // è¯åˆ¸ä»£ç 
+    char          szOrderId[10 + 1];            // åˆåŒåºå·
+    int           iOrderBsn;                    // å§”æ‰˜æ‰¹å·
+    char          szTrdacct[10 + 1];            // äº¤æ˜“è´¦æˆ·
+    short         iStrategySn;                  // ç­–ç•¥ç¼–å·
+    char          chFlag;                       // æŸ¥è¯¢æ ‡å¿— '0':æŸ¥è¯¢æ’¤å•å§”æ‰˜ä¿¡æ¯ '1':æŸ¥è¯¢æ­£å¸¸å§”æ‰˜ä¿¡æ¯ å…¶ä»–:å…¨éƒ¨
 };
 
 struct STRspQryOrder
 {
-    char          szQryPos[32 + 1];             // ¶¨Î»´®
-    char          szOrderId[10 + 1];            // ºÏÍ¬ĞòºÅ
-    char          chOrderStatus;                // Î¯ÍĞ×´Ì¬
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
-    char          szStkbd[2 + 1];               // ½»Ò×°å¿é
-    char          szStkCode[8 + 1];             // Ö¤È¯´úÂë
-    char          szStkName[16 + 1];            // Ö¤È¯Ãû³Æ
-    char          szOrderPrice[21 + 1];         // Î¯ÍĞ¼Û¸ñ
-    LONGLONG      llOrderQty;                   // Î¯ÍĞÊıÁ¿
-    char          szOrderAmt[21 + 1];           // Î¯ÍĞ½ğ¶î
-    char          szOrderFrzAmt[21 + 1];        // Î¯ÍĞ¶³½á½ğ¶î
-    char          szOrderUfzAmt[21 + 1];        // Î¯ÍĞ½â¶³½ğ¶î
-    LONGLONG      llWithdrawnQty;               // ÒÑ³·µ¥ÊıÁ¿
-    LONGLONG      llMatchedQty;                 // ÒÑ³É½»ÊıÁ¿
-    char          chIsWithdraw;                 // ³·µ¥±êÖ¾
-    char          chIsWithdrawn;                // ÒÑ³·µ¥±êÖ¾
-    int           iStkBiz;                      // Ö¤È¯ÒµÎñ Âò(100)Âô(101)
-    int           iOrderBsn;                    // Î¯ÍĞÅúºÅ
-    char          szRawOrderId[10 + 1];         // Ô­ºÏÍ¬ĞòºÅ
-    short         iStrategySn;                  // ²ßÂÔ±àºÅ
-    char          szOrderTime[32 + 1];          // Î¯ÍĞÊ±¼ä
-    char          szTrdacct[10 + 1];            // ½»Ò×ÕË»§
+    char          szQryPos[32 + 1];             // å®šä½ä¸²
+    char          szOrderId[10 + 1];            // åˆåŒåºå·
+    char          chOrderStatus;                // å§”æ‰˜çŠ¶æ€
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
+    char          szStkbd[2 + 1];               // äº¤æ˜“æ¿å—
+    char          szStkCode[8 + 1];             // è¯åˆ¸ä»£ç 
+    char          szStkName[16 + 1];            // è¯åˆ¸åç§°
+    char          szOrderPrice[21 + 1];         // å§”æ‰˜ä»·æ ¼
+    LONGLONG      llOrderQty;                   // å§”æ‰˜æ•°é‡
+    char          szOrderAmt[21 + 1];           // å§”æ‰˜é‡‘é¢
+    char          szOrderFrzAmt[21 + 1];        // å§”æ‰˜å†»ç»“é‡‘é¢
+    char          szOrderUfzAmt[21 + 1];        // å§”æ‰˜è§£å†»é‡‘é¢
+    LONGLONG      llWithdrawnQty;               // å·²æ’¤å•æ•°é‡
+    LONGLONG      llMatchedQty;                 // å·²æˆäº¤æ•°é‡
+    char          chIsWithdraw;                 // æ’¤å•æ ‡å¿—
+    char          chIsWithdrawn;                // å·²æ’¤å•æ ‡å¿—
+    int           iStkBiz;                      // è¯åˆ¸ä¸šåŠ¡ ä¹°(100)å–(101)
+    int           iOrderBsn;                    // å§”æ‰˜æ‰¹å·
+    char          szRawOrderId[10 + 1];         // åŸåˆåŒåºå·
+    short         iStrategySn;                  // ç­–ç•¥ç¼–å·
+    char          szOrderTime[32 + 1];          // å§”æ‰˜æ—¶é—´
+    char          szTrdacct[10 + 1];            // äº¤æ˜“è´¦æˆ·
 };
 
-//-------------------------------¿É³·µ¥Î¯ÍĞ²éÑ¯------------------------
+//-------------------------------å¯æ’¤å•å§”æ‰˜æŸ¥è¯¢------------------------
 struct STReqQryWithdrawableOrder
 {
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
-    char          szStkbd[2 + 1];               // ½»Ò×°å¿é
-    char          szStkCode[8 + 1];             // Ö¤È¯´úÂë
-    char          szOrderId[10 + 1];            // ºÏÍ¬ĞòºÅ
-    short         iStrategySn;                  // ²ßÂÔ±àºÅ
-    int           iOrderBsn;                    // Î¯ÍĞÅúºÅ
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
+    char          szStkbd[2 + 1];               // äº¤æ˜“æ¿å—
+    char          szStkCode[8 + 1];             // è¯åˆ¸ä»£ç 
+    char          szOrderId[10 + 1];            // åˆåŒåºå·
+    short         iStrategySn;                  // ç­–ç•¥ç¼–å·
+    int           iOrderBsn;                    // å§”æ‰˜æ‰¹å·
 };
 
 struct STRspQryWithdrawableOrder
 {
-    char          szOrderId[10 + 1];            // ºÏÍ¬ĞòºÅ
-    char          chOrderStatus;                // Î¯ÍĞ×´Ì¬
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
-    char          szStkbd[2 + 1];               // ½»Ò×°å¿é
-    char          szStkCode[8 + 1];             // Ö¤È¯´úÂë
-    char          szStkName[16 + 1];            // Ö¤È¯Ãû³Æ
-    LONGLONG      llOrderQty;                   // Î¯ÍĞÊıÁ¿
-    char          szOrderPrice[21 + 1];         // Î¯ÍĞ¼Û¸ñ
-    char          szOrderAmt[21 + 1];           // Î¯ÍĞ½ğ¶î
-    char          szOrderFrzAmt[21 + 1];        // Î¯ÍĞ¶³½á½ğ¶î
-    char          szOrderUfzAmt[21 + 1];        // Î¯ÍĞ½â¶³½ğ¶î
-    char          szOrderTime[32 + 1];          // Î¯ÍĞÊ±¼ä
-    LONGLONG      llWithdrawnQty;               // ÒÑ³·µ¥ÊıÁ¿
-    LONGLONG      llMatchedQty;                 // ÒÑ³É½»ÊıÁ¿
-    char          chIsWithdraw;                 // ³·µ¥±êÖ¾
-    char          chIsWithdrawn;                // ÒÑ³·µ¥±êÖ¾
-    int           iStkBiz;                      // Ö¤È¯ÒµÎñ
-    int           iOrderBsn;                    // Î¯ÍĞÅúºÅ
-    char          szMatchedAmt[21 + 1];         // ³É½»½ğ¶î
-    char          szTrdacct[10 + 1];            // ½»Ò×ÕË»§
-    short         iStrategySn;                  // ²ßÂÔ±àºÅ
+    char          szOrderId[10 + 1];            // åˆåŒåºå·
+    char          chOrderStatus;                // å§”æ‰˜çŠ¶æ€
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
+    char          szStkbd[2 + 1];               // äº¤æ˜“æ¿å—
+    char          szStkCode[8 + 1];             // è¯åˆ¸ä»£ç 
+    char          szStkName[16 + 1];            // è¯åˆ¸åç§°
+    LONGLONG      llOrderQty;                   // å§”æ‰˜æ•°é‡
+    char          szOrderPrice[21 + 1];         // å§”æ‰˜ä»·æ ¼
+    char          szOrderAmt[21 + 1];           // å§”æ‰˜é‡‘é¢
+    char          szOrderFrzAmt[21 + 1];        // å§”æ‰˜å†»ç»“é‡‘é¢
+    char          szOrderUfzAmt[21 + 1];        // å§”æ‰˜è§£å†»é‡‘é¢
+    char          szOrderTime[32 + 1];          // å§”æ‰˜æ—¶é—´
+    LONGLONG      llWithdrawnQty;               // å·²æ’¤å•æ•°é‡
+    LONGLONG      llMatchedQty;                 // å·²æˆäº¤æ•°é‡
+    char          chIsWithdraw;                 // æ’¤å•æ ‡å¿—
+    char          chIsWithdrawn;                // å·²æ’¤å•æ ‡å¿—
+    int           iStkBiz;                      // è¯åˆ¸ä¸šåŠ¡
+    int           iOrderBsn;                    // å§”æ‰˜æ‰¹å·
+    char          szMatchedAmt[21 + 1];         // æˆäº¤é‡‘é¢
+    char          szTrdacct[10 + 1];            // äº¤æ˜“è´¦æˆ·
+    short         iStrategySn;                  // ç­–ç•¥ç¼–å·
 };
 
-//-------------------------------³É½»²éÑ¯--------------------------------
+//-------------------------------æˆäº¤æŸ¥è¯¢--------------------------------
 struct STReqQryFill
 {
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
-    char          szStkbd[2 + 1];               // ½»Ò×°å¿é
-    char          szStkCode[8 + 1];             // Ö¤È¯´úÂë
-    char          szOrderId[10 + 1];            // ºÏÍ¬ĞòºÅ
-    int           iOrderBsn;                    // Î¯ÍĞÅúºÅ
-    char          szTrdacct[10 + 1];            // ½»Ò×ÕË»§
-    char          chQueryFlag;                  // ²éÑ¯·½Ïò
-    char          szQueryPos[32 + 1];           // ¶¨Î»´®
-    int           iQueryNum;                    // ²éÑ¯ĞĞÊı
-    short         iStrategySn;                  // ²ßÂÔ±àºÅ
-    char          chFlag;                       // ²éÑ¯±êÖ¾ '0':³·µ¥Î¯ÍĞµÄ³É½» '1':Õı³£Î¯ÍĞµÄ³É½» ÆäËû:È«²¿
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
+    char          szStkbd[2 + 1];               // äº¤æ˜“æ¿å—
+    char          szStkCode[8 + 1];             // è¯åˆ¸ä»£ç 
+    char          szOrderId[10 + 1];            // åˆåŒåºå·
+    int           iOrderBsn;                    // å§”æ‰˜æ‰¹å·
+    char          szTrdacct[10 + 1];            // äº¤æ˜“è´¦æˆ·
+    char          chQueryFlag;                  // æŸ¥è¯¢æ–¹å‘
+    char          szQueryPos[32 + 1];           // å®šä½ä¸²
+    int           iQueryNum;                    // æŸ¥è¯¢è¡Œæ•°
+    short         iStrategySn;                  // ç­–ç•¥ç¼–å·
+    char          chFlag;                       // æŸ¥è¯¢æ ‡å¿— '0':æ’¤å•å§”æ‰˜çš„æˆäº¤ '1':æ­£å¸¸å§”æ‰˜çš„æˆäº¤ å…¶ä»–:å…¨éƒ¨
 };
 
 struct STRspQryFill
 {
-    char          szQryPos[32 + 1];             // ¶¨Î»´®
-    char          szMatchedTime[8 + 1];         // ³É½»Ê±¼ä
-    int           iOrderDate;                   // Î¯ÍĞÈÕÆÚ
-    int           iOrderSn;                     // Î¯ÍĞĞòºÅ
-    int           iOrderBsn;                    // Î¯ÍĞÅúºÅ
-    char          szOrderId[10 + 1];            // ºÏÍ¬ĞòºÅ
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
-    char          szStkbd[2 + 1];               // ½»Ò×°å¿é
-    char          szTrdacct[10 + 1];            // Ö¤È¯ÕË»§
-    int           iStkBiz;                      // Ö¤È¯ÒµÎñ
-    char          szStkCode[8 + 1];             // Ö¤È¯´úÂë
-    char          szStkName[16 + 1];            // Ö¤È¯Ãû³Æ
-    char          chCurrency;                   // »õ±Ò´úÂë
-    char          szBondInt[21 + 1];            // Õ®È¯ÀûÏ¢
-    char          szOrderPrice[21 + 1];         // Î¯ÍĞ¼Û¸ñ
-    LONGLONG      llOrderQty;                   // Î¯ÍĞÊıÁ¿
-    char          szOrderAmt[21 + 1];           // Î¯ÍĞ½ğ¶î
-    char          szOrderFrzAmt[21 + 1];        // Î¯ÍĞ¶³½á½ğ¶î
-    char          szMatchedSn[16 + 1];          // ³É½»±àºÅ
-    char          szMatchedPrice[21 + 1];       // ³É½»¼Û¸ñ
-    char          szMatchedQty[21 + 1];         // ÒÑ³É½»ÊıÁ¿
-    char          szMatchedAmt[21 + 1];         // ÒÑ³É½»½ğ¶î
-    char          chMatchedType;                // ³É½»ÀàĞÍ
-    char          chIsWithdraw;                 // ³·µ¥±êÖ¾
-    char          chOrderStatus;                // Î¯ÍĞ×´Ì¬
-    short         iStrategySn;                  // ²ßÂÔ±àºÅ
+    char          szQryPos[32 + 1];             // å®šä½ä¸²
+    char          szMatchedTime[8 + 1];         // æˆäº¤æ—¶é—´
+    int           iOrderDate;                   // å§”æ‰˜æ—¥æœŸ
+    int           iOrderSn;                     // å§”æ‰˜åºå·
+    int           iOrderBsn;                    // å§”æ‰˜æ‰¹å·
+    char          szOrderId[10 + 1];            // åˆåŒåºå·
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
+    char          szStkbd[2 + 1];               // äº¤æ˜“æ¿å—
+    char          szTrdacct[10 + 1];            // è¯åˆ¸è´¦æˆ·
+    int           iStkBiz;                      // è¯åˆ¸ä¸šåŠ¡
+    char          szStkCode[8 + 1];             // è¯åˆ¸ä»£ç 
+    char          szStkName[16 + 1];            // è¯åˆ¸åç§°
+    char          chCurrency;                   // è´§å¸ä»£ç 
+    char          szBondInt[21 + 1];            // å€ºåˆ¸åˆ©æ¯
+    char          szOrderPrice[21 + 1];         // å§”æ‰˜ä»·æ ¼
+    LONGLONG      llOrderQty;                   // å§”æ‰˜æ•°é‡
+    char          szOrderAmt[21 + 1];           // å§”æ‰˜é‡‘é¢
+    char          szOrderFrzAmt[21 + 1];        // å§”æ‰˜å†»ç»“é‡‘é¢
+    char          szMatchedSn[16 + 1];          // æˆäº¤ç¼–å·
+    char          szMatchedPrice[21 + 1];       // æˆäº¤ä»·æ ¼
+    char          szMatchedQty[21 + 1];         // å·²æˆäº¤æ•°é‡
+    char          szMatchedAmt[21 + 1];         // å·²æˆäº¤é‡‘é¢
+    char          chMatchedType;                // æˆäº¤ç±»å‹
+    char          chIsWithdraw;                 // æ’¤å•æ ‡å¿—
+    char          chOrderStatus;                // å§”æ‰˜çŠ¶æ€
+    short         iStrategySn;                  // ç­–ç•¥ç¼–å·
 };
 
 
-//-------------------------------×Ê½ğ²éÑ¯--------------------------
+//-------------------------------èµ„é‡‘æŸ¥è¯¢--------------------------
 struct STReqQryMoney
 {
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
 };
 
 struct STRspQryMoney
 {
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
-    char          szFundBln[21 + 1];            // ×Ê½ğÓà¶î
-    char          szFundAvl[21 + 1];            // ×Ê½ğ¿ÉÓÃ½ğ¶î
-    char          szFundTrdFrz[21 + 1];         // ×Ê½ğ½»Ò×¶³½á½ğ¶î
-    char          szFundTrdOtd[21 + 1];         // ×Ê½ğ½»Ò×ÔÚÍ¾½ğ¶î
-    char          szTotalAssets[21 + 1];        // ×Ê²ú×ÜÖµ
-    char          szFundValue[21 + 1];          // ×Ê½ğ×Ê²ú
-    char          szMarketValue[21 + 1];        // ÊĞÖµ
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
+    char          szFundBln[21 + 1];            // èµ„é‡‘ä½™é¢
+    char          szFundAvl[21 + 1];            // èµ„é‡‘å¯ç”¨é‡‘é¢
+    char          szFundTrdFrz[21 + 1];         // èµ„é‡‘äº¤æ˜“å†»ç»“é‡‘é¢
+    char          szFundTrdOtd[21 + 1];         // èµ„é‡‘äº¤æ˜“åœ¨é€”é‡‘é¢
+    char          szTotalAssets[21 + 1];        // èµ„äº§æ€»å€¼
+    char          szFundValue[21 + 1];          // èµ„é‡‘èµ„äº§
+    char          szMarketValue[21 + 1];        // å¸‚å€¼
 };
 
-//-------------------------------¹É·İ²éÑ¯--------------------------------
+//-------------------------------è‚¡ä»½æŸ¥è¯¢--------------------------------
 struct STReqQryHolding
 {
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
-    char          szStkbd[2 + 1];               // ½»Ò×°å¿é
-    char          szStkCode[8 + 1];             // Ö¤È¯´úÂë
-    char          szTrdacct[10 + 1];            // ½»Ò×ÕË»§
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
+    char          szStkbd[2 + 1];               // äº¤æ˜“æ¿å—
+    char          szStkCode[8 + 1];             // è¯åˆ¸ä»£ç 
+    char          szTrdacct[10 + 1];            // äº¤æ˜“è´¦æˆ·
 };
 
 struct STRspQryHolding
 {
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
-    char          szStkbd[2 + 1];               // ½»Ò×°å¿é
-    char          szTrdacct[10 + 1];            // ½»Ò×ÕË»§
-    char          szStkCode[8 + 1];             // Ö¤È¯´úÂë
-    char          szStkName[16 + 1];            // Ö¤È¯Ãû³Æ
-    LONGLONG      llStkBln;                     // Ö¤È¯Óà¶î
-    LONGLONG      llStkAvl;                     // Ö¤È¯¿ÉÓÃÊıÁ¿
-    LONGLONG      llStkFrz;                     // Ö¤È¯¶³½áÊıÁ¿
-    LONGLONG      llStkTrdOtd;                  // Ö¤È¯½»Ò×ÔÚÍ¾ÊıÁ¿
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
+    char          szStkbd[2 + 1];               // äº¤æ˜“æ¿å—
+    char          szTrdacct[10 + 1];            // äº¤æ˜“è´¦æˆ·
+    char          szStkCode[8 + 1];             // è¯åˆ¸ä»£ç 
+    char          szStkName[16 + 1];            // è¯åˆ¸åç§°
+    LONGLONG      llStkBln;                     // è¯åˆ¸ä½™é¢
+    LONGLONG      llStkAvl;                     // è¯åˆ¸å¯ç”¨æ•°é‡
+    LONGLONG      llStkFrz;                     // è¯åˆ¸å†»ç»“æ•°é‡
+    LONGLONG      llStkTrdOtd;                  // è¯åˆ¸äº¤æ˜“åœ¨é€”æ•°é‡
 
-    char          szCostPrice[21 + 1];          // ³É±¾¼Û¸ñ
-    char          szStkBcostRlt[21 + 1];        // Ö¤È¯ÂòÈë³É±¾£¨ÊµÊ±£©
-    char          szMktVal[21 + 1];             // ÊĞÖµ
-    char          szProIncome[21 + 1];          // ²Î¿¼Ó¯¿÷
-    char          szProfitRate[21 + 1];         // Ó¯¿÷±ÈÀı
-    LONGLONG      llStkQty;                     // µ±Ç°Óµ¹ÉÊı
+    char          szCostPrice[21 + 1];          // æˆæœ¬ä»·æ ¼
+    char          szStkBcostRlt[21 + 1];        // è¯åˆ¸ä¹°å…¥æˆæœ¬ï¼ˆå®æ—¶ï¼‰
+    char          szMktVal[21 + 1];             // å¸‚å€¼
+    char          szProIncome[21 + 1];          // å‚è€ƒç›ˆäº
+    char          szProfitRate[21 + 1];         // ç›ˆäºæ¯”ä¾‹
+    LONGLONG      llStkQty;                     // å½“å‰æ‹¥è‚¡æ•°
 };
 
-//-------------------------------×î´ó¿É½»Ò×Êı¼ÆËã----------------------------
+//-------------------------------æœ€å¤§å¯äº¤æ˜“æ•°è®¡ç®—----------------------------
 struct STReqMaxTradeQty
 {
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
-    char          szStkbd[2 + 1];               // ½»Ò×°å¿é
-    char          szStkCode[8 + 1];             // Ö¤È¯´úÂë
-    char          szOrderPrice[21 + 1];         // Î¯ÍĞ¼Û¸ñ
-    int           iStkBiz;                      // Ö¤È¯ÒµÎñ
-    char          szTrdacct[10 + 1];            // Ö¤È¯ÕË»§
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
+    char          szStkbd[2 + 1];               // äº¤æ˜“æ¿å—
+    char          szStkCode[8 + 1];             // è¯åˆ¸ä»£ç 
+    char          szOrderPrice[21 + 1];         // å§”æ‰˜ä»·æ ¼
+    int           iStkBiz;                      // è¯åˆ¸ä¸šåŠ¡
+    char          szTrdacct[10 + 1];            // è¯åˆ¸è´¦æˆ·
 };
 
 struct STRspMaxTradeQty
 {
-    char          szStkbd[2 + 1];               // ½»Ò×°å¿é
-    char          szStkCode[8 + 1];             // Ö¤È¯´úÂë
-    LONGLONG      llOrderQty;                   // Î¯ÍĞÊıÁ¿
-    char          szTrdacct[10 + 1];            // Ö¤È¯ÕË»§
+    char          szStkbd[2 + 1];               // äº¤æ˜“æ¿å—
+    char          szStkCode[8 + 1];             // è¯åˆ¸ä»£ç 
+    LONGLONG      llOrderQty;                   // å§”æ‰˜æ•°é‡
+    char          szTrdacct[10 + 1];            // è¯åˆ¸è´¦æˆ·
 };
 
 
@@ -308,885 +308,885 @@ struct STRspMaxTradeQty
 
 
 
-//-------------------------------³É½»»Ø±¨ÍÆËÍ------------------------------------
+//-------------------------------æˆäº¤å›æŠ¥æ¨é€------------------------------------
 struct STRtnOrderFill
 {
-    char          szMatchedSn[16 + 1];        // ³É½»±àºÅ
-    char          szStkCode[8 + 1];           // Ö¤È¯´úÂë
-    char          szOrderId[10 + 1];          // ºÏÍ¬ĞòºÅ
-    char          szTrdacct[16 + 1];          // ½»Ò×ÕË»§
-    LONGLONG      llMatchedQty;               // ±¾´Î³É½»ÊıÁ¿
-    char          szMatchedPrice[11 + 1];     // ±¾´Î³É½»¼Û¸ñ
-    char          szOrderFrzAmt[21 + 1];      // Î¯ÍĞ¶³½á½ğ¶î
-    char          szRltSettAmt[21 + 1];       // ÊµÊ±ÇåËã½ğ¶î
-    char          szFundAvl[21 + 1];          // ×Ê½ğ¿ÉÓÃ½ğ¶î£¨³É½»ºó£©
-    LONGLONG      llStkAvl;                   // Ö¤È¯¿ÉÓÃÊıÁ¿£¨³É½»ºó£©
-    int           iMatchedDate;               // ³É½»ÈÕÆÚ
-    char          szMatchedTime[8 + 1];       // ³É½»Ê±¼ä
-    char          chIsWithdraw;               // ³·µ¥±êÖ¾ 'F':Õı³£ 'T':³·µ¥
-    LONGLONG      llCuacctCode;               // ×Ê²úÕË»§
-    int           iOrderBsn;                  // Î¯ÍĞÅúºÅ
-    short         iStrategySn;                // ²ßÂÔ±àºÅ
-    char          szStkbd[2 + 1];             // ½»Ò×°å¿é
-    char          chMatchedType;              // ³É½»ÀàĞÍ '1':·Ç·¨Î¯ÍĞ³·µ¥³É½» '2':½»Ò×Ëù³·µ¥»ò´éºÏ³É½»
-    char          chOrderStatus;              // Î¯ÍĞ×´Ì¬ '0':Î´±¨ '2':ÒÑ±¨ '6':ÒÑ³· '8':ÒÑ³É '9':·Ïµ¥
-    int           iStkBiz;                    // Ö¤È¯ÒµÎñ
-    char          szOfferRetMsg[64 + 1];      // Éê±¨ĞÅÏ¢ ½»Ò×Ëù·Ïµ¥Ê±·µ»Ø·Ïµ¥Ô­Òò
-    LONGLONG      llOrderQty;                 // Î¯ÍĞÊıÁ¿
-    LONGLONG      llWithdrawnQty;             // ÒÑ³·µ¥ÊıÁ¿
-    LONGLONG      llTotalMatchedQty;          // ÀÛ¼Æ³É½»ÊıÁ¿
-    char          szTotalMatchedAmt[21 + 1];  // ÀÛ¼Æ³É½»½ğ¶î
-    LONGLONG      llStkQty;                   // Óµ¹ÉÊı
-    char          szMatchedAmt[21 + 1];       // ÒÑ³É½»½ğ¶î
+    char          szMatchedSn[16 + 1];        // æˆäº¤ç¼–å·
+    char          szStkCode[8 + 1];           // è¯åˆ¸ä»£ç 
+    char          szOrderId[10 + 1];          // åˆåŒåºå·
+    char          szTrdacct[16 + 1];          // äº¤æ˜“è´¦æˆ·
+    LONGLONG      llMatchedQty;               // æœ¬æ¬¡æˆäº¤æ•°é‡
+    char          szMatchedPrice[11 + 1];     // æœ¬æ¬¡æˆäº¤ä»·æ ¼
+    char          szOrderFrzAmt[21 + 1];      // å§”æ‰˜å†»ç»“é‡‘é¢
+    char          szRltSettAmt[21 + 1];       // å®æ—¶æ¸…ç®—é‡‘é¢
+    char          szFundAvl[21 + 1];          // èµ„é‡‘å¯ç”¨é‡‘é¢ï¼ˆæˆäº¤åï¼‰
+    LONGLONG      llStkAvl;                   // è¯åˆ¸å¯ç”¨æ•°é‡ï¼ˆæˆäº¤åï¼‰
+    int           iMatchedDate;               // æˆäº¤æ—¥æœŸ
+    char          szMatchedTime[8 + 1];       // æˆäº¤æ—¶é—´
+    char          chIsWithdraw;               // æ’¤å•æ ‡å¿— 'F':æ­£å¸¸ 'T':æ’¤å•
+    LONGLONG      llCuacctCode;               // èµ„äº§è´¦æˆ·
+    int           iOrderBsn;                  // å§”æ‰˜æ‰¹å·
+    short         iStrategySn;                // ç­–ç•¥ç¼–å·
+    char          szStkbd[2 + 1];             // äº¤æ˜“æ¿å—
+    char          chMatchedType;              // æˆäº¤ç±»å‹ '1':éæ³•å§”æ‰˜æ’¤å•æˆäº¤ '2':äº¤æ˜“æ‰€æ’¤å•æˆ–æ’®åˆæˆäº¤
+    char          chOrderStatus;              // å§”æ‰˜çŠ¶æ€ '0':æœªæŠ¥ '2':å·²æŠ¥ '6':å·²æ’¤ '8':å·²æˆ '9':åºŸå•
+    int           iStkBiz;                    // è¯åˆ¸ä¸šåŠ¡
+    char          szOfferRetMsg[64 + 1];      // ç”³æŠ¥ä¿¡æ¯ äº¤æ˜“æ‰€åºŸå•æ—¶è¿”å›åºŸå•åŸå› 
+    LONGLONG      llOrderQty;                 // å§”æ‰˜æ•°é‡
+    LONGLONG      llWithdrawnQty;             // å·²æ’¤å•æ•°é‡
+    LONGLONG      llTotalMatchedQty;          // ç´¯è®¡æˆäº¤æ•°é‡
+    char          szTotalMatchedAmt[21 + 1];  // ç´¯è®¡æˆäº¤é‡‘é¢
+    LONGLONG      llStkQty;                   // æ‹¥è‚¡æ•°
+    char          szMatchedAmt[21 + 1];       // å·²æˆäº¤é‡‘é¢
 };
 
-//-------------------------------È·ÈÏ»Ø±¨ÍÆËÍ------------------------------------
+//-------------------------------ç¡®è®¤å›æŠ¥æ¨é€------------------------------------
 struct STRtnOrderConfirm
 {
-    char          szStkCode[8 + 1];           // Ö¤È¯´úÂë
-    char          szOrderId[10 + 1];          // ºÏÍ¬ĞòºÅ
-    char          szTrdacct[16 + 1];          // ½»Ò×ÕË»§
-    char          chIsWithdraw;               // ³·µ¥±êÖ¾ 'F':Õı³£ 'T':³·µ¥
-    LONGLONG      llCuacctCode;               // ×Ê²úÕË»§
-    int           iOrderBsn;                  // Î¯ÍĞÅúºÅ
-    short         iStrategySn;                // ²ßÂÔ±àºÅ
-    char          szStkbd[2 + 1];             // ½»Ò×°å¿é
-    char          chOrderStatus;              // Î¯ÍĞ×´Ì¬ '0':Î´±¨ '2':ÒÑ±¨ '6':ÒÑ³· '8':ÒÑ³É '9':·Ïµ¥
-    int           iStkBiz;                    // Ö¤È¯ÒµÎñ
-    int           iOrderDate;                 // Î¯ÍĞÈÕÆÚ
-    char          szOrderPrice[21 + 1];       // Î¯ÍĞ¼Û¸ñ
-    LONGLONG      llOrderQty;                 // Î¯ÍĞÊıÁ¿
+    char          szStkCode[8 + 1];           // è¯åˆ¸ä»£ç 
+    char          szOrderId[10 + 1];          // åˆåŒåºå·
+    char          szTrdacct[16 + 1];          // äº¤æ˜“è´¦æˆ·
+    char          chIsWithdraw;               // æ’¤å•æ ‡å¿— 'F':æ­£å¸¸ 'T':æ’¤å•
+    LONGLONG      llCuacctCode;               // èµ„äº§è´¦æˆ·
+    int           iOrderBsn;                  // å§”æ‰˜æ‰¹å·
+    short         iStrategySn;                // ç­–ç•¥ç¼–å·
+    char          szStkbd[2 + 1];             // äº¤æ˜“æ¿å—
+    char          chOrderStatus;              // å§”æ‰˜çŠ¶æ€ '0':æœªæŠ¥ '2':å·²æŠ¥ '6':å·²æ’¤ '8':å·²æˆ '9':åºŸå•
+    int           iStkBiz;                    // è¯åˆ¸ä¸šåŠ¡
+    int           iOrderDate;                 // å§”æ‰˜æ—¥æœŸ
+    char          szOrderPrice[21 + 1];       // å§”æ‰˜ä»·æ ¼
+    LONGLONG      llOrderQty;                 // å§”æ‰˜æ•°é‡
 };
 
 
 
 
-//-------------------------------ÈÚ×ÊÈÚÈ¯±êµÄÈ¯ĞÅÏ¢²éÑ¯------------------------------
+//-------------------------------èèµ„èåˆ¸æ ‡çš„åˆ¸ä¿¡æ¯æŸ¥è¯¢------------------------------
 struct STReqQryUndlStkInfo
 {
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
-    char          szStkbd[2 + 1];               // ½»Ò×°å¿é  
-    char          szStkCode[8 + 1];             // Ö¤È¯´úÂë  
-    char          chCurrEnableFi;               // µ±ÈÕÈÚ×Ê±êÖ¾ '0':ÔÊĞí '1':²»ÔÊĞí
-    char          chCurrEnableSl;               // µ±ÈÕÈÚÈ¯±êÖ¾ '0':ÔÊĞí '1':²»ÔÊĞí 
-    char          chQueryFlag;                  // ²éÑ¯·½Ïò  
-    char          szQueryPos[32 + 1];           // ¶¨Î»´®
-    int           iQueryNum;                    // ²éÑ¯ĞĞÊı
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
+    char          szStkbd[2 + 1];               // äº¤æ˜“æ¿å—  
+    char          szStkCode[8 + 1];             // è¯åˆ¸ä»£ç   
+    char          chCurrEnableFi;               // å½“æ—¥èèµ„æ ‡å¿— '0':å…è®¸ '1':ä¸å…è®¸
+    char          chCurrEnableSl;               // å½“æ—¥èåˆ¸æ ‡å¿— '0':å…è®¸ '1':ä¸å…è®¸ 
+    char          chQueryFlag;                  // æŸ¥è¯¢æ–¹å‘  
+    char          szQueryPos[32 + 1];           // å®šä½ä¸²
+    int           iQueryNum;                    // æŸ¥è¯¢è¡Œæ•°
 };
 
 struct STRspQryUndlStkInfo
 {
-    char          szQryPos[32 + 1];             // ¶¨Î»´®        
-    char          szStkbd[2 + 1];               // ½»Ò×°å¿é      
-    char          szStkCode[8 + 1];             // Ö¤È¯´úÂë      
-    char          szStkName[16 + 1];            // Ö¤È¯Ãû³Æ      
-    char          szFiMarginRatio[21 + 1];      // ÈÚ×Ê±£Ö¤½ğ±ÈÀı
-    char          szSlMarginRatio[21 + 1];      // ÈÚÈ¯±£Ö¤½ğ±ÈÀı
-    char          chCurrEnableFi;               // µ±ÈÕÈÚ×Ê±êÖ¾ '0':ÔÊĞí '1':²»ÔÊĞí
-    char          chCurrEnableSl;               // µ±ÈÕÈÚÈ¯±êÖ¾ '0':ÔÊĞí '1':²»ÔÊĞí
+    char          szQryPos[32 + 1];             // å®šä½ä¸²        
+    char          szStkbd[2 + 1];               // äº¤æ˜“æ¿å—      
+    char          szStkCode[8 + 1];             // è¯åˆ¸ä»£ç       
+    char          szStkName[16 + 1];            // è¯åˆ¸åç§°      
+    char          szFiMarginRatio[21 + 1];      // èèµ„ä¿è¯é‡‘æ¯”ä¾‹
+    char          szSlMarginRatio[21 + 1];      // èåˆ¸ä¿è¯é‡‘æ¯”ä¾‹
+    char          chCurrEnableFi;               // å½“æ—¥èèµ„æ ‡å¿— '0':å…è®¸ '1':ä¸å…è®¸
+    char          chCurrEnableSl;               // å½“æ—¥èåˆ¸æ ‡å¿— '0':å…è®¸ '1':ä¸å…è®¸
 };
 
-//-------------------------------ÈÚ×ÊÈÚÈ¯µ£±£Ö¤È¯ĞÅÏ¢²éÑ¯----------------------------
+//-------------------------------èèµ„èåˆ¸æ‹…ä¿è¯åˆ¸ä¿¡æ¯æŸ¥è¯¢----------------------------
 struct STReqQryColStkInfo
 {
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
-    char          szStkbd[2 + 1];               // ½»Ò×°å¿é  
-    char          szStkCode[8 + 1];             // Ö¤È¯´úÂë  
-    char          chQueryFlag;                  // ²éÑ¯·½Ïò  
-    char          szQueryPos[32 + 1];           // ¶¨Î»´®    
-    int           iQueryNum;                    // ²éÑ¯ĞĞÊı  
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
+    char          szStkbd[2 + 1];               // äº¤æ˜“æ¿å—  
+    char          szStkCode[8 + 1];             // è¯åˆ¸ä»£ç   
+    char          chQueryFlag;                  // æŸ¥è¯¢æ–¹å‘  
+    char          szQueryPos[32 + 1];           // å®šä½ä¸²    
+    int           iQueryNum;                    // æŸ¥è¯¢è¡Œæ•°  
 };
 
 struct STRspQryColStkInfo
 {
-    char          szQryPos[32 + 1];             // ¶¨Î»´®       
-    char          szStkbd[2 + 1];               // ½»Ò×°å¿é    
-    char          szStkCode[8 + 1];             // Ö¤È¯´úÂë    
-    char          szStkName[16 + 1];            // Ö¤È¯Ãû³Æ    
-    char          szCollatRatio[21 + 1];        // µ£±£Æ·ÕÛËãÂÊ
-    char          chCreditFundUseFlag;          // ĞÅÓÃ×Ê½ğÊ¹ÓÃ±êÖ¾
+    char          szQryPos[32 + 1];             // å®šä½ä¸²       
+    char          szStkbd[2 + 1];               // äº¤æ˜“æ¿å—    
+    char          szStkCode[8 + 1];             // è¯åˆ¸ä»£ç     
+    char          szStkName[16 + 1];            // è¯åˆ¸åç§°    
+    char          szCollatRatio[21 + 1];        // æ‹…ä¿å“æŠ˜ç®—ç‡
+    char          chCreditFundUseFlag;          // ä¿¡ç”¨èµ„é‡‘ä½¿ç”¨æ ‡å¿—
 };
 
-//-------------------------------ÈÚ×ÊÈÚÈ¯Î¯ÍĞ------------------------------------
+//-------------------------------èèµ„èåˆ¸å§”æ‰˜------------------------------------
 struct STReqOrderCredit
 {   
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
-    char          szStkbd[2 + 1];               // ½»Ò×°å¿é SZ SH
-    char          szStkCode[8 + 1];             // Ö¤È¯´úÂë
-    char          szOrderPrice[21 + 1];         // Î¯ÍĞ¼Û¸ñ
-    LONGLONG      llOrderQty;                   // Î¯ÍĞÊıÁ¿
-    int           iStkBiz;                      // Ö¤È¯ÒµÎñ ÈÚ×ÊÂò(702)ÈÚÈ¯Âô(703)
-    short         iStrategySn;                  // ²ßÂÔ±àºÅ
-    char          szRepayOrderId[10 + 1];       // ³¥»¹ºÏÍ¬ĞòºÅ
-    int           iRepayOpeningDate;            // ³¥»¹ºÏÔ¼ÈÕÆÚ
-    char          szRepayStkCode[8 + 1];        // ³¥»¹Ö¤È¯´úÂë
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
+    char          szStkbd[2 + 1];               // äº¤æ˜“æ¿å— SZ SH
+    char          szStkCode[8 + 1];             // è¯åˆ¸ä»£ç 
+    char          szOrderPrice[21 + 1];         // å§”æ‰˜ä»·æ ¼
+    LONGLONG      llOrderQty;                   // å§”æ‰˜æ•°é‡
+    int           iStkBiz;                      // è¯åˆ¸ä¸šåŠ¡ èèµ„ä¹°(702)èåˆ¸å–(703)
+    short         iStrategySn;                  // ç­–ç•¥ç¼–å·
+    char          szRepayOrderId[10 + 1];       // å¿è¿˜åˆåŒåºå·
+    int           iRepayOpeningDate;            // å¿è¿˜åˆçº¦æ—¥æœŸ
+    char          szRepayStkCode[8 + 1];        // å¿è¿˜è¯åˆ¸ä»£ç 
 };
 
 struct STRspOrderCredit
 {
-    int           iOrderBsn;                    // Î¯ÍĞÅúºÅ
-    char          szOrderId[10 + 1];            // ºÏÍ¬ĞòºÅ
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
-    char          szOrderPrice[21 + 1];         // Î¯ÍĞ¼Û¸ñ
-    LONGLONG      llOrderQty;                   // Î¯ÍĞÊıÁ¿
-    char          szOrderAmt[21 + 1];           // Î¯ÍĞ½ğ¶î
-    char          szOrderFrzAmt[21 + 1];        // ¶³½á½ğ¶î
-    char          szStkbd[2 + 1];               // ½»Ò×°å¿é SZ SH
-    char          szStkCode[8 + 1];             // Ö¤È¯´úÂë
-    char          szStkName[16 + 1];            // Ö¤È¯Ãû³Æ
-    int           iStkBiz;                      // Ö¤È¯ÒµÎñ ÈÚ×ÊÂò(702)ÈÚÈ¯Âô(703)
-    char          szTrdacct[10 + 1];            // Ö¤È¯ÕË»§
-    short         iStrategySn;                  // ²ßÂÔ±àºÅ
+    int           iOrderBsn;                    // å§”æ‰˜æ‰¹å·
+    char          szOrderId[10 + 1];            // åˆåŒåºå·
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
+    char          szOrderPrice[21 + 1];         // å§”æ‰˜ä»·æ ¼
+    LONGLONG      llOrderQty;                   // å§”æ‰˜æ•°é‡
+    char          szOrderAmt[21 + 1];           // å§”æ‰˜é‡‘é¢
+    char          szOrderFrzAmt[21 + 1];        // å†»ç»“é‡‘é¢
+    char          szStkbd[2 + 1];               // äº¤æ˜“æ¿å— SZ SH
+    char          szStkCode[8 + 1];             // è¯åˆ¸ä»£ç 
+    char          szStkName[16 + 1];            // è¯åˆ¸åç§°
+    int           iStkBiz;                      // è¯åˆ¸ä¸šåŠ¡ èèµ„ä¹°(702)èåˆ¸å–(703)
+    char          szTrdacct[10 + 1];            // è¯åˆ¸è´¦æˆ·
+    short         iStrategySn;                  // ç­–ç•¥ç¼–å·
 };
 
-//-------------------------------ÈÚ×ÊÈÚÈ¯Ö±½Ó»¹¿î----------------------------
+//-------------------------------èèµ„èåˆ¸ç›´æ¥è¿˜æ¬¾----------------------------
 struct STReqRepay
 {
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
-    char          chRepayType;                  // ³¥»¹ÀàĞÍ '0':³¥»¹ÈÚ×ÊÇ·¿î '1':³¥»¹ÈÚÈ¯·ÑÓÃ
-    char          szRepayOrderId[10 + 1];       // ³¥»¹ºÏÍ¬ĞòºÅ
-    int           iRepayOpeningDate;            // ³¥»¹ºÏÔ¼ÈÕÆÚ
-    char          szRepayStkCode[8 + 1];        // ³¥»¹Ö¤È¯´úÂë
-    char          szRepayContractAmt[21 + 1];   // ³¥»¹½ğ¶î
-    char          chRepayAmtCls;                // ³¥»¹½ğ¶îÀà±ğ '0':È«²¿¹é»¹ '1':½ö¹é»¹±¾½ğ '2':½ö¹é»¹ÀûÏ¢
-    char          szRemark[128 + 1];            // ±¸×¢
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
+    char          chRepayType;                  // å¿è¿˜ç±»å‹ '0':å¿è¿˜èèµ„æ¬ æ¬¾ '1':å¿è¿˜èåˆ¸è´¹ç”¨
+    char          szRepayOrderId[10 + 1];       // å¿è¿˜åˆåŒåºå·
+    int           iRepayOpeningDate;            // å¿è¿˜åˆçº¦æ—¥æœŸ
+    char          szRepayStkCode[8 + 1];        // å¿è¿˜è¯åˆ¸ä»£ç 
+    char          szRepayContractAmt[21 + 1];   // å¿è¿˜é‡‘é¢
+    char          chRepayAmtCls;                // å¿è¿˜é‡‘é¢ç±»åˆ« '0':å…¨éƒ¨å½’è¿˜ '1':ä»…å½’è¿˜æœ¬é‡‘ '2':ä»…å½’è¿˜åˆ©æ¯
+    char          szRemark[128 + 1];            // å¤‡æ³¨
 };
 
 struct STRspRepay
 {
-    char          szRealRepayAmt[21 + 1];       // Êµ¼Ê»¹¿î½ğ¶î
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
-    char          szRepayContractAmt[21 + 1];   // ³¥»¹½ğ¶î
+    char          szRealRepayAmt[21 + 1];       // å®é™…è¿˜æ¬¾é‡‘é¢
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
+    char          szRepayContractAmt[21 + 1];   // å¿è¿˜é‡‘é¢
 };
 
-//-------------------------------ÈÚ×ÊÈÚÈ¯³Ö²Ö²éÑ¯--------------------------------
+//-------------------------------èèµ„èåˆ¸æŒä»“æŸ¥è¯¢--------------------------------
 struct STReqQryHoldingCredit
 {
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
-    char          szStkbd[2 + 1];               // ½»Ò×°å¿é
-    char          szStkCode[8 + 1];             // Ö¤È¯´úÂë
-    char          szTrdacct[10 + 1];            // ½»Ò×ÕË»§
-    char          chContractFlag;               // ÆôÓÃºÏÔ¼¿ª¹Ø
-    char          chBizFlag;                    // ÒµÎñ±êÖ¾ '0':µ±Ç°ÕË»§¹É·İ '1':µ±Ç°ĞÅÓÃÕË»§¶ÔÓ¦µÄÆÕÍ¨ÕË»§¹É·İ
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
+    char          szStkbd[2 + 1];               // äº¤æ˜“æ¿å—
+    char          szStkCode[8 + 1];             // è¯åˆ¸ä»£ç 
+    char          szTrdacct[10 + 1];            // äº¤æ˜“è´¦æˆ·
+    char          chContractFlag;               // å¯ç”¨åˆçº¦å¼€å…³
+    char          chBizFlag;                    // ä¸šåŠ¡æ ‡å¿— '0':å½“å‰è´¦æˆ·è‚¡ä»½ '1':å½“å‰ä¿¡ç”¨è´¦æˆ·å¯¹åº”çš„æ™®é€šè´¦æˆ·è‚¡ä»½
     
 };
 
 struct STRspQryHoldingCredit
 {
-    char          szQryPos[32 + 1];             // ¶¨Î»´®                    
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§            
-    char          szStkbd[2 + 1];               // ½»Ò×°å¿é            
-    char          szTrdacct[10 + 1];            // ½»Ò×ÕË»§          
-    char          szStkCode[8 + 1];             // Ö¤È¯´úÂë            
-    char          szStkName[16 + 1];            // Ö¤È¯Ãû³Æ                       
-    LONGLONG      llStkPrebln;                  // Ö¤È¯×òÈÕÓà¶î        
-    LONGLONG      llStkBln;                     // Ö¤È¯Óà¶î            
-    LONGLONG      llStkAvl;                     // Ö¤È¯¿ÉÓÃÊıÁ¿        
-    LONGLONG      llStkFrz;                     // Ö¤È¯¶³½áÊıÁ¿        
-    LONGLONG      llStkUfz;                     // Ö¤È¯½â¶³ÊıÁ¿        
-    LONGLONG      llStkTrdFrz;                  // Ö¤È¯½»Ò×¶³½áÊıÁ¿    
-    LONGLONG      llStkTrdUfz;                  // Ö¤È¯½»Ò×½â¶³ÊıÁ¿    
-    LONGLONG      llStkTrdOtd;                  // Ö¤È¯½»Ò×ÔÚÍ¾ÊıÁ¿    
-    LONGLONG      llStkTrdBln;                  // Ö¤È¯½»Ò×Ôú²îÊıÁ¿
-    LONGLONG      llStkQty;                     // µ±Ç°Óµ¹ÉÊı          
-    LONGLONG      llStkRemain;                  // ÓàÈ¯¿ÉÓÃÊıÁ¿        
-    LONGLONG      llStkSale;                    // Âô³ö¶³½áÊıÁ¿
-    char          chIsCollat;                   // ÊÇ·ñÊÇµ£±£Æ·
-    char          szCollatRatio[21 + 1];        // µ£±£Æ·ÕÛËãÂÊ
-    LONGLONG      llMktQty;                     // µ±Ç°Óµ¹ÉÊı£¨ÕË»§£©
-    char          szAveragePrice[21 + 1];       // ÂòÈë¾ù¼Û
+    char          szQryPos[32 + 1];             // å®šä½ä¸²                    
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·            
+    char          szStkbd[2 + 1];               // äº¤æ˜“æ¿å—            
+    char          szTrdacct[10 + 1];            // äº¤æ˜“è´¦æˆ·          
+    char          szStkCode[8 + 1];             // è¯åˆ¸ä»£ç             
+    char          szStkName[16 + 1];            // è¯åˆ¸åç§°                       
+    LONGLONG      llStkPrebln;                  // è¯åˆ¸æ˜¨æ—¥ä½™é¢        
+    LONGLONG      llStkBln;                     // è¯åˆ¸ä½™é¢            
+    LONGLONG      llStkAvl;                     // è¯åˆ¸å¯ç”¨æ•°é‡        
+    LONGLONG      llStkFrz;                     // è¯åˆ¸å†»ç»“æ•°é‡        
+    LONGLONG      llStkUfz;                     // è¯åˆ¸è§£å†»æ•°é‡        
+    LONGLONG      llStkTrdFrz;                  // è¯åˆ¸äº¤æ˜“å†»ç»“æ•°é‡    
+    LONGLONG      llStkTrdUfz;                  // è¯åˆ¸äº¤æ˜“è§£å†»æ•°é‡    
+    LONGLONG      llStkTrdOtd;                  // è¯åˆ¸äº¤æ˜“åœ¨é€”æ•°é‡    
+    LONGLONG      llStkTrdBln;                  // è¯åˆ¸äº¤æ˜“æ‰å·®æ•°é‡
+    LONGLONG      llStkQty;                     // å½“å‰æ‹¥è‚¡æ•°          
+    LONGLONG      llStkRemain;                  // ä½™åˆ¸å¯ç”¨æ•°é‡        
+    LONGLONG      llStkSale;                    // å–å‡ºå†»ç»“æ•°é‡
+    char          chIsCollat;                   // æ˜¯å¦æ˜¯æ‹…ä¿å“
+    char          szCollatRatio[21 + 1];        // æ‹…ä¿å“æŠ˜ç®—ç‡
+    LONGLONG      llMktQty;                     // å½“å‰æ‹¥è‚¡æ•°ï¼ˆè´¦æˆ·ï¼‰
+    char          szAveragePrice[21 + 1];       // ä¹°å…¥å‡ä»·
 };
 
-//-------------------------------ÈÚ×ÊÈÚÈ¯ºÏÔ¼²éÑ¯----------------------------
+//-------------------------------èèµ„èåˆ¸åˆçº¦æŸ¥è¯¢----------------------------
 struct STReqQryContract
 {
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
-    int           iBgnDate;                     // ¿ªÊ¼ÈÕÆÚ
-    int           iEndDate;                     // ½áÊøÈÕÆÚ
-    char          szOrderId[10 + 1];            // ºÏÍ¬ĞòºÅ
-    char          chContractType;               // ºÏÔ¼ÀàĞÍ '0':ÈÚ×Ê '1':ÈÚÈ¯
-    char          szQueryPos[32 + 1];           // ¶¨Î»´®  
-    int           iQueryNum;                    // ²éÑ¯ĞĞÊı
-    char          szStkbd[2 + 1];               // ½»Ò×°å¿é
-    char          szTrdacct[10 + 1];            // ½»Ò×ÕË»§
-    char          szStkCode[8 + 1];             // Ö¤È¯´úÂë
-    char          chContractStatus;             // ºÏÔ¼×´Ì¬ '0':¿ª²ÖÎ´¹é»¹ '1':²¿·Ö¹é»¹ '2':µ½ÆÚÎ´Æ½²Ö '3':Ö÷¶¯ÁË½á '4':ÊÖ¹¤ÁË½á '5':ÊµÊ±ºÏÔ¼ '6':Õ¹ÆÚÖĞ 
-    char          chRepayFlag;                  // Æ½²Ö×´Ì¬ '0':È«²¿ '1':Î´Æ½²Ö '2':ÒÑÆ½²Ö
-    char          chQueryFlag;                  // ²éÑ¯·½Ïò
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
+    int           iBgnDate;                     // å¼€å§‹æ—¥æœŸ
+    int           iEndDate;                     // ç»“æŸæ—¥æœŸ
+    char          szOrderId[10 + 1];            // åˆåŒåºå·
+    char          chContractType;               // åˆçº¦ç±»å‹ '0':èèµ„ '1':èåˆ¸
+    char          szQueryPos[32 + 1];           // å®šä½ä¸²  
+    int           iQueryNum;                    // æŸ¥è¯¢è¡Œæ•°
+    char          szStkbd[2 + 1];               // äº¤æ˜“æ¿å—
+    char          szTrdacct[10 + 1];            // äº¤æ˜“è´¦æˆ·
+    char          szStkCode[8 + 1];             // è¯åˆ¸ä»£ç 
+    char          chContractStatus;             // åˆçº¦çŠ¶æ€ '0':å¼€ä»“æœªå½’è¿˜ '1':éƒ¨åˆ†å½’è¿˜ '2':åˆ°æœŸæœªå¹³ä»“ '3':ä¸»åŠ¨äº†ç»“ '4':æ‰‹å·¥äº†ç»“ '5':å®æ—¶åˆçº¦ '6':å±•æœŸä¸­ 
+    char          chRepayFlag;                  // å¹³ä»“çŠ¶æ€ '0':å…¨éƒ¨ '1':æœªå¹³ä»“ '2':å·²å¹³ä»“
+    char          chQueryFlag;                  // æŸ¥è¯¢æ–¹å‘
 };
 
 struct STRspQryContract
 {
-    char          szQryPos[32 + 1];             // ¶¨Î»´®
-    LONGLONG      llCashNo;                     // Í·´ç±àºÅ            
-    int           iTrdDate;                     // ½»Ò×ÈÕÆÚ            
-    char          chContractType;               // ºÏÔ¼ÀàĞÍ '0':ÈÚ×Ê '1':ÈÚÈ¯
-    char          szTrdacct[10 + 1];            // ½»Ò×ÕË»§            
-    char          szStkbd[2 + 1];               // ½»Ò×°å¿é
-    int           iOpeningDate;                 // ¿ª²ÖÈÕÆÚ
-    char          szStkCode[8 + 1];             // Ö¤È¯´úÂë
-    char          szOrderId[10 + 1];            // ºÏÍ¬ĞòºÅ
-    char          szFiDebtsAmt[21 + 1];         // ÈÚ×Ê¸ºÕ®½ğ¶î        
-    LONGLONG      llSlDebtsQty;                 // ÈÚÈ¯¸ºÕ®ÊıÁ¿        
-    LONGLONG      llRepaidQty;                  // ÈÚÈ¯ÒÑ»¹ÊıÁ¿        
-    char          szRepaidAmt[21 + 1];          // ÈÚ×ÊÒÑ»¹½ğ¶î        
-    char          chContractStatus;             // ºÏÔ¼×´Ì¬ '0':¿ª²ÖÎ´¹é»¹ '1':²¿·Ö¹é»¹ '2':ºÏÔ¼ÒÑ¹ıÆÚ '3':Ö÷¶¯ÁË½á '4':ÊÖ¹¤ÁË½á '5':ÊµÊ±ºÏÔ¼ '6':Õ¹ÆÚÖĞ 
-    int           iContractExpireDate;          // ºÏÔ¼µ½ÆÚÈÕ          
-    char          szMarginRatio[21 + 1];        // ±£Ö¤½ğ±ÈÀı          
-    char          szMarginAmt[21 + 1];          // Õ¼ÓÃ±£Ö¤½ğ          
-    char          szRights[21 + 1];             // Î´³¥»¹È¨Òæ½ğ¶î      
-    LONGLONG      llRightsQty;                  // Î´³¥»¹È¨ÒæÊıÁ¿      
-    char          szOverdueFee[21 + 1];         // ÓâÆÚÎ´³¥»¹Ï¢·Ñ      
-    int           iLastRepayDate;               // ×îºó³¥»¹ÈÕÆÚ        
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
-    char          szOrderPrice[21 + 1];         // Î¯ÍĞ¼Û¸ñ
-    LONGLONG      llOrderQty;                   // Î¯ÍĞÊıÁ¿
-    char          szOrderAmt[21 + 1];           // Î¯ÍĞ½ğ¶î
-    char          szOrderFrzAmt[21 + 1];        // Î¯ÍĞ¶³½á½ğ¶î        
-    LONGLONG      llWithdrawnQty;               // ÒÑ³·µ¥ÊıÁ¿          
-    LONGLONG      llMatchedQty;                 // ³É½»ÊıÁ¿            
-    char          szMatchedAmt[21 + 1];         // ³É½»½ğ¶î            
-    char          szRltSettAmt[21 + 1];         // ÊµÊ±ÇåËã½ğ¶î        
-    char          szSlDebtsMktvalue[21 + 1];    // ÈÚÈ¯¸ºÕ®ÊĞÖµ        
-    LONGLONG      llRltRepaidQty;               // ÈÚÈ¯ÊµÊ±¹é»¹ÊıÁ¿    
-    char          szRltRepaidAmt[21 + 1];       // ÈÚ×ÊÊµÊ±¹é»¹½ğ¶î    
-    char          szMatchedAmtRepay[21 + 1];    // »¹³É½»½ğ¶î          
-    int           iCalIntDate;                  // ¿ªÊ¼¼ÆÏ¢ÈÕÆÚ        
-    char          szContractInt[21 + 1];        // ºÏÔ¼ÀûÏ¢            
-    char          szContractIntAccrual[21 + 1]; // ÀûÏ¢»ıÊı            
-    char          szOverRights[21 + 1];         // ÓâÆÚÎ´³¥»¹È¨Òæ      
-    char          szRightsRepay[21 + 1];        // ¼º³¥»¹È¨Òæ          
-    char          szRightsRlt[21 + 1];          // ÊµÊ±³¥»¹È¨Òæ        
-    char          szOverRightsRlt[21 + 1];      // ÊµÊ±³¥»¹Ô¤ÆÚÈ¨Òæ    
-    LONGLONG      llOverRightsQty;              // ÓâÆÚÎ´³¥»¹È¨ÒæÊıÁ¿  
-    LONGLONG      llRightsQtyRepay;             // ÒÑ³¥»¹È¨ÒæÊıÁ¿      
-    LONGLONG      llRightsQtyRlt;               // ÊµÊ±³¥»¹È¨ÒæÊıÁ¿    
-    LONGLONG      llOverRightsQtyRlt;           // ÊµÊ±³¥»¹ÓâÆÚÈ¨ÒæÊıÁ¿
-    char          szContractFee[21 + 1];        // ÈÚ×ÊÈÚÈ¯Ï¢·Ñ        
-    char          szFeeRepay[21 + 1];           // ¼º³¥»¹Ï¢·Ñ          
-    char          szFeeRlt[21 + 1];             // ÊµÊ±³¥»¹Ï¢·Ñ        
-    char          szOverDuefeeRlt[21 + 1];      // ÊµÊ±³¥»¹ÓâÆÚÏ¢·Ñ    
-    char          szPuniDebts[21 + 1];          // ÓâÆÚ±¾½ğ·£Ï¢        
-    char          szPuniDebtsRepay[21 + 1];     // ±¾½ğ·£Ï¢³¥»¹        
-    char          szPuniDebtsRlt[21 + 1];       // ÊµÊ±ÓâÆÚ±¾½ğ·£Ï¢    
-    char          szPuniFee[21 + 1];            // ÀûÏ¢²úÉúµÄ·£Ï¢      
-    char          szPuniFeeRepay[21 + 1];       // ¼º³¥»¹·£Ï¢          
-    char          szPuniFeeRlt[21 + 1];         // ÊµÊ±ÓâÆÚÏ¢·Ñ·£Ï¢    
-    char          szPuniRights[21 + 1];         // ÓâÆÚÈ¨Òæ·£Ï¢        
-    char          szPuniRightsRepay[21 + 1];    // È¨Òæ·£Ï¢³¥»¹        
-    char          szPuniRightsRlt[21 + 1];      // ÊµÊ±ÓâÆÚÈ¨Òæ·£Ï¢    
-    int           iClosingDate;                 // ºÏÔ¼ÁË½áÈÕÆÚ        
-    char          szClosingPrice[21 + 1];       // ºÏÔ¼ÁË½á¼Û¸ñ        
-    char          chContractCls;                // ºÏÔ¼Àà±ğ '0':ÊµÊ±ºÏÔ¼ '1':ÒÑ¿ª²ÖºÏÔ¼
-    char          szProIncome[21 + 1];          // ²Î¿¼Ó¯¿÷
-    char          szPledgeCuacct[21 + 1];       // µÖÑº×Ê²ú
-    char          szFiRepayAmt[21 + 1];         // ÈÚ×Ê³¥»¹
-    LONGLONG      llSlRepayQty;                 // ÈÚÈ¯³¥»¹
+    char          szQryPos[32 + 1];             // å®šä½ä¸²
+    LONGLONG      llCashNo;                     // å¤´å¯¸ç¼–å·            
+    int           iTrdDate;                     // äº¤æ˜“æ—¥æœŸ            
+    char          chContractType;               // åˆçº¦ç±»å‹ '0':èèµ„ '1':èåˆ¸
+    char          szTrdacct[10 + 1];            // äº¤æ˜“è´¦æˆ·            
+    char          szStkbd[2 + 1];               // äº¤æ˜“æ¿å—
+    int           iOpeningDate;                 // å¼€ä»“æ—¥æœŸ
+    char          szStkCode[8 + 1];             // è¯åˆ¸ä»£ç 
+    char          szOrderId[10 + 1];            // åˆåŒåºå·
+    char          szFiDebtsAmt[21 + 1];         // èèµ„è´Ÿå€ºé‡‘é¢        
+    LONGLONG      llSlDebtsQty;                 // èåˆ¸è´Ÿå€ºæ•°é‡        
+    LONGLONG      llRepaidQty;                  // èåˆ¸å·²è¿˜æ•°é‡        
+    char          szRepaidAmt[21 + 1];          // èèµ„å·²è¿˜é‡‘é¢        
+    char          chContractStatus;             // åˆçº¦çŠ¶æ€ '0':å¼€ä»“æœªå½’è¿˜ '1':éƒ¨åˆ†å½’è¿˜ '2':åˆçº¦å·²è¿‡æœŸ '3':ä¸»åŠ¨äº†ç»“ '4':æ‰‹å·¥äº†ç»“ '5':å®æ—¶åˆçº¦ '6':å±•æœŸä¸­ 
+    int           iContractExpireDate;          // åˆçº¦åˆ°æœŸæ—¥          
+    char          szMarginRatio[21 + 1];        // ä¿è¯é‡‘æ¯”ä¾‹          
+    char          szMarginAmt[21 + 1];          // å ç”¨ä¿è¯é‡‘          
+    char          szRights[21 + 1];             // æœªå¿è¿˜æƒç›Šé‡‘é¢      
+    LONGLONG      llRightsQty;                  // æœªå¿è¿˜æƒç›Šæ•°é‡      
+    char          szOverdueFee[21 + 1];         // é€¾æœŸæœªå¿è¿˜æ¯è´¹      
+    int           iLastRepayDate;               // æœ€åå¿è¿˜æ—¥æœŸ        
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
+    char          szOrderPrice[21 + 1];         // å§”æ‰˜ä»·æ ¼
+    LONGLONG      llOrderQty;                   // å§”æ‰˜æ•°é‡
+    char          szOrderAmt[21 + 1];           // å§”æ‰˜é‡‘é¢
+    char          szOrderFrzAmt[21 + 1];        // å§”æ‰˜å†»ç»“é‡‘é¢        
+    LONGLONG      llWithdrawnQty;               // å·²æ’¤å•æ•°é‡          
+    LONGLONG      llMatchedQty;                 // æˆäº¤æ•°é‡            
+    char          szMatchedAmt[21 + 1];         // æˆäº¤é‡‘é¢            
+    char          szRltSettAmt[21 + 1];         // å®æ—¶æ¸…ç®—é‡‘é¢        
+    char          szSlDebtsMktvalue[21 + 1];    // èåˆ¸è´Ÿå€ºå¸‚å€¼        
+    LONGLONG      llRltRepaidQty;               // èåˆ¸å®æ—¶å½’è¿˜æ•°é‡    
+    char          szRltRepaidAmt[21 + 1];       // èèµ„å®æ—¶å½’è¿˜é‡‘é¢    
+    char          szMatchedAmtRepay[21 + 1];    // è¿˜æˆäº¤é‡‘é¢          
+    int           iCalIntDate;                  // å¼€å§‹è®¡æ¯æ—¥æœŸ        
+    char          szContractInt[21 + 1];        // åˆçº¦åˆ©æ¯            
+    char          szContractIntAccrual[21 + 1]; // åˆ©æ¯ç§¯æ•°            
+    char          szOverRights[21 + 1];         // é€¾æœŸæœªå¿è¿˜æƒç›Š      
+    char          szRightsRepay[21 + 1];        // å·±å¿è¿˜æƒç›Š          
+    char          szRightsRlt[21 + 1];          // å®æ—¶å¿è¿˜æƒç›Š        
+    char          szOverRightsRlt[21 + 1];      // å®æ—¶å¿è¿˜é¢„æœŸæƒç›Š    
+    LONGLONG      llOverRightsQty;              // é€¾æœŸæœªå¿è¿˜æƒç›Šæ•°é‡  
+    LONGLONG      llRightsQtyRepay;             // å·²å¿è¿˜æƒç›Šæ•°é‡      
+    LONGLONG      llRightsQtyRlt;               // å®æ—¶å¿è¿˜æƒç›Šæ•°é‡    
+    LONGLONG      llOverRightsQtyRlt;           // å®æ—¶å¿è¿˜é€¾æœŸæƒç›Šæ•°é‡
+    char          szContractFee[21 + 1];        // èèµ„èåˆ¸æ¯è´¹        
+    char          szFeeRepay[21 + 1];           // å·±å¿è¿˜æ¯è´¹          
+    char          szFeeRlt[21 + 1];             // å®æ—¶å¿è¿˜æ¯è´¹        
+    char          szOverDuefeeRlt[21 + 1];      // å®æ—¶å¿è¿˜é€¾æœŸæ¯è´¹    
+    char          szPuniDebts[21 + 1];          // é€¾æœŸæœ¬é‡‘ç½šæ¯        
+    char          szPuniDebtsRepay[21 + 1];     // æœ¬é‡‘ç½šæ¯å¿è¿˜        
+    char          szPuniDebtsRlt[21 + 1];       // å®æ—¶é€¾æœŸæœ¬é‡‘ç½šæ¯    
+    char          szPuniFee[21 + 1];            // åˆ©æ¯äº§ç”Ÿçš„ç½šæ¯      
+    char          szPuniFeeRepay[21 + 1];       // å·±å¿è¿˜ç½šæ¯          
+    char          szPuniFeeRlt[21 + 1];         // å®æ—¶é€¾æœŸæ¯è´¹ç½šæ¯    
+    char          szPuniRights[21 + 1];         // é€¾æœŸæƒç›Šç½šæ¯        
+    char          szPuniRightsRepay[21 + 1];    // æƒç›Šç½šæ¯å¿è¿˜        
+    char          szPuniRightsRlt[21 + 1];      // å®æ—¶é€¾æœŸæƒç›Šç½šæ¯    
+    int           iClosingDate;                 // åˆçº¦äº†ç»“æ—¥æœŸ        
+    char          szClosingPrice[21 + 1];       // åˆçº¦äº†ç»“ä»·æ ¼        
+    char          chContractCls;                // åˆçº¦ç±»åˆ« '0':å®æ—¶åˆçº¦ '1':å·²å¼€ä»“åˆçº¦
+    char          szProIncome[21 + 1];          // å‚è€ƒç›ˆäº
+    char          szPledgeCuacct[21 + 1];       // æŠµæŠ¼èµ„äº§
+    char          szFiRepayAmt[21 + 1];         // èèµ„å¿è¿˜
+    LONGLONG      llSlRepayQty;                 // èåˆ¸å¿è¿˜
 };
 
-//-------------------------------ĞÅÓÃ¿Í»§×Ê²ú¸ºÕ®²éÑ¯------------------------
+//-------------------------------ä¿¡ç”¨å®¢æˆ·èµ„äº§è´Ÿå€ºæŸ¥è¯¢------------------------
 struct STReqQryCustDebts
 {
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
 };
 
 struct STRspQryCustDebts
 {      
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§              
-    char          szFiRate[21 + 1];             // ÈÚ×ÊÀûÂÊ        
-    char          szSlRate[21 + 1];             // ÈÚÈ¯ÀûÂÊ        
-    char          szFreeIntRate[21 + 1];        // ·£Ï¢ÀûÂÊ        
-    char          chCreditStatus;               // ĞÅÓÃ×´Ì¬ '0':Õı³£ '1':Î´¼¤»î '2':ºÚÃûµ¥ '3':¶³½á '9':¹ıÆÚ
-    char          szMarginRate[21 + 1];         // Î¬³Öµ£±£±ÈÀı    
-    char          szRealRate[21 + 1];           // ÊµÊ±µ£±£±ÈÀı    
-    char          szTotalAssert[21 + 1];        // ×Ü×Ê²ú          
-    char          szTotalDebts[21 + 1];         // ×Ü¸ºÕ®          
-    char          szMarginValue[21 + 1];        // ±£Ö¤½ğ¿ÉÓÃÓà¶î  
-    char          szFundAvl[21 + 1];            // ×Ê½ğ¿ÉÓÃ½ğ¶î    
-    char          szFundBln[21 + 1];            // ×Ê½ğÓà¶î        
-    char          szSlAmt[21 + 1];              // ÈÚÈ¯Âô³öËùµÃ×Ê½ğ
-    char          szGuaranteOut[21 + 1];        // ¿É×ª³öµ£±£×Ê²ú  
-    char          szColMktVal[21 + 1];          // µ£±£Ö¤È¯ÊĞÖµ    
-    char          szFiAmt[21 + 1];              // ÈÚ×Ê±¾½ğ        
-    char          szTotalFiFee[21 + 1];         // ÈÚ×ÊÏ¢·Ñ        
-    char          szFiTotalDebts[21 + 1];       // ÈÚ×Ê¸ºÕ®ºÏ¼Æ    
-    char          szSlMktVal[21 + 1];           // Ó¦¸¶ÈÚÈ¯ÊĞÖµ    
-    char          szTotalSlFee[21 + 1];         // ÈÚÈ¯Ï¢·Ñ        
-    char          szSlTotalDebts[21 + 1];       // ÈÚÈ¯¸ºÕ®ºÏ¼Æ    
-    char          szFiCredit[21 + 1];           // ÈÚ×ÊÊÚĞÅ¶î¶È    
-    char          szFiCreditAvl[21 + 1];        // ÈÚ×Ê¿ÉÓÃ¶î¶È    
-    char          szFiCreditFrz[21 + 1];        // ÈÚ×Ê¶î¶È¶³½á    
-    char          szSlCredit[21 + 1];           // ÈÚÈ¯ÊÚĞÅ¶î¶È    
-    char          szSlCreditAvl[21 + 1];        // ÈÚÈ¯¿ÉÓÃ¶î¶È    
-    char          szSlCreditFrz[21 + 1];        // ÈÚÈ¯¶î¶È¶³½á    
-    char          szRights[21 + 1];             // ºìÀûÈ¨Òæ        
-    char          szRightsUncomer[21 + 1];      // ºìÀûÈ¨Òæ£¨ÔÚÍ¾£©
-    LONGLONG      llRightsQty;                  // ºì¹ÉÈ¨Òæ        
-    LONGLONG      llRightsQtyUncomer;           // ºì¹ÉÈ¨Òæ£¨ÔÚÍ¾£©
-    char          szTotalCredit[21 + 1];        // ×Ü¶î¶È          
-    char          szTotalCteditAvl[21 + 1];     // ×Ü¿ÉÓÃ¶î¶È      
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·              
+    char          szFiRate[21 + 1];             // èèµ„åˆ©ç‡        
+    char          szSlRate[21 + 1];             // èåˆ¸åˆ©ç‡        
+    char          szFreeIntRate[21 + 1];        // ç½šæ¯åˆ©ç‡        
+    char          chCreditStatus;               // ä¿¡ç”¨çŠ¶æ€ '0':æ­£å¸¸ '1':æœªæ¿€æ´» '2':é»‘åå• '3':å†»ç»“ '9':è¿‡æœŸ
+    char          szMarginRate[21 + 1];         // ç»´æŒæ‹…ä¿æ¯”ä¾‹    
+    char          szRealRate[21 + 1];           // å®æ—¶æ‹…ä¿æ¯”ä¾‹    
+    char          szTotalAssert[21 + 1];        // æ€»èµ„äº§          
+    char          szTotalDebts[21 + 1];         // æ€»è´Ÿå€º          
+    char          szMarginValue[21 + 1];        // ä¿è¯é‡‘å¯ç”¨ä½™é¢  
+    char          szFundAvl[21 + 1];            // èµ„é‡‘å¯ç”¨é‡‘é¢    
+    char          szFundBln[21 + 1];            // èµ„é‡‘ä½™é¢        
+    char          szSlAmt[21 + 1];              // èåˆ¸å–å‡ºæ‰€å¾—èµ„é‡‘
+    char          szGuaranteOut[21 + 1];        // å¯è½¬å‡ºæ‹…ä¿èµ„äº§  
+    char          szColMktVal[21 + 1];          // æ‹…ä¿è¯åˆ¸å¸‚å€¼    
+    char          szFiAmt[21 + 1];              // èèµ„æœ¬é‡‘        
+    char          szTotalFiFee[21 + 1];         // èèµ„æ¯è´¹        
+    char          szFiTotalDebts[21 + 1];       // èèµ„è´Ÿå€ºåˆè®¡    
+    char          szSlMktVal[21 + 1];           // åº”ä»˜èåˆ¸å¸‚å€¼    
+    char          szTotalSlFee[21 + 1];         // èåˆ¸æ¯è´¹        
+    char          szSlTotalDebts[21 + 1];       // èåˆ¸è´Ÿå€ºåˆè®¡    
+    char          szFiCredit[21 + 1];           // èèµ„æˆä¿¡é¢åº¦    
+    char          szFiCreditAvl[21 + 1];        // èèµ„å¯ç”¨é¢åº¦    
+    char          szFiCreditFrz[21 + 1];        // èèµ„é¢åº¦å†»ç»“    
+    char          szSlCredit[21 + 1];           // èåˆ¸æˆä¿¡é¢åº¦    
+    char          szSlCreditAvl[21 + 1];        // èåˆ¸å¯ç”¨é¢åº¦    
+    char          szSlCreditFrz[21 + 1];        // èåˆ¸é¢åº¦å†»ç»“    
+    char          szRights[21 + 1];             // çº¢åˆ©æƒç›Š        
+    char          szRightsUncomer[21 + 1];      // çº¢åˆ©æƒç›Šï¼ˆåœ¨é€”ï¼‰
+    LONGLONG      llRightsQty;                  // çº¢è‚¡æƒç›Š        
+    LONGLONG      llRightsQtyUncomer;           // çº¢è‚¡æƒç›Šï¼ˆåœ¨é€”ï¼‰
+    char          szTotalCredit[21 + 1];        // æ€»é¢åº¦          
+    char          szTotalCteditAvl[21 + 1];     // æ€»å¯ç”¨é¢åº¦      
 };
 
-//-------------------------------Ö¤È¯ÊĞÖµ¶î¶È²éÑ¯------------------------------------
+//-------------------------------è¯åˆ¸å¸‚å€¼é¢åº¦æŸ¥è¯¢------------------------------------
 struct STReqQryMktQuota
 {
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
 };
 
 struct STRspQryMktQuota
 {
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
-    char          szStkbd[2 + 1];               // ½»Ò×°å¿é
-    char          szTrdacct[10 + 1];            // Ö¤È¯ÕË»§
-    LONGLONG      llMktQuota;                   // ÊĞÖµ¶î¶È
-    LONGLONG      llKcbMktQuota;                // ÊĞÖµ¶î¶È(¿Æ´´°å) 
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
+    char          szStkbd[2 + 1];               // äº¤æ˜“æ¿å—
+    char          szTrdacct[10 + 1];            // è¯åˆ¸è´¦æˆ·
+    LONGLONG      llMktQuota;                   // å¸‚å€¼é¢åº¦
+    LONGLONG      llKcbMktQuota;                // å¸‚å€¼é¢åº¦(ç§‘åˆ›æ¿) 
 };
 
-//-------------------------------µ±ÈÕĞÂ¹ÉĞÅÏ¢²éÑ¯------------------------------------
+//-------------------------------å½“æ—¥æ–°è‚¡ä¿¡æ¯æŸ¥è¯¢------------------------------------
 struct STReqQryIpoInfo
 {
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
 };
 
 struct STRspQryIpoInfo
 {
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
-    char          szStkbd[2 + 1];               // ½»Ò×°å¿é
-    char          szStkCode[8 + 1];             // Éê¹º´úÂë
-    char          szStkName[16 + 1];            // Éê¹º´úÂëÃû³Æ
-    char          szLinkStk[8 + 1];             // Õı¹É´úÂë
-    char          chIssueType;                  // ·¢ĞĞ·½Ê½  '0':Éê¹º '1':ÅäÊÛ
-    int           iIssueDate;                   // Éê¹ºÈÕÆÚ
-    char          szFixPrice[21 + 1];           // Éê¹º¼Û¸ñ
-    int           iBuyUnit;                     // Éê¹ºµ¥Î»
-    int           iMinQty;                      // Éê¹ºÏÂÏŞ
-    int           iMaxQty;                      // Éê¹ºÉÏÏŞ
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
+    char          szStkbd[2 + 1];               // äº¤æ˜“æ¿å—
+    char          szStkCode[8 + 1];             // ç”³è´­ä»£ç 
+    char          szStkName[16 + 1];            // ç”³è´­ä»£ç åç§°
+    char          szLinkStk[8 + 1];             // æ­£è‚¡ä»£ç 
+    char          chIssueType;                  // å‘è¡Œæ–¹å¼  '0':ç”³è´­ '1':é…å”®
+    int           iIssueDate;                   // ç”³è´­æ—¥æœŸ
+    char          szFixPrice[21 + 1];           // ç”³è´­ä»·æ ¼
+    int           iBuyUnit;                     // ç”³è´­å•ä½
+    int           iMinQty;                      // ç”³è´­ä¸‹é™
+    int           iMaxQty;                      // ç”³è´­ä¸Šé™
 };
 
-//×ªÕÊÒøĞĞÒµÎñĞÅÏ¢²éÑ¯
+//è½¬å¸é“¶è¡Œä¸šåŠ¡ä¿¡æ¯æŸ¥è¯¢
 struct STReqQryBankInfo
 {
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
-    char          chCurrency;                   // »õ±Ò´úÂë
-    char          szBankCode[4 + 1];            // ÒøĞĞ´úÂë
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
+    char          chCurrency;                   // è´§å¸ä»£ç 
+    char          szBankCode[4 + 1];            // é“¶è¡Œä»£ç 
 };
 struct STRspQryBankInfo
 {
-    char          szBankCode[4 + 1];            // ÒøĞĞ´úÂë
-    char          chSourceType;                 // ·¢Æğ·½    
-    char          chBankTranType;               // ×ªÕÊ·½Ê½  
-    char          chFundPwdFlag;                // ×Ê½ğÃÜÂëĞ£Ñé
-    char          chBankPwdFlag;                // ÒøĞĞÃÜÂëĞ£Ñé
-    char          chCheckBankId;                // ÒøĞĞÕÊºÅĞ£Ñé
-    char          chCheckIdNo;                  // Ö¤¼şĞ£Ñé±êÖ¾  
-    char          szOrgId[4 + 1];               // »ú¹¹±àÂë
-    char          chCurrency;                   // »õ±Ò´úÂë
-    char          chStatus;                     // ÒøĞĞ×´Ì¬
+    char          szBankCode[4 + 1];            // é“¶è¡Œä»£ç 
+    char          chSourceType;                 // å‘èµ·æ–¹    
+    char          chBankTranType;               // è½¬å¸æ–¹å¼  
+    char          chFundPwdFlag;                // èµ„é‡‘å¯†ç æ ¡éªŒ
+    char          chBankPwdFlag;                // é“¶è¡Œå¯†ç æ ¡éªŒ
+    char          chCheckBankId;                // é“¶è¡Œå¸å·æ ¡éªŒ
+    char          chCheckIdNo;                  // è¯ä»¶æ ¡éªŒæ ‡å¿—  
+    char          szOrgId[4 + 1];               // æœºæ„ç¼–ç 
+    char          chCurrency;                   // è´§å¸ä»£ç 
+    char          chStatus;                     // é“¶è¡ŒçŠ¶æ€
 };
 
-//ÒøÖ¤×ªÕÊ
+//é“¶è¯è½¬å¸
 struct STReqBankStkTrans
 {
-    LONGLONG  llCuacctCode;                      //×Ê½ğÕËºÅ
-    char      chCurrency;                        //»õ±Ò´úÂë
-    char      szFundPwd[32 + 1];                 //×Ê½ğÃÜÂë
-    char      szBankCode[4 + 1];                 //ÒøĞĞ´úÂë
-    char      szBankPwd[32 + 1];                 //ÒøĞĞÃÜÂë
-    char      chBankTranType;                    //×ªÕÊÀàĞÍ '1':ÒøĞĞ×ªÖ¤È¯ '2':Ö¤È¯×ªÒøĞĞ
-    char      szTransAmt[21 + 1];                //×ªÕÊ½ğ¶î                          
+    LONGLONG  llCuacctCode;                      //èµ„é‡‘è´¦å·
+    char      chCurrency;                        //è´§å¸ä»£ç 
+    char      szFundPwd[32 + 1];                 //èµ„é‡‘å¯†ç 
+    char      szBankCode[4 + 1];                 //é“¶è¡Œä»£ç 
+    char      szBankPwd[32 + 1];                 //é“¶è¡Œå¯†ç 
+    char      chBankTranType;                    //è½¬å¸ç±»å‹ '1':é“¶è¡Œè½¬è¯åˆ¸ '2':è¯åˆ¸è½¬é“¶è¡Œ
+    char      szTransAmt[21 + 1];                //è½¬å¸é‡‘é¢                          
 };
 struct STRspBankStkTrans
 {
-    int  iSNo;                                  //Î¯ÍĞĞòºÅ
-    int  iSysErrorId;                           //´íÎó´úÂë
-    char szErrorMsg[64 + 1];                    //´íÎóĞÅÏ¢
+    int  iSNo;                                  //å§”æ‰˜åºå·
+    int  iSysErrorId;                           //é”™è¯¯ä»£ç 
+    char szErrorMsg[64 + 1];                    //é”™è¯¯ä¿¡æ¯
 
 };
 
-//²éÑ¯ÒøĞĞÕË»§Óà¶î
+//æŸ¥è¯¢é“¶è¡Œè´¦æˆ·ä½™é¢
 struct STReqQryBankBalance
 {
-    LONGLONG      llCuacctCode;                 // ×Ê½ğÕËºÅ
-    char          chCurrency;                   // »õ±Ò´úÂë
-    char          szFundPwd[32 + 1];            // ×Ê½ğÃÜÂë
-    char          szBankCode[4 + 1];            // ÒøĞĞ´úÂë
-    char          szBankPwd[32 + 1];            // ÒøĞĞÃÜÂë
+    LONGLONG      llCuacctCode;                 // èµ„é‡‘è´¦å·
+    char          chCurrency;                   // è´§å¸ä»£ç 
+    char          szFundPwd[32 + 1];            // èµ„é‡‘å¯†ç 
+    char          szBankCode[4 + 1];            // é“¶è¡Œä»£ç 
+    char          szBankPwd[32 + 1];            // é“¶è¡Œå¯†ç 
 };
 struct STRspQryBankBalance
 {
-    int           iSNo;                         // Î¯ÍĞĞòºÅ
-    char          szErrorMsg[64 + 1];           // ´íÎóĞÅÏ¢
-    int           iSysErrId;                    // ´íÎó´úÂë
-    char          szFundEffect[21 + 1];         // ÒøĞĞÓà¶î
+    int           iSNo;                         // å§”æ‰˜åºå·
+    char          szErrorMsg[64 + 1];           // é”™è¯¯ä¿¡æ¯
+    int           iSysErrId;                    // é”™è¯¯ä»£ç 
+    char          szFundEffect[21 + 1];         // é“¶è¡Œä½™é¢
 };
 
-//ÒøÖ¤×ªÕÊ²éÑ¯
+//é“¶è¯è½¬å¸æŸ¥è¯¢
 struct STReqQryBankStkTransInfo
 {
-    LONGLONG      llCuacctCode;                 // ×Ê½ğÕËºÅ
-    char          chCurrency;                   // »õ±Ò´úÂë
-    int           iSNo;                         // Î¯ÍĞĞòºÅ
+    LONGLONG      llCuacctCode;                 // èµ„é‡‘è´¦å·
+    char          chCurrency;                   // è´§å¸ä»£ç 
+    int           iSNo;                         // å§”æ‰˜åºå·
 };
 struct STRspQryBankStkTransInfo
 {
-    int           iOperDate;                    // ×ªÕÊÈÕÆÚ
-    int           iOperTime;                    // ×ªÕÊÊ±¼ä
-    LONGLONG      llCuacctCode;                 // ×Ê½ğÕËºÅ
-    char          chCurrency;                   // »õ±Ò´úÂë
-    char          szBankCode[4 + 1];            // ÒøĞĞ´úÂë
-    char          chBankTranId;                 // ÒµÎñÀàĞÍ
-    int           iSNo;                         // Î¯ÍĞĞòºÅ
-    char          szFundEffect[21 + 1];         // Î¯ÍĞ½ğ¶î
-    char          szFundBal[21 + 1];            // Óà¶î
-    char          szRemark[32 + 1];             // ±¸×¢ĞÅÏ¢
-    char          chStatus;                     // ´¦Àí½á¹û 
-    char          chSourceType;                 // ·¢Æğ·½Ïò 
-    char          szBankMsgId[16 + 1];          // Íâ²¿ĞÅÏ¢´úÂë
-    char          szBankMsg[64 + 1];            // Íâ²¿ĞÅÏ¢ÄÚÈİ
-    char          szErrorMsg[64 + 1];           // ÏµÍ³´íÎóĞÅÏ¢
-    int           iSysErrId;                    // ÏµÍ³´íÎó´úÂë
+    int           iOperDate;                    // è½¬å¸æ—¥æœŸ
+    int           iOperTime;                    // è½¬å¸æ—¶é—´
+    LONGLONG      llCuacctCode;                 // èµ„é‡‘è´¦å·
+    char          chCurrency;                   // è´§å¸ä»£ç 
+    char          szBankCode[4 + 1];            // é“¶è¡Œä»£ç 
+    char          chBankTranId;                 // ä¸šåŠ¡ç±»å‹
+    int           iSNo;                         // å§”æ‰˜åºå·
+    char          szFundEffect[21 + 1];         // å§”æ‰˜é‡‘é¢
+    char          szFundBal[21 + 1];            // ä½™é¢
+    char          szRemark[32 + 1];             // å¤‡æ³¨ä¿¡æ¯
+    char          chStatus;                     // å¤„ç†ç»“æœ 
+    char          chSourceType;                 // å‘èµ·æ–¹å‘ 
+    char          szBankMsgId[16 + 1];          // å¤–éƒ¨ä¿¡æ¯ä»£ç 
+    char          szBankMsg[64 + 1];            // å¤–éƒ¨ä¿¡æ¯å†…å®¹
+    char          szErrorMsg[64 + 1];           // ç³»ç»Ÿé”™è¯¯ä¿¡æ¯
+    int           iSysErrId;                    // ç³»ç»Ÿé”™è¯¯ä»£ç 
 };
 
-//ĞŞ¸Ä½»Ò×ÃÜÂë
+//ä¿®æ”¹äº¤æ˜“å¯†ç 
 struct STReqModifyTradePwd
 {
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
-    char          szNewPwd[32 + 1];             // ĞÂÃÜÂë
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
+    char          szNewPwd[32 + 1];             // æ–°å¯†ç 
 };
 struct STRspModifyTradePwd
 {
-    char          szMsgOk[32 + 1];              // ³É¹¦ĞÅÏ¢
+    char          szMsgOk[32 + 1];              // æˆåŠŸä¿¡æ¯
 };
 
-//ĞŞ¸Ä×Ê½ğÃÜÂë
+//ä¿®æ”¹èµ„é‡‘å¯†ç 
 struct STReqModifyFundPwd
 {
-    LONGLONG      llCuacctCode;                 // ×Ê½ğÕÊ»§
-    char          szOldFundPwd[32 + 1];         // ÀÏ×Ê½ğÃÜÂë
-    char          szNewFundPwd[32 + 1];         // ĞÂ×Ê½ğÃÜÂë
+    LONGLONG      llCuacctCode;                 // èµ„é‡‘å¸æˆ·
+    char          szOldFundPwd[32 + 1];         // è€èµ„é‡‘å¯†ç 
+    char          szNewFundPwd[32 + 1];         // æ–°èµ„é‡‘å¯†ç 
 };
 struct STRspModifyFundPwd
 {
-    char          szMsgOk[32 + 1];              // ³É¹¦ĞÅÏ¢
+    char          szMsgOk[32 + 1];              // æˆåŠŸä¿¡æ¯
 };
 
-//¼¯ÖĞ½»Ò×¹ñÌ¨×Ê½ğ²éÑ¯
+//é›†ä¸­äº¤æ˜“æŸœå°èµ„é‡‘æŸ¥è¯¢
 struct STReqQryRpcFund
 {
-    LONGLONG      llCuacctCode;                 // ×Ê²úÕË»§
-    char          chCurrency;                   // »õ±Ò´úÂë
+    LONGLONG      llCuacctCode;                 // èµ„äº§è´¦æˆ·
+    char          chCurrency;                   // è´§å¸ä»£ç 
 };
 struct STRspQryRpcFund
 {
-    LONGLONG      llCuacctCode;                 // ×Ê½ğÕË»§
-    char          szOrgId[4 + 1];               // »ú¹¹±àÂë
-    char          chCurrency;                   // »õ±Ò´úÂë
-    char          szFundBal[21 + 1];            // ×Ê½ğÓà¶î
-    char          szFundAvl[21 + 1];            // ×Ê½ğ¿ÉÓÃ½ğ¶î
-    char          szMarketValue[21 + 1];        // ×Ê²ú×ÜÖµ
-    char          szFund[21 + 1];               // ×Ê½ğ×Ê²ú
-    char          szStkValue[21 + 1];           // ÊĞÖµ
-    int           iFundSeq;                     // Ö÷×Ê½ğ±êÖ¾
+    LONGLONG      llCuacctCode;                 // èµ„é‡‘è´¦æˆ·
+    char          szOrgId[4 + 1];               // æœºæ„ç¼–ç 
+    char          chCurrency;                   // è´§å¸ä»£ç 
+    char          szFundBal[21 + 1];            // èµ„é‡‘ä½™é¢
+    char          szFundAvl[21 + 1];            // èµ„é‡‘å¯ç”¨é‡‘é¢
+    char          szMarketValue[21 + 1];        // èµ„äº§æ€»å€¼
+    char          szFund[21 + 1];               // èµ„é‡‘èµ„äº§
+    char          szStkValue[21 + 1];           // å¸‚å€¼
+    int           iFundSeq;                     // ä¸»èµ„é‡‘æ ‡å¿—
 };
 
-//×Ê½ğ»®²¦
+//èµ„é‡‘åˆ’æ‹¨
 struct STReqFundTransfer
 {
-    char         szOrgId[4 + 1];                // »ú¹¹±àÂë
-    LONGLONG     llCuacctCode;                  // ×Ê½ğÕËºÅ
-    char         chCurrency;                    // »õ±Ò´úÂë
-    char         szFundAvl[21 + 1];             // ×Ê½ğ¿ÉÓÃ
-    char         chDirect;                      // »®²¦·½Ïò '0':ÆÕÍ¨½Úµã»®Èë¡¢VIP ÏµÍ³»®³ö '1':ÆÕÍ¨½Úµã»®³ö¡¢VIP ÏµÍ³»®Èë
+    char         szOrgId[4 + 1];                // æœºæ„ç¼–ç 
+    LONGLONG     llCuacctCode;                  // èµ„é‡‘è´¦å·
+    char         chCurrency;                    // è´§å¸ä»£ç 
+    char         szFundAvl[21 + 1];             // èµ„é‡‘å¯ç”¨
+    char         chDirect;                      // åˆ’æ‹¨æ–¹å‘ '0':æ™®é€šèŠ‚ç‚¹åˆ’å…¥ã€VIP ç³»ç»Ÿåˆ’å‡º '1':æ™®é€šèŠ‚ç‚¹åˆ’å‡ºã€VIP ç³»ç»Ÿåˆ’å…¥
 };
 struct STRspFundTransfer
 {
-    int          iSNo;                          // ²Ù×÷Á÷Ë®ºÅ
-    int          iVipSno;                       // VIP²Ù×÷Á÷Ë®ºÅ
+    int          iSNo;                          // æ“ä½œæµæ°´å·
+    int          iVipSno;                       // VIPæ“ä½œæµæ°´å·
 };
 
-//ÒøÖ¤×ªÕËÒøĞĞÕËºÅ²éÑ¯
+//é“¶è¯è½¬è´¦é“¶è¡Œè´¦å·æŸ¥è¯¢
 struct STReqQryBankAcct
 {
-    char          szBankCode[4 + 1];            // ÒøĞĞ´úÂë
-    char          chCurrency;                   // »õ±Ò´úÂë
-    LONGLONG      llCuacctCode;                 // ×Ê½ğÕËºÅ
+    char          szBankCode[4 + 1];            // é“¶è¡Œä»£ç 
+    char          chCurrency;                   // è´§å¸ä»£ç 
+    LONGLONG      llCuacctCode;                 // èµ„é‡‘è´¦å·
 };
 struct STRspQryBankAcct
 {
-    char          szOrgId[4 + 1];                // »ú¹¹±àÂë
-    char          szBankCode[4 + 1];             // ÒøĞĞ´úÂë
-    char          szBankName[32 + 1];            // ÒøĞĞÃû³Æ
-    char          chCurrency;                    // »õ±Ò´úÂë
-    char          szBankId[32 + 1];              // ÒøĞĞÕÊ»§
-    LONGLONG      llCuacctCode;                  // ×Ê½ğÕÊºÅ
-    char          chLinkFlag;                    // ×ªÕÊ±êÊ¶
-    char          chSourceType;                  // ·¢Æğ·½Ïò
+    char          szOrgId[4 + 1];                // æœºæ„ç¼–ç 
+    char          szBankCode[4 + 1];             // é“¶è¡Œä»£ç 
+    char          szBankName[32 + 1];            // é“¶è¡Œåç§°
+    char          chCurrency;                    // è´§å¸ä»£ç 
+    char          szBankId[32 + 1];              // é“¶è¡Œå¸æˆ·
+    LONGLONG      llCuacctCode;                  // èµ„é‡‘å¸å·
+    char          chLinkFlag;                    // è½¬å¸æ ‡è¯†
+    char          chSourceType;                  // å‘èµ·æ–¹å‘
 };
 
 
 
-//-------------------------------ÆÚÈ¨Î¯ÍĞÉê±¨------------------------------------
+//-------------------------------æœŸæƒå§”æ‰˜ç”³æŠ¥------------------------------------
 struct STReqOrderOpt
 {
-    LONGLONG      llCuacctCode;               // ×Ê²úÕË»§
-    char          szStkbd[2 + 1];             // ½»Ò×°å¿é
-    char          szOptNum[16 + 1];           // ºÏÔ¼±àÂë
-    char          szOrderPrice[11 + 1];       // Î¯ÍĞ¼Û¸ñ
-    LONGLONG      llOrderQty;                 // Î¯ÍĞÊıÁ¿
-    int           iStkBiz;                    // Ö¤È¯ÒµÎñ
-    int           iStkBizAction;              // Ö¤È¯ÒµÎñĞĞÎª
-    short         iStrategySn;                // ²ßÂÔ±àºÅ
+    LONGLONG      llCuacctCode;               // èµ„äº§è´¦æˆ·
+    char          szStkbd[2 + 1];             // äº¤æ˜“æ¿å—
+    char          szOptNum[16 + 1];           // åˆçº¦ç¼–ç 
+    char          szOrderPrice[11 + 1];       // å§”æ‰˜ä»·æ ¼
+    LONGLONG      llOrderQty;                 // å§”æ‰˜æ•°é‡
+    int           iStkBiz;                    // è¯åˆ¸ä¸šåŠ¡
+    int           iStkBizAction;              // è¯åˆ¸ä¸šåŠ¡è¡Œä¸º
+    short         iStrategySn;                // ç­–ç•¥ç¼–å·
 };
 
 struct STRspOrderOpt
 {
-    int           iOrderBsn;                  // Î¯ÍĞÅúºÅ
-    char          szOrderId[10 + 1];          // ºÏÍ¬ĞòºÅ
-    LONGLONG      llCuacctCode;               // ×Ê²úÕË»§
-    char          szOrderPrice[11 + 1];       // Î¯ÍĞ¼Û¸ñ
-    LONGLONG      llOrderQty;                 // Î¯ÍĞÊıÁ¿
-    char          szOrderAmt[21 + 1];         // Î¯ÍĞ½ğ¶î
-    char          szOrderFrzAmt[21 + 1];      // Î¯ÍĞ¶³½á½ğ¶î
-    char          szStkbd[2 + 1];             // ½»Ò×°å¿é
-    char          szTrdacct[10 + 1];          // Ö¤È¯ÕË»§
-    char          szSubacctCode[8 + 1];       // Ö¤È¯ÕË»§×Ó±àÂë
-    char          szOptTrdacct[18 + 1];       // ÆÚÈ¨ºÏÔ¼ÕË»§
-    char          szOptNum[16 + 1];           // ºÏÔ¼±àÂë
-    char          szOptCode[32 + 1];          // ºÏÔ¼´úÂë
-    char          szOptName[32 + 1];          // ºÏÔ¼¼ò³Æ
-    char          szOptUndlCode[8 + 1];       // ±êµÄÖ¤È¯´úÂë
-    char          szOptUndlName[16 + 1];      // ±êµÄÖ¤È¯Ãû³Æ
-    int           iStkBiz;                    // Ö¤È¯ÒµÎñ
-    int           iStkBizAction;              // Ö¤È¯ÒµÎñĞĞÎª
-    short         iStrategySn;                // ²ßÂÔ±àºÅ
+    int           iOrderBsn;                  // å§”æ‰˜æ‰¹å·
+    char          szOrderId[10 + 1];          // åˆåŒåºå·
+    LONGLONG      llCuacctCode;               // èµ„äº§è´¦æˆ·
+    char          szOrderPrice[11 + 1];       // å§”æ‰˜ä»·æ ¼
+    LONGLONG      llOrderQty;                 // å§”æ‰˜æ•°é‡
+    char          szOrderAmt[21 + 1];         // å§”æ‰˜é‡‘é¢
+    char          szOrderFrzAmt[21 + 1];      // å§”æ‰˜å†»ç»“é‡‘é¢
+    char          szStkbd[2 + 1];             // äº¤æ˜“æ¿å—
+    char          szTrdacct[10 + 1];          // è¯åˆ¸è´¦æˆ·
+    char          szSubacctCode[8 + 1];       // è¯åˆ¸è´¦æˆ·å­ç¼–ç 
+    char          szOptTrdacct[18 + 1];       // æœŸæƒåˆçº¦è´¦æˆ·
+    char          szOptNum[16 + 1];           // åˆçº¦ç¼–ç 
+    char          szOptCode[32 + 1];          // åˆçº¦ä»£ç 
+    char          szOptName[32 + 1];          // åˆçº¦ç®€ç§°
+    char          szOptUndlCode[8 + 1];       // æ ‡çš„è¯åˆ¸ä»£ç 
+    char          szOptUndlName[16 + 1];      // æ ‡çš„è¯åˆ¸åç§°
+    int           iStkBiz;                    // è¯åˆ¸ä¸šåŠ¡
+    int           iStkBizAction;              // è¯åˆ¸ä¸šåŠ¡è¡Œä¸º
+    short         iStrategySn;                // ç­–ç•¥ç¼–å·
 };
 
-//-------------------------------ÆÚÈ¨Î¯ÍĞ³·µ¥------------------------------------
+//-------------------------------æœŸæƒå§”æ‰˜æ’¤å•------------------------------------
 struct STReqOptCancelOrder
 {
-    LONGLONG      llCuacctCode;               // ×Ê²úÕË»§
-    char          szStkbd[2 + 1];             // ½»Ò×°å¿é
-    char          szOrderId[10 + 1];          // ºÏÍ¬ĞòºÅ
-    int           iOrderBsn;                  // Î¯ÍĞÅúºÅ
+    LONGLONG      llCuacctCode;               // èµ„äº§è´¦æˆ·
+    char          szStkbd[2 + 1];             // äº¤æ˜“æ¿å—
+    char          szOrderId[10 + 1];          // åˆåŒåºå·
+    int           iOrderBsn;                  // å§”æ‰˜æ‰¹å·
 };
 
 struct STRspOptCancelOrder
 {
-    int           iOrderBsn;                  // Î¯ÍĞÅúºÅ
-    char          szOrderId[10 + 1];          // ºÏÍ¬ĞòºÅ
-    LONGLONG      llCuacctCode;               // ×Ê²úÕË»§
-    char          szOrderPrice[11 + 1];       // Î¯ÍĞ¼Û¸ñ
-    LONGLONG      llOrderQty;                 // Î¯ÍĞÊıÁ¿
-    char          szOrderAmt[21 + 1];         // Î¯ÍĞ½ğ¶î
-    char          szOrderFrzAmt[21 + 1];      // Î¯ÍĞ¶³½á½ğ¶î
-    char          szStkbd[2 + 1];             // ½»Ò×°å¿é
-    char          szTrdacct[10 + 1];          // Ö¤È¯ÕË»§
-    char          szSubacctCode[8 + 1];       // Ö¤È¯ÕË»§×Ó±àÂë
-    char          szOptTrdacct[18 + 1];       // ÆÚÈ¨ºÏÔ¼ÕË»§
-    char          szStkCode[32 + 1];          // Ö¤È¯´úÂë
-    char          szStkName[32 + 1];          // Ö¤È¯Ãû³Æ
-    int           iStkBiz;                    // Ö¤È¯ÒµÎñ
-    int           iStkBizAction;              // Ö¤È¯ÒµÎñĞĞÎª
-    char          chCancelStatus;             // ÄÚ²¿³·µ¥±êÖ¾ 1:ÄÚ²¿³·µ¥ ·Ç1:ÆÕÍ¨³·µ¥
-    short         iStrategySn;                // ²ßÂÔ±àºÅ
+    int           iOrderBsn;                  // å§”æ‰˜æ‰¹å·
+    char          szOrderId[10 + 1];          // åˆåŒåºå·
+    LONGLONG      llCuacctCode;               // èµ„äº§è´¦æˆ·
+    char          szOrderPrice[11 + 1];       // å§”æ‰˜ä»·æ ¼
+    LONGLONG      llOrderQty;                 // å§”æ‰˜æ•°é‡
+    char          szOrderAmt[21 + 1];         // å§”æ‰˜é‡‘é¢
+    char          szOrderFrzAmt[21 + 1];      // å§”æ‰˜å†»ç»“é‡‘é¢
+    char          szStkbd[2 + 1];             // äº¤æ˜“æ¿å—
+    char          szTrdacct[10 + 1];          // è¯åˆ¸è´¦æˆ·
+    char          szSubacctCode[8 + 1];       // è¯åˆ¸è´¦æˆ·å­ç¼–ç 
+    char          szOptTrdacct[18 + 1];       // æœŸæƒåˆçº¦è´¦æˆ·
+    char          szStkCode[32 + 1];          // è¯åˆ¸ä»£ç 
+    char          szStkName[32 + 1];          // è¯åˆ¸åç§°
+    int           iStkBiz;                    // è¯åˆ¸ä¸šåŠ¡
+    int           iStkBizAction;              // è¯åˆ¸ä¸šåŠ¡è¡Œä¸º
+    char          chCancelStatus;             // å†…éƒ¨æ’¤å•æ ‡å¿— 1:å†…éƒ¨æ’¤å• é1:æ™®é€šæ’¤å•
+    short         iStrategySn;                // ç­–ç•¥ç¼–å·
 };
 
 
-//-------------------------------ÆÚÈ¨¿ÉÓÃ×Ê½ğ²éÑ¯--------------------------
+//-------------------------------æœŸæƒå¯ç”¨èµ„é‡‘æŸ¥è¯¢--------------------------
 struct STReqOptQryMoney
 {
-    LONGLONG        llCuacctCode;               // ×Ê²úÕË»§ 
+    LONGLONG        llCuacctCode;               // èµ„äº§è´¦æˆ· 
 };
 
 struct STRspOptQryMoney
 {
-    LONGLONG        llCuacctCode;               // ×Ê²úÕË»§ 
-    char            chCurrency;                 // »õ±Ò´úÂë
-    char            szMarketValue[21 + 1];      // ×Ê²ú×ÜÖµ ¿Í»§×Ê²ú×Ü¶î£¨ÊµÊ±£©
-    char            szFundValue[21 + 1];        // ×Ê½ğ×Ê²ú ×Ê½ğ×Ê²ú×Ü¶î
-    char            szStkValue[21 + 1];         // ÊĞÖµ ·Ç×Ê½ğ×Ê²ú×Ü¶î = ÊĞÖµ
-    char            szFundPrebln[21 + 1];       // ×Ê½ğ×òÈÕÓà¶î 
-    char            szFundBln[21 + 1];          // ×Ê½ğÓà¶î 
-    char            szFundAvl[21 + 1];          // ×Ê½ğ¿ÉÓÃ½ğ¶î 
-    char            szFundFrz[21 + 1];          // ×Ê½ğ¶³½á½ğ¶î 
-    char            szFundUfz[21 + 1];          // ×Ê½ğ½â¶³½ğ¶î 
-    char            szFundTrdFrz[21 + 1];       // ×Ê½ğ½»Ò×¶³½á½ğ¶î 
-    char            szFundTrdUfz[21 + 1];       // ×Ê½ğ½»Ò×½â¶³½ğ¶î 
-    char            szFundTrdOtd[21 + 1];       // ×Ê½ğ½»Ò×ÔÚÍ¾½ğ¶î 
-    char            szFundTrdBln[21 + 1];       // ×Ê½ğ½»Ò×Ôş²î½ğ¶î 
-    char            chFundStatus;               // ×Ê½ğ×´Ì¬
-    char            szMarginUsed[21 + 1];       // Õ¼ÓÃ±£Ö¤½ğ 
-    char            szMarginInclRlt[21 + 1];    // ÒÑÕ¼ÓÃ±£Ö¤½ğ(º¬Î´³É½») °üº¬Âô³ö¿ª²ÖÎ¯ÍĞÎ´³É½»¶³½áµÄ±£Ö¤½ğ(°´Ç°½áËã¼Û¼ÆËã)
-    char            szFundExeMargin[21 + 1];    // ĞĞÈ¨Ëø¶¨±£Ö¤½ğ 
-    char            szFundExeFrz[21 + 1];       // ĞĞÈ¨×Ê½ğ¶³½á½ğ¶î 
-    char            szFundFeeFrz[21 + 1];       // ×Ê½ğ·ÑÓÃ¶³½á½ğ¶î 
-    char            szPaylater[21 + 1];         // µæ¸¶×Ê½ğ 
-    char            szPreadvaPay[21 + 1];       // Ô¤¼Æµæ×Ê½ğ¶î ÉîÛÚETFĞĞÈ¨E+1ÈÕÔ¤½»ÊÕÊ¹ÓÃ
-    char            szExpPenInt[21 + 1];        // Ô¤¼Æ¸ºÕ®ÀûÏ¢ 
-    char            szFundDraw[21 + 1];         // ×Ê½ğ¿ÉÈ¡½ğ¶î 
-    char            szFundAvlRlt[21 + 1];       // ×Ê½ğ¶¯Ì¬¿ÉÓÃ 
-    char            szMarginInclDyn[21 + 1];    // ¶¯Ì¬Õ¼ÓÃ±£Ö¤½ğ(º¬Î´³É½») °üº¬Âô³ö¿ª²ÖÎ¯ÍĞÎ´³É½»¶³½áµÄ±£Ö¤½ğ(°´ÊµÊ±¼Û¸ñ¼ÆËã)
-    char            szDailyInAmt[21 + 1];       // µ±ÈÕÈë½ğ 
-    char            szDailyOutAmt[21 + 1];      // µ±ÈÕ³ö½ğ 
-    char            szFundRealAvl[21 + 1];      // ×Ê½ğÊµ¼Ê¿ÉÓÃ µ±½ğÖ¤¹ÉÆ±ÆÚÈ¨¹ñÌ¨ÏµÍ³ÆôÓÃ¶¯Ì¬¿ÉÓÃ¹¦ÄÜÊ±£¬×Ê½ğÊµ¼Ê¿ÉÓÃ=min£¨×Ê½ğ¿ÉÓÃ½ğ¶î£¬×Ê½ğ¶¯Ì¬¿ÉÓÃ£©£»µ±²»ÆôÓÃ¶¯Ì¬¿ÉÓÃÊ±£¬×Ê½ğÊµ¼Ê¿ÉÓÃ=×Ê½ğ¿ÉÓÃ½ğ¶î
+    LONGLONG        llCuacctCode;               // èµ„äº§è´¦æˆ· 
+    char            chCurrency;                 // è´§å¸ä»£ç 
+    char            szMarketValue[21 + 1];      // èµ„äº§æ€»å€¼ å®¢æˆ·èµ„äº§æ€»é¢ï¼ˆå®æ—¶ï¼‰
+    char            szFundValue[21 + 1];        // èµ„é‡‘èµ„äº§ èµ„é‡‘èµ„äº§æ€»é¢
+    char            szStkValue[21 + 1];         // å¸‚å€¼ éèµ„é‡‘èµ„äº§æ€»é¢ = å¸‚å€¼
+    char            szFundPrebln[21 + 1];       // èµ„é‡‘æ˜¨æ—¥ä½™é¢ 
+    char            szFundBln[21 + 1];          // èµ„é‡‘ä½™é¢ 
+    char            szFundAvl[21 + 1];          // èµ„é‡‘å¯ç”¨é‡‘é¢ 
+    char            szFundFrz[21 + 1];          // èµ„é‡‘å†»ç»“é‡‘é¢ 
+    char            szFundUfz[21 + 1];          // èµ„é‡‘è§£å†»é‡‘é¢ 
+    char            szFundTrdFrz[21 + 1];       // èµ„é‡‘äº¤æ˜“å†»ç»“é‡‘é¢ 
+    char            szFundTrdUfz[21 + 1];       // èµ„é‡‘äº¤æ˜“è§£å†»é‡‘é¢ 
+    char            szFundTrdOtd[21 + 1];       // èµ„é‡‘äº¤æ˜“åœ¨é€”é‡‘é¢ 
+    char            szFundTrdBln[21 + 1];       // èµ„é‡‘äº¤æ˜“è½§å·®é‡‘é¢ 
+    char            chFundStatus;               // èµ„é‡‘çŠ¶æ€
+    char            szMarginUsed[21 + 1];       // å ç”¨ä¿è¯é‡‘ 
+    char            szMarginInclRlt[21 + 1];    // å·²å ç”¨ä¿è¯é‡‘(å«æœªæˆäº¤) åŒ…å«å–å‡ºå¼€ä»“å§”æ‰˜æœªæˆäº¤å†»ç»“çš„ä¿è¯é‡‘(æŒ‰å‰ç»“ç®—ä»·è®¡ç®—)
+    char            szFundExeMargin[21 + 1];    // è¡Œæƒé”å®šä¿è¯é‡‘ 
+    char            szFundExeFrz[21 + 1];       // è¡Œæƒèµ„é‡‘å†»ç»“é‡‘é¢ 
+    char            szFundFeeFrz[21 + 1];       // èµ„é‡‘è´¹ç”¨å†»ç»“é‡‘é¢ 
+    char            szPaylater[21 + 1];         // å«ä»˜èµ„é‡‘ 
+    char            szPreadvaPay[21 + 1];       // é¢„è®¡å«èµ„é‡‘é¢ æ·±åœ³ETFè¡ŒæƒE+1æ—¥é¢„äº¤æ”¶ä½¿ç”¨
+    char            szExpPenInt[21 + 1];        // é¢„è®¡è´Ÿå€ºåˆ©æ¯ 
+    char            szFundDraw[21 + 1];         // èµ„é‡‘å¯å–é‡‘é¢ 
+    char            szFundAvlRlt[21 + 1];       // èµ„é‡‘åŠ¨æ€å¯ç”¨ 
+    char            szMarginInclDyn[21 + 1];    // åŠ¨æ€å ç”¨ä¿è¯é‡‘(å«æœªæˆäº¤) åŒ…å«å–å‡ºå¼€ä»“å§”æ‰˜æœªæˆäº¤å†»ç»“çš„ä¿è¯é‡‘(æŒ‰å®æ—¶ä»·æ ¼è®¡ç®—)
+    char            szDailyInAmt[21 + 1];       // å½“æ—¥å…¥é‡‘ 
+    char            szDailyOutAmt[21 + 1];      // å½“æ—¥å‡ºé‡‘ 
+    char            szFundRealAvl[21 + 1];      // èµ„é‡‘å®é™…å¯ç”¨ å½“é‡‘è¯è‚¡ç¥¨æœŸæƒæŸœå°ç³»ç»Ÿå¯ç”¨åŠ¨æ€å¯ç”¨åŠŸèƒ½æ—¶ï¼Œèµ„é‡‘å®é™…å¯ç”¨=minï¼ˆèµ„é‡‘å¯ç”¨é‡‘é¢ï¼Œèµ„é‡‘åŠ¨æ€å¯ç”¨ï¼‰ï¼›å½“ä¸å¯ç”¨åŠ¨æ€å¯ç”¨æ—¶ï¼Œèµ„é‡‘å®é™…å¯ç”¨=èµ„é‡‘å¯ç”¨é‡‘é¢
 };
 
-//-------------------------------ÆÚÈ¨³Ö²Ö²éÑ¯------------------------------------
+//-------------------------------æœŸæƒæŒä»“æŸ¥è¯¢------------------------------------
 struct STReqOptQryHolding
 {
-    LONGLONG      llCuacctCode;               // ×Ê²úÕË»§
-    char          szStkbd[2 + 1];             // ½»Ò×°å¿é
-    char          szTrdacct[10 + 1];          // ½»Ò×ÕË»§
-    char          szOptNum[16 + 1];           // ºÏÔ¼±àÂë
-    char          szOptUndlCode[8 + 1];       // ±êµÄÖ¤È¯´úÂë
-    char          chOptSide;                  // ³Ö²Ö·½Ïò L-È¨Á¦²Ö£¬S-ÒåÎñ²Ö£¬C-±¸¶Ò²ßÂÔ³Ö²Ö
-    char          chOptCvdFlag;               // ±¸¶Ò±êÖ¾ 0-·Ç±¸¶ÒºÏÔ¼ 1-±¸¶ÒºÏÔ¼
-    char          chQueryFlag;                // ²éÑ¯·½Ïò 0:ÏòºóÈ¡Êı¾İ 1:ÏòÇ°È¡Êı¾İ ÆäËûÈ«²¿·µ»Ø
+    LONGLONG      llCuacctCode;               // èµ„äº§è´¦æˆ·
+    char          szStkbd[2 + 1];             // äº¤æ˜“æ¿å—
+    char          szTrdacct[10 + 1];          // äº¤æ˜“è´¦æˆ·
+    char          szOptNum[16 + 1];           // åˆçº¦ç¼–ç 
+    char          szOptUndlCode[8 + 1];       // æ ‡çš„è¯åˆ¸ä»£ç 
+    char          chOptSide;                  // æŒä»“æ–¹å‘ L-æƒåŠ›ä»“ï¼ŒS-ä¹‰åŠ¡ä»“ï¼ŒC-å¤‡å…‘ç­–ç•¥æŒä»“
+    char          chOptCvdFlag;               // å¤‡å…‘æ ‡å¿— 0-éå¤‡å…‘åˆçº¦ 1-å¤‡å…‘åˆçº¦
+    char          chQueryFlag;                // æŸ¥è¯¢æ–¹å‘ 0:å‘åå–æ•°æ® 1:å‘å‰å–æ•°æ® å…¶ä»–å…¨éƒ¨è¿”å›
 };
 
 struct STRspOptQryHolding
 {
-    LONGLONG        llCuacctCode;               // ×Ê²úÕË»§ 
-    char            szStkbd[2 + 1];             // ½»Ò×°å¿é
-    char            szTrdacct[10 + 1];          // Ö¤È¯ÕË»§ 
-    char            szSubacctCode[8 + 1];       // Ö¤È¯ÕË»§×Ó±àÂë 
-    char            szOptTrdacct[18 + 1];       // ÆÚÈ¨ºÏÔ¼ÕË»§ 
-    char            chCurrency;                 // »õ±Ò´úÂë 
-    char            szOptNum[16 + 1];           // ºÏÔ¼±àÂë 
-    char            szOptCode[32 + 1];          // ºÏÔ¼´úÂë 
-    char            szOptName[32 + 1];          // ºÏÔ¼¼ò³Æ 
-    char            chOptType;                  // ºÏÔ¼ÀàĞÍ ×Öµä[OPT_TYPE]
-    char            chOptSide;                  // ³Ö²Ö·½Ïò 
-    char            chOptCvdFlag;               // ±¸¶Ò±êÖ¾ 0-·Ç±¸¶ÒºÏÔ¼ 1-±¸¶ÒºÏÔ¼
-    LONGLONG        llOptPrebln;                // ºÏÔ¼×òÈÕÓà¶î 
-    LONGLONG        llOptBln;                   // ºÏÔ¼Óà¶î 
-    LONGLONG        llOptAvl;                   // ºÏÔ¼¿ÉÓÃÊıÁ¿ 
-    LONGLONG        llOptFrz;                   // ºÏÔ¼¶³½áÊıÁ¿ 
-    LONGLONG        llOptUfz;                   // ºÏÔ¼½â¶³ÊıÁ¿ 
-    LONGLONG        llOptTrdFrz;                // ºÏÔ¼½»Ò×¶³½áÊıÁ¿ 
-    LONGLONG        llOptTrdUfz;                // ºÏÔ¼½»Ò×½â¶³ÊıÁ¿ 
-    LONGLONG        llOptTrdOtd;                // ºÏÔ¼½»Ò×ÔÚÍ¾ÊıÁ¿ 
-    LONGLONG        llOptTrdBln;                // ºÏÔ¼½»Ò×Ôş²îÊıÁ¿ 
-    LONGLONG        llOptClrFrz;                // ºÏÔ¼ÇåËã¶³½áÊıÁ¿ 
-    LONGLONG        llOptClrUfz;                // ºÏÔ¼ÇåËã½â¶³ÊıÁ¿ 
-    LONGLONG        llOptClrOtd;                // ºÏÔ¼ÇåËãÔÚÍ¾ÊıÁ¿ 
-    char            szOptBcost[21 + 1];         // ºÏÔ¼ÂòÈë³É±¾ 
-    char            szOptBcostRlt[21 + 1];      // ºÏÔ¼ÂòÈë³É±¾£¨ÊµÊ±£© 
-    char            szOptPlamt[21 + 1];         // ºÏÔ¼Ó¯¿÷½ğ¶î 
-    char            szOptPlamtRlt[21 + 1];      // ºÏÔ¼Ó¯¿÷½ğ¶î£¨ÊµÊ±£© 
-    char            szOptMktVal[21 + 1];        // ºÏÔ¼ÊĞÖµ 
-    char            szOptPremium[21 + 1];       // È¨Àû½ğ 
-    char            szOptMargin[21 + 1];        // ±£Ö¤½ğ 
-    LONGLONG        llOptCvdAsset;              // ±¸¶Ò¹É·İÊıÁ¿ 
-    char            szOptClsProfit[21 + 1];     // µ±ÈÕÆ½²ÖÓ¯¿÷ 
-    char            szSumClsProfit[21 + 1];     // ÀÛ¼ÆÆ½²ÖÓ¯¿÷ 
-    char            szOptFloatProfit[21 + 1];   // ¸¡¶¯Ó¯¿÷ ¸¡¶¯Ó¯¿÷=Ö¤È¯ÊĞÖµ-ÂòÈë³É±¾
-    char            szTotalProfit[21 + 1];      // ×ÜÓ¯¿÷ 
-    LONGLONG        llOptRealPosi;              // ºÏÔ¼Êµ¼Ê³Ö²Ö 
-    LONGLONG        llOptClsUnmatched;          // ºÏÔ¼Æ½²Ö¹Òµ¥ÊıÁ¿ ¼´Æ½²ÖÎ¯ÍĞÎ´³É½»ÊıÁ¿
-    LONGLONG        llOptDailyOpenRlt;          // µ±ÈÕÀÛ¼Æ¿ª²ÖÊıÁ¿ 
-    char            szOptUndlCode[8 + 1];       // ±êµÄÖ¤È¯´úÂë 
-    char            szExerciseVal[21 + 1];      // ĞĞÈ¨¼ÛÖµ ÈÏ¹ºÈ¨Àû²ÖµÄĞĞÈ¨¼ÛÖµ£ºMAX((±êµÄ-ĞĞÈ¨¼Û), 0) * ºÏÔ¼µ¥Î» * ºÏÔ¼ÕÅÊı ÈÏ¹ÁÈ¨Àû²ÖµÄĞĞÈ¨¼ÛÖµ£ºMAX((ĞĞÈ¨¼Û-±êµÄ¼Û), 0) * ºÏÔ¼µ¥Î» * ºÏÔ¼ÕÅÊı
-    LONGLONG        llCombedQty;                // ÒÑ×éºÏºÏÔ¼ÊıÁ¿ ²ÎÓë×éºÏµÄÆÚÈ¨ºÏÔ¼³Ö²ÖÊıÁ¿
-    char            szCostPrice[22 + 1];        // ºÏÔ¼³É±¾¼Û 
+    LONGLONG        llCuacctCode;               // èµ„äº§è´¦æˆ· 
+    char            szStkbd[2 + 1];             // äº¤æ˜“æ¿å—
+    char            szTrdacct[10 + 1];          // è¯åˆ¸è´¦æˆ· 
+    char            szSubacctCode[8 + 1];       // è¯åˆ¸è´¦æˆ·å­ç¼–ç  
+    char            szOptTrdacct[18 + 1];       // æœŸæƒåˆçº¦è´¦æˆ· 
+    char            chCurrency;                 // è´§å¸ä»£ç  
+    char            szOptNum[16 + 1];           // åˆçº¦ç¼–ç  
+    char            szOptCode[32 + 1];          // åˆçº¦ä»£ç  
+    char            szOptName[32 + 1];          // åˆçº¦ç®€ç§° 
+    char            chOptType;                  // åˆçº¦ç±»å‹ å­—å…¸[OPT_TYPE]
+    char            chOptSide;                  // æŒä»“æ–¹å‘ 
+    char            chOptCvdFlag;               // å¤‡å…‘æ ‡å¿— 0-éå¤‡å…‘åˆçº¦ 1-å¤‡å…‘åˆçº¦
+    LONGLONG        llOptPrebln;                // åˆçº¦æ˜¨æ—¥ä½™é¢ 
+    LONGLONG        llOptBln;                   // åˆçº¦ä½™é¢ 
+    LONGLONG        llOptAvl;                   // åˆçº¦å¯ç”¨æ•°é‡ 
+    LONGLONG        llOptFrz;                   // åˆçº¦å†»ç»“æ•°é‡ 
+    LONGLONG        llOptUfz;                   // åˆçº¦è§£å†»æ•°é‡ 
+    LONGLONG        llOptTrdFrz;                // åˆçº¦äº¤æ˜“å†»ç»“æ•°é‡ 
+    LONGLONG        llOptTrdUfz;                // åˆçº¦äº¤æ˜“è§£å†»æ•°é‡ 
+    LONGLONG        llOptTrdOtd;                // åˆçº¦äº¤æ˜“åœ¨é€”æ•°é‡ 
+    LONGLONG        llOptTrdBln;                // åˆçº¦äº¤æ˜“è½§å·®æ•°é‡ 
+    LONGLONG        llOptClrFrz;                // åˆçº¦æ¸…ç®—å†»ç»“æ•°é‡ 
+    LONGLONG        llOptClrUfz;                // åˆçº¦æ¸…ç®—è§£å†»æ•°é‡ 
+    LONGLONG        llOptClrOtd;                // åˆçº¦æ¸…ç®—åœ¨é€”æ•°é‡ 
+    char            szOptBcost[21 + 1];         // åˆçº¦ä¹°å…¥æˆæœ¬ 
+    char            szOptBcostRlt[21 + 1];      // åˆçº¦ä¹°å…¥æˆæœ¬ï¼ˆå®æ—¶ï¼‰ 
+    char            szOptPlamt[21 + 1];         // åˆçº¦ç›ˆäºé‡‘é¢ 
+    char            szOptPlamtRlt[21 + 1];      // åˆçº¦ç›ˆäºé‡‘é¢ï¼ˆå®æ—¶ï¼‰ 
+    char            szOptMktVal[21 + 1];        // åˆçº¦å¸‚å€¼ 
+    char            szOptPremium[21 + 1];       // æƒåˆ©é‡‘ 
+    char            szOptMargin[21 + 1];        // ä¿è¯é‡‘ 
+    LONGLONG        llOptCvdAsset;              // å¤‡å…‘è‚¡ä»½æ•°é‡ 
+    char            szOptClsProfit[21 + 1];     // å½“æ—¥å¹³ä»“ç›ˆäº 
+    char            szSumClsProfit[21 + 1];     // ç´¯è®¡å¹³ä»“ç›ˆäº 
+    char            szOptFloatProfit[21 + 1];   // æµ®åŠ¨ç›ˆäº æµ®åŠ¨ç›ˆäº=è¯åˆ¸å¸‚å€¼-ä¹°å…¥æˆæœ¬
+    char            szTotalProfit[21 + 1];      // æ€»ç›ˆäº 
+    LONGLONG        llOptRealPosi;              // åˆçº¦å®é™…æŒä»“ 
+    LONGLONG        llOptClsUnmatched;          // åˆçº¦å¹³ä»“æŒ‚å•æ•°é‡ å³å¹³ä»“å§”æ‰˜æœªæˆäº¤æ•°é‡
+    LONGLONG        llOptDailyOpenRlt;          // å½“æ—¥ç´¯è®¡å¼€ä»“æ•°é‡ 
+    char            szOptUndlCode[8 + 1];       // æ ‡çš„è¯åˆ¸ä»£ç  
+    char            szExerciseVal[21 + 1];      // è¡Œæƒä»·å€¼ è®¤è´­æƒåˆ©ä»“çš„è¡Œæƒä»·å€¼ï¼šMAX((æ ‡çš„-è¡Œæƒä»·), 0) * åˆçº¦å•ä½ * åˆçº¦å¼ æ•° è®¤æ²½æƒåˆ©ä»“çš„è¡Œæƒä»·å€¼ï¼šMAX((è¡Œæƒä»·-æ ‡çš„ä»·), 0) * åˆçº¦å•ä½ * åˆçº¦å¼ æ•°
+    LONGLONG        llCombedQty;                // å·²ç»„åˆåˆçº¦æ•°é‡ å‚ä¸ç»„åˆçš„æœŸæƒåˆçº¦æŒä»“æ•°é‡
+    char            szCostPrice[22 + 1];        // åˆçº¦æˆæœ¬ä»· 
 };
 
 
-//-------------------------------ÆÚÈ¨µ±ÈÕÎ¯ÍĞ²éÑ¯------------------------------------
+//-------------------------------æœŸæƒå½“æ—¥å§”æ‰˜æŸ¥è¯¢------------------------------------
 struct STReqOptQryOrder
 {
-    LONGLONG      llCuacctCode;               // ×Ê²úÕË»§
-    char          szStkbd[2 + 1];             // ½»Ò×°å¿é
-    char          szTrdacct[10 + 1];          // ½»Ò×ÕË»§
-    char          szOptNum[32 + 1];           // ºÏÔ¼±àÂë
-    char          szOptUndlCode[8 + 1];       // ±êµÄÖ¤È¯´úÂë
-    char          szCombStraCode[16 + 1];     // ×éºÏ²ßÂÔ´úÂë
-    char          szOrderId[10 + 1];          // ºÏÍ¬ĞòºÅ
-    int           iOrderBsn;                  // Î¯ÍĞÅúºÅ 
-    char          chQueryFlag;                // ²éÑ¯·½Ïò 0:ÏòºóÈ¡Êı¾İ 1:ÏòÇ°È¡Êı¾İ ÆäËûÈ«²¿·µ»Ø
-    char          szQryPos[32 + 1];           // ¶¨Î»´®
-    int           iQryNum;                    // ²éÑ¯ĞĞÊı
+    LONGLONG      llCuacctCode;               // èµ„äº§è´¦æˆ·
+    char          szStkbd[2 + 1];             // äº¤æ˜“æ¿å—
+    char          szTrdacct[10 + 1];          // äº¤æ˜“è´¦æˆ·
+    char          szOptNum[32 + 1];           // åˆçº¦ç¼–ç 
+    char          szOptUndlCode[8 + 1];       // æ ‡çš„è¯åˆ¸ä»£ç 
+    char          szCombStraCode[16 + 1];     // ç»„åˆç­–ç•¥ä»£ç 
+    char          szOrderId[10 + 1];          // åˆåŒåºå·
+    int           iOrderBsn;                  // å§”æ‰˜æ‰¹å· 
+    char          chQueryFlag;                // æŸ¥è¯¢æ–¹å‘ 0:å‘åå–æ•°æ® 1:å‘å‰å–æ•°æ® å…¶ä»–å…¨éƒ¨è¿”å›
+    char          szQryPos[32 + 1];           // å®šä½ä¸²
+    int           iQryNum;                    // æŸ¥è¯¢è¡Œæ•°
 };
 
 struct STRspOptQryOrder
 {
-    char          szQryPos[32 + 1];           // ¶¨Î»´®
-    int           iTrdDate;                   // ½»Ò×ÈÕÆÚ
-    int           iOrderDate;                 // Î¯ÍĞÈÕÆÚ
-    char          szOrderTime[25 + 1];        // Î¯ÍĞÊ±¼ä
-    int           iOrderBsn;                  // Î¯ÍĞÅúºÅ
-    char          szOrderId[10 + 1];          // ºÏÍ¬ĞòºÅ
-    char          chOrderStatus;              // Î¯ÍĞ×´Ì¬
-    char          chOrderValidFlag;           // Î¯ÍĞÓĞĞ§±êÖ¾
-    LONGLONG      llCuacctCode;               // ×Ê²úÕË»§
-    char          szStkbd[2 + 1];             // ½»Ò×°å¿é
-    char          szTrdacct[10 + 1];          // Ö¤È¯ÕË»§
-    char          szSubacctCode[8 + 1];       // Ö¤È¯ÕË»§×Ó±àÂë
-    char          szOptTrdacct[18 + 1];       // ÆÚÈ¨ºÏÔ¼ÕË»§
-    int           iStkBiz;                    // Ö¤È¯ÒµÎñ
-    int           iStkBizAction;              // Ö¤È¯ÒµÎñĞĞÎª
-    char          szOwnerType[3 + 1];         // ¶©µ¥ËùÓĞÀàĞÍ
-    char          szOptNum[16 + 1];           // ºÏÔ¼±àÂë
-    char          szOptCode[32 + 1];          // ºÏÔ¼´úÂë
-    char          szOptName[32 + 1];          // ºÏÔ¼¼ò³Æ
-    char          szCombNum[16 + 1];          // ×éºÏ±àÂë
-    char          szCombStraCode[16 + 1];     // ×éºÏ²ßÂÔ´úÂë
-    char          szLeg1Num[16 + 1];          // ³É·ÖÒ»ºÏÔ¼±àÂë
-    char          szLeg2Num[16 + 1];          // ³É·Ö¶şºÏÔ¼±àÂë
-    char          szLeg3Num[16 + 1];          // ³É·ÖÈıºÏÔ¼±àÂë
-    char          szLeg4Num[16 + 1];          // ³É·ÖËÄºÏÔ¼±àÂë
-    char          chCurrency;                 // »õ±Ò´úÂë
-    char          szOrderPrice[11 + 1];       // Î¯ÍĞ¼Û¸ñ
-    LONGLONG      llOrderQty;                 // Î¯ÍĞÊıÁ¿
-    char          szOrderAmt[21 + 1];         // Î¯ÍĞ½ğ¶î
-    char          szOrderFrzAmt[21 + 1];      // Î¯ÍĞ¶³½á½ğ¶î
-    char          szOrderUfzAmt[21 + 1];      // Î¯ÍĞ½â¶³½ğ¶î
-    LONGLONG      llOfferQty;                 // Éê±¨ÊıÁ¿
-    int           iOfferStime;                // Éê±¨Ê±¼ä
-    LONGLONG      llWithdrawnQty;             // ÒÑ³·µ¥ÊıÁ¿
-    LONGLONG      llMatchedQty;               // ÒÑ³É½»ÊıÁ¿
-    char          szMatchedAmt[21 + 1];       // ÒÑ³É½»½ğ¶î
-    char          chIsWithdraw;               // ³·µ¥±êÖ¾
-    char          chIsWithdrawn;              // ÒÑ³·µ¥±êÖ¾
-    char          chOptUndlCls;               // ±êµÄÖ¤È¯Àà±ğ
-    char          szOptUndlCode[8 + 1];       // ±êµÄÖ¤È¯´úÂë
-    char          szOptUndlName[16 + 1];      // ±êµÄÖ¤È¯Ãû³Æ
-    LONGLONG      llUndlFrzQty;               // ±êµÄÈ¯Î¯ÍĞ¶³½áÊıÁ¿
-    LONGLONG      llUndlUfzQty;               // ±êµÄÈ¯Î¯ÍĞ½â¶³ÊıÁ¿
-    LONGLONG      llUndlWthQty;               // ±êµÄÈ¯ÒÑ³·µ¥ÊıÁ¿
-    char          szOfferRetMsg[64 + 1];      // Éê±¨·µ»ØĞÅÏ¢
-    short         iStrategySn;                // ²ßÂÔ±àºÅ
-    int           iOrderSn;                   // Î¯ÍĞĞòºÅ
-    char          szRawOrderId[10 + 1];       // Ô­ºÏÍ¬ĞòºÅ
-    char          szMarginPreFrz[21 + 1];     // Ô¤Õ¼ÓÃ±£Ö¤½ğ Âô¿ªÎ¯ÍĞÊ±ÌîĞ´Ô¤¶³½áµÄ±£Ö¤½ğ½ğ¶î£¬ÆäËûÇé¿öÌî¡°0¡±
-    char          szMarginFrz[21 + 1];        // Õ¼ÓÃ±£Ö¤½ğ Âô¿ª³É½»Ê±ÌîĞ´Êµ¼Ê¶³½áµÄ±£Ö¤½ğ½ğ¶î£¬ÆäËûÇé¿öÌî¡°0¡±
-    char          szMarginPreUfz[21 + 1];     // Ô¤½â¶³±£Ö¤½ğ ÂòÆ½Î¯ÍĞÊ±ÌîĞ´Ô¤½â¶³µÄ±£Ö¤½ğ½ğ¶î£¬ÆäËûÇé¿öÌî¡°0¡±
-    char          szMarginUfz[21 + 1];        // ½â¶³±£Ö¤½ğ ÂòÆ½³É½»Ê±ÌîĞ´Êµ¼Ê½â¶³µÄ±£Ö¤½ğ½ğ¶î£¬ÆäËûÇé¿öÌî¡°0¡±
+    char          szQryPos[32 + 1];           // å®šä½ä¸²
+    int           iTrdDate;                   // äº¤æ˜“æ—¥æœŸ
+    int           iOrderDate;                 // å§”æ‰˜æ—¥æœŸ
+    char          szOrderTime[25 + 1];        // å§”æ‰˜æ—¶é—´
+    int           iOrderBsn;                  // å§”æ‰˜æ‰¹å·
+    char          szOrderId[10 + 1];          // åˆåŒåºå·
+    char          chOrderStatus;              // å§”æ‰˜çŠ¶æ€
+    char          chOrderValidFlag;           // å§”æ‰˜æœ‰æ•ˆæ ‡å¿—
+    LONGLONG      llCuacctCode;               // èµ„äº§è´¦æˆ·
+    char          szStkbd[2 + 1];             // äº¤æ˜“æ¿å—
+    char          szTrdacct[10 + 1];          // è¯åˆ¸è´¦æˆ·
+    char          szSubacctCode[8 + 1];       // è¯åˆ¸è´¦æˆ·å­ç¼–ç 
+    char          szOptTrdacct[18 + 1];       // æœŸæƒåˆçº¦è´¦æˆ·
+    int           iStkBiz;                    // è¯åˆ¸ä¸šåŠ¡
+    int           iStkBizAction;              // è¯åˆ¸ä¸šåŠ¡è¡Œä¸º
+    char          szOwnerType[3 + 1];         // è®¢å•æ‰€æœ‰ç±»å‹
+    char          szOptNum[16 + 1];           // åˆçº¦ç¼–ç 
+    char          szOptCode[32 + 1];          // åˆçº¦ä»£ç 
+    char          szOptName[32 + 1];          // åˆçº¦ç®€ç§°
+    char          szCombNum[16 + 1];          // ç»„åˆç¼–ç 
+    char          szCombStraCode[16 + 1];     // ç»„åˆç­–ç•¥ä»£ç 
+    char          szLeg1Num[16 + 1];          // æˆåˆ†ä¸€åˆçº¦ç¼–ç 
+    char          szLeg2Num[16 + 1];          // æˆåˆ†äºŒåˆçº¦ç¼–ç 
+    char          szLeg3Num[16 + 1];          // æˆåˆ†ä¸‰åˆçº¦ç¼–ç 
+    char          szLeg4Num[16 + 1];          // æˆåˆ†å››åˆçº¦ç¼–ç 
+    char          chCurrency;                 // è´§å¸ä»£ç 
+    char          szOrderPrice[11 + 1];       // å§”æ‰˜ä»·æ ¼
+    LONGLONG      llOrderQty;                 // å§”æ‰˜æ•°é‡
+    char          szOrderAmt[21 + 1];         // å§”æ‰˜é‡‘é¢
+    char          szOrderFrzAmt[21 + 1];      // å§”æ‰˜å†»ç»“é‡‘é¢
+    char          szOrderUfzAmt[21 + 1];      // å§”æ‰˜è§£å†»é‡‘é¢
+    LONGLONG      llOfferQty;                 // ç”³æŠ¥æ•°é‡
+    int           iOfferStime;                // ç”³æŠ¥æ—¶é—´
+    LONGLONG      llWithdrawnQty;             // å·²æ’¤å•æ•°é‡
+    LONGLONG      llMatchedQty;               // å·²æˆäº¤æ•°é‡
+    char          szMatchedAmt[21 + 1];       // å·²æˆäº¤é‡‘é¢
+    char          chIsWithdraw;               // æ’¤å•æ ‡å¿—
+    char          chIsWithdrawn;              // å·²æ’¤å•æ ‡å¿—
+    char          chOptUndlCls;               // æ ‡çš„è¯åˆ¸ç±»åˆ«
+    char          szOptUndlCode[8 + 1];       // æ ‡çš„è¯åˆ¸ä»£ç 
+    char          szOptUndlName[16 + 1];      // æ ‡çš„è¯åˆ¸åç§°
+    LONGLONG      llUndlFrzQty;               // æ ‡çš„åˆ¸å§”æ‰˜å†»ç»“æ•°é‡
+    LONGLONG      llUndlUfzQty;               // æ ‡çš„åˆ¸å§”æ‰˜è§£å†»æ•°é‡
+    LONGLONG      llUndlWthQty;               // æ ‡çš„åˆ¸å·²æ’¤å•æ•°é‡
+    char          szOfferRetMsg[64 + 1];      // ç”³æŠ¥è¿”å›ä¿¡æ¯
+    short         iStrategySn;                // ç­–ç•¥ç¼–å·
+    int           iOrderSn;                   // å§”æ‰˜åºå·
+    char          szRawOrderId[10 + 1];       // åŸåˆåŒåºå·
+    char          szMarginPreFrz[21 + 1];     // é¢„å ç”¨ä¿è¯é‡‘ å–å¼€å§”æ‰˜æ—¶å¡«å†™é¢„å†»ç»“çš„ä¿è¯é‡‘é‡‘é¢ï¼Œå…¶ä»–æƒ…å†µå¡«â€œ0â€
+    char          szMarginFrz[21 + 1];        // å ç”¨ä¿è¯é‡‘ å–å¼€æˆäº¤æ—¶å¡«å†™å®é™…å†»ç»“çš„ä¿è¯é‡‘é‡‘é¢ï¼Œå…¶ä»–æƒ…å†µå¡«â€œ0â€
+    char          szMarginPreUfz[21 + 1];     // é¢„è§£å†»ä¿è¯é‡‘ ä¹°å¹³å§”æ‰˜æ—¶å¡«å†™é¢„è§£å†»çš„ä¿è¯é‡‘é‡‘é¢ï¼Œå…¶ä»–æƒ…å†µå¡«â€œ0â€
+    char          szMarginUfz[21 + 1];        // è§£å†»ä¿è¯é‡‘ ä¹°å¹³æˆäº¤æ—¶å¡«å†™å®é™…è§£å†»çš„ä¿è¯é‡‘é‡‘é¢ï¼Œå…¶ä»–æƒ…å†µå¡«â€œ0â€
 };
 
-//-------------------------------ÆÚÈ¨µ±ÈÕ³É½»²éÑ¯------------------------------------
+//-------------------------------æœŸæƒå½“æ—¥æˆäº¤æŸ¥è¯¢------------------------------------
 struct STReqOptQryFill
 {
-    LONGLONG      llCuacctCode;               // ×Ê²úÕË»§
-    char          szStkbd[2 + 1];             // ½»Ò×°å¿é ×Öµä[STKBD]
-    char          szTrdacct[10 + 1];          // ½»Ò×ÕË»§
-    char          szOptNum[32 + 1];           // ºÏÔ¼±àÂë
-    char          szOptUndlCode[8 + 1];       // ±êµÄÖ¤È¯´úÂë
-    char          szCombStraCode[16 + 1];     // ×éºÏ²ßÂÔ´úÂë
-    char          szOrderId[10 + 1];          // ºÏÍ¬ĞòºÅ
-    int           iOrderBsn;                  // Î¯ÍĞÅúºÅ
-    char          chQueryFlag;                // ²éÑ¯·½Ïò 0:ÏòºóÈ¡Êı¾İ 1:ÏòÇ°È¡Êı¾İ ÆäËûÈ«²¿·µ»Ø
-    char          szQryPos[32 + 1];           // ¶¨Î»´®
-    int           iQryNum;                    // ²éÑ¯ĞĞÊı
+    LONGLONG      llCuacctCode;               // èµ„äº§è´¦æˆ·
+    char          szStkbd[2 + 1];             // äº¤æ˜“æ¿å— å­—å…¸[STKBD]
+    char          szTrdacct[10 + 1];          // äº¤æ˜“è´¦æˆ·
+    char          szOptNum[32 + 1];           // åˆçº¦ç¼–ç 
+    char          szOptUndlCode[8 + 1];       // æ ‡çš„è¯åˆ¸ä»£ç 
+    char          szCombStraCode[16 + 1];     // ç»„åˆç­–ç•¥ä»£ç 
+    char          szOrderId[10 + 1];          // åˆåŒåºå·
+    int           iOrderBsn;                  // å§”æ‰˜æ‰¹å·
+    char          chQueryFlag;                // æŸ¥è¯¢æ–¹å‘ 0:å‘åå–æ•°æ® 1:å‘å‰å–æ•°æ® å…¶ä»–å…¨éƒ¨è¿”å›
+    char          szQryPos[32 + 1];           // å®šä½ä¸²
+    int           iQryNum;                    // æŸ¥è¯¢è¡Œæ•°
 };
 
 struct STRspOptQryFill
 {
-    char          szQryPos[32 + 1];           // ¶¨Î»´®
-    int           iTrdDate;                   // ½»Ò×ÈÕÆÚ
-    char          szMatchedTime[8 + 1];       // ³É½»Ê±¼ä
-    int           iOrderDate;                 // Î¯ÍĞÈÕÆÚ
-    int           iOrderSn;                   // Î¯ÍĞĞòºÅ
-    int           iOrderBsn;                  // Î¯ÍĞÅúºÅ
-    char          szOrderId[10 + 1];          // ºÏÍ¬ĞòºÅ
-    LONGLONG      llCuacctCode;               // ×Ê²úÕË»§
-    char          szStkbd[2 + 1];             // ½»Ò×°å¿é
-    char          szStkpbu[8 + 1];            // ½»Ò×µ¥Ôª
-    char          szTrdacct[10 + 1];          // Ö¤È¯ÕË»§
-    char          szSubacctCode[8 + 1];       // Ö¤È¯ÕË»§×Ó±àÂë
-    char          szOptTrdacct[18 + 1];       // ÆÚÈ¨ºÏÔ¼ÕË»§
-    int           iStkBiz;                    // Ö¤È¯ÒµÎñ
-    int           iStkBizAction;              // Ö¤È¯ÒµÎñĞĞÎª
-    char          szOwnerType[3 + 1];         // ¶©µ¥ËùÓĞÀàĞÍ
-    char          szOptNum[16 + 1];           // ºÏÔ¼±àÂë
-    char          szOptCode[32 + 1];          // ºÏÔ¼´úÂë
-    char          szOptName[32 + 1];          // ºÏÔ¼¼ò³Æ
-    char          szCombNum[16 + 1];          // ×éºÏ±àÂë
-    char          szCombStraCode[16 + 1];     // ×éºÏ²ßÂÔ´úÂë
-    char          szLeg1Num[16 + 1];          // ³É·ÖÒ»ºÏÔ¼±àÂë
-    char          szLeg2Num[16 + 1];          // ³É·Ö¶şºÏÔ¼±àÂë
-    char          szLeg3Num[16 + 1];          // ³É·ÖÈıºÏÔ¼±àÂë
-    char          szLeg4Num[16 + 1];          // ³É·ÖËÄºÏÔ¼±àÂë
-    char          chCurrency;                 // »õ±Ò´úÂë
-    char          chOptUndlCls;               // ±êµÄÖ¤È¯Àà±ğ
-    char          szOptUndlCode[8 + 1];       // ±êµÄÖ¤È¯´úÂë
-    char          szOptUndlName[16 + 1];      // ±êµÄÖ¤È¯Ãû³Æ
-    char          szOrderPrice[11 + 1];       // Î¯ÍĞ¼Û¸ñ
-    LONGLONG      llOrderQty;                 // Î¯ÍĞÊıÁ¿
-    char          szOrderAmt[21 + 1];         // Î¯ÍĞ½ğ¶î
-    char          szOrderFrzAmt[21 + 1];      // Î¯ÍĞ¶³½á½ğ¶î
-    char          chIsWithdraw;               // ³·µ¥±êÖ¾
-    char          chMatchedType;              // ³É½»ÀàĞÍ
-    char          szMatchedSn[32 + 1];        // ³É½»±àºÅ
-    char          szMatchedPrice[11 + 1];     // ³É½»¼Û¸ñ
-    LONGLONG      llMatchedQty;               // ÒÑ³É½»ÊıÁ¿
-    char          szMatchedAmt[21 + 1];       // ÒÑ³É½»½ğ¶î
-    short         iStrategySn;                // ²ßÂÔ±àºÅ
-    char          szMarginPreFrz[21 + 1];     // Ô¤Õ¼ÓÃ±£Ö¤½ğ Âô¿ªÎ¯ÍĞÊ±ÌîĞ´Ô¤¶³½áµÄ±£Ö¤½ğ½ğ¶î£¬ÆäËûÇé¿öÌî¡°0¡±
-    char          szMarginFrz[21 + 1];        // Õ¼ÓÃ±£Ö¤½ğ Âô¿ª³É½»Ê±ÌîĞ´Êµ¼Ê¶³½áµÄ±£Ö¤½ğ½ğ¶î£¬ÆäËûÇé¿öÌî¡°0¡±
-    char          szMarginPreUfz[21 + 1];     // Ô¤½â¶³±£Ö¤½ğ ÂòÆ½Î¯ÍĞÊ±ÌîĞ´Ô¤½â¶³µÄ±£Ö¤½ğ½ğ¶î£¬ÆäËûÇé¿öÌî¡°0¡±
-    char          szMarginUfz[21 + 1];        // ½â¶³±£Ö¤½ğ ÂòÆ½³É½»Ê±ÌîĞ´Êµ¼Ê½â¶³µÄ±£Ö¤½ğ½ğ¶î£¬ÆäËûÇé¿öÌî¡°0¡±
-    char          szMatchedFee[21 + 1];       // ³É½»·ÑÓÃ
+    char          szQryPos[32 + 1];           // å®šä½ä¸²
+    int           iTrdDate;                   // äº¤æ˜“æ—¥æœŸ
+    char          szMatchedTime[8 + 1];       // æˆäº¤æ—¶é—´
+    int           iOrderDate;                 // å§”æ‰˜æ—¥æœŸ
+    int           iOrderSn;                   // å§”æ‰˜åºå·
+    int           iOrderBsn;                  // å§”æ‰˜æ‰¹å·
+    char          szOrderId[10 + 1];          // åˆåŒåºå·
+    LONGLONG      llCuacctCode;               // èµ„äº§è´¦æˆ·
+    char          szStkbd[2 + 1];             // äº¤æ˜“æ¿å—
+    char          szStkpbu[8 + 1];            // äº¤æ˜“å•å…ƒ
+    char          szTrdacct[10 + 1];          // è¯åˆ¸è´¦æˆ·
+    char          szSubacctCode[8 + 1];       // è¯åˆ¸è´¦æˆ·å­ç¼–ç 
+    char          szOptTrdacct[18 + 1];       // æœŸæƒåˆçº¦è´¦æˆ·
+    int           iStkBiz;                    // è¯åˆ¸ä¸šåŠ¡
+    int           iStkBizAction;              // è¯åˆ¸ä¸šåŠ¡è¡Œä¸º
+    char          szOwnerType[3 + 1];         // è®¢å•æ‰€æœ‰ç±»å‹
+    char          szOptNum[16 + 1];           // åˆçº¦ç¼–ç 
+    char          szOptCode[32 + 1];          // åˆçº¦ä»£ç 
+    char          szOptName[32 + 1];          // åˆçº¦ç®€ç§°
+    char          szCombNum[16 + 1];          // ç»„åˆç¼–ç 
+    char          szCombStraCode[16 + 1];     // ç»„åˆç­–ç•¥ä»£ç 
+    char          szLeg1Num[16 + 1];          // æˆåˆ†ä¸€åˆçº¦ç¼–ç 
+    char          szLeg2Num[16 + 1];          // æˆåˆ†äºŒåˆçº¦ç¼–ç 
+    char          szLeg3Num[16 + 1];          // æˆåˆ†ä¸‰åˆçº¦ç¼–ç 
+    char          szLeg4Num[16 + 1];          // æˆåˆ†å››åˆçº¦ç¼–ç 
+    char          chCurrency;                 // è´§å¸ä»£ç 
+    char          chOptUndlCls;               // æ ‡çš„è¯åˆ¸ç±»åˆ«
+    char          szOptUndlCode[8 + 1];       // æ ‡çš„è¯åˆ¸ä»£ç 
+    char          szOptUndlName[16 + 1];      // æ ‡çš„è¯åˆ¸åç§°
+    char          szOrderPrice[11 + 1];       // å§”æ‰˜ä»·æ ¼
+    LONGLONG      llOrderQty;                 // å§”æ‰˜æ•°é‡
+    char          szOrderAmt[21 + 1];         // å§”æ‰˜é‡‘é¢
+    char          szOrderFrzAmt[21 + 1];      // å§”æ‰˜å†»ç»“é‡‘é¢
+    char          chIsWithdraw;               // æ’¤å•æ ‡å¿—
+    char          chMatchedType;              // æˆäº¤ç±»å‹
+    char          szMatchedSn[32 + 1];        // æˆäº¤ç¼–å·
+    char          szMatchedPrice[11 + 1];     // æˆäº¤ä»·æ ¼
+    LONGLONG      llMatchedQty;               // å·²æˆäº¤æ•°é‡
+    char          szMatchedAmt[21 + 1];       // å·²æˆäº¤é‡‘é¢
+    short         iStrategySn;                // ç­–ç•¥ç¼–å·
+    char          szMarginPreFrz[21 + 1];     // é¢„å ç”¨ä¿è¯é‡‘ å–å¼€å§”æ‰˜æ—¶å¡«å†™é¢„å†»ç»“çš„ä¿è¯é‡‘é‡‘é¢ï¼Œå…¶ä»–æƒ…å†µå¡«â€œ0â€
+    char          szMarginFrz[21 + 1];        // å ç”¨ä¿è¯é‡‘ å–å¼€æˆäº¤æ—¶å¡«å†™å®é™…å†»ç»“çš„ä¿è¯é‡‘é‡‘é¢ï¼Œå…¶ä»–æƒ…å†µå¡«â€œ0â€
+    char          szMarginPreUfz[21 + 1];     // é¢„è§£å†»ä¿è¯é‡‘ ä¹°å¹³å§”æ‰˜æ—¶å¡«å†™é¢„è§£å†»çš„ä¿è¯é‡‘é‡‘é¢ï¼Œå…¶ä»–æƒ…å†µå¡«â€œ0â€
+    char          szMarginUfz[21 + 1];        // è§£å†»ä¿è¯é‡‘ ä¹°å¹³æˆäº¤æ—¶å¡«å†™å®é™…è§£å†»çš„ä¿è¯é‡‘é‡‘é¢ï¼Œå…¶ä»–æƒ…å†µå¡«â€œ0â€
+    char          szMatchedFee[21 + 1];       // æˆäº¤è´¹ç”¨
 };
 
 
-//-------------------------------ÆÚÈ¨¿É³·Î¯ÍĞ²éÑ¯------------------------------------
+//-------------------------------æœŸæƒå¯æ’¤å§”æ‰˜æŸ¥è¯¢------------------------------------
 struct STReqOptQryWithdrawableOrder
 {
-    LONGLONG      llCuacctCode;               // ×Ê²úÕË»§
-    char          szStkbd[2 + 1];             // ½»Ò×°å¿é
-    char          szTrdacct[10 + 1];          // ½»Ò×ÕË»§
-    char          szOptNum[32 + 1];           // ºÏÔ¼±àÂë
-    char          szOptUndlCode[8 + 1];       // ±êµÄÖ¤È¯´úÂë
-    char          szOrderId[10 + 1];          // ºÏÍ¬ĞòºÅ
-    char          chQueryFlag;                // ²éÑ¯·½Ïò 0:ÏòºóÈ¡Êı¾İ 1:ÏòÇ°È¡Êı¾İ ÆäËûÈ«²¿·µ»Ø
-    char          szQryPos[32 + 1];           // ¶¨Î»´®
-    int           iQryNum;                    // ²éÑ¯ĞĞÊı
+    LONGLONG      llCuacctCode;               // èµ„äº§è´¦æˆ·
+    char          szStkbd[2 + 1];             // äº¤æ˜“æ¿å—
+    char          szTrdacct[10 + 1];          // äº¤æ˜“è´¦æˆ·
+    char          szOptNum[32 + 1];           // åˆçº¦ç¼–ç 
+    char          szOptUndlCode[8 + 1];       // æ ‡çš„è¯åˆ¸ä»£ç 
+    char          szOrderId[10 + 1];          // åˆåŒåºå·
+    char          chQueryFlag;                // æŸ¥è¯¢æ–¹å‘ 0:å‘åå–æ•°æ® 1:å‘å‰å–æ•°æ® å…¶ä»–å…¨éƒ¨è¿”å›
+    char          szQryPos[32 + 1];           // å®šä½ä¸²
+    int           iQryNum;                    // æŸ¥è¯¢è¡Œæ•°
 };
 
 struct STRspOptQryWithdrawableOrder
 {
-    char          szQryPos[32 + 1];           // ¶¨Î»´®
-    int           iTrdDate;                   // ½»Ò×ÈÕÆÚ
-    int           iOrderDate;                 // Î¯ÍĞÈÕÆÚ
-    char          szOrderTime[25 + 1];        // Î¯ÍĞÊ±¼ä
-    int           iOrderBsn;                  // Î¯ÍĞÅúºÅ
-    char          szOrderId[10 + 1];          // ºÏÍ¬ĞòºÅ
-    char          chOrderStatus;              // Î¯ÍĞ×´Ì¬
-    char          chOrderValidFlag;           // Î¯ÍĞÓĞĞ§±êÖ¾
-    LONGLONG      llCuacctCode;               // ×Ê²úÕË»§
-    char          szStkbd[2 + 1];             // ½»Ò×°å¿é
-    char          szTrdacct[10 + 1];          // Ö¤È¯ÕË»§
-    char          szSubacctCode[8 + 1];       // Ö¤È¯ÕË»§×Ó±àÂë
-    char          szOptTrdacct[18 + 1];       // ÆÚÈ¨ºÏÔ¼ÕË»§
-    int           iStkBiz;                    // Ö¤È¯ÒµÎñ
-    int           iStkBizAction;              // Ö¤È¯ÒµÎñĞĞÎª
-    char          szOwnerType[3 + 1];         // ¶©µ¥ËùÓĞÀàĞÍ
-    char          szOptNum[16 + 1];           // ºÏÔ¼±àÂë
-    char          szOptCode[32 + 1];          // ºÏÔ¼´úÂë
-    char          szOptName[32 + 1];          // ºÏÔ¼¼ò³Æ
-    char          chCurrency;                 // »õ±Ò´úÂë
-    char          szOrderPrice[11 + 1];       // Î¯ÍĞ¼Û¸ñ
-    LONGLONG      llOrderQty;                 // Î¯ÍĞÊıÁ¿
-    char          szOrderAmt[21 + 1];         // Î¯ÍĞ½ğ¶î
-    char          szOrderFrzAmt[21 + 1];      // Î¯ÍĞ¶³½á½ğ¶î
-    char          szOrderUfzAmt[21 + 1];      // Î¯ÍĞ½â¶³½ğ¶î
-    LONGLONG      llOfferQty;                 // Éê±¨ÊıÁ¿
-    int           iOfferStime;                // Éê±¨Ê±¼ä
-    LONGLONG      llWithdrawnQty;             // ÒÑ³·µ¥ÊıÁ¿
-    LONGLONG      llMatchedQty;               // ÒÑ³É½»ÊıÁ¿
-    char          szMatchedAmt[21 + 1];       // ÒÑ³É½»½ğ¶î
-    char          chIsWithdraw;               // ³·µ¥±êÖ¾
-    char          chIsWithdrawn;              // ÒÑ³·µ¥±êÖ¾
-    char          chOptUndlCls;               // ±êµÄÖ¤È¯Àà±ğ
-    char          szOptUndlCode[8 + 1];       // ±êµÄÖ¤È¯´úÂë
-    char          szOptUndlName[16 + 1];      // ±êµÄÖ¤È¯Ãû³Æ
-    LONGLONG      llUndlFrzQty;               // ±êµÄÈ¯Î¯ÍĞ¶³½áÊıÁ¿
-    LONGLONG      llUndlUfzQty;               // ±êµÄÈ¯Î¯ÍĞ½â¶³ÊıÁ¿
-    LONGLONG      llUndlWthQty;               // ±êµÄÈ¯ÒÑ³·µ¥ÊıÁ¿
-    char          szMarginPreFrz[21 + 1];     // Ô¤Õ¼ÓÃ±£Ö¤½ğ Âô¿ªÎ¯ÍĞÊ±ÌîĞ´Ô¤¶³½áµÄ±£Ö¤½ğ½ğ¶î£¬ÆäËûÇé¿öÌî¡°0¡±
-    char          szMarginFrz[21 + 1];        // Õ¼ÓÃ±£Ö¤½ğ Âô¿ª³É½»Ê±ÌîĞ´Êµ¼Ê¶³½áµÄ±£Ö¤½ğ½ğ¶î£¬ÆäËûÇé¿öÌî¡°0¡±
-    char          szMarginPreUfz[21 + 1];     // Ô¤½â¶³±£Ö¤½ğ ÂòÆ½Î¯ÍĞÊ±ÌîĞ´Ô¤½â¶³µÄ±£Ö¤½ğ½ğ¶î£¬ÆäËûÇé¿öÌî¡°0¡±
-    char          szMarginUfz[21 + 1];        // ½â¶³±£Ö¤½ğ ÂòÆ½³É½»Ê±ÌîĞ´Êµ¼Ê½â¶³µÄ±£Ö¤½ğ½ğ¶î£¬ÆäËûÇé¿öÌî¡°0¡±
+    char          szQryPos[32 + 1];           // å®šä½ä¸²
+    int           iTrdDate;                   // äº¤æ˜“æ—¥æœŸ
+    int           iOrderDate;                 // å§”æ‰˜æ—¥æœŸ
+    char          szOrderTime[25 + 1];        // å§”æ‰˜æ—¶é—´
+    int           iOrderBsn;                  // å§”æ‰˜æ‰¹å·
+    char          szOrderId[10 + 1];          // åˆåŒåºå·
+    char          chOrderStatus;              // å§”æ‰˜çŠ¶æ€
+    char          chOrderValidFlag;           // å§”æ‰˜æœ‰æ•ˆæ ‡å¿—
+    LONGLONG      llCuacctCode;               // èµ„äº§è´¦æˆ·
+    char          szStkbd[2 + 1];             // äº¤æ˜“æ¿å—
+    char          szTrdacct[10 + 1];          // è¯åˆ¸è´¦æˆ·
+    char          szSubacctCode[8 + 1];       // è¯åˆ¸è´¦æˆ·å­ç¼–ç 
+    char          szOptTrdacct[18 + 1];       // æœŸæƒåˆçº¦è´¦æˆ·
+    int           iStkBiz;                    // è¯åˆ¸ä¸šåŠ¡
+    int           iStkBizAction;              // è¯åˆ¸ä¸šåŠ¡è¡Œä¸º
+    char          szOwnerType[3 + 1];         // è®¢å•æ‰€æœ‰ç±»å‹
+    char          szOptNum[16 + 1];           // åˆçº¦ç¼–ç 
+    char          szOptCode[32 + 1];          // åˆçº¦ä»£ç 
+    char          szOptName[32 + 1];          // åˆçº¦ç®€ç§°
+    char          chCurrency;                 // è´§å¸ä»£ç 
+    char          szOrderPrice[11 + 1];       // å§”æ‰˜ä»·æ ¼
+    LONGLONG      llOrderQty;                 // å§”æ‰˜æ•°é‡
+    char          szOrderAmt[21 + 1];         // å§”æ‰˜é‡‘é¢
+    char          szOrderFrzAmt[21 + 1];      // å§”æ‰˜å†»ç»“é‡‘é¢
+    char          szOrderUfzAmt[21 + 1];      // å§”æ‰˜è§£å†»é‡‘é¢
+    LONGLONG      llOfferQty;                 // ç”³æŠ¥æ•°é‡
+    int           iOfferStime;                // ç”³æŠ¥æ—¶é—´
+    LONGLONG      llWithdrawnQty;             // å·²æ’¤å•æ•°é‡
+    LONGLONG      llMatchedQty;               // å·²æˆäº¤æ•°é‡
+    char          szMatchedAmt[21 + 1];       // å·²æˆäº¤é‡‘é¢
+    char          chIsWithdraw;               // æ’¤å•æ ‡å¿—
+    char          chIsWithdrawn;              // å·²æ’¤å•æ ‡å¿—
+    char          chOptUndlCls;               // æ ‡çš„è¯åˆ¸ç±»åˆ«
+    char          szOptUndlCode[8 + 1];       // æ ‡çš„è¯åˆ¸ä»£ç 
+    char          szOptUndlName[16 + 1];      // æ ‡çš„è¯åˆ¸åç§°
+    LONGLONG      llUndlFrzQty;               // æ ‡çš„åˆ¸å§”æ‰˜å†»ç»“æ•°é‡
+    LONGLONG      llUndlUfzQty;               // æ ‡çš„åˆ¸å§”æ‰˜è§£å†»æ•°é‡
+    LONGLONG      llUndlWthQty;               // æ ‡çš„åˆ¸å·²æ’¤å•æ•°é‡
+    char          szMarginPreFrz[21 + 1];     // é¢„å ç”¨ä¿è¯é‡‘ å–å¼€å§”æ‰˜æ—¶å¡«å†™é¢„å†»ç»“çš„ä¿è¯é‡‘é‡‘é¢ï¼Œå…¶ä»–æƒ…å†µå¡«â€œ0â€
+    char          szMarginFrz[21 + 1];        // å ç”¨ä¿è¯é‡‘ å–å¼€æˆäº¤æ—¶å¡«å†™å®é™…å†»ç»“çš„ä¿è¯é‡‘é‡‘é¢ï¼Œå…¶ä»–æƒ…å†µå¡«â€œ0â€
+    char          szMarginPreUfz[21 + 1];     // é¢„è§£å†»ä¿è¯é‡‘ ä¹°å¹³å§”æ‰˜æ—¶å¡«å†™é¢„è§£å†»çš„ä¿è¯é‡‘é‡‘é¢ï¼Œå…¶ä»–æƒ…å†µå¡«â€œ0â€
+    char          szMarginUfz[21 + 1];        // è§£å†»ä¿è¯é‡‘ ä¹°å¹³æˆäº¤æ—¶å¡«å†™å®é™…è§£å†»çš„ä¿è¯é‡‘é‡‘é¢ï¼Œå…¶ä»–æƒ…å†µå¡«â€œ0â€
 };
 #endif  //__ZS_STK_TRADE_API_STRUCT_H__

@@ -16,19 +16,19 @@ public:
     CBaseApi(void);
     virtual ~CBaseApi(void);
 
-    // ³õÊ¼»¯
+    // åˆå§‹åŒ–
     virtual int Init(int iNoSub = 0);
 
-    // ÍË³ö
+    // é€€å‡º
     virtual int Exit(void);
 
-    // ÉèÖÃ·şÎñÆ÷µØÖ·ºÍ¶Ë¿Ú
+    // è®¾ç½®æœåŠ¡å™¨åœ°å€å’Œç«¯å£
     virtual int RegisterServer(const char *p_pszIp, int p_iPort, unsigned int uiTimeout = 0);
 
-    ///×¢²á»Øµ÷½Ó¿Ú
+    ///æ³¨å†Œå›è°ƒæ¥å£
     virtual int RegisterCallback(CBaseCallback *p_pCallback);
 
-    //ÉèÖÃ¼øÈ¨·½Ê½
+    //è®¾ç½®é‰´æƒæ–¹å¼
     virtual void SetAuthType(int iAuthType, const char *szSecretKey = 0);
 
 public:

@@ -2,7 +2,7 @@
 
 #include <functional>
 
-// ×÷ÓÃÓò·À»¤
+// ä½œç”¨åŸŸé˜²æŠ¤
 class ScopeGuard
 {
 public:
@@ -20,7 +20,7 @@ public:
     }
   }
 
-  void Dismiss() // ½â³ı·À»¤
+  void Dismiss() // è§£é™¤é˜²æŠ¤
   {
     m_bDismissed = true;
   }

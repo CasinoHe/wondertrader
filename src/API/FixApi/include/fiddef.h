@@ -1,3037 +1,3037 @@
 /***********************************************************************
-*         Copyright (C) 2004  ¸£½¨¶¥µãÈí¼şÓĞÏŞ¹«Ë¾ All rights reserved.
+*         Copyright (C) 2004  ç¦å»ºé¡¶ç‚¹è½¯ä»¶æœ‰é™å…¬å¸ All rights reserved.
 *
-*ÎÄ¼şÃû³Æ£ºfiddef.h
-*ÏîÄ¿Ãû³Æ£º
-*ÕªÒª£º    ĞÅÏ¢Ôª¶¨Òåc/c++±à³ÌÓÃÍ·ÎÄ¼ş¡£
+*æ–‡ä»¶åç§°ï¼šfiddef.h
+*é¡¹ç›®åç§°ï¼š
+*æ‘˜è¦ï¼š    ä¿¡æ¯å…ƒå®šä¹‰c/c++ç¼–ç¨‹ç”¨å¤´æ–‡ä»¶ã€‚
 *
-*Ô­×÷Õß£º  ¶¥µãÆóÒµ¼¶Ö¤È¯¼¯ÖĞ½»Ò×ÏµÍ³ABOSS2
-*´´½¨ÈÕÆÚ£º2015.12.07
-*±¸×¢£º
+*åŸä½œè€…ï¼š  é¡¶ç‚¹ä¼ä¸šçº§è¯åˆ¸é›†ä¸­äº¤æ˜“ç³»ç»ŸABOSS2
+*åˆ›å»ºæ—¥æœŸï¼š2015.12.07
+*å¤‡æ³¨ï¼š
 *
-*ÀúÊ·ĞŞ¸Ä¼ÇÂ¼£º
+*å†å²ä¿®æ”¹è®°å½•ï¼š
 *
-*ĞòºÅ    ÈÕÆÚ             °æ±¾                ×÷Õß
-*1.      2015.12.07       v1.0.0.1            ¶¥µãÆóÒµ¼¶Ö¤È¯¼¯ÖĞ½»Ò×ÏµÍ³ABOSS2
-*    ´´½¨¡£
+*åºå·    æ—¥æœŸ             ç‰ˆæœ¬                ä½œè€…
+*1.      2015.12.07       v1.0.0.1            é¡¶ç‚¹ä¼ä¸šçº§è¯åˆ¸é›†ä¸­äº¤æ˜“ç³»ç»ŸABOSS2
+*    åˆ›å»ºã€‚
 *
 **********************************************************************/
 
 #if !defined(_FIDDEF_DEFINE_H)
 #define _FIDDEF_DEFINE_H
 
-#define  FID_BCZJYE             501  //±¾´Î×Ê½ğÓà¶î  DT£ºC  
-#define  FID_BFXJJ              502  //Âò·çÏÕ½ğ  DT£ºC  
-#define  FID_BGHF               503  //Âò¹ı»§·Ñ  DT£ºC  
-#define  FID_BJE                504  //ÂòÈë½ğ¶î  DT£ºC  
-#define  FID_BJSF               505  //Âò¾­ÊÖ·Ñ  DT£ºC  
-#define  FID_BPGDH              506  //±¨ÅÌ¹É¶«ºÅ  DT£ºC  
-#define  FID_CODE               507  //·µ»ØÂë  DT£ºC  
-#define  FID_MESSAGE            508  //·µ»ØËµÃ÷  DT£ºC  
-#define  FID_BSL                509  //ÂòÈëÊıÁ¿  DT£ºC  
-#define  FID_BYHS               510  //ÂòÓ¡»¨Ë°  DT£ºC  
-#define  FID_BZ                 511  //±ÒÖÖ  DT£ºC  
-#define  FID_BZBM               512  //±ÒÖÖ±àÂë  DT£ºC  
-#define  FID_BZGF               513  //ÂòÖ¤¹Ü·Ñ  DT£ºC  
-#define  FID_BZMC               514  //±ÒÖÖÃû³Æ  DT£ºC  
-#define  FID_CBBD               515  //³É±¾±ä¶¯  DT£ºR  
-#define  FID_MENUID_HC          516  //»¥³âµÄ²Ëµ¥ÏµÍ³´úÂë  DT£ºI  
-#define  FID_HLJE               517  //ºìÀû½ğ¶î  DT£ºR  
-#define  FID_CDMC               518  //²Ëµ¥Ãû³Æ  DT£ºC  
-#define  FID_CDTIME             519  //²Ëµ¥¿ÉÓÃÊ±¼ä  DT£ºC  
-#define  FID_CDTS               520  //²Ëµ¥ÌáÊ¾  DT£ºC  
-#define  FID_CDWZID             521  //²Ëµ¥Î»ÖÃID  DT£ºC  
-#define  FID_CJBH               522  //³É½»±àºÅ  DT£ºC  
-#define  FID_CJGY               523  //´´½¨¹ñÔ±  DT£ºC  
-#define  FID_CJJE               524  //³É½»½ğ¶î  DT£ºC  
-#define  FID_CJJG               525  //³É½»¼Û¸ñ  DT£ºC  
-#define  FID_CJRQ               526  //³É½»ÈÕÆÚ  DT£ºC  
-#define  FID_CJSJ               527  //³É½»Ê±¼ä  DT£ºC  
-#define  FID_CJSL               528  //³É½»ÊıÁ¿  DT£ºC  
-#define  FID_CKLL               529  //´æ¿îÀûÂÊ  DT£ºC  
-#define  FID_YKBD               530  //Ó¯¿÷±ä¶¯  DT£ºR  
-#define  FID_CSZ                531  //²ÎÊıÖµ  DT£ºC  
-#define  FID_DH                 532  //µç»°  DT£ºC  
-#define  FID_DJLB               533  //¶³½áÀà±ğ  DT£ºC  
-#define  FID_DH_SQCZR           534  //ÊÚÈ¨²Ù×÷ÈËµç»°  DT£ºC  
-#define  FID_DZ_SQCZR           535  //ÊÚÈ¨²Ù×÷ÈËµØÖ·  DT£ºC  
-#define  FID_MM_SQCZR           536  //ÊÚÈ¨²Ù×÷ÈËÃÜÂë  DT£ºC  
-#define  FID_QX_SQCZR           537  //ÊÚÈ¨²Ù×÷ÈËÈ¨ÏŞ  DT£ºC  
-#define  FID_XWID               538  //Ï¯Î»±àºÅ  DT£ºI  
-#define  FID_XM_SQCZR           539  //ÊÚÈ¨²Ù×÷ÈËĞÕÃû  DT£ºC  
-#define  FID_DRMCCJJE           540  //µ±ÈÕÂô³ö³É½»½ğ¶î  DT£ºC  
-#define  FID_DRMCCJSL           541  //µ±ÈÕÂô³ö³É½»ÊıÁ¿  DT£ºC  
-#define  FID_DRMCJDZJ           542  //µ±ÈÕÂô³ö½â¶³×Ê½ğ  DT£ºC  
-#define  FID_DRMCWTSL           543  //µ±ÈÕÂô³öÎ¯ÍĞÊıÁ¿  DT£ºC  
-#define  FID_DRMRCJJE           544  //µ±ÈÕÂòÈë³É½»½ğ¶î  DT£ºC  
-#define  FID_DRMRCJSL           545  //µ±ÈÕÂòÈë³É½»ÊıÁ¿  DT£ºC  
-#define  FID_DRMRDJZJ           546  //µ±ÈÕÂòÈë¶³½á×Ê½ğ  DT£ºC  
-#define  FID_DRMRWTSL           547  //µ±ÈÕÂòÈëÎ¯ÍĞÊıÁ¿  DT£ºC  
-#define  FID_DRQS               548  //µ±ÈÕÒÑ³É½»µÄÇåËã×Ê½ğ  DT£ºC  
-#define  FID_DTB                549  //µøÍ£°å  DT£ºC  
-#define  FID_DZ                 550  //µØÖ·  DT£ºC  
-#define  FID_DZLX               551  //´ı×ªÀûÏ¢  DT£ºC  
-#define  FID_EMAIL              552  //µç×ÓÓÊ¼ş  DT£ºC  
-#define  FID_EN_BZ              553  //¿É²Ù×÷µÄ±ÒÖÖ  DT£ºC  
-#define  FID_EN_JYS             554  //¿É²Ù×÷µÄ½»Ò×Ëù  DT£ºC  
-#define  FID_EN_KHH             555  //¿É²Ù×÷µÄ¿Í»§ºÅ  DT£ºC  
-#define  FID_EN_KHQZ            556  //ÔÊĞí²Ù×÷µÄ¿Í»§Èº×é  DT£ºC  
-#define  FID_EN_YYB             557  //ÔÊĞí²Ù×÷µÄÓªÒµ²¿  DT£ºC  
-#define  FID_EN_ZQLB            558  //¿É²Ù×÷µÄÖ¤È¯Àà±ğ  DT£ºC  
-#define  FID_EX_KHH             559  //²»¿É²Ù×÷µÄ¿Í»§ºÅ  DT£ºC  
-#define  FID_EX_KHQZ            560  //½ûÖ¹²Ù×÷µÄ¿Í»§Èº×é  DT£ºC  
-#define  FID_EX_YYB             561  //½ûÖ¹²Ù×÷µÄÓªÒµ²¿  DT£ºC  
-#define  FID_EX_ZQLB            562  //½ûÖ¹Ö¤È¯Àà±ğ·¶Î§  DT£ºC  
-#define  FID_FATHERID           563  //¸¸²Ëµ¥  DT£ºC  
-#define  FID_AUTOSAVE           564  //×Ô¶¯±£´æ  DT£ºI  
-#define  FID_FKEY               565  //¼ÓËÙ¼ü  DT£ºC  
-#define  FID_FLDM               566  //Êı¾İ×Öµä·ÖÀà´úÂë  DT£ºC  
-#define  FID_FLMC               567  //Êı¾İ×Öµä·ÖÀàÃû³Æ  DT£ºC  
-#define  FID_FLTSL              568  //·ÇÁ÷Í¨ÊıÁ¿  DT£ºC  
-#define  FID_FSYYB              569  //·¢ÉúÓªÒµ²¿  DT£ºC  
-#define  FID_FWXM               570  //·şÎñÏîÄ¿  DT£ºC  
-#define  FID_GDH                571  //¹É¶«ºÅ  DT£ºC  
-#define  FID_GDLB               572  //¹É¶«Àà±ğ  DT£ºC  
-#define  FID_ZJBH_GDH           573  //¹É¶«Ö¤¼ş±àºÅ  DT£ºC  
-#define  FID_GDZDSX             574  //¹É¶«Ö¸¶¨ÊôĞÔ  DT£ºI  
-#define  FID_GDXM               575  //¹É¶«ĞÕÃû  DT£ºC  
-#define  FID_GJDM               576  //¹ú¼®´úÂë  DT£ºC  
-#define  FID_GMRQ               577  //¹ñÔ±¸üÃÜÈÕÆÚ  DT£ºC  
-#define  FID_DATE               578  //µ±Ç°ÈÕÆÚ  DT£ºC  DT£ºDT£ºYYYY.MM.DD  
-#define  FID_HKEY               579  //ÈÈ¼ü  DT£ºC  
-#define  FID_HKEYMASK           580  //×éºÏ¼ü  DT£ºC  
-#define  FID_SHZD               581  //×Ô¶¯·¢ËÍÉÏº£Ö¸¶¨  DT£ºC  DT£ºDT£º0 ²»·¢ËÍ  
-#define  FID_IBM                582  //Êı×Ö±àÂë  DT£ºC  
-#define  FID_JJR                583  //¾­¼ÍÈË´úÂë  DT£ºC  
-#define  FID_JJRLB              584  //¾­¼ÍÈËÀà±ğ  DT£ºC  
-#define  FID_JJRMM              585  //¾­¼ÍÈËÃÜÂë  DT£ºC  
-#define  FID_JJRQX              586  //¾­¼ÍÈËÈ¨ÏŞ  DT£ºC  
-#define  FID_JKP                587  //½ñ¿ªÅÌ  DT£ºC  
-#define  FID_JSDM               588  //½ÇÉ«´úÂë  DT£ºC  
-#define  FID_JSMC               589  //½ÇÉ«Ãû³Æ  DT£ºC  
-#define  FID_JSRQ               590  //½áÊøÈÕÆÚ  DT£ºC  
-#define  FID_JYDW               591  //½»Ò×µ¥Î»  DT£ºC  
-#define  FID_JYFL               592  //½»Ò×·ÖÀà  DT£ºC  
-#define  FID_JYFW               593  //½»Ò×·¶Î§  DT£ºC  
-#define  FID_JYJW               594  //½»Ò×¼ÛÎ»  DT£ºC  
-#define  FID_JYLB               595  //½»Ò×Àà±ğ±àÂë  DT£ºC  
-#define  FID_JYLBMC             596  //½»Ò×Àà±ğÃû³Æ  DT£ºC  
-#define  FID_JYLBXZ             597  //½»Ò×Àà±ğÏŞÖÆ  DT£ºC  
-#define  FID_JYMM               598  //½»Ò×ÃÜÂë  DT£ºC  
-#define  FID_JYS                599  //½»Ò×Ëù±àÂë  DT£ºC  
-#define  FID_JYSXH              600  //½»Ò×ËùĞòºÅ  DT£ºI  
-#define  FID_JYSJC              601  //½»Ò×ËùÃû³Æ  DT£ºC  
-#define  FID_JYSQC              602  //½»Ò×ËùÈ«³Æ  DT£ºC  
-#define  FID_KCRQ               603  //¿ª²ÖÈÕÆÚ  DT£ºC  
-#define  FID_KEYMASK            604  //²Ëµ¥×éºÏ¼ü  DT£ºC  
-#define  FID_KHH                605  //¿Í»§ºÅ  DT£ºC  
-#define  FID_KHJB               606  //¿Í»§¼¶±ğ  DT£ºC  
-#define  FID_KHJL               607  //¿Í»§¾­Àí  DT£ºC  
-#define  FID_KHLB               608  //¿Í»§Àà±ğ  DT£ºC  
-#define  FID_KHQC               609  //¿Í»§È«³Æ  DT£ºC  
-#define  FID_KHQZ               610  //¿Í»§Èº×é  DT£ºC  
-#define  FID_KHRQ               611  //¿ª»§ÈÕÆÚ  DT£ºC  
-#define  FID_KHSX               612  //¿Í»§ÊôĞÔ  DT£ºC  
-#define  FID_KHXM               613  //¿Í»§ĞÕÃû  DT£ºC  
-#define  FID_LSH_ZR             614  //×ªÈëÒµÎñ²Ù×÷Á÷Ë®ºÅ  DT£ºI  
-#define  FID_KMCSL              615  //¿ÉÂô³öÊıÁ¿  DT£ºC  
-#define  FID_KMRSL              616  //¿ÉÂòÈëÊıÁ¿  DT£ºC  
-#define  FID_KQZJ               617  //¿ÉÈ¡×Ê½ğ  DT£ºC  
-#define  FID_KSRQ               618  //¿ªÊ¼ÈÕÆÚ  DT£ºC  
-#define  FID_KYZJ               619  //¿ÉÓÃ×Ê½ğ  DT£ºC  
-#define  FID_LL                 620  //ÀûÂÊ  DT£ºC  
-#define  FID_YJLX               621  //Ô¤¼ÆÀûÏ¢  DT£ºR  
-#define  FID_LXJS               622  //ÀûÏ¢»ıÊı  DT£ºR  
-#define  FID_LXS                623  //Ô¤¼ÆÀûÏ¢Ë°  DT£ºR  
-#define  FID_LXSL               624  //ÀûÏ¢Ë°ÂÊ  DT£ºR  
-#define  FID_MCJE               625  //Âô³ö½ğ¶î  DT£ºC  
-#define  FID_MCJJ               626  //Âô³ö¾ù¼Û  DT£ºC  
-#define  FID_MCJS               627  //Âô³ö»ùÊı  DT£ºC  
-#define  FID_MCSL               628  //Âô³öÊıÁ¿  DT£ºC  
-#define  FID_MENUID             629  //²Ëµ¥µÄÏµÍ³´úÂë  DT£ºC  
-#define  FID_MKBH               630  //Ä£¿é±àºÅ  DT£ºC  
-#define  FID_MM                 631  //ÃÜÂë  DT£ºC  
-#define  FID_MMXZ               632  //ÂòÂôÏŞÖÆ  DT£ºC  
-#define  FID_YKTZMS             633  //Ó¯¿÷µ÷ÕûÄ£Ê½  DT£ºC  DT£ºDT£º0 ¸ù¾İÊäÈëµ÷Õû£¬1 ×Ô¶¯µ÷Õû  
-#define  FID_MRJE               634  //ÂòÈë½ğ¶î  DT£ºC  
-#define  FID_JYMQZ              635  //½»Ò×ÂëÇ°×º  DT£ºC  
-#define  FID_MRJJ               636  //ÂòÈë¾ù¼Û  DT£ºC  
-#define  FID_MRJS               637  //ÂòÈë»ùÊı  DT£ºC  
-#define  FID_MRSL               638  //ÂòÈëÊıÁ¿  DT£ºC  
-#define  FID_NBMC               639  //ÕªÒªÄÚ²¿Ãû³Æ  DT£ºC  
-#define  FID_NEWMM              640  //ĞÂÃÜÂë  DT£ºC  
-#define  FID_NODE               641  //²Ù×÷Õ¾µã  DT£ºC  
-#define  FID_NOTE               642  //ËµÃ÷  DT£ºC  
-#define  FID_PYDM               643  //Æ´Òô´úÂë  DT£ºC  
-#define  FID_PZBZ               644  //ÊÇ·ñ´òÓ¡Æ¾Ö¤  DT£ºC  
-#define  FID_ZJZH_ZR            645  //×ªÈë×Ê½ğÕÊºÅ  DT£ºC  
-#define  FID_QSJE               646  //ÇåËã½ğ¶î  DT£ºC  
-#define  FID_QSZJ               647  //ÇåËã×Ê½ğ  DT£ºC  
-#define  FID_QYBM               648  //ÇøÓò±àÂë  DT£ºC  
-#define  FID_QZFW               649  //È¡Öµ·¶Î§  DT£ºC  
-#define  FID_QZMC               650  //Èº×éÃû³Æ  DT£ºC  
-#define  FID_RQ                 651  //ÈÕÆÚ  DT£ºC  
-#define  FID_RZJE               652  //ÈÚ×Ê½ğ¶î  DT£ºC  
-#define  FID_RZLL               653  //ÈÚ×ÊÀûÂÊ  DT£ºC  
-#define  FID_SFXJJ              654  //Âô·çÏÕ»ù½ğ  DT£ºC  
-#define  FID_SGHF               655  //Âô¹ı»§·Ñ  DT£ºC  
-#define  FID_SJCD               656  //Êı¾İ³¤¶È  DT£ºC  
-#define  FID_SJE                657  //Âô³ö½ğ¶î  DT£ºC  
-#define  FID_SJJJR              658  //ÉÏ¼¶¾­¼ÍÈË  DT£ºC  
-#define  FID_SJSF               659  //Âô¾­ÊÖ·Ñ  DT£ºC  
-#define  FID_SJYYB              660  //ÉÏ¼¶ÓªÒµ²¿  DT£ºC  
-#define  FID_SLXZ               661  //ÊıÁ¿ÏŞÖÆ  DT£ºC  
-#define  FID_CZCS               662  //³åÕÊ´ÎÊı  DT£ºI  
-#define  FID_SRZJYE             663  //ÉÏÈÕ×Ê½ğÓà¶î  DT£ºC  
-#define  FID_SSL                664  //Âô³öÊıÁ¿  DT£ºC  
-#define  FID_SXLB               665  //ÊôĞÔÀà±ğ  DT£ºC  
-#define  FID_SYHS               666  //ÂôÓ¡»¨Ë°  DT£ºC  
-#define  FID_SZGF               667  //ÂôÖ¤¹Ü·Ñ  DT£ºC  
-#define  FID_T0JS               668  //µ±ÈÕÓ¦½»ÊÕ×Ê½ğ  DT£ºC  
-#define  FID_T1JS               669  //T+1ÇåËãÓ¦½»ÊÕ×Ê½ğ  DT£ºC  
-#define  FID_T2JS               670  //T+2ÇåËãÓ¦½»ÊÕ×Ê½ğ  DT£ºC  
-#define  FID_TBCBJ              671  //Ì¯±¡³É±¾¼Û  DT£ºC  
-#define  FID_TBTS               672  //ÌØ±ğÌáÊ¾  DT£ºC  
-#define  FID_TJFL               673  //Í³¼Æ·ÖÀà  DT£ºC  
-#define  FID_TZJS               674  //Í¸Ö§»ıÊı  DT£ºC  
-#define  FID_TZLL               675  //Í¸Ö§ÀûÂÊ  DT£ºC  
-#define  FID_CBTZMS             676  //³É±¾µ÷ÕûÄ£Ê½  DT£ºC  DT£ºDT£º0 ¸ù¾İÊäÈëµ÷Õû£¬1 ×Ô¶¯µ÷Õû  
-#define  FID_USERID             677  //¹ñÔ±ºÅ  DT£ºC  
-#define  FID_USERNAME           678  //¹ñÔ±Ãû³Æ  DT£ºC  
-#define  FID_VALUE              679  //ÊôĞÔÖµ  DT£ºC  
-#define  FID_WTFS               680  //Î¯ÍĞ·½Ê½  DT£ºC  
-#define  FID_WTH                681  //Î¯ÍĞºÅ  DT£ºC  
-#define  FID_WTJG               682  //Î¯ÍĞ¼Û¸ñ  DT£ºC  
-#define  FID_WTLB               683  //Î¯ÍĞÀà±ğ  DT£ºC  
-#define  FID_WTSL               684  //Î¯ÍĞÊıÁ¿  DT£ºC  
-#define  FID_JSDM_HC            685  //È¨ÏŞ»¥³âµÄ½ÇÉ«´úÂë  DT£ºC  
-#define  FID_WTSX               686  //Î¯ÍĞÉÏÏŞ  DT£ºC  
-#define  FID_WTXX               687  //Î¯ÍĞÏÂÏŞ  DT£ºC  
-#define  FID_XHRQ               688  //Ïú»§ÈÕÆÚ  DT£ºC  
-#define  FID_XLDM               689  //Ñ§Àú´úÂë  DT£ºC  
-#define  FID_XM                 690  //ĞÕÃû  DT£ºC  
-#define  FID_GDZT               691  //¹É¶«×´Ì¬  DT£ºI  
-#define  FID_YHDM               692  //ÒøĞĞ´úÂë  DT£ºC  
-#define  FID_YHZH               693  //ÒøĞĞÕÊºÅ  DT£ºC  
-#define  FID_YWKM               694  //ÒµÎñ¿ÆÄ¿  DT£ºC  
-#define  FID_YWLB               695  //ÒµÎñÀà±ğ  DT£ºC  
-#define  FID_YWMC               696  //ÒµÎñÃû³Æ  DT£ºC  
-#define  FID_YYB                697  //ÓªÒµ²¿  DT£ºC  
-#define  FID_KHH_ZR             698  //×ªÈë¿Í»§ºÅ  DT£ºC  
-#define  FID_CLSJ               699  //´¦ÀíÊ±¼ä  DT£ºC  
-#define  FID_KHXM_ZR            700  //×ªÈë¿Í»§ĞÕÃû  DT£ºC  
-#define  FID_GYDM_ZP            701  //Ö¸ÅÉ¹ñÔ±´úÂë  DT£ºC  
-#define  FID_YZBM               702  //ÓÊÕş±àÂë  DT£ºC  
-#define  FID_ZDBJ               703  //×îµÍ±¨¼Û  DT£ºC  
-#define  FID_ZDJ                704  //×îµÍ¼Û  DT£ºR  
-#define  FID_EN_WTH             705  //Î¯ÍĞºÏÍ¬ºÅ·¶Î§  DT£ºC  
-#define  FID_ZGBJ               706  //×î¸ß±¨¼Û  DT£ºC  
-#define  FID_ZGJ                707  //×î¸ß¼Û  DT£ºR  
-#define  FID_KHFLFS             708  //¿Í»§·ÖÀà·½Ê½  DT£ºI  
-#define  FID_ZHYE               709  //ÕÊ»§Óà¶î  DT£ºC  
-#define  FID_ZHZT               710  //ÕÊ»§×´Ì¬  DT£ºC  
-#define  FID_ZJBH               711  //Ö¤¼ş±àºÅ  DT£ºC  
-#define  FID_YJDJCL             712  //Ó¶½ğ¶¨¼Û²ßÂÔ  DT£ºI  
-#define  FID_ZJLB               713  //Ö¤¼şÀà±ğ  DT£ºC  
-#define  FID_ZJMM               714  //×Ê½ğÃÜÂë  DT£ºC  
-#define  FID_ZJYE               715  //×Ê½ğÓà¶î  DT£ºC  
-#define  FID_ZJZH               716  //×Ê½ğÕÊºÅ  DT£ºC  
-#define  FID_GDH_OLD            717  //Ô­¹É¶«ºÅ  DT£ºC  
-#define  FID_LJS1               718  //ÀÛ¼ÆÓ¶½ğ  DT£ºR  
-#define  FID_ZQDM               719  //Ö¤È¯´úÂë  DT£ºC  
-#define  FID_ZQLB               720  //Ö¤È¯Àà±ğ  DT£ºC  
-#define  FID_ZQLBMC             721  //Ö¤È¯Àà±ğÃû³Æ  DT£ºC  
-#define  FID_ZQMC               722  //Ö¤È¯Ãû³Æ  DT£ºC  
-#define  FID_ZQQC               723  //Ö¤È¯È«³Æ  DT£ºC  
-#define  FID_ZQSL               724  //Ö¤È¯ÊıÁ¿  DT£ºC  
-#define  FID_ZSBH               725  //Ö¤Êé±àºÅ  DT£ºC  
-#define  FID_ZSP                726  //×òÊÕÅÌ  DT£ºC  
-#define  FID_ZZHBZ              727  //Ö÷ÕÊ»§±êÖ¾  DT£ºI  
-#define  FID_ZTB                728  //ÕÇÍ£°å  DT£ºC  
-#define  FID_ZXJ                729  //×îĞÂ¼Û  DT£ºC  
-#define  FID_ZY                 730  //ÕªÒª  DT£ºC  
-#define  FID_ZYDM               731  //Ö°Òµ´úÂë  DT£ºC  
-#define  FID_ZZFS               732  //×ªÕÊÉêÇë·½Ê½  DT£ºC  
-#define  FID_ZZJE               733  //Ö§»ãÆ±½ğ¶î  DT£ºC  
-#define  FID_ZZKZ               734  //×ªÕÊ¿ØÖÆ  DT£ºC  
-#define  FID_MMLB               735  //ÃÜÂëÀà±ğ  DT£ºC  
-#define  FID_HTHQZ              736  //ºÏÍ¬ºÅÇ°×º  DT£ºC  
-#define  FID_NEWQZ              737  //ĞÂÈº×é±àºÅ  DT£ºC  
-#define  FID_EN_ZJZH            738  //¿É²Ù×÷µÄ×Ê½ğÕÊºÅ  DT£ºC  
-#define  FID_LOGICAL            739  //Âß¼­ÅĞ¶Ï²Ù×÷£¨ÊÇ¡¢·ñ£©  DT£ºC  
-#define  FID_KHFW               740  //¿Í»§·¶Î§  DT£ºC  
-#define  FID_SQFS               741  //ÉêÇë·½Ê½  DT£ºI  
-#define  FID_CKCS               742  //´æ¿î´ÎÊıÏŞÖÆ  DT£ºC  
-#define  FID_CKZE               743  //´æ¿î×Ü¶îÏŞÖÆ  DT£ºC  
-#define  FID_CKDBSX             744  //´æ¿îµ¥±ÊÏŞÖÆ  DT£ºC  
-#define  FID_QKCS               745  //È¡¿î´ÎÊıÏŞÖÆ  DT£ºC  
-#define  FID_QKZE               746  //È¡¿î×Ü¶îÏŞÖÆ  DT£ºC  
-#define  FID_QKDBSX             747  //È¡¿îµ¥±ÊÏŞÖÆ  DT£ºC  
-#define  FID_TBBBJ              748  //Ì¯±¡±£±¾¼Û  DT£ºC  
-#define  FID_TBFDYK             749  //Ì¯±¡¸¡¶¯Ó¯¿÷  DT£ºC  
-#define  FID_WTSJ               750  //Î¯ÍĞÊ±¼ä  DT£ºC  
-#define  FID_SBSJ               751  //Éê±¨Ê±¼ä  DT£ºC  
-#define  FID_MMLBSM             752  //ÂòÂôÀà±ğËµÃ÷  DT£ºC  
-#define  FID_SBJG               753  //Éê±¨½á¹û  DT£ºC  
-#define  FID_SBJGSM             754  //Éê±¨½á¹ûËµÃ÷  DT£ºC  
-#define  FID_CXBZ               755  //³·Ïú±êÖ¾  DT£ºC  
-#define  FID_DLSF               756  //µÇÂ¼Éí·İ  DT£ºC  
-#define  FID_JCCL               757  //½ñ³Ö²ÖÁ¿  DT£ºC  
-#define  FID_WJSSL              758  //Î´½»ÊÕÊıÁ¿  DT£ºC  
-#define  FID_CDCZDX             759  //²Ëµ¥²Ù×÷¶ÔÏó  DT£ºI  
-#define  FID_ZXSZ               760  //×îĞÂÊĞÖµ  DT£ºC  
-#define  FID_FDYK               761  //¸¡¶¯Ó¯¿÷  DT£ºC  
-#define  FID_DGDHBZ             762  //ÊÇ·ñÔÊĞíµÇ¼Ç¶à¹É¶«ºÅ  DT£ºC  DT£ºDT£º0 ÔÊĞí£¬1 ²»ÔÊĞí  
-#define  FID_BROWINDEX          763  //ÆğÊ¼ÀúÊ·¼ÇÂ¼Ë÷ÒıÖµ  DT£ºC  
-#define  FID_DJZJ               764  //¶³½á×Ê½ğ  DT£ºC  
-#define  FID_LOGINPWD           765  //ÓÃ»§µÇÂ¼ÃÜÂë  DT£ºC  
-#define  FID_S1                 766  //Ó¶½ğ  DT£ºC  
-#define  FID_S2                 767  //Ó¡»¨Ë°  DT£ºC  
-#define  FID_S3                 768  //¹ı»§·Ñ  DT£ºC  
-#define  FID_S4                 769  //¸½¼Ó·Ñ  DT£ºC  
-#define  FID_S5                 770  //½áËã·Ñ  DT£ºC  
-#define  FID_S6                 771  //½»Ò×¹æ·Ñ  DT£ºC  
-#define  FID_YSJE               772  //Ó¦ÊÕ½ğ¶î  DT£ºC  
-#define  FID_LXSR               773  //ÀûÏ¢ÊÕÈë  DT£ºR  
-#define  FID_LXFC               774  //ÀûÏ¢¸¶³ö  DT£ºR  
-#define  FID_BZS1               775  //±ê×¼Ó¶½ğ  DT£ºC  
-#define  FID_BCZQSL             776  //±¾´Î¹É·İÓà¶î  DT£ºC  
-#define  FID_BRZQSL             777  //±¾ÈÕ¹É·İÓà¶î  DT£ºC  
-#define  FID_BRZJYE             778  //±¾ÈÕ×Ê½ğÓà¶î  DT£ºC  
-#define  FID_GDJG               779  //×ªÕÊ¹´¶Ô½á¹û  DT£ºC  
-#define  FID_CSID               780  //²ÎÊı±àºÅID  DT£ºI  
-#define  FID_JMLX               781  //¼ÓÃÜÀàĞÍ  DT£ºC  
-#define  FID_SQLB               782  //ÉêÇëÀà±ğ  DT£ºC  
-#define  FID_DLXH               783  //µÇÂ¼ĞòºÅ  DT£ºC  DT£ºDT£ºINT  
-#define  FID_ZPJE               784  //Ö§Æ±½ğ¶î  DT£ºC  
-#define  FID_GPSZ               785  //¹ÉÆ±ÊĞÖµ  DT£ºC  
-#define  FID_MMYZFS             786  //ÃÜÂëÑéÖ¤·½Ê½  DT£ºI  
-#define  FID_FZYZFS             787  //¸¨ÖúÉí·İÑéÖ¤·½Ê½  DT£ºI  
-#define  FID_COUNT              788  //±ÊÊı  DT£ºC  
-#define  FID_GDHH               789  //¹É¶«ºÅÇ°×º  DT£ºC  
-#define  FID_GDHL               790  //¹É¶«ºÅ³¤¶È  DT£ºC  
-#define  FID_ZQDML              791  //Ö¤È¯´úÂë³¤¶È  DT£ºC  
-#define  FID_ENDWTH             792  //½áÊøÎ¯ÍĞºÅ  DT£ºC  
-#define  FID_LOGINID            793  //µÇÂ¼ID  DT£ºC  
-#define  FID_ZHXM               794  //ÕÊ»§ĞÕÃû  DT£ºC  
-#define  FID_JSZH               795  //½áËãÕÊ»§  DT£ºC  
-#define  FID_FAX                796  //´«ÕæFAX  DT£ºC  
-#define  FID_LSH                797  //Á÷Ë®ºÅ  DT£ºC  
-#define  FID_HOST               798  //Ö÷»úµØÖ·  DT£ºC  
-#define  FID_TZLX               799  //Í¸Ö§ÀûÏ¢  DT£ºC  
-#define  FID_GSFL               800  //¹«Ë¾¼¶¿Í»§·ÖÀà  DT£ºC  
-#define  FID_SRFS               801  //ÊäÈë·½Ê½  DT£ºC  
-#define  FID_XJZC               802  //ÏÖ½ğ×Ê²ú  DT£ºC  
-#define  FID_SRYE               803  //ÉÏÈÕÓà¶î  DT£ºC  
-#define  FID_ZHSX               804  //ÕÊ»§ÊôĞÔ  DT£ºC  
-#define  FID_WJSJE              805  //Î´½»ÊÕ½ğ¶î  DT£ºC  
-#define  FID_CQBZ               806  //´æÈ¡±êÖ¾  DT£ºC  
-#define  FID_YZZZBZ             807  //ÒøÖ¤×ªÕÊ±êÖ¾  DT£ºC  
-#define  FID_FSJE               808  //·¢Éú½ğ¶î  DT£ºC  
-#define  FID_NEWKHJL            809  //Ç¨Èë¿Í»§¾­Àí  DT£ºC  
-#define  FID_SCZJYE             810  //ÉÏ´Î×Ê½ğÓà¶î  DT£ºC  
-#define  FID_SQPCH              811  //ÉêÇëÅú´ÎºÅ  DT£ºI  
-#define  FID_DJRQ               812  //µÇ¼ÇÈÕÆÚ  DT£ºC  
-#define  FID_EN_GSFL            813  //ÔÊĞí²Ù×÷µÄ¿Í»§¹«Ë¾·ÖÀà  DT£ºC  
-#define  FID_ITEM               814  //ÅäÖÃÏî  DT£ºC  
-#define  FID_XGRQ               815  //ĞŞ¸ÄÈÕÆÚ  DT£ºC  
-#define  FID_CSJB               816  //²ÎÊı¼¶±ğ  DT£ºC  
-#define  FID_SXMC               817  //ÊôĞÔÃû³Æ  DT£ºC  
-#define  FID_PZH2               818  //Æ¾Ö¤ºÅ2  DT£ºC  
-#define  FID_LPID               819  //ÀñÆ·IDºÅ  DT£ºC  
-#define  FID_LPBM               820  //ÀñÆ·±àÂë  DT£ºC  
-#define  FID_LPMC               821  //ÀñÆ·Ãû³Æ  DT£ºC  
-#define  FID_LPJZ               822  //ÀñÆ·¼ÛÖµ  DT£ºC  
-#define  FID_ZSFS               823  //ÔùËÍ·½Ê½  DT£ºC  
-#define  FID_ZCKZED             824  //×Ê²ú¿ØÖÆ¶î¶È  DT£ºC  
-#define  FID_ZJKZED             825  //×Ê½ğ¿ØÖÆ¶î¶È  DT£ºC  
-#define  FID_DJJE               826  //¶³½á½ğ¶î  DT£ºC  
-#define  FID_YCDJJE             827  //Òì³£¶³½á½ğ¶î  DT£ºC  
-#define  FID_QSDM               828  //È¯ÉÌ´úÂë  DT£ºC  
-#define  FID_QSMC               829  //È¯ÉÌÃû³Æ  DT£ºC  
-#define  FID_JGSM               830  //½á¹ûËµÃ÷  DT£ºC  
-#define  FID_CLRQ               831  //´¦ÀíÈÕÆÚ  DT£ºI  
-#define  FID_JGBM               832  //»ú¹¹±àÂë  DT£ºC  
-#define  FID_JGMC               833  //»ú¹¹Ãû³Æ  DT£ºC  
-#define  FID_JGJC               834  //»ú¹¹¼ò³Æ  DT£ºC  
-#define  FID_CITY               835  //³ÇÊĞ  DT£ºC  
-#define  FID_PROVINCE           836  //Ê¡·İ  DT£ºC  
-#define  FID_SJJG               837  //ÉÏ¼¶»ú¹¹  DT£ºC  
-#define  FID_SJJGLB             838  //ÉÏ¼¶»ú¹¹Àà±ğ  DT£ºI  
-#define  FID_JGLB               839  //»ú¹¹Àà±ğ  DT£ºI  
-#define  FID_EN_SJJGLB          840  //ÔÊĞíÉÏ¼¶»ú¹¹Àà±ğ·¶Î§  DT£ºC  
-#define  FID_EN_JYLB            841  //ÔÊĞíµÄ½»Ò×Àà±ğ  DT£ºC  
-#define  FID_MRJG1              842  //ÂòÈë¼Û¸ñÒ»  DT£ºC  
-#define  FID_MRSL1              843  //ÂòÈëÊıÁ¿Ò»  DT£ºC  
-#define  FID_MRJG2              844  //ÂòÈë¼Û¸ñ¶ş  DT£ºC  
-#define  FID_MRSL2              845  //ÂòÈëÊıÁ¿¶ş  DT£ºC  
-#define  FID_MRJG3              846  //ÂòÈë¼Û¸ñÈı  DT£ºC  
-#define  FID_MRSL3              847  //ÂòÈëÊıÁ¿Èı  DT£ºC  
-#define  FID_MRJG4              848  //ÂòÈë¼Û¸ñËÄ  DT£ºC  
-#define  FID_MRSL4              849  //ÂòÈëÊıÁ¿ËÄ  DT£ºC  
-#define  FID_MCJG1              850  //Âô³ö¼Û¸ñÒ»  DT£ºC  
-#define  FID_MCSL1              851  //Âô³öÊıÁ¿Ò»  DT£ºC  
-#define  FID_MCJG2              852  //Âô³ö¼Û¸ñ¶ş  DT£ºC  
-#define  FID_MCSL2              853  //Âô³öÊıÁ¿¶ş  DT£ºC  
-#define  FID_MCJG3              854  //Âô³ö¼Û¸ñÈı  DT£ºC  
-#define  FID_MCSL3              855  //Âô³öÊıÁ¿Èı  DT£ºC  
-#define  FID_MCJG4              856  //Âô³ö¼Û¸ñËÄ  DT£ºC  
-#define  FID_MCSL4              857  //Âô³öÊıÁ¿ËÄ  DT£ºC  
-#define  FID_DYBL               858  //µÖÑº±ÈÀı  DT£ºR  
-#define  FID_JJRXM              859  //¾­¼ÍÈËĞÕÃû  DT£ºC  
-#define  FID_TPBZ               860  //Í£ÅÆ±êÖ¾  DT£ºC  
-#define  FID_JSLX               861  //½áËãÀàĞÍ  DT£ºI  
-#define  FID_HBXH               862  //»Ø±¨ĞòºÅ  DT£ºC  
-#define  FID_SBGDH              863  //Èı°å¹É¶«ºÅ  DT£ºC  
-#define  FID_WTGY               864  //Î¯ÍĞ¹ñÔ±  DT£ºC  
-#define  FID_FSSJ               865  //·¢ÉúÊ±¼ä  DT£ºC  
-#define  FID_WTZKXS             866  //Î¯ÍĞÕÛ¿ÛÏµÊı  DT£ºC  
-#define  FID_CXZKXS             867  //²éÑ¯ÕÛ¿ÛÏµÊı  DT£ºC  
-#define  FID_QTZKXS             868  //Ç°Ì¨ÕÛ¿ÛÏµÊı  DT£ºC  
-#define  FID_ZQSZ               869  //Ö¤È¯ÊĞÖµ  DT£ºC  
-#define  FID_KYZJXE             870  //¿ÉÓÃ×Ê½ğÏŞ¶î  DT£ºR  
-#define  FID_XMLSH              871  //ÏîÄ¿Á÷Ë®ºÅ  DT£ºI  
-#define  FID_ZCZH               872  //×ª´æÕÊºÅ  DT£ºC  
-#define  FID_ZCBL               873  //×ª´æ±ÈÀı  DT£ºC  
-#define  FID_SFFS               874  //ÊÕ·Ñ·½Ê½  DT£ºC  
-#define  FID_SFBZ               875  //ÊÕ·Ñ±ê×¼  DT£ºC  
-#define  FID_JFFS               876  //¼Æ·Ñ·½Ê½  DT£ºC  
-#define  FID_JFQD               877  //¼Æ·ÑÆğµã  DT£ºC  
-#define  FID_JFDW               878  //¼Æ·Ñµ¥Î»  DT£ºC  
-#define  FID_CZSJ               879  //²Ù×÷Ê±¼ä  DT£ºC  
-#define  FID_CLJG               880  //´¦Àí½á¹û  DT£ºC  
-#define  FID_GYFL               881  //¹ñÔ±·ÖÀà  DT£ºC  
-#define  FID_WBGYDM             882  //Íâ²¿¹ñÔ±´úÂë  DT£ºC  
-#define  FID_XQXZ               883  //ĞÇÆÚÏŞÖÆ  DT£ºC  
-#define  FID_ZCXZ               884  //×¢²áÏŞÖÆ  DT£ºC  
-#define  FID_SLSX               885  //ÊıÁ¿ÉÏÏŞ  DT£ºC  
-#define  FID_CDSL               886  //³·µ¥ÊıÁ¿  DT£ºC  
-#define  FID_YJZKBL             887  //Ó¶½ğÕÛ¿Û±ÈÀı  DT£ºR  
-#define  FID_FJFZKBL            888  //¸½¼Ó·ÑÕÛ¿Û±ÈÀı  DT£ºR  
-#define  FID_BH                 889  //±àºÅ  DT£ºC  
-#define  FID_SHXYM              890  //ÉóºËĞ£ÑéÂë  DT£ºC  
-#define  FID_ZLLB               891  //Ö¸ÁîÀà±ğ  DT£ºC  
-#define  FID_CDJSP              892  //²Ëµ¥JSP  DT£ºC  
-#define  FID_EN_NODE            893  //ÔÊĞí²Ù×÷Õ¾µã  DT£ºC  
-#define  FID_EN_MYYYB           894  //ÔÊĞíÂşÓÎÓªÒµ²¿·¶Î§  DT£ºC  
-#define  FID_ZJGMRQ             895  //ÏµÍ³ÓÃ»§×î½ü¸üÃÜÈÕÆÚ  DT£ºI  
-#define  FID_JGSX               896  //»ú¹¹ÊôĞÔ  DT£ºI  
-#define  FID_CDSX               897  //²ÎÊıÊôĞÔ  DT£ºI  
-#define  FID_BM                 898  //Êı¾İ×Öµä±àÂë  DT£ºI  
-#define  FID_BMSM               899  //Êı¾İ×Öµä±àÂëËµÃ÷  DT£ºC  
-#define  FID_CDDLL              900  //²Ëµ¥DLLÃû³Æ  DT£ºC  
-#define  FID_SXZ                901  //ÊôĞÔÖµ  DT£ºC  
-#define  FID_YHSX               902  //ÒøĞĞÊôĞÔ  DT£ºC  
-#define  FID_YHYW               903  //ÒøĞĞÒµÎñ  DT£ºC  
-#define  FID_ZQYW               904  //Ö¤È¯ÒµÎñ  DT£ºC  
-#define  FID_ZJMMXY             905  //×Ê½ğÃÜÂëĞ§Ñé  DT£ºC  
-#define  FID_JYMMXY             906  //½»Ò×ÂòÂôĞ§Ñé  DT£ºC  
-#define  FID_YHMMXY             907  //ÒøĞĞÂòÂôĞ§Ñé  DT£ºC  
-#define  FID_YHMC               908  //ÒøĞĞÃû³Æ  DT£ºC  
-#define  FID_HBLB               909  //»õ±ÒÀà±ğ  DT£ºC  
-#define  FID_WBZHMM             910  //Íâ²¿ÕÊ»§ÃÜÂë  DT£ºC  
-#define  FID_DYBS               911  //×ªÕÊ¶ÔÓ¦±êÊ¶  DT£ºC  
-#define  FID_SQH                912  //ÉêÇëºÅ  DT£ºC  
-#define  FID_WBLSH              913  //Íâ²¿Á÷Ë®ºÅ  DT£ºC  
-#define  FID_BDDJJE             914  //±¾µØ¶³½á½ğ¶î  DT£ºR  
-#define  FID_CJBS               915  //³É½»±ÊÊı  DT£ºI  
-#define  FID_SHLB               916  //ÉóºËÀà±ğ  DT£ºC  
-#define  FID_SHJG               917  //ÉóºË½á¹û  DT£ºC  
-#define  FID_YEGXSJ             918  //Óà¶î¸üĞÂÊ±¼ä  DT£ºC  
-#define  FID_QSMM               919  //È¯ÉÌÃÜÂë  DT£ºC  
-#define  FID_MMMY               920  //ÃÜÂëÃÜÔ¿  DT£ºC  
-#define  FID_CSMY               921  //´«ÊäÃÜÔ¿  DT£ºC  
-#define  FID_FJXX               922  //¸½¼ÓĞÅÏ¢  DT£ºC  
-#define  FID_WBCLJG             923  //Íâ²¿´¦Àí½á¹û  DT£ºC  
-#define  FID_SQWD               924  //ÉêÇëÍøµã  DT£ºC  
-#define  FID_XYBZ               925  //Ğ§Ñé±êÖ¾  DT£ºC  
-#define  FID_CXSQH              926  //³·ÏúÉêÇëºÅ  DT£ºC  
-#define  FID_JYBS               927  //½»Ò×±êÊ¶  DT£ºC  
-#define  FID_CLLB               928  //´¦ÀíÀà±ğ  DT£ºC  
-#define  FID_ZHLB               929  //ÕÊ»§Àà±ğ  DT£ºC  
-#define  FID_FQF                930  //·¢Æğ·½  DT£ºC  
-#define  FID_HZBS               931  //»ã×Ü±ÊÊı  DT£ºC  
-#define  FID_HZJE               932  //»ã×Ü½ğ¶î  DT£ºC  
-#define  FID_LY                 933  //À´Ô´  DT£ºC  
-#define  FID_WDH                934  //ÍøµãºÅ  DT£ºC  
-#define  FID_QD1                935  //ÆğµãÒ»  DT£ºC  
-#define  FID_QD2                936  //Æğµã¶ş  DT£ºC  
-#define  FID_QD3                937  //ÆğµãÈı  DT£ºC  
-#define  FID_QD4                938  //ÆğµãËÄ  DT£ºC  
-#define  FID_QD5                939  //ÆğµãÎå  DT£ºC  
-#define  FID_BL1                940  //Ó¶½ğÒ»  DT£ºC  
-#define  FID_BL2                941  //Ó¶½ğ¶ş  DT£ºC  
-#define  FID_BL3                942  //Ó¶½ğÈı  DT£ºC  
-#define  FID_BL4                943  //Ó¶½ğËÄ  DT£ºC  
-#define  FID_BL5                944  //Ó¶½ğÎå  DT£ºC  
-#define  FID_KHJCGX             945  //¿Í»§¼Ì³Ğ¹ØÏµ  DT£ºC  
-#define  FID_SYZH1              946  //ÊÕÒæÕÊºÅÒ»  DT£ºC  
-#define  FID_SYZH2              947  //ÊÕÒæÕÊºÅ¶ş  DT£ºC  
-#define  FID_JSTS               948  //¼ÆËãÌìÊı  DT£ºC  
-#define  FID_TJJYR              949  //Í³¼Æ½»Ò×ÈÕ  DT£ºC  
-#define  FID_TJTS               950  //Í³¼ÆÌìÊı  DT£ºC  
-#define  FID_FPBL               951  //·ÖÅä±ÈÀı  DT£ºC  
-#define  FID_ZKFS               952  //ÕÛ¿Û·½Ê½  DT£ºC  
-#define  FID_ZJED               953  //×Ê½ğ¶î¶È  DT£ºC  
-#define  FID_ZCED               954  //×Ê²ú¶î¶È  DT£ºC  
-#define  FID_GLF                955  //¹ÜÀí·Ñ  DT£ºC  
-#define  FID_YJDX               956  //Ó¶½ğµ×ÏŞ  DT£ºC  
-#define  FID_EX_JYLB            957  //½ûÖ¹½»Ò×Àà±ğ  DT£ºC  
-#define  FID_BDSL               958  //±ä¶¯ÊıÁ¿  DT£ºC  
-#define  FID_HZFS               959  //»ã×Ü·½Ê½  DT£ºC  
-#define  FID_LPSL               960  //ÀñÆ·ÊıÁ¿  DT£ºC  
-#define  FID_LXBJ               961  //ÀûÏ¢±¨¼Û  DT£ºC  
-#define  FID_KLX                962  //¿¨ÀàĞÍ  DT£ºC  
-#define  FID_KMC                963  //¿¨Ãû³Æ  DT£ºC  
-#define  FID_BSC                964  //±êÊ¶´®  DT£ºC  
-#define  FID_BSCKSWZ            965  //±êÊ¶´®¿ªÊ¼Î»ÖÃ  DT£ºC  
-#define  FID_FJC                966  //¸½¼Ó´®  DT£ºC  
-#define  FID_FJCKSWZ            967  //¸½¼Ó´®¿ªÊ¼Î»ÖÃ  DT£ºC  
-#define  FID_KHKSWZ             968  //¿¨ºÅ¿ªÊ¼Î»ÖÃ  DT£ºC  
-#define  FID_KHCD               969  //¿¨ºÅ³¤¶È  DT£ºC  
-#define  FID_EN_YWKM            970  //ÔÊĞíÒµÎñ¿ÆÄ¿  DT£ºC  
-#define  FID_ZRSZ               971  //×òÈÕÊĞÖµ  DT£ºC  
-#define  FID_NEXTDATA           972  //¼ÌĞøÈ¡Êı±êÖ¾  DT£ºC  
-#define  FID_SYL                973  //ÊÕÒæÂÊ  DT£ºC  
-#define  FID_FHS1               974  //ÒÑ·µ»¹Ó¶½ğ  DT£ºC  
-#define  FID_GJBM1              975  //¹ú¼®±àÂëÒ»  DT£ºC  
-#define  FID_GJBM2              976  //¹ú¼®±àÂë¶ş  DT£ºC  
-#define  FID_GJBM3              977  //¹ú¼®±àÂëÈı  DT£ºC  
-#define  FID_GJMC               978  //¹ú¼®Ãû³Æ  DT£ºC  
-#define  FID_EGJMC              979  //¹ú¼®Ó¢ÎÄÃû³Æ  DT£ºC  
-#define  FID_CCCB               980  //³Ö²Ö³É±¾  DT£ºC  
-#define  FID_BDRQ               981  //±ä¶¯ÈÕÆÚ  DT£ºC  
-#define  FID_MMXYLX             982  //ÃÜÂëĞ§ÑéÀàĞÍ  DT£ºC  
-#define  FID_XZSJ               983  //ÏŞÖÆÊ±¼ä  DT£ºC  
-#define  FID_KHDXLX             984  //¿Í»§¶ÔÏóÀàĞÍ  DT£ºC  
-#define  FID_JYSXGX             985  //½»Ò×ËùÏà¹ØĞÔ  DT£ºC  
-#define  FID_BZXGX              986  //±ÒÖÖÏà¹ØĞÔ  DT£ºC  
-#define  FID_QZXGX              987  //Èº×éÏà¹ØĞÔ  DT£ºC  
-#define  FID_EXFLG              988  //²éÑ¯À©Õ¹ĞÅÏ¢±êÖ¾  DT£ºC  
-#define  FID_MAX_D              989  //×î´óÖµ£¨¸¡µã£©  DT£ºC  
-#define  FID_MIN_D              990  //×îĞ¡Öµ£¨¸¡µã£©  DT£ºC  
-#define  FID_MAX_L              991  //×î´óÖµ£¨ÕûĞÍ£©  DT£ºC  
-#define  FID_MIN_L              992  //×îĞ¡Öµ£¨ÕûĞÍ£©  DT£ºC  
-#define  FID_GYFJQX             993  //¹ñÔ±¸½¼ÓÈ¨ÏŞ  DT£ºC  
-#define  FID_ZHTZE              994  //ÕÊ»§Í¶×Ê¶î  DT£ºC  
-#define  FID_QSJE_B             995  //»Ø±¨ÂòÇåËã×Ê½ğ  DT£ºC  
-#define  FID_QSJE_S             996  //»Ø±¨ÂôÇåËã×Ê½ğ  DT£ºC  
-#define  FID_FDYK_TB            997  //Ì¯±¡¸¡¶¯Ó¯¿÷  DT£ºC  
-#define  FID_LLCSLB             998  //ÀûÂÊ²ÎÊıÀà±ğ  DT£ºC  
-#define  FID_EX_JJR             999  //½ûÖ¹¾­¼ÍÈË  DT£ºC  
-#define  FID_FHFS               1000  //Ó¶½ğ·µ»¹·½Ê½  DT£ºC  
-#define  FID_BZ_FH              1001  //Ó¶½ğ·µ»¹±ÒÖÖ  DT£ºC  
-#define  FID_HBDHBL             1002  //»õ±Ò¶Ò»»±ÈÀı  DT£ºC  
-#define  FID_SYZH3              1003  //ÊÕÒæÕÊ»§3  DT£ºC  
-#define  FID_SYBL1              1004  //ÊÕÒæ±ÈÀı1  DT£ºC  
-#define  FID_SYBL2              1005  //ÊÕÒæ±ÈÀı2  DT£ºC  
-#define  FID_SYBL3              1006  //ÊÕÒæ±ÈÀı3  DT£ºC  
-#define  FID_GDKZSX             1007  //¹É¶«¿ØÖÆÊôĞÔ  DT£ºI  
-#define  FID_RCKHH              1008  //Èİ´í¿Í»§ºÅ±êÖ¾  DT£ºI  
-#define  FID_RQ2                1009  //ÈÕÆÚ2  DT£ºC  
-#define  FID_EN_YXZZDM          1010  //ÓªÏú×éÖ¯´úÂë·¶Î§  DT£ºC  
-#define  FID_SBWTH              1011  //Éê±¨Î¯ÍĞºÅ  DT£ºC  
-#define  FID_CITYID             1012  //³ÇÊĞID  DT£ºC  
-#define  FID_DDLX               1013  //¶©µ¥ÀàĞÍ  DT£ºI  
-#define  FID_SECTIONID          1014  //Ï½ÇøID  DT£ºC  
-#define  FID_SECTION            1015  //Ï½ÇøÃû³Æ  DT£ºC  
-#define  FID_SFZQ               1016  //ÊÕ·ÑÖÜÆÚ  DT£ºC  
-#define  FID_WTPCH              1017  //Î¯ÍĞÅú´ÎºÅ  DT£ºI  
-#define  FID_KXDLSF             1018  //¿ÉÑ¡µÇÂ¼Éí·İ  DT£ºI  
-#define  FID_EN_YWLB            1019  //ÒµÎñÀà±ğ·¶Î§  DT£ºC  
-#define  FID_BZDM               1020  //±ê×¼´úÂë  DT£ºC  
-#define  FID_WBDM               1021  //Íâ²¿´úÂë  DT£ºC  
-#define  FID_CSDM               1022  //²ÎÊı´úÂë  DT£ºC  
-#define  FID_CSMC               1023  //²ÎÊıÃû³Æ  DT£ºC  
-#define  FID_QZSM               1024  //È¡ÖµËµÃ÷  DT£ºC  
-#define  FID_EN_FJBZ            1025  //ÔÊĞíµÄ¸½¼Ó±êÖ¾  DT£ºC  
-#define  FID_HYMC               1026  //ĞĞÒµÃû³Æ  DT£ºC  
-#define  FID_JSJG               1027  //½áËã»ú¹¹  DT£ºC  
-#define  FID_CWLX               1028  //´íÎóÀàĞÍ  DT£ºC  
-#define  FID_CWDM               1029  //´íÎóÀàĞÍ  DT£ºC  
-#define  FID_CWSM               1030  //´íÎóÀàĞÍ  DT£ºC  
-#define  FID_ZXZS               1031  //×îĞÂÖ¸Êı  DT£ºC  
-#define  FID_TZEBZ              1032  //Í¶×Ê¶î±êÖ¾  DT£ºC  
-#define  FID_KBBZ               1033  //Ó¶½ğÀ¦°ó±êÖ¾  DT£ºC  
-#define  FID_KHTZFL             1034  //¿Í»§Í¶×Ê·ÖÀà(X  DT£ºC  DT£ºDT£ºZFL)  
-#define  FID_ZJZR               1035  //×ªÈë×Ê½ğ  DT£ºC  
-#define  FID_ZJZC               1036  //×ª³ö×Ê½ğ  DT£ºC  
-#define  FID_SZZR               1037  //×ªÈëÊĞÖµ  DT£ºC  
-#define  FID_SZZC               1038  //×ª³öÊĞÖµ  DT£ºC  
-#define  FID_MKKZ               1039  //Âô¿Õ¿ØÖÆ  DT£ºI  
-#define  FID_MFCS               1040  //Ãâ·ÑµÇÂ¼´ÎÊı  DT£ºC  
-#define  FID_XZCS               1041  //ÏŞÖÆµÇÂ¼´ÎÊı  DT£ºC  
-#define  FID_SJSX_A             1042  //Ã¿ÈÕÊ¹ÓÃ×ÜÊ±¼äÉÏÏŞ  DT£ºC  
-#define  FID_SJSX_S             1043  //Ã¿ÈÕÊ¹ÓÃµ¥Õ¾µãÊ±¼äÉÏÏŞ  DT£ºC  
-#define  FID_MMCSCS             1044  //ÃÜÂë³¢ÊÔ´ÎÊı  DT£ºC  
-#define  FID_ZDJDTS             1045  //×Ô¶¯½â¶³ÌìÊı  DT£ºC  
-#define  FID_MFHQCS             1046  //Ãâ·Ñ²éÑ¯ĞĞÇé´ÎÊı  DT£ºC  
-#define  FID_HQSFSX             1047  //ĞĞÇéÊÕ·ÑÉÏÏŞ  DT£ºC  
-#define  FID_HKSFSX             1048  //»®¿¨ÊÕ·ÑÉÏÏŞ  DT£ºC  
-#define  FID_SJSFSX             1049  //Ê¹ÓÃÊ±¼äÊÕ·ÑÉÏÏŞ  DT£ºC  
-#define  FID_ZSFSX              1050  //×ÜÊÕ·ÑÉÏÏŞ  DT£ºC  
-#define  FID_DBYJXX             1051  //µ¥±ÊÓ¶½ğÏÂÏŞ  DT£ºC  
-#define  FID_DBYJSX             1052  //µ¥±ÊÓ¶½ğÉÏÏŞ  DT£ºC  
-#define  FID_ZCJJE              1053  //×Ü³É½»½ğ¶î  DT£ºR  
-#define  FID_YJDJFS             1054  //Ó¶½ğ¶¨¼Û·½Ê½XTDM.YJDJFS  DT£ºC  
-#define  FID_FHGY               1055  //¸´ºË¹ñÔ±  DT£ºC  
-#define  FID_TJZQLB             1056  //Í³¼ÆÖ¤È¯Àà±ğ  DT£ºC  
-#define  FID_DJJSFS             1057  //Ó¶½ğ¶¨¼Û½áËã·½Ê½  DT£ºI  
-#define  FID_FDBH               1058  //·Ö¶Î±àºÅ  DT£ºC  
-#define  FID_CFCDBZ             1059  //ÊÇ·ñÔÊĞíÖØ¸´³·µ¥  DT£ºC  DT£ºDT£º0 ²»ÔÊĞí£»1 ÔÊĞí  
-#define  FID_ZHDM               1060  //×¨»§´úÂë  DT£ºC  
-#define  FID_TZDW               1061  //Í¶×Êµ¥Î»  DT£ºC  
-#define  FID_TZXX               1062  //Í¶×ÊÏÂÏŞ  DT£ºC  
-#define  FID_SYZKXS             1063  //ÊÕÒæÕÛ¿ÛÏµÍ³  DT£ºC  
-#define  FID_SYTZFS             1064  //ÊÕÒæÍ¶×Ê·½Ê½  DT£ºC  
-#define  FID_TZJESX             1065  //Í¶×Ê½ğ¶îÉÏÏŞ  DT£ºC  
-#define  FID_ZJLCDS             1066  //×Ê½ğÁô´æµ×Êı  DT£ºC  
-#define  FID_TZBDJE             1067  //Í¶×Ê¶î±ä¸üÊı  DT£ºC  
-#define  FID_ZHKHH              1068  //×¨»§¿Í»§ºÅ  DT£ºC  
-#define  FID_ZHZJZH             1069  //×¨»§×Ê½ğÕË»§  DT£ºC  
-#define  FID_LCJZJE             1070  //Àí²Æ¼¯ÖĞ½ğ¶î  DT£ºC  
-#define  FID_LCFHJE             1071  //Àí²Æ·µ»¹½ğ¶î  DT£ºC  
-#define  FID_SYZTZBZ            1072  //Àí²ÆÊÕÒæÔÙÍ¶×Ê±êÖ¾  DT£ºC  
-#define  FID_SYZTZZQ            1073  //ÊÕÒæÔÙÍ¶×ÊÖÜÆÚ  DT£ºC  
-#define  FID_LCZSY              1074  //Àí²Æ×ÜÊÕÒæ  DT£ºC  
-#define  FID_SYZCJE             1075  //Àí²ÆÊÕÒæ×ª´æ½ğ¶î  DT£ºC  
-#define  FID_SYZTZE             1076  //ÊÕÒæÔÙÍ¶×Ê½ğ¶î  DT£ºC  
-#define  FID_XYBH               1077  //Ğ­Òé±àºÅ  DT£ºC  
-#define  FID_LCTZJE             1078  //Àí²ÆÍ¶×Ê½ğ¶î  DT£ºC  
-#define  FID_SGDM               1079  //×¨»§Éê¹º´úÂë  DT£ºC  
-#define  FID_CLBZ               1080  //´¦Àí±êÖ¾  DT£ºC  
-#define  FID_FPSY               1081  //·ÖÅäÊÕÒæ  DT£ºC  
-#define  FID_GBZQL              1082  //¹«²¼ÖĞÇ©ÂÊ  DT£ºC  
-#define  FID_SGSL               1083  //Éê¹ºÊıÁ¿  DT£ºC  
-#define  FID_SGJG               1084  //Éê¹º¼Û¸ñ  DT£ºC  
-#define  FID_SSRQ               1085  //ÉÏÊĞÈÕÆÚ  DT£ºC  
-#define  FID_HKRQ               1086  //»¹¿îÈÕÆÚ  DT£ºC  
-#define  FID_SSDM               1087  //ÉÏÊĞ´úÂë  DT£ºC  
-#define  FID_PHDM               1088  //ÅäºÅ´úÂë  DT£ºC  
-#define  FID_HKDM               1089  //»¹¿î´úÂë  DT£ºC  
-#define  FID_SGRQ               1090  //Éê¹ºÈÕÆÚ  DT£ºC  
-#define  FID_JEBL               1091  //½ğ¶î±ÈÂÊ  DT£ºC  
-#define  FID_LCJZQTJE           1092  //Àí²Æ¼¯ÖĞ½ğ¶î  DT£ºC  
-#define  FID_HZGDH              1093  //ºÏ×÷¹É¶«ºÅ  DT£ºC  
-#define  FID_SYDX               1094  //ÊÊÓÃ¶ÔÏó  DT£ºC  
-#define  FID_JYLJSFS            1095  //½»Ò×Á¿¼ÆËã·½Ê½  DT£ºC  
-#define  FID_JYLLJZQ            1096  //½»Ò×Á¿ÀÛ¼ÆÖÜÆÚ  DT£ºC  
-#define  FID_DJFS               1097  //¶¨¼Û·½Ê½  DT£ºC  
-#define  FID_BBJ                1098  //±£±¾¼Û  DT£ºC  
-#define  FID_HZLB               1099  //ºÏ×÷ÕÊ»§Àà±ğ  DT£ºC  
-#define  FID_FSJE_LCBJ          1100  //±¾½ğ·¢Éú½ğ¶î  DT£ºC  
-#define  FID_BCYE_LCBJ          1101  //±¾´Î±¾½ğÓà¶î  DT£ºC  
-#define  FID_FSJE_SY            1102  //ÊÕÒæ·¢Éú½ğ¶î  DT£ºC  
-#define  FID_BCYE_SY            1103  //´ı×ªÊÕÒæÓà¶î  DT£ºC  
-#define  FID_FSJE_BZJ           1104  //±£Ö¤½ğ·¢Éú¶î  DT£ºC  
-#define  FID_BCYE_BZJ           1105  //±£Ö¤½ğÕÊ»§Óà¶î  DT£ºC  
-#define  FID_HZLBMC             1106  //ºÏ×÷Àà±ğÃû³Æ  DT£ºC  
-#define  FID_KSFW               1107  //ÆğÊ¼·¶Î§  DT£ºC  
-#define  FID_JSFW               1108  //½áÊø·¶Î§  DT£ºC  
-#define  FID_ZDKZBZ             1109  //Ö¸¶¨¿ØÖÆ±êÖ¾  DT£ºI  
-#define  FID_KHS                1110  //¿ª»§»§Êı  DT£ºC  
-#define  FID_XHS                1111  //Ïú»§»§Êı  DT£ºC  
-#define  FID_ZHS                1112  //×Ü»§Êı  DT£ºC  
-#define  FID_ZDGDHS             1113  //Ö¸¶¨¹É¶«»§Êı  DT£ºC  
-#define  FID_CXZDHS             1114  //³·Ïú¹É¶«»§Êı  DT£ºC  
-#define  FID_CCGDHS             1115  //³Ö²Ö¹É¶«»§Êı  DT£ºC  
-#define  FID_TJZJYE             1116  //Í³¼Æ×Ê½ğÓà¶î  DT£ºC  
-#define  FID_TJZJCK             1117  //Í³¼ÆÔö¼Ó´æ¿î  DT£ºC  
-#define  FID_TJZJQK             1118  //Í³¼ÆÔö¼ÓÈ¡¿î  DT£ºC  
-#define  FID_TJZJGP             1119  //Í³¼ÆÔö¼ÓÊĞÖµ  DT£ºC  
-#define  FID_TJJSGP             1120  //Í³¼Æ¼õÉÙÊĞÖµ  DT£ºC  
-#define  FID_TJGPSZ             1121  //Í³¼Æ¹ÉÆ±ÊĞÖµ  DT£ºC  
-#define  FID_TJZZC              1122  //Í³¼Æ×Ü×Ê²ú  DT£ºC  
-#define  FID_FDB1               1123  //Í³¼Æ·Ö¶Î¿ªÊ¼1  DT£ºC  
-#define  FID_FDE1               1124  //Í³¼Æ·Ö¶Î½áÊø1  DT£ºC  
-#define  FID_FDB2               1125  //Í³¼Æ·Ö¶Î¿ªÊ¼2  DT£ºC  
-#define  FID_FDE2               1126  //Í³¼Æ·Ö¶Î½áÊø2  DT£ºC  
-#define  FID_FDB3               1127  //Í³¼Æ·Ö¶Î¿ªÊ¼3  DT£ºC  
-#define  FID_FDE3               1128  //Í³¼Æ·Ö¶Î½áÊø3  DT£ºC  
-#define  FID_FDB4               1129  //Í³¼Æ·Ö¶Î¿ªÊ¼4  DT£ºC  
-#define  FID_FDE4               1130  //Í³¼Æ·Ö¶Î½áÊø4  DT£ºC  
-#define  FID_FDB5               1131  //Í³¼Æ·Ö¶Î¿ªÊ¼5  DT£ºC  
-#define  FID_FDE5               1132  //Í³¼Æ·Ö¶Î½áÊø5  DT£ºC  
-#define  FID_FDB6               1133  //Í³¼Æ·Ö¶Î¿ªÊ¼6  DT£ºC  
-#define  FID_FDE6               1134  //Í³¼Æ·Ö¶Î½áÊø6  DT£ºC  
-#define  FID_TJJGGS             1135  //Í³¼Æ½á¹û¸öÊı  DT£ºC  
-#define  FID_TJJGSJ             1136  //Í³¼Æ½á¹ûÊı¾İ  DT£ºC  
-#define  FID_QSBZ               1137  //ÊµÊ±ÇåËã±êÖ¾  DT£ºC  
-#define  FID_TZJE               1138  //Í¸Ö§½ğ¶î  DT£ºC  
-#define  FID_WJSZJ              1139  //Î´½»ÊÕ×Ê½ğ  DT£ºC  
-#define  FID_ZJDJLSH            1140  //×Ê½ğ¶³½áÁ÷Ë®ºÅ  DT£ºI  
-#define  FID_YDZD               1141  //Ó¦´ğ×Ö¶Î  DT£ºC  
-#define  FID_YDZDSM             1142  //Ó¦´ğ×Ö¶ÎËµÃ÷  DT£ºC  
-#define  FID_YDSJ               1143  //Ó¦´ğÊı¾İ  DT£ºC  
-#define  FID_JCJJE              1144  //¾»³É½»½ğ¶î  DT£ºC  
-#define  FID_YXHS               1145  //ÓĞĞ§»§Êı  DT£ºC  
-#define  FID_CJSLBL             1146  //³É½»ÊıÁ¿±ÈÀı  DT£ºC  
-#define  FID_CJJEBL             1147  //³É½»½ğ¶î±ÈÀı  DT£ºC  
-#define  FID_S1BL               1148  //Ó¶½ğÊÕÈë±ÈÀı  DT£ºC  
-#define  FID_ZZCBL1             1149  //ÓªÒµ²¿µÄ×Ê²ú±ÈÀı  DT£ºC  
-#define  FID_ZZCBL2             1150  //×Ü¹«Ë¾µÄ×Ê²ú±ÈÀı  DT£ºC  
-#define  FID_ZSLBL1             1151  //ÓªÒµ²¿µÄÊıÁ¿±ÈÀı  DT£ºC  
-#define  FID_ZSLBL2             1152  //×Ü¹«Ë¾µÄÊıÁ¿±ÈÀı  DT£ºC  
-#define  FID_ZHSBL1             1153  //ÓªÒµ²¿µÄ»§Êı±ÈÀı  DT£ºC  
-#define  FID_ZHSBL2             1154  //×Ü¹«Ë¾µÄ»§Êı±ÈÀı  DT£ºC  
-#define  FID_JEXX               1155  //½ğ¶îÏÂÏŞ  DT£ºC  
-#define  FID_ZQDJLSH            1156  //Ö¤È¯¶³½áÁ÷Ë®ºÅ  DT£ºI  
-#define  FID_WTSB               1157  //ÒøÖ¤×ªÕÊ²ÎÊıµÄÉê±¨×´Ì¬  DT£ºC  
-#define  FID_QDBZ               1158  //ÒøÖ¤×ªÕÊ²ÎÊıµÄÇ©µ½±êÖ¾  DT£ºC  
-#define  FID_WBZH               1159  //Íâ²¿ÕÊºÅ  DT£ºC  
-#define  FID_SQBH               1160  //ÒµÎñÉêÇë±àºÅ  DT£ºC  
-#define  FID_WBCKKY             1161  //Íâ²¿ÕÊ»§²Î¿¼¿ÉÓÃÓà¶î  DT£ºC  
-#define  FID_WBCKKQ             1162  //Íâ²¿ÕÊ»§²Î¿¼¿ÉÈ¡×Ê½ğÓà¶î  DT£ºC  
-#define  FID_WBDJJE             1163  //Íâ²¿ÕÊ»§²Î¿¼¶³½á½ğ¶î  DT£ºC  
-#define  FID_JYXZ               1164  //ÒøÖ¤Í¨½»Ò×ÏŞÖÆ  DT£ºC  
-#define  FID_ZJXYFS             1165  //ÒøÖ¤Í¨×Ê½ğĞ£Ñé·½Ê½  DT£ºC  
-#define  FID_HBBZ               1166  //ÒøÖ¤Í¨×ÊÁÏ»Ø±¨ÀàĞÍ  DT£ºC  
-#define  FID_ZJHZFS             1167  //ÒøÖ¤Í¨×Ê½ğ»Ø×ª·½Ê½  DT£ºC  
-#define  FID_DRQKJE             1168  //µ±ÈÕÈ¡¿î½ğ¶î  DT£ºR  
-#define  FID_JGKZBZ             1169  //¼Û¸ñ¿ØÖÆ±êÖ¾  DT£ºI  
-#define  FID_ZZJSSJ             1170  //ÒøÖ¤×ªÕÊÍ£Ö¹Õı³£×ªÕÊ½»Ò×µÄÊ±¼ä  DT£ºC  
-#define  FID_CZDRZXBZ           1171  //³·Ö¸µ±ÈÕÊÇ·ñÔÊĞí×¢Ïú  DT£ºC  DT£ºDT£º0 ²»ÔÊĞí£¬1 ÔÊĞí  
-#define  FID_LSH_LXS            1172  //ÊÕÈ¡ÀûÏ¢Ë°µÄÒµÎñÁ÷Ë®ºÅ  DT£ºI  
-#define  FID_LX                 1173  //ÀûÏ¢  DT£ºR  
-#define  FID_ZJMXLSH            1174  //×Ê½ğÃ÷Ï¸Á÷Ë®ºÅ  DT£ºI  
-#define  FID_YSSL               1175  //Ó¦ÊÕÊıÁ¿  DT£ºI  
-#define  FID_BBYK               1176  //±¾±ÊÓ¯¿÷  DT£ºR  
-#define  FID_JYSFY              1177  //½»Ò×Ëù·ÑÓÃ  DT£ºR  
-#define  FID_BCJKYE             1178  //±¾´Î½è¿îÓà¶î  DT£ºR  
-#define  FID_KSGSL              1179  //¿ÉÉê¹ºÊıÁ¿  DT£ºI  
-#define  FID_ZSZBL1             1180  //ÓªÒµ²¿µÄÊĞÖµ±ÈÀı  DT£ºC  
-#define  FID_ZSZBL2             1181  //×Ü¹«Ë¾µÄÊĞÖµ±ÈÀı  DT£ºC  
-#define  FID_QCKHS              1182  //ÆÚ³õ¿Í»§Êı  DT£ºC  
-#define  FID_QMKHS              1183  //ÆÚÄ©¿Í»§Êı  DT£ºC  
-#define  FID_KSHSL              1184  //¿ÉÊê»ØÊıÁ¿  DT£ºI  
-#define  FID_EN_ZQDM            1185  //Ö¤È¯´úÂë·¶Î§  DT£ºC  
-#define  FID_XCMRJ              1186  //ÏÖ³®ÂòÈë¼Û  DT£ºC  
-#define  FID_XCMCJ              1187  //ÏÖ³®Âô³ö¼Û  DT£ºC  
-#define  FID_XHMRJ              1188  //ÏÖ»ãÂòÈë¼Û  DT£ºC  
-#define  FID_XHMCJ              1189  //ÏÖ»ãÂô³ö¼Û  DT£ºC  
-#define  FID_GSBL               1190  //¹ÀËã±ÈÀı  DT£ºC  
-#define  FID_HLBZ               1191  //»ãÂÊ±êÖ¾  DT£ºC  
-#define  FID_DRCKJE             1192  //µ±ÈÕÕÊ»§´æ¿î½ğ¶î  DT£ºC  
-#define  FID_TZCKJE             1193  //µ±ÈÕÍ¨Öª´æ¿î½ğ¶î  DT£ºC  
-#define  FID_JGMC_E             1194  //»ú¹¹Ó¢ÎÄÃû³Æ  DT£ºC  
-#define  FID_FRDB               1195  //·¨ÈË´ú±í  DT£ºC  
-#define  FID_WTQR               1196  //Î¯ÍĞÈ·ÈÏ¿â  DT£ºC  
-#define  FID_HYLB               1197  //ĞĞÒµÀà±ğ  DT£ºC  
-#define  FID_YWFW               1198  //ÒµÎñ·¶Î§  DT£ºC  
-#define  FID_ZCDZ               1199  //×¢²áµØÖ·  DT£ºC  
-#define  FID_ZCZB               1200  //×¢²á×Ê±¾  DT£ºC  
-#define  FID_ZCYE               1201  //×Ê²úÓà¶î  DT£ºC  
-#define  FID_FZYE               1202  //¸ºÕ®Óà¶î  DT£ºC  
-#define  FID_YSZC               1203  //Ô­Ê¼×Ê²ú  DT£ºC  
-#define  FID_CXWTH              1204  //³·µ¥³·ÏúÎ¯ÍĞºÅ  DT£ºI  
-#define  FID_YWXZ               1205  //ÒµÎñÏŞÖÆ  DT£ºC  
-#define  FID_SJXM               1206  //Éó¼ÆÏîÄ¿  DT£ºC  
-#define  FID_SJMC               1207  //Éó¼ÆÃû³Æ  DT£ºC  
-#define  FID_JS                 1208  //Õ®È¯ÔöÖµ»ıÊı  DT£ºC  
-#define  FID_CCJJ               1209  //³Ö²Ö¾ù¼Û  DT£ºC  
-#define  FID_LJYK               1210  //ÀÛ¼ÆÓ¯¿÷  DT£ºC  
-#define  FID_PGSL               1211  //Åä¹ÉÊıÁ¿  DT£ºC  
-#define  FID_BL                 1212  //±ÈÀı  DT£ºC  
-#define  FID_CSLB               1213  //²ÎÊıÀà±ğ  DT£ºC  
-#define  FID_FJBZ               1214  //¸½¼Ó±êÊ¶  DT£ºC  
-#define  FID_QZQKBZ             1215  //Ç¿ÖÆÈ¡¿î±êÖ¾  DT£ºC  
-#define  FID_SBRQ               1216  //Î¯ÍĞÉê±¨ÈÕÆÚ  DT£ºI  
-#define  FID_ZCXX               1217  //×Ê²úÏÂÏŞ  DT£ºC  
-#define  FID_ZCSX               1218  //×Ê²úÉÏÏŞ  DT£ºC  
-#define  FID_TIME               1219  //²Ù×÷Ê±¼ä  DT£ºC  
-#define  FID_PGJE               1220  //Åä¹É½ğ¶î  DT£ºC  
-#define  FID_TGZH               1221  //Õ®È¯ÏµÍ³ÍĞ¹ÜÕÊ»§  DT£ºC  
-#define  FID_GZQX               1222  //¹úÕ®ÆÚÏŞ  DT£ºC  
-#define  FID_HGTS               1223  //»Ø¹ºÌìÊı  DT£ºC  
-#define  FID_GZJYSX             1224  //¹úÕ®½»Ò×ÊôĞÔ  DT£ºC  
-#define  FID_ISLOGIN            1225  //ÊÇ·ñµÇÂ¼±êÖ¾  DT£ºI  
-#define  FID_GZNBDM             1226  //Õ®È¯ÄÚ²¿´úÂë  DT£ºC  
-#define  FID_GZFJSX             1227  //¹úÕ®¸½¼ÓÊôĞÔ  DT£ºC  
-#define  FID_GZMZSX             1228  //ÃæÖµÊôĞÔ  DT£ºC  
-#define  FID_GZJXTS             1229  //¹úÕ®¼ÆÏ¢ÌìÊı  DT£ºC  
-#define  FID_FXJG               1230  //Õ®È¯·¢ĞĞ¼Û¸ñ  DT£ºC  
-#define  FID_TGBH               1231  //ÍĞ¹Ü±àºÅ  DT£ºC  
-#define  FID_DYSL               1232  //µÖÑºÊıÁ¿  DT£ºC  
-#define  FID_TGRQ               1233  //ÍĞ¹ÜÈÕÆÚ  DT£ºC  
-#define  FID_SXF                1234  //ÊÖĞø·Ñ  DT£ºC  
-#define  FID_DJSL               1235  //¶³½áÊıÁ¿  DT£ºC  
-#define  FID_CQDJ               1236  //³¤ÆÚ¶³½á  DT£ºC  
-#define  FID_JYFY               1237  //½»Ò×·ÑÓÃ  DT£ºC  
-#define  FID_DQBX               1238  //Õ®È¯µ½ÆÚ±¾Ï¢  DT£ºC  
-#define  FID_GZLL               1239  //¹úÕ®ÀûÂÊ  DT£ºC  
-#define  FID_DQRQ               1240  //µ½ÆÚ£¨¶Ò¸¶ÈÕÆÚ£©  DT£ºC  
-#define  FID_JXRQ               1241  //¿ªÊ¼¼ÇÏ¢ÈÕÆÚ  DT£ºC  
-#define  FID_LTRQ               1242  //¿ªÊ¼Á÷Í¨ÈÕÆÚ  DT£ºC  
-#define  FID_FXZQDJR            1243  //ÅÉÏ¢µÇ¼ÇÈÕ  DT£ºC  
-#define  FID_ZQFXRQ             1244  //ÅÉÏ¢ÈÕ  DT£ºC  
-#define  FID_DFZQDJR            1245  //¶Ò¸¶µÇ¼ÇÈÕ  DT£ºC  
-#define  FID_BRLX               1246  //¼ÇÕËÊ½Õ®È¯µ¥Î»£¨100£©±¾ÈÕÀûÏ¢  DT£ºC  
-#define  FID_HGJG               1247  //»Ø¹º¼Û¸ñ  DT£ºC  
-#define  FID_GHJG               1248  //¹º»Ø¼Û¸ñ  DT£ºC  
-#define  FID_KTBZ               1249  //¿ªÍ¨±êÖ¾  DT£ºC  
-#define  FID_HGSL               1250  //»Ø¹ºÊıÁ¿  DT£ºC  
-#define  FID_HGRQ               1251  //»Ø¹ºÈÕÆÚ  DT£ºC  
-#define  FID_GHRQ               1252  //¹º»ØÈÕÆÚ  DT£ºC  
-#define  FID_ZRTGZH             1253  //×ªÈëÍĞ¹ÜÕÊ»§  DT£ºC  
-#define  FID_QTZC               1254  //ÆäËû×Ê²ú  DT£ºC  
-#define  FID_ZZC                1255  //×Ü×Ê²ú  DT£ºC  
-#define  FID_WQSZJ              1256  //Î´ÇåËã×Ê½ğ  DT£ºC  
-#define  FID_JGDM               1257  //»ú¹¹´úÂë  DT£ºC  
-#define  FID_DFSXFL             1258  //¶Ò¸¶ÊÖĞø·ÑÂÊ  DT£ºC  
-#define  FID_DFLXSL             1259  //¶Ò¸¶ÀûÏ¢Ë°ÂÊ  DT£ºC  
-#define  FID_JXFS               1260  //¼ÆÏ¢·½Ê½  DT£ºC  
-#define  FID_CSSM               1261  //²ÎÊıËµÃ÷  DT£ºC  
-#define  FID_SZSM               1262  //²ÎÊıÉèÖÃËµÃ÷  DT£ºC  
-#define  FID_XGGY               1263  //ĞŞ¸Ä¹ñÔ±  DT£ºC  
-#define  FID_LOGINNAME          1264  //µÇÂ¼ÓÃ»§Ãû³Æ  DT£ºC  
-#define  FID_MRDLSF             1265  //Ä¬ÈÏµÇÂ¼Éí·İ  DT£ºI  
-#define  FID_MGZC               1266  //Ã¿¹É×Ê²ú  DT£ºR  
-#define  FID_SNMGSY             1267  //ÉÏÄêÃ¿¹ÉÊÕÒæ  DT£ºR  
-#define  FID_XZJB               1268  //ÏŞÖÆ¼¶±ğ  DT£ºI  
-#define  FID_EN_MCQZ            1269  //Ãû³ÆÇ°×º·¶Î§  DT£ºC  
-#define  FID_BDZQDM             1270  //±¾µØÖ¤È¯´úÂë  DT£ºC  DT£ºDT£ºÂò¶ÏÊ½»Ø¹º±¾µØÕ®È¯´úÂë  
-#define  FID_LYJBL              1271  //ÂÄÔ¼½ğ±ÈÀı  DT£ºR  
-#define  FID_RQWGHZJ            1272  //ÈÚÈ¯Î´¹º»Ø×Ê½ğ(È¨Òæ)  DT£ºR  
-#define  FID_RZWGHZJ            1273  //ÈÚ×ÊÎ´¹º»Ø×Ê½ğ(¸ºÕ®)  DT£ºR  
-#define  FID_BWJSZJ             1274  //ÂòÈëÎ´½»ÊÕ×Ê½ğ  DT£ºR  
-#define  FID_SWJSZJ             1275  //Âô³öÎ´½»ÊÕ×Ê½ğ  DT£ºR  
-#define  FID_YSYXYED            1276  //ÒÑÊ¹ÓÃĞÅÓÃ¶î¶È  DT£ºR  
-#define  FID_DJWTK              1277  //µÇ¼ÇÎ¯ÍĞ¿â  DT£ºC  
-#define  FID_DJHBK              1278  //µÇ¼Ç»Ø±¨¿â  DT£ºC  
-#define  FID_CDSB               1279  //³·µ¥Éê±¨¿â  DT£ºC  
-#define  FID_CDQR               1280  //³·µ¥È·ÈÏ¿â  DT£ºC  
-#define  FID_WTQRNO             1281  //Î¯ÍĞÈ·ÈÏ±ÊÊı  DT£ºI  
-#define  FID_CDQRNO             1282  //³·µ¥È·ÈÏ±ÊÊı  DT£ºI  
-#define  FID_TYPE_BF            1283  //±¸·İÍ¨µÀÀàĞÍ  DT£ºI  
-#define  FID_MODULE_BF          1284  //±¸·İÉê±¨Ä£¿é  DT£ºC  
-#define  FID_HOST_BF            1285  //±¸·İÉê±¨Ö÷»úµØÖ·  DT£ºC  
-#define  FID_WTSB_BF            1286  //±¸·İÎ¯ÍĞÉê±¨¿â  DT£ºC  
-#define  FID_WTQR_BF            1287  //±¸·İÎ¯ÍĞÈ·ÈÏ¿â  DT£ºC  
-#define  FID_CDSB_BF            1288  //±¸·İ³·µ¥Éê±¨¿â  DT£ºC  
-#define  FID_CDQR_BF            1289  //±¸·İ³·µ¥È·ÈÏ¿â  DT£ºC  
-#define  FID_WTQRNO_BF          1290  //±¸·İÍ¨µÀÎ¯ÍĞÉê±¨È·ÈÏ±ÊÊı  DT£ºI  
-#define  FID_CDQRNO_BF          1291  //±¸·İÍ¨µÀ³·µ¥È·ÈÏ±ÊÊı  DT£ºI  
-#define  FID_TDBH               1292  //Í¨µÀ±àºÅ  DT£ºI  
-#define  FID_EN_TDBH            1293  //Í¨µÀ±àºÅ·¶Î§  DT£ºC  
-#define  FID_LTXW               1294  //ÁªÍ¨Ï¯Î»  DT£ºC  
-#define  FID_YYBXZMS            1295  //ÓªÒµ²¿ÏŞÖÆÄ£Ê½  DT£ºI  
-#define  FID_ZQLBXZMS           1296  //Ö¤È¯Àà±ğÏŞÖÆÄ£Ê½  DT£ºI  
-#define  FID_SBBS               1297  //Éê±¨±ÊÊı  DT£ºI  
-#define  FID_SBBS_S             1298  //µ¥´ÎÂÖÑ¯×î´óÉê±¨±ÊÊı  DT£ºI  
-#define  FID_JGSJ               1299  //¼ä¸ôÊ±¼ä  DT£ºI  
-#define  FID_YXHSBL1            1300  //ÓªÒµ²¿ÓĞĞ§»§Êı±ÈÀı  DT£ºC  
-#define  FID_YXHSBL2            1301  //×Ü²¿ÓĞĞ§»§Êı±ÈÀı  DT£ºC  
-#define  FID_ENDKHH             1302  //½áÊø¿Í»§ºÅ  DT£ºC  
-#define  FID_FILESIZE           1303  //ÎÄ¼ş´óĞ¡  DT£ºC  
-#define  FID_FILETRANSIZE       1304  //ÎÄ¼ş´«ËÍÊ±µÄ´óĞ¡  DT£º±ÈÈç£ºÑ¹Ëõºó  DT£ºC  
-#define  FID_YJXX               1305  //×îµÍÓ¶½ğ  DT£ºC  
-#define  FID_YJSX               1306  //×î¸ßÓ¶½ğ  DT£ºC  
-#define  FID_YHSL               1307  //Ó¡»¨Ë°ÂÊ  DT£ºC  
-#define  FID_GHFL               1308  //¹ı»§·ÑÂÊ  DT£ºC  
-#define  FID_GHFXX              1309  //×îµÍ¹ı»§·Ñ  DT£ºC  
-#define  FID_GHFSX              1310  //×î¸ß¹ı»§·Ñ  DT£ºC  
-#define  FID_FJF                1311  //¸½¼Ó·Ñ  DT£ºC  
-#define  FID_JSFL               1312  //½áËã·ÑÂÊ  DT£ºR  
-#define  FID_JSFXX              1313  //×îµÍ½áËã·Ñ  DT£ºC  
-#define  FID_JSFSX              1314  //×î¸ß½áËã·Ñ  DT£ºC  
-#define  FID_JYGFL              1315  //½»Ò×¹æ·ÑÂÊ  DT£ºC  
-#define  FID_JYGFXX             1316  //½»Ò×¹æ·ÑÏÂÏŞ  DT£ºC  
-#define  FID_JYGFSX             1317  //½»Ò×¹æ·ÑÉÏÏŞ  DT£ºC  
-#define  FID_QTFL               1318  //ÆäËü·ÑÂÊ  DT£ºC  
-#define  FID_QTFXX              1319  //×îµÍÆäËû·ÑÓÃ  DT£ºC  
-#define  FID_QTFSX              1320  //×î¸ßÆäËû·ÑÓÃ  DT£ºC  
-#define  FID_FID                1321  //FIX°üÖĞµÄFID±àºÅ  DT£ºI  
-#define  FID_EN_XWH             1322  //Ï¯Î»ºÅ·¶Î§  DT£ºC  
-#define  FID_FWDM               1323  //¿Í»§·şÎñ´úÂë  DT£ºC  
-#define  FID_FWMC               1324  //¿Í»§·şÎñÃû³Æ  DT£ºC  
-#define  FID_FWLX               1325  //¿Í»§·şÎñÀàĞÍ  DT£ºC  
-#define  FID_SLZ                1326  //¿Í»§·şÎñÊÜÀíÖ÷Ìå  DT£ºC  
-#define  FID_CLFS               1327  //¿Í»§·şÎñ´¦Àí·½Ê½  DT£ºC  
-#define  FID_FILE               1328  //ÎÄ¼şÃû  DT£ºC  
-#define  FID_FILE2              1329  //ÎÄ¼şÃû¶ş  DT£ºC  
-#define  FID_PROCNAME           1330  //¹ı³ÌÃû  DT£ºC  
-#define  FID_CSXH               1331  //²ÎÊıĞòºÅ  DT£ºC  
-#define  FID_TYPE               1332  //²ÎÊıÀàĞÍ  DT£ºC  
-#define  FID_QSZ                1333  //È±Ê¡Öµ  DT£ºC  
-#define  FID_CJHB               1334  //³É½»»Ø±¨¿â  DT£ºC  
-#define  FID_CS1                1335  //²ÎÊı1  DT£ºC  
-#define  FID_CS2                1336  //²ÎÊı2  DT£ºC  
-#define  FID_CS3                1337  //²ÎÊı3  DT£ºC  
-#define  FID_CS4                1338  //²ÎÊı4  DT£ºC  
-#define  FID_CS5                1339  //²ÎÊı5  DT£ºC  
-#define  FID_CS6                1340  //²ÎÊı6  DT£ºC  
-#define  FID_CS7                1341  //²ÎÊı7  DT£ºC  
-#define  FID_CS8                1342  //²ÎÊı8  DT£ºC  
-#define  FID_CS9                1343  //²ÎÊı9  DT£ºC  
-#define  FID_CS10               1344  //²ÎÊı10  DT£ºC  
-#define  FID_CS11               1345  //²ÎÊı11  DT£ºC  
-#define  FID_CS12               1346  //²ÎÊı12  DT£ºC  
-#define  FID_CS13               1347  //²ÎÊı13  DT£ºC  
-#define  FID_CS14               1348  //²ÎÊı14  DT£ºC  
-#define  FID_CS15               1349  //²ÎÊı15  DT£ºC  
-#define  FID_OPTERATOR          1350  //ºËĞÄ¿ª»§²Ù×÷ÀàĞÍ  DT£ºC  
-#define  FID_OPTION             1351  //ºËĞÄ¿ª»§²ÎÊı1  DT£ºC  
-#define  FID_PACKINDEX          1352  //Êı¾İ°üĞòÁĞºÅ  DT£ºC  
-#define  FID_GYDM               1353  //¹ñÔ±´úÂë  DT£ºC  
-#define  FID_JYJS               1354  //½»Ò×»ùÊı  DT£ºC  
-#define  FID_QTSX               1355  //ÆäËûÊôĞÔ  DT£ºC  
-#define  FID_TDJY               1356  //Ìæ´ú½»Ò×  DT£ºC  
-#define  FID_MRJG5              1357  //ÂòÈë¼Û¸ñ5  DT£ºC  
-#define  FID_MRSL5              1358  //ÂòÈëÊıÁ¿5  DT£ºC  
-#define  FID_MCJG5              1359  //Âô³ö¼Û¸ñ5  DT£ºC  
-#define  FID_MCSL5              1360  //Âô³öÊıÁ¿5  DT£ºC  
-#define  FID_ZQSZ_RMB           1361  //ÈËÃñ±ÒÖ¤È¯ÊĞÖµ  DT£ºC  
-#define  FID_ZQSZ_USD           1362  //ÃÀÔªÖ¤È¯ÊĞÖµ  DT£ºC  
-#define  FID_ZQSZ_HKD           1363  //¸Û±ÒÖ¤È¯ÊĞÖµ  DT£ºC  
-#define  FID_ZQSZ_ZSRMB         1364  //×ÜÖ¤È¯ÊĞÖµÕÛËãÈËÃñ±Ò  DT£ºC  
-#define  FID_ZJYE_RMB           1365  //ÈËÃñ±Ò×Ê½ğÓà¶î  DT£ºC  
-#define  FID_ZJYE_USD           1366  //ÃÀÔª×Ê½ğÓà¶î  DT£ºC  
-#define  FID_ZJYE_HKD           1367  //¸Û±Ò×Ê½ğÓà¶î  DT£ºC  
-#define  FID_ZJYE_ZSRMB         1368  //×Ü×Ê½ğÓà¶îÕÛËãÈËÃñ±Ò  DT£ºC  
-#define  FID_QTZC_RMB           1369  //ÈËÃñ±ÒÆäËû×Ê²ú  DT£ºC  
-#define  FID_QTZC_USD           1370  //ÃÀÔªÆäËû×Ê²ú  DT£ºC  
-#define  FID_QTZC_HKD           1371  //¸Û±ÒÆäËû×Ê²ú  DT£ºC  
-#define  FID_QTZC_ZSRMB         1372  //×ÜÆäËû×Ê²úÕÛËãÈËÃñ±Ò  DT£ºC  
-#define  FID_LASTRECNO          1373  //×î½ü»Ø±¨¼ÇÂ¼ºÅ  DT£ºI  
-#define  FID_HTHQZFW            1374  //ºÏÍ¬ºÅÇ°×º·¶Î§  DT£ºC  
-#define  FID_TZZHDM             1375  //Í¶×Ê×éºÏ´úÂë  DT£ºC  
-#define  FID_TZZHMC             1376  //Í¶×Ê×éºÏ´úÂë  DT£ºC  
-#define  FID_TZZHQZ             1377  //Í¶×Ê×éºÏ´úÂë  DT£ºC  
-#define  FID_TZZHLB             1378  //Í¶×Ê×éºÏ´úÂë  DT£ºC  
-#define  FID_HTHQJ              1379  //ºÏÍ¬ºÅÇø¼ä  DT£ºC  
-#define  FID_FWLB               1380  //·şÎñÀà±ğ  DT£ºC  
-#define  FID_XMZX               1381  //ÏîÄ¿×ÓÏî  DT£ºC  
-#define  FID_DZLB               1382  //Ö÷¶¯ÍÆËÍÔÊĞíµØÖ·Àà±ğ  DT£ºC  
-#define  FID_QSDZLB             1383  //Ö÷¶¯ÍÆËÍÈ±Ê¡µØÖ·Àà±ğ  DT£ºC  
-#define  FID_SJFY               1384  //ÊÖ»ú¶ÌĞÅ·½Ê½µÄ·şÎñÊÕ·Ñ±ê×¼  DT£ºC  
-#define  FID_YJFY               1385  //EMAIL·½Ê½µÄ·şÎñÊÕ·Ñ±ê×¼  DT£ºC  
-#define  FID_ZF                 1386  //ÕÇ·ù  DT£ºC  
-#define  FID_DF                 1387  //µø·ù  DT£ºC  
-#define  FID_FSCS               1388  //·¢ËÍ´ÎÊı  DT£ºC  
-#define  FID_HQNR               1389  //ĞĞÇéµã²¥ÄÚÈİ  DT£ºC  
-#define  FID_ZDSJ               1390  //ĞĞÇéµã²¥ÔÊĞí·¢ËÍÖ¸¶¨Ê±¼äµã  DT£ºC  
-#define  FID_SJQJ               1391  //ĞĞÇéµã²¥ÔÊĞí·¢ËÍÊ±¼äÇø¼ä  DT£ºC  
-#define  FID_XWZBH              1392  //Ï¯Î»×é±àºÅ  DT£ºI  
-#define  FID_XJDM               1393  //ÏÖ½ğ´úÂë(ETF)  DT£ºC  
-#define  FID_RGDM               1394  //ÈÏ¹º´úÂë(ETF)  DT£ºC  
-#define  FID_RGQRDM             1395  //ÈÏ¹ºÈ·ÈÏ´úÂë  DT£ºC  
-#define  FID_XWZMC              1396  //Ï¯Î»×éÃû³Æ  DT£ºC  
-#define  FID_RIGH               1397  //×øÏ¯ÓÃ»§È¨ÏŞ  DT£ºC  
-#define  FID_MGSY               1398  //Ã¿¹ÉÊÕÒæ  DT£ºC  
-#define  FID_SHDM               1399  //ÉÏº£ÊĞ³¡¹ÉÆ±´úÂë(ÅäÊÛ)  DT£ºC  
-#define  FID_SZDM               1400  //ÉîÛÚÊĞ³¡¹ÉÆ±´úÂë(ÅäÊÛ)  DT£ºC  
-#define  FID_GSHY               1401  //ÉÏÊĞ¹«Ë¾ĞĞÒµ  DT£ºC  
-#define  FID_GSMC               1402  //ÉÏÊĞ¹«Ë¾Ãû³Æ  DT£ºC  
-#define  FID_FXZL               1403  //·¢ĞĞ×ÜÁ¿  DT£ºC  
-#define  FID_FILEWRITETIME      1404  //ÎÄ¼şĞŞ¸ÄÊ±¼ä  DT£ºC  
-#define  FID_DHXL               1405  //µ¥»§Éê¹ºÏŞÁ¿  DT£ºC  
-#define  FID_BLFM               1406  //±ÈÀı·ÖÄ¸  DT£ºÅä¹É¡¢ËÍ¹ÉµÈ  DT£ºC  
-#define  FID_BLFZ               1407  //±ÈÀı·Ö×Ó  DT£ºÅä¹É¡¢ËÍ¹ÉµÈ  DT£ºC  
-#define  FID_ZQL                1408  //ÖĞÇ©ÂÊ  DT£ºC  
-#define  FID_SSGJ               1409  //ÉÏÊĞ¹À¼Û  DT£ºC  
-#define  FID_FXRQ               1410  //·¢ĞĞÈÕÆÚ  DT£ºC  
-#define  FID_ZQYHRQ             1411  //ÖĞÇ©Ò¡ºÅÈÕÆÚ  DT£ºC  
-#define  FID_CQRQ               1412  //³ıÈ¨ÈÕÆÚ  DT£ºC  
-#define  FID_JKQSRQ             1413  //½É¿îÆğÊ¼ÈÕÆÚ  DT£ºC  
-#define  FID_JKJSRQ             1414  //½É¿î½áÊøÈÕÆÚ  DT£ºC  
-#define  FID_TSXX               1415  //ÌØ±ğÌáÊ¾ĞÅÏ¢  DT£ºC  
-#define  FID_ZGB                1416  //ÉÏÊĞ¹«Ë¾×Ü¹É±¾  DT£ºC  
-#define  FID_MGGJJ              1417  //Ã¿¹É×Ê±¾¹«»ı½ğ  DT£ºR  
-#define  FID_MGWFPLR            1418  //Ã¿¹ÉÎ´·ÖÅäÀûÈó  DT£ºR  
-#define  FID_CLMC               1419  //Ó¶½ğ¶¨¼Û²ßÂÔÃû³Æ  DT£ºC  
-#define  FID_EN_FLLB            1420  //·ÑÂÊÀà±ğ·¶Î§  DT£ºC  
-#define  FID_GHFZKL             1421  //¹ı»§·ÑÕÛ¿ÛÂÊ  DT£ºR  
-#define  FID_LJJS               1422  //ÀÛ¼Æ¼ÆÊı  DT£ºI  
-#define  FID_LJZQ               1423  //ÀÛ¼ÆÖÜÆÚ  DT£ºI  
-#define  FID_ZCJSFS             1424  //×Ê²ú¼ÆËã·½Ê½  DT£ºI  
-#define  FID_ZSYJL              1425  //ÕÛËãÓ¶½ğÂÊ  DT£ºI  
-#define  FID_JYLFDBH            1426  //½»Ò×Á¿·Ö¶Î±àºÅ  DT£ºI  
-#define  FID_ZCFDBH             1427  //×Ê²ú·Ö¶Î±àºÅ  DT£ºI  
-#define  FID_JYLXX              1428  //½»Ò×Á¿ÏÂÏŞ  DT£ºR  
-#define  FID_JYLSX              1429  //½»Ò×Á¿ÉÏÏŞ  DT£ºR  
-#define  FID_GHJE               1430  //¹é»¹½ğ¶î  DT£ºR  
-#define  FID_FZYWDM             1431  //¸´ÖÆÒµÎñ´úÂë  DT£ºC  
-#define  FID_LOGIN_ENABLE       1432  //µÇÂ¼ÔÊĞí×´Ì¬  DT£ºC  DT£ºDT£º0 ½ûÖ¹£»1 ÔÊĞí  
-#define  FID_ZQJY_ENABLE        1433  //Ö¤È¯½»Ò×ÔÊĞí×´Ì¬  DT£ºC  DT£ºDT£º0 ½ûÖ¹£»1 ÔÊĞí  
-#define  FID_ZJYW_ENABLE        1434  //×Ê½ğÒµÎñÔÊĞí×´Ì¬  DT£ºC  DT£ºDT£º0 ½ûÖ¹£»1 ÔÊĞí  
-#define  FID_LSCXYW_ENABLE      1435  //ÀúÊ·²éÑ¯ÒµÎñ×´Ì¬  DT£ºC  DT£ºDT£º0 ½ûÖ¹£»1 ÔÊĞí  
-#define  FID_OFS_ENABLE         1436  //¿ª·ÅÊ½»ù½ğÔÊĞí×´Ì¬  DT£ºC  DT£ºDT£º0 ½ûÖ¹£»1 ÔÊĞí  
-#define  FID_KHYW_ENABLE        1437  //¿Í»§ÒµÎñÔÊĞí×´Ì¬  DT£ºC  DT£ºDT£º0 ½ûÖ¹£»1 ÔÊĞí  
-#define  FID_SFYG               1438  //ÊÇ·ñÄÚ²¿Ô±¹¤  DT£ºI  
-#define  FID_XZYS               1439  //ÏŞÖÆÔÂÊı  DT£ºI  
-#define  FID_FUNCID             1440  //º¯Êı¹¦ÄÜºÅ  DT£ºI  
-#define  FID_CXJE               1441  //³·Ïú½ğ¶î  DT£ºR  
-#define  FID_ZJLY               1442  //×Ê½ğÀ´Ô´  DT£ºC  DT£ºDT£ºÒøĞĞ¡¢½»Ò×Ëù...  
-#define  FID_WTSF               1443  //Î¯ÍĞÊÕ·Ñ½ğ¶î  DT£ºR  
-#define  FID_CDSF               1444  //³·µ¥ÊÕ·Ñ½ğ¶î  DT£ºR  
-#define  FID_XYSYBZ             1445  //ĞÅÓÃÊ¹ÓÃ±êÖ¾  DT£ºI  
-#define  FID_LSCLMS             1446  //³åÏú×Ê½ğÒµÎñÔ­Á÷Ë®´¦ÀíÄ£Ê½  DT£ºC  DT£ºDT£º0 ±£Áô£¬1 É¾³ıÔ­Á÷Ë®  
-#define  FID_JLLSBZ             1447  //ÊÇ·ñ¼ÇÂ¼Á÷Ë®±êÖ¾  DT£ºC  DT£ºDT£º0 Ä¬ÈÏ  
-#define  FID_TZMS               1448  //µ÷ÕûÄ£Ê½  DT£ºC  DT£ºDT£º0 Ö±½Óµ÷Õû£¬1 ÀÛ¼Ó  
-#define  FID_DOMAIN1            1449  //²éÑ¯Óò  DT£ºC  DT£ºDT£ºÈ«Ìå²éÑ¯µ±Ç°Êı¾İËùÔÚµÄÓò  
-#define  FID_REGLOG             1450  //ÊÇ·ñ¼ÇÂ¼ÈÕÖ¾  DT£ºC  DT£ºDT£º0 ¼ÇÂ¼£¬1 ²»¼ÇÂ¼  
-#define  FID_SLTSFS             1451  //ÊıÁ¿ÌáÊ¾·½Ê½  DT£ºC  
-#define  FID_OWNER_KH           1452  //ÔÊĞíÓµÓĞ¿Í»§  DT£ºI  
-#define  FID_OWNER_JJR          1453  //ÔÊĞíÓµÓĞ¾­¼ÍÈË  DT£ºI  
-#define  FID_KZFS_KHQX          1454  //¿Í»§È¨ÏŞ¿ØÖÆ·½Ê½  DT£ºI  
-#define  FID_KZFS_YHQX          1455  //ÓÃ»§È¨ÏŞ¿ØÖÆ·½Ê½  DT£ºI  
-#define  FID_KZFS_CSQX          1456  //²ÎÊıÈ¨ÏŞ¿ØÖÆ·½Ê½  DT£ºI  
-#define  FID_KZFS_KHFL          1457  //¿Í»§·ÖÀà¿ØÖÆ·½Ê½  DT£ºI  
-#define  FID_YXRQ               1458  //ÓĞĞ§ÈÕÆÚ  DT£ºI  
-#define  FID_WJLX               1459  //ÎÄ¼şÀàĞÍ  DT£ºI  
-#define  FID_WJLJ               1460  //ÎÄ¼şÂ·¾¶  DT£ºC  
-#define  FID_SYFW               1461  //ÊÊÓÃ·¶Î§  DT£ºI  
-#define  FID_ZJDZ               1462  //Ö¤¼şÉÏµÄµØÖ·  DT£ºC  
-#define  FID_FXJB               1463  //·çÏÕ¼¶±ğ  DT£ºI  
-#define  FID_SQCZRH             1464  //ÊÚÈ¨²Ù×÷ÈË±àºÅ  DT£ºC  
-#define  FID_ZHGLJG             1465  //ÕÊ»§¹ÜÀí»ú¹¹  DT£ºC  
-#define  FID_ZJDZ_FRDB          1466  //·¨ÈË´ú±íµÄÖ¤¼şµØÖ·  DT£ºC  
-#define  FID_XM_JBR             1467  //»ú¹¹¾­°ìÈËĞÕÃû  DT£ºC  
-#define  FID_ZJLB_JBR           1468  //»ú¹¹¾­°ìÈËÖ¤¼şÀà±ğ  DT£ºI  
-#define  FID_ZJBH_JBR           1469  //»ú¹¹¾­°ìÈËÖ¤¼ş±àºÅ  DT£ºC  
-#define  FID_ZCFZ               1470  //×Ê²ú·Ö×é  DT£ºC  
-#define  FID_EN_ZCFZ            1471  //×Ê²ú·Ö×é·¶Î§  DT£ºC  
-#define  FID_XJYE               1472  //ÏÖ½ğÓà¶î  DT£ºR  
-#define  FID_RZRQ               1473  //ÈëÕÊÈÕÆÚ  DT£ºI  
-#define  FID_TXXS               1474  //ÊÇ·ñÏÔÊ¾Í¼Ïñ  DT£ºI  
-#define  FID_CDWZID_NEW         1475  //ĞÂ²Ëµ¥Î»ÖÃ´úÂë  DT£ºI  
-#define  FID_KZYWDM             1476  //À©Õ¹ÒµÎñ´úÂë  DT£ºC  
-#define  FID_KZYWMC             1477  //À©Õ¹ÒµÎñÃû³Æ  DT£ºC  
-#define  FID_KZYWSM             1478  //À©Õ¹ÒµÎñËµÃ÷  DT£ºC  
-#define  FID_KZYWZT             1479  //À©Õ¹ÒµÎñ×´Ì¬  DT£ºI  
-#define  FID_ZZXY               1480  //×ÔÖúĞ­Òé  DT£ºC  
-#define  FID_NZZCJE             1481  //ÄÚ×ª×ª³ö½ğ¶î  DT£ºR  
-#define  FID_NZZRJE             1482  //ÄÚ×ª×ªÈë½ğ¶î  DT£ºR  
-#define  FID_QTCKJE             1483  //ÆäËü´æ¿î½ğ¶î  DT£ºR  
-#define  FID_QTQKJE             1484  //ÆäËüÈ¡¿î½ğ¶î  DT£ºR  
-#define  FID_ZPCKJE             1485  //Ö§Æ±´æ¿î½ğ¶î  DT£ºR  
-#define  FID_ZPQKJE             1486  //Ö§Æ±È¡¿î½ğ¶î  DT£ºR  
-#define  FID_ZZZCJE             1487  //ÒøÖ¤×ªÕÊ×ª³ö½ğ¶î  DT£ºR  
-#define  FID_ZZZRJE             1488  //ÒøÖ¤×ªÕÊ×ªÈë½ğ¶î  DT£ºR  
-#define  FID_HCJE               1489  //ºì³å½ğ¶î  DT£ºR  
-#define  FID_LBJE               1490  //À¼²¹½ğ¶î  DT£ºR  
-#define  FID_TJZQ               1491  //Í³¼ÆÖÜÆÚ  DT£ºC  DT£ºDT£º0 °´Ìì£»1 °´ÔÂ£»2 °´Äê  
-#define  FID_TJDW               1492  //Í³¼Æµ¥Î»  DT£ºC  
-#define  FID_TGZRHS             1493  //×ªÍĞ¹Ü×ªÈë»§Êı  DT£ºI  
-#define  FID_TGZCHS             1494  //×ªÍĞ¹Ü×ª³ö»§Êı  DT£ºI  
-#define  FID_TGZRSZ             1495  //×ªÍĞ¹Ü×ªÈëÊĞÖµ  DT£ºR  
-#define  FID_TGZCSZ             1496  //×ªÍĞ¹Ü×ª³öÊĞÖµ  DT£ºR  
-#define  FID_ZDZRSZ             1497  //Ö¸¶¨×ªÈëÊĞÖµ  DT£ºR  
-#define  FID_CZZCSZ             1498  //³·Ö¸×ª³öÊĞÖµ  DT£ºR  
-#define  FID_JGLBMC             1499  //»ú¹¹Àà±ğÃû³Æ  DT£ºC  
-#define  FID_FXLB               1500  //·¢ĞĞÀà±ğ  DT£ºI  
-#define  FID_FXRDM              1501  //·¢ĞĞÈË´úÂë  DT£ºC  
-#define  FID_QZDM               1502  //È¨Ö¤´úÂë  DT£ºC  
-#define  FID_QZLX               1503  //È¨Ö¤ÀàĞÍ  DT£ºI  
-#define  FID_XQBL               1504  //ĞĞÈ¨±ÈÀı  DT£ºR  
-#define  FID_FILEDATA           1505  //ÎÄ¼şÊı¾İ  DT£ºC  
-#define  FID_FILEZIP            1506  //ÎÄ¼şÊÇ·ñÑ¹Ëõ´«ËÍ(ÓÉ·şÎñ¶Ë¾ö¶¨)  DT£ºC  
-#define  FID_FILECOMPANYNAME    1507  //ÎÄ¼şµÄ¹«Ë¾Ãû³Æ  DT£ºC  
-#define  FID_FILEPRODUCTNAME    1508  //ÎÄ¼şµÄÏà¹Ø²úÆ·Ãû³Æ  DT£ºC  
-#define  FID_FILEDIR            1509  //ÎÄ¼şËù´æ·ÅÄ¿Â¼  DT£ºC  
-#define  FID_FILENEW            1510  //ÊÇĞÂÎÄ¼ş£¬Ç¿ÖÆÓÃ»§¸üĞÂ  DT£ºC  
-#define  FID_FILERELATION       1511  //ÉÏ´«Êı¾İ¿éÓëÒÑ´æÔÚµÄÎÄ¼şµÄ¹ØÏµ  DT£ºC  
-#define  FID_FILEPOSITION       1512  //ÎÄ¼şÖĞÏà¶ÔÓÚÎÄ¼şÍ·µÄÆ«ÒÆ  DT£ºC  
-#define  FID_FILETYPE           1513  //ÎÄ¼şµÄÒµÎñÀàĞÍ  DT£ºC  
-#define  FID_XQDM               1514  //ĞĞÈ¨´úÂë  DT£ºC  
-#define  FID_XQFS               1515  //ĞĞÈ¨·½Ê½  DT£ºI  
-#define  FID_XQJG               1516  //ĞĞÈ¨¼Û¸ñ  DT£ºR  
-#define  FID_ZCLB               1517  //×Ê²úÀà±ğ  DT£ºI  
-#define  FID_DBXS               1518  //µ£±£ÏµÊı  DT£ºR  
-#define  FID_SJZD               1519  //Êı¾İ×Öµä  DT£ºC  
-#define  FID_SRKJLX             1520  //ÊäÈë¿Ø¼şÀàĞÍ  DT£ºI  
-#define  FID_DZFS               1521  //¿Í»§¶ÔÕÊµ¥¼ÄËÍ·½Ê½  DT£ºI  
-#define  FID_CXSL               1522  //³·ÏúÊıÁ¿  DT£ºI  
-#define  FID_BLSFUNC            1523  //¶ÔÓ¦µÄBLS¹¦ÄÜÂë  DT£ºI  
-#define  FID_QSFY               1524  //ÇåËã·ÑÓÃ  DT£ºR  
-#define  FID_RGRQ               1525  //ÈÏ¹ºÈÕÆÚ  DT£ºI  
-#define  FID_JGRQ               1526  //½»¸îÈÕÆÚ  DT£ºI  
-#define  FID_JYSCPFL            1527  //½»Ò×Ëù²úÆ··ÖÀà  DT£ºC  
-#define  FID_JYSCPZL            1528  //½»Ò×Ëù²úÆ·×ÓÀà  DT£ºC  
-#define  FID_DDLXXZ             1529  //¶©µ¥ÀàĞÍÏŞÖÆ  DT£ºC  
-#define  FID_BSDDZXSL           1530  //±ùÉ½¶©µ¥×îĞ¡ÉÌÁ¿  DT£ºI  
-#define  FID_BSDDZXPLSL         1531  //±ùÉ½¶©µ¥×îĞ¡ÅûÂ¶ÊıÁ¿  DT£ºI  
-#define  FID_JYQX               1532  //½»Ò×È¨ÏŞ  DT£ºI  
-#define  FID_SBJB               1533  //Éê±¨¼¶±ğ  DT£ºI  
-#define  FID_ZSXJ               1534  //Ö¹ËğÏŞ¼Û  DT£ºR  
-#define  FID_ISIN               1535  //ISIN´úÂë  DT£ºC  
-#define  FID_DDYXRQ             1536  //¶©µ¥ÓĞĞ§ÈÕÆÚ  DT£ºI  
-#define  FID_DDSXXZ             1537  //¶©µ¥Ê±Ğ§ÏŞÖÆ  DT£ºI  
-#define  FID_DDJYXZ             1538  //¶©µ¥½»Ò×ÏŞÖÆ  DT£ºI  
-#define  FID_JYSDDBH            1539  //½»Ò×Ëù¶©µ¥±àºÅ  DT£ºC  
-#define  FID_BRCJSL             1540  //±¾ÈÕ³É½»ÊıÁ¿  DT£ºI  
-#define  FID_BRCJJE             1541  //±¾ÈÕ³É½»½ğ¶î  DT£ºR  
-#define  FID_EN_SBJB            1542  //Éê±¨¼¶±ğ·¶Î§  DT£ºC  
-#define  FID_DZXXBZ             1543  //¶àÖµĞÅÏ¢±êÖ¾  DT£ºC  DT£ºDT£º0 µ¥Öµ£¬1 ¶àÖµ  
-#define  FID_DXLX               1544  //¶ÔÏóÀàĞÍ  DT£ºI  
-#define  FID_EN_LOGINID         1545  //µÇÂ¼ID·¶Î§  DT£ºC  
-#define  FID_EN_JSDM            1546  //½ÇÉ«´úÂë  DT£ºC  
-#define  FID_JYBWFL             1547  //½»Ò×±¸Íü·ÖÀà  DT£ºI  
-#define  FID_QRSMJG             1548  //È·ÈÏÉ¨Ãè¼ä¸ô  DT£ºI  
-#define  FID_HBSMJG             1549  //»Ø±¨É¨Ãè¼ä¸ô  DT£ºI  
-#define  FID_NONTRADINGORDTYPE  1550  //NGTS·Ç½»Ò×¶©µ¥ÀàĞÍ  DT£ºC  
-#define  FID_ORDTYPE            1551  //NGTS½Ó¿Ú¶©µ¥ÀàĞÍ  DT£ºC  
-#define  FID_SIDE               1552  //NGTSÂòÂô·½Ïò  DT£ºC  
-#define  FID_TIMEINFORCE        1553  //NGTSÊ±Ğ§ÏŞÖÆ  DT£ºC  
-#define  FID_TRADINGSESSIO      1554  //NGTS½»Ò×ÏŞÖÆ  DT£ºC  
-#define  FID_XTCSBZ             1555  //ÏµÍ³²âÊÔ±êÖ¾  DT£ºI  
-#define  FID_ZJJRBZ             1556  //Ö÷¾­¼ÍÈË±êÖ¾  DT£ºI  
-#define  FID_PJZC               1557  //Æ½¾ù×Ê²ú  DT£ºR  
-#define  FID_KHMMSQ             1558  //¿Í»§ÃÜÂëÊÚÈ¨  DT£ºC  DT£ºDT£º¿Í»§ÊÇ·ñ½«ÃÜÂëÊÚÈ¨¸øÆä´úÀíÈË  
-#define  FID_TJRQ               1559  //Í³¼ÆÈÕÆÚ  DT£ºI  
-#define  FID_BCDJSL             1560  //±¾µØ¶³½áÊıÁ¿  DT£ºI  
-#define  FID_TQSL               1561  //Í¸È¯ÊıÁ¿  DT£ºI  
-#define  FID_EN_SQLB            1562  //ÉêÇëÀà±ğ·¶Î§  DT£ºC  
-#define  FID_RGJG               1563  //ÈÏ¹º¼Û¸ñ  DT£ºR  
-#define  FID_RGSL               1564  //ÈÏ¹ºÊıÁ¿  DT£ºI  
-#define  FID_CGLB               1565  //´æ¹ÜÀà±ğ  DT£ºI  
-#define  FID_CGZH               1566  //´æ¹ÜÕÊºÅ  DT£ºC  
-#define  FID_CGYHDM             1567  //´æ¹ÜÒøĞĞ´úÂë  DT£ºC  
-#define  FID_CGYHZH             1568  //´æ¹ÜÒøĞĞÕÊ»§  DT£ºC  
-#define  FID_CGCLJG             1569  //´æ¹ÜĞĞ´¦Àí½á¹û  DT£ºI  
-#define  FID_CGJGSM             1570  //´æ¹ÜĞĞ½á¹ûËµÃ÷  DT£ºC  
-#define  FID_CGCLRQ             1571  //´æ¹ÜĞĞ´¦ÀíÈÕÆÚ  DT£ºI  
-#define  FID_CGCLSJ             1572  //´æ¹ÜĞĞ´¦ÀíÊ±¼ä  DT£ºC  
-#define  FID_CGWBCLJG           1573  //´æ¹ÜĞĞÍâ²¿´¦Àí½á¹û  DT£ºC  
-#define  FID_CXWBLSH            1574  //³·ÏúÍâ²¿Á÷Ë®ºÅ  DT£ºC  
-#define  FID_YHYE               1575  //ÒøĞĞÓà¶î  DT£ºC  DT£ºDT£º´æ¹ÜÒøĞĞ¶Ë×Ê½ğ¹ÜÀíÕÊ»§Óà¶î  
-#define  FID_ZBYH               1576  //´æ¹ÜÖ÷°ìÒøĞĞ  DT£ºC  DT£ºDT£º0 Ğ­°ìĞĞ£¬1 Ö÷°ìĞĞ  
-#define  FID_CGJGDM             1577  //´æ¹Ü»ú¹¹´úÂë  DT£ºC  DT£ºDT£ºÔÚÒøĞĞ¶Ë±£´æµÄÓªÒµ²¿±àÂë  
-#define  FID_MRSL6              1578  //ÂòÈëÊıÁ¿6  DT£ºI  
-#define  FID_MRSL7              1579  //ÂòÈëÊıÁ¿7  DT£ºI  
-#define  FID_MRSL8              1580  //ÂòÈëÊıÁ¿8  DT£ºI  
-#define  FID_MRSL9              1581  //ÂòÈëÊıÁ¿9  DT£ºI  
-#define  FID_MRSL10             1582  //ÂòÈëÊıÁ¿10  DT£ºI  
-#define  FID_MCSL6              1583  //Âô³öÊıÁ¿6  DT£ºI  
-#define  FID_MCSL7              1584  //Âô³öÊıÁ¿7  DT£ºI  
-#define  FID_MCSL8              1585  //Âô³öÊıÁ¿8  DT£ºI  
-#define  FID_MCSL9              1586  //Âô³öÊıÁ¿9  DT£ºI  
-#define  FID_MCSL10             1587  //Âô³öÊıÁ¿10  DT£ºI  
-#define  FID_MRJG6              1588  //ÂòÈë¼Û¸ñ6  DT£ºR  
-#define  FID_MRJG7              1589  //ÂòÈë¼Û¸ñ7  DT£ºR  
-#define  FID_MRJG8              1590  //ÂòÈë¼Û¸ñ8  DT£ºR  
-#define  FID_MRJG9              1591  //ÂòÈë¼Û¸ñ9  DT£ºR  
-#define  FID_MRJG10             1592  //ÂòÈë¼Û¸ñ10  DT£ºR  
-#define  FID_MCJG6              1593  //Âô³ö¼Û¸ñ6  DT£ºR  
-#define  FID_MCJG7              1594  //Âô³ö¼Û¸ñ7  DT£ºR  
-#define  FID_MCJG8              1595  //Âô³ö¼Û¸ñ8  DT£ºR  
-#define  FID_MCJG9              1596  //Âô³ö¼Û¸ñ9  DT£ºR  
-#define  FID_MCJG10             1597  //Âô³ö¼Û¸ñ10  DT£ºR  
-#define  FID_PCDWBL             1598  //Æ½²Öµ½Î»±ÈÀı  DT£ºR  
-#define  FID_MRJG               1599  //ÂòÈë¼Û¸ñ  DT£ºR  
-#define  FID_TOKEN              1600  //¿Í»§µÇÂ¼ÁîÅÆ  DT£ºC  
-#define  FID_XYDJ               1601  //ĞÅÓÃµÈ¼¶  DT£ºC  
-#define  FID_CCSLXZ             1602  //³Ö²ÖÊıÁ¿ÏŞÖÆ  DT£ºC  
-#define  FID_YJBL               1603  //Ô¤¾¯±ÈÀı  DT£ºC  
-#define  FID_PCBL               1604  //Æ½²Ö±ÈÀı  DT£ºC  
-#define  FID_LTSL               1605  //Á÷Í¨ÊıÁ¿  DT£ºC  
-#define  FID_TABLENAME          1606  //±íÃû  DT£ºC  
-#define  FID_FIELDNAME          1607  //×Ö¶ÎÃû  DT£ºC  
-#define  FID_JDBZ               1608  //½è´û±êÖ¾  DT£ºC  
-#define  FID_HYZ                1609  //ºÏÔ¼×´Ì¬  DT£ºC  
-#define  FID_HYB                1610  //ºÏÔ¼±êÌâ  DT£ºC  
-#define  FID_JKHH               1611  //½è·½¿Í»§ºÅ  DT£ºC  
-#define  FID_DKHH               1612  //´û·½¿Í»§ºÅ  DT£ºC  
-#define  FID_JYYB               1613  //½è·½ÓªÒµ²¿  DT£ºC  
-#define  FID_DYYB               1614  //´û·½ÓªÒµ²¿  DT£ºC  
-#define  FID_ZCKZDX             1615  //×Ê²ú¿ØÖÆµ×Ïß  DT£ºC  
-#define  FID_HYH                1616  //ºÏÔ¼ºÅ  DT£ºC  
-#define  FID_HYJE               1617  //ºÏÔ¼½ğ¶î  DT£ºC  
-#define  FID_ZJZHBH             1618  //×Ê½ğÕË»§±àºÅ  DT£ºC  
-#define  FID_RZLV               1619  //ÈÚ×ÊÀûÂÊ  DT£ºC  
-#define  FID_JQRQ               1620  //½áÇåÈÕÆÚ  DT£ºC  
-#define  FID_ZHYH               1621  //×ÓºÏÔ¼ºÅ  DT£ºC  
-#define  FID_JZJZH              1622  //½è·½×Ê½ğÕËºÅ  DT£ºC  
-#define  FID_DZJZH              1623  //´û·½×Ê½ğÕËºÅ  DT£ºC  
-#define  FID_JZJYYB             1624  //½è·½×Ê½ğÓªÒµ²¿  DT£ºC  
-#define  FID_DZJYYB             1625  //´û·½×Ê½ğÓªÒµ²¿  DT£ºC  
-#define  FID_EN_JYYB            1626  //½è·½ÓªÒµ²¿  DT£ºC  
-#define  FID_EN_DYYB            1627  //´û·½ÓªÒµ²¿  DT£ºC  
-#define  FID_EN_JZJYYB          1628  //½è·½×Ê½ğÓªÒµ²¿  DT£ºC  
-#define  FID_EN_DZJYYB          1629  //´û·½×Ê½ğÓªÒµ²¿  DT£ºC  
-#define  FID_DJGY               1630  //µÇ¼Ç¹ñÔ±  DT£ºC  
-#define  FID_SHGY               1631  //ÉóºË¹ñÔ±  DT£ºC  
-#define  FID_JKHXM              1632  //½è·½¿Í»§ĞÕÃû  DT£ºC  
-#define  FID_DKHXM              1633  //´û·½¿Í»§ĞÕÃû  DT£ºC  
-#define  FID_EN_BH              1634  //×Ê½ğ±àºÅ  DT£ºC  
-#define  FID_EN_ZBH             1635  //×Ê½ğ×Ó±àºÅ  DT£ºC  
-#define  FID_ZHDYCS             1636  //ÕÊ»§µÖÑº´ÎÊı  DT£ºI  
-#define  FID_ZBH                1637  //×Ê½ğ×Ó±àºÅ  DT£ºC  
-#define  FID_ZHMC               1638  //ÕÊ»§Ãû³Æ  DT£ºC  
-#define  FID_JZHYE              1639  //½è·½ÕÊ»§Óà¶î  DT£ºC  
-#define  FID_DZHYE              1640  //´û·½ÕÊ»§Óà¶î  DT£ºC  
-#define  FID_JZXSZ              1641  //½è·½×îĞÂÊĞÖµ  DT£ºC  
-#define  FID_DZXSZ              1642  //´û·½×îĞÂÊĞÖµ  DT£ºC  
-#define  FID_JZCZZ              1643  //½è·½×Ê²ú×ÜÖµ  DT£ºC  
-#define  FID_DZCZZ              1644  //´û·½×Ê²ú×ÜÖµ  DT£ºC  
-#define  FID_SHTG               1645  //ÉóºËÊÇ·ñÍ¨¹ı  DT£ºC  
-#define  FID_JQHYJE             1646  //ÒÑ½áÇåºÏÔ¼½ğ¶î  DT£ºC  
-#define  FID_EN_KHYYB           1647  //¿Í»§ÓªÒµ²¿  DT£ºC  
-#define  FID_EN_ZJYYB           1648  //×Ê½ğÓªÒµ²¿  DT£ºC  
-#define  FID_SRYE2              1649  //ÉÏÈÕÓà¶î2  DT£ºC  
-#define  FID_ZHYE2              1650  //ÕÊ»§Óà¶î2  DT£ºC  
-#define  FID_ZPJE2              1651  //Ö§Æ±½ğ¶î2  DT£ºC  
-#define  FID_DJJE2              1652  //¶³½á½ğ¶î2  DT£ºC  
-#define  FID_YCDJJE2            1653  //Òì³£¶³½á½ğ¶î2  DT£ºC  
-#define  FID_ZJCQDJ2            1654  //×Ê½ğ³¤ÆÚ¶³½á2  DT£ºC  
-#define  FID_WJSJE2             1655  //Î´½»ÊÕ½ğ¶î2  DT£ºC  
-#define  FID_KYZJ2              1656  //¿ÉÓÃ×Ê½ğ2  DT£ºC  
-#define  FID_KQZJ2              1657  //¿ÉÈ¡×Ê½ğ2  DT£ºC  
-#define  FID_XJZC2              1658  //ÏÖ½ğ×Ê²ú2  DT£ºC  
-#define  FID_GPSZ2              1659  //¹ÉÆ±ÊĞÖµ2  DT£ºC  
-#define  FID_LX2                1660  //Ô¤¼ÆÀûÏ¢2  DT£ºC  
-#define  FID_LXS2               1661  //Ô¤¼ÆÀûÏ¢Ë°2  DT£ºC  
-#define  FID_TZLX2              1662  //Í¸Ö§ÀûÏ¢2  DT£ºC  
-#define  FID_RZJE2              1663  //ÈÚ×Ê½ğ¶î2  DT£ºC  
-#define  FID_QSJE_B2            1664  //»Ø±¨ÂòÇåËã×Ê½ğ2  DT£ºC  
-#define  FID_QSJE_S2            1665  //»Ø±¨ÂôÇåËã×Ê½ğ2  DT£ºC  
-#define  FID_DRCKJE2            1666  //µ±ÈÕÕÊ»§´æ¿î½ğ¶î2  DT£ºC  
-#define  FID_TZCKJE2            1667  //µ±ÈÕÍ¨Öª´æ¿î½ğ¶î2  DT£ºC  
-#define  FID_HAVE_ZCXX          1668  //ÊÇ·ñ²éÑ¯×Ê²úĞÅÏ¢  DT£ºC  
-#define  FID_HAVE_JKCS          1669  //ÊÇ·ñ²éÑ¯ÈÚ×Ê¼à¿Ø²ÎÊı  DT£ºC  
-#define  FID_XZDJ               1670  //ÏŞÖÆµÈ¼¶  DT£ºC  
-#define  FID_CCBLXZ             1671  //³Ö²Ö±ÈÀıÏŞÖÆ  DT£ºC  
-#define  FID_ZHYJE              1672  //×ÜºÏÔ¼½ğ¶î  DT£ºC  
-#define  FID_RZJEBL             1673  //ÈÚ×Ê½ğ¶î±ÈÀı  DT£ºC  
-#define  FID_RZBLSX             1674  //ÈÚ×Ê½ğ¶î±ÈÀıÏŞÖÆ  DT£ºC  
-#define  FID_SHQD               1675  //ÒµÎñÉóºËÆğµã  DT£ºR  
-#define  FID_YWDM               1676  //ÒµÎñ´úÂë  DT£ºC  
-#define  FID_SHFS               1677  //ÉóºË·½Ê½  DT£ºI  
-#define  FID_SHJS               1678  //ÉóºË¼¶Êı  DT£ºI  
-#define  FID_LCMC               1679  //Á÷³ÌÃû³Æ  DT£ºC  
-#define  FID_SHJB               1680  //ÉóºË¼¶±ğ  DT£ºI  
-#define  FID_LGFH               1681  //ÁÙ¹ñ¸´ºË  DT£ºI  
-#define  FID_HTSH               1682  //ºóÌ¨ÉóºË  DT£ºI  
-#define  FID_LGFHJSDM           1683  //ÁÙ¹ñ¸´ºË½ÇÉ«´úÂë  DT£ºC  
-#define  FID_JKYWDM             1684  //½Ó¿ÚÒµÎñ´úÂë  DT£ºC  
-#define  FID_SFJYLX             1685  //Éí·İĞ£ÑéÀàĞÍ  DT£ºI  
-#define  FID_MBMC               1686  //Ä£°åÃû³Æ  DT£ºC  
-#define  FID_XSBQ               1687  //ÏÔÊ¾±êÇ©  DT£ºC  
-#define  FID_FLLB               1688  //·ÑÂÊÀà±ğ  DT£ºI  
-#define  FID_GFBDFX             1689  //¹É·İ±ä¶¯·½Ïò  DT£ºI  
-#define  FID_GFJSTS             1690  //¹É·İ½»ÊÕÌìÊı  DT£ºI  
-#define  FID_JHJJKS             1691  //¼¯ºÏ¾º¼Û¿ªÊ¼Ê±¼ä  DT£ºC  
-#define  FID_JHJJJS             1692  //¼¯ºÏ¾º¼Û½áÊøÊ±¼ä  DT£ºC  
-#define  FID_JJJYBZ             1693  //¾»¼Û½»Ò×±êÖ¾  DT£ºI  
-#define  FID_JSFBZ              1694  //¾­ÊÖ·Ñ±êÖ¾  DT£ºI  
-#define  FID_JYZT               1695  //½»Ò××´Ì¬  DT£ºI  
-#define  FID_JYKZ               1696  //½»Ò×¿ØÖÆ  DT£ºI  
-#define  FID_QSDZ               1697  //È¯ÉÌµØÖ·  DT£ºC  
-#define  FID_SHSBBZ             1698  //ÉÏº£Éê±¨±êÖ¾  DT£ºC  
-#define  FID_SZSBBZ             1699  //ÉîÛÚÉê±¨±êÖ¾  DT£ºC  
-#define  FID_SZCDBZ             1700  //ÉîÛÚ³·µ¥±êÖ¾  DT£ºC  
-#define  FID_SWKSSJ             1701  //ÉÏÎç¿ªÊĞÊ±¼ä  DT£ºC  
-#define  FID_SWBSSJ             1702  //ÉÏÎç±ÕÊĞÊ±¼ä  DT£ºC  
-#define  FID_XWKSSJ             1703  //ÏÂÎç¿ªÊĞÊ±¼ä  DT£ºC  
-#define  FID_XWBSSJ             1704  //ÏÂÎç±ÕÊĞÊ±¼ä  DT£ºC  
-#define  FID_SJXZ               1705  //Ê±¼äÏŞÖÆ  DT£ºI  
-#define  FID_XJFS               1706  //ÏŞ¼Û·½Ê½  DT£ºI  
-#define  FID_ZJBDFX             1707  //×Ê½ğ±ä¶¯·½Ïò  DT£ºI  
-#define  FID_ZJJSTS             1708  //×Ê½ğ½»ÊÕÌìÊı  DT£ºI  
-#define  FID_XGDM               1709  //Ïà¹Ø´úÂë  DT£ºC  
-#define  FID_PCKZ               1710  //Æ½²Ö¿ØÖÆ  DT£ºC  
-#define  FID_JSFS               1711  //½áËã·½Ê½  DT£ºC  
-#define  FID_XWLX               1712  //Ï¯Î»ÀàĞÍ  DT£ºC  
-#define  FID_JGDW               1713  //¼Û¸ñµ¥Î»  DT£ºC  
-#define  FID_MCJG               1714  //Âô³ö¼Û¸ñ  DT£ºR  
-#define  FID_KCDW               1715  //¿ª²Öµ¥Î»  DT£ºC  
-#define  FID_JYBM               1716  //½»Ò×±àÂë  DT£ºC  
-#define  FID_TZLB               1717  //Í¶×ÊÀà±ğ  DT£ºC  
-#define  FID_KPBZ               1718  //¿ªÆ½±êÖ¾  DT£ºC  
-#define  FID_RQJEBL             1719  //ÈÚÈ¯½ğ¶î±ÈÀı  DT£ºR  
-#define  FID_BZJ                1720  //±£Ö¤½ğ  DT£ºC  
-#define  FID_JYSBZJ             1721  //½»Ò×Ëù±£Ö¤½ğ  DT£ºC  
-#define  FID_JGSL               1722  //½»¸îÊıÁ¿  DT£ºC  
-#define  FID_LJZK               1723  //ÀÛ¼ÆÕÛ¿Û  DT£ºC  
-#define  FID_FXL                1724  //·çÏÕÂÊ  DT£ºC  
-#define  FID_ZFXL               1725  //×ò·çÏÕÂÊ  DT£ºC  
-#define  FID_PCSL               1726  //Æ½²ÖÊıÁ¿  DT£ºC  
-#define  FID_PCYK               1727  //Æ½²ÖÓ¯¿÷  DT£ºC  
-#define  FID_PCRQ               1728  //Æ½²ÖÈÕÆÚ  DT£ºC  
-#define  FID_CCWTH              1729  //³Ö²ÖÎ¯ÍĞºÅ  DT£ºC  
-#define  FID_GSDM               1730  //¹«Ë¾´úÂë  DT£ºC  
-#define  FID_SBJLH              1731  //Éê±¨¼ÇÂ¼ºÅ  DT£ºC  
-#define  FID_ZKFY               1732  //ÕÛ¿Û·ÑÓÃ  DT£ºC  
-#define  FID_FHJE               1733  //·µ»¹½ğ¶î  DT£ºC  
-#define  FID_CJJJ               1734  //³É½»¾ù¼Û  DT£ºC  
-#define  FID_DJBZJ              1735  //¶³½á±£Ö¤½ğ  DT£ºC  
-#define  FID_SBGY               1736  //Éê±¨¹ñÔ±  DT£ºC  
-#define  FID_BDJE               1737  //±ä¶¯½ğ¶î  DT£ºC  
-#define  FID_BCDJ               1738  //±¾´Î¶³½á  DT£ºC  
-#define  FID_BDSJ               1739  //±ä¶¯Ê±¼ä  DT£ºC  
-#define  FID_CCSL               1740  //³Ö²ÖÊıÁ¿  DT£ºC  
-#define  FID_BZJBL              1741  //±£Ö¤½ğ±ÈÀı  DT£ºC  
-#define  FID_DWBZJ              1742  //µ¥Î»±£Ö¤½ğ  DT£ºC  
-#define  FID_JYSBZJBL           1743  //½»Ò×Ëù±£Ö¤½ğ±ÈÀı  DT£ºC  
-#define  FID_JYSDWBZJ           1744  //½»Ò×Ëùµ¥Î»±£Ö¤½ğ  DT£ºC  
-#define  FID_LJFH               1745  //ÀÛ¼Æ·µ»¹  DT£ºC  
-#define  FID_BRSXF              1746  //±¾ÈÕÊÖĞø·Ñ  DT£ºC  
-#define  FID_BRPCYK             1747  //±¾ÈÕÆ½²ÖÓ¯¿÷  DT£ºC  
-#define  FID_JYSBRSXF           1748  //½»Ò×Ëù±¾ÈÕÊÖĞø·Ñ  DT£ºC  
-#define  FID_JYSCCXE            1749  //½»Ò×Ëù³Ö²ÖÏŞ¶î  DT£ºC  
-#define  FID_KHCCXE             1750  //¿Í»§³Ö²ÖÏŞ¶î  DT£ºC  
-#define  FID_SQCZBZ             1751  //ÊÚÈ¨²Ù×÷±êÖ¾  DT£ºI  
-#define  FID_JSLB               1752  //½ÇÉ«Àà±ğ  DT£ºI  
-#define  FID_QXLB               1753  //ÓÃ»§È¨ÏŞÀà±ğ  DT£ºI  
-#define  FID_SHBZ               1754  //ÉóºË±êÖ¾  DT£ºI  
-#define  FID_AZRQ               1755  //°²×°ÈÕÆÚ  DT£ºI  
-#define  FID_CPDM               1756  //²úÆ·´úÂë  DT£ºC  
-#define  FID_CPMC               1757  //²úÆ·Ãû³Æ  DT£ºC  
-#define  FID_DFRQ               1758  //¶Ò¸¶ÈÕÆÚ  DT£ºI  
-#define  FID_XLH                1759  //ĞòÁĞºÅ  DT£ºC  
-#define  FID_YXXG               1760  //ÊÇ·ñÔÊĞíĞŞ¸Ä  DT£ºI  
-#define  FID_ZJSQRQ             1761  //×î½üÊÚÈ¨ÈÕÆÚ  DT£ºI  
-#define  FID_CWJB               1762  //´íÎó¼¶±ğ  DT£ºI  
-#define  FID_JKLB               1763  //½Ó¿ÚÀà±ğ  DT£ºI  
-#define  FID_JKCWDM             1764  //½Ó¿Ú´íÎó´úÂë  DT£ºC  
-#define  FID_CWLY               1765  //´íÎóÀ´Ô´  DT£ºC  
-#define  FID_KSKHH              1766  //¿ªÊ¼¿Í»§ºÅ  DT£ºC  
-#define  FID_JSKHH              1767  //½áÊø¿Í»§ºÅ  DT£ºC  
-#define  FID_KYKHH              1768  //¿ÉÓÃ¿Í»§ºÅ  DT£ºC  
-#define  FID_SJKZFS             1769  //Ê±¼ä¿ØÖÆ·½Ê½  DT£ºI  
-#define  FID_CPXM               1770  //²úÆ·ÏîÄ¿  DT£ºC  
-#define  FID_SJXZ_SQCZR         1771  //ÊÚÈ¨²Ù×÷ÈËÊ±¼äÆÚÏŞÏŞÖÆ  DT£ºI  
-#define  FID_TBTS_SQCZR         1772  //ÊÚÈ¨²Ù×÷ÈËÌØ±ğÌáÊ¾  DT£ºC  
-#define  FID_ZJBH_SQCZR         1773  //ÊÚÈ¨²Ù×÷ÈËÖ¤¼ş±àºÅ  DT£ºC  
-#define  FID_ZJLB_SQCZR         1774  //ÊÚÈ¨²Ù×÷ÈËÖ¤¼şÀà±ğ  DT£ºI  
-#define  FID_JFQSRQ             1775  //»ı·ÖÆğÊ¼ÈÕÆÚ  DT£ºI  
-#define  FID_JGBZ               1776  //»ú¹¹ÕÊ»§±êÖ¾  DT£ºI  
-#define  FID_KHJF               1777  //¿Í»§»ı·Ö  DT£ºI  
-#define  FID_KHKH               1778  //¿Í»§¿¨ºÅ  DT£ºC  
-#define  FID_MOBILE             1779  //ÒÆ¶¯µç»°  DT£ºC  
-#define  FID_TZZFL              1780  //Í¶×ÊÕß·ÖÀà  DT£ºI  
-#define  FID_YXZZDM             1781  //ÓªÏú×éÖ¯´úÂë  DT£ºC  
-#define  FID_ZDXM               1782  //ÕÊµ¥ÏîÄ¿  DT£ºC  
-#define  FID_ZDZQ               1783  //ÕÊµ¥ÖÜÆÚ  DT£ºI  
-#define  FID_ZJDLRQ             1784  //×î½üµÇÂ¼ÈÕÆÚ  DT£ºI  
-#define  FID_SXDM               1785  //¸½¼ÓÊôĞÔ´úÂë  DT£ºC  
-#define  FID_LQRQ               1786  //ÁìÈ¡ÈÕÆÚ  DT£ºI  
-#define  FID_JGXZ               1787  //»ú¹¹ĞÔÖÊ  DT£ºI  
-#define  FID_ZJLB_FRDB          1788  //Ö¤¼şÀà±ğ(·¨ÈË´ú±í)  DT£ºI  
-#define  FID_ZJBH_FRDB          1789  //Ö¤¼ş±àºÅ(·¨ÈË´ú±í)  DT£ºC  
-#define  FID_ZCSJ               1790  //×¢²áÊ±¼ä  DT£ºI  
-#define  FID_KHJLXM             1791  //¿Í»§¾­ÀíĞÕÃû  DT£ºC  
-#define  FID_BZ1                1792  //±ÒÖÖ1  DT£ºC  
-#define  FID_BZ2                1793  //±ÒÖÖ2  DT£ºC  
-#define  FID_MBBH               1794  //Ä£°å±àºÅ  DT£ºI  
-#define  FID_TABLE              1795  //Êı¾İ±í  DT£ºC  
-#define  FID_ACT                1796  //¶¯×÷  DT£ºI  
-#define  FID_XZLB               1797  //ÏŞÖÆÀà±ğ  DT£ºI  
-#define  FID_KHQZFW1            1798  //¿Í»§Èº×é·¶Î§  DT£ºC  
-#define  FID_SJYWKM             1799  //ÉÏ¼¶ÒµÎñ¿ÆÄ¿  DT£ºC  
-#define  FID_LLLX               1800  //ÀûÂÊÀàĞÍ  DT£ºI  
-#define  FID_RZJESX             1801  //ÈÚ×Ê½ğ¶îÉÏÏŞ  DT£ºR  
-#define  FID_RQSLSX             1802  //ÈÚÈ¯ÊıÁ¿ÉÏÏŞ  DT£ºI  
-#define  FID_RZED               1803  //ÈÚ×Ê¶î¶È  DT£ºR  
-#define  FID_RQED               1804  //ÈÚÈ¯¶î¶È  DT£ºR  
-#define  FID_RZFDLL             1805  //ÈÚ×Ê¸¡¶¯ÀûÂÊ  DT£ºR  
-#define  FID_RQFDLL             1806  //ÈÚÈ¯¸¡¶¯ÀûÂÊ  DT£ºR  
-#define  FID_RZXYLL             1807  //ÈÚ×ÊĞÅÓÃÀûÂÊ  DT£ºR  
-#define  FID_RQXYLL             1808  //ÈÚÈ¯ĞÅÓÃÀûÂÊ  DT£ºR  
-#define  FID_RQLL               1809  //ÈÚÈ¯ÀûÂÊ  DT£ºR  
-#define  FID_WYLB               1810  //Î¥Ô¼Àà±ğ  DT£ºI  
-#define  FID_SQL                1811  //  DT£ºC  
-#define  FID_FILENAME           1812  //ÎÄ¼şÃû³Æ  DT£ºC  
-#define  FID_FILEVERSION        1813  //ÎÄ¼ş°æ±¾  DT£ºC  
-#define  FID_ZJLB_GDH           1814  //¹É¶«Ö¤¼şÀà±ğ  DT£ºI  
-#define  FID_MEMHEAD            1815  //  DT£ºC  
-#define  FID_MEMDATA            1816  //  DT£ºC  
-#define  FID_MEMCOUNT           1817  //  DT£ºC  
-#define  FID_MEMSIZE            1818  //  DT£ºC  
-#define  FID_GQZH_ZR            1819  //×ªÈë¹ÉÈ¨ÕÊºÅ  DT£ºC  
-#define  FID_PCCL               1820  //Æ½²Ö²ßÂÔ  DT£ºI  
-#define  FID_RZXYED             1821  //ÈÚ×ÊĞÅÓÃ¶î¶È  DT£ºR  
-#define  FID_RQXYED             1822  //ÈÚÈ¯ĞÅÓÃ¶î¶È  DT£ºR  
-#define  FID_RQJE               1823  //ÈÚÈ¯½ğ¶î  DT£ºR  
-#define  FID_YQSL               1824  //ÓàÈ¯ÊıÁ¿  DT£ºI  
-#define  FID_RZSL               1825  //ÈÚ×ÊÊıÁ¿  DT£ºI  
-#define  FID_RQSL               1826  //ÈÚÈ¯ÊıÁ¿  DT£ºI  
-#define  FID_RZWTSL             1827  //ÈÚ×ÊÎ¯ÍĞÊıÁ¿  DT£ºI  
-#define  FID_RQWTSL             1828  //ÈÚÈ¯Î¯ÍĞÊıÁ¿  DT£ºI  
-#define  FID_RZWTJE             1829  //ÈÚ×ÊÎ¯ÍĞ½ğ¶î  DT£ºR  
-#define  FID_RQWTJE             1830  //ÈÚÈ¯Î¯ÍĞ½ğ¶î  DT£ºR  
-#define  FID_RZCJSL             1831  //ÈÚ×Ê³É½»ÊıÁ¿  DT£ºI  
-#define  FID_RQCJSL             1832  //ÈÚÈ¯³É½»ÊıÁ¿  DT£ºI  
-#define  FID_RZCJJE             1833  //ÈÚ×Ê³É½»½ğ¶î  DT£ºR  
-#define  FID_RQCJJE             1834  //ÈÚÈ¯³É½»½ğ¶î  DT£ºR  
-#define  FID_YQWTSL             1835  //ÓàÈ¯Î¯ÍĞÊıÁ¿  DT£ºI  
-#define  FID_YQCJSL             1836  //ÓàÈ¯³É½»ÊıÁ¿  DT£ºI  
-#define  FID_HQWTSL             1837  //»¹È¯Î¯ÍĞÊıÁ¿  DT£ºI  
-#define  FID_HQCJSL             1838  //»¹È¯³É½»ÊıÁ¿  DT£ºI  
-#define  FID_RZLLXX             1839  //ÈÚ×ÊÀûÂÊÏÂÏŞ  DT£ºR  
-#define  FID_RQLLXX             1840  //ÈÚÈ¯ÀûÂÊÏÂÏŞ  DT£ºR  
-#define  FID_RZXYJS             1841  //ÈÚ×ÊÕ¼ÓÃÀûÏ¢»ùÊı  DT£ºR  
-#define  FID_RQXYJS             1842  //ÈÚÈ¯Õ¼ÓÃÀûÏ¢»ùÊı  DT£ºR  
-#define  FID_RZXYLX             1843  //ÈÚ×ÊÕ¼ÓÃÀûÏ¢  DT£ºR  
-#define  FID_RQXYLX             1844  //ÈÚÈ¯Õ¼ÓÃÀûÏ¢  DT£ºR  
-#define  FID_RZYJLX             1845  //ÈÚ×ÊÔ¤¼ÆÀûÏ¢  DT£ºR  
-#define  FID_RQYJLX             1846  //ÈÚÈ¯Ô¤¼ÆÀûÏ¢  DT£ºR  
-#define  FID_FZJE               1847  //¸ºÕ®½ğ¶î  DT£ºR  
-#define  FID_FZSL               1848  //¸ºÕ®ÊıÁ¿  DT£ºI  
-#define  FID_MARGIN_ENABLE      1849  //ÈÚ×ÊÈÚÈ¯ÔÊĞí×´Ì¬  DT£ºI  
-#define  FID_KQBZ               1850  //¿ªÆô±êÖ¾  DT£ºI  
-#define  FID_KSSJ1              1851  //¿ªÊ¼Ê±¼ä1  DT£ºC  
-#define  FID_JSSJ1              1852  //½áÊøÊ±¼ä1  DT£ºC  
-#define  FID_KSSJ2              1853  //¿ªÊ¼Ê±¼ä2  DT£ºC  
-#define  FID_JSSJ2              1854  //½áÊøÊ±¼ä2  DT£ºC  
-#define  FID_WXWTFBZ            1855  //ÎŞĞ§Î¯ÍĞ±êÖ¾  DT£ºI  
-#define  FID_MFCXCS             1856  //Ãâ·Ñ²éÑ¯´ÎÊı  DT£ºI  
-#define  FID_KYXYED             1857  //¿ÉÓÃĞÅÓÃ¶î¶È  DT£ºR  
-#define  FID_XYED               1858  //ĞÅÓÃ¶î¶È  DT£ºR  
-#define  FID_RZFY               1859  //ÈÚ×Ê·ÑÓÃ  DT£ºR  
-#define  FID_RQFY               1860  //ÈÚÈ¯·ÑÓÃ  DT£ºR  
-#define  FID_BDKYZJ             1861  //Íâ²¿ÕÊ»§±¾µØ¿ÉÓÃ×Ê½ğ  DT£ºR  
-#define  FID_SHLX               1862  //Ë°ºóÀûÏ¢  DT£ºR  
-#define  FID_JCFL               1863  //»ù´¡·ÖÀà  DT£ºI  
-#define  FID_YSJYBZ             1864  //Ò¹ÊĞ½»Ò×±êÖ¾  DT£ºI  
-#define  FID_YSKSSJ             1865  //Ò¹ÊĞ¿ªÊĞÊ±¼ä  DT£ºC  
-#define  FID_YSBSSJ             1866  //Ò¹ÊĞ±ÕÊĞÊ±¼ä  DT£ºC  
-#define  FID_JYSSXF             1867  //½»Ò×ËùÊÖĞø·Ñ  DT£ºR  
-#define  FID_YJL                1868  //Ó¶½ğÂÊ  DT£ºR  
-#define  FID_YJLXX              1869  //×îµÍÓ¶½ğÂÊ  DT£ºR  
-#define  FID_SLXX               1870  //ÊıÁ¿ÏÂÏŞ  DT£ºI  
-#define  FID_XMDM               1871  //ÏîÄ¿´úÂë  DT£ºC  
-#define  FID_DAID               1872  //µµ°¸ID  DT£ºI  
-#define  FID_INSINDEX           1873  //²åÈëË÷Òı  DT£ºC  
-#define  FID_MODINDEX           1874  //»ØĞ´Ë÷Òı  DT£ºC  
-#define  FID_LSHMC              1875  //Á÷Ë®ºÅÃû³Æ  DT£ºC  
-#define  FID_TRANPORT           1876  //´«Êä·şÎñ¶Ë¿Ú  DT£ºI  
-#define  FID_DATABASE           1877  //Êı¾İ¿âÃû  DT£ºC  
-#define  FID_DUMPPATH           1878  //DUMPÎÄ¼şÂ·¾¶  DT£ºC  
-#define  FID_DUMPTYPE           1879  //DUMPÀàĞÍ 0È«±¸£¬1²î±¸  DT£ºI  
-#define  FID_DUMPNOTE           1880  //DUMPÃèÊöÃû  DT£ºC  
-#define  FID_UPDATEITEM         1881  //UPDATEµÄ×Ö¶ÎÃû  DT£ºC  
-#define  FID_IDENTITY           1882  //ÊÇ·ñ×ÔÔöÁĞ  DT£ºI  
-#define  FID_LOWPAR             1883  //LARGE_INTEGERĞÍµÄµÍÎ»²¿·Ö  DT£ºC  
-#define  FID_HIGHPAR            1884  //LARGE_INTEGERĞÍµÄ¸ßÎ»²¿·Ö  DT£ºC  
-#define  FID_CZYBH              1885  //²Ù×÷Ô±±àºÅ  DT£ºC  
-#define  FID_KHDDH              1886  //¿ª»§µã´úºÅ  DT£ºC  
-#define  FID_QYLB               1887  //¹É¶«ĞÔÖÊ  DT£ºC  
-#define  FID_TZRXM              1888  //Í¶×ÊÈËÃû³Æ  DT£ºC  
-#define  FID_TZRLB              1889  //Í¶×ÊÈËÀà±ğ  DT£ºC  
-#define  FID_JZJ                1890  //»ù×¼¼ÛÀàĞÍ  DT£ºI  
-#define  FID_GDXM_OLD           1891  //Ô­¹É¶«ĞÕÃû/µ¥Î»È«³Æ  DT£ºC  
-#define  FID_QQLB               1892  //ÇëÇóÀà±ğ  DT£ºC  
-#define  FID_GDJC               1893  //¹É¶«¼ò³Æ  DT£ºC  
-#define  FID_GFXZ               1894  //¹É·İĞÔÖÊ  DT£ºC  
-#define  FID_PGDM               1895  //Åä¹É´úÂë  DT£ºC  
-#define  FID_XJFSMC             1896  //ÏŞ¼Û·½Ê½Ãû³Æ  DT£ºC  
-#define  FID_XJLB               1897  //ÏŞ¼ÛÀà±ğ  DT£ºI  
-#define  FID_WTRQ               1898  //Î¯ÍĞÈÕÆÚ  DT£ºC  
-#define  FID_DYBZ               1899  //´òÓ¡±êÖ¾  DT£ºC  
-#define  FID_BZXX               1900  //±¸×¢ĞÅÏ¢  DT£ºC  
-#define  FID_TZRMC              1901  //¹É¶«ĞÕÃû/µ¥Î»È«³Æ  DT£ºC  
-#define  FID_ZJBH_OLD           1902  //Ô­Ö¤¼ş±àºÅ  DT£ºC  
-#define  FID_TZRMC_OLD          1903  //Ô­¹É¶«ĞÕÃû/µ¥Î»È«³Æ  DT£ºC  
-#define  FID_SBBZ               1904  //Éê±¨±êÖ¾  DT£ºC  
-#define  FID_CLSM               1905  //´¦ÀíËµÃ÷  DT£ºC  
-#define  FID_CXLB               1906  //²éÑ¯Àà±ğ  DT£ºC  
-#define  FID_XWH                1907  //Ï¯Î»ºÅ  DT£ºC  
-#define  FID_KHHY               1908  //¿ª»§»áÔ±  DT£ºC  
-#define  FID_SXZ_OLD            1909  //Ô­ÊôĞÔÖµ  DT£ºC  
-#define  FID_TZRJC              1910  //Í¶×ÊÈË¼ò³Æ  DT£ºC  
-#define  FID_XB                 1911  //ĞÔ±ğ  DT£ºC  
-#define  FID_DMQZ               1912  //´úÂëÇ°×º  DT£ºC  
-#define  FID_CSRQ               1913  //³öÉúÈÕÆÚ  DT£ºC  
-#define  FID_MCQZ               1914  //Ãû³ÆÇ°×º  DT£ºC  
-#define  FID_FRLB               1915  //·¨ÈËÀà±ğ  DT£ºC  
-#define  FID_HYDM               1916  //ĞĞÒµ´úÂë  DT£ºC  
-#define  FID_JSHY               1917  //½áËã»áÔ±  DT£ºC  
-#define  FID_SDSL_GR            1918  //¸öÈËËùµÃË°ÂÊ  DT£ºR  
-#define  FID_SDSL_JG            1919  //»ú¹¹ËùµÃË°ÂÊ  DT£ºR  
-#define  FID_SRGDH              1920  //ÊÜÈÃ·½¹É¶«ºÅ  DT£ºC  
-#define  FID_SRXWH              1921  //ÊÜÈÃÏ¯Î»ºÅ  DT£ºC  
-#define  FID_HBRQ               1922  //»Ø±¨ÈÕÆÚ  DT£ºC  
-#define  FID_YWLX               1923  //ÒµÎñÀàĞÍ  DT£ºC  
-#define  FID_WWMC               1924  //ÍâÎÄÃû³Æ  DT£ºC  
-#define  FID_TJSL               1925  //Í³¼ÆÊıÁ¿  DT£ºC  
-#define  FID_SFJE               1926  //ÊÕ·Ñ½ğ¶î  DT£ºC  
-#define  FID_DJGSSF             1927  //µÇ¼Ç¹«Ë¾ÊÕ·Ñ  DT£ºC  
-#define  FID_DLJGSF             1928  //´úÀí»ú¹¹ÊÕ·Ñ  DT£ºC  
-#define  FID_SRZJBH             1929  //ÊÜÈÃ¹É¶«Ö¤¼ş±àºÅ  DT£ºC  
-#define  FID_SRGDXM             1930  //ÊÜÈÃ¹É¶«ĞÕÃû  DT£ºC  
-#define  FID_SRDZ               1931  //ÊÜÈÃ·½Í¨Ñ¶µØÖ·  DT£ºC  
-#define  FID_SRDH               1932  //ÊÜÈÃ·½µç»°ºÅÂë  DT£ºC  
-#define  FID_SRYZBM             1933  //ÊÜÈÃ·½ÓÊÕş±àÂë  DT£ºC  
-#define  FID_SRGFXZ             1934  //ÊÜÈÃ¹É·İĞÔÖÊ  DT£ºC  
-#define  FID_DFXW               1935  //¶Ô·½Ï¯Î»ºÅ  DT£ºC  
-#define  FID_DFGDH              1936  //¶Ô·½¹É¶«ºÅ  DT£ºC  
-#define  FID_DFXZ               1937  //¶Ô·½ĞÔÖÊ  DT£ºC  
-#define  FID_QRBZ               1938  //È·ÈÏ±êÖ¾  DT£ºC  
-#define  FID_QQSL               1939  //È·È¨ÊıÁ¿  DT£ºI  
-#define  FID_ZBQS               1940  //Ö÷°ìÈ¯ÉÌ´úÂë  DT£ºC  
-#define  FID_GHSL               1941  //¹ı»§ÊıÁ¿  DT£ºI  
-#define  FID_DBQS               1942  //´úÂëÈ¯ÉÌ´úÂë  DT£ºC  
-#define  FID_GFXZSM             1943  //¹É·İĞÔÖÊËµÃ÷  DT£ºC  
-#define  FID_QSLB               1944  //È¯ÉÌÀà±ğ  DT£ºI  
-#define  FID_QQSF_GR            1945  //¸öÈËÈ·È¨ÊÕ·Ñ  DT£ºC  
-#define  FID_QQSF_JG            1946  //»ú¹¹È·È¨ÊÕ·Ñ  DT£ºC  
-#define  FID_QYZL               1947  //È¨Òæ×ÜÁ¿  DT£ºI  
-#define  FID_ZBQSMC             1948  //Ö÷°ìÈ¯ÉÌÃû³Æ  DT£ºC  
-#define  FID_DYZQDM             1949  //µÖÑºÖ¤È¯´úÂë  DT£ºC  
-#define  FID_GHTS               1950  //¹º»ØÌìÊı  DT£ºI  
-#define  FID_JXTS               1951  //¼ÇÏ¢ÌìÊı  DT£ºI  
-#define  FID_CLEARFEE           1952  //½áËã·ÑÂÊ  DT£ºR  
-#define  FID_FXJJFL             1953  //·çÏÕ»ù½ğ·ÑÂÊ  DT£ºR  
-#define  FID_ZGFL               1954  //Ö¤¹Ü·ÑÂÊ  DT£ºR  
-#define  FID_QTFLXX             1955  //ÆäËü·ÑÓÃÏÂÏŞ  DT£ºR  
-#define  FID_QTFLSX             1956  //ÆäËü·ÑÓÃÉÏÏŞ  DT£ºR  
-#define  FID_CJJEQD             1957  //³É½»½ğ¶îÆğµã  DT£ºR  
-#define  FID_SFQD               1958  //ÊÕ·ÑÆğµã  DT£ºR  
-#define  FID_FJYRBS             1959  //·Ç½»Ò×ÈÕ±êÊ¶  DT£ºI  
-#define  FID_YEAR               1960  //Äê·İ  DT£ºC  
-#define  FID_MBLB               1961  //Ä£°åÀà±ğ  DT£ºI  
-#define  FID_ZJDS               1962  //×Ê½ğµ×Êı  DT£ºR  
-#define  FID_ZCDS               1963  //×Ê²úµ×Êı  DT£ºR  
-#define  FID_DJYHZHS            1964  //µ¥»§ÔÊĞíµÇ¼ÇµÄÒøĞĞÕÊ»§Êı  DT£ºI  
-#define  FID_FJXYXX             1965  //¸½¼ÓĞ£ÑéĞÅÏ¢  DT£ºC  
-#define  FID_FJYRZZBZ           1966  //·Ç½»Ò×ÈÕÊÇ·ñÔÊĞí×ªÕÊ  DT£ºI  
-#define  FID_PGJG               1967  //Åä¹É¼Û¸ñ  DT£ºR  
-#define  FID_GSKYE              1968  //¹«Ë¾¿¨Óà¶î  DT£ºR  
-#define  FID_JCGSKYE            1969  //ÊÇ·ñ¼ì²é¹«Ë¾¿¨Óà¶î  DT£ºI  
-#define  FID_LXCZCS             1970  //Á¬Ğø³åÕı´ÎÊı  DT£ºI  
-#define  FID_QDSJ               1971  //Ç©µ½Ê±¼ä  DT£ºC  
-#define  FID_QYZZBS             1972  //ÊÇ·ñÆôÓÃ×ªÕÊ±êÊ¶  DT£ºI  
-#define  FID_ZJQDRQ             1973  //×î½üÇ©µ½ÈÕÆÚ  DT£ºI  
-#define  FID_KSWTH              1974  //¿ªÊ¼Î¯ÍĞºÅ  DT£ºC  
-#define  FID_JSWTH              1975  //½áÊøÎ¯ÍĞºÅ  DT£ºC  
-#define  FID_KYWTH              1976  //¿ÉÓÃÎ¯ÍĞºÅ  DT£ºC  
-#define  FID_SQXQ               1977  //ÉêÇëÏêÇé  DT£ºC  DT£ºDT£ºT  
-#define  FID_SHZT               1978  //ÉóºË×´Ì¬  DT£ºI  
-#define  FID_SQGY               1979  //ÉêÇë¹ñÔ±  DT£ºC  
-#define  FID_SQRQ               1980  //ÉêÇëÈÕÆÚ  DT£ºI  
-#define  FID_SQSJ               1981  //ÉêÇëÊ±¼ä  DT£ºC  
-#define  FID_HKQX               1982  //»¹¿îÆÚÏŞ(Ìì)  DT£ºI  
-#define  FID_MXTS               1983  //ÃâÏ¢ÌìÊı  DT£ºI  
-#define  FID_YWSQH              1984  //ÒµÎñÉêÇëºÅ  DT£ºI  
-#define  FID_SHRQ               1985  //ÉóºËÈÕÆÚ  DT£ºI  
-#define  FID_SHSJ               1986  //ÉóºËÊ±¼ä  DT£ºC  
-#define  FID_YMBBH              1987  //Ô­Ä£°å±àºÅ  DT£ºI  
-#define  FID_XSXH               1988  //ÏÔÊ¾ĞòºÅ  DT£ºI  
-#define  FID_MMTB               1989  //ÃÜÂëÍ¬²½±êÖ¾  DT£ºI  
-#define  FID_EN_GYDM            1990  //ÔÊĞí¹ñÔ±´úÂë·¶Î§  DT£ºC  
-#define  FID_KHYYB              1991  //¿Í»§ËùÊôÓªÒµ²¿  DT£ºC  
-#define  FID_NEWJJR             1992  //ĞÂ¾­¼ÍÈË  DT£ºC  
-#define  FID_ZPKZBZ             1993  //Ö§Æ±Óà¶î¿ØÖÆ±êÖ¾  DT£ºI  
-#define  FID_DRCKKZ             1994  //µ±ÈÕ´æ¿î½ğ¶î¿ØÖÆ±êÖ¾  DT£ºI  
-#define  FID_XML                1995  //XMLÓò  DT£ºC  
-#define  FID_QYDM               1996  //È¨Òæ´úÂë  DT£ºC  
-#define  FID_QYSL               1997  //È¨ÒæÊıÁ¿  DT£ºI  
-#define  FID_QYJE               1998  //È¨Òæ½ğ¶î  DT£ºR  
-#define  FID_JYRBS              1999  //½»Ò×ÈÕ±êÊ¶  DT£ºI  
-#define  FID_TIME_INIT          2000  //³õÊ¼»¯Ê±¼ä  DT£ºC  DT£ºDT£ºYYYYMMDD HH:MM:SS  
-#define  FID_TIME_CLOSE         2001  //ÊÕÅÌÊ±¼ä  DT£ºC  DT£ºDT£ºYYYYMMDD HH:MM:SS  
-#define  FID_GQDJLSH            2002  //¹ÉÈ¨¶³½áÁ÷Ë®ºÅ  DT£ºI  
-#define  FID_LDSMJG             2003  //Â©µ¥É¨Ãè¼ä¸ô  DT£ºI  
-#define  FID_XCXZBS             2004  //Ğ´³öÏŞÖÆ±ÊÊı  DT£ºI  
-#define  FID_EN_WTLB            2005  //Î¯ÍĞÀà±ğ·¶Î§  DT£ºC  
-#define  FID_FXJ                2006  //·¢ĞĞ¼Û  DT£ºR  
-#define  FID_GQDM               2007  //¹ÉÈ¨´úÂë  DT£ºC  
-#define  FID_GQLB               2008  //¹ÉÈ¨Àà±ğ  DT£ºC  
-#define  FID_GQLBMC             2009  //¹ÉÈ¨Àà±ğÃû³Æ  DT£ºC  
-#define  FID_GQMC               2010  //¹ÉÈ¨Ãû³Æ  DT£ºC  
-#define  FID_GQSL               2011  //¹ÉÈ¨ÊıÁ¿  DT£ºI  
-#define  FID_GQZH               2012  //¹ÉÈ¨ÕÊºÅ  DT£ºC  
-#define  FID_JMC_ZDCGSL         2013  //¾»Âô³ö×îµÍ³Ö¹ÉÊıÁ¿  DT£ºI  
-#define  FID_KSGQZH             2014  //¿ªÊ¼¹ÉÈ¨ÕÊºÅ  DT£ºC  
-#define  FID_KYGQZH             2015  //¿ÉÓÃ¹ÉÈ¨ÕÊºÅ  DT£ºC  
-#define  FID_KZSX               2016  //¿ØÖÆÊôĞÔ  DT£ºI  
-#define  FID_SDLX               2017  //Ê±¶ÎÀàĞÍ  DT£ºI  
-#define  FID_ROWNUM             2018  //¼ÇÂ¼ĞĞºÅ  DT£ºI  
-#define  FID_ZDCGSL             2019  //×îµÍ³Ö¹ÉÊıÁ¿  DT£ºI  
-#define  FID_ZSBJFD             2020  //×öÊĞÆÚ¼ä±¨¼Û·ù¶È  DT£ºR  
-#define  FID_ZSQBJFD            2021  //×öÊĞÇ°±¨¼Û·ù¶È  DT£ºR  
-#define  FID_EN_GQDM            2022  //¹ÉÈ¨´úÂë·¶Î§  DT£ºC  
-#define  FID_EN_GQLB            2023  //¹ÉÈ¨Àà±ğ·¶Î§  DT£ºC  
-#define  FID_GZMZ               2024  //ÃæÖµ  DT£ºR  
-#define  FID_FXDS               2025  //·¢ĞĞµ×Êı  DT£ºR  
-#define  FID_MRED               2026  //ÂòÈë¶î¶È  DT£ºR  
-#define  FID_MCED               2027  //Âô³ö¶î¶È  DT£ºR  
-#define  FID_PXCS               2028  //ÅÉÏ¢´ÎÊı  DT£ºI  
-#define  FID_URL                2029  //ÍøÖ·  DT£ºC  
-#define  FID_ZSR                2030  //±¨¸æÆÚ×ÜÊÕÈë  DT£ºR  
-#define  FID_ZLR                2031  //±¨¸æÆÚ×ÜÀûÈó  DT£ºR  
-#define  FID_JLR                2032  //±¨¸æÆÚ¾»ÀûÈó  DT£ºR  
-#define  FID_MGFH               2033  //Ã¿¹É·Öºì  DT£ºR  
-#define  FID_FHHJZC             2034  //·Öºìºó¾»×Ê²ú  DT£ºR  
-#define  FID_MGJZC              2035  //Ã¿¹É¾»×Ê²ú  DT£ºR  
-#define  FID_PAY                2036  //ÄêĞ½  DT£ºR  
-#define  FID_DZ_OFFICE          2037  //°ì¹«µØÖ·  DT£ºC  
-#define  FID_ZZJGDM             2038  //×éÖ¯»ú¹¹´úÂë  DT£ºC  
-#define  FID_SFJE_GR            2039  //¸öÈËÊÕ·Ñ½ğ¶î  DT£ºR  
-#define  FID_SFJE_JG            2040  //»ú¹¹ÊÕ·Ñ½ğ¶î  DT£ºR  
-#define  FID_KHH_YJ             2041  //Ò»¼¶¿Í»§ºÅ  DT£ºC  
-#define  FID_GQZH_YJ            2042  //Ò»¼¶¹ÉÈ¨ÕÊºÅ  DT£ºC  
-#define  FID_SXF_ZR             2043  //×ªÈëÊÖĞø·Ñ  DT£ºR  
-#define  FID_ZDHBSL             2044  //×îµÍºÏ²¢ÊıÁ¿  DT£ºC  DT£ºDT£º×îµÍ×Ó»ù½ğÉê±¨ºÏ²¢ÊıÁ¿  
-#define  FID_ZDCFSL             2045  //×îµÍ²ğ·ÖÊıÁ¿  DT£ºC  DT£ºDT£º×îµÍÖ÷»ù½ğÉê±¨²ğ·ÖÊıÁ¿  
-#define  FID_RZSYLLFD           2046  //ÈÚ×ÊÊ¹ÓÃÀûÂÊ¸¡¶¯  DT£ºR  
-#define  FID_RQSYLLFD           2047  //ÈÚÈ¯Ê¹ÓÃÀûÂÊ¸¡¶¯  DT£ºR  
-#define  FID_RZEDLLFD           2048  //ÈÚ×Ê¶î¶ÈÀûÂÊ¸¡¶¯  DT£ºC  
-#define  FID_RQEDLLFD           2049  //ÈÚÈ¯¶î¶ÈÀûÂÊ¸¡¶¯  DT£ºC  
-#define  FID_ZDCXRQ             2050  //×Ô¶¯³·ÏúÈÕÆÚ  DT£ºI  
-#define  FID_WEEK               2051  //ĞÇÆÚ  DT£ºI  
-#define  FID_MILLISECOND        2052  //ºÁÃë  DT£ºI  
-#define  FID_GDSL               2053  //¹É¶«ÊıÁ¿  DT£ºI  
-#define  FID_CCSLXZ_JG          2054  //»ú¹¹³Ö²ÖÊıÁ¿ÏŞÖÆ  DT£ºI  
-#define  FID_CCSLXZ_ZG          2055  //ÄÚ²¿Ö°¹¤³Ö²ÖÊıÁ¿ÏŞÖÆ  DT£ºI  
-#define  FID_JYJS_GR_ZGG        2056  //¸öÈË×Ê¸ñ¹É½»Ò×»ùÊı  DT£ºI  
-#define  FID_JYJS_GR_TZG        2057  //¸öÈËÍ¶×Ê¹É½»Ò×»ùÊı  DT£ºI  
-#define  FID_JYJS_JG_ZGG        2058  //»ú¹¹×Ê¸ñ¹É½»Ò×»ùÊı  DT£ºI  
-#define  FID_JYJS_JG_TZG        2059  //»ú¹¹Í¶×Ê¹É½»Ò×»ùÊı  DT£ºI  
-#define  FID_ZGBZ               2060  //ÄÚ²¿Ö°¹¤±êÖ¾  DT£ºI  
-#define  FID_QYDJRQ             2061  //È¨ÒæµÇ¼ÇÈÕÆÚ  DT£ºI  
-#define  FID_KHH_ZQR            2062  //ÖÊÈ¨ÈË¿Í»§ºÅ  DT£ºC  
-#define  FID_GQZH_ZQR           2063  //ÖÊÈ¨ÈË¹ÉÈ¨ÕÊºÅ  DT£ºC  
-#define  FID_SXF_ZQR            2064  //ÖÊÈ¨ÈËÊÖĞø·Ñ  DT£ºR  
-#define  FID_GFXZ_YJ            2065  //Ò»¼¶´ú³Ö¹É·İĞÔÖÊ  DT£ºI  
-#define  FID_FXJJ               2066  //·çÏÕ»ù½ğ  DT£ºR  
-#define  FID_RZXYED_OLD         2067  //Ô­ÈÚ×ÊĞÅÓÃ¶î¶È  DT£ºR  
-#define  FID_RQXYED_OLD         2068  //Ô­ÈÚÈ¯ĞÅÓÃ¶î¶È  DT£ºR  
-#define  FID_EN_JGDM            2069  //ÔÊĞí²Ù×÷µÄ»ú¹¹´úÂë·¶Î§  DT£ºC  
-#define  FID_EX_JGDM            2070  //½ûÖ¹²Ù×÷µÄ»ú¹¹´úÂë·¶Î§  DT£ºC  
-#define  FID_NODEID             2071  //½»Ò×½Úµã±àÂë  DT£ºI  
-#define  FID_NODENAME           2072  //½»Ò×½ÚµãÃû³Æ  DT£ºC  
-#define  FID_SEAT_SH            2073  //ÉÏº£Ï¯Î»  DT£ºC  
-#define  FID_SEAT_SZ            2074  //ÉîÛÚÏ¯Î»  DT£ºC  
-#define  FID_ADDR_IP            2075  //IPµØÖ·  DT£ºC  
-#define  FID_ADDR_MAC           2076  //MACµØÖ·  DT£ºC  
-#define  FID_OID                2077  //ÄÚ²¿¼ÇÂ¼OIDºÅ  DT£ºC  DT£ºDT£ºI64  
-#define  FID_LOG_POS            2078  //ÏµÍ³ÈÕÖ¾ÎÄ¼şÎ»ÖÃ  DT£ºI  
-#define  FID_INDEX              2079  //Ë÷ÒıºÅ  DT£ºI  
-#define  FID_KSSBWTH            2080  //ÆğÊ¼Éê±¨Î¯ÍĞºÅ  DT£ºI  
-#define  FID_DZJGSX             2081  //´ó×Ú½»Ò×¼Û¸ñÉÏÏŞ  DT£ºR  
-#define  FID_DZJGXX             2082  //´ó×Ú½»Ò×¼Û¸ñÏÂÏŞ  DT£ºR  
-#define  FID_ZCJSL              2083  //×Ü³É½»ÊıÁ¿  DT£ºI  
-#define  FID_DBWSXED            2084  //µ£±£ÎïÊÚĞÅ¶î¶È  DT£ºR  
-#define  FID_T2DJJE             2085  //T+2¶³½á½ğ¶î  DT£ºR  
-#define  FID_T2KYZJ             2086  //T+2¿ÉÓÃ×Ê½ğ  DT£ºR  
-#define  FID_SJKZR              2087  //Êµ¼Ê¿ØÖÆÈË  DT£ºC  
-#define  FID_SJZB               2088  //Êµ½É×Ê±¾  DT£ºC  
-#define  FID_QYGM               2089  //ÆóÒµ¹æÄ£  DT£ºC  
-#define  FID_QTZGCCSX           2090  //È«ÌåÖ°¹¤³Ö²ÖÉÏÏŞ  DT£ºC  
-#define  FID_QTJGCCXX           2091  //È«Ìå»ú¹¹³Ö²ÖÏÂÏŞ  DT£ºC  
-#define  FID_SBWTH_MR           2092  //ÂòÈëÉê±¨Î¯ÍĞºÅ  DT£ºC  
-#define  FID_SBWTH_MC           2093  //Âô³öÉê±¨Î¯ÍĞºÅ  DT£ºC  
-#define  FID_SBJLH_MR           2094  //ÂòÈëÉê±¨¼ÇÂ¼ºÅ  DT£ºI  
-#define  FID_SBJLH_MC           2095  //Âô³öÉê±¨¼ÇÂ¼ºÅ  DT£ºI  
-#define  FID_GSZCH              2096  //¹¤ÉÌ×¢²áºÅ  DT£ºC  
-#define  FID_GHF                2097  //¹ı»§·Ñ  DT£ºR  
-#define  FID_ZGF                2098  //Ö¤¹Ü·Ñ  DT£ºR  
-#define  FID_JSF                2099  //½áËã·Ñ  DT£ºR  
-#define  FID_OFSS_JZ            2100  //¿ª·ÅÊ½»ù½ğ¾»Öµ  DT£ºR  
-#define  FID_JGGF               2101  //¼à¹Ü¹æ·Ñ  DT£ºR  
-#define  FID_DJJSHY             2102  //µÇ¼Ç½áËã»áÔ±  DT£ºC  
-#define  FID_BRANCHID           2103  //È¯ÉÌÓªÒµ²¿±àºÅ  DT£ºC  
-#define  FID_YXRQ_ZZJGDM        2104  //×éÖ¯»ú¹¹´úÂëÖ¤ÓĞĞ§ÈÕÆÚ  DT£ºI  
-#define  FID_DXZCGL             2105  //¶¨Ïò×Ê²ú¹ÜÀí±êÊ¶  DT£ºI  
-#define  FID_HTH_DXZCGL         2106  //¶¨Ïò×Ê²ú¹ÜÀíºÏÍ¬ºÅ  DT£ºC  
-#define  FID_MC_DXZCGLR         2107  //¶¨Ïò×Ê²ú¹ÜÀíÈËÃû³Æ  DT£ºC  
-#define  FID_ZJLB_DXZCGLR       2108  //¶¨Ïò×Ê²ú¹ÜÀíÈËÖ¤¼şÀà±ğ  DT£ºI  
-#define  FID_ZJBH_DXZCGLR       2109  //¶¨Ïò×Ê²ú¹ÜÀíÈËÖ¤¼ş±àºÅ  DT£ºC  
-#define  FID_MC_DXZCTGR         2110  //¶¨Ïò×Ê²úÍĞ¹ÜÈËÃû³Æ  DT£ºC  
-#define  FID_ZJLB_DXZCTGR       2111  //¶¨Ïò×Ê²úÍĞ¹ÜÈËÖ¤¼şÀà±ğ  DT£ºI  
-#define  FID_ZJBH_DXZCTGR       2112  //¶¨Ïò×Ê²úÍĞ¹ÜÈËÖ¤¼ş±àºÅ  DT£ºC  
-#define  FID_EN_ZHLB            2113  //ÕË»§Àà±ğ·¶Î§  DT£ºC  
-#define  FID_TQSH               2114  //ÌáÇ°Êê»Ø±êÖ¾  DT£ºI  
-#define  FID_SQJE               2115  //ÉêÇë½ğ¶î  DT£ºR  
-#define  FID_SQFE               2116  //ÉêÇë·İ¶î  DT£ºR  
-#define  FID_MRBS               2117  //ÂòÈë±ÊÊı  DT£ºI  
-#define  FID_MCBS               2118  //Âô³ö±ÊÊı  DT£ºI  
-#define  FID_EN_CPDM            2119  //²úÆ·´úÂë·¶Î§  DT£ºC  
-#define  FID_WJBM               2201  //ÎÊ¾í±àÂë  DT£ºC  
-#define  FID_WJMC               2202  //ÎÊ¾íÃû³Æ  DT£ºC  
-#define  FID_WJHM               2203  //ÎÊ¾íºÅÂë  DT£ºC  
-#define  FID_TMHM               2204  //ÌâÄ¿ºÅÂë  DT£ºC  
-#define  FID_TMLX               2205  //ÌâÄ¿ÀàĞÍ  DT£ºC  
-#define  FID_TMMS               2206  //ÌâÄ¿ÃèÊö  DT£ºC  
-#define  FID_TMDA               2207  //ÌâÄ¿´ğ°¸  DT£ºC  
-#define  FID_SCORE              2208  //µÃ·Ö  DT£ºC  
-#define  FID_ZJYXQ              2209  //Ö¤¼şÓĞĞ§ÆÚ  DT£ºC  
-#define  FID_ZJDZYB             2210  //Ö¤¼şµØÖ·ÓÊ±à  DT£ºC  
-#define  FID_ZJFZJG             2211  //Ö¤¼ş·¢Ö¤»ú¹Ø  DT£ºC  
-#define  FID_EDZ                2212  //¶ş´úÖ¤Ğ£Ñé  DT£ºI  
-#define  FID_YYZZNJRQ           2213  //ÓªÒµÖ´ÕÕÄê¼ìÈÕÆÚ  DT£ºC  
-#define  FID_JTDZ               2214  //¼ÒÍ¥µØÖ·  DT£ºC  
-#define  FID_JTYB               2215  //¼ÒÍ¥ÓÊ±à  DT£ºC  
-#define  FID_QTDH               2216  //ÆäËûµç»°  DT£ºC  
-#define  FID_QQ                 2217  //QQ  DT£ºC  
-#define  FID_FXQHYLB            2218  //·´Ï´Ç®ĞĞÒµÀà±ğ  DT£ºI  
-#define  FID_XQFXDJ             2219  //Ï´Ç®·çÏÕµÈ¼¶  DT£ºI  
-#define  FID_FXQSZRQ            2220  //·´Ï´Ç®ÉèÖÃÈÕÆÚ  DT£ºC  
-#define  FID_HYZK               2221  //»éÒö×´¿ö  DT£ºC  
-#define  FID_JG                 2222  //¼®¹á  DT£ºC  
-#define  FID_MZDM               2223  //Ãñ×å´úÂë  DT£ºI  
-#define  FID_GZDW               2224  //¹¤×÷µ¥Î»  DT£ºC  
-#define  FID_GZDWDZ             2225  //¹¤×÷µ¥Î»µØÖ·  DT£ºC  
-#define  FID_GZDWYB             2226  //¹¤×÷µ¥Î»ÓÊ±à  DT£ºC  
-#define  FID_GZDWZW             2227  //¹¤×÷µ¥Î»Ö°Îñ  DT£ºC  
-#define  FID_GZDWDH             2228  //¹¤×÷µ¥Î»µç»°  DT£ºC  
-#define  FID_FXCSNL             2229  //·çÏÕ³ĞÊÜÄÜÁ¦  DT£ºI  
-#define  FID_FXPGRQ             2230  //·çÏÕÆÀ¹ÀÈÕÆÚ  DT£ºC  
-#define  FID_JJFXCSNL           2231  //»ù½ğ·çÏÕ³ĞÊÜÄÜÁ¦  DT£ºI  
-#define  FID_JJFXPGRQ           2232  //»ù½ğ·çÏÕÆÀ¹ÀÈÕÆÚ  DT£ºC  
-#define  FID_GPFXCSNL           2233  //¹ÉÆ±·çÏÕ³ĞÊÜÄÜÁ¦  DT£ºI  
-#define  FID_GPFXPGRQ           2234  //¹ÉÆ±·çÏÕÆÀ¹ÀÈÕÆÚ  DT£ºC  
-#define  FID_XYFXCSNL           2235  //ĞÅÓÃ·çÏÕ³ĞÊÜÄÜÁ¦  DT£ºI  
-#define  FID_XYFXPGRQ           2236  //ĞÅÓÃ·çÏÕÆÀ¹ÀÈÕÆÚ  DT£ºC  
-#define  FID_KHKZT              2237  //¿Í»§¿¨×´Ì¬  DT£ºI  
-#define  FID_TBSM               2238  //ÌØ±ğËµÃ÷  DT£ºC  
-#define  FID_ZZSHZT             2239  //×ÊÖÊÉóºË×´Ì¬  DT£ºI  
-#define  FID_GSDH               2240  //¹«Ë¾µç»°  DT£ºC  
-#define  FID_ZCRQ               2241  //×¢²áÈÕÆÚ  DT£ºC  
-#define  FID_LTGB               2242  //ÉÏÊĞ¹«Ë¾Á÷Í¨¹É±¾  DT£ºR  
-#define  FID_ZZJGDMYXQ          2243  //×éÖ¯»ú¹¹´úÂëÖ¤ÓĞĞ§ÆÚ  DT£ºC  
-#define  FID_ZZJGDMFZJG         2244  //×éÖ¯»ú¹¹´úÂëÖ¤·¢Ö¤»ú¹Ø  DT£ºC  
-#define  FID_ZZJGDMNJRQ         2245  //×éÖ¯»ú¹¹´úÂëÖ¤Äê¼ìÈÕÆÚ  DT£ºC  
-#define  FID_SWDJZ              2246  //Ë°ÎñµÇ¼ÇÖ¤  DT£ºC  
-#define  FID_SWDJZYXQ           2247  //Ë°ÎñµÇ¼ÇÖ¤ÓĞĞ§ÆÚ  DT£ºC  
-#define  FID_SWDJZFZJG          2248  //Ë°ÎñµÇ¼ÇÖ¤·¢Ö¤»ú¹Ø  DT£ºC  
-#define  FID_SWDJZNJRQ          2249  //Ë°ÎñµÇ¼ÇÖ¤Äê¼ìÈÕÆÚ  DT£ºC  
-#define  FID_ZJYXQ_FRDB         2250  //Ö¤¼şÓĞĞ§ÆÚ(·¨ÈË´ú±í)  DT£ºC  
-#define  FID_ZJYXQ_JBR          2251  //»ú¹¹¾­°ìÈËÖ¤¼şÓĞĞ§ÆÚ  DT£ºC  
-#define  FID_DH_JBR             2252  //»ú¹¹¾­°ìÈËµç»°  DT£ºC  
-#define  FID_MOBILE_JBR         2253  //»ú¹¹¾­°ìÈËÒÆ¶¯µç»°  DT£ºC  
-#define  FID_XB_JBR             2254  //»ú¹¹¾­°ìÈËĞÔ±ğ  DT£ºC  
-#define  FID_FWMM               2255  //·şÎñÃÜÂë  DT£ºC  
-#define  FID_HXKH               2256  //ºËĞÂ¿ª»§±êÖ¾  DT£ºI  
-#define  FID_GYSX               2257  //¹úÓĞÊôĞÔ  DT£ºI  
-#define  FID_SSSX               2258  //ÉÏÊĞÊôĞÔ  DT£ºI  
-#define  FID_ZBSX               2259  //×Ê±¾ÊôĞÔ  DT£ºI  
-#define  FID_KHFS               2260  //¿ª»§·½Ê½  DT£ºI  
-#define  FID_GXSJ               2261  //¸üĞÂÊ±¼ä  DT£ºC  
-#define  FID_SHYJ               2262  //ÉóºËÒâ¼û  DT£ºC  
-#define  FID_KHJGDM             2263  //¿ª»§»ú¹¹´úÂë  DT£ºC  
-#define  FID_KHWDDM             2264  //¿ª»§Íøµã´úÂë  DT£ºC  
-#define  FID_YWPZBS             2265  //ÒµÎñÆ¾Ö¤±¨ËÍ  DT£ºC  
-#define  FID_YWPH               2266  //ÒµÎñÅúºÅ  DT£ºC  
-#define  FID_YMTH               2267  //Ò»ÂëÍ¨ºÅ  DT£ºC  
-#define  FID_WFID               2268  //Á÷³ÌID  DT£ºC  
-#define  FID_FZZJLB             2269  //¸¨ÖúÖ¤¼şÀà±ğ  DT£ºC  
-#define  FID_FZZJBH             2270  //¸¨ÖúÖ¤¼ş±àºÅ  DT£ºC  
-#define  FID_FZZJJZRQ           2271  //¸¨ÖúÖ¤¼ş½ØÖ¹ÈÕÆÚ  DT£ºC  
-#define  FID_FZZJDZ             2272  //¸¨ÖúÖ¤¼şµØÖ·  DT£ºC  
-#define  FID_GSWZ               2273  //¹«Ë¾ÍøÖ·  DT£ºC  
-#define  FID_LXDZ               2274  //ÁªÏµµØÖ·  DT£ºC  
-#define  FID_LXYB               2275  //ÁªÏµÓÊ±à  DT£ºC  
-#define  FID_DXFWBS             2276  //¿ªÍ¨¶ÌĞÅ·şÎñ±êÊ¶  DT£ºC  
-#define  FID_WLFWBS             2277  //¿ªÍ¨ÍøÂç·şÎñ±êÊ¶  DT£ºC  
-#define  FID_WLMM               2278  //ÍøÂç·şÎñÃÜÂë  DT£ºC  
-#define  FID_ZQZH               2279  //Ö¤È¯ÕËºÅ  DT£ºC  
-#define  FID_XYMTH              2280  //ĞÂÒ»ÂëÍ¨ºÅ  DT£ºC  
-#define  FID_XZJLB              2281  //ĞÂÖ¤¼şÀà±ğ  DT£ºC  
-#define  FID_XZJBH              2282  //ĞÂÖ¤¼ş±àºÅ  DT£ºC  
-#define  FID_PHZQZH             2283  //ÅäºÅÖ¤È¯ÕËºÅ  DT£ºC  
-#define  FID_JSCYR              2284  //½áËã²ÎÓëÈË  DT£ºC  
-#define  FID_JYDY               2285  //½»Ò×µ¥Ôª  DT£ºC  
-#define  FID_YYBBM              2286  //ÓªÒµ²¿±àÂë  DT£ºC  
-#define  FID_HHCDFS             2287  //³Ğµ£ÔğÈÎ·½Ê½  DT£ºC  
-#define  FID_JCXZLB             2288  //½â³ıÏŞÖÆÀà±ğ  DT£ºC  
-#define  FID_BYZD1              2289  //±¸ÓÃ×Ö¶Î1  DT£ºC  
-#define  FID_BYZD2              2290  //±¸ÓÃ×Ö¶Î2  DT£ºC  
-#define  FID_BYZD3              2291  //±¸ÓÃ×Ö¶Î3  DT£ºC  
-#define  FID_YMTZT              2292  //Ò»ÂëÍ¨ÕË»§×´Ì¬  DT£ºC  
-#define  FID_ZQZHZT             2293  //Ö¤È¯ÕË»§×´Ì¬  DT£ºC  
-#define  FID_SCJYRQ             2294  //Ê×´Î½»Ò×ÈÕÆÚ  DT£ºC  
-#define  FID_SYSBRQ             2295  //Ê¹ÓÃÉê±¨ÈÕÆÚ  DT£ºC  
-#define  FID_XFZZJLB            2296  //ĞÂ¸¨ÖúÖ¤¼şÀà±ğ  DT£ºC  
-#define  FID_XFZZJBH            2297  //ĞÂ¸¨ÖúÖ¤¼ş±àºÅ  DT£ºC  
-#define  FID_XKHMC              2298  //ĞÂ¿Í»§Ãû³Æ  DT£ºC  
-#define  FID_XGSJ               2299  //ĞŞ¸ÄÊ±¼ä  DT£ºC  
-#define  FID_HGDM               2300  //»Ø¹º´úÂë  DT£ºC  
-#define  FID_HGMC               2301  //»Ø¹ºÃû³Æ  DT£ºC  
-#define  FID_DQLL               2302  //µ½ÆÚÀûÂÊ  DT£ºR  
-#define  FID_TQLL               2303  //ÌáÇ°ÖÕÖ¹ÀûÂÊ  DT£ºR  
-#define  FID_ZED                2304  //×Ü¶î¶È  DT£ºI  
-#define  FID_ZYED               2305  //Õ¼ÓÃ¶î¶È  DT£ºI  
-#define  FID_DEBS               2306  //´ó¶î±êÊ¶  DT£ºI  
-#define  FID_TQGHSX             2307  //ÌáÇ°¹º»ØÉÏÏŞ  DT£ºI  
-#define  FID_GXRQ               2308  //¸üĞÂÈÕÆÚ  DT£ºI  
-#define  FID_GDFJQX             2309  //¹É¶«¸½¼ÓÈ¨ÏŞ  DT£ºI  
-#define  FID_ZDXY               2310  //×Ô¶¯ĞøÔ¼  DT£ºI  
-#define  FID_SX1                2311  //À©Õ¹ÊôĞÔ  DT£ºI  
-#define  FID_SX2                2312  //À©Õ¹ÊôĞÔ2  DT£ºI  
-#define  FID_HGED               2313  //»Ø¹º¶î¶È  DT£ºI  
-#define  FID_YYLB               2314  //Ô¤Ô¼Àà±ğ  DT£ºI  
-#define  FID_XYTS               2315  //ĞøÔ¼ÌìÊı  DT£ºI  
-#define  FID_TQXZBL             2316  //ÌáÇ°ÏŞÖÆ±ÈÀı  DT£ºR  
-#define  FID_YYTQTS             2317  //Ô¤Ô¼ÌáÇ°ÌìÊı  DT£ºI  
-#define  FID_XZBL               2318  //ÏŞÖÆ±ÈÀı  DT£ºR  
-#define  FID_TQYYSX             2319  //ÌáÇ°Ô¤Ô¼µÄÉÏÏŞ  DT£ºI  
-#define  FID_JZSJ               2320  //½ØÖÁÊ±¼ä  DT£ºC  
-#define  FID_SYBDBL             2321  //ÊÕÒæÂÊ±ä¶¯±ÈÀı  DT£ºN  
-#define  FID_TQYYDBQS           2322  //ÌáÇ°µ¥±ÊÆğÊ¼  DT£ºI  
-#define  FID_TQDBSX             2323  //ÌáÇ°µ¥±ÊÉÏÏŞ  DT£ºI  
-#define  FID_JESHBZ             2324  //¾Ş¶îÊê»Ø´¦Àí·½Ê½  DT£ºI  
-#define  FID_FXFFXCSNL          2325  //·¢ĞĞ·½·çÏÕ³ĞÊÜÄÜÁ¦  DT£ºI  
-#define  FID_FXFFXCSNLMC        2326  //·¢ĞĞ·½·çÏÕ³ĞÊÜÄÜÁ¦Ãû³Æ  DT£ºC  
-#define  FID_FXCSNLMC           2327  //·çÏÕ³ĞÊÜÄÜÁ¦Ãû³Æ  DT£ºC  
-#define  FID_FXFFXJB            2328  //·¢ĞĞ·½·çÏÕ¼¶±ğ  DT£ºI  
-#define  FID_YYH                2329  //Ô¤Ô¼ºÅ  DT£ºC  
-#define  FID_QYFS               2330  //Ç©Ô¼·½Ê½  DT£ºI  
-#define  FID_YDSQYBZ            2331  //Ô¼¶¨ÊéÇ©Ô¼±êÖ¾  DT£ºI  
-#define  FID_YDBZ               2332  //ÔÄ¶Á±êÖ¾  DT£ºI  
-#define  FID_PCLX               2333  //ÆÀ²âÀàĞÍ  DT£ºI  
-#define  FID_CPTZQX             2334  //²úÆ·Í¶×ÊÆÚÏŞ  DT£ºI  
-#define  FID_BSLX               2335  //±êÊ¶ÀàĞÍ  DT£ºC  
-#define  FID_ZRFS               2336  //×ªÈÃ·½Ê½  DT£ºI  
-#define  FID_RGKSRQ             2337  //ÈÏ¹º¿ªÊ¼ÈÕÆÚ  DT£ºI  
-#define  FID_RGJSRQ             2338  //ÈÏ¹º½áÊøÈÕÆÚ  DT£ºI  
-#define  FID_TZPZ               2339  //Í¶×ÊÆ·ÖÖ  DT£ºI  
-#define  FID_TZQX               2340  //Í¶×ÊÆÚÏŞ  DT£ºI  
-#define  FID_SDXBZ              2341  //ÊÊµ±ĞÔ±êÖ¾  DT£ºI  
-#define  FID_SRBS               2342  //ÊäÈë±êÊ¶  DT£ºC  
-#define  FID_KHJC               2343  //¿Í»§¼ò³Æ  DT£ºC  
-#define  FID_ZJQSRQ             2344  //Ö¤¼şÆğÊ¼ÈÕÆÚ  DT£ºC  
-#define  FID_ZJJZRQ             2345  //Ö¤¼ş½ØÖ¹ÈÕÆÚ  DT£ºC  
-#define  FID_GJ                 2346  //¹ú¼®  DT£ºC  
-#define  FID_DWYB               2347  //µ¥Î»ÓÊ±à  DT£ºC  
-#define  FID_DWDZ               2348  //µ¥Î»µØÖ·  DT£ºC  
-#define  FID_DWDH               2349  //µ¥Î»µç»°  DT£ºC  
-#define  FID_JTDH               2350  //¼ÒÍ¥µç»°  DT£ºC  
-#define  FID_CZ                 2351  //´«Õæ  DT£ºC  
-#define  FID_FQQD               2352  //·¢ÆğÇşµÀ  DT£ºC  
-#define  FID_METHOD             2353  //·½·¨  DT£ºC  
-#define  FID_CZZD               2354  //²Ù×÷Õ¾µã  DT£ºC  
-#define  FID_IFTBZDGS           2355  //ÊÇ·ñÍ¬²½ÖĞµÇ¹«Ë¾  DT£ºC  
-#define  FID_IFTBJJGS           2356  //ÊÇ·ñÍ¬²½»ù½ğ¹«Ë¾  DT£ºC  
-#define  FID_XMM                2357  //ĞÂÃÜÂë  DT£ºC  
-#define  FID_YMM                2358  //Ô­ÃÜÂë  DT£ºC  
-#define  FID_REMARK             2359  //±¸×¢  DT£ºC  
-#define  FID_YHTMM              2360  //Ò»»§Í¨ÃÜÂë  DT£ºC  
-#define  FID_ACTION             2361  //Ö´ĞĞ¶¯×÷  DT£ºC  
-#define  FID_FQR                2362  //·¢ÆğÈË  DT£ºC  
-#define  FID_YXLX               2363  //Ó°ÏñÀàĞÍ  DT£ºC  
-#define  FID_YJFS               2364  //ÓÊ¼Ä·½Ê½  DT£ºC  
-#define  FID_SHGDZH             2365  //ÉÏº£¹É¶«ÕËºÅ  DT£ºC  
-#define  FID_SZGDZH             2366  //ÉîÛÚ¹É¶«ÕËºÅ  DT£ºC  
-#define  FID_KHQZMC             2367  //¿Í»§Èº×éÃû³Æ  DT£ºC  
-#define  FID_KHQZSM             2368  //¿Í»§Èº×éËµÃ÷  DT£ºC  
-#define  FID_JJGSQC             2369  //»ù½ğ¹«Ë¾È«³Æ  DT£ºC  
-#define  FID_YWQQCLID           2370  //ÒµÎñÇëÇó´¦ÀíID  DT£ºC  
-#define  FID_JJGSJC             2371  //»ù½ğ¹«Ë¾¼ò³Æ  DT£ºC  
-#define  FID_YDSBZ              2372  //Ô¼¶¨Êé±êÖ¾  DT£ºC  
-#define  FID_GDMC               2373  //¹É¶«Ãû³Æ  DT£ºC  
-#define  FID_SYXXBZ             2374  //Ê¹ÓÃĞÅÏ¢±êÖ¾  DT£ºC  
-#define  FID_YWLSH              2375  //ÒµÎñÁ÷Ë®ºÅ  DT£ºC  
-#define  FID_CLZT               2376  //´¦Àí×´Ì¬  DT£ºC  
-#define  FID_YWQQID             2377  //ÒµÎñÇëÇóID  DT£ºC  
-#define  FID_SBLX               2378  //Éê±¨ÀàĞÍ  DT£ºC  
-#define  FID_GSXWDM             2379  //¹«Ë¾ĞĞÎª´úÂë  DT£ºC  
-#define  FID_QYCS               2380  //È¨Òæ´ÎÊı  DT£ºC  
-#define  FID_GGBH               2381  //¹«¸æ±àºÅ  DT£ºC  
-#define  FID_YABH               2382  //Òé°¸±àºÅ  DT£ºC  
-#define  FID_ZCSL               2383  //ÔŞ³ÉÊıÁ¿  DT£ºC  
-#define  FID_FDSL               2384  //·´¶ÔÊıÁ¿  DT£ºC  
-#define  FID_YWFY               2385  //ÒµÎñ·ÑÓÃ  DT£ºC  
-#define  FID_ZCYMTH             2386  //×ª³öÒ»ÂëÍ¨ºÅ  DT£ºC  
-#define  FID_BYZD               2387  //±¸ÓÃ×Ö¶Î  DT£ºC  
-#define  FID_YWLY               2388  //ÒµÎñÀ´Ô´  DT£ºC  
-#define  FID_ZJZP               2389  //Ö¤¼şÕÕÆ¬  DT£ºC  
-#define  FID_ZCBZ               2390  //×¢²á±ÒÖÖ  DT£ºC  
-#define  FID_ZZJGDMZJDZ         2391  //×éÖ¯»ú¹¹´úÂëÖ¤Ö¤¼şµØÖ·  DT£ºC  
-#define  FID_EX_YWLB            2392  //½ûÖ¹²Ù×÷µÄÒµÎñÀà±ğ  DT£ºC  
-#define  FID_RPJJG              2393  //ÈÕÆ½¾ù¼Û¸ñ  DT£ºC  
-#define  FID_FZCJSL             2394  //·ÖÖÓ³É½»ÊıÁ¿  DT£ºC  
-#define  FID_ERRCODE            2399  //´íÎóÂë  DT£ºC  
-#define  FID_XYMC               2400  //Ğ­ÒéÃû³Æ  DT£ºC  
-#define  FID_ZRSY               2401  //×òÈÕÊÕÒæ  DT£ºC  
-#define  FID_YCYRS              2402  //ÒÑ²ÎÓëÈËÊı  DT£ºC  
-#define  FID_KCYRS              2403  //¿É²ÎÓëÈËÊı  DT£ºC  
-#define  FID_BLRQ               2404  //°ìÀíÈÕÆÚ  DT£ºC  
-#define  FID_YHBH               2405  //ÒøĞĞ±àºÅ  DT£ºC  
-#define  FID_LANGUAGE           2406  //ÓïÑÔ  DT£ºC  
-#define  FID_CYRDM              2407  //²ÎÓëÈË´úÂë  DT£ºC  
-#define  FID_ZJLB2              2410  //Ö¤¼şÀà±ğ2  DT£ºC  
-#define  FID_ZJBH2              2411  //Ö¤¼ş±àÂë2  DT£ºC  
-#define  FID_ZJBH2YXQ           2412  //Ö¤¼ş±àÂë2ÓĞĞ§ÆÚ  DT£ºC  
-#define  FID_ZJLB3              2413  //Ö¤¼şÀà±ğ3  DT£ºC  
-#define  FID_ZJBH3              2414  //Ö¤¼ş±àÂë3  DT£ºC  
-#define  FID_ZJBH3YXQ           2415  //Ö¤¼ş±àÂë3ÓĞĞ§ÆÚ  DT£ºC  
-#define  FID_YWXT               2500  //ÒµÎñÏµÍ³  DT£ºC  
-#define  FID_YWZH               2501  //ÒµÎñÕËºÅ  DT£ºC  
-#define  FID_CZRBM              2502  //³öÖÊÈË±àÂë  DT£ºC  
-#define  FID_CZRMC              2503  //³öÖÊÈËÃû³Æ  DT£ºC  
-#define  FID_ZQRBM              2504  //ÖÊÈ¨ÈË±àÂë  DT£ºC  
-#define  FID_ZQRMC              2505  //ÖÊÈ¨ÈËÃû³Æ  DT£ºC  
-#define  FID_ZYHYBH             2506  //ÖÊÑººÏÔ¼±àºÅ  DT£ºC  
-#define  FID_DKHYBH             2507  //´û¿îºÏÔ¼±àºÅ  DT£ºC  
-#define  FID_DKJE               2508  //´û¿î½ğ¶î  DT£ºC  
-#define  FID_DKDQRQ             2509  //´û¿îµ½ÆÚÈÕ  DT£ºC  
-#define  FID_HTDJRQ             2510  //ºÏÍ¬µÇ¼ÇÈÕÆÚ  DT£ºC  
-#define  FID_WTZT               2514  //Î¯ÍĞ×´Ì¬  DT£ºC  
-#define  FID_ZYZH               2522  //ÖÊÑºÕÊºÅ  DT£ºC  
-#define  FID_DJBH               2523  //µÇ¼Ç±àºÅ  DT£ºC  
-#define  FID_SBLSH              2524  //Éê±¨Á÷Ë®ºÅ  DT£ºC  
-#define  FID_ZQMZ               2525  //Ö¤È¯ÃæÖµ  DT£ºC  DT£ºDT£ºÎª¼æÈİ£¬ÖµÎª0Ê±±íÊ¾1.00  
-#define  FID_FU_HYQY            2600  //ÆÚ»õºÏÔ¼È¨Òæ  DT£ºR  
-#define  FID_FEZH               2700  //·İ¶îÕË»§  DT£ºC  
-#define  FID_FESL               2701  //·İ¶îÊıÁ¿  DT£ºN  
-#define  FID_YXRQ_ZJ            2702  //Ö¤¼şÓĞĞ§ÈÕÆÚ  DT£ºC  
-#define  FID_PBU                2703  //½áËãµ¥Ôª  DT£ºC  
-#define  FID_HYBH               2704  //½áËã»áÔ±  DT£ºC  
-#define  FID_ZHQC               2705  //ÕË»§È«³Æ  DT£ºC  
-#define  FID_USERID_FH          2706  //¸´ºË¹ñÔ±  DT£ºC  
-#define  FID_JSHYHQZ            2708  //½áËã×ÊÔ´ºÅÇ°×º  DT£ºC  
-#define  FID_KYJSHYH            2709  //¿ÉÓÃ½áËã»áÔ±ºÅ  DT£ºC  
-#define  FID_JSHYLB             2710  //½áËã»áÔ±Àà±ğ  DT£ºC  
-#define  FID_JSDYXZ             2711  //½áËãµ¥ÔªĞÔÖÊ  DT£ºC  
-#define  FID_JSDYHQZ            2712  //½áËãµ¥ÔªÇ°×º  DT£ºC  
-#define  FID_KYJSDYH            2713  //¿ÉÓÃ½áËãµ¥ÔªºÅ  DT£ºC  
-#define  FID_FEZHQZ             2714  //·İ¶îÕËºÅÇ°×º  DT£ºC  
-#define  FID_KYFEZH             2715  //¿ÉÓÃ·İ¶îÕËºÅ  DT£ºC  
-#define  FID_ZJMCRQ             2717  //×î½üÂô³öÈÕÆÚ  DT£ºN  
-#define  FID_ZJMRRQ             2718  //×î½üÂòÈëÈÕÆÚ  DT£ºN  
-#define  FID_FEZH_ZQR           2719  //ÖÊÈ¨ÈË·İ¶îÕË»§  DT£ºC  
-#define  FID_YWLBMC             2720  //ÒµÎñÀà±ğÃû³Æ  DT£ºC  
-#define  FID_WBYWLB             2721  //Íâ²¿ÒµÎñÀà±ğ  DT£ºC  
-#define  FID_YWFL               2722  //ÒµÎñ·ÖÀà  DT£ºC  
-#define  FID_CPXZ               2723  //²úÆ·ĞÔÖÊ  DT£ºI  
-#define  FID_CPXZ_ZR            2724  //×ªÈë²úÆ·ĞÔÖÊ  DT£ºI  
-#define  FID_CPXZ_YJ            2725  //Ò»¼¶´ú³Ö²úÆ·ĞÔÖÊ  DT£ºI  
-#define  FID_FEZH_ZR            2726  //×ªÈë·İ¶îÕËºÅ  DT£ºC  
-#define  FID_FEZH_YJ            2727  //Ò»¼¶´ú³Ö·İ¶îÕËºÅ  DT£ºC  
-#define  FID_ENPBU              2728  //½áËãµ¥Ôª·¶Î§  DT£ºC  
-#define  FID_ENHYBH             2729  //½áËã»áÔ±·¶Î§  DT£ºC  
-#define  FID_ENCPLX             2730  //²úÆ·ÀàĞÍ·¶Î§  DT£ºC  
-#define  FID_ENCPXZ             2731  //²úÆ·ĞÔÖÊ·¶Î§  DT£ºC  
-#define  FID_CPLX               2732  //²úÆ·ÀàĞÍ  DT£ºC  
-#define  FID_CPFL               2733  //²úÆ··ÖÀà  DT£ºI  
-#define  FID_CPZT               2734  //²úÆ·×´Ì¬  DT£ºI  
-#define  FID_GCMC               2735  //¹ı³ÌÃû³Æ  DT£ºC  
-#define  FID_RWMC               2736  //ÈÎÎñÃû³Æ  DT£ºC  
-#define  FID_ZXSX               2737  //Ö´ĞĞË³Ğò  DT£ºC  
-#define  FID_JYMS               2738  //½»Ò×Ä£Ê½  DT£ºC  
-#define  FID_CJLB               2739  //³É½»Àà±ğ  DT£ºC  
-#define  FID_ZFFS               2740  //Ö§¸¶·½Ê½  DT£ºC  
-#define  FID_YWTH               2741  //Ô­Î¯ÍĞºÅ  DT£ºC  
-#define  FID_YSBWTH             2742  //Ô­Éê±¨Î¯ÍĞºÅ  DT£ºC  
-#define  FID_ZYH                2743  //×ÓÓÃ»§  DT£ºC  
-#define  FID_YWQX               2744  //ÒµÎñÈ¨ÏŞ  DT£ºC  
-#define  FID_DYXZ               2745  //µ¥ÔªĞÔÖÊ  DT£ºI  
-#define  FID_CJJLH              2746  //³É½»¼ÇÂ¼ºÅ  DT£ºC  
-#define  FID_MBCPDM             2747  //Ä¿±ê²úÆ·´úÂë  DT£ºC  
-#define  FID_CDSL_MR            2748  //ÂòÈë³·µ¥ÊıÁ¿  DT£ºI  
-#define  FID_CDSL_MC            2749  //Âô³ö³·µ¥ÊıÁ¿  DT£ºI  
-#define  FID_JGLX               2752  //»ú¹¹ÀàĞÍ  DT£ºC  
-#define  FID_EN_PBU             2753  //À©Õ¹½áËãÍ¨µÀ  DT£ºC  
-#define  FID_HYJC               2754  //»áÔ±¼ò³Æ  DT£ºC  
-#define  FID_PZJG               2755  //Åú×¼»ú¹Ø  DT£ºC  
-#define  FID_PZWH               2756  //Åú×¼ÎÄºÅ  DT£ºC  
-#define  FID_YWXKZH             2758  //ÒµÎñĞí¿ÉÖ¤ºÅ  DT£ºC  
-#define  FID_JJYY               2759  //¾Ü¾øÔ­Òò  DT£ºC  
-#define  FID_QRSL               2760  //È·ÈÏÊıÁ¿  DT£ºC  
-#define  FID_SYSL               2761  //Ê£ÓàÊıÁ¿  DT£ºC  
-#define  FID_ZCDJ               2801  //×Ê²úµÈ¼¶  DT£ºC  
-#define  FID_GSKHLX             2802  //¹«Ë¾¿Í»§ÀàĞÍ  DT£ºC  
-#define  FID_KFYYB              2803  //¿ª·¢ÓªÒµ²¿  DT£ºC  
-#define  FID_ZJKSRQ             2804  //Ö¤¼ş¿ªÊ¼ÈÕÆÚ  DT£ºC  
-#define  FID_GFXX               2805  //¹æ·¶ĞÅÏ¢  DT£ºC  
-#define  FID_FXYSXX             2806  //·çÏÕÒªËØĞÅÏ¢  DT£ºC  
-#define  FID_CBLX               2807  //³É±¾ÀàĞÍ  DT£ºC  
-#define  FID_LXFS               2808  //ÁªÏµ·½Ê½  DT£ºC  
-#define  FID_LLPL               2809  //ÁªÂçÆµÂÊ  DT£ºC  
-#define  FID_ZSLX               2810  //Ö¤ÊéÀàĞÍ  DT£ºC  
-#define  FID_XYLX               2811  //Ğ­ÒéÀàĞÍ  DT£ºC  
-#define  FID_CPBZ               2812  //²úÆ·±êÖ¾  DT£ºC  
-#define  FID_XTID               2813  //ÒµÎñÏµÍ³ID  DT£ºI  
-#define  FID_ZJLB_LXR           2814  //ÁªÏµÈËÖ¤¼şÀà±ğ  DT£ºI  
-#define  FID_ZJBH_LXR           2815  //ÁªÏµÈËÖ¤¼ş±àºÅ  DT£ºC  
-#define  FID_ZJQSR_FRDB         2816  //·¨ÈËÖ¤¼şÆğÊ¼ÈÕ  DT£ºC  
-#define  FID_DH_FRDB            2817  //·¨ÈËµç»°  DT£ºC  
-#define  FID_ZJQSR_JBR          2818  //¾­°ìÈËÖ¤¼şÆğÊ¼ÈÕ  DT£ºC  
-#define  FID_ZJQSR_LXR          2819  //ÁªÏµÈËÖ¤¼şÆğÊ¼ÈÕ  DT£ºC  
-#define  FID_ZZJGDMQSR          2820  //×éÖ¯»ú¹¹´úÂëÆğÊ¼ÈÕ  DT£ºC  
-#define  FID_ZMWJLX             2821  //Ö¤Ã÷ÎÄ¼şÀàĞÍ  DT£ºC  
-#define  FID_ZMWJBH             2822  //Ö¤Ã÷ÎÄ¼şºÅÂë  DT£ºC  
-#define  FID_ZMWJQSR            2823  //Ö¤Ã÷ÎÄ¼şÆğÊ¼ÈÕ  DT£ºC  
-#define  FID_ZMWJYXQ            2824  //Ö¤Ã÷ÎÄ¼şÓĞĞ§ÆÚ  DT£ºC  
-#define  FID_KGGD               2825  //¿Ø¹É¹É¶«  DT£ºC  
-#define  FID_ZJLB_KGGD          2826  //¿Ø¹É¹É¶«Ö¤¼şÀà±ğ  DT£ºI  
-#define  FID_ZJBH_KGGD          2827  //¿Ø¹É¹É¶«Ö¤¼ş±àºÅ  DT£ºC  
-#define  FID_ZJQSR_KGGD         2828  //¿Ø¹É¹É¶«Ö¤¼şÆğÊ¼ÈÕ  DT£ºC  
-#define  FID_ZJYXQ_KGGD         2829  //¿Ø¹É¹É¶«Ö¤¼şÓĞĞ§ÆÚ  DT£ºC  
-#define  FID_FZR                2830  //¸ºÔğÈË  DT£ºC  
-#define  FID_ZJLB_FZR           2831  //¸ºÔğÈËÖ¤¼şÀà±ğ  DT£ºI  
-#define  FID_ZJBH_FZR           2832  //¸ºÔğÈËÖ¤¼ş±àºÅ  DT£ºC  
-#define  FID_ZJQSR_FZR          2833  //¸ºÔğÈËÖ¤¼şÆğÊ¼ÈÕ  DT£ºC  
-#define  FID_ZJYXQ_FZR          2834  //¸ºÔğÈËÖ¤¼şÓĞĞ§ÆÚ  DT£ºC  
-#define  FID_DH_FZR             2835  //¸ºÔğÈËµç»°  DT£ºC  
-#define  FID_SWDJZQSR           2836  //Ë°ÎñµÇ¼ÇÖ¤ÆğÊ¼ÈÕ  DT£ºC  
-#define  FID_JYZTSM             2837  //¾­Óª×´Ì¬ËµÃ÷  DT£ºC  
-#define  FID_SSDD               2838  //ÉÏÊĞµØµã  DT£ºC  
-#define  FID_YYBID              2839  //ÓªÒµ²¿ID  DT£ºI  
-#define  FID_GSSWDJZ            2840  //¹úË°Ë°ÎñµÇ¼ÇÖ¤  DT£ºC  
-#define  FID_GSSWDJZQSR         2841  //¹úË°Ë°ÎñµÇ¼ÇÖ¤ÆğÊ¼ÈÕ  DT£ºC  
-#define  FID_GSSWDJZYXQ         2842  //¹úË°Ë°ÎñµÇ¼ÇÖ¤ÓĞĞ§ÆÚ  DT£ºC  
-#define  FID_DSSWDJZ            2843  //µØË°Ë°ÎñµÇ¼ÇÖ¤  DT£ºC  
-#define  FID_DSSWDJZQSR         2844  //µØË°Ë°ÎñµÇ¼ÇÖ¤ÆğÊ¼ÈÕ  DT£ºC  
-#define  FID_DSSWDJZYXQ         2845  //µØË°Ë°ÎñµÇ¼ÇÖ¤ÓĞĞ§ÆÚ  DT£ºC  
-#define  FID_YYZZ               2846  //ÓªÒµÖ´ÕÕ  DT£ºC  
-#define  FID_YYZZQSR            2847  //ÓªÒµÖ´ÕÕÆğÊ¼ÈÕ  DT£ºC  
-#define  FID_YYZZYXQ            2848  //ÓªÒµÖ´ÕÕÓĞĞ§ÆÚ  DT£ºC  
-#define  FID_ZJYXQ_LXR          2849  //ÁªÏµÈËÖ¤¼şÓĞĞ§ÆÚ  DT£ºC  
-#define  FID_WZDZ               2850  //ÍøÕ¾µØÖ·  DT£ºC  
-#define  FID_ZJKH               2851  //×Ê½ğ¿¨ºÅ  DT£ºC  
-#define  FID_ZRCDFS             2852  //ÔğÈÎ³Ğµ£·½Ê½  DT£ºC  
-#define  FID_KZRLX              2853  //¿ØÖÆÈËÀàĞÍ  DT£ºC  
-#define  FID_XZBZ               2854  //ÏŞÖÆ±êÖ¾  DT£ºC  
-#define  FID_JWBZ               2855  //¾³Íâ±êÖ¾  DT£ºC  
-#define  FID_JESX2              2856  //½ğ¶îÉÏÏŞ2  DT£ºR  
-#define  FID_JEXX2              2857  //½ğ¶îÏÂÏŞ2  DT£ºR  
-#define  FID_QSFS               2858  //Ç©Êğ·½Ê½  DT£ºC  
-#define  FID_XYBB               2859  //Ğ­Òé°æ±¾  DT£ºC  
-#define  FID_EN_HYDM            2860  //ºÏÔ¼´úÂë·¶Î§SH.XXXX,SZ.YYYY  DT£ºC  
-#define  FID_FXJS               2861  //·£Ï¢»ùÊı  DT£ºC  
-#define  FID_CPJC               2871  //²úÆ·¼ò³Æ  DT£ºC  
-#define  FID_CPDQR              2872  //²úÆ·µ½ÆÚÈÕ  DT£ºC  
-#define  FID_ZCGLR              2873  //×Ê²ú¹ÜÀíÈËÃû³Æ  DT£ºC  
-#define  FID_ZJLB_ZCGLR         2874  //×Ê²ú¹ÜÀíÈËÖ¤¼şÀà±ğ  DT£ºC  
-#define  FID_ZJBH_ZCGLR         2875  //×Ê²ú¹ÜÀíÈËÖ¤¼ş±àºÅ  DT£ºC  
-#define  FID_ZCTGR              2876  //×Ê²úÍĞ¹ÜÈËÃû³Æ  DT£ºC  
-#define  FID_ZJLB_ZCTGR         2877  //×Ê²úÍĞ¹ÜÈËÖ¤¼şÀà±ğ  DT£ºC  
-#define  FID_ZJBH_ZCTGR         2878  //×Ê²úÍĞ¹ÜÈËÖ¤¼ş±àºÅ  DT£ºC  
-#define  FID_BHGBS              2879  //²»ºÏ¸ñ±êÊ¶  DT£ºC  
-#define  FID_BHGJYXZ            2880  //²»ºÏ¸ñ½»Ò×ÏŞÖÆ  DT£ºC  
-#define  FID_BHGYYLB            2881  //²»ºÏ¸ñÔ­ÒòÀà±ğ  DT£ºC  
-#define  FID_KHJGMC             2882  //¿ª»§»ú¹¹Ãû³Æ  DT£ºC  
-#define  FID_KHWDMC             2883  //¿ª»§ÍøµãÃû³Æ  DT£ºC  
-#define  FID_XHJGMC             2884  //Ïú»§»ú¹¹Ãû³Æ  DT£ºC  
-#define  FID_GLGXBS             2885  //¹ØÁª¹ØÏµ±êÊ¶  DT£ºC  
-#define  FID_QRJGMC             2886  //È·ÈÏ»ú¹¹Ãû³Æ  DT£ºC  
-#define  FID_ZDJGMC             2887  //Ö¸¶¨»ú¹¹Ãû³Æ  DT£ºC  
-#define  FID_CPZH               2901  //²úÆ·ÕË»§  DT£ºC  
-#define  FID_CCFX               2902  //³Ö²Ö·½Ïò  DT£ºI  
-#define  FID_DLJG               2903  //¶©Á¢¼Û¸ñ  DT£ºR  
-#define  FID_CCYK               2904  //³Ö²ÖÓ¯¿÷  DT£ºR  
-#define  FID_ZRYK               2905  //×ªÈÃÓ¯¿÷  DT£ºR  
-#define  FID_FQHK               2906  //·ÖÆÚ»õ¿î  DT£ºR  
-#define  FID_KCWTSL             2907  //µ±ÈÕ¿ª²ÖÊıÁ¿  DT£ºR  
-#define  FID_KCCJSL             2908  //µ±ÈÕ¿ª²Ö³É½»ÊıÁ¿  DT£ºR  
-#define  FID_ZRWTSL             2909  //µ±ÈÕ×ªÈÃÊıÁ¿  DT£ºR  
-#define  FID_ZRCJSL             2910  //µ±ÈÕ×ªÈÃ³É½»ÊıÁ¿  DT£ºR  
-#define  FID_CDZT               2911  //³Öµ¥×´Ì¬  DT£ºI  
-#define  FID_JSWTSL             2912  //½»ÊÕÎ¯ÍĞÊıÁ¿  DT£ºR  
-#define  FID_LJCCYK             2913  //ÀÛ¼Æ³Ö²ÖÓ¯¿÷  DT£ºR  
-#define  FID_LJZRYK             2914  //ÀÛ¼Æ×ªÈÃÓ¯¿÷  DT£ºR  
-#define  FID_MSDW               2915  //Ã¿ÊÖµ¥Î»  DT£ºI  
-#define  FID_BDJW               2916  //±ä¶¯¼ÛÎ»  DT£ºR  
-#define  FID_SBDW               2917  //Éê±¨µ¥Î»  DT£ºI  
-#define  FID_PCDW               2918  //Æ½²Öµ¥Î»  DT£ºI  
-#define  FID_ZTFD               2919  //ÕÇÍ£·ù¶È  DT£ºR  
-#define  FID_DTFD               2920  //µøÍ£·ù¶È  DT£ºR  
-#define  FID_ZTJ                2921  //ÕÇÍ£¼Û  DT£ºR  
-#define  FID_DTJ                2922  //µøÍ£¼Û  DT£ºR  
-#define  FID_ZHJYR              2923  //×îºó½»Ò×ÈÕ  DT£ºI  
-#define  FID_ZHJGR              2924  //×îºó½»¸îÈÕ  DT£ºI  
-#define  FID_CPFLAG             2925  //ÊÇ·ñÔÊĞí¿ª¿Õ²Ö  DT£ºI  
-#define  FID_TKXDR              2926  //Í£¿ªĞÂµ¥ÈÕ  DT£ºI  
-#define  FID_FLMB               2927  //·ÑÀûÄ£°å  DT£ºR  
-#define  FID_TNXZ               2928  //T+NÌìÏŞÖÆ  DT£ºI  
-#define  FID_CLASS              2929  //²úÆ··ÖÀà  DT£ºI  
-#define  FID_SUBCLASS           2930  //²úÆ·×ÓÀà  DT£ºI  
-#define  FID_XHDJXM             2931  //ÏÖ»õ¶³½áÏîÄ¿Á÷Ë®ºÅ  DT£ºR  
-#define  FID_CKBM               2932  //²Ö¿â±àÂë  DT£ºI  
-#define  FID_PZDJ               2933  //Æ·ÖÖµÈ¼¶  DT£ºI  
-#define  FID_DFCPZH             2934  //¶Ô·½²úÆ·ÕËºÅ  DT£ºC  
-#define  FID_YHTH               2935  //Ô­ºÏÍ¬ºÅ  DT£ºC  
-#define  FID_CHBH               2936  //´æ»õ±àºÅ  DT£ºC  
-#define  FID_BCCPSL             2937  //±¾´Î²úÆ·Óà¶î  DT£ºR  
-#define  FID_HTXH               2938  //ºÏÍ¬ĞòºÅ  DT£ºC  
-#define  FID_CZMM               3002  //²Ù×÷ÃÜÂë  DT£ºC  
-#define  FID_TXMM               3004  //Í¨ĞÅÃÜÂë  DT£ºC  
-#define  FID_GTKHLB             3006  //¹ñÌ¨¿Í»§×éÖ¯Àà±ğ  DT£ºC  
-#define  FID_ROUTER             3007  //Â·ÓÉÓªÒµ²¿Ãû³Æ  DT£ºC  
-#define  FID_ENTRY              3008  //ÅäÖÃÎÄ¼ş±äÁ¿Ãû  DT£ºC  
-#define  FID_KHHQZ              3009  //¿Í»§ºÅÇ°×º  DT£ºC  
-#define  FID_CHECKBOX           3010  //CheckBox  DT£ºC  
-#define  FID_CZLB               3011  //²Ù×÷Àà±ğ  DT£ºC  
-#define  FID_PUSH               3021  //ÍÆËÍ±êÖ¾  DT£ºC  
-#define  FID_ZJBL               3022  //×Ê½ğ±ÈÂÊ  DT£ºC  
-#define  FID_HQZD               3023  //ĞĞÇéÕÇµø  DT£ºC  
-#define  FID_ZDF                3024  //ĞĞÇéÕÇµø·ù  DT£ºR  
-#define  FID_HQZF               3027  //ĞĞÇéÕñ·ù  DT£ºC  
-#define  FID_HSL                3028  //»»ÊÖÂÊ  DT£ºR  
-#define  FID_ICON               3029  //Í¼±êºÅ  DT£ºC  
-#define  FID_FZDM               3030  //¿Í»§ºÅËùÊô·Ö×é´úÂë  DT£ºC  
-#define  FID_FZMC               3031  //¿Í»§ºÅËùÊô·Ö×éÃû³Æ  DT£ºC  
-#define  FID_HFBH               3032  //»Ø¸´±àºÅ  DT£ºC  
-#define  FID_FSKHH              3033  //·¢ËÍ¿Í»§ºÅ  DT£ºC  
-#define  FID_FSFJBZ             3034  //·¢ËÍ¿Í»§ºÅ¸½¼Ó±êÖ¾  DT£ºC  
-#define  FID_DFKHH              3035  //¶Ô·½¿Í»§´úÂë  DT£ºC  
-#define  FID_STATE              3036  //ÔÚÏß×´Ì¬  DT£ºC  
-#define  FID_DLSJ               3037  //µÇÂ¼Ê±¼ä  DT£ºC  
-#define  FID_QTSJ               3038  //Ç©ÍËÊ±¼ä  DT£ºC  
-#define  FID_MLLB               3040  //Ä¿Â¼Àà±ğ  DT£ºC  
-#define  FID_MLBM               3041  //Ä¿Â¼±àÂë  DT£ºC  
-#define  FID_MLMC               3042  //Ä¿Â¼Ãû³Æ  DT£ºC  
-#define  FID_MLSM               3043  //Ä¿Â¼ËµÃ÷  DT£ºC  
-#define  FID_FORMAT             3044  //Ä¿Â¼¸ñÊ½  DT£ºC  
-#define  FID_DEFAULT            3045  //È±Ê¡Öµ  DT£ºC  
-#define  FID_DATA               3046  //  DT£ºC  
-#define  FID_JLBZ               3047  //¼ÇÂ¼±êÖ¾  DT£ºÈ¡Öµ·¶Î§  DT£ºC  
-#define  FID_MBSMS              3050  //¶Ô·½ÊÖ»úºÅÂë  DT£ºC  
-#define  FID_MBMAIL             3051  //¶Ô·½ÓÊ¼şµØÖ·  DT£ºC  
-#define  FID_LBMC               3053  //Àà±ğÃû³Æ  DT£ºC  
-#define  FID_CSLX               3054  //²ÎÊıÀàĞÍ  DT£ºC  
-#define  FID_XMMC               3060  //·şÎñÏîÄ¿Ãû³Æ  DT£ºC  
-#define  FID_FWXZ               3061  //·şÎñÏîÄ¿ÏŞÖÆ  DT£ºC  
-#define  FID_RECNO              3062  //½á¹û¼ÇÂ¼ºÅ  DT£ºC  
-#define  FID_YJB                3063  //ÓÊ¼ş±êÌâ  DT£ºC  
-#define  FID_CCMAIL             3064  //¸½ËÍMailµØÖ·  DT£ºC  
-#define  FID_YJXM               3065  //Ô¤¾¯ÏîÄ¿  DT£ºC  
-#define  FID_PRODUCT            3071  //²úÆ·Ãû³Æ  DT£ºC  
-#define  FID_VERSION            3072  //²úÆ·°æ±¾ºÅ  DT£ºC  
-#define  FID_COMPANY            3073  //¹«Ë¾Ãû³Æ  DT£ºC  
-#define  FID_LWTIME             3075  //ÎÄ¼ş×î½üĞŞ¸ÄÊ±¼ä  DT£ºC  
-#define  FID_PKLEN              3076  //ÎÄ¼şÊı¾İ°ü´óĞ¡  DT£ºC  
-#define  FID_PACKAGE            3077  //ÎÄ¼şÊı¾İ°ü  DT£ºC  
-#define  FID_SUBDIR             3078  //ÎÄ¼ş×ÓÄ¿Â¼  DT£ºC  
-#define  FID_ZHBZ               3081  //ÕÊ»§±êÖ¾  DT£ºC  
-#define  FID_IBY                3082  //±¸ÓÃÓò...  DT£ºC  
-#define  FID_BYDZ1              3085  //±¸ÓÃµØÖ·1  DT£ºC  
-#define  FID_BYDZ2              3086  //±¸ÓÃµØÖ·2  DT£ºC  
-#define  FID_BYDZ3              3087  //±¸ÓÃµØÖ·3  DT£ºC  
-#define  FID_XH                 3090  //ĞòºÅ  DT£ºC  
-#define  FID_DXFDED             3107  //¶ÌĞÅ·â¶¥¶î¶È  DT£ºC  
-#define  FID_YJFDED             3108  //ÓÊ¼ş·â¶¥¶î¶È  DT£ºC  
-#define  FID_DXFYBL             3109  //¶ÌĞÅ·ÑÓÃ±ÈÂÊ  DT£ºC  
-#define  FID_YJFYBL             3110  //ÓÊ¼ş·ÑÓÃ±ÈÂÊ  DT£ºC  
-#define  FID_YXSJ               3113  //ÓĞĞ§Ê±¼ä  DT£ºC  
-#define  FID_LYLX               3114  //ÁôÑÔÀàĞÍ  DT£ºC  
-#define  FID_KTZT               3115  //¿ªÍ¨×´Ì¬  DT£ºI  
-#define  FID_YWSM               3116  //ÒµÎñËµÃ÷  DT£ºC  
-#define  FID_WTFSDM             3200  //Î¯ÍĞ·½Ê½´úÂë  DT£ºC  
-#define  FID_PRIVATEKEY         3202  //Ë½Ô¿±£»¤ÃÜÂë  DT£ºC  
-#define  FID_YHJS               3301  //ÓÃ»§½ÇÉ«  DT£ºC  
-#define  FID_YHLX               3302  //ÓÃ»§ÀàĞÍ  DT£ºC  
-#define  FID_CZQD               3303  //²Ù×÷ÇşµÀ  DT£ºC  
-#define  FID_KTXY               3304  //¿ªÍ¨Ğ­Òé  DT£ºC  
-#define  FID_GFKHBZ             3305  //¹æ·¶¿Í»§±êÖ¾  DT£ºC  
-#define  FID_SXDH               3306  //Ê×Ñ¡µç»°  DT£ºC  
-#define  FID_SXDZ               3307  //Ê×Ñ¡µØÖ·  DT£ºC  
-#define  FID_KHLY               3308  //¿Í»§À´Ô´  DT£ºC  
-#define  FID_FWDJ               3309  //·şÎñµÈ¼¶  DT£ºC  
-#define  FID_ZJLB_FSYH          3310  //·¢ËÍÒøĞĞÖ¤¼şÀà±ğ  DT£ºI  
-#define  FID_KHFZ               3311  //¿Í»§·Ö×é  DT£ºC  
-#define  FID_ZJKLX              3312  //Ö¤¼ş¿¨ÀàĞÍ  DT£ºC  
-#define  FID_ZJKXYBZ            3313  //Ö¤¼ş¿¨Ğ£Ñé±êÖ¾  DT£ºC  
-#define  FID_WCNRBS             3314  //Î´³ÉÄêÈË±êÊ¶  DT£ºC  
-#define  FID_ZHZB               3315  //ÕË»§×é±ğ  DT£ºC  
-#define  FID_ZHJB               3316  //ÕË»§¼¶±ğ  DT£ºC  
-#define  FID_ZHLX               3317  //ÕË»§ÀàĞÍ  DT£ºC  
-#define  FID_FZLL               3318  //¸ºÕ®ÀûÂÊ  DT£ºC  
-#define  FID_SXRQ               3319  //ÉúĞ§ÈÕÆÚ  DT£ºC  
-#define  FID_ZJZH_OLD           3320  //Ô­×Ê½ğÕËºÅ  DT£ºC  
-#define  FID_QYLX               3321  //ÆóÒµÀàĞÍ  DT£ºC  
-#define  FID_WLFW               3322  //ÍøÂç·şÎñ  DT£ºC  
-#define  FID_KHLX               3323  //¿ª»§ÀàĞÍ  DT£ºC  
-#define  FID_ZYJG               3324  //Ö´Òµ»ú¹¹  DT£ºC  
-#define  FID_ZHYT               3325  //ÕË»§ÓÃÍ¾  DT£ºC  
-#define  FID_ZDDM               3326  //×Ö¶Î´úÂë  DT£ºC  
-#define  FID_KHXZ               3327  //¿Í»§ĞÔÖÊ  DT£ºC  
-#define  FID_YSJG               3328  //Ô­Ê¼»ú¹¹  DT£ºC  
-#define  FID_YSJGWD             3329  //Ô­Ê¼»ú¹¹Íøµã  DT£ºC  
-#define  FID_TGSX               3330  //ÍĞ¹ÜÊôĞÔ  DT£ºC  
-#define  FID_LLLB               3331  //ÀûÂÊÀà±ğ  DT£ºC  
-#define  FID_ZZJZH              3332  //Ö÷×Ê½ğÕËºÅ  DT£ºC  
-#define  FID_CGZJZH             3333  //´æ¹Ü×Ê½ğÕËºÅ  DT£ºC  
-#define  FID_YHZH_NEW           3334  //ĞÂÒøĞĞÕËºÅ  DT£ºC  
-#define  FID_CGZDBZ             3335  //´æ¹ÜÖ¸¶¨±êÖ¾  DT£ºC  
-#define  FID_CGBZ               3336  //´æ¹Ü±êÖ¾  DT£ºC  
-#define  FID_YHZHQX             3337  //ÒøĞĞÕË»§È¨ÏŞ  DT£ºC  
-#define  FID_YHZHXZ             3338  //ÒøĞĞÕË»§ÏŞÖÆ  DT£ºC  
-#define  FID_YHCWXX             3339  //ÒøĞĞ´íÎóĞÅÏ¢  DT£ºC  
-#define  FID_SQM                3340  //ÊÚÈ¨Âë  DT£ºC  
-#define  FID_CGZJZH_ZR          3341  //×ªÈë´æ¹Ü×Ê½ğÕËºÅ  DT£ºC  
-#define  FID_YHDM_ZR            3342  //×ªÈëÒøĞĞ´úÂë  DT£ºC  
-#define  FID_YWXTBH             3343  //ÒµÎñÏµÍ³±àºÅ  DT£ºC  
-#define  FID_YWXTZH             3344  //ÒµÎñÏµÍ³ÕËºÅ  DT£ºC  
-#define  FID_DJZCZH             3345  //µÇ¼Ç×¢²áÕËºÅ  DT£ºC  
-#define  FID_SCLB               3346  //ÊĞ³¡Àà±ğ  DT£ºC  
-#define  FID_GFBS               3347  //¹æ·¶±êÊ¶  DT£ºC  
-#define  FID_SCKHRQ             3348  //Ê×´Î¿ª»§ÈÕÆÚ  DT£ºC  
-#define  FID_YWBZ               3349  //ÒµÎñ±êÖ¾  DT£ºC  
-#define  FID_EN_YWBZ            3350  //ÒµÎñ±êÖ¾·¶Î§  DT£ºC  
-#define  FID_SJ                 3351  //µ±Ç°Ê±¼ä  DT£ºC  
-#define  FID_BDLB               3352  //±ä¶¯Àà±ğ  DT£ºC  
-#define  FID_CPLB               3353  //²úÆ·Àà±ğ  DT£ºC  
-#define  FID_BDFE               3354  //±ä¶¯·İ¶î  DT£ºC  
-#define  FID_DQFE               3355  //µ±Ç°·İ¶î  DT£ºC  
-#define  FID_KYYE               3356  //¿ÉÓÃÓà¶î  DT£ºC  
-#define  FID_DJSSL              3357  //´ı½»ÊÕÊıÁ¿  DT£ºC  
-#define  FID_KZFE               3358  //¿É×ª·İ¶î  DT£ºC  
-#define  FID_JSSDFE             3359  //½»ÊÕËø¶¨·İ¶î  DT£ºC  
-#define  FID_TSRQ               3360  //ÍËÊĞÈÕÆÚ  DT£ºC  
-#define  FID_SFLX               3361  //ÊÕ·ÑÀàĞÍ  DT£ºC  
-#define  FID_GLRQ               3362  //¹ØÁªÈÕÆÚ  DT£ºC  
-#define  FID_GLLSH              3363  //¹ØÁªÁ÷Ë®ºÅ  DT£ºC  
-#define  FID_JYLSH              3364  //½»Ò×Á÷Ë®ºÅ  DT£ºC  
-#define  FID_FEKZLB             3365  //·İ¶î¿ØÖÆÀà±ğ  DT£ºC  
-#define  FID_XYSX               3366  //Ğ­ÒéÊôĞÔ  DT£ºC  
-#define  FID_LLLBMC             3367  //ÀûÂÊÀà±ğÃû³Æ  DT£ºC  
-#define  FID_SCFL               3368  //ÊĞ³¡·ÖÀà  DT£ºC  
-#define  FID_YYQKFS             3369  //Ô¤Ô¼È¡¿î·½Ê½  DT£ºI  
-#define  FID_YYZDJE             3370  //Ô¤Ô¼×î´ó½ğ¶î  DT£ºN  
-#define  FID_QRLB               3371  //È·ÈÏÀà±ğ  DT£ºC  
-#define  FID_CGZH_NEW           3372  //ĞÂ´æ¹ÜÕËºÅ  DT£ºC  
-#define  FID_FEKZSL             3373  //·İ¶î¿ØÖÆÊıÁ¿  DT£ºI  
-#define  FID_LYBQH              3374  //Â·ÓÉ±êÇ©ºÅ  DT£ºI  
-#define  FID_LYBQMC             3375  //Â·ÓÉ±êÇ©Ãû³Æ  DT£ºC  
-#define  FID_ZJYE_TZJE          3376  //×Ê½ğÓà¶îµ÷Õû½ğ¶î  DT£ºC  
-#define  FID_KYZJ_TZJE          3377  //¿ÉÓÃ×Ê½ğµ÷Õû½ğ¶î  DT£ºC  
-#define  FID_ZQFQCRBS           3378  //Ö¤È¯·¢Æğ´æÈë±ÊÊı  DT£ºI  
-#define  FID_ZQFQCRJE           3379  //Ö¤È¯·¢Æğ´æÈë½ğ¶î  DT£ºR  
-#define  FID_ZQFQQCBS           3380  //Ö¤È¯·¢ÆğÈ¡³ö±ÊÊı  DT£ºI  
-#define  FID_ZQFQQCJE           3381  //Ö¤È¯·¢ÆğÈ¡³ö½ğ¶î  DT£ºR  
-#define  FID_YHFQCRBS           3382  //ÒøĞĞ·¢Æğ´æÈë±ÊÊı  DT£ºI  
-#define  FID_YHFQCRJE           3383  //ÒøĞĞ·¢Æğ´æÈë½ğ¶î  DT£ºR  
-#define  FID_YHFQQCBS           3384  //ÒøĞĞ·¢ÆğÈ¡³ö±ÊÊı  DT£ºI  
-#define  FID_YHFQQCJE           3385  //ÒøĞĞ·¢ÆğÈ¡³ö½ğ¶î  DT£ºR  
-#define  FID_ZCRJE              3386  //×Ü´æÈë½ğ¶î  DT£ºR  
-#define  FID_ZQCJE              3387  //×ÜÈ¡³ö½ğ¶î  DT£ºR  
-#define  FID_DTLP               3388  //¶¯Ì¬ÁîÅÆ  DT£ºC  
-#define  FID_EN_LLLB            3389  //ÀûÂÊÀà±ğ·¶Î§  DT£ºC  
-#define  FID_ZHH                3390  //ÕË»§ºÅ  DT£ºC  
-#define  FID_JJNM               3391  //»ù½ğÄÚÂë  DT£ºC  
-#define  FID_TAID               3392  //»ù½ğ¹«Ë¾ID  DT£ºI  
-#define  FID_QWRZLL             3600  //ÆÚÍûÈÚ×ÊÀûÂÊ  DT£ºC  
-#define  FID_QWRZCRF            3602  //ÆÚÍûÈÚ×Ê³ĞÅµ·Ñ  DT£ºC  
-#define  FID_QWRZGLF            3603  //ÆÚÍûÈÚ×Ê¹ÜÀí·Ñ  DT£ºC  
-#define  FID_QWRQLX             3604  //ÆÚÍûÈÚÈ¯ÀûÏ¢  DT£ºC  
-#define  FID_QWRQCRF            3605  //ÆÚÍûÈÚÈ¯³ĞÅµ·Ñ  DT£ºC  
-#define  FID_QWRQGLF            3606  //ÆÚÍûÈÚÈ¯¹ÜÀí·Ñ  DT£ºC  
-#define  FID_QWFX               3607  //ÆÚÍû·£Ï¢  DT£ºC  
-#define  FID_MMLX               3608  //ÃÜÂëÀàĞÍ  DT£ºC  
-#define  FID_ZJFL               3609  //×Ê½ğ·ÖÀà  DT£ºC  
-#define  FID_ZJFZ               3610  //×Ê½ğ·Ö×é  DT£ºC  
-#define  FID_ZJSH               3611  //×Ê½ğÊÒºÅ  DT£ºC  
-#define  FID_ZJQX               3612  //×Ê½ğÈ¨ÏŞ  DT£ºC  
-#define  FID_ZJDLQX             3613  //×Ê½ğ´úÀíÈ¨ÏŞ  DT£ºC  
-#define  FID_ZJXZ               3614  //×Ê½ğÏŞÖÆ  DT£ºC  
-#define  FID_ZJGZ               3615  //×Ê½ğ¹æÔò  DT£ºC  
-#define  FID_ZJMMLX             3616  //×Ê½ğÃÜÂëÀàĞÍ  DT£ºC  
-#define  FID_ZJZJLB             3617  //×Ê½ğÖ¤¼şÀà±ğ  DT£ºC  
-#define  FID_ZJZJBH             3618  //×Ê½ğÖ¤¼ş±àºÅ  DT£ºC  
-#define  FID_GDXZ               3619  //¹É¶«ÏŞÖÆ  DT£ºC  
-#define  FID_XB_LXR             3620  //ÁªÏµÈËĞÔ±ğ  DT£ºC  
-#define  FID_GSDH_LXR           3622  //ÁªÏµÈË¹«Ë¾µç»°  DT£ºC  
-#define  FID_FAX_LXR            3623  //ÁªÏµÈË´«Õæ  DT£ºC  
-#define  FID_ZYBM_LXR           3624  //ÁªÏµÈËÖ°Òµ  DT£ºC  
-#define  FID_MOBILE_LXR         3625  //ÁªÏµÈËÊÖ»ú  DT£ºC  
-#define  FID_EMAIL_LXR          3626  //ÁªÏµÈËemail  DT£ºC  
-#define  FID_DZ_LXR             3627  //ÁªÏµÈËµØÖ·  DT£ºC  
-#define  FID_YZBM_LXR           3628  //ÁªÏµÈËÓÊ±à  DT£ºC  
-#define  FID_DEVICENAME         3800  //ÎïÀíÉè±¸Ãû³Æ  DT£ºC  
-#define  FID_DATANAME           3801  //Êı¾İ¿âÃû³Æ  DT£ºC  
-#define  FID_DATASIZE           3802  //Êı¾İ¿â´óĞ¡  DT£ºC  
-#define  FID_DEVICESIZE         3803  //Éè±¸´óĞ¡  DT£ºC  
-#define  FID_YJBCDM             3804  //Ô­¼ş±£´æ´úÂë  DT£ºC  
-#define  FID_MINIMAGESIZE       3839  //Í¼Ïñ×îĞ¡ÏŞÖÆ  DT£ºI  
-#define  FID_MAXIMAGESIZE       3840  //Í¼Ïñ×î´óÏŞÖÆ  DT£ºI  
-#define  FID_ALERTIMAGESIZE     3841  //Í¼Ïñ×î¾¯¸æ´óĞ¡  DT£ºI  
-#define  FID_QZYZFS             3900  //Ç¿ÖÆÑéÖ¤·½Ê½  DT£ºC  
-#define  FID_KXYZFS             3901  //¿ÉÑ¡ÑéÖ¤·½Ê½  DT£ºC  
-#define  FID_YZFS_SQCZR         3902  //ÊÚÈ¨²Ù×÷ÈËÑéÖ¤·½Ê½  DT£ºC  
-#define  FID_APPID              4001  //Ó¦ÓÃ±êÊ¶  DT£ºC  
-#define  FID_BCJJSL             4002  //±¾´Î»ù½ğÊıÁ¿  DT£ºR  
-#define  FID_BGFHFS             4003  //ÔÊĞí±ä¸ü·Öºì·½Ê½  DT£ºN  
-#define  FID_BKKBZ              4004  //²¹¿Û¿î±êÖ¾  DT£ºN  
-#define  FID_BRBZS1             4005  //±¾ÈÕ±ê×¼Ó¶½ğ  DT£ºR  
-#define  FID_BRCKJE             4006  //±¾ÈÕ´æ¿î½ğ¶î  DT£ºR  
-#define  FID_BRCXZD             4007  //±¾ÈÕ³·ÏúÖ¸¶¨  DT£ºN  
-#define  FID_BRZDJY             4008  //±¾ÈÕÖ¸¶¨½»Ò×  DT£ºN  
-#define  FID_CBJ                4009  //³É±¾¼Û  DT£ºR  
-#define  FID_CDYWLB             4010  //²Ëµ¥ÒµÎñÀà±ğ  DT£ºN  
-#define  FID_CFBL               4011  //²ğ·Ö±ÈÀı  DT£ºN  
-#define  FID_CFBZ               4012  //ÖØ·¢±êÖ¾  DT£ºN  
-#define  FID_CFGDM              4013  //³É·İ¹É´úÂë  DT£ºC  
-#define  FID_CFGSL              4014  //³É·İ¹ÉÊıÁ¿  DT£ºN  
-#define  FID_CJHBNO             4015  //³É½»»Ø±¨¼ÇÂ¼  DT£ºC  
-#define  FID_DFBZ               4016  //¶Ô·½±ÒÖÖ  DT£ºC  
-#define  FID_DFDJSL             4017  //¶Ô·½¶³½áÊıÁ¿  DT£ºR  
-#define  FID_DFJGDM             4018  //¶Ô·½»ú¹¹´úÂë  DT£ºC  
-#define  FID_DFJSDM             4019  //¶Ô·½½ÇÉ«´úÂë  DT£ºC  
-#define  FID_DFJSJG             4020  //¶Ô·½½áËã»ú¹¹  DT£ºC  
-#define  FID_DFJSLX             4021  //¶Ô·½½áËãÀàĞÍ  DT£ºN  
-#define  FID_DFJSZH             4022  //¶Ô·½½áËãÕË»§  DT£ºC  
-#define  FID_DFKHQZ             4023  //¶Ô·½¿Í»§Èº×é  DT£ºC  
-#define  FID_DFLOGINID          4024  //¶Ô·½ÓÃ»§  DT£ºC  
-#define  FID_DFWJSSL            4025  //¶Ô·½Î´½»ÊÕÊıÁ¿  DT£ºR  
-#define  FID_DFWZDM             4026  //¶Ô·½Î»ÖÃ´úÂë  DT£ºN  
-#define  FID_DFYHDM             4027  //¶Ô·½ÒøĞĞ´úÂë  DT£ºC  
-#define  FID_DFYHZH             4028  //¶Ô·½ÒøĞĞÕË»§  DT£ºC  
-#define  FID_DFYWKM             4029  //¶Ô·½ÒµÎñ¿ÆÄ¿  DT£ºC  
-#define  FID_DFYZBM             4030  //¶Ô·½ÓÊ±à  DT£ºC  
-#define  FID_DFZJBH             4031  //¶Ô·½Ö¤¼ş±àºÅ  DT£ºC  
-#define  FID_DFZJLB             4032  //¶Ô·½Ö¤¼şÀà±ğ  DT£ºC  
-#define  FID_DFZJZH             4033  //¶Ô·½×Ê½ğÕË»§  DT£ºC  
-#define  FID_DFZQDM             4034  //¶Ô·½Ö¤È¯´úÂë  DT£ºC  
-#define  FID_DFZQSL             4035  //¶Ô·½Ö¤È¯ÊıÁ¿  DT£ºR  
-#define  FID_DFZY               4036  //¶Ô·½ÕªÒª  DT£ºC  
-#define  FID_DJYE               4037  //¶³½áÓà¶î  DT£ºR  
-#define  FID_DJYXRQ             4038  //¶³½áÓĞĞ§ÈÕÆÚ  DT£ºN  
-#define  FID_DLCS               4039  //µÇÂ¼´ÎÊı  DT£ºN  
-#define  FID_DLKZFS             4040  //µÇÂ¼¿ØÖÆ·½Ê½  DT£ºN  
-#define  FID_DLSFBZ             4041  //µÇÂ¼ÊÕ·Ñ±ê×¼  DT£ºR  
-#define  FID_DLSFFW             4042  //µÇÂ¼Éí·İ·¶Î§  DT£ºC  
-#define  FID_DLSFJE             4043  //µÇÂ¼ÊÕ·Ñ½ğ¶î  DT£ºR  
-#define  FID_DLSFSX             4044  //µÇÂ¼ÊÕ·ÑÉÏÏŞ  DT£ºR  
-#define  FID_DZLXS              4045  //´ı×ªÀûÏ¢Ë°  DT£ºR  
-#define  FID_EDKZBZ             4046  //¶î¶È¿ØÖÆ±êÖ¾  DT£ºN  
-#define  FID_EN_CJHBNO          4047  //³É½»¼ÇÂ¼Î»ÖÃ·¶Î§  DT£ºC  
-#define  FID_EN_FXDJ            4048  //·çÏÕµÈ¼¶·¶Î§  DT£ºC  
-#define  FID_EN_GFXZ            4049  //¹É·İĞÔÖÊ·¶Î§  DT£ºC  
-#define  FID_EN_JDBM            4050  //½Úµã·¶Î§  DT£ºC  
-#define  FID_EN_JJDM            4051  //»ù½ğ´úÂë·¶Î§  DT£ºC  
-#define  FID_EN_JYQX            4052  //½»Ò×È¨ÏŞ·¶Î§  DT£ºC  
-#define  FID_EN_SFFS            4053  //ÊÕ·Ñ·½Ê½·¶Î§  DT£ºC  
-#define  FID_EN_WTFL            4054  //Î¯ÍĞ·ÖÀà·¶Î§  DT£ºC  
-#define  FID_EN_WTHQZ           4055  //Î¯ÍĞºÅÇ°×º·¶Î§  DT£ºC  
-#define  FID_EN_YHDM            4056  //ÒøĞĞ´úÂë·¶Î§  DT£ºC  
-#define  FID_EN_YWDM            4057  //ÒµÎñ´úÂë·¶Î§  DT£ºC  
-#define  FID_FHDM               4058  //·µ»Ø´úÂë  DT£ºC  
-#define  FID_FHDWJE             4059  //µ¥Î»·Öºì  DT£ºR  
-#define  FID_FILEID             4060  //ÎÄ¼ş±àºÅ  DT£ºC  
-#define  FID_FJYRJYBZ           4061  //·Ç½»Ò×ÈÕ½»Ò×±êÖ¾  DT£ºN  
-#define  FID_FLSX               4062  //·ÖÀàÊôĞÔ  DT£ºN  
-#define  FID_FWFL               4063  //·şÎñ·ÑÂÊ  DT£ºR  
-#define  FID_FWFSX              4064  //·şÎñ·ÑÉÏÏŞ  DT£ºR  
-#define  FID_FWFXX              4065  //·şÎñ·ÑÏÂÏŞ  DT£ºR  
-#define  FID_FXBL               4066  //·çÏÕ±ÈÀı  DT£ºR  
-#define  FID_FXPP               4068  //·çÏÕÆ¥Åä  DT£ºN  
-#define  FID_GRZDSCRGSG         4069  //¸öÈË×îµÍÊ×´ÎÈÏ¹ºÉê¹º  DT£ºR  
-#define  FID_GRZDZJRGSG         4070  //¸öÈË×îµÍ×·¼ÓÈÏ¹ºÉê¹º  DT£ºR  
-#define  FID_GRZGDTSH           4071  //¸öÈË×î¸ßµ±ÌìÊê»Ø·İ¶î  DT£ºR  
-#define  FID_HBJG               4072  //»Ø±¨½á¹û  DT£ºN  
-#define  FID_HGBZ               4073  //»Ø¹ö±êÖ¾  DT£ºC  
-#define  FID_HISTORY            4074  //ÀúÊ·Êı¾İÔÊĞí²éÑ¯±êÖ¾  DT£ºN  
-#define  FID_HLSYTS             4075  //ºìÀûË³ÑÓÌìÊı  DT£ºN  
-#define  FID_HQCXCS             4077  //ĞĞÇé²éÑ¯´ÎÊı  DT£ºN  
-#define  FID_HQMFCS             4078  //ĞĞÇéÃâ·Ñ´ÎÊı  DT£ºN  
-#define  FID_HQSFBZ             4079  //ĞĞÇéÊÕ·Ñ±ê×¼  DT£ºR  
-#define  FID_HQSFJE             4080  //ĞĞÇéÊÕ·Ñ½ğ¶î  DT£ºR  
-#define  FID_HS                 4081  //»§Êı  DT£ºN  
-#define  FID_HZSJ               4082  //»Ø×ªÊ±¼ä  DT£ºC  
-#define  FID_INI                4083  //ÅäÖÃ  DT£ºC  
-#define  FID_JBQXLB             4084  //»ù±¾È¨ÏŞÀà±ğ  DT£ºC  
-#define  FID_DFZHMC             4085  //¶Ô·½ÕË»§Ãû³Æ  DT£ºC  
-#define  FID_JFSJ               4086  //¼Æ·ÑÊ±¼ä  DT£ºN  
-#define  FID_JGZDSCRGSG         4087  //»ú¹¹×îµÍÊ×´ÎÈÏ¹ºÉê¹º  DT£ºR  
-#define  FID_JGZDZJRGSG         4088  //»ú¹¹×îµÍ×·¼ÓÈÏ¹ºÉê¹º  DT£ºR  
-#define  FID_JGZGDTSH           4089  //»ú¹¹×î¸ßµ±ÌìÊê»Ø·İ¶î  DT£ºR  
-#define  FID_JJCFZT             4090  //»ù½ğ²ğ·Ö×´Ì¬  DT£ºN  
-#define  FID_JJHBZT             4091  //»ù½ğºÏ²¢×´Ì¬  DT£ºN  
-#define  FID_JJKHZT             4092  //»ù½ğ¿ª»§×´Ì¬  DT£ºN  
-#define  FID_JJRGZT             4093  //»ù½ğÈÏ¹º×´Ì¬  DT£ºN  
-#define  FID_JJSGZT             4094  //»ù½ğÉê¹º×´Ì¬  DT£ºN  
-#define  FID_JJSHZT             4095  //»ù½ğÊê»Ø×´Ì¬  DT£ºN  
-#define  FID_JJZHSQFS           4096  //»ù½ğÕË»§ÉêÇë·½Ê½  DT£ºN  
-#define  FID_JJZHSX             4097  //»ù½ğÕË»§ÊôĞÔ  DT£ºN  
-#define  FID_JJZHZT             4098  //»ù½ğ×ª»»×´Ì¬  DT£ºN  
-#define  FID_JSBZ               4099  //½»ÊÕ±êÖ¾  DT£ºN  
-#define  FID_JSKZFS             4100  //¼ÆÊ±¿ØÖÆ·½Ê½  DT£ºN  
-#define  FID_JSSFBZ             4101  //¼ÆÊ±ÊÕ·Ñ±ê×¼  DT£ºR  
-#define  FID_JSSFDW             4102  //¼ÆÊ±ÊÕ·Ñµ¥Î»  DT£ºN  
-#define  FID_JSSFJE             4103  //¼ÆÊ±ÊÕ·Ñ½ğ¶î  DT£ºR  
-#define  FID_JSSFQD             4104  //¼ÆÊ±ÊÕ·ÑÆğµã  DT£ºN  
-#define  FID_JSSFSX             4105  //¼ÆÊ±ÊÕ·ÑÉÏÏŞ  DT£ºR  
-#define  FID_JSSJSX             4106  //¼ÆÊ±Ê±¼äÉÏÏŞ  DT£ºN  
-#define  FID_JXJE               4107  //¼ÆÏ¢½ğ¶î  DT£ºR  
-#define  FID_JYJ                4108  //¾»Ó¶½ğ  DT£ºR  
-#define  FID_JYLBSX             4109  //½»Ò×Àà±ğÊôĞÔ  DT£ºN  
-#define  FID_JYLTJFS            4110  //½»Ò×Á¿Í³¼Æ·½Ê½  DT£ºN  
-#define  FID_JYSQH              4111  //½»Ò×ÉêÇëºÅ  DT£ºN  
-#define  FID_KHFL               4112  //¿Í»§·ÖÀà  DT£ºC  
-#define  FID_KHXMXY             4113  //¿Í»§ĞÕÃû¼ìÑé  DT£ºC  
-#define  FID_KWTSL              4114  //¿ÉÎ¯ÍĞÊıÁ¿  DT£ºR  
-#define  FID_TJZC               4115  //ÀÛ¼Æ×Ê²ú  DT£ºR  
-#define  FID_LLMBBH             4116  //ÀûÂÊÄ£°å±àºÅ  DT£ºN  
-#define  FID_MCCJJE             4117  //Âô³ö³É½»½ğ¶î  DT£ºR  
-#define  FID_MCCJSL             4118  //Âô³ö³É½»ÊıÁ¿  DT£ºR  
-#define  FID_MCQSJE             4119  //Âô³öÇåËã½ğ¶î  DT£ºR  
-#define  FID_MCWTJE             4120  //Âô³öÎ¯ÍĞ½ğ¶î  DT£ºR  
-#define  FID_MCWTSL             4121  //Âô³öÎ¯ÍĞÊıÁ¿  DT£ºR  
-#define  FID_MMBDRQ             4122  //ÃÜÂë±ä¶¯ÈÕÆÚ  DT£ºN  
-#define  FID_MMXZFS             4123  //ÃÜÂëÏŞÖÆ·½Ê½  DT£ºN  
-#define  FID_MRCJJE             4124  //ÂòÈë³É½»½ğ¶î  DT£ºR  
-#define  FID_MRCJSL             4125  //ÂòÈë³É½»ÊıÁ¿  DT£ºR  
-#define  FID_MRFHFS             4126  //Ä¬ÈÏ·Öºì·½Ê½  DT£ºR  
-#define  FID_MRQSJE             4127  //ÂòÈëÇåËã½ğ¶î  DT£ºR  
-#define  FID_MRWTJE             4128  //ÂòÈëÎ¯ÍĞ½ğ¶î  DT£ºN  
-#define  FID_MRWTSL             4129  //ÂòÈëÎ¯ÍĞÊıÁ¿  DT£ºR  
-#define  FID_MXBZ               4130  //Ã÷Ï¸±êÖ¾  DT£ºN  
-#define  FID_ORDWTH             4131  //¶©µ¥±àÂëÀàĞÍ  DT£ºC  
-#define  FID_OTHER              4132  //ÆäËüÒµÎñÔÊĞí±êÖ¾  DT£ºN  
-#define  FID_PHRQ               4133  //ÅäºÅÈÕÆÚ  DT£ºN  
-#define  FID_POSITION           4134  //Î»ÖÃ  DT£ºN  
-#define  FID_QRLSH              4135  //È·ÈÏÁ÷Ë®ºÅ  DT£ºC  
-#define  FID_QSRQ               4136  //ÇåËãÈÕÆÚ  DT£ºN  
-#define  FID_QTDJ               4137  //ÆäËüÔ­Òò¶³½á  DT£ºC  
-#define  FID_QTFY               4138  //ÆäËü·ÑÓÃ  DT£ºR  
-#define  FID_QTMM               4139  //ÆäËüÃÜÂë  DT£ºC  
-#define  FID_QXSX               4140  //È¨ÏŞÊôĞÔ  DT£ºN  
-#define  FID_QYRQ               4141  //Ç©Ô¼ÈÕÆÚ  DT£ºN  
-#define  FID_RGSGJS             4142  //ÈÏ¹ºÉê¹º»ùÊı  DT£ºN  
-#define  FID_RQJS               4143  //ÈÚÈ¯»ıÊı  DT£ºR  
-#define  FID_RZBZ               4144  //ÈëÕË±êÖ¾  DT£ºN  
-#define  FID_RZJS               4145  //ÈÚ×Ê»ıÊı  DT£ºR  
-#define  FID_S7                 4146  //·şÎñ·Ñ  DT£ºR  
-#define  FID_SBFS               4147  //Éê±¨·½Ê½  DT£ºN  
-#define  FID_SFSX               4148  //ÊÕ·ÑÉÏÏŞ  DT£ºR  
-#define  FID_SGSHDM             4149  //ÉêÊê´úÂë  DT£ºC  
-#define  FID_SMBS               4150  //É¨Ãè±ÊÊı  DT£ºN  
-#define  FID_SPBZ               4151  //ÊÕÅÌ±êÖ¾  DT£ºN  
-#define  FID_SRRQ               4152  //ÉÏÈÕÈÕÆÚ  DT£ºN  
-#define  FID_STAMP              4153  //Ê±¼ä´Á  DT£ºC  
-#define  FID_SXFSX              4154  //ÊÖĞø·ÑÉÏÏŞ  DT£ºR  
-#define  FID_SXFXX              4155  //ÊÖĞø·ÑÏÂÏŞ  DT£ºR  
-#define  FID_SXYK               4156  //ÊµÏÖÓ¯¿÷  DT£ºR  
-#define  FID_T3JS               4157  //T3½»ÊÕ½ğ¶î  DT£ºR  
-#define  FID_TABM               4158  //»ù½ğ¹«Ë¾±àÂë  DT£ºC  
-#define  FID_TAKZSX             4159  //TA¿ØÖÆÊôĞÔ  DT£ºN  
-#define  FID_TEST               4160  //²âÊÔ×´Ì¬  DT£ºN  
-#define  FID_THREAD             4161  //Ïß³Ì  DT£ºN  
-#define  FID_TSYWJSSJ           4162  //ÌØÊâÒµÎñ½áÊøÊ±¼ä  DT£ºC  
-#define  FID_TXDZ               4163  //Í¨Ñ¶µØÖ·  DT£ºC  
-#define  FID_TXTS               4164  //ÌáĞÑÌìÊı  DT£ºN  
-#define  FID_WJSSL_B            4165  //ÂòÈëÎ´½»ÊÕ  DT£ºR  
-#define  FID_WJSSL_S            4166  //Âô³öÎ´½»ÊÕ  DT£ºR  
-#define  FID_WTBZ               4167  //Î¯ÍĞ±êÖ¾  DT£ºC  
-#define  FID_WTDJJE             4168  //Î¯ÍĞ¶³½á½ğ¶î  DT£ºR  
-#define  FID_WTHQZ              4169  //Î¯ÍĞºÅÇ°×º  DT£ºC  
-#define  FID_WTMARK             4170  //Î¯ÍĞ¼ÇºÅ  DT£ºC  
-#define  FID_WZDM               4171  //Î»ÖÃ´úÂë  DT£ºN  
-#define  FID_XSSL               4172  //ÏŞÊÛÊıÁ¿  DT£ºR  
-#define  FID_XTZT               4173  //ÏµÍ³×´Ì¬  DT£ºN  
-#define  FID_XYZT               4174  //Ğ­Òé×´Ì¬  DT£ºN  
-#define  FID_XZFS               4175  //ÏŞÖÆ·½Ê½  DT£ºN  
-#define  FID_YDH                4176  //Ô¼¶¨ºÅ  DT£ºN  
-#define  FID_YGXJCE             4177  //Ô¤¹ÀÏÖ½ğ²î¶î  DT£ºR  
-#define  FID_YHKZSX             4178  //ÒøĞĞ¿ØÖÆÊôĞÔ  DT£ºN  
-#define  FID_YWBS               4179  //ÒµÎñ±ÊÊı  DT£ºN  
-#define  FID_YWRQ               4180  //ÒµÎñÈÕÆÚ  DT£ºN  
-#define  FID_YYBBH              4181  //ÓªÒµ²¿±àºÅ  DT£ºC  
-#define  FID_ZCSMJG             4182  //Õı³£É¨Ãè¼ä¸ô  DT£ºN  
-#define  FID_ZCTJFS             4183  //×Ê²úÍ³¼Æ·½Ê½  DT£ºN  
-#define  FID_ZCZQSZ             4184  //×ª³öÖ¤È¯ÊĞÖµ  DT£ºR  
-#define  FID_ZDHS               4185  //Ö¸¶¨»§Êı  DT£ºN  
-#define  FID_ZJBHXY             4186  //Ö¤¼ş±àºÅ¼ìÑé  DT£ºC  
-#define  FID_ZJDM               4187  //×Ê½ğ´úÂë  DT£ºC  
-#define  FID_ZJSBSJ             4188  //×î½üÉê±¨Ê±¼ä  DT£ºC  
-#define  FID_ZQFXDJ             4189  //Ö¤È¯·çÏÕµÈ¼¶  DT£ºC  
-#define  FID_ZQJCLB             4190  //Ö¤È¯»ù´¡Àà±ğ  DT£ºC  
-#define  FID_ZQJYSX             4191  //Ö¤È¯½»Ò×ÊôĞÔ  DT£ºN  
-#define  FID_ZQLBXZFS           4192  //Ö¤È¯Àà±ğÏŞÖÆ·½Ê½  DT£ºN  
-#define  FID_ZQSXFW             4193  //Ö¤È¯ÊôĞÔ·¶Î§  DT£ºN  
-#define  FID_ZQXZMS             4194  //Ö¤È¯ÏŞÖÆÄ£Ê½  DT£ºN  
-#define  FID_ZQYWDM             4195  //Ö¤È¯ÒµÎñ·¶Î§  DT£ºC  
-#define  FID_ZRZQSZ             4196  //×ªÈëÖ¤È¯ÊĞÖµ  DT£ºR  
-#define  FID_ZYQDM              4197  //ÖÊÑºÈ¯´úÂë  DT£ºC  
-#define  FID_ZZKSSJ             4198  //×ªÕË¿ªÊ¼Ê±¼ä  DT£ºC  
-#define  FID_ZZLB               4199  //×ªÕËÀà±ğ  DT£ºN  
-#define  FID_ZZQDM              4200  //Ö÷Ö¤È¯´úÂë  DT£ºC  
-#define  FID_LTLX               4201  //Á÷Í¨ÀàĞÍ  DT£ºC  
-#define  FID_BBFUNCID           4202  //±¨±íº¯Êı¹¦ÄÜºÅ  DT£ºI  
-#define  FID_BBBSC              4203  //±¨±í±êÊ¶´®  DT£ºC  
-#define  FID_BBSORTTYPE         4204  //±¨±íÊı¾İ²éÑ¯µÄÅÅĞò·½Ê½  DT£ºI  
-#define  FID_BBCXLB             4205  //±¨±í²éÑ¯Àà±ğ  DT£ºC  
-#define  FID_BBFIELDNAME        4206  //±¨±í×Ö¶ÎÃû  DT£ºC  
-#define  FID_BBTYPE             4207  //±¨±í²ÎÊıÀàĞÍ  DT£ºC  
-#define  FID_BBVALUE            4208  //±¨±íÊôĞÔÖµ  DT£ºC  
-#define  FID_BBROWNUM           4209  //±¨±í¼ÇÂ¼ĞĞºÅ  DT£ºI  
-#define  FID_BBSJJDM            4210  //±¨±íÊı¾İ¼¯´úÂë  DT£ºC  
-#define  FID_JYRQ               4211  //½»Ò×ÈÕÆÚ  DT£ºC  
-#define  FID_TDLX_BF            4212  //±¸·İÍ¨µÀÀàĞÍ  DT£ºI  
-#define  FID_SGWTSL             4213  //Éê¹ºÎ¯ÍĞÊıÁ¿  DT£ºR  
-#define  FID_DFJDBM             4214  //¶Ô·½½Úµã±àÂë  DT£ºC  
-#define  FID_GRZDJC             4215  //¸öÈË×î´ó¼õ³Ö  DT£ºI  
-#define  FID_JGZDJC             4216  //»ú¹¹×î´ó¼õ³Ö  DT£ºI  
-#define  FID_CPTX               4217  //²úÆ·ÌØĞÔ  DT£ºI  
-#define  FID_GSJZB              4218  //¹«Ë¾¾»×Ê±¾  DT£ºN  
-#define  FID_JSJE               4219  //½»ÊÕ½ğ¶î  DT£ºR  
-#define  FID_DYSZ               4220  //µÖÑºÊĞÖµ  DT£ºR  
-#define  FID_YJGHRQ             4221  //Ô¤¼Æ¹º»ØÈÕÆÚ  DT£ºN  
-#define  FID_DYKHJZD            4222  //µ¥Ò»¿Í»§¼¯ÖĞ¶È  DT£ºR  
-#define  FID_DYZQJZD            4223  //µ¥Ò»Ö¤È¯¼¯ÖĞ¶È  DT£ºR  
-#define  FID_DBJYJZD            4224  //µ¥±Ê½»Ò×¼¯ÖĞ¶È  DT£ºR  
-#define  FID_QYBH               4225  //È¨Òæ±àºÅ  DT£ºI  
-#define  FID_SKYPE              4226  //SKYPEÕËºÅ  DT£ºC  
-#define  FID_SYR                4227  //ÊÜÒæÈË  DT£ºC  
-#define  FID_DH_LXR             4228  //ÁªÏµÈËµç»°  DT£ºC  
-#define  FID_YXMRJ              4236  //ÒâÏòÂòÈë¼Û  DT£ºR  
-#define  FID_YXMCJ              4237  //ÒâÏòÂô³ö¼Û  DT£ºR  
-#define  FID_YXMRL              4238  //ÒâÏòÂòÈëÁ¿  DT£ºR  
-#define  FID_YXMCL              4239  //ÒâÏòÂô³öÁ¿  DT£ºR  
-#define  FID_ZFQDBH             4240  //Ö§¸¶ÇşµÀ±àºÅ  DT£ºC  
-#define  FID_ZFZH               4241  //Ö§¸¶ÕË»§  DT£ºC  
-#define  FID_HTBH               4242  //ºÏÍ¬±àºÅ  DT£ºC  
-#define  FID_YCLX               4243  //Òì³£ÀàĞÍ  DT£ºC  
-#define  FID_HTLX               4244  //ºÏÍ¬ÀàĞÍ  DT£ºN  
-#define  FID_HTZT               4245  //ºÏÍ¬×´Ì¬  DT£ºN  
-#define  FID_KHFXDJ             4246  //¿Í»§·çÏÕµÈ¼¶  DT£ºC  
-#define  FID_CPFXDJ             4247  //²úÆ··çÏÕµÈ¼¶  DT£ºC  
-#define  FID_WFSY               4248  //Î´¸¶ÊÕÒæ  DT£ºC  
-#define  FID_PJBH               4249  //Æ±¾İ±àºÅ  DT£ºC  
-#define  FID_WX                 4250  //Î¢ĞÅÕËºÅ  DT£ºC  
-#define  FID_CPBM               4251  //²úÆ·±ğÃû  DT£ºC  
-#define  FID_CPGS               4252  //²úÆ·¹«Ë¾  DT£ºC  
-#define  FID_MJKSRQ             4253  //Ä¼¼¯¿ªÊ¼ÈÕÆÚ  DT£ºC  
-#define  FID_MJJSRQ             4254  //Ä¼¼¯½áÊøÈÕÆÚ  DT£ºC  
-#define  FID_CPCLRQ             4255  //²úÆ·³ÉÁ¢ÈÕÆÚ  DT£ºC  
-#define  FID_CPJSRQ             4256  //²úÆ·½áÊøÈÕÆÚ  DT£ºC  
-#define  FID_ZDMJJE             4257  //²úÆ·×îµÍÄ¼¼¯½ğ¶î  DT£ºC  
-#define  FID_ZGMJJE             4258  //²úÆ·×î¸ßÄ¼¼¯½ğ¶î  DT£ºC  
-#define  FID_TJKSRQ             4259  //ÍÆ½é¿ªÊ¼ÈÕÆÚ  DT£ºC  
-#define  FID_TJJSRQ             4260  //ÍÆ½é½áÊøÈÕÆÚ  DT£ºC  
-#define  FID_TJGM               4261  //ÍÆ½é¹æÄ£  DT£ºC  
-#define  FID_CPQX               4262  //²úÆ·ÆÚÏŞ  DT£ºC  
-#define  FID_CPPGDJ             4263  //ÆÀ¹ÀµÈ¼¶  DT£ºC  
-#define  FID_FXMZ               4264  //·¢ĞĞÃæÖµ  DT£ºC  
-#define  FID_YQSYL              4265  //Ô¤ÆÚÊÕÒæÂÊ  DT£ºC  
-#define  FID_TGYH               4266  //ÍĞ¹ÜÒøĞĞ  DT£ºC  
-#define  FID_RGFL               4267  //ÈÏ¹º·ÑÂÊ  DT£ºC  
-#define  FID_RGRSSX             4268  //ÈÏ¹ºÈËÊıÉÏÏŞ  DT£ºC  
-#define  FID_DRSGZDJE           4269  //µ¥ÈÕÉê¹º×î¸ß½ğ¶î  DT£ºC  
-#define  FID_GRZDSGZJ           4270  //¸öÈË×îµÍÉê¹º½ğ¶î  DT£ºC  
-#define  FID_JGZDSGZJ           4271  //»ú¹¹×îµÍÉê¹º½ğ¶î  DT£ºC  
-#define  FID_SHDW               4272  //Êê»Ø×îĞ¡µ¥Î»  DT£ºC  
-#define  FID_SHZDFE             4273  //Êê»Ø×îµÍ·İ¶î  DT£ºC  
-#define  FID_XZLSH              4274  //Ğ­×÷Á÷Ë®ºÅ  DT£ºC  
-#define  FID_ZFZT               4275  //Ö§¸¶×´Ì¬  DT£ºC  
-#define  FID_JZSZ               4276  //¾»ÖµÊĞÖµ  DT£ºC  
-#define  FID_TZSL               4277  //Í¶×ÊÊıÁ¿  DT£ºC  
-#define  FID_CPFZLB             4278  //²úÆ·¸¨ÖúÀà±ğ  DT£ºC  
-#define  FID_PDDM               4279  //Åä¶Ô´úÂë  DT£ºC  
-#define  FID_DKLX               4280  //¶à¿ÕÀàĞÍ  DT£ºC  
-#define  FID_SZJ                4281  //ÊĞÖµ¼Û  DT£ºC  
-#define  FID_CXMS               4282  //²éÑ¯Ä£Ê½  DT£ºC  
-#define  FID_YHTKHH             4283  //Ò»»§Í¨¿Í»§ºÅ  DT£ºC  
-#define  FID_KFRQ               4284  //¿ª·ÅÈÕÆÚ  DT£ºC  
-#define  FID_NEWZHH             4285  //ĞÂÕË»§ºÅ  DT£ºC  
-#define  FID_NHSYL              4286  //Äê»¯ÊÕÒæÂÊ  DT£ºC  
-#define  FID_GHLX               4287  //¹ı»§ÀàĞÍ  DT£ºC  
-#define  FID_SYBS               4288  //Ê£Óà±ÊÊı  DT£ºC  
-#define  FID_SYED               4289  //Ê£Óà¶î¶È  DT£ºC  
-#define  FID_LCZJZH             4290  //Àí²Æ×Ê½ğÕËºÅ  DT£ºC  
-#define  FID_LCZJZH_MAIN        4291  //Àí²Æ×Ê½ğÖ÷ÕËºÅ  DT£ºC  
-#define  FID_LCZJZH_CHILD       4292  //Àí²Æ×Ê½ğ×ÓÕËºÅ  DT£ºC  
-#define  FID_QQHYZH             4293  //ÆÚÈ¨ºÏÔ¼ÕËºÅ  DT£ºC  
-#define  FID_QQCCLX             4294  //ÆÚÈ¨³Ö²ÖÀàĞÍ  DT£ºC  
-#define  FID_ZBLB               4295  //Ö¸±êÀà±ğ  DT£ºC  
-#define  FID_XXFSQD             4300  //ÏûÏ¢·¢ËÍÇşµÀ  DT£ºC  
-#define  FID_CC                 4301  //³­ËÍ  DT£ºC  
-#define  FID_BCC                4302  //ÃÜËÍ  DT£ºC  
-#define  FID_CXFS               4303  //²éÑ¯·½Ê½  DT£ºC  
-#define  FID_XSFY               4304  //ÏúÊÛ·ÑÓÃ  DT£ºC  
-#define  FID_TAFY               4305  //TAÊÕÈ¡µÄ·ÑÓÃ  DT£ºC  
-#define  FID_DJBM               4306  //¶¨¼Û±àÂë  DT£ºC  
-#define  FID_QDBM               4307  //ÇşµÀ±àÂë  DT£ºC  
-#define  FID_QDMC               4308  //ÇşµÀÃû³Æ  DT£ºC  
-#define  FID_QDZH               4309  //ÇşµÀÕËºÅ  DT£ºC  
-#define  FID_ZHMC_HZQD          4310  //ºÏ×÷ÇşµÀÕË»§Ãû³Æ  DT£ºC  
-#define  FID_MMZT               4311  //ÃÜÂë×´Ì¬  DT£ºC  
-#define  FID_MMSDSJ             4312  //ÃÜÂëËø¶¨Ê±¼ä  DT£ºC  
-#define  FID_MJZJGM             4401  //Ä¼¼¯×Ê½ğ¹æÄ£  DT£ºC  
-#define  FID_YXCRGFBL           4402  //ÒâÏò³öÈÃ¹É·İ±ÈÀı  DT£ºC  
-#define  FID_BFFS               4403  //²¦¸¶·½Ê½  DT£ºC  
-#define  FID_LTCYJBL            4404  //ÁìÍ¶³ÏÒâ½ğ±ÈÀı  DT£ºC  
-#define  FID_GTCYJBL            4405  //¸úÍ¶³ÏÒâ½ğ±ÈÀı  DT£ºC  
-#define  FID_LTJEXX             4406  //ÁìÍ¶½ğ¶îÏÂÏŞ  DT£ºC  
-#define  FID_LTJESX             4407  //ÁìÍ¶½ğ¶îÉÏÏŞ  DT£ºC  
-#define  FID_GTJEXX             4408  //¸úÍ¶½ğ¶îÏÂÏŞ  DT£ºC  
-#define  FID_GTJESX             4409  //¸úÍ¶½ğ¶îÉÏÏŞ  DT£ºC  
-#define  FID_HBXWDM             5001  //»Ø±¨Ï¯Î»´úÂë  DT£ºC  
-#define  FID_JYSHTH             5002  //½»Ò×ËùÖ´ĞĞ±àºÅ(²»ÊÇ³É½»±àºÅ)  DT£ºC  
-#define  FID_CX_SBWTH           5003  //³·µ¥Éê±¨Î¯ÍĞºÅ  DT£ºC  
-#define  FID_CPQC               6000  //²úÆ·È«³Æ  DT£ºC  
-#define  FID_CPDM_WB            6001  //²úÆ·ÍâÂë  DT£ºC  
-#define  FID_SYLX               6002  //ÊÕÒæÀàĞÍ  DT£ºC  
-#define  FID_CPGM               6003  //²úÆ·¹æÄ£  DT£ºC  
-#define  FID_SFXCP              6004  //ĞÂ²úÆ·  DT£ºC  
-#define  FID_RGJS_JG            6005  //»ú¹¹ÈÏ¹º»ùÊı  DT£ºC  
-#define  FID_SGJS_JG            6006  //»ú¹¹Éê¹º»ùÊı  DT£ºC  
-#define  FID_BFSHYEXX           6007  //²¿·ÖÊê»ØÓà¶îÏÂÏŞ  DT£ºC  
-#define  FID_SFYXDCGM           6008  //ÊÇ·ñÔÊĞí¶à´Î¹ºÂò  DT£ºC  
-#define  FID_SFYXDCYY           6009  //ÊÇ·ñÔÊĞí¶à´ÎÔ¤Ô¼  DT£ºC  
-#define  FID_CDKZ               6010  //³·µ¥¿ØÖÆ  DT£ºC  
-#define  FID_FXBPPXZ            6011  //·çÏÕ²»Æ¥ÅäÏŞÖÆ  DT£ºC  
-#define  FID_CCWWZS             6012  //ÔÊĞí³Ö²ÖÍâÎ§Õ¹Ê¾  DT£ºC  
-#define  FID_SFTH               6013  //ÌØ»İ²úÆ·  DT£ºC  
-#define  FID_FXDJBM_DSF         6014  //µÚÈı·½·çÏÕµÈ¼¶±àÂë  DT£ºC  
-#define  FID_SJBZ               6015  //ÉÏ¼Ü±êÖ¾  DT£ºC  
-#define  FID_RGJKR              6016  //ÈÏ¹º½É¿îÈÕ  DT£ºC  
-#define  FID_SGJKR              6017  //Éê¹º½É¿îÈÕ  DT£ºC  
-#define  FID_DTJKR              6018  //¶¨Í¶½É¿îÈÕ  DT£ºC  
-#define  FID_RGTKSY             6019  //Ä¼¼¯Ê§°ÜÍË¿îË³ÑÓ  DT£ºC  
-#define  FID_ZRJSR              6020  //×ªÈÃ½áËãÈÕ  DT£ºC  
-#define  FID_MJSBTKSY           6021  //Ä¼¼¯Ê§°ÜÍË¿îË³ÑÓ  DT£ºC  
-#define  FID_ZRMS               6022  //×ªÈëÄ£Ê½  DT£ºC  
-#define  FID_ZCMS               6023  //×ª³öÄ£Ê½  DT£ºC  
-#define  FID_MRSBCL             6024  //ÂòÈëÊ§°Ü´¦Àí  DT£ºC  
-#define  FID_MCSBCL             6025  //Âô³öÊ§°Ü´¦Àí  DT£ºC  
-#define  FID_GRRGXE             6026  //¸öÈËÈÏ¹ºÏŞ¶î  DT£ºC  
-#define  FID_JGRGXE             6027  //»ú¹¹ÈÏ¹ºÏŞ¶î  DT£ºC  
-#define  FID_YZHGTZZ            6028  //ÊÇ·ñĞèÒªÑéÖ¤ºÏ¸ñÍ¶×ÊÕß  DT£ºC  
-#define  FID_ID                 9001  //µµ°¸±àºÅ  DT£ºC  
-#define  FID_MODULE             9002  //Ä£¿éÃû  DT£ºC  
-#define  FID_NAME               9003  //Ä£¿éÎÄ¼ş  DT£ºC  
-#define  FID_CLASE              9004  //Ä£¿é·ÖÀà  DT£ºC  
-#define  FID_LEVEL              9006  //ÓÅÏÈ¼¶±ğ  DT£ºC  
-#define  FID_OLDVER             9007  //¾É°æ±¾  DT£ºC  
-#define  FID_LASTVER            9008  //ĞÂ°æ±¾  DT£ºC  
-#define  FID_WHYS               9009  //ĞŞ¸ÄÔ­Òò  DT£ºC  
-#define  FID_FILEPATH           9011  //ÎÄ¼şÂ·¾¶  DT£ºC  
-#define  FID_MENDER             9012  //ĞŞ¸ÄÈË  DT£ºC  
-#define  FID_CONNER             9013  //²âÊÔÈË  DT£ºC  
-#define  FID_MODIRQ             9014  //ĞŞ¸ÄÈÕÆÚ  DT£ºC  
-#define  FID_TESTRQ             9015  //²âÊÔÈÕÆÚ  DT£ºC  
-#define  FID_CONCLUSION         9016  //²âÊÔ½áÂÛ  DT£ºC  
-#define  FID_UPNOTE             9017  //Éı¼¶ÌáÊ¾  DT£ºC  
-#define  FID_STATUS             9018  //¼ÇÂ¼×´Ì¬  DT£ºC  
-#define  FID_RESOLVEN           9019  //¹ØÁªÌáÊ¾  DT£ºC  
-#define  FID_FLAG               9020  //µµ°¸ÀàĞÍ  DT£ºC  
-#define  FID_DIFF               9021  //ÄÑ¶È  DT£ºC  
-#define  FID_YZJB               9022  //ÑÏÖØ¼¶±ğ  DT£ºC  
-#define  FID_RWBH               9023  //ÈÎÎñ±àºÅ  DT£ºC  
-#define  FID_DIR                9024  //ÔËĞĞÄ¿Â¼  DT£ºC  
-#define  FID_CPID               9025  //²úÆ·ID  DT£ºC  
-#define  FID_XQLX               9026  //ĞèÇóÀàĞÍ  DT£ºC  
-#define  FID_XQLY               9027  //ĞèÇóÀ´Ô´  DT£ºC  
-#define  FID_XQMS               9028  //ĞèÇóÃèÊö  DT£ºC  
-#define  FID_XQLXF              9029  //ĞèÇóÁªÏµ·½  DT£ºC  
-#define  FID_XGFA               9030  //ĞŞ¸Ä·½°¸  DT£ºC  
-#define  FID_FASP               9031  //·½°¸ÉóÅúÈË  DT£ºC  
-#define  FID_FASPRQ             9032  //·½°¸ÉóÅúÈÕÆÚ  DT£ºC  
-#define  FID_JRX                9033  //¼æÈİĞÔ  DT£ºC  
-#define  FID_FFJH               9034  //·¢·Å¼Æ»®  DT£ºC  
-#define  FID_XGR                9035  //ĞŞ¸ÄÈË  DT£ºC  
-#define  FID_XGJD               9036  //ĞŞ¸Ä½ø¶È  DT£ºC  
-#define  FID_CSR                9037  //²âÊÔÈË  DT£ºC  
-#define  FID_CSJD               9038  //²âÊÔ½ø¶È  DT£ºC  
-#define  FID_YMTS               9039  //Ô´ÂëÌáÊ¾  DT£ºC  
-#define  FID_XGFK               9040  //ĞŞ¸Ä·´À¡  DT£ºC  
-#define  FID_XGWCRQ             9041  //ĞŞ¸ÄÍê³ÉÈÕÆÚ  DT£ºC  
-#define  FID_CSFK               9042  //²âÊÔ·´À¡  DT£ºC  
-#define  FID_CSWCRQ             9043  //²âÊÔÍê³ÉÈÕÆÚ  DT£ºC  
-#define  FID_HFYJ               9044  //»Ø·ÃÒâ¼û  DT£ºC  
-#define  FID_HFRQ               9045  //»Ø·ÃÈÕÆÚ  DT£ºC  
-#define  FID_HFR                9046  //»Ø·ÃÈË  DT£ºC  
-#define  FID_RWB                9047  //ÈÎÎñ±êÌâ  DT£ºC  
-#define  FID_MTYPE              9048  //ÀàĞÍ  DT£ºC  
-#define  FID_GYXM               9049  //¹ñÔ±ĞÕÃû  DT£ºC  
-#define  FID_JLZ                9050  //¼ÇÂ¼×´Ì¬  DT£ºC  
-#define  FID_GH                 9051  //¹¤ºÅ  DT£ºC  
-#define  FID_KHMC               9052  //¿Í»§Ãû³Æ  DT£ºC  
-#define  FID_WHR                9053  //Î¬»¤ÈË  DT£ºC  
-#define  FID_XZR                9054  //Ğ­ÖúÈË  DT£ºC  
-#define  FID_KHID               9055  //¿Í»§ID  DT£ºC  
-#define  FID_WTMS               9056  //ÎÊÌâÃèÊö  DT£ºC  
-#define  FID_FXDW               9057  //·ÖÎö¶¨Î»  DT£ºC  
-#define  FID_JJFS               9058  //½â¾ö·½Ê½  DT£ºC  
-#define  FID_JJGC               9059  //½â¾ö¹ı³Ì  DT£ºC  
-#define  FID_CLYS               9060  //´¦ÀíÓÃÊ±  DT£ºC  
-#define  FID_FSRQ               9061  //·¢ÉúÈÕÆÚ  DT£ºC  
-#define  FID_WTFL               9062  //  DT£ºC  
-#define  FID_GROUP              9063  //×é  DT£ºC  
-#define  FID_SECURITY           9064  //  DT£ºC  
-#define  FID_GXQ                9065  //  DT£ºC  
-#define  FID_CPXX               9066  //²úÆ·ĞÅÏ¢  DT£ºC  
-#define  FID_KHZB               9067  //¿Í»§×Ü²¿  DT£ºC  
-#define  FID_QYZB               9068  //  DT£ºC  
-#define  FID_ZJL                9070  //×Ü¾­Àí  DT£ºC  
-#define  FID_ZJLDH              9071  //×Ü¾­Àíµç»°  DT£ºC  
-#define  FID_ZJLMAIL            9072  //×Ü¾­ÀíEMAIL  DT£ºC  
-#define  FID_JL                 9073  //¾­Àí  DT£ºC  
-#define  FID_JLDH               9074  //¾­Àíµç»°  DT£ºC  
-#define  FID_JLMAIL             9075  //¾­ÀíEMAIL  DT£ºC  
-#define  FID_LXR                9076  //ÁªÏµÈË  DT£ºC  
-#define  FID_CRDATE             9077  //´´½¨ÈÕÆÚ  DT£ºC  
-#define  FID_ENGINEERS          9078  //¹¤³ÌÊ¦  DT£ºC  
-#define  FID_HFRQ2              9079  //»Ö¸´ÈÕÆÚ2  DT£ºC  
-#define  FID_DJR                9080  //µÇ¼ÇÈË  DT£ºC  
-#define  FID_ZW                 9081  //Ö°Î»  DT£ºC  
-#define  FID_WHBT               9082  //Î¬»¤±êÌâ  DT£ºC  
-#define  FID_FLAG1              9083  //FLAG1  DT£ºC  
-#define  FID_FLAG2              9084  //FLAG2  DT£ºC  
-#define  FID_XQLB               9085  //ĞèÇóÀà±ğ  DT£ºC  
-#define  FID_MSN                9086  //MSN  DT£ºC  
-#define  FID_SPFA               9087  //ÉóÅú·½°¸  DT£ºC  
-#define  FID_SJNR               9088  //Éæ¼°ÄÚÈİ  DT£ºC  
-#define  FID_LCRZ               9089  //Á÷³ÌÈÕÖ¾  DT£ºC  
-#define  FID_SPR                9090  //ÉóÅúÈË  DT£ºC  
-#define  FID_SPRQ               9091  //ÉóÅúÈÕÆÚ  DT£ºC  
-#define  FID_GZR                9092  //¸ú×ÙÈË  DT£ºC  
-#define  FID_XQBT               9093  //ĞèÇó±êÌâ  DT£ºC  
-#define  FID_ZPR                9094  //Ö¸ÅÉÈË  DT£ºC  
-#define  FID_RWMS               9095  //ÈÎÎñÃèÊö  DT£ºC  
-#define  FID_ZPRQ               9096  //Ö¸ÅÉÈÕÆÚ  DT£ºC  
-#define  FID_GMZQ               9097  //¸üÃÜÖÜÆÚ  DT£ºN  
-#define  FID_GYZT               9098  //¹ñÔ±×´Ì¬  DT£ºN  
-#define  FID_KSSJ               9099  //¿ªÊ¼Ê±¼ä  DT£ºC  
-#define  FID_JSSJ               9100  //½áÊøÊ±¼ä  DT£ºC  
-#define  FID_XZQYDM             9101  //ĞĞÕşÇøÓò´úÂë  DT£ºC  
-#define  FID_XZQYMC             9102  //ĞĞÕşÇøÓòÃû³Æ  DT£ºC  
-#define  FID_XZQYLB             9103  //ĞĞÕşÇøÓòÀà±ğ  DT£ºC  
-#define  FID_SJXZQYDM           9104  //ÉÏ¼¶ĞĞÕşÇøÓò´úÂë  DT£ºC  
-#define  FID_DHQH               9105  //µç»°ÇøºÅ  DT£ºN  
-#define  FID_KHBS               9106  //¿Í»§±êÊ¶  DT£ºC  
-#define  FID_KHZT               9107  //¿Í»§×´Ì¬  DT£ºN  
-#define  FID_ZT                 9108  //×´Ì¬  DT£ºN  
-#define  FID_SORTTYPE           9109  //Êı¾İ²éÑ¯µÄÅÅĞò·½Ê½  DT£ºI  
-#define  FID_ROWCOUNT           9110  //ĞĞºÅ  DT£ºN  
-#define  FID_LPDM               9111  //ÀñÆ·´úÂë  DT£ºC  
-#define  FID_YWSHBZ             9112  //ÒµÎñÉóºË±êÖ¾  DT£ºN  
-#define  FID_YWSHQD             9113  //ÊÇ·ñĞèÒµÎñÉóºË  DT£ºN  
-#define  FID_LPZCDS             9114  //ÀñÆ·×ª´æµ×Êı  DT£ºR  
-#define  FID_SRJE               9115  //ÊÕÈë½ğ¶î  DT£ºR  
-#define  FID_FCJE               9116  //¸¶³ö½ğ¶î  DT£ºR  
-#define  FID_CZBZ               9117  //³åÏú±êÖ¾  DT£ºC  
-#define  FID_JSJ                9118  //½áËã¼Û  DT£ºR  
-#define  FID_YSJE_YJ            9119  //Ò»¼¶Ó¦ÊÕ½ğ¶î  DT£ºR  
-#define  FID_JGZLLB             9120  //½»¸î×ÊÁÏÀà±ğ  DT£ºN  
-#define  FID_S11                9121  //Ò»¼¶¾­ÊÖ·Ñ  DT£ºR  
-#define  FID_S12                9122  //Ò»¼¶Ö¤¹Ü·Ñ  DT£ºR  
-#define  FID_S13                9123  //Ò»¼¶¹ı»§·Ñ  DT£ºR  
-#define  FID_S15                9124  //Ò»¼¶½áËã·Ñ  DT£ºR  
-#define  FID_S16                9125  //Ò»¼¶·çÏÕ»ù½ğ  DT£ºR  
-#define  FID_BZQDM              9126  //±ê×¼È¯´úÂë  DT£ºC  
-#define  FID_CWLB               9127  //´íÎóÀà±ğ  DT£ºC  
-#define  FID_YHMM               9128  //ÒøĞĞÃÜÂë  DT£ºC  
-#define  FID_JJDM               9129  //»ù½ğ´úÂë  DT£ºC  
-#define  FID_JJMC               9130  //»ù½ğÃû³Æ  DT£ºC  
-#define  FID_XJTDBL             9131  //ÏÖ½ğÌæ´ú±ÈÀı  DT£ºR  
-#define  FID_WTJE               9132  //Î¯ÍĞ½ğ¶î  DT£ºR  
-#define  FID_SGSHZT             9133  //Éê¹ºÊê»Ø×´Ì¬  DT£ºN  
-#define  FID_TDBZ               9134  //Ìæ´ú±êÖ¾  DT£ºN  
-#define  FID_ZDXW               9135  //Ö¸¶¨Ï¯Î»  DT£ºC  
-#define  FID_XJCE               9136  //ÏÖ½ğ²î¶î  DT£ºR  
-#define  FID_TDJE               9137  //Ìæ´ú½ğ¶î£¨ÏÖ½ğÌæ´ú½ğ¶î£©  DT£ºR  
-#define  FID_DWJZ               9138  //µ¥Î»¾»Öµ  DT£ºR  
-#define  FID_SGSHDWJZ           9139  //Éê¹ºÊê»Øµ¥Î»¾»Öµ  DT£ºR  
-#define  FID_CZGY               9140  //²Ù×÷¹ñÔ±  DT£ºC  
-#define  FID_FYBL               9141  //·ÑÓÃ±ÈÀı  DT£ºR  
-#define  FID_JYL                9142  //½»Ò×Á¿  DT£ºR  
-#define  FID_XGPZ               9143  //Ïà¹ØÆ·ÖÖ  DT£ºC  
-#define  FID_XGZH               9144  //Ïà¹ØÕÊºÅ  DT£ºC  
-#define  FID_JESX               9145  //½ğ¶îÉÏÏŞ  DT£ºR  
-#define  FID_FSSL               9146  //·¢ÉúÊıÁ¿  DT£ºN  
-#define  FID_LXJE               9147  //ÀûÏ¢½ğ¶î  DT£ºR  
-#define  FID_LXJG               9148  //ÀûÏ¢¼Û¸ñ  DT£ºR  
-#define  FID_PLWTPCH            9149  //ÅúÁ¿Î¯ÍĞÅú´ÎºÅ  DT£ºN  
-#define  FID_SEQNO              9150  //ÀúÊ·Êı¾İĞòÁĞºÅ  DT£ºN  
-#define  FID_SBXW               9151  //Éê±¨Ï¯Î»  DT£ºC  
-#define  FID_XWDM               9152  //Ï¯Î»´úÂë  DT£ºC  
-#define  FID_EN_JGZLLB          9153  //½»¸î×ÊÁÏÀà±ğ·¶Î§  DT£ºC  
-#define  FID_WBJGDM             9154  //Íâ²¿»ú¹¹´úÂë  DT£ºC  
-#define  FID_WBFJJYLB           9155  //Íâ²¿¸½¼Ó½»Ò×Àà±ğ£¨ÒµÎñÀà±ğ£©  DT£ºN  
-#define  FID_CZWBSQBH           9156  //³åÕıÍâ²¿ÉêÇë±àºÅ  DT£ºC  
-#define  FID_WBSQBH             9157  //Íâ²¿ÉêÇë±àºÅ  DT£ºC  
-#define  FID_RWSM               9158  //ÈÎÎñËµÃ÷  DT£ºC  
-#define  FID_FHRQ               9159  //¸´ºËÈÕÆÚ  DT£ºI  
-#define  FID_FLLBFW             9160  //·ÑÂÊÀà±ğ·¶Î§  DT£ºC  
-#define  FID_JYSFW              9161  //½»Ò×Ëù·¶Î§  DT£ºC  
-#define  FID_SDSL               9162  //ËùµÃË°ÂÊ  DT£ºR  
-#define  FID_WTFSFW             9163  //Î¯ÍĞ·½Ê½·¶Î§  DT£ºI  
-#define  FID_ZDJSBZ             9164  //×Ô¶¯¼ÆËã±êÖ¾  DT£ºI  
-#define  FID_JYLBFW             9165  //½»Ò×Àà±ğ·¶Î§  DT£ºC  
-#define  FID_TJZQS              9166  //Í³¼ÆÖÜÆÚÊı  DT£ºI  
-#define  FID_JJZHCD             9167  //»ù½ğÕÊºÅ³¤¶È  DT£ºI  
-#define  FID_JYMCD              9168  //½»Ò×Âë³¤¶È  DT£ºI  
-#define  FID_SQBHCD             9169  //ÉêÇë±àºÅ³¤¶È  DT£ºI  
-#define  FID_JJZHSCFS           9170  //»ù½ğÕÊºÅÉú³É·½Ê½  DT£ºI  
-#define  FID_JYZHQZ             9171  //½»Ò×ÕÊºÅÇ°×º  DT£ºC  
-#define  FID_KYJJZH_GR          9172  //¿ÉÓÃ»ù½ğÕÊºÅ_¸öÈË  DT£ºC  
-#define  FID_KYJJZH_JG          9173  //¿ÉÓÃ»ù½ğÕÊºÅ_»ú¹¹  DT£ºC  
-#define  FID_FEDZZT             9174  //·İ¶î¶ÔÕÊ×´Ì¬  DT£ºI  
-#define  FID_HBDZBZ             9175  //ºÏ²¢¶ÔÕÊ±êÖ¾  DT£ºI  
-#define  FID_FEDZXM             9176  //·İ¶î¶ÔÕÊÏîÄ¿  DT£ºI  
-#define  FID_FEDZFS             9177  //·İ¶î¶ÔÕÊ·½Ê½  DT£ºI  
-#define  FID_FJYGHLB            9178  //´úÀí·Ç½»Ò×¹ı»§Àà±ğ  DT£ºI  
-#define  FID_JGSCRGZDZJ         9179  //»ú¹¹Ê×´ÎÈÏ¹º×îµÍ½ğ¶î  DT£ºR  
-#define  FID_GRSCRGZDZJ         9180  //¸öÈËÊ×´ÎÈÏ¹º×îµÍ½ğ¶î  DT£ºR  
-#define  FID_GRZJRGZDZJ         9181  //¸öÈË×·¼ÓÈÏ¹º×îµÍ½ğ¶î  DT£ºR  
-#define  FID_JGZJRGZDZJ         9182  //»ú¹¹×·¼ÓÈÏ¹º×îµÍ½ğ¶î  DT£ºR  
-#define  FID_GRZDRGZJ           9183  //¸öÈË×îµÍÈÏ¹º½ğ¶î  DT£ºR  
-#define  FID_JGZDRGZJ           9184  //»ú¹¹×îµÍÈÏ¹º½ğ¶î  DT£ºR  
-#define  FID_GRSCSGZDZJ         9185  //¸öÈËÊ×´ÎÉê¹º×îµÍ½ğ¶î  DT£ºR  
-#define  FID_JGSCSGZDZJ         9186  //»ú¹¹Ê×´ÎÉê¹º×îµÍ½ğ¶î  DT£ºR  
-#define  FID_GRZJSGZDZJ         9187  //¸öÈË×·¼ÓÉê¹º×îµÍ½ğ¶î  DT£ºR  
-#define  FID_JGZJSGZDZJ         9188  //»ú¹¹×·¼ÓÉê¹º×îµÍ½ğ¶î  DT£ºR  
-#define  FID_GRSHZDFE           9189  //¸öÈËÊê»Ø×îµÍ·İ¶î  DT£ºR  
-#define  FID_JGSHZDFE           9190  //»ú¹¹Êê»Ø×îµÍ·İ¶î  DT£ºR  
-#define  FID_GRCCZDFE           9191  //¸öÈË³Ö²Ö×îµÍÏŞ¶î  DT£ºR  
-#define  FID_JGCCZDFE           9192  //»ú¹¹³Ö²Ö×îµÍÏŞ¶î  DT£ºR  
-#define  FID_SHSYTS             9193  //Êê»ØË³ÑÓÌìÊı  DT£ºI  
-#define  FID_HLHKTS             9194  //ºìÀûµ½¿îÑÓ³ÙÌìÊı  DT£ºI  
-#define  FID_GRZDZHFE           9195  //¸öÈË×îµÍ×ª»»·İ¶î  DT£ºR  
-#define  FID_JGZDZHFE           9196  //»ú¹¹×îµÍ×ª»»·İ¶î  DT£ºR  
-#define  FID_SGJSBZ             9197  //ÊÖ¹¤½áËã±êÖ¾  DT£ºI  
-#define  FID_TADM               9198  //»ù½ğ¹«Ë¾´úÂë  DT£ºC  
-#define  FID_FQRDM              9199  //·¢ÆğÈË´úÂë  DT£ºC  
-#define  FID_FXZFE              9200  //·¢ĞĞ×Ü·İ¶î  DT£ºR  
-#define  FID_GLRDM              9201  //¹ÜÀíÈË´úÂë  DT£ºC  
-#define  FID_JJJC               9202  //»ù½ğ¼ò³Æ  DT£ºC  
-#define  FID_JJQC               9203  //»ù½ğÈ«³Æ  DT£ºC  
-#define  FID_JJJZ               9204  //»ù½ğ¾»Öµ  DT£ºR  
-#define  FID_DFJJDM             9205  //¶Ô·½»ù½ğ´úÂë  DT£ºC  
-#define  FID_RGFS               9206  //ÈÏ¹º·½Ê½  DT£ºI  
-#define  FID_RGJS               9207  //ÈÏ¹º»ùÊı  DT£ºI  
-#define  FID_SGJS               9208  //Éê¹º»ùÊı  DT£ºI  
-#define  FID_TGRDM              9209  //ÍĞ¹ÜÈË´úÂë  DT£ºC  
-#define  FID_TDLX               9210  //Í¨µÀÀàĞÍ  DT£ºI  
-#define  FID_MODULE_ID          9211  //Ä£¿éID  DT£ºI  
-#define  FID_ZKLX               9212  //ÕÛ¿ÛÀàĞÍ  DT£ºI  
-#define  FID_ZKL                9213  //ÕÛ¿ÛÂÊ  DT£ºR  
-#define  FID_DXBS               9214  //¶ÔÏó±êÊ¶  DT£ºC  
-#define  FID_DXLB               9215  //¶ÔÏóÀà±ğ  DT£ºI  
-#define  FID_BDKHBZ             9216  //±¾µØ¿ª»§±êÖ¾  DT£ºI  
-#define  FID_DJYY               9217  //¶³½áÔ­Òò  DT£ºI  
-#define  FID_DZDLB              9219  //¶ÔÕÊµ¥Àà±ğ  DT£ºI  
-#define  FID_YSQBH              9225  //Ô­ÉêÇë±àºÅ  DT£ºC  
-#define  FID_ZJJSLX             9226  //×Ê½ğ½áËãÀàĞÍ  DT£ºI  
-#define  FID_YYRQ               9227  //Ô¤Ô¼ÈÕÆÚ  DT£ºI  
-#define  FID_JJZH               9228  //»ù½ğÕÊºÅ  DT£ºC  
-#define  FID_JJZHXM             9229  //»ù½ğÕÊ»§ĞÕÃû  DT£ºC  
-#define  FID_XSDM               9231  //ÏúÊÛ´úÂë  DT£ºC  
-#define  FID_TJDM               9232  //Í³¼Æ´úÂë  DT£ºC  
-#define  FID_JJFL               9233  //»ù½ğ·ÖÀà  DT£ºI  
-#define  FID_GRZGCYBL           9234  //¸öÈË×î¸ß³ÖÓĞ±ÈÀı  DT£ºR  
-#define  FID_JGZGCYBL           9235  //»ú¹¹×î¸ß³ÖÓĞ±ÈÀı  DT£ºR  
-#define  FID_MRFS               9236  //ÈÏ¹ºÉê¹ºÄ¬ÈÏ·½Ê½  DT£ºI  
-#define  FID_KYSL               9237  //¿ÉÓÃÊıÁ¿  DT£ºI  
-#define  FID_WTFE               9238  //Î¯ÍĞ·İ¶î  DT£ºR  
-#define  FID_YYBZ               9239  //Ô¤Ô¼±êÖ¾  DT£ºI  
-#define  FID_ORDERS             9240  //¶©µ¥Ë³ĞòºÅ  DT£ºI  
-#define  FID_DFJJZH             9241  //¶Ô·½»ù½ğÕÊºÅ  DT£ºC  
-#define  FID_DFJYZH             9242  //¶Ô·½½»Ò×ÕÊºÅ  DT£ºC  
-#define  FID_DFWDH              9243  //¶Ô·½ÍøµãºÅ  DT£ºC  
-#define  FID_DFXSSDM            9244  //¶Ô·½ÏúÊÛÉÌ´úÂë  DT£ºC  
-#define  FID_PZDM               9245  //Æ·ÖÖ´úÂë  DT£ºC  
-#define  FID_DFSFFS             9246  //¶Ô·½ÊÕ·Ñ·½Ê½  DT£ºI  
-#define  FID_GHYY               9247  //¹ı»§Ô­Òò  DT£ºI  
-#define  FID_JJSL               9248  //»ù½ğ·İ¶îÊıÁ¿  DT£ºR  
-#define  FID_LJWYCS             9249  //ÀÛ¼ÆÎ¥Ô¼´ÎÊı  DT£ºI  
-#define  FID_LXWYCS             9250  //Á¬ĞøÎ¥Ô¼´ÎÊı  DT£ºI  
-#define  FID_QQCS               9251  //Ç·È±´ÎÊı  DT£ºI  
-#define  FID_SCKKRQ             9252  //ÉÏ´Î¿Û¿îÈÕÆÚ  DT£ºI  
-#define  FID_MYKKRQ             9253  //Ã¿ÔÂ¿Û¿îÈÕÆÚ  DT£ºI  
-#define  FID_SGJE               9254  //Éê¹º½ğ¶î  DT£ºC  DT£ºDT£º2  
-#define  FID_SCSGZDJE           9255  //Ê×´ÎÉê¹º×îµÍ½ğ¶î  DT£ºR  
-#define  FID_SGZDJE             9256  //Éê¹º×îµÍ½ğ¶î  DT£ºR  
-#define  FID_CONTENT            9257  //ÄÚÈİ  DT£ºC  
-#define  FID_TITLE              9258  //±êÌâ  DT£ºC  
-#define  FID_GGLB               9259  //¹«¸æÀà±ğ  DT£ºI  
-#define  FID_JYZH               9260  //½»Ò×ÕÊºÅ  DT£ºC  
-#define  FID_TALSH              9261  //TAÁ÷Ë®ºÅ  DT£ºC  
-#define  FID_QRRQ               9262  //È·ÈÏÈÕÆÚ  DT£ºI  
-#define  FID_QRFE               9263  //È·ÈÏ·İ¶î  DT£ºR  
-#define  FID_QRJE               9264  //È·ÈÏ½ğ¶î  DT£ºR  
-#define  FID_DLF                9265  //´úÀí·Ç  DT£ºR  
-#define  FID_SHF                9266  //Êê»Ø·Ñ  DT£ºR  
-#define  FID_YHS                9267  //Ó¡»¨Ë°  DT£ºR  
-#define  FID_ZFE                9268  //×Ü·İ¶î  DT£ºR  
-#define  FID_DJFE               9269  //¶³½á·İ¶î  DT£ºR  
-#define  FID_KYFE               9270  //¿ÉÓÃ·İ¶î  DT£ºR  
-#define  FID_DZRQ               9271  //µ½ÕÊÈÕÆÚ  DT£ºI  
-#define  FID_SFHLJE             9272  //Êµ¼ÊºìÀû½ğ¶î  DT£ºR  
-#define  FID_HLZJE              9273  //ºìÀû×Ü½ğ¶î  DT£ºR  
-#define  FID_FHDWFE             9274  //·Öºìµ¥Î»·İ¶î  DT£ºR  
-#define  FID_FHJJFE             9275  //·Öºì»ù½ğ·İ¶î  DT£ºR  
-#define  FID_ZTZFE              9276  //ÔÙÍ¶×Ê·İ¶î  DT£ºR  
-#define  FID_DJZTZFE            9277  //¶³½áÔÙÍ¶×Ê·İ¶î  DT£ºR  
-#define  FID_YJKBFS             9278  //Ó¶½ğÀ¦°ó·½Ê½  DT£ºI  
-#define  FID_ZFHJE              9279  //×Ü·µ»¹½ğ¶î  DT£ºR  
-#define  FID_HGRQFCJE           9280  //»Ø¹ºÈÚÈ¯¸¶³ö½ğ¶î  DT£ºR  
-#define  FID_HGRZSRJE           9281  //»Ø¹ºÈÚ×ÊÊÕÈë½ğ¶î  DT£ºR  
-#define  FID_RQGHSRJE           9282  //ÈÚÈ¯¹º»ØÊÕÈë½ğ¶î  DT£ºR  
-#define  FID_RZGHFCJE           9283  //ÈÚ×Ê¹º»Ø¸¶³ö½ğ¶î  DT£ºR  
-#define  FID_HLPFJE             9284  //ºìÀûÅÉ·¢½ğ¶î  DT£ºR  
-#define  FID_PGJKJE             9285  //Åä¹É½É¿î½ğ¶î  DT£ºR  
-#define  FID_SGZQFC             9286  //Éê¹ºÖĞÇ©¸¶³ö  DT£ºR  
-#define  FID_ZQDFJE             9287  //Õ®È¯¶Ò¸¶½ğ¶î  DT£ºR  
-#define  FID_ZZLGJE             9288  //×ªÕ®Áã¹É×Ê½ğ  DT£ºR  
-#define  FID_BYSJE              9289  //ÂòÓ¦ÊÕ½ğ¶î  DT£ºR  
-#define  FID_SGKFC              9290  //Éê¹º¿î¸¶³ö½ğ¶î  DT£ºR  
-#define  FID_SGKSR              9291  //Éê¹º¿îÊÕÈë½ğ¶î  DT£ºR  
-#define  FID_SYSJE              9292  //ÂôÓ¦ÊÕ½ğ¶î  DT£ºR  
-#define  FID_WGHZJ              9293  //Î´¹º»Ø×Ê½ğ  DT£ºR  
-#define  FID_WHSGK              9294  //Î´»ØÉê¹º¿î  DT£ºR  
-#define  FID_BRKHSL             9295  //±¾ÈÕ¿ª»§ÊıÁ¿  DT£ºI  
-#define  FID_BRXHSL             9296  //±¾ÈÕÏú»§ÊıÁ¿  DT£ºI  
-#define  FID_MCDXSL             9297  //Âô³öµÖÏûÊıÁ¿  DT£ºI  
-#define  FID_MRDXSL             9298  //ÂòÈëµÖÏûÊıÁ¿  DT£ºI  
-#define  FID_SGCJSL             9299  //Éê¹º³É½»ÊıÁ¿  DT£ºI  
-#define  FID_SHCJSL             9300  //Êê»Ø³É½»ÊıÁ¿  DT£ºI  
-#define  FID_FEMXLSH            9301  //·İ¶îÃ÷Ï¸Á÷Ë®ºÅ  DT£ºC  
-#define  FID_FEDZRQ             9302  //·İ¶îµ½ÕÊÈÕÆÚ  DT£ºC  
-#define  FID_ZJDZRQ             9303  //×Ê½ğµ½ÕÊÈÕÆÚ  DT£ºC  
-#define  FID_FHDJFE             9304  //·Öºì¶³½á·İ¶î  DT£ºC  
-#define  FID_FEYE               9305  //·İ¶îÓà¶î  DT£ºC  
-#define  FID_RGJE               9306  //ÈÏ¹º½ğ¶î  DT£ºC  DT£ºDT£ºR22.2  
-#define  FID_SHFE               9307  //Êê»Ø·İ¶î  DT£ºC  
-#define  FID_BRBD               9308  //±¾ÈÕ±ä¶¯½ğ¶î  DT£ºR  
-#define  FID_XYJKFSJE           9309  //ĞÅÓÃ½è¿î·¢Éú½ğ¶î  DT£ºR  
-#define  FID_XYJKYE             9310  //ĞÅÓÃ½è¿îÓà¶î  DT£ºR  
-#define  FID_FILEZAP            9311  //ÎÄ¼şÑ¹Ëõ  DT£ºI  
-#define  FID_MZZL               9312  //ÃæÖµÖÖÀà  DT£ºC  
-#define  FID_QX                 9313  //ÆÚÏŞ  DT£ºI  
-#define  FID_DQBH               9314  //µ±Ç°±àºÅ  DT£ºC  
-#define  FID_DFJG               9315  //Õ®È¯¶Ò¸¶¼Û¸ñ  DT£ºC  
-#define  FID_FXED               9316  //Õ®È¯·¢ĞĞ¶î¶È  DT£ºI  
-#define  FID_FXSL               9317  //Õ®È¯·¢ĞĞÊıÁ¿  DT£ºI  
-#define  FID_TS                 9318  //ÌìÊı  DT£ºI  
-#define  FID_SXFL               9319  //ÊÖĞø·ÑÂÊ  DT£ºI  
-#define  FID_YQLL               9320  //ÓâÆÚÀûÂÊ  DT£ºI  
-#define  FID_TGFL               9321  //ÍĞ¹Ü·ÑÂÊ  DT£ºI  
-#define  FID_LJJZ               9322  //»ù½ğÀÛ¼Æ¾»Öµ  DT£ºD  
-#define  FID_MWFSY              9323  //Ã¿Íò·İÊÕÒæ  DT£ºD  
-#define  FID_NSYL               9324  //»ù½ğÄê»¯ÊÕÒæÂÊ(%)  DT£ºD  
-#define  FID_TGJE               9325  //Õ®È¯¹ºÂò½ğ¶î  DT£ºI  
-#define  FID_DBGBH              9326  //´ú±£¹Ü±àºÅ  DT£ºC  
-#define  FID_DBGRQ              9327  //´ú±£¹ÜÈÕÆÚ  DT£ºI  
-#define  FID_DFJE               9328  //¶Ò¸¶½ğ¶î  DT£ºD  
-#define  FID_DFLX               9329  //¶Ò¸¶ÀûÏ¢  DT£ºD  
-#define  FID_DFGY               9330  //¶Ò¸¶¹ñÔ±  DT£ºC  
-#define  FID_DFYYB              9331  //¶Ò¸¶ÓªÒµ²¿  DT£ºC  
-#define  FID_GSRQ               9332  //¹ÒÊ§ÈÕÆÚ  DT£ºI  
-#define  FID_NBDM               9333  //Õ®È¯´úÂë  DT£ºC  
-#define  FID_DBGGY              9334  //´ú±£¹Ü¹ñÔ±  DT£ºC  
-#define  FID_DBGYYB             9335  //´ú±£¹ÜÓªÒµ²¿  DT£ºC  
-#define  FID_NF                 9336  //Äê·İ  DT£ºI  
-#define  FID_XQJE               9337  //ÏÖÈ¯½ğ¶î  DT£ºD  
-#define  FID_DBBC               9338  //´ú±í±ä²î  DT£ºI  
-#define  FID_XQBC               9339  //ÏÖ²î±ä²î  DT£ºI  
-#define  FID_DBGBD              9340  //´ú±£¹Ü±ä¶¯  DT£ºI  
-#define  FID_XQBD               9341  //ÏÖÈ¯±ä¶¯  DT£ºI  
-#define  FID_DBGSJ              9342  //´ú±£¹ÜÊ±¼ä  DT£ºC  
-#define  FID_GSSJ               9343  //¹ÒÊ§Ê±¼ä  DT£ºC  
-#define  FID_DFSJ               9344  //¶Ò¸¶Ê±¼ä  DT£ºC  
-#define  FID_PLRQ               9345  //ÅÉÀûÈÕÆÚ  DT£ºI  
-#define  FID_PLSJ               9346  //ÅÉÀûÊ±¼ä  DT£ºC  
-#define  FID_DBGJE              9347  //´ú±£¹Ü½ğ¶î  DT£ºC  
-#define  FID_TGBD               9348  //ÍĞ¹Ü±ä¶¯  DT£ºC  
-#define  FID_SCDBG              9349  //ÉÏ´Î´ú±£¹Ü  DT£ºC  
-#define  FID_SCXQ               9350  //ÉÏ´ÎÏÖÈ¯  DT£ºC  
-#define  FID_SCTG               9351  //ÉÏ´ÎÍĞ¹Ü  DT£ºC  
-#define  FID_PZSM               9352  //Æ·ÖÖËµÃ÷  DT£ºC  
-#define  FID_QYBZ               9353  //Ç©Ô¼±êÖ¾  DT£ºI  
-#define  FID_QYJJDM             9354  //Ç©Ô¼»ù½ğ´úÂë  DT£ºC  
-#define  FID_DXDM               9355  //¶ÌĞÅ´úÂë  DT£ºC  
-#define  FID_DXMC               9356  //¶ÌĞÅÃû³Æ  DT£ºC  
-#define  FID_JJFXDJ             9357  //»ù½ğ·çÏÕµÈ¼¶  DT£ºI  
-#define  FID_KHQR               9358  //¿Í»§È·ÈÏ±êÖ¾  DT£ºI  
-#define  FID_GRRGSGDBZGJE       9359  //¸öÈËÈÏ¹ºÉê¹ºµ¥±Ê×î¸ß½ğ¶î  DT£ºR  
-#define  FID_GRRGSGDTZGJE       9360  //¸öÈËÈÏ¹ºÉê¹ºµ±Ìì×î¸ß½ğ¶î  DT£ºR  
-#define  FID_MCDJSL             9361  //Âô³ö¶³½áÊıÁ¿  DT£ºC  
-#define  FID_JGRGSGDBZGJE       9362  //»ú¹¹ÈÏ¹ºÉê¹ºµ¥±Ê×î¸ß½ğ¶î  DT£ºR  
-#define  FID_JGRGSGDTZGJE       9363  //»ú¹¹ÈÏ¹ºÉê¹ºµ±Ìì×î¸ß½ğ¶î  DT£ºR  
-#define  FID_LCCPBZ             9364  //»ù½ğÀí²Æ²úÆ·±êÖ¾  DT£ºI  
-#define  FID_CDYY               9365  //³·µ¥Ô­Òò  DT£ºC  DT£ºDT£º¸øVIP³É½»´¥·¢Ê¹ÓÃ  
-#define  FID_MRBDRQ             9366  //ÂòÈë±ä¶¯ÈÕÆÚ  DT£ºI  
-#define  FID_MCBDRQ             9367  //Âô³ö±ä¶¯ÈÕÆÚ  DT£ºI  
-#define  FID_GRSHDBSX           9368  //¸öÈËÊê»Øµ¥±ÊÉÏÏŞ  DT£ºR  
-#define  FID_GRSHDRSX           9369  //¸öÈËÊê»Øµ±ÈÕÉÏÏŞ  DT£ºR  
-#define  FID_JGSHDBSX           9370  //»ú¹¹Êê»Øµ¥±ÊÉÏÏŞ  DT£ºR  
-#define  FID_JGSHDRSX           9371  //»ú¹¹Êê»Øµ±ÈÕÉÏÏŞ  DT£ºR  
-#define  FID_ZZHBM              9372  //×ÓÕË»§±àÂë  DT£ºC  
-#define  FID_QQLX               9373  //ÆÚÈ¨ÀàĞÍ  DT£ºC  
-#define  FID_BDZQLX             9374  //ÆÚÈ¨±êµÄÖ¤È¯ÀàĞÍ  DT£ºC  
-#define  FID_MMFX               9375  //ÆÚÈ¨ÂòÂô·½Ïò  DT£ºC  
-#define  FID_QQBDBQ             9377  //ÆÚÈ¨±¸¶Ò±êÇ©  DT£ºC  
-#define  FID_QQHYDM             9378  //ÆÚÈ¨ºÏÔ¼´úÂë  DT£ºC  
-#define  FID_QQHYMC             9379  //ÆÚÈ¨ºÏÔ¼Ãû³Æ  DT£ºC  
-#define  FID_STEPEX             9380  //STEP×Ö¶ÎÓò  DT£ºC  
-#define  FID_ZJSJ               9381  //×ò½áËã¼Û(ÆÚÈ¨)  DT£ºR  
-#define  FID_BDZSP              9382  //ÆÚÈ¨±êµÄ×òÊÕÅÌ  DT£ºR  
-#define  FID_BDZXJ              9383  //ÆÚÈ¨±êµÄ×îĞÂ¼Û  DT£ºR  
-#define  FID_QQLA               9384  //¿´ÕÇ·½Ïò¿É¿ª²ÖÁ¿  DT£ºR  
-#define  FID_QQLS               9385  //¿´ÕÇ·½ÏòÌ×±£¿É¿ª²ÖÁ¿  DT£ºR  
-#define  FID_QQSA               9386  //¿´µø·½Ïò¿É¿ª²ÖÁ¿  DT£ºR  
-#define  FID_QQSS               9387  //¿´µø·½ÏòÌ×±£¿É¿ª²ÖÁ¿  DT£ºR  
-#define  FID_DTJG               9388  //ÆÚÈ¨¶¯Ì¬²Î¿¼¼Û¸ñ  DT£ºR  
-#define  FID_MMFX2              9389  //ÆÚÈ¨ÂòÂô·½Ïò2  DT£ºC  
-#define  FID_QQBDBQ2            9390  //ÆÚÈ¨±¸¶Ò±êÇ©2  DT£ºC  
-#define  FID_QQHYDM2            9391  //ÆÚÈ¨ºÏÔ¼´úÂë2  DT£ºC  
-#define  FID_MMFX3              9392  //ÆÚÈ¨ÂòÂô·½Ïò3  DT£ºC  
-#define  FID_QQBDBQ3            9393  //ÆÚÈ¨±¸¶Ò±êÇ©3  DT£ºC  
-#define  FID_QQHYDM3            9394  //ÆÚÈ¨ºÏÔ¼´úÂë3  DT£ºC  
-#define  FID_MMFX4              9395  //ÆÚÈ¨ÂòÂô·½Ïò4  DT£ºC  
-#define  FID_QQBDBQ4            9396  //ÆÚÈ¨±¸¶Ò±êÇ©4  DT£ºC  
-#define  FID_QQHYDM4            9397  //ÆÚÈ¨ºÏÔ¼´úÂë4  DT£ºC  
-#define  FID_MMFX1              9398  //ÆÚÈ¨ÂòÂô·½Ïò1  DT£ºC  
-#define  FID_QQHYDM1            9399  //ÆÚÈ¨ºÏÔ¼´úÂë1  DT£ºC  
-#define  FID_GDZH               9402  //¹É¶«ÕËºÅ  DT£ºC  
-#define  FID_WLFWBZ             9404  //ÍøÂç·şÎñ±êÖ¾  DT£ºC  
-#define  FID_WLFWMM             9405  //ÍøÂç·şÎñÃÜÂë  DT£ºC  
-#define  FID_GPNF               9406  //¹ÒÅÆÄê·İ  DT£ºC  
-#define  FID_SGBZ               9407  //ËÍ¹É±êÖ¾  DT£ºC  
-#define  FID_DXBZ               9408  //¶ÒÏ¢±êÖ¾  DT£ºC  
-#define  FID_SLBH               9409  //ÊÜÀí±àºÅ  DT£ºC  
-#define  FID_HYDM2              9410  //»áÔ±´úÂë2  DT£ºC  
-#define  FID_XWH2               9411  //Ï¯Î»ºÅ2  DT£ºC  
-#define  FID_HYLX               9412  //ĞĞÒµÀàĞÍ  DT£ºC  
-#define  FID_LXDH               9413  //ÁªÏµµç»°  DT£ºC  
-#define  FID_CZH                9414  //´«ÕæºÅ  DT£ºC  
-#define  FID_ZQDM2              9415  //Ö¤È¯´úÂë2  DT£ºC  
-#define  FID_ZDSH               9416  //ÖĞµÇÉÏº£  DT£ºC  
-#define  FID_ZDSZ               9417  //ÖĞµÇÉîÛÚ  DT£ºC  
-#define  FID_CBM                9418  //×Ö·û±àÂë  DT£ºC  
-#define  FID_QRSL2              9420  //È·ÈÏÊıÁ¿2  DT£ºC  
-#define  FID_QRJG               9421  //È·ÈÏ¼Û¸ñ  DT£ºC  
-#define  FID_SLRQ               9422  //ÊÜÀíÈÕÆÚ  DT£ºC  
-#define  FID_SLSJ               9423  //ÊÜÀíÊ±¼ä  DT£ºC  
-#define  FID_GDZH2              9424  //¹É¶«ÕËºÅ2  DT£ºC  
-#define  FID_YTZRMC             9425  //Ô­Í¶×ÊÈËÃû³Æ  DT£ºC  
-#define  FID_YZJBH              9426  //Ô­Ö¤¼ş±àºÅ  DT£ºC  
-#define  FID_SQDW               9427  //ÉêÇëµ¥Î»  DT£ºC  
-#define  FID_ZHGFLB             9428  //ÕË»§¹æ·¶Àà±ğ  DT£ºC  
-#define  FID_CDBZ               9429  //³·µ¥±êÖ¾  DT£ºC  
-#define  FID_LDSD               9430  //Â©µ¥É¨Ãè  DT£ºC  
-#define  FID_ZXJGLX             9431  //Ö´ĞĞ»ú¹ØÀàĞÍ  DT£ºC  
-#define  FID_CLBZ_CONDITION     9432  //´¦Àí±êÖ¾  DT£ºC  
-#define  FID_LXYZBM             9434  //ÁªÏµÓÊÕş±àÂë  DT£ºC  
-#define  FID_ZZJG               9436  //×éÖ¯»ú¹¹  DT£ºC  
-#define  FID_JGZJYXQ            9437  //»ú¹¹Ö¤¼şÓĞĞ§ÆÚ  DT£ºC  
-#define  FID_YHJSZH             9438  //ÒøĞĞ½áËãÕË»§  DT£ºC  
-#define  FID_QSZY               9439  //È¯ÉÌ×ÔÓÃ  DT£ºC  
-#define  FID_PSWD1              9440  //·şÎñÃÜÂë1  DT£ºC  
-#define  FID_PSWD2              9441  //·şÎñÃÜÂë2  DT£ºC  
-#define  FID_BYNR               9442  //±¸ÓÃ  DT£ºC  
-#define  FID_CGYH               9443  //´æ¹ÜÒøĞĞ  DT£ºC  
-#define  FID_BYBZ               9444  //±¸ÓÃ±êÖ¾  DT£ºC  
-#define  FID_ZXSWHHR            9446  //Ö´ĞĞÊÂÎñºÏ»ïÈË  DT£ºC  
-#define  FID_FRDBSFZH           9447  //·¨ÈË´ú±íÉí·İÖ¤ºÅ  DT£ºC  
-#define  FID_SDXLB              9451  //ÊÊµ±ĞÔÀà±ğ  DT£ºC  
-#define  FID_BJDZT              9500  //±¨¼Ûµ¥×´Ì¬  DT£ºC  
-#define  FID_WJLZ               9501  //ÎÊ¾íÀ¸×é  DT£ºC  
-#define  FID_WJLM               9502  //ÎÊ¾íÀ¸Ä¿  DT£ºC  
-#define  FID_DAFZ               9503  //´ğ°¸·ÖÖµ  DT£ºC  
-#define  FID_ZJYT               9504  //×Ê½ğÓÃÍ¾  DT£ºC  
-#define  FID_LJSY               9505  //ÀÛ¼ÆÊÕÒæ  DT£ºC  
-#define  FID_YJSY               9506  //Ô¤¼ÆÊÕÒæ  DT£ºC  
-#define  FID_BP_WTLY            9507  //±¨ÅÌÎ¯ÍĞÀ´Ô´£¨Çë²»ÒªÊ¹ÓÃÕâ¸ö¶Ï£¬ÌØÊâ  £©  DT£ºC  
-#define  FID_RGSX_GR            9508  //ÈÏ¹ºÉÏÏŞ(¸öÈË)  DT£ºC  
-#define  FID_RGSX_JG            9509  //ÈÏ¹ºÉÏÏŞ(»ú¹¹)  DT£ºC  
-#define  FID_JHBZ               9510  //¼¤»î±êÖ¾  DT£ºC  
-#define  FID_ZXTBZ              9998  //Ö÷ÏµÍ³±êÖ¾  DT£ºC  DT£ºDT£ºÇë²»ÒªÊ¹ÓÃÕâ¸ö¶Ï£¬ÌØÊâ  
-#define  FID_XSSDM              30510  //ÏúÊÛÉÌ´úÂë  DT£ºC  
-#define  FID_GJZH               30511  //¹é¼¯ÕË»§  DT£ºC  
-#define  FID_KSSQH              30512  //¿ªÊ¼ÉêÇëºÅ  DT£ºC  
-#define  FID_JSSQH              30513  //½áÊøÉêÇëºÅ  DT£ºC  
-#define  FID_YLSH               30517  //Ô­Á÷Ë®ºÅ  DT£ºC  
-#define  FID_QDDM               30519  //ÇşµÀ´úÂë  DT£ºC  
-#define  FID_SHH                30533  //ÉÌ»§ºÅ  DT£ºC  
-#define  FID_DEHH               30540  //´ó¶îĞĞºÅ  DT£ºC  
-#define  FID_KHYHMC             60261  //¿ª»§ÒøĞĞÃû³Æ  DT£ºC  
-#define	 FID_JZRQ               10062 //¾»ÖµÈÕÆÚ
-#define	 FID_JZRQPY             20000 //¾»ÖµÈÕÆ«ÒÆ
-#define	 FID_SSZT				20001 //ÊµÊ±×´Ì¬ 
-#define  FID_JSP				20002 //½ñÈÕÊÕÅÌ¼Û
-#define  FID_LGDDZT				20003 //Áã¹É¶©µ¥×´Ì¬
-#define  FID_ZSDDZT				20004 //ÕûÊÖ¶©µ¥×´Ì¬
-#define  FID_HQCJZH				20005 //ĞĞÇé²É¼¯Ö¡ºÅ
-#define  FID_HQTSZH             20006 //ĞĞÍÆËÍÖ¡ºÅ
-#define  FID_GGTBD              20010 //¸Û¹ÉÍ¨±êµÄ
+#define  FID_BCZJYE             501  //æœ¬æ¬¡èµ„é‡‘ä½™é¢  DTï¼šC  
+#define  FID_BFXJJ              502  //ä¹°é£é™©é‡‘  DTï¼šC  
+#define  FID_BGHF               503  //ä¹°è¿‡æˆ·è´¹  DTï¼šC  
+#define  FID_BJE                504  //ä¹°å…¥é‡‘é¢  DTï¼šC  
+#define  FID_BJSF               505  //ä¹°ç»æ‰‹è´¹  DTï¼šC  
+#define  FID_BPGDH              506  //æŠ¥ç›˜è‚¡ä¸œå·  DTï¼šC  
+#define  FID_CODE               507  //è¿”å›ç   DTï¼šC  
+#define  FID_MESSAGE            508  //è¿”å›è¯´æ˜  DTï¼šC  
+#define  FID_BSL                509  //ä¹°å…¥æ•°é‡  DTï¼šC  
+#define  FID_BYHS               510  //ä¹°å°èŠ±ç¨  DTï¼šC  
+#define  FID_BZ                 511  //å¸ç§  DTï¼šC  
+#define  FID_BZBM               512  //å¸ç§ç¼–ç   DTï¼šC  
+#define  FID_BZGF               513  //ä¹°è¯ç®¡è´¹  DTï¼šC  
+#define  FID_BZMC               514  //å¸ç§åç§°  DTï¼šC  
+#define  FID_CBBD               515  //æˆæœ¬å˜åŠ¨  DTï¼šR  
+#define  FID_MENUID_HC          516  //äº’æ–¥çš„èœå•ç³»ç»Ÿä»£ç   DTï¼šI  
+#define  FID_HLJE               517  //çº¢åˆ©é‡‘é¢  DTï¼šR  
+#define  FID_CDMC               518  //èœå•åç§°  DTï¼šC  
+#define  FID_CDTIME             519  //èœå•å¯ç”¨æ—¶é—´  DTï¼šC  
+#define  FID_CDTS               520  //èœå•æç¤º  DTï¼šC  
+#define  FID_CDWZID             521  //èœå•ä½ç½®ID  DTï¼šC  
+#define  FID_CJBH               522  //æˆäº¤ç¼–å·  DTï¼šC  
+#define  FID_CJGY               523  //åˆ›å»ºæŸœå‘˜  DTï¼šC  
+#define  FID_CJJE               524  //æˆäº¤é‡‘é¢  DTï¼šC  
+#define  FID_CJJG               525  //æˆäº¤ä»·æ ¼  DTï¼šC  
+#define  FID_CJRQ               526  //æˆäº¤æ—¥æœŸ  DTï¼šC  
+#define  FID_CJSJ               527  //æˆäº¤æ—¶é—´  DTï¼šC  
+#define  FID_CJSL               528  //æˆäº¤æ•°é‡  DTï¼šC  
+#define  FID_CKLL               529  //å­˜æ¬¾åˆ©ç‡  DTï¼šC  
+#define  FID_YKBD               530  //ç›ˆäºå˜åŠ¨  DTï¼šR  
+#define  FID_CSZ                531  //å‚æ•°å€¼  DTï¼šC  
+#define  FID_DH                 532  //ç”µè¯  DTï¼šC  
+#define  FID_DJLB               533  //å†»ç»“ç±»åˆ«  DTï¼šC  
+#define  FID_DH_SQCZR           534  //æˆæƒæ“ä½œäººç”µè¯  DTï¼šC  
+#define  FID_DZ_SQCZR           535  //æˆæƒæ“ä½œäººåœ°å€  DTï¼šC  
+#define  FID_MM_SQCZR           536  //æˆæƒæ“ä½œäººå¯†ç   DTï¼šC  
+#define  FID_QX_SQCZR           537  //æˆæƒæ“ä½œäººæƒé™  DTï¼šC  
+#define  FID_XWID               538  //å¸­ä½ç¼–å·  DTï¼šI  
+#define  FID_XM_SQCZR           539  //æˆæƒæ“ä½œäººå§“å  DTï¼šC  
+#define  FID_DRMCCJJE           540  //å½“æ—¥å–å‡ºæˆäº¤é‡‘é¢  DTï¼šC  
+#define  FID_DRMCCJSL           541  //å½“æ—¥å–å‡ºæˆäº¤æ•°é‡  DTï¼šC  
+#define  FID_DRMCJDZJ           542  //å½“æ—¥å–å‡ºè§£å†»èµ„é‡‘  DTï¼šC  
+#define  FID_DRMCWTSL           543  //å½“æ—¥å–å‡ºå§”æ‰˜æ•°é‡  DTï¼šC  
+#define  FID_DRMRCJJE           544  //å½“æ—¥ä¹°å…¥æˆäº¤é‡‘é¢  DTï¼šC  
+#define  FID_DRMRCJSL           545  //å½“æ—¥ä¹°å…¥æˆäº¤æ•°é‡  DTï¼šC  
+#define  FID_DRMRDJZJ           546  //å½“æ—¥ä¹°å…¥å†»ç»“èµ„é‡‘  DTï¼šC  
+#define  FID_DRMRWTSL           547  //å½“æ—¥ä¹°å…¥å§”æ‰˜æ•°é‡  DTï¼šC  
+#define  FID_DRQS               548  //å½“æ—¥å·²æˆäº¤çš„æ¸…ç®—èµ„é‡‘  DTï¼šC  
+#define  FID_DTB                549  //è·Œåœæ¿  DTï¼šC  
+#define  FID_DZ                 550  //åœ°å€  DTï¼šC  
+#define  FID_DZLX               551  //å¾…è½¬åˆ©æ¯  DTï¼šC  
+#define  FID_EMAIL              552  //ç”µå­é‚®ä»¶  DTï¼šC  
+#define  FID_EN_BZ              553  //å¯æ“ä½œçš„å¸ç§  DTï¼šC  
+#define  FID_EN_JYS             554  //å¯æ“ä½œçš„äº¤æ˜“æ‰€  DTï¼šC  
+#define  FID_EN_KHH             555  //å¯æ“ä½œçš„å®¢æˆ·å·  DTï¼šC  
+#define  FID_EN_KHQZ            556  //å…è®¸æ“ä½œçš„å®¢æˆ·ç¾¤ç»„  DTï¼šC  
+#define  FID_EN_YYB             557  //å…è®¸æ“ä½œçš„è¥ä¸šéƒ¨  DTï¼šC  
+#define  FID_EN_ZQLB            558  //å¯æ“ä½œçš„è¯åˆ¸ç±»åˆ«  DTï¼šC  
+#define  FID_EX_KHH             559  //ä¸å¯æ“ä½œçš„å®¢æˆ·å·  DTï¼šC  
+#define  FID_EX_KHQZ            560  //ç¦æ­¢æ“ä½œçš„å®¢æˆ·ç¾¤ç»„  DTï¼šC  
+#define  FID_EX_YYB             561  //ç¦æ­¢æ“ä½œçš„è¥ä¸šéƒ¨  DTï¼šC  
+#define  FID_EX_ZQLB            562  //ç¦æ­¢è¯åˆ¸ç±»åˆ«èŒƒå›´  DTï¼šC  
+#define  FID_FATHERID           563  //çˆ¶èœå•  DTï¼šC  
+#define  FID_AUTOSAVE           564  //è‡ªåŠ¨ä¿å­˜  DTï¼šI  
+#define  FID_FKEY               565  //åŠ é€Ÿé”®  DTï¼šC  
+#define  FID_FLDM               566  //æ•°æ®å­—å…¸åˆ†ç±»ä»£ç   DTï¼šC  
+#define  FID_FLMC               567  //æ•°æ®å­—å…¸åˆ†ç±»åç§°  DTï¼šC  
+#define  FID_FLTSL              568  //éæµé€šæ•°é‡  DTï¼šC  
+#define  FID_FSYYB              569  //å‘ç”Ÿè¥ä¸šéƒ¨  DTï¼šC  
+#define  FID_FWXM               570  //æœåŠ¡é¡¹ç›®  DTï¼šC  
+#define  FID_GDH                571  //è‚¡ä¸œå·  DTï¼šC  
+#define  FID_GDLB               572  //è‚¡ä¸œç±»åˆ«  DTï¼šC  
+#define  FID_ZJBH_GDH           573  //è‚¡ä¸œè¯ä»¶ç¼–å·  DTï¼šC  
+#define  FID_GDZDSX             574  //è‚¡ä¸œæŒ‡å®šå±æ€§  DTï¼šI  
+#define  FID_GDXM               575  //è‚¡ä¸œå§“å  DTï¼šC  
+#define  FID_GJDM               576  //å›½ç±ä»£ç   DTï¼šC  
+#define  FID_GMRQ               577  //æŸœå‘˜æ›´å¯†æ—¥æœŸ  DTï¼šC  
+#define  FID_DATE               578  //å½“å‰æ—¥æœŸ  DTï¼šC  DTï¼šDTï¼šYYYY.MM.DD  
+#define  FID_HKEY               579  //çƒ­é”®  DTï¼šC  
+#define  FID_HKEYMASK           580  //ç»„åˆé”®  DTï¼šC  
+#define  FID_SHZD               581  //è‡ªåŠ¨å‘é€ä¸Šæµ·æŒ‡å®š  DTï¼šC  DTï¼šDTï¼š0 ä¸å‘é€  
+#define  FID_IBM                582  //æ•°å­—ç¼–ç   DTï¼šC  
+#define  FID_JJR                583  //ç»çºªäººä»£ç   DTï¼šC  
+#define  FID_JJRLB              584  //ç»çºªäººç±»åˆ«  DTï¼šC  
+#define  FID_JJRMM              585  //ç»çºªäººå¯†ç   DTï¼šC  
+#define  FID_JJRQX              586  //ç»çºªäººæƒé™  DTï¼šC  
+#define  FID_JKP                587  //ä»Šå¼€ç›˜  DTï¼šC  
+#define  FID_JSDM               588  //è§’è‰²ä»£ç   DTï¼šC  
+#define  FID_JSMC               589  //è§’è‰²åç§°  DTï¼šC  
+#define  FID_JSRQ               590  //ç»“æŸæ—¥æœŸ  DTï¼šC  
+#define  FID_JYDW               591  //äº¤æ˜“å•ä½  DTï¼šC  
+#define  FID_JYFL               592  //äº¤æ˜“åˆ†ç±»  DTï¼šC  
+#define  FID_JYFW               593  //äº¤æ˜“èŒƒå›´  DTï¼šC  
+#define  FID_JYJW               594  //äº¤æ˜“ä»·ä½  DTï¼šC  
+#define  FID_JYLB               595  //äº¤æ˜“ç±»åˆ«ç¼–ç   DTï¼šC  
+#define  FID_JYLBMC             596  //äº¤æ˜“ç±»åˆ«åç§°  DTï¼šC  
+#define  FID_JYLBXZ             597  //äº¤æ˜“ç±»åˆ«é™åˆ¶  DTï¼šC  
+#define  FID_JYMM               598  //äº¤æ˜“å¯†ç   DTï¼šC  
+#define  FID_JYS                599  //äº¤æ˜“æ‰€ç¼–ç   DTï¼šC  
+#define  FID_JYSXH              600  //äº¤æ˜“æ‰€åºå·  DTï¼šI  
+#define  FID_JYSJC              601  //äº¤æ˜“æ‰€åç§°  DTï¼šC  
+#define  FID_JYSQC              602  //äº¤æ˜“æ‰€å…¨ç§°  DTï¼šC  
+#define  FID_KCRQ               603  //å¼€ä»“æ—¥æœŸ  DTï¼šC  
+#define  FID_KEYMASK            604  //èœå•ç»„åˆé”®  DTï¼šC  
+#define  FID_KHH                605  //å®¢æˆ·å·  DTï¼šC  
+#define  FID_KHJB               606  //å®¢æˆ·çº§åˆ«  DTï¼šC  
+#define  FID_KHJL               607  //å®¢æˆ·ç»ç†  DTï¼šC  
+#define  FID_KHLB               608  //å®¢æˆ·ç±»åˆ«  DTï¼šC  
+#define  FID_KHQC               609  //å®¢æˆ·å…¨ç§°  DTï¼šC  
+#define  FID_KHQZ               610  //å®¢æˆ·ç¾¤ç»„  DTï¼šC  
+#define  FID_KHRQ               611  //å¼€æˆ·æ—¥æœŸ  DTï¼šC  
+#define  FID_KHSX               612  //å®¢æˆ·å±æ€§  DTï¼šC  
+#define  FID_KHXM               613  //å®¢æˆ·å§“å  DTï¼šC  
+#define  FID_LSH_ZR             614  //è½¬å…¥ä¸šåŠ¡æ“ä½œæµæ°´å·  DTï¼šI  
+#define  FID_KMCSL              615  //å¯å–å‡ºæ•°é‡  DTï¼šC  
+#define  FID_KMRSL              616  //å¯ä¹°å…¥æ•°é‡  DTï¼šC  
+#define  FID_KQZJ               617  //å¯å–èµ„é‡‘  DTï¼šC  
+#define  FID_KSRQ               618  //å¼€å§‹æ—¥æœŸ  DTï¼šC  
+#define  FID_KYZJ               619  //å¯ç”¨èµ„é‡‘  DTï¼šC  
+#define  FID_LL                 620  //åˆ©ç‡  DTï¼šC  
+#define  FID_YJLX               621  //é¢„è®¡åˆ©æ¯  DTï¼šR  
+#define  FID_LXJS               622  //åˆ©æ¯ç§¯æ•°  DTï¼šR  
+#define  FID_LXS                623  //é¢„è®¡åˆ©æ¯ç¨  DTï¼šR  
+#define  FID_LXSL               624  //åˆ©æ¯ç¨ç‡  DTï¼šR  
+#define  FID_MCJE               625  //å–å‡ºé‡‘é¢  DTï¼šC  
+#define  FID_MCJJ               626  //å–å‡ºå‡ä»·  DTï¼šC  
+#define  FID_MCJS               627  //å–å‡ºåŸºæ•°  DTï¼šC  
+#define  FID_MCSL               628  //å–å‡ºæ•°é‡  DTï¼šC  
+#define  FID_MENUID             629  //èœå•çš„ç³»ç»Ÿä»£ç   DTï¼šC  
+#define  FID_MKBH               630  //æ¨¡å—ç¼–å·  DTï¼šC  
+#define  FID_MM                 631  //å¯†ç   DTï¼šC  
+#define  FID_MMXZ               632  //ä¹°å–é™åˆ¶  DTï¼šC  
+#define  FID_YKTZMS             633  //ç›ˆäºè°ƒæ•´æ¨¡å¼  DTï¼šC  DTï¼šDTï¼š0 æ ¹æ®è¾“å…¥è°ƒæ•´ï¼Œ1 è‡ªåŠ¨è°ƒæ•´  
+#define  FID_MRJE               634  //ä¹°å…¥é‡‘é¢  DTï¼šC  
+#define  FID_JYMQZ              635  //äº¤æ˜“ç å‰ç¼€  DTï¼šC  
+#define  FID_MRJJ               636  //ä¹°å…¥å‡ä»·  DTï¼šC  
+#define  FID_MRJS               637  //ä¹°å…¥åŸºæ•°  DTï¼šC  
+#define  FID_MRSL               638  //ä¹°å…¥æ•°é‡  DTï¼šC  
+#define  FID_NBMC               639  //æ‘˜è¦å†…éƒ¨åç§°  DTï¼šC  
+#define  FID_NEWMM              640  //æ–°å¯†ç   DTï¼šC  
+#define  FID_NODE               641  //æ“ä½œç«™ç‚¹  DTï¼šC  
+#define  FID_NOTE               642  //è¯´æ˜  DTï¼šC  
+#define  FID_PYDM               643  //æ‹¼éŸ³ä»£ç   DTï¼šC  
+#define  FID_PZBZ               644  //æ˜¯å¦æ‰“å°å‡­è¯  DTï¼šC  
+#define  FID_ZJZH_ZR            645  //è½¬å…¥èµ„é‡‘å¸å·  DTï¼šC  
+#define  FID_QSJE               646  //æ¸…ç®—é‡‘é¢  DTï¼šC  
+#define  FID_QSZJ               647  //æ¸…ç®—èµ„é‡‘  DTï¼šC  
+#define  FID_QYBM               648  //åŒºåŸŸç¼–ç   DTï¼šC  
+#define  FID_QZFW               649  //å–å€¼èŒƒå›´  DTï¼šC  
+#define  FID_QZMC               650  //ç¾¤ç»„åç§°  DTï¼šC  
+#define  FID_RQ                 651  //æ—¥æœŸ  DTï¼šC  
+#define  FID_RZJE               652  //èèµ„é‡‘é¢  DTï¼šC  
+#define  FID_RZLL               653  //èèµ„åˆ©ç‡  DTï¼šC  
+#define  FID_SFXJJ              654  //å–é£é™©åŸºé‡‘  DTï¼šC  
+#define  FID_SGHF               655  //å–è¿‡æˆ·è´¹  DTï¼šC  
+#define  FID_SJCD               656  //æ•°æ®é•¿åº¦  DTï¼šC  
+#define  FID_SJE                657  //å–å‡ºé‡‘é¢  DTï¼šC  
+#define  FID_SJJJR              658  //ä¸Šçº§ç»çºªäºº  DTï¼šC  
+#define  FID_SJSF               659  //å–ç»æ‰‹è´¹  DTï¼šC  
+#define  FID_SJYYB              660  //ä¸Šçº§è¥ä¸šéƒ¨  DTï¼šC  
+#define  FID_SLXZ               661  //æ•°é‡é™åˆ¶  DTï¼šC  
+#define  FID_CZCS               662  //å†²å¸æ¬¡æ•°  DTï¼šI  
+#define  FID_SRZJYE             663  //ä¸Šæ—¥èµ„é‡‘ä½™é¢  DTï¼šC  
+#define  FID_SSL                664  //å–å‡ºæ•°é‡  DTï¼šC  
+#define  FID_SXLB               665  //å±æ€§ç±»åˆ«  DTï¼šC  
+#define  FID_SYHS               666  //å–å°èŠ±ç¨  DTï¼šC  
+#define  FID_SZGF               667  //å–è¯ç®¡è´¹  DTï¼šC  
+#define  FID_T0JS               668  //å½“æ—¥åº”äº¤æ”¶èµ„é‡‘  DTï¼šC  
+#define  FID_T1JS               669  //T+1æ¸…ç®—åº”äº¤æ”¶èµ„é‡‘  DTï¼šC  
+#define  FID_T2JS               670  //T+2æ¸…ç®—åº”äº¤æ”¶èµ„é‡‘  DTï¼šC  
+#define  FID_TBCBJ              671  //æ‘Šè–„æˆæœ¬ä»·  DTï¼šC  
+#define  FID_TBTS               672  //ç‰¹åˆ«æç¤º  DTï¼šC  
+#define  FID_TJFL               673  //ç»Ÿè®¡åˆ†ç±»  DTï¼šC  
+#define  FID_TZJS               674  //é€æ”¯ç§¯æ•°  DTï¼šC  
+#define  FID_TZLL               675  //é€æ”¯åˆ©ç‡  DTï¼šC  
+#define  FID_CBTZMS             676  //æˆæœ¬è°ƒæ•´æ¨¡å¼  DTï¼šC  DTï¼šDTï¼š0 æ ¹æ®è¾“å…¥è°ƒæ•´ï¼Œ1 è‡ªåŠ¨è°ƒæ•´  
+#define  FID_USERID             677  //æŸœå‘˜å·  DTï¼šC  
+#define  FID_USERNAME           678  //æŸœå‘˜åç§°  DTï¼šC  
+#define  FID_VALUE              679  //å±æ€§å€¼  DTï¼šC  
+#define  FID_WTFS               680  //å§”æ‰˜æ–¹å¼  DTï¼šC  
+#define  FID_WTH                681  //å§”æ‰˜å·  DTï¼šC  
+#define  FID_WTJG               682  //å§”æ‰˜ä»·æ ¼  DTï¼šC  
+#define  FID_WTLB               683  //å§”æ‰˜ç±»åˆ«  DTï¼šC  
+#define  FID_WTSL               684  //å§”æ‰˜æ•°é‡  DTï¼šC  
+#define  FID_JSDM_HC            685  //æƒé™äº’æ–¥çš„è§’è‰²ä»£ç   DTï¼šC  
+#define  FID_WTSX               686  //å§”æ‰˜ä¸Šé™  DTï¼šC  
+#define  FID_WTXX               687  //å§”æ‰˜ä¸‹é™  DTï¼šC  
+#define  FID_XHRQ               688  //é”€æˆ·æ—¥æœŸ  DTï¼šC  
+#define  FID_XLDM               689  //å­¦å†ä»£ç   DTï¼šC  
+#define  FID_XM                 690  //å§“å  DTï¼šC  
+#define  FID_GDZT               691  //è‚¡ä¸œçŠ¶æ€  DTï¼šI  
+#define  FID_YHDM               692  //é“¶è¡Œä»£ç   DTï¼šC  
+#define  FID_YHZH               693  //é“¶è¡Œå¸å·  DTï¼šC  
+#define  FID_YWKM               694  //ä¸šåŠ¡ç§‘ç›®  DTï¼šC  
+#define  FID_YWLB               695  //ä¸šåŠ¡ç±»åˆ«  DTï¼šC  
+#define  FID_YWMC               696  //ä¸šåŠ¡åç§°  DTï¼šC  
+#define  FID_YYB                697  //è¥ä¸šéƒ¨  DTï¼šC  
+#define  FID_KHH_ZR             698  //è½¬å…¥å®¢æˆ·å·  DTï¼šC  
+#define  FID_CLSJ               699  //å¤„ç†æ—¶é—´  DTï¼šC  
+#define  FID_KHXM_ZR            700  //è½¬å…¥å®¢æˆ·å§“å  DTï¼šC  
+#define  FID_GYDM_ZP            701  //æŒ‡æ´¾æŸœå‘˜ä»£ç   DTï¼šC  
+#define  FID_YZBM               702  //é‚®æ”¿ç¼–ç   DTï¼šC  
+#define  FID_ZDBJ               703  //æœ€ä½æŠ¥ä»·  DTï¼šC  
+#define  FID_ZDJ                704  //æœ€ä½ä»·  DTï¼šR  
+#define  FID_EN_WTH             705  //å§”æ‰˜åˆåŒå·èŒƒå›´  DTï¼šC  
+#define  FID_ZGBJ               706  //æœ€é«˜æŠ¥ä»·  DTï¼šC  
+#define  FID_ZGJ                707  //æœ€é«˜ä»·  DTï¼šR  
+#define  FID_KHFLFS             708  //å®¢æˆ·åˆ†ç±»æ–¹å¼  DTï¼šI  
+#define  FID_ZHYE               709  //å¸æˆ·ä½™é¢  DTï¼šC  
+#define  FID_ZHZT               710  //å¸æˆ·çŠ¶æ€  DTï¼šC  
+#define  FID_ZJBH               711  //è¯ä»¶ç¼–å·  DTï¼šC  
+#define  FID_YJDJCL             712  //ä½£é‡‘å®šä»·ç­–ç•¥  DTï¼šI  
+#define  FID_ZJLB               713  //è¯ä»¶ç±»åˆ«  DTï¼šC  
+#define  FID_ZJMM               714  //èµ„é‡‘å¯†ç   DTï¼šC  
+#define  FID_ZJYE               715  //èµ„é‡‘ä½™é¢  DTï¼šC  
+#define  FID_ZJZH               716  //èµ„é‡‘å¸å·  DTï¼šC  
+#define  FID_GDH_OLD            717  //åŸè‚¡ä¸œå·  DTï¼šC  
+#define  FID_LJS1               718  //ç´¯è®¡ä½£é‡‘  DTï¼šR  
+#define  FID_ZQDM               719  //è¯åˆ¸ä»£ç   DTï¼šC  
+#define  FID_ZQLB               720  //è¯åˆ¸ç±»åˆ«  DTï¼šC  
+#define  FID_ZQLBMC             721  //è¯åˆ¸ç±»åˆ«åç§°  DTï¼šC  
+#define  FID_ZQMC               722  //è¯åˆ¸åç§°  DTï¼šC  
+#define  FID_ZQQC               723  //è¯åˆ¸å…¨ç§°  DTï¼šC  
+#define  FID_ZQSL               724  //è¯åˆ¸æ•°é‡  DTï¼šC  
+#define  FID_ZSBH               725  //è¯ä¹¦ç¼–å·  DTï¼šC  
+#define  FID_ZSP                726  //æ˜¨æ”¶ç›˜  DTï¼šC  
+#define  FID_ZZHBZ              727  //ä¸»å¸æˆ·æ ‡å¿—  DTï¼šI  
+#define  FID_ZTB                728  //æ¶¨åœæ¿  DTï¼šC  
+#define  FID_ZXJ                729  //æœ€æ–°ä»·  DTï¼šC  
+#define  FID_ZY                 730  //æ‘˜è¦  DTï¼šC  
+#define  FID_ZYDM               731  //èŒä¸šä»£ç   DTï¼šC  
+#define  FID_ZZFS               732  //è½¬å¸ç”³è¯·æ–¹å¼  DTï¼šC  
+#define  FID_ZZJE               733  //æ”¯æ±‡ç¥¨é‡‘é¢  DTï¼šC  
+#define  FID_ZZKZ               734  //è½¬å¸æ§åˆ¶  DTï¼šC  
+#define  FID_MMLB               735  //å¯†ç ç±»åˆ«  DTï¼šC  
+#define  FID_HTHQZ              736  //åˆåŒå·å‰ç¼€  DTï¼šC  
+#define  FID_NEWQZ              737  //æ–°ç¾¤ç»„ç¼–å·  DTï¼šC  
+#define  FID_EN_ZJZH            738  //å¯æ“ä½œçš„èµ„é‡‘å¸å·  DTï¼šC  
+#define  FID_LOGICAL            739  //é€»è¾‘åˆ¤æ–­æ“ä½œï¼ˆæ˜¯ã€å¦ï¼‰  DTï¼šC  
+#define  FID_KHFW               740  //å®¢æˆ·èŒƒå›´  DTï¼šC  
+#define  FID_SQFS               741  //ç”³è¯·æ–¹å¼  DTï¼šI  
+#define  FID_CKCS               742  //å­˜æ¬¾æ¬¡æ•°é™åˆ¶  DTï¼šC  
+#define  FID_CKZE               743  //å­˜æ¬¾æ€»é¢é™åˆ¶  DTï¼šC  
+#define  FID_CKDBSX             744  //å­˜æ¬¾å•ç¬”é™åˆ¶  DTï¼šC  
+#define  FID_QKCS               745  //å–æ¬¾æ¬¡æ•°é™åˆ¶  DTï¼šC  
+#define  FID_QKZE               746  //å–æ¬¾æ€»é¢é™åˆ¶  DTï¼šC  
+#define  FID_QKDBSX             747  //å–æ¬¾å•ç¬”é™åˆ¶  DTï¼šC  
+#define  FID_TBBBJ              748  //æ‘Šè–„ä¿æœ¬ä»·  DTï¼šC  
+#define  FID_TBFDYK             749  //æ‘Šè–„æµ®åŠ¨ç›ˆäº  DTï¼šC  
+#define  FID_WTSJ               750  //å§”æ‰˜æ—¶é—´  DTï¼šC  
+#define  FID_SBSJ               751  //ç”³æŠ¥æ—¶é—´  DTï¼šC  
+#define  FID_MMLBSM             752  //ä¹°å–ç±»åˆ«è¯´æ˜  DTï¼šC  
+#define  FID_SBJG               753  //ç”³æŠ¥ç»“æœ  DTï¼šC  
+#define  FID_SBJGSM             754  //ç”³æŠ¥ç»“æœè¯´æ˜  DTï¼šC  
+#define  FID_CXBZ               755  //æ’¤é”€æ ‡å¿—  DTï¼šC  
+#define  FID_DLSF               756  //ç™»å½•èº«ä»½  DTï¼šC  
+#define  FID_JCCL               757  //ä»ŠæŒä»“é‡  DTï¼šC  
+#define  FID_WJSSL              758  //æœªäº¤æ”¶æ•°é‡  DTï¼šC  
+#define  FID_CDCZDX             759  //èœå•æ“ä½œå¯¹è±¡  DTï¼šI  
+#define  FID_ZXSZ               760  //æœ€æ–°å¸‚å€¼  DTï¼šC  
+#define  FID_FDYK               761  //æµ®åŠ¨ç›ˆäº  DTï¼šC  
+#define  FID_DGDHBZ             762  //æ˜¯å¦å…è®¸ç™»è®°å¤šè‚¡ä¸œå·  DTï¼šC  DTï¼šDTï¼š0 å…è®¸ï¼Œ1 ä¸å…è®¸  
+#define  FID_BROWINDEX          763  //èµ·å§‹å†å²è®°å½•ç´¢å¼•å€¼  DTï¼šC  
+#define  FID_DJZJ               764  //å†»ç»“èµ„é‡‘  DTï¼šC  
+#define  FID_LOGINPWD           765  //ç”¨æˆ·ç™»å½•å¯†ç   DTï¼šC  
+#define  FID_S1                 766  //ä½£é‡‘  DTï¼šC  
+#define  FID_S2                 767  //å°èŠ±ç¨  DTï¼šC  
+#define  FID_S3                 768  //è¿‡æˆ·è´¹  DTï¼šC  
+#define  FID_S4                 769  //é™„åŠ è´¹  DTï¼šC  
+#define  FID_S5                 770  //ç»“ç®—è´¹  DTï¼šC  
+#define  FID_S6                 771  //äº¤æ˜“è§„è´¹  DTï¼šC  
+#define  FID_YSJE               772  //åº”æ”¶é‡‘é¢  DTï¼šC  
+#define  FID_LXSR               773  //åˆ©æ¯æ”¶å…¥  DTï¼šR  
+#define  FID_LXFC               774  //åˆ©æ¯ä»˜å‡º  DTï¼šR  
+#define  FID_BZS1               775  //æ ‡å‡†ä½£é‡‘  DTï¼šC  
+#define  FID_BCZQSL             776  //æœ¬æ¬¡è‚¡ä»½ä½™é¢  DTï¼šC  
+#define  FID_BRZQSL             777  //æœ¬æ—¥è‚¡ä»½ä½™é¢  DTï¼šC  
+#define  FID_BRZJYE             778  //æœ¬æ—¥èµ„é‡‘ä½™é¢  DTï¼šC  
+#define  FID_GDJG               779  //è½¬å¸å‹¾å¯¹ç»“æœ  DTï¼šC  
+#define  FID_CSID               780  //å‚æ•°ç¼–å·ID  DTï¼šI  
+#define  FID_JMLX               781  //åŠ å¯†ç±»å‹  DTï¼šC  
+#define  FID_SQLB               782  //ç”³è¯·ç±»åˆ«  DTï¼šC  
+#define  FID_DLXH               783  //ç™»å½•åºå·  DTï¼šC  DTï¼šDTï¼šINT  
+#define  FID_ZPJE               784  //æ”¯ç¥¨é‡‘é¢  DTï¼šC  
+#define  FID_GPSZ               785  //è‚¡ç¥¨å¸‚å€¼  DTï¼šC  
+#define  FID_MMYZFS             786  //å¯†ç éªŒè¯æ–¹å¼  DTï¼šI  
+#define  FID_FZYZFS             787  //è¾…åŠ©èº«ä»½éªŒè¯æ–¹å¼  DTï¼šI  
+#define  FID_COUNT              788  //ç¬”æ•°  DTï¼šC  
+#define  FID_GDHH               789  //è‚¡ä¸œå·å‰ç¼€  DTï¼šC  
+#define  FID_GDHL               790  //è‚¡ä¸œå·é•¿åº¦  DTï¼šC  
+#define  FID_ZQDML              791  //è¯åˆ¸ä»£ç é•¿åº¦  DTï¼šC  
+#define  FID_ENDWTH             792  //ç»“æŸå§”æ‰˜å·  DTï¼šC  
+#define  FID_LOGINID            793  //ç™»å½•ID  DTï¼šC  
+#define  FID_ZHXM               794  //å¸æˆ·å§“å  DTï¼šC  
+#define  FID_JSZH               795  //ç»“ç®—å¸æˆ·  DTï¼šC  
+#define  FID_FAX                796  //ä¼ çœŸFAX  DTï¼šC  
+#define  FID_LSH                797  //æµæ°´å·  DTï¼šC  
+#define  FID_HOST               798  //ä¸»æœºåœ°å€  DTï¼šC  
+#define  FID_TZLX               799  //é€æ”¯åˆ©æ¯  DTï¼šC  
+#define  FID_GSFL               800  //å…¬å¸çº§å®¢æˆ·åˆ†ç±»  DTï¼šC  
+#define  FID_SRFS               801  //è¾“å…¥æ–¹å¼  DTï¼šC  
+#define  FID_XJZC               802  //ç°é‡‘èµ„äº§  DTï¼šC  
+#define  FID_SRYE               803  //ä¸Šæ—¥ä½™é¢  DTï¼šC  
+#define  FID_ZHSX               804  //å¸æˆ·å±æ€§  DTï¼šC  
+#define  FID_WJSJE              805  //æœªäº¤æ”¶é‡‘é¢  DTï¼šC  
+#define  FID_CQBZ               806  //å­˜å–æ ‡å¿—  DTï¼šC  
+#define  FID_YZZZBZ             807  //é“¶è¯è½¬å¸æ ‡å¿—  DTï¼šC  
+#define  FID_FSJE               808  //å‘ç”Ÿé‡‘é¢  DTï¼šC  
+#define  FID_NEWKHJL            809  //è¿å…¥å®¢æˆ·ç»ç†  DTï¼šC  
+#define  FID_SCZJYE             810  //ä¸Šæ¬¡èµ„é‡‘ä½™é¢  DTï¼šC  
+#define  FID_SQPCH              811  //ç”³è¯·æ‰¹æ¬¡å·  DTï¼šI  
+#define  FID_DJRQ               812  //ç™»è®°æ—¥æœŸ  DTï¼šC  
+#define  FID_EN_GSFL            813  //å…è®¸æ“ä½œçš„å®¢æˆ·å…¬å¸åˆ†ç±»  DTï¼šC  
+#define  FID_ITEM               814  //é…ç½®é¡¹  DTï¼šC  
+#define  FID_XGRQ               815  //ä¿®æ”¹æ—¥æœŸ  DTï¼šC  
+#define  FID_CSJB               816  //å‚æ•°çº§åˆ«  DTï¼šC  
+#define  FID_SXMC               817  //å±æ€§åç§°  DTï¼šC  
+#define  FID_PZH2               818  //å‡­è¯å·2  DTï¼šC  
+#define  FID_LPID               819  //ç¤¼å“IDå·  DTï¼šC  
+#define  FID_LPBM               820  //ç¤¼å“ç¼–ç   DTï¼šC  
+#define  FID_LPMC               821  //ç¤¼å“åç§°  DTï¼šC  
+#define  FID_LPJZ               822  //ç¤¼å“ä»·å€¼  DTï¼šC  
+#define  FID_ZSFS               823  //èµ é€æ–¹å¼  DTï¼šC  
+#define  FID_ZCKZED             824  //èµ„äº§æ§åˆ¶é¢åº¦  DTï¼šC  
+#define  FID_ZJKZED             825  //èµ„é‡‘æ§åˆ¶é¢åº¦  DTï¼šC  
+#define  FID_DJJE               826  //å†»ç»“é‡‘é¢  DTï¼šC  
+#define  FID_YCDJJE             827  //å¼‚å¸¸å†»ç»“é‡‘é¢  DTï¼šC  
+#define  FID_QSDM               828  //åˆ¸å•†ä»£ç   DTï¼šC  
+#define  FID_QSMC               829  //åˆ¸å•†åç§°  DTï¼šC  
+#define  FID_JGSM               830  //ç»“æœè¯´æ˜  DTï¼šC  
+#define  FID_CLRQ               831  //å¤„ç†æ—¥æœŸ  DTï¼šI  
+#define  FID_JGBM               832  //æœºæ„ç¼–ç   DTï¼šC  
+#define  FID_JGMC               833  //æœºæ„åç§°  DTï¼šC  
+#define  FID_JGJC               834  //æœºæ„ç®€ç§°  DTï¼šC  
+#define  FID_CITY               835  //åŸå¸‚  DTï¼šC  
+#define  FID_PROVINCE           836  //çœä»½  DTï¼šC  
+#define  FID_SJJG               837  //ä¸Šçº§æœºæ„  DTï¼šC  
+#define  FID_SJJGLB             838  //ä¸Šçº§æœºæ„ç±»åˆ«  DTï¼šI  
+#define  FID_JGLB               839  //æœºæ„ç±»åˆ«  DTï¼šI  
+#define  FID_EN_SJJGLB          840  //å…è®¸ä¸Šçº§æœºæ„ç±»åˆ«èŒƒå›´  DTï¼šC  
+#define  FID_EN_JYLB            841  //å…è®¸çš„äº¤æ˜“ç±»åˆ«  DTï¼šC  
+#define  FID_MRJG1              842  //ä¹°å…¥ä»·æ ¼ä¸€  DTï¼šC  
+#define  FID_MRSL1              843  //ä¹°å…¥æ•°é‡ä¸€  DTï¼šC  
+#define  FID_MRJG2              844  //ä¹°å…¥ä»·æ ¼äºŒ  DTï¼šC  
+#define  FID_MRSL2              845  //ä¹°å…¥æ•°é‡äºŒ  DTï¼šC  
+#define  FID_MRJG3              846  //ä¹°å…¥ä»·æ ¼ä¸‰  DTï¼šC  
+#define  FID_MRSL3              847  //ä¹°å…¥æ•°é‡ä¸‰  DTï¼šC  
+#define  FID_MRJG4              848  //ä¹°å…¥ä»·æ ¼å››  DTï¼šC  
+#define  FID_MRSL4              849  //ä¹°å…¥æ•°é‡å››  DTï¼šC  
+#define  FID_MCJG1              850  //å–å‡ºä»·æ ¼ä¸€  DTï¼šC  
+#define  FID_MCSL1              851  //å–å‡ºæ•°é‡ä¸€  DTï¼šC  
+#define  FID_MCJG2              852  //å–å‡ºä»·æ ¼äºŒ  DTï¼šC  
+#define  FID_MCSL2              853  //å–å‡ºæ•°é‡äºŒ  DTï¼šC  
+#define  FID_MCJG3              854  //å–å‡ºä»·æ ¼ä¸‰  DTï¼šC  
+#define  FID_MCSL3              855  //å–å‡ºæ•°é‡ä¸‰  DTï¼šC  
+#define  FID_MCJG4              856  //å–å‡ºä»·æ ¼å››  DTï¼šC  
+#define  FID_MCSL4              857  //å–å‡ºæ•°é‡å››  DTï¼šC  
+#define  FID_DYBL               858  //æŠµæŠ¼æ¯”ä¾‹  DTï¼šR  
+#define  FID_JJRXM              859  //ç»çºªäººå§“å  DTï¼šC  
+#define  FID_TPBZ               860  //åœç‰Œæ ‡å¿—  DTï¼šC  
+#define  FID_JSLX               861  //ç»“ç®—ç±»å‹  DTï¼šI  
+#define  FID_HBXH               862  //å›æŠ¥åºå·  DTï¼šC  
+#define  FID_SBGDH              863  //ä¸‰æ¿è‚¡ä¸œå·  DTï¼šC  
+#define  FID_WTGY               864  //å§”æ‰˜æŸœå‘˜  DTï¼šC  
+#define  FID_FSSJ               865  //å‘ç”Ÿæ—¶é—´  DTï¼šC  
+#define  FID_WTZKXS             866  //å§”æ‰˜æŠ˜æ‰£ç³»æ•°  DTï¼šC  
+#define  FID_CXZKXS             867  //æŸ¥è¯¢æŠ˜æ‰£ç³»æ•°  DTï¼šC  
+#define  FID_QTZKXS             868  //å‰å°æŠ˜æ‰£ç³»æ•°  DTï¼šC  
+#define  FID_ZQSZ               869  //è¯åˆ¸å¸‚å€¼  DTï¼šC  
+#define  FID_KYZJXE             870  //å¯ç”¨èµ„é‡‘é™é¢  DTï¼šR  
+#define  FID_XMLSH              871  //é¡¹ç›®æµæ°´å·  DTï¼šI  
+#define  FID_ZCZH               872  //è½¬å­˜å¸å·  DTï¼šC  
+#define  FID_ZCBL               873  //è½¬å­˜æ¯”ä¾‹  DTï¼šC  
+#define  FID_SFFS               874  //æ”¶è´¹æ–¹å¼  DTï¼šC  
+#define  FID_SFBZ               875  //æ”¶è´¹æ ‡å‡†  DTï¼šC  
+#define  FID_JFFS               876  //è®¡è´¹æ–¹å¼  DTï¼šC  
+#define  FID_JFQD               877  //è®¡è´¹èµ·ç‚¹  DTï¼šC  
+#define  FID_JFDW               878  //è®¡è´¹å•ä½  DTï¼šC  
+#define  FID_CZSJ               879  //æ“ä½œæ—¶é—´  DTï¼šC  
+#define  FID_CLJG               880  //å¤„ç†ç»“æœ  DTï¼šC  
+#define  FID_GYFL               881  //æŸœå‘˜åˆ†ç±»  DTï¼šC  
+#define  FID_WBGYDM             882  //å¤–éƒ¨æŸœå‘˜ä»£ç   DTï¼šC  
+#define  FID_XQXZ               883  //æ˜ŸæœŸé™åˆ¶  DTï¼šC  
+#define  FID_ZCXZ               884  //æ³¨å†Œé™åˆ¶  DTï¼šC  
+#define  FID_SLSX               885  //æ•°é‡ä¸Šé™  DTï¼šC  
+#define  FID_CDSL               886  //æ’¤å•æ•°é‡  DTï¼šC  
+#define  FID_YJZKBL             887  //ä½£é‡‘æŠ˜æ‰£æ¯”ä¾‹  DTï¼šR  
+#define  FID_FJFZKBL            888  //é™„åŠ è´¹æŠ˜æ‰£æ¯”ä¾‹  DTï¼šR  
+#define  FID_BH                 889  //ç¼–å·  DTï¼šC  
+#define  FID_SHXYM              890  //å®¡æ ¸æ ¡éªŒç   DTï¼šC  
+#define  FID_ZLLB               891  //æŒ‡ä»¤ç±»åˆ«  DTï¼šC  
+#define  FID_CDJSP              892  //èœå•JSP  DTï¼šC  
+#define  FID_EN_NODE            893  //å…è®¸æ“ä½œç«™ç‚¹  DTï¼šC  
+#define  FID_EN_MYYYB           894  //å…è®¸æ¼«æ¸¸è¥ä¸šéƒ¨èŒƒå›´  DTï¼šC  
+#define  FID_ZJGMRQ             895  //ç³»ç»Ÿç”¨æˆ·æœ€è¿‘æ›´å¯†æ—¥æœŸ  DTï¼šI  
+#define  FID_JGSX               896  //æœºæ„å±æ€§  DTï¼šI  
+#define  FID_CDSX               897  //å‚æ•°å±æ€§  DTï¼šI  
+#define  FID_BM                 898  //æ•°æ®å­—å…¸ç¼–ç   DTï¼šI  
+#define  FID_BMSM               899  //æ•°æ®å­—å…¸ç¼–ç è¯´æ˜  DTï¼šC  
+#define  FID_CDDLL              900  //èœå•DLLåç§°  DTï¼šC  
+#define  FID_SXZ                901  //å±æ€§å€¼  DTï¼šC  
+#define  FID_YHSX               902  //é“¶è¡Œå±æ€§  DTï¼šC  
+#define  FID_YHYW               903  //é“¶è¡Œä¸šåŠ¡  DTï¼šC  
+#define  FID_ZQYW               904  //è¯åˆ¸ä¸šåŠ¡  DTï¼šC  
+#define  FID_ZJMMXY             905  //èµ„é‡‘å¯†ç æ•ˆéªŒ  DTï¼šC  
+#define  FID_JYMMXY             906  //äº¤æ˜“ä¹°å–æ•ˆéªŒ  DTï¼šC  
+#define  FID_YHMMXY             907  //é“¶è¡Œä¹°å–æ•ˆéªŒ  DTï¼šC  
+#define  FID_YHMC               908  //é“¶è¡Œåç§°  DTï¼šC  
+#define  FID_HBLB               909  //è´§å¸ç±»åˆ«  DTï¼šC  
+#define  FID_WBZHMM             910  //å¤–éƒ¨å¸æˆ·å¯†ç   DTï¼šC  
+#define  FID_DYBS               911  //è½¬å¸å¯¹åº”æ ‡è¯†  DTï¼šC  
+#define  FID_SQH                912  //ç”³è¯·å·  DTï¼šC  
+#define  FID_WBLSH              913  //å¤–éƒ¨æµæ°´å·  DTï¼šC  
+#define  FID_BDDJJE             914  //æœ¬åœ°å†»ç»“é‡‘é¢  DTï¼šR  
+#define  FID_CJBS               915  //æˆäº¤ç¬”æ•°  DTï¼šI  
+#define  FID_SHLB               916  //å®¡æ ¸ç±»åˆ«  DTï¼šC  
+#define  FID_SHJG               917  //å®¡æ ¸ç»“æœ  DTï¼šC  
+#define  FID_YEGXSJ             918  //ä½™é¢æ›´æ–°æ—¶é—´  DTï¼šC  
+#define  FID_QSMM               919  //åˆ¸å•†å¯†ç   DTï¼šC  
+#define  FID_MMMY               920  //å¯†ç å¯†é’¥  DTï¼šC  
+#define  FID_CSMY               921  //ä¼ è¾“å¯†é’¥  DTï¼šC  
+#define  FID_FJXX               922  //é™„åŠ ä¿¡æ¯  DTï¼šC  
+#define  FID_WBCLJG             923  //å¤–éƒ¨å¤„ç†ç»“æœ  DTï¼šC  
+#define  FID_SQWD               924  //ç”³è¯·ç½‘ç‚¹  DTï¼šC  
+#define  FID_XYBZ               925  //æ•ˆéªŒæ ‡å¿—  DTï¼šC  
+#define  FID_CXSQH              926  //æ’¤é”€ç”³è¯·å·  DTï¼šC  
+#define  FID_JYBS               927  //äº¤æ˜“æ ‡è¯†  DTï¼šC  
+#define  FID_CLLB               928  //å¤„ç†ç±»åˆ«  DTï¼šC  
+#define  FID_ZHLB               929  //å¸æˆ·ç±»åˆ«  DTï¼šC  
+#define  FID_FQF                930  //å‘èµ·æ–¹  DTï¼šC  
+#define  FID_HZBS               931  //æ±‡æ€»ç¬”æ•°  DTï¼šC  
+#define  FID_HZJE               932  //æ±‡æ€»é‡‘é¢  DTï¼šC  
+#define  FID_LY                 933  //æ¥æº  DTï¼šC  
+#define  FID_WDH                934  //ç½‘ç‚¹å·  DTï¼šC  
+#define  FID_QD1                935  //èµ·ç‚¹ä¸€  DTï¼šC  
+#define  FID_QD2                936  //èµ·ç‚¹äºŒ  DTï¼šC  
+#define  FID_QD3                937  //èµ·ç‚¹ä¸‰  DTï¼šC  
+#define  FID_QD4                938  //èµ·ç‚¹å››  DTï¼šC  
+#define  FID_QD5                939  //èµ·ç‚¹äº”  DTï¼šC  
+#define  FID_BL1                940  //ä½£é‡‘ä¸€  DTï¼šC  
+#define  FID_BL2                941  //ä½£é‡‘äºŒ  DTï¼šC  
+#define  FID_BL3                942  //ä½£é‡‘ä¸‰  DTï¼šC  
+#define  FID_BL4                943  //ä½£é‡‘å››  DTï¼šC  
+#define  FID_BL5                944  //ä½£é‡‘äº”  DTï¼šC  
+#define  FID_KHJCGX             945  //å®¢æˆ·ç»§æ‰¿å…³ç³»  DTï¼šC  
+#define  FID_SYZH1              946  //æ”¶ç›Šå¸å·ä¸€  DTï¼šC  
+#define  FID_SYZH2              947  //æ”¶ç›Šå¸å·äºŒ  DTï¼šC  
+#define  FID_JSTS               948  //è®¡ç®—å¤©æ•°  DTï¼šC  
+#define  FID_TJJYR              949  //ç»Ÿè®¡äº¤æ˜“æ—¥  DTï¼šC  
+#define  FID_TJTS               950  //ç»Ÿè®¡å¤©æ•°  DTï¼šC  
+#define  FID_FPBL               951  //åˆ†é…æ¯”ä¾‹  DTï¼šC  
+#define  FID_ZKFS               952  //æŠ˜æ‰£æ–¹å¼  DTï¼šC  
+#define  FID_ZJED               953  //èµ„é‡‘é¢åº¦  DTï¼šC  
+#define  FID_ZCED               954  //èµ„äº§é¢åº¦  DTï¼šC  
+#define  FID_GLF                955  //ç®¡ç†è´¹  DTï¼šC  
+#define  FID_YJDX               956  //ä½£é‡‘åº•é™  DTï¼šC  
+#define  FID_EX_JYLB            957  //ç¦æ­¢äº¤æ˜“ç±»åˆ«  DTï¼šC  
+#define  FID_BDSL               958  //å˜åŠ¨æ•°é‡  DTï¼šC  
+#define  FID_HZFS               959  //æ±‡æ€»æ–¹å¼  DTï¼šC  
+#define  FID_LPSL               960  //ç¤¼å“æ•°é‡  DTï¼šC  
+#define  FID_LXBJ               961  //åˆ©æ¯æŠ¥ä»·  DTï¼šC  
+#define  FID_KLX                962  //å¡ç±»å‹  DTï¼šC  
+#define  FID_KMC                963  //å¡åç§°  DTï¼šC  
+#define  FID_BSC                964  //æ ‡è¯†ä¸²  DTï¼šC  
+#define  FID_BSCKSWZ            965  //æ ‡è¯†ä¸²å¼€å§‹ä½ç½®  DTï¼šC  
+#define  FID_FJC                966  //é™„åŠ ä¸²  DTï¼šC  
+#define  FID_FJCKSWZ            967  //é™„åŠ ä¸²å¼€å§‹ä½ç½®  DTï¼šC  
+#define  FID_KHKSWZ             968  //å¡å·å¼€å§‹ä½ç½®  DTï¼šC  
+#define  FID_KHCD               969  //å¡å·é•¿åº¦  DTï¼šC  
+#define  FID_EN_YWKM            970  //å…è®¸ä¸šåŠ¡ç§‘ç›®  DTï¼šC  
+#define  FID_ZRSZ               971  //æ˜¨æ—¥å¸‚å€¼  DTï¼šC  
+#define  FID_NEXTDATA           972  //ç»§ç»­å–æ•°æ ‡å¿—  DTï¼šC  
+#define  FID_SYL                973  //æ”¶ç›Šç‡  DTï¼šC  
+#define  FID_FHS1               974  //å·²è¿”è¿˜ä½£é‡‘  DTï¼šC  
+#define  FID_GJBM1              975  //å›½ç±ç¼–ç ä¸€  DTï¼šC  
+#define  FID_GJBM2              976  //å›½ç±ç¼–ç äºŒ  DTï¼šC  
+#define  FID_GJBM3              977  //å›½ç±ç¼–ç ä¸‰  DTï¼šC  
+#define  FID_GJMC               978  //å›½ç±åç§°  DTï¼šC  
+#define  FID_EGJMC              979  //å›½ç±è‹±æ–‡åç§°  DTï¼šC  
+#define  FID_CCCB               980  //æŒä»“æˆæœ¬  DTï¼šC  
+#define  FID_BDRQ               981  //å˜åŠ¨æ—¥æœŸ  DTï¼šC  
+#define  FID_MMXYLX             982  //å¯†ç æ•ˆéªŒç±»å‹  DTï¼šC  
+#define  FID_XZSJ               983  //é™åˆ¶æ—¶é—´  DTï¼šC  
+#define  FID_KHDXLX             984  //å®¢æˆ·å¯¹è±¡ç±»å‹  DTï¼šC  
+#define  FID_JYSXGX             985  //äº¤æ˜“æ‰€ç›¸å…³æ€§  DTï¼šC  
+#define  FID_BZXGX              986  //å¸ç§ç›¸å…³æ€§  DTï¼šC  
+#define  FID_QZXGX              987  //ç¾¤ç»„ç›¸å…³æ€§  DTï¼šC  
+#define  FID_EXFLG              988  //æŸ¥è¯¢æ‰©å±•ä¿¡æ¯æ ‡å¿—  DTï¼šC  
+#define  FID_MAX_D              989  //æœ€å¤§å€¼ï¼ˆæµ®ç‚¹ï¼‰  DTï¼šC  
+#define  FID_MIN_D              990  //æœ€å°å€¼ï¼ˆæµ®ç‚¹ï¼‰  DTï¼šC  
+#define  FID_MAX_L              991  //æœ€å¤§å€¼ï¼ˆæ•´å‹ï¼‰  DTï¼šC  
+#define  FID_MIN_L              992  //æœ€å°å€¼ï¼ˆæ•´å‹ï¼‰  DTï¼šC  
+#define  FID_GYFJQX             993  //æŸœå‘˜é™„åŠ æƒé™  DTï¼šC  
+#define  FID_ZHTZE              994  //å¸æˆ·æŠ•èµ„é¢  DTï¼šC  
+#define  FID_QSJE_B             995  //å›æŠ¥ä¹°æ¸…ç®—èµ„é‡‘  DTï¼šC  
+#define  FID_QSJE_S             996  //å›æŠ¥å–æ¸…ç®—èµ„é‡‘  DTï¼šC  
+#define  FID_FDYK_TB            997  //æ‘Šè–„æµ®åŠ¨ç›ˆäº  DTï¼šC  
+#define  FID_LLCSLB             998  //åˆ©ç‡å‚æ•°ç±»åˆ«  DTï¼šC  
+#define  FID_EX_JJR             999  //ç¦æ­¢ç»çºªäºº  DTï¼šC  
+#define  FID_FHFS               1000  //ä½£é‡‘è¿”è¿˜æ–¹å¼  DTï¼šC  
+#define  FID_BZ_FH              1001  //ä½£é‡‘è¿”è¿˜å¸ç§  DTï¼šC  
+#define  FID_HBDHBL             1002  //è´§å¸å…‘æ¢æ¯”ä¾‹  DTï¼šC  
+#define  FID_SYZH3              1003  //æ”¶ç›Šå¸æˆ·3  DTï¼šC  
+#define  FID_SYBL1              1004  //æ”¶ç›Šæ¯”ä¾‹1  DTï¼šC  
+#define  FID_SYBL2              1005  //æ”¶ç›Šæ¯”ä¾‹2  DTï¼šC  
+#define  FID_SYBL3              1006  //æ”¶ç›Šæ¯”ä¾‹3  DTï¼šC  
+#define  FID_GDKZSX             1007  //è‚¡ä¸œæ§åˆ¶å±æ€§  DTï¼šI  
+#define  FID_RCKHH              1008  //å®¹é”™å®¢æˆ·å·æ ‡å¿—  DTï¼šI  
+#define  FID_RQ2                1009  //æ—¥æœŸ2  DTï¼šC  
+#define  FID_EN_YXZZDM          1010  //è¥é”€ç»„ç»‡ä»£ç èŒƒå›´  DTï¼šC  
+#define  FID_SBWTH              1011  //ç”³æŠ¥å§”æ‰˜å·  DTï¼šC  
+#define  FID_CITYID             1012  //åŸå¸‚ID  DTï¼šC  
+#define  FID_DDLX               1013  //è®¢å•ç±»å‹  DTï¼šI  
+#define  FID_SECTIONID          1014  //è¾–åŒºID  DTï¼šC  
+#define  FID_SECTION            1015  //è¾–åŒºåç§°  DTï¼šC  
+#define  FID_SFZQ               1016  //æ”¶è´¹å‘¨æœŸ  DTï¼šC  
+#define  FID_WTPCH              1017  //å§”æ‰˜æ‰¹æ¬¡å·  DTï¼šI  
+#define  FID_KXDLSF             1018  //å¯é€‰ç™»å½•èº«ä»½  DTï¼šI  
+#define  FID_EN_YWLB            1019  //ä¸šåŠ¡ç±»åˆ«èŒƒå›´  DTï¼šC  
+#define  FID_BZDM               1020  //æ ‡å‡†ä»£ç   DTï¼šC  
+#define  FID_WBDM               1021  //å¤–éƒ¨ä»£ç   DTï¼šC  
+#define  FID_CSDM               1022  //å‚æ•°ä»£ç   DTï¼šC  
+#define  FID_CSMC               1023  //å‚æ•°åç§°  DTï¼šC  
+#define  FID_QZSM               1024  //å–å€¼è¯´æ˜  DTï¼šC  
+#define  FID_EN_FJBZ            1025  //å…è®¸çš„é™„åŠ æ ‡å¿—  DTï¼šC  
+#define  FID_HYMC               1026  //è¡Œä¸šåç§°  DTï¼šC  
+#define  FID_JSJG               1027  //ç»“ç®—æœºæ„  DTï¼šC  
+#define  FID_CWLX               1028  //é”™è¯¯ç±»å‹  DTï¼šC  
+#define  FID_CWDM               1029  //é”™è¯¯ç±»å‹  DTï¼šC  
+#define  FID_CWSM               1030  //é”™è¯¯ç±»å‹  DTï¼šC  
+#define  FID_ZXZS               1031  //æœ€æ–°æŒ‡æ•°  DTï¼šC  
+#define  FID_TZEBZ              1032  //æŠ•èµ„é¢æ ‡å¿—  DTï¼šC  
+#define  FID_KBBZ               1033  //ä½£é‡‘æ†ç»‘æ ‡å¿—  DTï¼šC  
+#define  FID_KHTZFL             1034  //å®¢æˆ·æŠ•èµ„åˆ†ç±»(X  DTï¼šC  DTï¼šDTï¼šZFL)  
+#define  FID_ZJZR               1035  //è½¬å…¥èµ„é‡‘  DTï¼šC  
+#define  FID_ZJZC               1036  //è½¬å‡ºèµ„é‡‘  DTï¼šC  
+#define  FID_SZZR               1037  //è½¬å…¥å¸‚å€¼  DTï¼šC  
+#define  FID_SZZC               1038  //è½¬å‡ºå¸‚å€¼  DTï¼šC  
+#define  FID_MKKZ               1039  //å–ç©ºæ§åˆ¶  DTï¼šI  
+#define  FID_MFCS               1040  //å…è´¹ç™»å½•æ¬¡æ•°  DTï¼šC  
+#define  FID_XZCS               1041  //é™åˆ¶ç™»å½•æ¬¡æ•°  DTï¼šC  
+#define  FID_SJSX_A             1042  //æ¯æ—¥ä½¿ç”¨æ€»æ—¶é—´ä¸Šé™  DTï¼šC  
+#define  FID_SJSX_S             1043  //æ¯æ—¥ä½¿ç”¨å•ç«™ç‚¹æ—¶é—´ä¸Šé™  DTï¼šC  
+#define  FID_MMCSCS             1044  //å¯†ç å°è¯•æ¬¡æ•°  DTï¼šC  
+#define  FID_ZDJDTS             1045  //è‡ªåŠ¨è§£å†»å¤©æ•°  DTï¼šC  
+#define  FID_MFHQCS             1046  //å…è´¹æŸ¥è¯¢è¡Œæƒ…æ¬¡æ•°  DTï¼šC  
+#define  FID_HQSFSX             1047  //è¡Œæƒ…æ”¶è´¹ä¸Šé™  DTï¼šC  
+#define  FID_HKSFSX             1048  //åˆ’å¡æ”¶è´¹ä¸Šé™  DTï¼šC  
+#define  FID_SJSFSX             1049  //ä½¿ç”¨æ—¶é—´æ”¶è´¹ä¸Šé™  DTï¼šC  
+#define  FID_ZSFSX              1050  //æ€»æ”¶è´¹ä¸Šé™  DTï¼šC  
+#define  FID_DBYJXX             1051  //å•ç¬”ä½£é‡‘ä¸‹é™  DTï¼šC  
+#define  FID_DBYJSX             1052  //å•ç¬”ä½£é‡‘ä¸Šé™  DTï¼šC  
+#define  FID_ZCJJE              1053  //æ€»æˆäº¤é‡‘é¢  DTï¼šR  
+#define  FID_YJDJFS             1054  //ä½£é‡‘å®šä»·æ–¹å¼XTDM.YJDJFS  DTï¼šC  
+#define  FID_FHGY               1055  //å¤æ ¸æŸœå‘˜  DTï¼šC  
+#define  FID_TJZQLB             1056  //ç»Ÿè®¡è¯åˆ¸ç±»åˆ«  DTï¼šC  
+#define  FID_DJJSFS             1057  //ä½£é‡‘å®šä»·ç»“ç®—æ–¹å¼  DTï¼šI  
+#define  FID_FDBH               1058  //åˆ†æ®µç¼–å·  DTï¼šC  
+#define  FID_CFCDBZ             1059  //æ˜¯å¦å…è®¸é‡å¤æ’¤å•  DTï¼šC  DTï¼šDTï¼š0 ä¸å…è®¸ï¼›1 å…è®¸  
+#define  FID_ZHDM               1060  //ä¸“æˆ·ä»£ç   DTï¼šC  
+#define  FID_TZDW               1061  //æŠ•èµ„å•ä½  DTï¼šC  
+#define  FID_TZXX               1062  //æŠ•èµ„ä¸‹é™  DTï¼šC  
+#define  FID_SYZKXS             1063  //æ”¶ç›ŠæŠ˜æ‰£ç³»ç»Ÿ  DTï¼šC  
+#define  FID_SYTZFS             1064  //æ”¶ç›ŠæŠ•èµ„æ–¹å¼  DTï¼šC  
+#define  FID_TZJESX             1065  //æŠ•èµ„é‡‘é¢ä¸Šé™  DTï¼šC  
+#define  FID_ZJLCDS             1066  //èµ„é‡‘ç•™å­˜åº•æ•°  DTï¼šC  
+#define  FID_TZBDJE             1067  //æŠ•èµ„é¢å˜æ›´æ•°  DTï¼šC  
+#define  FID_ZHKHH              1068  //ä¸“æˆ·å®¢æˆ·å·  DTï¼šC  
+#define  FID_ZHZJZH             1069  //ä¸“æˆ·èµ„é‡‘è´¦æˆ·  DTï¼šC  
+#define  FID_LCJZJE             1070  //ç†è´¢é›†ä¸­é‡‘é¢  DTï¼šC  
+#define  FID_LCFHJE             1071  //ç†è´¢è¿”è¿˜é‡‘é¢  DTï¼šC  
+#define  FID_SYZTZBZ            1072  //ç†è´¢æ”¶ç›Šå†æŠ•èµ„æ ‡å¿—  DTï¼šC  
+#define  FID_SYZTZZQ            1073  //æ”¶ç›Šå†æŠ•èµ„å‘¨æœŸ  DTï¼šC  
+#define  FID_LCZSY              1074  //ç†è´¢æ€»æ”¶ç›Š  DTï¼šC  
+#define  FID_SYZCJE             1075  //ç†è´¢æ”¶ç›Šè½¬å­˜é‡‘é¢  DTï¼šC  
+#define  FID_SYZTZE             1076  //æ”¶ç›Šå†æŠ•èµ„é‡‘é¢  DTï¼šC  
+#define  FID_XYBH               1077  //åè®®ç¼–å·  DTï¼šC  
+#define  FID_LCTZJE             1078  //ç†è´¢æŠ•èµ„é‡‘é¢  DTï¼šC  
+#define  FID_SGDM               1079  //ä¸“æˆ·ç”³è´­ä»£ç   DTï¼šC  
+#define  FID_CLBZ               1080  //å¤„ç†æ ‡å¿—  DTï¼šC  
+#define  FID_FPSY               1081  //åˆ†é…æ”¶ç›Š  DTï¼šC  
+#define  FID_GBZQL              1082  //å…¬å¸ƒä¸­ç­¾ç‡  DTï¼šC  
+#define  FID_SGSL               1083  //ç”³è´­æ•°é‡  DTï¼šC  
+#define  FID_SGJG               1084  //ç”³è´­ä»·æ ¼  DTï¼šC  
+#define  FID_SSRQ               1085  //ä¸Šå¸‚æ—¥æœŸ  DTï¼šC  
+#define  FID_HKRQ               1086  //è¿˜æ¬¾æ—¥æœŸ  DTï¼šC  
+#define  FID_SSDM               1087  //ä¸Šå¸‚ä»£ç   DTï¼šC  
+#define  FID_PHDM               1088  //é…å·ä»£ç   DTï¼šC  
+#define  FID_HKDM               1089  //è¿˜æ¬¾ä»£ç   DTï¼šC  
+#define  FID_SGRQ               1090  //ç”³è´­æ—¥æœŸ  DTï¼šC  
+#define  FID_JEBL               1091  //é‡‘é¢æ¯”ç‡  DTï¼šC  
+#define  FID_LCJZQTJE           1092  //ç†è´¢é›†ä¸­é‡‘é¢  DTï¼šC  
+#define  FID_HZGDH              1093  //åˆä½œè‚¡ä¸œå·  DTï¼šC  
+#define  FID_SYDX               1094  //é€‚ç”¨å¯¹è±¡  DTï¼šC  
+#define  FID_JYLJSFS            1095  //äº¤æ˜“é‡è®¡ç®—æ–¹å¼  DTï¼šC  
+#define  FID_JYLLJZQ            1096  //äº¤æ˜“é‡ç´¯è®¡å‘¨æœŸ  DTï¼šC  
+#define  FID_DJFS               1097  //å®šä»·æ–¹å¼  DTï¼šC  
+#define  FID_BBJ                1098  //ä¿æœ¬ä»·  DTï¼šC  
+#define  FID_HZLB               1099  //åˆä½œå¸æˆ·ç±»åˆ«  DTï¼šC  
+#define  FID_FSJE_LCBJ          1100  //æœ¬é‡‘å‘ç”Ÿé‡‘é¢  DTï¼šC  
+#define  FID_BCYE_LCBJ          1101  //æœ¬æ¬¡æœ¬é‡‘ä½™é¢  DTï¼šC  
+#define  FID_FSJE_SY            1102  //æ”¶ç›Šå‘ç”Ÿé‡‘é¢  DTï¼šC  
+#define  FID_BCYE_SY            1103  //å¾…è½¬æ”¶ç›Šä½™é¢  DTï¼šC  
+#define  FID_FSJE_BZJ           1104  //ä¿è¯é‡‘å‘ç”Ÿé¢  DTï¼šC  
+#define  FID_BCYE_BZJ           1105  //ä¿è¯é‡‘å¸æˆ·ä½™é¢  DTï¼šC  
+#define  FID_HZLBMC             1106  //åˆä½œç±»åˆ«åç§°  DTï¼šC  
+#define  FID_KSFW               1107  //èµ·å§‹èŒƒå›´  DTï¼šC  
+#define  FID_JSFW               1108  //ç»“æŸèŒƒå›´  DTï¼šC  
+#define  FID_ZDKZBZ             1109  //æŒ‡å®šæ§åˆ¶æ ‡å¿—  DTï¼šI  
+#define  FID_KHS                1110  //å¼€æˆ·æˆ·æ•°  DTï¼šC  
+#define  FID_XHS                1111  //é”€æˆ·æˆ·æ•°  DTï¼šC  
+#define  FID_ZHS                1112  //æ€»æˆ·æ•°  DTï¼šC  
+#define  FID_ZDGDHS             1113  //æŒ‡å®šè‚¡ä¸œæˆ·æ•°  DTï¼šC  
+#define  FID_CXZDHS             1114  //æ’¤é”€è‚¡ä¸œæˆ·æ•°  DTï¼šC  
+#define  FID_CCGDHS             1115  //æŒä»“è‚¡ä¸œæˆ·æ•°  DTï¼šC  
+#define  FID_TJZJYE             1116  //ç»Ÿè®¡èµ„é‡‘ä½™é¢  DTï¼šC  
+#define  FID_TJZJCK             1117  //ç»Ÿè®¡å¢åŠ å­˜æ¬¾  DTï¼šC  
+#define  FID_TJZJQK             1118  //ç»Ÿè®¡å¢åŠ å–æ¬¾  DTï¼šC  
+#define  FID_TJZJGP             1119  //ç»Ÿè®¡å¢åŠ å¸‚å€¼  DTï¼šC  
+#define  FID_TJJSGP             1120  //ç»Ÿè®¡å‡å°‘å¸‚å€¼  DTï¼šC  
+#define  FID_TJGPSZ             1121  //ç»Ÿè®¡è‚¡ç¥¨å¸‚å€¼  DTï¼šC  
+#define  FID_TJZZC              1122  //ç»Ÿè®¡æ€»èµ„äº§  DTï¼šC  
+#define  FID_FDB1               1123  //ç»Ÿè®¡åˆ†æ®µå¼€å§‹1  DTï¼šC  
+#define  FID_FDE1               1124  //ç»Ÿè®¡åˆ†æ®µç»“æŸ1  DTï¼šC  
+#define  FID_FDB2               1125  //ç»Ÿè®¡åˆ†æ®µå¼€å§‹2  DTï¼šC  
+#define  FID_FDE2               1126  //ç»Ÿè®¡åˆ†æ®µç»“æŸ2  DTï¼šC  
+#define  FID_FDB3               1127  //ç»Ÿè®¡åˆ†æ®µå¼€å§‹3  DTï¼šC  
+#define  FID_FDE3               1128  //ç»Ÿè®¡åˆ†æ®µç»“æŸ3  DTï¼šC  
+#define  FID_FDB4               1129  //ç»Ÿè®¡åˆ†æ®µå¼€å§‹4  DTï¼šC  
+#define  FID_FDE4               1130  //ç»Ÿè®¡åˆ†æ®µç»“æŸ4  DTï¼šC  
+#define  FID_FDB5               1131  //ç»Ÿè®¡åˆ†æ®µå¼€å§‹5  DTï¼šC  
+#define  FID_FDE5               1132  //ç»Ÿè®¡åˆ†æ®µç»“æŸ5  DTï¼šC  
+#define  FID_FDB6               1133  //ç»Ÿè®¡åˆ†æ®µå¼€å§‹6  DTï¼šC  
+#define  FID_FDE6               1134  //ç»Ÿè®¡åˆ†æ®µç»“æŸ6  DTï¼šC  
+#define  FID_TJJGGS             1135  //ç»Ÿè®¡ç»“æœä¸ªæ•°  DTï¼šC  
+#define  FID_TJJGSJ             1136  //ç»Ÿè®¡ç»“æœæ•°æ®  DTï¼šC  
+#define  FID_QSBZ               1137  //å®æ—¶æ¸…ç®—æ ‡å¿—  DTï¼šC  
+#define  FID_TZJE               1138  //é€æ”¯é‡‘é¢  DTï¼šC  
+#define  FID_WJSZJ              1139  //æœªäº¤æ”¶èµ„é‡‘  DTï¼šC  
+#define  FID_ZJDJLSH            1140  //èµ„é‡‘å†»ç»“æµæ°´å·  DTï¼šI  
+#define  FID_YDZD               1141  //åº”ç­”å­—æ®µ  DTï¼šC  
+#define  FID_YDZDSM             1142  //åº”ç­”å­—æ®µè¯´æ˜  DTï¼šC  
+#define  FID_YDSJ               1143  //åº”ç­”æ•°æ®  DTï¼šC  
+#define  FID_JCJJE              1144  //å‡€æˆäº¤é‡‘é¢  DTï¼šC  
+#define  FID_YXHS               1145  //æœ‰æ•ˆæˆ·æ•°  DTï¼šC  
+#define  FID_CJSLBL             1146  //æˆäº¤æ•°é‡æ¯”ä¾‹  DTï¼šC  
+#define  FID_CJJEBL             1147  //æˆäº¤é‡‘é¢æ¯”ä¾‹  DTï¼šC  
+#define  FID_S1BL               1148  //ä½£é‡‘æ”¶å…¥æ¯”ä¾‹  DTï¼šC  
+#define  FID_ZZCBL1             1149  //è¥ä¸šéƒ¨çš„èµ„äº§æ¯”ä¾‹  DTï¼šC  
+#define  FID_ZZCBL2             1150  //æ€»å…¬å¸çš„èµ„äº§æ¯”ä¾‹  DTï¼šC  
+#define  FID_ZSLBL1             1151  //è¥ä¸šéƒ¨çš„æ•°é‡æ¯”ä¾‹  DTï¼šC  
+#define  FID_ZSLBL2             1152  //æ€»å…¬å¸çš„æ•°é‡æ¯”ä¾‹  DTï¼šC  
+#define  FID_ZHSBL1             1153  //è¥ä¸šéƒ¨çš„æˆ·æ•°æ¯”ä¾‹  DTï¼šC  
+#define  FID_ZHSBL2             1154  //æ€»å…¬å¸çš„æˆ·æ•°æ¯”ä¾‹  DTï¼šC  
+#define  FID_JEXX               1155  //é‡‘é¢ä¸‹é™  DTï¼šC  
+#define  FID_ZQDJLSH            1156  //è¯åˆ¸å†»ç»“æµæ°´å·  DTï¼šI  
+#define  FID_WTSB               1157  //é“¶è¯è½¬å¸å‚æ•°çš„ç”³æŠ¥çŠ¶æ€  DTï¼šC  
+#define  FID_QDBZ               1158  //é“¶è¯è½¬å¸å‚æ•°çš„ç­¾åˆ°æ ‡å¿—  DTï¼šC  
+#define  FID_WBZH               1159  //å¤–éƒ¨å¸å·  DTï¼šC  
+#define  FID_SQBH               1160  //ä¸šåŠ¡ç”³è¯·ç¼–å·  DTï¼šC  
+#define  FID_WBCKKY             1161  //å¤–éƒ¨å¸æˆ·å‚è€ƒå¯ç”¨ä½™é¢  DTï¼šC  
+#define  FID_WBCKKQ             1162  //å¤–éƒ¨å¸æˆ·å‚è€ƒå¯å–èµ„é‡‘ä½™é¢  DTï¼šC  
+#define  FID_WBDJJE             1163  //å¤–éƒ¨å¸æˆ·å‚è€ƒå†»ç»“é‡‘é¢  DTï¼šC  
+#define  FID_JYXZ               1164  //é“¶è¯é€šäº¤æ˜“é™åˆ¶  DTï¼šC  
+#define  FID_ZJXYFS             1165  //é“¶è¯é€šèµ„é‡‘æ ¡éªŒæ–¹å¼  DTï¼šC  
+#define  FID_HBBZ               1166  //é“¶è¯é€šèµ„æ–™å›æŠ¥ç±»å‹  DTï¼šC  
+#define  FID_ZJHZFS             1167  //é“¶è¯é€šèµ„é‡‘å›è½¬æ–¹å¼  DTï¼šC  
+#define  FID_DRQKJE             1168  //å½“æ—¥å–æ¬¾é‡‘é¢  DTï¼šR  
+#define  FID_JGKZBZ             1169  //ä»·æ ¼æ§åˆ¶æ ‡å¿—  DTï¼šI  
+#define  FID_ZZJSSJ             1170  //é“¶è¯è½¬å¸åœæ­¢æ­£å¸¸è½¬å¸äº¤æ˜“çš„æ—¶é—´  DTï¼šC  
+#define  FID_CZDRZXBZ           1171  //æ’¤æŒ‡å½“æ—¥æ˜¯å¦å…è®¸æ³¨é”€  DTï¼šC  DTï¼šDTï¼š0 ä¸å…è®¸ï¼Œ1 å…è®¸  
+#define  FID_LSH_LXS            1172  //æ”¶å–åˆ©æ¯ç¨çš„ä¸šåŠ¡æµæ°´å·  DTï¼šI  
+#define  FID_LX                 1173  //åˆ©æ¯  DTï¼šR  
+#define  FID_ZJMXLSH            1174  //èµ„é‡‘æ˜ç»†æµæ°´å·  DTï¼šI  
+#define  FID_YSSL               1175  //åº”æ”¶æ•°é‡  DTï¼šI  
+#define  FID_BBYK               1176  //æœ¬ç¬”ç›ˆäº  DTï¼šR  
+#define  FID_JYSFY              1177  //äº¤æ˜“æ‰€è´¹ç”¨  DTï¼šR  
+#define  FID_BCJKYE             1178  //æœ¬æ¬¡å€Ÿæ¬¾ä½™é¢  DTï¼šR  
+#define  FID_KSGSL              1179  //å¯ç”³è´­æ•°é‡  DTï¼šI  
+#define  FID_ZSZBL1             1180  //è¥ä¸šéƒ¨çš„å¸‚å€¼æ¯”ä¾‹  DTï¼šC  
+#define  FID_ZSZBL2             1181  //æ€»å…¬å¸çš„å¸‚å€¼æ¯”ä¾‹  DTï¼šC  
+#define  FID_QCKHS              1182  //æœŸåˆå®¢æˆ·æ•°  DTï¼šC  
+#define  FID_QMKHS              1183  //æœŸæœ«å®¢æˆ·æ•°  DTï¼šC  
+#define  FID_KSHSL              1184  //å¯èµå›æ•°é‡  DTï¼šI  
+#define  FID_EN_ZQDM            1185  //è¯åˆ¸ä»£ç èŒƒå›´  DTï¼šC  
+#define  FID_XCMRJ              1186  //ç°é’ä¹°å…¥ä»·  DTï¼šC  
+#define  FID_XCMCJ              1187  //ç°é’å–å‡ºä»·  DTï¼šC  
+#define  FID_XHMRJ              1188  //ç°æ±‡ä¹°å…¥ä»·  DTï¼šC  
+#define  FID_XHMCJ              1189  //ç°æ±‡å–å‡ºä»·  DTï¼šC  
+#define  FID_GSBL               1190  //ä¼°ç®—æ¯”ä¾‹  DTï¼šC  
+#define  FID_HLBZ               1191  //æ±‡ç‡æ ‡å¿—  DTï¼šC  
+#define  FID_DRCKJE             1192  //å½“æ—¥å¸æˆ·å­˜æ¬¾é‡‘é¢  DTï¼šC  
+#define  FID_TZCKJE             1193  //å½“æ—¥é€šçŸ¥å­˜æ¬¾é‡‘é¢  DTï¼šC  
+#define  FID_JGMC_E             1194  //æœºæ„è‹±æ–‡åç§°  DTï¼šC  
+#define  FID_FRDB               1195  //æ³•äººä»£è¡¨  DTï¼šC  
+#define  FID_WTQR               1196  //å§”æ‰˜ç¡®è®¤åº“  DTï¼šC  
+#define  FID_HYLB               1197  //è¡Œä¸šç±»åˆ«  DTï¼šC  
+#define  FID_YWFW               1198  //ä¸šåŠ¡èŒƒå›´  DTï¼šC  
+#define  FID_ZCDZ               1199  //æ³¨å†Œåœ°å€  DTï¼šC  
+#define  FID_ZCZB               1200  //æ³¨å†Œèµ„æœ¬  DTï¼šC  
+#define  FID_ZCYE               1201  //èµ„äº§ä½™é¢  DTï¼šC  
+#define  FID_FZYE               1202  //è´Ÿå€ºä½™é¢  DTï¼šC  
+#define  FID_YSZC               1203  //åŸå§‹èµ„äº§  DTï¼šC  
+#define  FID_CXWTH              1204  //æ’¤å•æ’¤é”€å§”æ‰˜å·  DTï¼šI  
+#define  FID_YWXZ               1205  //ä¸šåŠ¡é™åˆ¶  DTï¼šC  
+#define  FID_SJXM               1206  //å®¡è®¡é¡¹ç›®  DTï¼šC  
+#define  FID_SJMC               1207  //å®¡è®¡åç§°  DTï¼šC  
+#define  FID_JS                 1208  //å€ºåˆ¸å¢å€¼ç§¯æ•°  DTï¼šC  
+#define  FID_CCJJ               1209  //æŒä»“å‡ä»·  DTï¼šC  
+#define  FID_LJYK               1210  //ç´¯è®¡ç›ˆäº  DTï¼šC  
+#define  FID_PGSL               1211  //é…è‚¡æ•°é‡  DTï¼šC  
+#define  FID_BL                 1212  //æ¯”ä¾‹  DTï¼šC  
+#define  FID_CSLB               1213  //å‚æ•°ç±»åˆ«  DTï¼šC  
+#define  FID_FJBZ               1214  //é™„åŠ æ ‡è¯†  DTï¼šC  
+#define  FID_QZQKBZ             1215  //å¼ºåˆ¶å–æ¬¾æ ‡å¿—  DTï¼šC  
+#define  FID_SBRQ               1216  //å§”æ‰˜ç”³æŠ¥æ—¥æœŸ  DTï¼šI  
+#define  FID_ZCXX               1217  //èµ„äº§ä¸‹é™  DTï¼šC  
+#define  FID_ZCSX               1218  //èµ„äº§ä¸Šé™  DTï¼šC  
+#define  FID_TIME               1219  //æ“ä½œæ—¶é—´  DTï¼šC  
+#define  FID_PGJE               1220  //é…è‚¡é‡‘é¢  DTï¼šC  
+#define  FID_TGZH               1221  //å€ºåˆ¸ç³»ç»Ÿæ‰˜ç®¡å¸æˆ·  DTï¼šC  
+#define  FID_GZQX               1222  //å›½å€ºæœŸé™  DTï¼šC  
+#define  FID_HGTS               1223  //å›è´­å¤©æ•°  DTï¼šC  
+#define  FID_GZJYSX             1224  //å›½å€ºäº¤æ˜“å±æ€§  DTï¼šC  
+#define  FID_ISLOGIN            1225  //æ˜¯å¦ç™»å½•æ ‡å¿—  DTï¼šI  
+#define  FID_GZNBDM             1226  //å€ºåˆ¸å†…éƒ¨ä»£ç   DTï¼šC  
+#define  FID_GZFJSX             1227  //å›½å€ºé™„åŠ å±æ€§  DTï¼šC  
+#define  FID_GZMZSX             1228  //é¢å€¼å±æ€§  DTï¼šC  
+#define  FID_GZJXTS             1229  //å›½å€ºè®¡æ¯å¤©æ•°  DTï¼šC  
+#define  FID_FXJG               1230  //å€ºåˆ¸å‘è¡Œä»·æ ¼  DTï¼šC  
+#define  FID_TGBH               1231  //æ‰˜ç®¡ç¼–å·  DTï¼šC  
+#define  FID_DYSL               1232  //æŠµæŠ¼æ•°é‡  DTï¼šC  
+#define  FID_TGRQ               1233  //æ‰˜ç®¡æ—¥æœŸ  DTï¼šC  
+#define  FID_SXF                1234  //æ‰‹ç»­è´¹  DTï¼šC  
+#define  FID_DJSL               1235  //å†»ç»“æ•°é‡  DTï¼šC  
+#define  FID_CQDJ               1236  //é•¿æœŸå†»ç»“  DTï¼šC  
+#define  FID_JYFY               1237  //äº¤æ˜“è´¹ç”¨  DTï¼šC  
+#define  FID_DQBX               1238  //å€ºåˆ¸åˆ°æœŸæœ¬æ¯  DTï¼šC  
+#define  FID_GZLL               1239  //å›½å€ºåˆ©ç‡  DTï¼šC  
+#define  FID_DQRQ               1240  //åˆ°æœŸï¼ˆå…‘ä»˜æ—¥æœŸï¼‰  DTï¼šC  
+#define  FID_JXRQ               1241  //å¼€å§‹è®°æ¯æ—¥æœŸ  DTï¼šC  
+#define  FID_LTRQ               1242  //å¼€å§‹æµé€šæ—¥æœŸ  DTï¼šC  
+#define  FID_FXZQDJR            1243  //æ´¾æ¯ç™»è®°æ—¥  DTï¼šC  
+#define  FID_ZQFXRQ             1244  //æ´¾æ¯æ—¥  DTï¼šC  
+#define  FID_DFZQDJR            1245  //å…‘ä»˜ç™»è®°æ—¥  DTï¼šC  
+#define  FID_BRLX               1246  //è®°è´¦å¼å€ºåˆ¸å•ä½ï¼ˆ100ï¼‰æœ¬æ—¥åˆ©æ¯  DTï¼šC  
+#define  FID_HGJG               1247  //å›è´­ä»·æ ¼  DTï¼šC  
+#define  FID_GHJG               1248  //è´­å›ä»·æ ¼  DTï¼šC  
+#define  FID_KTBZ               1249  //å¼€é€šæ ‡å¿—  DTï¼šC  
+#define  FID_HGSL               1250  //å›è´­æ•°é‡  DTï¼šC  
+#define  FID_HGRQ               1251  //å›è´­æ—¥æœŸ  DTï¼šC  
+#define  FID_GHRQ               1252  //è´­å›æ—¥æœŸ  DTï¼šC  
+#define  FID_ZRTGZH             1253  //è½¬å…¥æ‰˜ç®¡å¸æˆ·  DTï¼šC  
+#define  FID_QTZC               1254  //å…¶ä»–èµ„äº§  DTï¼šC  
+#define  FID_ZZC                1255  //æ€»èµ„äº§  DTï¼šC  
+#define  FID_WQSZJ              1256  //æœªæ¸…ç®—èµ„é‡‘  DTï¼šC  
+#define  FID_JGDM               1257  //æœºæ„ä»£ç   DTï¼šC  
+#define  FID_DFSXFL             1258  //å…‘ä»˜æ‰‹ç»­è´¹ç‡  DTï¼šC  
+#define  FID_DFLXSL             1259  //å…‘ä»˜åˆ©æ¯ç¨ç‡  DTï¼šC  
+#define  FID_JXFS               1260  //è®¡æ¯æ–¹å¼  DTï¼šC  
+#define  FID_CSSM               1261  //å‚æ•°è¯´æ˜  DTï¼šC  
+#define  FID_SZSM               1262  //å‚æ•°è®¾ç½®è¯´æ˜  DTï¼šC  
+#define  FID_XGGY               1263  //ä¿®æ”¹æŸœå‘˜  DTï¼šC  
+#define  FID_LOGINNAME          1264  //ç™»å½•ç”¨æˆ·åç§°  DTï¼šC  
+#define  FID_MRDLSF             1265  //é»˜è®¤ç™»å½•èº«ä»½  DTï¼šI  
+#define  FID_MGZC               1266  //æ¯è‚¡èµ„äº§  DTï¼šR  
+#define  FID_SNMGSY             1267  //ä¸Šå¹´æ¯è‚¡æ”¶ç›Š  DTï¼šR  
+#define  FID_XZJB               1268  //é™åˆ¶çº§åˆ«  DTï¼šI  
+#define  FID_EN_MCQZ            1269  //åç§°å‰ç¼€èŒƒå›´  DTï¼šC  
+#define  FID_BDZQDM             1270  //æœ¬åœ°è¯åˆ¸ä»£ç   DTï¼šC  DTï¼šDTï¼šä¹°æ–­å¼å›è´­æœ¬åœ°å€ºåˆ¸ä»£ç   
+#define  FID_LYJBL              1271  //å±¥çº¦é‡‘æ¯”ä¾‹  DTï¼šR  
+#define  FID_RQWGHZJ            1272  //èåˆ¸æœªè´­å›èµ„é‡‘(æƒç›Š)  DTï¼šR  
+#define  FID_RZWGHZJ            1273  //èèµ„æœªè´­å›èµ„é‡‘(è´Ÿå€º)  DTï¼šR  
+#define  FID_BWJSZJ             1274  //ä¹°å…¥æœªäº¤æ”¶èµ„é‡‘  DTï¼šR  
+#define  FID_SWJSZJ             1275  //å–å‡ºæœªäº¤æ”¶èµ„é‡‘  DTï¼šR  
+#define  FID_YSYXYED            1276  //å·²ä½¿ç”¨ä¿¡ç”¨é¢åº¦  DTï¼šR  
+#define  FID_DJWTK              1277  //ç™»è®°å§”æ‰˜åº“  DTï¼šC  
+#define  FID_DJHBK              1278  //ç™»è®°å›æŠ¥åº“  DTï¼šC  
+#define  FID_CDSB               1279  //æ’¤å•ç”³æŠ¥åº“  DTï¼šC  
+#define  FID_CDQR               1280  //æ’¤å•ç¡®è®¤åº“  DTï¼šC  
+#define  FID_WTQRNO             1281  //å§”æ‰˜ç¡®è®¤ç¬”æ•°  DTï¼šI  
+#define  FID_CDQRNO             1282  //æ’¤å•ç¡®è®¤ç¬”æ•°  DTï¼šI  
+#define  FID_TYPE_BF            1283  //å¤‡ä»½é€šé“ç±»å‹  DTï¼šI  
+#define  FID_MODULE_BF          1284  //å¤‡ä»½ç”³æŠ¥æ¨¡å—  DTï¼šC  
+#define  FID_HOST_BF            1285  //å¤‡ä»½ç”³æŠ¥ä¸»æœºåœ°å€  DTï¼šC  
+#define  FID_WTSB_BF            1286  //å¤‡ä»½å§”æ‰˜ç”³æŠ¥åº“  DTï¼šC  
+#define  FID_WTQR_BF            1287  //å¤‡ä»½å§”æ‰˜ç¡®è®¤åº“  DTï¼šC  
+#define  FID_CDSB_BF            1288  //å¤‡ä»½æ’¤å•ç”³æŠ¥åº“  DTï¼šC  
+#define  FID_CDQR_BF            1289  //å¤‡ä»½æ’¤å•ç¡®è®¤åº“  DTï¼šC  
+#define  FID_WTQRNO_BF          1290  //å¤‡ä»½é€šé“å§”æ‰˜ç”³æŠ¥ç¡®è®¤ç¬”æ•°  DTï¼šI  
+#define  FID_CDQRNO_BF          1291  //å¤‡ä»½é€šé“æ’¤å•ç¡®è®¤ç¬”æ•°  DTï¼šI  
+#define  FID_TDBH               1292  //é€šé“ç¼–å·  DTï¼šI  
+#define  FID_EN_TDBH            1293  //é€šé“ç¼–å·èŒƒå›´  DTï¼šC  
+#define  FID_LTXW               1294  //è”é€šå¸­ä½  DTï¼šC  
+#define  FID_YYBXZMS            1295  //è¥ä¸šéƒ¨é™åˆ¶æ¨¡å¼  DTï¼šI  
+#define  FID_ZQLBXZMS           1296  //è¯åˆ¸ç±»åˆ«é™åˆ¶æ¨¡å¼  DTï¼šI  
+#define  FID_SBBS               1297  //ç”³æŠ¥ç¬”æ•°  DTï¼šI  
+#define  FID_SBBS_S             1298  //å•æ¬¡è½®è¯¢æœ€å¤§ç”³æŠ¥ç¬”æ•°  DTï¼šI  
+#define  FID_JGSJ               1299  //é—´éš”æ—¶é—´  DTï¼šI  
+#define  FID_YXHSBL1            1300  //è¥ä¸šéƒ¨æœ‰æ•ˆæˆ·æ•°æ¯”ä¾‹  DTï¼šC  
+#define  FID_YXHSBL2            1301  //æ€»éƒ¨æœ‰æ•ˆæˆ·æ•°æ¯”ä¾‹  DTï¼šC  
+#define  FID_ENDKHH             1302  //ç»“æŸå®¢æˆ·å·  DTï¼šC  
+#define  FID_FILESIZE           1303  //æ–‡ä»¶å¤§å°  DTï¼šC  
+#define  FID_FILETRANSIZE       1304  //æ–‡ä»¶ä¼ é€æ—¶çš„å¤§å°  DTï¼šæ¯”å¦‚ï¼šå‹ç¼©å  DTï¼šC  
+#define  FID_YJXX               1305  //æœ€ä½ä½£é‡‘  DTï¼šC  
+#define  FID_YJSX               1306  //æœ€é«˜ä½£é‡‘  DTï¼šC  
+#define  FID_YHSL               1307  //å°èŠ±ç¨ç‡  DTï¼šC  
+#define  FID_GHFL               1308  //è¿‡æˆ·è´¹ç‡  DTï¼šC  
+#define  FID_GHFXX              1309  //æœ€ä½è¿‡æˆ·è´¹  DTï¼šC  
+#define  FID_GHFSX              1310  //æœ€é«˜è¿‡æˆ·è´¹  DTï¼šC  
+#define  FID_FJF                1311  //é™„åŠ è´¹  DTï¼šC  
+#define  FID_JSFL               1312  //ç»“ç®—è´¹ç‡  DTï¼šR  
+#define  FID_JSFXX              1313  //æœ€ä½ç»“ç®—è´¹  DTï¼šC  
+#define  FID_JSFSX              1314  //æœ€é«˜ç»“ç®—è´¹  DTï¼šC  
+#define  FID_JYGFL              1315  //äº¤æ˜“è§„è´¹ç‡  DTï¼šC  
+#define  FID_JYGFXX             1316  //äº¤æ˜“è§„è´¹ä¸‹é™  DTï¼šC  
+#define  FID_JYGFSX             1317  //äº¤æ˜“è§„è´¹ä¸Šé™  DTï¼šC  
+#define  FID_QTFL               1318  //å…¶å®ƒè´¹ç‡  DTï¼šC  
+#define  FID_QTFXX              1319  //æœ€ä½å…¶ä»–è´¹ç”¨  DTï¼šC  
+#define  FID_QTFSX              1320  //æœ€é«˜å…¶ä»–è´¹ç”¨  DTï¼šC  
+#define  FID_FID                1321  //FIXåŒ…ä¸­çš„FIDç¼–å·  DTï¼šI  
+#define  FID_EN_XWH             1322  //å¸­ä½å·èŒƒå›´  DTï¼šC  
+#define  FID_FWDM               1323  //å®¢æˆ·æœåŠ¡ä»£ç   DTï¼šC  
+#define  FID_FWMC               1324  //å®¢æˆ·æœåŠ¡åç§°  DTï¼šC  
+#define  FID_FWLX               1325  //å®¢æˆ·æœåŠ¡ç±»å‹  DTï¼šC  
+#define  FID_SLZ                1326  //å®¢æˆ·æœåŠ¡å—ç†ä¸»ä½“  DTï¼šC  
+#define  FID_CLFS               1327  //å®¢æˆ·æœåŠ¡å¤„ç†æ–¹å¼  DTï¼šC  
+#define  FID_FILE               1328  //æ–‡ä»¶å  DTï¼šC  
+#define  FID_FILE2              1329  //æ–‡ä»¶åäºŒ  DTï¼šC  
+#define  FID_PROCNAME           1330  //è¿‡ç¨‹å  DTï¼šC  
+#define  FID_CSXH               1331  //å‚æ•°åºå·  DTï¼šC  
+#define  FID_TYPE               1332  //å‚æ•°ç±»å‹  DTï¼šC  
+#define  FID_QSZ                1333  //ç¼ºçœå€¼  DTï¼šC  
+#define  FID_CJHB               1334  //æˆäº¤å›æŠ¥åº“  DTï¼šC  
+#define  FID_CS1                1335  //å‚æ•°1  DTï¼šC  
+#define  FID_CS2                1336  //å‚æ•°2  DTï¼šC  
+#define  FID_CS3                1337  //å‚æ•°3  DTï¼šC  
+#define  FID_CS4                1338  //å‚æ•°4  DTï¼šC  
+#define  FID_CS5                1339  //å‚æ•°5  DTï¼šC  
+#define  FID_CS6                1340  //å‚æ•°6  DTï¼šC  
+#define  FID_CS7                1341  //å‚æ•°7  DTï¼šC  
+#define  FID_CS8                1342  //å‚æ•°8  DTï¼šC  
+#define  FID_CS9                1343  //å‚æ•°9  DTï¼šC  
+#define  FID_CS10               1344  //å‚æ•°10  DTï¼šC  
+#define  FID_CS11               1345  //å‚æ•°11  DTï¼šC  
+#define  FID_CS12               1346  //å‚æ•°12  DTï¼šC  
+#define  FID_CS13               1347  //å‚æ•°13  DTï¼šC  
+#define  FID_CS14               1348  //å‚æ•°14  DTï¼šC  
+#define  FID_CS15               1349  //å‚æ•°15  DTï¼šC  
+#define  FID_OPTERATOR          1350  //æ ¸å¿ƒå¼€æˆ·æ“ä½œç±»å‹  DTï¼šC  
+#define  FID_OPTION             1351  //æ ¸å¿ƒå¼€æˆ·å‚æ•°1  DTï¼šC  
+#define  FID_PACKINDEX          1352  //æ•°æ®åŒ…åºåˆ—å·  DTï¼šC  
+#define  FID_GYDM               1353  //æŸœå‘˜ä»£ç   DTï¼šC  
+#define  FID_JYJS               1354  //äº¤æ˜“åŸºæ•°  DTï¼šC  
+#define  FID_QTSX               1355  //å…¶ä»–å±æ€§  DTï¼šC  
+#define  FID_TDJY               1356  //æ›¿ä»£äº¤æ˜“  DTï¼šC  
+#define  FID_MRJG5              1357  //ä¹°å…¥ä»·æ ¼5  DTï¼šC  
+#define  FID_MRSL5              1358  //ä¹°å…¥æ•°é‡5  DTï¼šC  
+#define  FID_MCJG5              1359  //å–å‡ºä»·æ ¼5  DTï¼šC  
+#define  FID_MCSL5              1360  //å–å‡ºæ•°é‡5  DTï¼šC  
+#define  FID_ZQSZ_RMB           1361  //äººæ°‘å¸è¯åˆ¸å¸‚å€¼  DTï¼šC  
+#define  FID_ZQSZ_USD           1362  //ç¾å…ƒè¯åˆ¸å¸‚å€¼  DTï¼šC  
+#define  FID_ZQSZ_HKD           1363  //æ¸¯å¸è¯åˆ¸å¸‚å€¼  DTï¼šC  
+#define  FID_ZQSZ_ZSRMB         1364  //æ€»è¯åˆ¸å¸‚å€¼æŠ˜ç®—äººæ°‘å¸  DTï¼šC  
+#define  FID_ZJYE_RMB           1365  //äººæ°‘å¸èµ„é‡‘ä½™é¢  DTï¼šC  
+#define  FID_ZJYE_USD           1366  //ç¾å…ƒèµ„é‡‘ä½™é¢  DTï¼šC  
+#define  FID_ZJYE_HKD           1367  //æ¸¯å¸èµ„é‡‘ä½™é¢  DTï¼šC  
+#define  FID_ZJYE_ZSRMB         1368  //æ€»èµ„é‡‘ä½™é¢æŠ˜ç®—äººæ°‘å¸  DTï¼šC  
+#define  FID_QTZC_RMB           1369  //äººæ°‘å¸å…¶ä»–èµ„äº§  DTï¼šC  
+#define  FID_QTZC_USD           1370  //ç¾å…ƒå…¶ä»–èµ„äº§  DTï¼šC  
+#define  FID_QTZC_HKD           1371  //æ¸¯å¸å…¶ä»–èµ„äº§  DTï¼šC  
+#define  FID_QTZC_ZSRMB         1372  //æ€»å…¶ä»–èµ„äº§æŠ˜ç®—äººæ°‘å¸  DTï¼šC  
+#define  FID_LASTRECNO          1373  //æœ€è¿‘å›æŠ¥è®°å½•å·  DTï¼šI  
+#define  FID_HTHQZFW            1374  //åˆåŒå·å‰ç¼€èŒƒå›´  DTï¼šC  
+#define  FID_TZZHDM             1375  //æŠ•èµ„ç»„åˆä»£ç   DTï¼šC  
+#define  FID_TZZHMC             1376  //æŠ•èµ„ç»„åˆä»£ç   DTï¼šC  
+#define  FID_TZZHQZ             1377  //æŠ•èµ„ç»„åˆä»£ç   DTï¼šC  
+#define  FID_TZZHLB             1378  //æŠ•èµ„ç»„åˆä»£ç   DTï¼šC  
+#define  FID_HTHQJ              1379  //åˆåŒå·åŒºé—´  DTï¼šC  
+#define  FID_FWLB               1380  //æœåŠ¡ç±»åˆ«  DTï¼šC  
+#define  FID_XMZX               1381  //é¡¹ç›®å­é¡¹  DTï¼šC  
+#define  FID_DZLB               1382  //ä¸»åŠ¨æ¨é€å…è®¸åœ°å€ç±»åˆ«  DTï¼šC  
+#define  FID_QSDZLB             1383  //ä¸»åŠ¨æ¨é€ç¼ºçœåœ°å€ç±»åˆ«  DTï¼šC  
+#define  FID_SJFY               1384  //æ‰‹æœºçŸ­ä¿¡æ–¹å¼çš„æœåŠ¡æ”¶è´¹æ ‡å‡†  DTï¼šC  
+#define  FID_YJFY               1385  //EMAILæ–¹å¼çš„æœåŠ¡æ”¶è´¹æ ‡å‡†  DTï¼šC  
+#define  FID_ZF                 1386  //æ¶¨å¹…  DTï¼šC  
+#define  FID_DF                 1387  //è·Œå¹…  DTï¼šC  
+#define  FID_FSCS               1388  //å‘é€æ¬¡æ•°  DTï¼šC  
+#define  FID_HQNR               1389  //è¡Œæƒ…ç‚¹æ’­å†…å®¹  DTï¼šC  
+#define  FID_ZDSJ               1390  //è¡Œæƒ…ç‚¹æ’­å…è®¸å‘é€æŒ‡å®šæ—¶é—´ç‚¹  DTï¼šC  
+#define  FID_SJQJ               1391  //è¡Œæƒ…ç‚¹æ’­å…è®¸å‘é€æ—¶é—´åŒºé—´  DTï¼šC  
+#define  FID_XWZBH              1392  //å¸­ä½ç»„ç¼–å·  DTï¼šI  
+#define  FID_XJDM               1393  //ç°é‡‘ä»£ç (ETF)  DTï¼šC  
+#define  FID_RGDM               1394  //è®¤è´­ä»£ç (ETF)  DTï¼šC  
+#define  FID_RGQRDM             1395  //è®¤è´­ç¡®è®¤ä»£ç   DTï¼šC  
+#define  FID_XWZMC              1396  //å¸­ä½ç»„åç§°  DTï¼šC  
+#define  FID_RIGH               1397  //åå¸­ç”¨æˆ·æƒé™  DTï¼šC  
+#define  FID_MGSY               1398  //æ¯è‚¡æ”¶ç›Š  DTï¼šC  
+#define  FID_SHDM               1399  //ä¸Šæµ·å¸‚åœºè‚¡ç¥¨ä»£ç (é…å”®)  DTï¼šC  
+#define  FID_SZDM               1400  //æ·±åœ³å¸‚åœºè‚¡ç¥¨ä»£ç (é…å”®)  DTï¼šC  
+#define  FID_GSHY               1401  //ä¸Šå¸‚å…¬å¸è¡Œä¸š  DTï¼šC  
+#define  FID_GSMC               1402  //ä¸Šå¸‚å…¬å¸åç§°  DTï¼šC  
+#define  FID_FXZL               1403  //å‘è¡Œæ€»é‡  DTï¼šC  
+#define  FID_FILEWRITETIME      1404  //æ–‡ä»¶ä¿®æ”¹æ—¶é—´  DTï¼šC  
+#define  FID_DHXL               1405  //å•æˆ·ç”³è´­é™é‡  DTï¼šC  
+#define  FID_BLFM               1406  //æ¯”ä¾‹åˆ†æ¯  DTï¼šé…è‚¡ã€é€è‚¡ç­‰  DTï¼šC  
+#define  FID_BLFZ               1407  //æ¯”ä¾‹åˆ†å­  DTï¼šé…è‚¡ã€é€è‚¡ç­‰  DTï¼šC  
+#define  FID_ZQL                1408  //ä¸­ç­¾ç‡  DTï¼šC  
+#define  FID_SSGJ               1409  //ä¸Šå¸‚ä¼°ä»·  DTï¼šC  
+#define  FID_FXRQ               1410  //å‘è¡Œæ—¥æœŸ  DTï¼šC  
+#define  FID_ZQYHRQ             1411  //ä¸­ç­¾æ‘‡å·æ—¥æœŸ  DTï¼šC  
+#define  FID_CQRQ               1412  //é™¤æƒæ—¥æœŸ  DTï¼šC  
+#define  FID_JKQSRQ             1413  //ç¼´æ¬¾èµ·å§‹æ—¥æœŸ  DTï¼šC  
+#define  FID_JKJSRQ             1414  //ç¼´æ¬¾ç»“æŸæ—¥æœŸ  DTï¼šC  
+#define  FID_TSXX               1415  //ç‰¹åˆ«æç¤ºä¿¡æ¯  DTï¼šC  
+#define  FID_ZGB                1416  //ä¸Šå¸‚å…¬å¸æ€»è‚¡æœ¬  DTï¼šC  
+#define  FID_MGGJJ              1417  //æ¯è‚¡èµ„æœ¬å…¬ç§¯é‡‘  DTï¼šR  
+#define  FID_MGWFPLR            1418  //æ¯è‚¡æœªåˆ†é…åˆ©æ¶¦  DTï¼šR  
+#define  FID_CLMC               1419  //ä½£é‡‘å®šä»·ç­–ç•¥åç§°  DTï¼šC  
+#define  FID_EN_FLLB            1420  //è´¹ç‡ç±»åˆ«èŒƒå›´  DTï¼šC  
+#define  FID_GHFZKL             1421  //è¿‡æˆ·è´¹æŠ˜æ‰£ç‡  DTï¼šR  
+#define  FID_LJJS               1422  //ç´¯è®¡è®¡æ•°  DTï¼šI  
+#define  FID_LJZQ               1423  //ç´¯è®¡å‘¨æœŸ  DTï¼šI  
+#define  FID_ZCJSFS             1424  //èµ„äº§è®¡ç®—æ–¹å¼  DTï¼šI  
+#define  FID_ZSYJL              1425  //æŠ˜ç®—ä½£é‡‘ç‡  DTï¼šI  
+#define  FID_JYLFDBH            1426  //äº¤æ˜“é‡åˆ†æ®µç¼–å·  DTï¼šI  
+#define  FID_ZCFDBH             1427  //èµ„äº§åˆ†æ®µç¼–å·  DTï¼šI  
+#define  FID_JYLXX              1428  //äº¤æ˜“é‡ä¸‹é™  DTï¼šR  
+#define  FID_JYLSX              1429  //äº¤æ˜“é‡ä¸Šé™  DTï¼šR  
+#define  FID_GHJE               1430  //å½’è¿˜é‡‘é¢  DTï¼šR  
+#define  FID_FZYWDM             1431  //å¤åˆ¶ä¸šåŠ¡ä»£ç   DTï¼šC  
+#define  FID_LOGIN_ENABLE       1432  //ç™»å½•å…è®¸çŠ¶æ€  DTï¼šC  DTï¼šDTï¼š0 ç¦æ­¢ï¼›1 å…è®¸  
+#define  FID_ZQJY_ENABLE        1433  //è¯åˆ¸äº¤æ˜“å…è®¸çŠ¶æ€  DTï¼šC  DTï¼šDTï¼š0 ç¦æ­¢ï¼›1 å…è®¸  
+#define  FID_ZJYW_ENABLE        1434  //èµ„é‡‘ä¸šåŠ¡å…è®¸çŠ¶æ€  DTï¼šC  DTï¼šDTï¼š0 ç¦æ­¢ï¼›1 å…è®¸  
+#define  FID_LSCXYW_ENABLE      1435  //å†å²æŸ¥è¯¢ä¸šåŠ¡çŠ¶æ€  DTï¼šC  DTï¼šDTï¼š0 ç¦æ­¢ï¼›1 å…è®¸  
+#define  FID_OFS_ENABLE         1436  //å¼€æ”¾å¼åŸºé‡‘å…è®¸çŠ¶æ€  DTï¼šC  DTï¼šDTï¼š0 ç¦æ­¢ï¼›1 å…è®¸  
+#define  FID_KHYW_ENABLE        1437  //å®¢æˆ·ä¸šåŠ¡å…è®¸çŠ¶æ€  DTï¼šC  DTï¼šDTï¼š0 ç¦æ­¢ï¼›1 å…è®¸  
+#define  FID_SFYG               1438  //æ˜¯å¦å†…éƒ¨å‘˜å·¥  DTï¼šI  
+#define  FID_XZYS               1439  //é™åˆ¶æœˆæ•°  DTï¼šI  
+#define  FID_FUNCID             1440  //å‡½æ•°åŠŸèƒ½å·  DTï¼šI  
+#define  FID_CXJE               1441  //æ’¤é”€é‡‘é¢  DTï¼šR  
+#define  FID_ZJLY               1442  //èµ„é‡‘æ¥æº  DTï¼šC  DTï¼šDTï¼šé“¶è¡Œã€äº¤æ˜“æ‰€...  
+#define  FID_WTSF               1443  //å§”æ‰˜æ”¶è´¹é‡‘é¢  DTï¼šR  
+#define  FID_CDSF               1444  //æ’¤å•æ”¶è´¹é‡‘é¢  DTï¼šR  
+#define  FID_XYSYBZ             1445  //ä¿¡ç”¨ä½¿ç”¨æ ‡å¿—  DTï¼šI  
+#define  FID_LSCLMS             1446  //å†²é”€èµ„é‡‘ä¸šåŠ¡åŸæµæ°´å¤„ç†æ¨¡å¼  DTï¼šC  DTï¼šDTï¼š0 ä¿ç•™ï¼Œ1 åˆ é™¤åŸæµæ°´  
+#define  FID_JLLSBZ             1447  //æ˜¯å¦è®°å½•æµæ°´æ ‡å¿—  DTï¼šC  DTï¼šDTï¼š0 é»˜è®¤  
+#define  FID_TZMS               1448  //è°ƒæ•´æ¨¡å¼  DTï¼šC  DTï¼šDTï¼š0 ç›´æ¥è°ƒæ•´ï¼Œ1 ç´¯åŠ   
+#define  FID_DOMAIN1            1449  //æŸ¥è¯¢åŸŸ  DTï¼šC  DTï¼šDTï¼šå…¨ä½“æŸ¥è¯¢å½“å‰æ•°æ®æ‰€åœ¨çš„åŸŸ  
+#define  FID_REGLOG             1450  //æ˜¯å¦è®°å½•æ—¥å¿—  DTï¼šC  DTï¼šDTï¼š0 è®°å½•ï¼Œ1 ä¸è®°å½•  
+#define  FID_SLTSFS             1451  //æ•°é‡æç¤ºæ–¹å¼  DTï¼šC  
+#define  FID_OWNER_KH           1452  //å…è®¸æ‹¥æœ‰å®¢æˆ·  DTï¼šI  
+#define  FID_OWNER_JJR          1453  //å…è®¸æ‹¥æœ‰ç»çºªäºº  DTï¼šI  
+#define  FID_KZFS_KHQX          1454  //å®¢æˆ·æƒé™æ§åˆ¶æ–¹å¼  DTï¼šI  
+#define  FID_KZFS_YHQX          1455  //ç”¨æˆ·æƒé™æ§åˆ¶æ–¹å¼  DTï¼šI  
+#define  FID_KZFS_CSQX          1456  //å‚æ•°æƒé™æ§åˆ¶æ–¹å¼  DTï¼šI  
+#define  FID_KZFS_KHFL          1457  //å®¢æˆ·åˆ†ç±»æ§åˆ¶æ–¹å¼  DTï¼šI  
+#define  FID_YXRQ               1458  //æœ‰æ•ˆæ—¥æœŸ  DTï¼šI  
+#define  FID_WJLX               1459  //æ–‡ä»¶ç±»å‹  DTï¼šI  
+#define  FID_WJLJ               1460  //æ–‡ä»¶è·¯å¾„  DTï¼šC  
+#define  FID_SYFW               1461  //é€‚ç”¨èŒƒå›´  DTï¼šI  
+#define  FID_ZJDZ               1462  //è¯ä»¶ä¸Šçš„åœ°å€  DTï¼šC  
+#define  FID_FXJB               1463  //é£é™©çº§åˆ«  DTï¼šI  
+#define  FID_SQCZRH             1464  //æˆæƒæ“ä½œäººç¼–å·  DTï¼šC  
+#define  FID_ZHGLJG             1465  //å¸æˆ·ç®¡ç†æœºæ„  DTï¼šC  
+#define  FID_ZJDZ_FRDB          1466  //æ³•äººä»£è¡¨çš„è¯ä»¶åœ°å€  DTï¼šC  
+#define  FID_XM_JBR             1467  //æœºæ„ç»åŠäººå§“å  DTï¼šC  
+#define  FID_ZJLB_JBR           1468  //æœºæ„ç»åŠäººè¯ä»¶ç±»åˆ«  DTï¼šI  
+#define  FID_ZJBH_JBR           1469  //æœºæ„ç»åŠäººè¯ä»¶ç¼–å·  DTï¼šC  
+#define  FID_ZCFZ               1470  //èµ„äº§åˆ†ç»„  DTï¼šC  
+#define  FID_EN_ZCFZ            1471  //èµ„äº§åˆ†ç»„èŒƒå›´  DTï¼šC  
+#define  FID_XJYE               1472  //ç°é‡‘ä½™é¢  DTï¼šR  
+#define  FID_RZRQ               1473  //å…¥å¸æ—¥æœŸ  DTï¼šI  
+#define  FID_TXXS               1474  //æ˜¯å¦æ˜¾ç¤ºå›¾åƒ  DTï¼šI  
+#define  FID_CDWZID_NEW         1475  //æ–°èœå•ä½ç½®ä»£ç   DTï¼šI  
+#define  FID_KZYWDM             1476  //æ‰©å±•ä¸šåŠ¡ä»£ç   DTï¼šC  
+#define  FID_KZYWMC             1477  //æ‰©å±•ä¸šåŠ¡åç§°  DTï¼šC  
+#define  FID_KZYWSM             1478  //æ‰©å±•ä¸šåŠ¡è¯´æ˜  DTï¼šC  
+#define  FID_KZYWZT             1479  //æ‰©å±•ä¸šåŠ¡çŠ¶æ€  DTï¼šI  
+#define  FID_ZZXY               1480  //è‡ªåŠ©åè®®  DTï¼šC  
+#define  FID_NZZCJE             1481  //å†…è½¬è½¬å‡ºé‡‘é¢  DTï¼šR  
+#define  FID_NZZRJE             1482  //å†…è½¬è½¬å…¥é‡‘é¢  DTï¼šR  
+#define  FID_QTCKJE             1483  //å…¶å®ƒå­˜æ¬¾é‡‘é¢  DTï¼šR  
+#define  FID_QTQKJE             1484  //å…¶å®ƒå–æ¬¾é‡‘é¢  DTï¼šR  
+#define  FID_ZPCKJE             1485  //æ”¯ç¥¨å­˜æ¬¾é‡‘é¢  DTï¼šR  
+#define  FID_ZPQKJE             1486  //æ”¯ç¥¨å–æ¬¾é‡‘é¢  DTï¼šR  
+#define  FID_ZZZCJE             1487  //é“¶è¯è½¬å¸è½¬å‡ºé‡‘é¢  DTï¼šR  
+#define  FID_ZZZRJE             1488  //é“¶è¯è½¬å¸è½¬å…¥é‡‘é¢  DTï¼šR  
+#define  FID_HCJE               1489  //çº¢å†²é‡‘é¢  DTï¼šR  
+#define  FID_LBJE               1490  //å…°è¡¥é‡‘é¢  DTï¼šR  
+#define  FID_TJZQ               1491  //ç»Ÿè®¡å‘¨æœŸ  DTï¼šC  DTï¼šDTï¼š0 æŒ‰å¤©ï¼›1 æŒ‰æœˆï¼›2 æŒ‰å¹´  
+#define  FID_TJDW               1492  //ç»Ÿè®¡å•ä½  DTï¼šC  
+#define  FID_TGZRHS             1493  //è½¬æ‰˜ç®¡è½¬å…¥æˆ·æ•°  DTï¼šI  
+#define  FID_TGZCHS             1494  //è½¬æ‰˜ç®¡è½¬å‡ºæˆ·æ•°  DTï¼šI  
+#define  FID_TGZRSZ             1495  //è½¬æ‰˜ç®¡è½¬å…¥å¸‚å€¼  DTï¼šR  
+#define  FID_TGZCSZ             1496  //è½¬æ‰˜ç®¡è½¬å‡ºå¸‚å€¼  DTï¼šR  
+#define  FID_ZDZRSZ             1497  //æŒ‡å®šè½¬å…¥å¸‚å€¼  DTï¼šR  
+#define  FID_CZZCSZ             1498  //æ’¤æŒ‡è½¬å‡ºå¸‚å€¼  DTï¼šR  
+#define  FID_JGLBMC             1499  //æœºæ„ç±»åˆ«åç§°  DTï¼šC  
+#define  FID_FXLB               1500  //å‘è¡Œç±»åˆ«  DTï¼šI  
+#define  FID_FXRDM              1501  //å‘è¡Œäººä»£ç   DTï¼šC  
+#define  FID_QZDM               1502  //æƒè¯ä»£ç   DTï¼šC  
+#define  FID_QZLX               1503  //æƒè¯ç±»å‹  DTï¼šI  
+#define  FID_XQBL               1504  //è¡Œæƒæ¯”ä¾‹  DTï¼šR  
+#define  FID_FILEDATA           1505  //æ–‡ä»¶æ•°æ®  DTï¼šC  
+#define  FID_FILEZIP            1506  //æ–‡ä»¶æ˜¯å¦å‹ç¼©ä¼ é€(ç”±æœåŠ¡ç«¯å†³å®š)  DTï¼šC  
+#define  FID_FILECOMPANYNAME    1507  //æ–‡ä»¶çš„å…¬å¸åç§°  DTï¼šC  
+#define  FID_FILEPRODUCTNAME    1508  //æ–‡ä»¶çš„ç›¸å…³äº§å“åç§°  DTï¼šC  
+#define  FID_FILEDIR            1509  //æ–‡ä»¶æ‰€å­˜æ”¾ç›®å½•  DTï¼šC  
+#define  FID_FILENEW            1510  //æ˜¯æ–°æ–‡ä»¶ï¼Œå¼ºåˆ¶ç”¨æˆ·æ›´æ–°  DTï¼šC  
+#define  FID_FILERELATION       1511  //ä¸Šä¼ æ•°æ®å—ä¸å·²å­˜åœ¨çš„æ–‡ä»¶çš„å…³ç³»  DTï¼šC  
+#define  FID_FILEPOSITION       1512  //æ–‡ä»¶ä¸­ç›¸å¯¹äºæ–‡ä»¶å¤´çš„åç§»  DTï¼šC  
+#define  FID_FILETYPE           1513  //æ–‡ä»¶çš„ä¸šåŠ¡ç±»å‹  DTï¼šC  
+#define  FID_XQDM               1514  //è¡Œæƒä»£ç   DTï¼šC  
+#define  FID_XQFS               1515  //è¡Œæƒæ–¹å¼  DTï¼šI  
+#define  FID_XQJG               1516  //è¡Œæƒä»·æ ¼  DTï¼šR  
+#define  FID_ZCLB               1517  //èµ„äº§ç±»åˆ«  DTï¼šI  
+#define  FID_DBXS               1518  //æ‹…ä¿ç³»æ•°  DTï¼šR  
+#define  FID_SJZD               1519  //æ•°æ®å­—å…¸  DTï¼šC  
+#define  FID_SRKJLX             1520  //è¾“å…¥æ§ä»¶ç±»å‹  DTï¼šI  
+#define  FID_DZFS               1521  //å®¢æˆ·å¯¹å¸å•å¯„é€æ–¹å¼  DTï¼šI  
+#define  FID_CXSL               1522  //æ’¤é”€æ•°é‡  DTï¼šI  
+#define  FID_BLSFUNC            1523  //å¯¹åº”çš„BLSåŠŸèƒ½ç   DTï¼šI  
+#define  FID_QSFY               1524  //æ¸…ç®—è´¹ç”¨  DTï¼šR  
+#define  FID_RGRQ               1525  //è®¤è´­æ—¥æœŸ  DTï¼šI  
+#define  FID_JGRQ               1526  //äº¤å‰²æ—¥æœŸ  DTï¼šI  
+#define  FID_JYSCPFL            1527  //äº¤æ˜“æ‰€äº§å“åˆ†ç±»  DTï¼šC  
+#define  FID_JYSCPZL            1528  //äº¤æ˜“æ‰€äº§å“å­ç±»  DTï¼šC  
+#define  FID_DDLXXZ             1529  //è®¢å•ç±»å‹é™åˆ¶  DTï¼šC  
+#define  FID_BSDDZXSL           1530  //å†°å±±è®¢å•æœ€å°å•†é‡  DTï¼šI  
+#define  FID_BSDDZXPLSL         1531  //å†°å±±è®¢å•æœ€å°æŠ«éœ²æ•°é‡  DTï¼šI  
+#define  FID_JYQX               1532  //äº¤æ˜“æƒé™  DTï¼šI  
+#define  FID_SBJB               1533  //ç”³æŠ¥çº§åˆ«  DTï¼šI  
+#define  FID_ZSXJ               1534  //æ­¢æŸé™ä»·  DTï¼šR  
+#define  FID_ISIN               1535  //ISINä»£ç   DTï¼šC  
+#define  FID_DDYXRQ             1536  //è®¢å•æœ‰æ•ˆæ—¥æœŸ  DTï¼šI  
+#define  FID_DDSXXZ             1537  //è®¢å•æ—¶æ•ˆé™åˆ¶  DTï¼šI  
+#define  FID_DDJYXZ             1538  //è®¢å•äº¤æ˜“é™åˆ¶  DTï¼šI  
+#define  FID_JYSDDBH            1539  //äº¤æ˜“æ‰€è®¢å•ç¼–å·  DTï¼šC  
+#define  FID_BRCJSL             1540  //æœ¬æ—¥æˆäº¤æ•°é‡  DTï¼šI  
+#define  FID_BRCJJE             1541  //æœ¬æ—¥æˆäº¤é‡‘é¢  DTï¼šR  
+#define  FID_EN_SBJB            1542  //ç”³æŠ¥çº§åˆ«èŒƒå›´  DTï¼šC  
+#define  FID_DZXXBZ             1543  //å¤šå€¼ä¿¡æ¯æ ‡å¿—  DTï¼šC  DTï¼šDTï¼š0 å•å€¼ï¼Œ1 å¤šå€¼  
+#define  FID_DXLX               1544  //å¯¹è±¡ç±»å‹  DTï¼šI  
+#define  FID_EN_LOGINID         1545  //ç™»å½•IDèŒƒå›´  DTï¼šC  
+#define  FID_EN_JSDM            1546  //è§’è‰²ä»£ç   DTï¼šC  
+#define  FID_JYBWFL             1547  //äº¤æ˜“å¤‡å¿˜åˆ†ç±»  DTï¼šI  
+#define  FID_QRSMJG             1548  //ç¡®è®¤æ‰«æé—´éš”  DTï¼šI  
+#define  FID_HBSMJG             1549  //å›æŠ¥æ‰«æé—´éš”  DTï¼šI  
+#define  FID_NONTRADINGORDTYPE  1550  //NGTSéäº¤æ˜“è®¢å•ç±»å‹  DTï¼šC  
+#define  FID_ORDTYPE            1551  //NGTSæ¥å£è®¢å•ç±»å‹  DTï¼šC  
+#define  FID_SIDE               1552  //NGTSä¹°å–æ–¹å‘  DTï¼šC  
+#define  FID_TIMEINFORCE        1553  //NGTSæ—¶æ•ˆé™åˆ¶  DTï¼šC  
+#define  FID_TRADINGSESSIO      1554  //NGTSäº¤æ˜“é™åˆ¶  DTï¼šC  
+#define  FID_XTCSBZ             1555  //ç³»ç»Ÿæµ‹è¯•æ ‡å¿—  DTï¼šI  
+#define  FID_ZJJRBZ             1556  //ä¸»ç»çºªäººæ ‡å¿—  DTï¼šI  
+#define  FID_PJZC               1557  //å¹³å‡èµ„äº§  DTï¼šR  
+#define  FID_KHMMSQ             1558  //å®¢æˆ·å¯†ç æˆæƒ  DTï¼šC  DTï¼šDTï¼šå®¢æˆ·æ˜¯å¦å°†å¯†ç æˆæƒç»™å…¶ä»£ç†äºº  
+#define  FID_TJRQ               1559  //ç»Ÿè®¡æ—¥æœŸ  DTï¼šI  
+#define  FID_BCDJSL             1560  //æœ¬åœ°å†»ç»“æ•°é‡  DTï¼šI  
+#define  FID_TQSL               1561  //é€åˆ¸æ•°é‡  DTï¼šI  
+#define  FID_EN_SQLB            1562  //ç”³è¯·ç±»åˆ«èŒƒå›´  DTï¼šC  
+#define  FID_RGJG               1563  //è®¤è´­ä»·æ ¼  DTï¼šR  
+#define  FID_RGSL               1564  //è®¤è´­æ•°é‡  DTï¼šI  
+#define  FID_CGLB               1565  //å­˜ç®¡ç±»åˆ«  DTï¼šI  
+#define  FID_CGZH               1566  //å­˜ç®¡å¸å·  DTï¼šC  
+#define  FID_CGYHDM             1567  //å­˜ç®¡é“¶è¡Œä»£ç   DTï¼šC  
+#define  FID_CGYHZH             1568  //å­˜ç®¡é“¶è¡Œå¸æˆ·  DTï¼šC  
+#define  FID_CGCLJG             1569  //å­˜ç®¡è¡Œå¤„ç†ç»“æœ  DTï¼šI  
+#define  FID_CGJGSM             1570  //å­˜ç®¡è¡Œç»“æœè¯´æ˜  DTï¼šC  
+#define  FID_CGCLRQ             1571  //å­˜ç®¡è¡Œå¤„ç†æ—¥æœŸ  DTï¼šI  
+#define  FID_CGCLSJ             1572  //å­˜ç®¡è¡Œå¤„ç†æ—¶é—´  DTï¼šC  
+#define  FID_CGWBCLJG           1573  //å­˜ç®¡è¡Œå¤–éƒ¨å¤„ç†ç»“æœ  DTï¼šC  
+#define  FID_CXWBLSH            1574  //æ’¤é”€å¤–éƒ¨æµæ°´å·  DTï¼šC  
+#define  FID_YHYE               1575  //é“¶è¡Œä½™é¢  DTï¼šC  DTï¼šDTï¼šå­˜ç®¡é“¶è¡Œç«¯èµ„é‡‘ç®¡ç†å¸æˆ·ä½™é¢  
+#define  FID_ZBYH               1576  //å­˜ç®¡ä¸»åŠé“¶è¡Œ  DTï¼šC  DTï¼šDTï¼š0 ååŠè¡Œï¼Œ1 ä¸»åŠè¡Œ  
+#define  FID_CGJGDM             1577  //å­˜ç®¡æœºæ„ä»£ç   DTï¼šC  DTï¼šDTï¼šåœ¨é“¶è¡Œç«¯ä¿å­˜çš„è¥ä¸šéƒ¨ç¼–ç   
+#define  FID_MRSL6              1578  //ä¹°å…¥æ•°é‡6  DTï¼šI  
+#define  FID_MRSL7              1579  //ä¹°å…¥æ•°é‡7  DTï¼šI  
+#define  FID_MRSL8              1580  //ä¹°å…¥æ•°é‡8  DTï¼šI  
+#define  FID_MRSL9              1581  //ä¹°å…¥æ•°é‡9  DTï¼šI  
+#define  FID_MRSL10             1582  //ä¹°å…¥æ•°é‡10  DTï¼šI  
+#define  FID_MCSL6              1583  //å–å‡ºæ•°é‡6  DTï¼šI  
+#define  FID_MCSL7              1584  //å–å‡ºæ•°é‡7  DTï¼šI  
+#define  FID_MCSL8              1585  //å–å‡ºæ•°é‡8  DTï¼šI  
+#define  FID_MCSL9              1586  //å–å‡ºæ•°é‡9  DTï¼šI  
+#define  FID_MCSL10             1587  //å–å‡ºæ•°é‡10  DTï¼šI  
+#define  FID_MRJG6              1588  //ä¹°å…¥ä»·æ ¼6  DTï¼šR  
+#define  FID_MRJG7              1589  //ä¹°å…¥ä»·æ ¼7  DTï¼šR  
+#define  FID_MRJG8              1590  //ä¹°å…¥ä»·æ ¼8  DTï¼šR  
+#define  FID_MRJG9              1591  //ä¹°å…¥ä»·æ ¼9  DTï¼šR  
+#define  FID_MRJG10             1592  //ä¹°å…¥ä»·æ ¼10  DTï¼šR  
+#define  FID_MCJG6              1593  //å–å‡ºä»·æ ¼6  DTï¼šR  
+#define  FID_MCJG7              1594  //å–å‡ºä»·æ ¼7  DTï¼šR  
+#define  FID_MCJG8              1595  //å–å‡ºä»·æ ¼8  DTï¼šR  
+#define  FID_MCJG9              1596  //å–å‡ºä»·æ ¼9  DTï¼šR  
+#define  FID_MCJG10             1597  //å–å‡ºä»·æ ¼10  DTï¼šR  
+#define  FID_PCDWBL             1598  //å¹³ä»“åˆ°ä½æ¯”ä¾‹  DTï¼šR  
+#define  FID_MRJG               1599  //ä¹°å…¥ä»·æ ¼  DTï¼šR  
+#define  FID_TOKEN              1600  //å®¢æˆ·ç™»å½•ä»¤ç‰Œ  DTï¼šC  
+#define  FID_XYDJ               1601  //ä¿¡ç”¨ç­‰çº§  DTï¼šC  
+#define  FID_CCSLXZ             1602  //æŒä»“æ•°é‡é™åˆ¶  DTï¼šC  
+#define  FID_YJBL               1603  //é¢„è­¦æ¯”ä¾‹  DTï¼šC  
+#define  FID_PCBL               1604  //å¹³ä»“æ¯”ä¾‹  DTï¼šC  
+#define  FID_LTSL               1605  //æµé€šæ•°é‡  DTï¼šC  
+#define  FID_TABLENAME          1606  //è¡¨å  DTï¼šC  
+#define  FID_FIELDNAME          1607  //å­—æ®µå  DTï¼šC  
+#define  FID_JDBZ               1608  //å€Ÿè´·æ ‡å¿—  DTï¼šC  
+#define  FID_HYZ                1609  //åˆçº¦çŠ¶æ€  DTï¼šC  
+#define  FID_HYB                1610  //åˆçº¦æ ‡é¢˜  DTï¼šC  
+#define  FID_JKHH               1611  //å€Ÿæ–¹å®¢æˆ·å·  DTï¼šC  
+#define  FID_DKHH               1612  //è´·æ–¹å®¢æˆ·å·  DTï¼šC  
+#define  FID_JYYB               1613  //å€Ÿæ–¹è¥ä¸šéƒ¨  DTï¼šC  
+#define  FID_DYYB               1614  //è´·æ–¹è¥ä¸šéƒ¨  DTï¼šC  
+#define  FID_ZCKZDX             1615  //èµ„äº§æ§åˆ¶åº•çº¿  DTï¼šC  
+#define  FID_HYH                1616  //åˆçº¦å·  DTï¼šC  
+#define  FID_HYJE               1617  //åˆçº¦é‡‘é¢  DTï¼šC  
+#define  FID_ZJZHBH             1618  //èµ„é‡‘è´¦æˆ·ç¼–å·  DTï¼šC  
+#define  FID_RZLV               1619  //èèµ„åˆ©ç‡  DTï¼šC  
+#define  FID_JQRQ               1620  //ç»“æ¸…æ—¥æœŸ  DTï¼šC  
+#define  FID_ZHYH               1621  //å­åˆçº¦å·  DTï¼šC  
+#define  FID_JZJZH              1622  //å€Ÿæ–¹èµ„é‡‘è´¦å·  DTï¼šC  
+#define  FID_DZJZH              1623  //è´·æ–¹èµ„é‡‘è´¦å·  DTï¼šC  
+#define  FID_JZJYYB             1624  //å€Ÿæ–¹èµ„é‡‘è¥ä¸šéƒ¨  DTï¼šC  
+#define  FID_DZJYYB             1625  //è´·æ–¹èµ„é‡‘è¥ä¸šéƒ¨  DTï¼šC  
+#define  FID_EN_JYYB            1626  //å€Ÿæ–¹è¥ä¸šéƒ¨  DTï¼šC  
+#define  FID_EN_DYYB            1627  //è´·æ–¹è¥ä¸šéƒ¨  DTï¼šC  
+#define  FID_EN_JZJYYB          1628  //å€Ÿæ–¹èµ„é‡‘è¥ä¸šéƒ¨  DTï¼šC  
+#define  FID_EN_DZJYYB          1629  //è´·æ–¹èµ„é‡‘è¥ä¸šéƒ¨  DTï¼šC  
+#define  FID_DJGY               1630  //ç™»è®°æŸœå‘˜  DTï¼šC  
+#define  FID_SHGY               1631  //å®¡æ ¸æŸœå‘˜  DTï¼šC  
+#define  FID_JKHXM              1632  //å€Ÿæ–¹å®¢æˆ·å§“å  DTï¼šC  
+#define  FID_DKHXM              1633  //è´·æ–¹å®¢æˆ·å§“å  DTï¼šC  
+#define  FID_EN_BH              1634  //èµ„é‡‘ç¼–å·  DTï¼šC  
+#define  FID_EN_ZBH             1635  //èµ„é‡‘å­ç¼–å·  DTï¼šC  
+#define  FID_ZHDYCS             1636  //å¸æˆ·æŠµæŠ¼æ¬¡æ•°  DTï¼šI  
+#define  FID_ZBH                1637  //èµ„é‡‘å­ç¼–å·  DTï¼šC  
+#define  FID_ZHMC               1638  //å¸æˆ·åç§°  DTï¼šC  
+#define  FID_JZHYE              1639  //å€Ÿæ–¹å¸æˆ·ä½™é¢  DTï¼šC  
+#define  FID_DZHYE              1640  //è´·æ–¹å¸æˆ·ä½™é¢  DTï¼šC  
+#define  FID_JZXSZ              1641  //å€Ÿæ–¹æœ€æ–°å¸‚å€¼  DTï¼šC  
+#define  FID_DZXSZ              1642  //è´·æ–¹æœ€æ–°å¸‚å€¼  DTï¼šC  
+#define  FID_JZCZZ              1643  //å€Ÿæ–¹èµ„äº§æ€»å€¼  DTï¼šC  
+#define  FID_DZCZZ              1644  //è´·æ–¹èµ„äº§æ€»å€¼  DTï¼šC  
+#define  FID_SHTG               1645  //å®¡æ ¸æ˜¯å¦é€šè¿‡  DTï¼šC  
+#define  FID_JQHYJE             1646  //å·²ç»“æ¸…åˆçº¦é‡‘é¢  DTï¼šC  
+#define  FID_EN_KHYYB           1647  //å®¢æˆ·è¥ä¸šéƒ¨  DTï¼šC  
+#define  FID_EN_ZJYYB           1648  //èµ„é‡‘è¥ä¸šéƒ¨  DTï¼šC  
+#define  FID_SRYE2              1649  //ä¸Šæ—¥ä½™é¢2  DTï¼šC  
+#define  FID_ZHYE2              1650  //å¸æˆ·ä½™é¢2  DTï¼šC  
+#define  FID_ZPJE2              1651  //æ”¯ç¥¨é‡‘é¢2  DTï¼šC  
+#define  FID_DJJE2              1652  //å†»ç»“é‡‘é¢2  DTï¼šC  
+#define  FID_YCDJJE2            1653  //å¼‚å¸¸å†»ç»“é‡‘é¢2  DTï¼šC  
+#define  FID_ZJCQDJ2            1654  //èµ„é‡‘é•¿æœŸå†»ç»“2  DTï¼šC  
+#define  FID_WJSJE2             1655  //æœªäº¤æ”¶é‡‘é¢2  DTï¼šC  
+#define  FID_KYZJ2              1656  //å¯ç”¨èµ„é‡‘2  DTï¼šC  
+#define  FID_KQZJ2              1657  //å¯å–èµ„é‡‘2  DTï¼šC  
+#define  FID_XJZC2              1658  //ç°é‡‘èµ„äº§2  DTï¼šC  
+#define  FID_GPSZ2              1659  //è‚¡ç¥¨å¸‚å€¼2  DTï¼šC  
+#define  FID_LX2                1660  //é¢„è®¡åˆ©æ¯2  DTï¼šC  
+#define  FID_LXS2               1661  //é¢„è®¡åˆ©æ¯ç¨2  DTï¼šC  
+#define  FID_TZLX2              1662  //é€æ”¯åˆ©æ¯2  DTï¼šC  
+#define  FID_RZJE2              1663  //èèµ„é‡‘é¢2  DTï¼šC  
+#define  FID_QSJE_B2            1664  //å›æŠ¥ä¹°æ¸…ç®—èµ„é‡‘2  DTï¼šC  
+#define  FID_QSJE_S2            1665  //å›æŠ¥å–æ¸…ç®—èµ„é‡‘2  DTï¼šC  
+#define  FID_DRCKJE2            1666  //å½“æ—¥å¸æˆ·å­˜æ¬¾é‡‘é¢2  DTï¼šC  
+#define  FID_TZCKJE2            1667  //å½“æ—¥é€šçŸ¥å­˜æ¬¾é‡‘é¢2  DTï¼šC  
+#define  FID_HAVE_ZCXX          1668  //æ˜¯å¦æŸ¥è¯¢èµ„äº§ä¿¡æ¯  DTï¼šC  
+#define  FID_HAVE_JKCS          1669  //æ˜¯å¦æŸ¥è¯¢èèµ„ç›‘æ§å‚æ•°  DTï¼šC  
+#define  FID_XZDJ               1670  //é™åˆ¶ç­‰çº§  DTï¼šC  
+#define  FID_CCBLXZ             1671  //æŒä»“æ¯”ä¾‹é™åˆ¶  DTï¼šC  
+#define  FID_ZHYJE              1672  //æ€»åˆçº¦é‡‘é¢  DTï¼šC  
+#define  FID_RZJEBL             1673  //èèµ„é‡‘é¢æ¯”ä¾‹  DTï¼šC  
+#define  FID_RZBLSX             1674  //èèµ„é‡‘é¢æ¯”ä¾‹é™åˆ¶  DTï¼šC  
+#define  FID_SHQD               1675  //ä¸šåŠ¡å®¡æ ¸èµ·ç‚¹  DTï¼šR  
+#define  FID_YWDM               1676  //ä¸šåŠ¡ä»£ç   DTï¼šC  
+#define  FID_SHFS               1677  //å®¡æ ¸æ–¹å¼  DTï¼šI  
+#define  FID_SHJS               1678  //å®¡æ ¸çº§æ•°  DTï¼šI  
+#define  FID_LCMC               1679  //æµç¨‹åç§°  DTï¼šC  
+#define  FID_SHJB               1680  //å®¡æ ¸çº§åˆ«  DTï¼šI  
+#define  FID_LGFH               1681  //ä¸´æŸœå¤æ ¸  DTï¼šI  
+#define  FID_HTSH               1682  //åå°å®¡æ ¸  DTï¼šI  
+#define  FID_LGFHJSDM           1683  //ä¸´æŸœå¤æ ¸è§’è‰²ä»£ç   DTï¼šC  
+#define  FID_JKYWDM             1684  //æ¥å£ä¸šåŠ¡ä»£ç   DTï¼šC  
+#define  FID_SFJYLX             1685  //èº«ä»½æ ¡éªŒç±»å‹  DTï¼šI  
+#define  FID_MBMC               1686  //æ¨¡æ¿åç§°  DTï¼šC  
+#define  FID_XSBQ               1687  //æ˜¾ç¤ºæ ‡ç­¾  DTï¼šC  
+#define  FID_FLLB               1688  //è´¹ç‡ç±»åˆ«  DTï¼šI  
+#define  FID_GFBDFX             1689  //è‚¡ä»½å˜åŠ¨æ–¹å‘  DTï¼šI  
+#define  FID_GFJSTS             1690  //è‚¡ä»½äº¤æ”¶å¤©æ•°  DTï¼šI  
+#define  FID_JHJJKS             1691  //é›†åˆç«ä»·å¼€å§‹æ—¶é—´  DTï¼šC  
+#define  FID_JHJJJS             1692  //é›†åˆç«ä»·ç»“æŸæ—¶é—´  DTï¼šC  
+#define  FID_JJJYBZ             1693  //å‡€ä»·äº¤æ˜“æ ‡å¿—  DTï¼šI  
+#define  FID_JSFBZ              1694  //ç»æ‰‹è´¹æ ‡å¿—  DTï¼šI  
+#define  FID_JYZT               1695  //äº¤æ˜“çŠ¶æ€  DTï¼šI  
+#define  FID_JYKZ               1696  //äº¤æ˜“æ§åˆ¶  DTï¼šI  
+#define  FID_QSDZ               1697  //åˆ¸å•†åœ°å€  DTï¼šC  
+#define  FID_SHSBBZ             1698  //ä¸Šæµ·ç”³æŠ¥æ ‡å¿—  DTï¼šC  
+#define  FID_SZSBBZ             1699  //æ·±åœ³ç”³æŠ¥æ ‡å¿—  DTï¼šC  
+#define  FID_SZCDBZ             1700  //æ·±åœ³æ’¤å•æ ‡å¿—  DTï¼šC  
+#define  FID_SWKSSJ             1701  //ä¸Šåˆå¼€å¸‚æ—¶é—´  DTï¼šC  
+#define  FID_SWBSSJ             1702  //ä¸Šåˆé—­å¸‚æ—¶é—´  DTï¼šC  
+#define  FID_XWKSSJ             1703  //ä¸‹åˆå¼€å¸‚æ—¶é—´  DTï¼šC  
+#define  FID_XWBSSJ             1704  //ä¸‹åˆé—­å¸‚æ—¶é—´  DTï¼šC  
+#define  FID_SJXZ               1705  //æ—¶é—´é™åˆ¶  DTï¼šI  
+#define  FID_XJFS               1706  //é™ä»·æ–¹å¼  DTï¼šI  
+#define  FID_ZJBDFX             1707  //èµ„é‡‘å˜åŠ¨æ–¹å‘  DTï¼šI  
+#define  FID_ZJJSTS             1708  //èµ„é‡‘äº¤æ”¶å¤©æ•°  DTï¼šI  
+#define  FID_XGDM               1709  //ç›¸å…³ä»£ç   DTï¼šC  
+#define  FID_PCKZ               1710  //å¹³ä»“æ§åˆ¶  DTï¼šC  
+#define  FID_JSFS               1711  //ç»“ç®—æ–¹å¼  DTï¼šC  
+#define  FID_XWLX               1712  //å¸­ä½ç±»å‹  DTï¼šC  
+#define  FID_JGDW               1713  //ä»·æ ¼å•ä½  DTï¼šC  
+#define  FID_MCJG               1714  //å–å‡ºä»·æ ¼  DTï¼šR  
+#define  FID_KCDW               1715  //å¼€ä»“å•ä½  DTï¼šC  
+#define  FID_JYBM               1716  //äº¤æ˜“ç¼–ç   DTï¼šC  
+#define  FID_TZLB               1717  //æŠ•èµ„ç±»åˆ«  DTï¼šC  
+#define  FID_KPBZ               1718  //å¼€å¹³æ ‡å¿—  DTï¼šC  
+#define  FID_RQJEBL             1719  //èåˆ¸é‡‘é¢æ¯”ä¾‹  DTï¼šR  
+#define  FID_BZJ                1720  //ä¿è¯é‡‘  DTï¼šC  
+#define  FID_JYSBZJ             1721  //äº¤æ˜“æ‰€ä¿è¯é‡‘  DTï¼šC  
+#define  FID_JGSL               1722  //äº¤å‰²æ•°é‡  DTï¼šC  
+#define  FID_LJZK               1723  //ç´¯è®¡æŠ˜æ‰£  DTï¼šC  
+#define  FID_FXL                1724  //é£é™©ç‡  DTï¼šC  
+#define  FID_ZFXL               1725  //æ˜¨é£é™©ç‡  DTï¼šC  
+#define  FID_PCSL               1726  //å¹³ä»“æ•°é‡  DTï¼šC  
+#define  FID_PCYK               1727  //å¹³ä»“ç›ˆäº  DTï¼šC  
+#define  FID_PCRQ               1728  //å¹³ä»“æ—¥æœŸ  DTï¼šC  
+#define  FID_CCWTH              1729  //æŒä»“å§”æ‰˜å·  DTï¼šC  
+#define  FID_GSDM               1730  //å…¬å¸ä»£ç   DTï¼šC  
+#define  FID_SBJLH              1731  //ç”³æŠ¥è®°å½•å·  DTï¼šC  
+#define  FID_ZKFY               1732  //æŠ˜æ‰£è´¹ç”¨  DTï¼šC  
+#define  FID_FHJE               1733  //è¿”è¿˜é‡‘é¢  DTï¼šC  
+#define  FID_CJJJ               1734  //æˆäº¤å‡ä»·  DTï¼šC  
+#define  FID_DJBZJ              1735  //å†»ç»“ä¿è¯é‡‘  DTï¼šC  
+#define  FID_SBGY               1736  //ç”³æŠ¥æŸœå‘˜  DTï¼šC  
+#define  FID_BDJE               1737  //å˜åŠ¨é‡‘é¢  DTï¼šC  
+#define  FID_BCDJ               1738  //æœ¬æ¬¡å†»ç»“  DTï¼šC  
+#define  FID_BDSJ               1739  //å˜åŠ¨æ—¶é—´  DTï¼šC  
+#define  FID_CCSL               1740  //æŒä»“æ•°é‡  DTï¼šC  
+#define  FID_BZJBL              1741  //ä¿è¯é‡‘æ¯”ä¾‹  DTï¼šC  
+#define  FID_DWBZJ              1742  //å•ä½ä¿è¯é‡‘  DTï¼šC  
+#define  FID_JYSBZJBL           1743  //äº¤æ˜“æ‰€ä¿è¯é‡‘æ¯”ä¾‹  DTï¼šC  
+#define  FID_JYSDWBZJ           1744  //äº¤æ˜“æ‰€å•ä½ä¿è¯é‡‘  DTï¼šC  
+#define  FID_LJFH               1745  //ç´¯è®¡è¿”è¿˜  DTï¼šC  
+#define  FID_BRSXF              1746  //æœ¬æ—¥æ‰‹ç»­è´¹  DTï¼šC  
+#define  FID_BRPCYK             1747  //æœ¬æ—¥å¹³ä»“ç›ˆäº  DTï¼šC  
+#define  FID_JYSBRSXF           1748  //äº¤æ˜“æ‰€æœ¬æ—¥æ‰‹ç»­è´¹  DTï¼šC  
+#define  FID_JYSCCXE            1749  //äº¤æ˜“æ‰€æŒä»“é™é¢  DTï¼šC  
+#define  FID_KHCCXE             1750  //å®¢æˆ·æŒä»“é™é¢  DTï¼šC  
+#define  FID_SQCZBZ             1751  //æˆæƒæ“ä½œæ ‡å¿—  DTï¼šI  
+#define  FID_JSLB               1752  //è§’è‰²ç±»åˆ«  DTï¼šI  
+#define  FID_QXLB               1753  //ç”¨æˆ·æƒé™ç±»åˆ«  DTï¼šI  
+#define  FID_SHBZ               1754  //å®¡æ ¸æ ‡å¿—  DTï¼šI  
+#define  FID_AZRQ               1755  //å®‰è£…æ—¥æœŸ  DTï¼šI  
+#define  FID_CPDM               1756  //äº§å“ä»£ç   DTï¼šC  
+#define  FID_CPMC               1757  //äº§å“åç§°  DTï¼šC  
+#define  FID_DFRQ               1758  //å…‘ä»˜æ—¥æœŸ  DTï¼šI  
+#define  FID_XLH                1759  //åºåˆ—å·  DTï¼šC  
+#define  FID_YXXG               1760  //æ˜¯å¦å…è®¸ä¿®æ”¹  DTï¼šI  
+#define  FID_ZJSQRQ             1761  //æœ€è¿‘æˆæƒæ—¥æœŸ  DTï¼šI  
+#define  FID_CWJB               1762  //é”™è¯¯çº§åˆ«  DTï¼šI  
+#define  FID_JKLB               1763  //æ¥å£ç±»åˆ«  DTï¼šI  
+#define  FID_JKCWDM             1764  //æ¥å£é”™è¯¯ä»£ç   DTï¼šC  
+#define  FID_CWLY               1765  //é”™è¯¯æ¥æº  DTï¼šC  
+#define  FID_KSKHH              1766  //å¼€å§‹å®¢æˆ·å·  DTï¼šC  
+#define  FID_JSKHH              1767  //ç»“æŸå®¢æˆ·å·  DTï¼šC  
+#define  FID_KYKHH              1768  //å¯ç”¨å®¢æˆ·å·  DTï¼šC  
+#define  FID_SJKZFS             1769  //æ—¶é—´æ§åˆ¶æ–¹å¼  DTï¼šI  
+#define  FID_CPXM               1770  //äº§å“é¡¹ç›®  DTï¼šC  
+#define  FID_SJXZ_SQCZR         1771  //æˆæƒæ“ä½œäººæ—¶é—´æœŸé™é™åˆ¶  DTï¼šI  
+#define  FID_TBTS_SQCZR         1772  //æˆæƒæ“ä½œäººç‰¹åˆ«æç¤º  DTï¼šC  
+#define  FID_ZJBH_SQCZR         1773  //æˆæƒæ“ä½œäººè¯ä»¶ç¼–å·  DTï¼šC  
+#define  FID_ZJLB_SQCZR         1774  //æˆæƒæ“ä½œäººè¯ä»¶ç±»åˆ«  DTï¼šI  
+#define  FID_JFQSRQ             1775  //ç§¯åˆ†èµ·å§‹æ—¥æœŸ  DTï¼šI  
+#define  FID_JGBZ               1776  //æœºæ„å¸æˆ·æ ‡å¿—  DTï¼šI  
+#define  FID_KHJF               1777  //å®¢æˆ·ç§¯åˆ†  DTï¼šI  
+#define  FID_KHKH               1778  //å®¢æˆ·å¡å·  DTï¼šC  
+#define  FID_MOBILE             1779  //ç§»åŠ¨ç”µè¯  DTï¼šC  
+#define  FID_TZZFL              1780  //æŠ•èµ„è€…åˆ†ç±»  DTï¼šI  
+#define  FID_YXZZDM             1781  //è¥é”€ç»„ç»‡ä»£ç   DTï¼šC  
+#define  FID_ZDXM               1782  //å¸å•é¡¹ç›®  DTï¼šC  
+#define  FID_ZDZQ               1783  //å¸å•å‘¨æœŸ  DTï¼šI  
+#define  FID_ZJDLRQ             1784  //æœ€è¿‘ç™»å½•æ—¥æœŸ  DTï¼šI  
+#define  FID_SXDM               1785  //é™„åŠ å±æ€§ä»£ç   DTï¼šC  
+#define  FID_LQRQ               1786  //é¢†å–æ—¥æœŸ  DTï¼šI  
+#define  FID_JGXZ               1787  //æœºæ„æ€§è´¨  DTï¼šI  
+#define  FID_ZJLB_FRDB          1788  //è¯ä»¶ç±»åˆ«(æ³•äººä»£è¡¨)  DTï¼šI  
+#define  FID_ZJBH_FRDB          1789  //è¯ä»¶ç¼–å·(æ³•äººä»£è¡¨)  DTï¼šC  
+#define  FID_ZCSJ               1790  //æ³¨å†Œæ—¶é—´  DTï¼šI  
+#define  FID_KHJLXM             1791  //å®¢æˆ·ç»ç†å§“å  DTï¼šC  
+#define  FID_BZ1                1792  //å¸ç§1  DTï¼šC  
+#define  FID_BZ2                1793  //å¸ç§2  DTï¼šC  
+#define  FID_MBBH               1794  //æ¨¡æ¿ç¼–å·  DTï¼šI  
+#define  FID_TABLE              1795  //æ•°æ®è¡¨  DTï¼šC  
+#define  FID_ACT                1796  //åŠ¨ä½œ  DTï¼šI  
+#define  FID_XZLB               1797  //é™åˆ¶ç±»åˆ«  DTï¼šI  
+#define  FID_KHQZFW1            1798  //å®¢æˆ·ç¾¤ç»„èŒƒå›´  DTï¼šC  
+#define  FID_SJYWKM             1799  //ä¸Šçº§ä¸šåŠ¡ç§‘ç›®  DTï¼šC  
+#define  FID_LLLX               1800  //åˆ©ç‡ç±»å‹  DTï¼šI  
+#define  FID_RZJESX             1801  //èèµ„é‡‘é¢ä¸Šé™  DTï¼šR  
+#define  FID_RQSLSX             1802  //èåˆ¸æ•°é‡ä¸Šé™  DTï¼šI  
+#define  FID_RZED               1803  //èèµ„é¢åº¦  DTï¼šR  
+#define  FID_RQED               1804  //èåˆ¸é¢åº¦  DTï¼šR  
+#define  FID_RZFDLL             1805  //èèµ„æµ®åŠ¨åˆ©ç‡  DTï¼šR  
+#define  FID_RQFDLL             1806  //èåˆ¸æµ®åŠ¨åˆ©ç‡  DTï¼šR  
+#define  FID_RZXYLL             1807  //èèµ„ä¿¡ç”¨åˆ©ç‡  DTï¼šR  
+#define  FID_RQXYLL             1808  //èåˆ¸ä¿¡ç”¨åˆ©ç‡  DTï¼šR  
+#define  FID_RQLL               1809  //èåˆ¸åˆ©ç‡  DTï¼šR  
+#define  FID_WYLB               1810  //è¿çº¦ç±»åˆ«  DTï¼šI  
+#define  FID_SQL                1811  //  DTï¼šC  
+#define  FID_FILENAME           1812  //æ–‡ä»¶åç§°  DTï¼šC  
+#define  FID_FILEVERSION        1813  //æ–‡ä»¶ç‰ˆæœ¬  DTï¼šC  
+#define  FID_ZJLB_GDH           1814  //è‚¡ä¸œè¯ä»¶ç±»åˆ«  DTï¼šI  
+#define  FID_MEMHEAD            1815  //  DTï¼šC  
+#define  FID_MEMDATA            1816  //  DTï¼šC  
+#define  FID_MEMCOUNT           1817  //  DTï¼šC  
+#define  FID_MEMSIZE            1818  //  DTï¼šC  
+#define  FID_GQZH_ZR            1819  //è½¬å…¥è‚¡æƒå¸å·  DTï¼šC  
+#define  FID_PCCL               1820  //å¹³ä»“ç­–ç•¥  DTï¼šI  
+#define  FID_RZXYED             1821  //èèµ„ä¿¡ç”¨é¢åº¦  DTï¼šR  
+#define  FID_RQXYED             1822  //èåˆ¸ä¿¡ç”¨é¢åº¦  DTï¼šR  
+#define  FID_RQJE               1823  //èåˆ¸é‡‘é¢  DTï¼šR  
+#define  FID_YQSL               1824  //ä½™åˆ¸æ•°é‡  DTï¼šI  
+#define  FID_RZSL               1825  //èèµ„æ•°é‡  DTï¼šI  
+#define  FID_RQSL               1826  //èåˆ¸æ•°é‡  DTï¼šI  
+#define  FID_RZWTSL             1827  //èèµ„å§”æ‰˜æ•°é‡  DTï¼šI  
+#define  FID_RQWTSL             1828  //èåˆ¸å§”æ‰˜æ•°é‡  DTï¼šI  
+#define  FID_RZWTJE             1829  //èèµ„å§”æ‰˜é‡‘é¢  DTï¼šR  
+#define  FID_RQWTJE             1830  //èåˆ¸å§”æ‰˜é‡‘é¢  DTï¼šR  
+#define  FID_RZCJSL             1831  //èèµ„æˆäº¤æ•°é‡  DTï¼šI  
+#define  FID_RQCJSL             1832  //èåˆ¸æˆäº¤æ•°é‡  DTï¼šI  
+#define  FID_RZCJJE             1833  //èèµ„æˆäº¤é‡‘é¢  DTï¼šR  
+#define  FID_RQCJJE             1834  //èåˆ¸æˆäº¤é‡‘é¢  DTï¼šR  
+#define  FID_YQWTSL             1835  //ä½™åˆ¸å§”æ‰˜æ•°é‡  DTï¼šI  
+#define  FID_YQCJSL             1836  //ä½™åˆ¸æˆäº¤æ•°é‡  DTï¼šI  
+#define  FID_HQWTSL             1837  //è¿˜åˆ¸å§”æ‰˜æ•°é‡  DTï¼šI  
+#define  FID_HQCJSL             1838  //è¿˜åˆ¸æˆäº¤æ•°é‡  DTï¼šI  
+#define  FID_RZLLXX             1839  //èèµ„åˆ©ç‡ä¸‹é™  DTï¼šR  
+#define  FID_RQLLXX             1840  //èåˆ¸åˆ©ç‡ä¸‹é™  DTï¼šR  
+#define  FID_RZXYJS             1841  //èèµ„å ç”¨åˆ©æ¯åŸºæ•°  DTï¼šR  
+#define  FID_RQXYJS             1842  //èåˆ¸å ç”¨åˆ©æ¯åŸºæ•°  DTï¼šR  
+#define  FID_RZXYLX             1843  //èèµ„å ç”¨åˆ©æ¯  DTï¼šR  
+#define  FID_RQXYLX             1844  //èåˆ¸å ç”¨åˆ©æ¯  DTï¼šR  
+#define  FID_RZYJLX             1845  //èèµ„é¢„è®¡åˆ©æ¯  DTï¼šR  
+#define  FID_RQYJLX             1846  //èåˆ¸é¢„è®¡åˆ©æ¯  DTï¼šR  
+#define  FID_FZJE               1847  //è´Ÿå€ºé‡‘é¢  DTï¼šR  
+#define  FID_FZSL               1848  //è´Ÿå€ºæ•°é‡  DTï¼šI  
+#define  FID_MARGIN_ENABLE      1849  //èèµ„èåˆ¸å…è®¸çŠ¶æ€  DTï¼šI  
+#define  FID_KQBZ               1850  //å¼€å¯æ ‡å¿—  DTï¼šI  
+#define  FID_KSSJ1              1851  //å¼€å§‹æ—¶é—´1  DTï¼šC  
+#define  FID_JSSJ1              1852  //ç»“æŸæ—¶é—´1  DTï¼šC  
+#define  FID_KSSJ2              1853  //å¼€å§‹æ—¶é—´2  DTï¼šC  
+#define  FID_JSSJ2              1854  //ç»“æŸæ—¶é—´2  DTï¼šC  
+#define  FID_WXWTFBZ            1855  //æ— æ•ˆå§”æ‰˜æ ‡å¿—  DTï¼šI  
+#define  FID_MFCXCS             1856  //å…è´¹æŸ¥è¯¢æ¬¡æ•°  DTï¼šI  
+#define  FID_KYXYED             1857  //å¯ç”¨ä¿¡ç”¨é¢åº¦  DTï¼šR  
+#define  FID_XYED               1858  //ä¿¡ç”¨é¢åº¦  DTï¼šR  
+#define  FID_RZFY               1859  //èèµ„è´¹ç”¨  DTï¼šR  
+#define  FID_RQFY               1860  //èåˆ¸è´¹ç”¨  DTï¼šR  
+#define  FID_BDKYZJ             1861  //å¤–éƒ¨å¸æˆ·æœ¬åœ°å¯ç”¨èµ„é‡‘  DTï¼šR  
+#define  FID_SHLX               1862  //ç¨ååˆ©æ¯  DTï¼šR  
+#define  FID_JCFL               1863  //åŸºç¡€åˆ†ç±»  DTï¼šI  
+#define  FID_YSJYBZ             1864  //å¤œå¸‚äº¤æ˜“æ ‡å¿—  DTï¼šI  
+#define  FID_YSKSSJ             1865  //å¤œå¸‚å¼€å¸‚æ—¶é—´  DTï¼šC  
+#define  FID_YSBSSJ             1866  //å¤œå¸‚é—­å¸‚æ—¶é—´  DTï¼šC  
+#define  FID_JYSSXF             1867  //äº¤æ˜“æ‰€æ‰‹ç»­è´¹  DTï¼šR  
+#define  FID_YJL                1868  //ä½£é‡‘ç‡  DTï¼šR  
+#define  FID_YJLXX              1869  //æœ€ä½ä½£é‡‘ç‡  DTï¼šR  
+#define  FID_SLXX               1870  //æ•°é‡ä¸‹é™  DTï¼šI  
+#define  FID_XMDM               1871  //é¡¹ç›®ä»£ç   DTï¼šC  
+#define  FID_DAID               1872  //æ¡£æ¡ˆID  DTï¼šI  
+#define  FID_INSINDEX           1873  //æ’å…¥ç´¢å¼•  DTï¼šC  
+#define  FID_MODINDEX           1874  //å›å†™ç´¢å¼•  DTï¼šC  
+#define  FID_LSHMC              1875  //æµæ°´å·åç§°  DTï¼šC  
+#define  FID_TRANPORT           1876  //ä¼ è¾“æœåŠ¡ç«¯å£  DTï¼šI  
+#define  FID_DATABASE           1877  //æ•°æ®åº“å  DTï¼šC  
+#define  FID_DUMPPATH           1878  //DUMPæ–‡ä»¶è·¯å¾„  DTï¼šC  
+#define  FID_DUMPTYPE           1879  //DUMPç±»å‹ 0å…¨å¤‡ï¼Œ1å·®å¤‡  DTï¼šI  
+#define  FID_DUMPNOTE           1880  //DUMPæè¿°å  DTï¼šC  
+#define  FID_UPDATEITEM         1881  //UPDATEçš„å­—æ®µå  DTï¼šC  
+#define  FID_IDENTITY           1882  //æ˜¯å¦è‡ªå¢åˆ—  DTï¼šI  
+#define  FID_LOWPAR             1883  //LARGE_INTEGERå‹çš„ä½ä½éƒ¨åˆ†  DTï¼šC  
+#define  FID_HIGHPAR            1884  //LARGE_INTEGERå‹çš„é«˜ä½éƒ¨åˆ†  DTï¼šC  
+#define  FID_CZYBH              1885  //æ“ä½œå‘˜ç¼–å·  DTï¼šC  
+#define  FID_KHDDH              1886  //å¼€æˆ·ç‚¹ä»£å·  DTï¼šC  
+#define  FID_QYLB               1887  //è‚¡ä¸œæ€§è´¨  DTï¼šC  
+#define  FID_TZRXM              1888  //æŠ•èµ„äººåç§°  DTï¼šC  
+#define  FID_TZRLB              1889  //æŠ•èµ„äººç±»åˆ«  DTï¼šC  
+#define  FID_JZJ                1890  //åŸºå‡†ä»·ç±»å‹  DTï¼šI  
+#define  FID_GDXM_OLD           1891  //åŸè‚¡ä¸œå§“å/å•ä½å…¨ç§°  DTï¼šC  
+#define  FID_QQLB               1892  //è¯·æ±‚ç±»åˆ«  DTï¼šC  
+#define  FID_GDJC               1893  //è‚¡ä¸œç®€ç§°  DTï¼šC  
+#define  FID_GFXZ               1894  //è‚¡ä»½æ€§è´¨  DTï¼šC  
+#define  FID_PGDM               1895  //é…è‚¡ä»£ç   DTï¼šC  
+#define  FID_XJFSMC             1896  //é™ä»·æ–¹å¼åç§°  DTï¼šC  
+#define  FID_XJLB               1897  //é™ä»·ç±»åˆ«  DTï¼šI  
+#define  FID_WTRQ               1898  //å§”æ‰˜æ—¥æœŸ  DTï¼šC  
+#define  FID_DYBZ               1899  //æ‰“å°æ ‡å¿—  DTï¼šC  
+#define  FID_BZXX               1900  //å¤‡æ³¨ä¿¡æ¯  DTï¼šC  
+#define  FID_TZRMC              1901  //è‚¡ä¸œå§“å/å•ä½å…¨ç§°  DTï¼šC  
+#define  FID_ZJBH_OLD           1902  //åŸè¯ä»¶ç¼–å·  DTï¼šC  
+#define  FID_TZRMC_OLD          1903  //åŸè‚¡ä¸œå§“å/å•ä½å…¨ç§°  DTï¼šC  
+#define  FID_SBBZ               1904  //ç”³æŠ¥æ ‡å¿—  DTï¼šC  
+#define  FID_CLSM               1905  //å¤„ç†è¯´æ˜  DTï¼šC  
+#define  FID_CXLB               1906  //æŸ¥è¯¢ç±»åˆ«  DTï¼šC  
+#define  FID_XWH                1907  //å¸­ä½å·  DTï¼šC  
+#define  FID_KHHY               1908  //å¼€æˆ·ä¼šå‘˜  DTï¼šC  
+#define  FID_SXZ_OLD            1909  //åŸå±æ€§å€¼  DTï¼šC  
+#define  FID_TZRJC              1910  //æŠ•èµ„äººç®€ç§°  DTï¼šC  
+#define  FID_XB                 1911  //æ€§åˆ«  DTï¼šC  
+#define  FID_DMQZ               1912  //ä»£ç å‰ç¼€  DTï¼šC  
+#define  FID_CSRQ               1913  //å‡ºç”Ÿæ—¥æœŸ  DTï¼šC  
+#define  FID_MCQZ               1914  //åç§°å‰ç¼€  DTï¼šC  
+#define  FID_FRLB               1915  //æ³•äººç±»åˆ«  DTï¼šC  
+#define  FID_HYDM               1916  //è¡Œä¸šä»£ç   DTï¼šC  
+#define  FID_JSHY               1917  //ç»“ç®—ä¼šå‘˜  DTï¼šC  
+#define  FID_SDSL_GR            1918  //ä¸ªäººæ‰€å¾—ç¨ç‡  DTï¼šR  
+#define  FID_SDSL_JG            1919  //æœºæ„æ‰€å¾—ç¨ç‡  DTï¼šR  
+#define  FID_SRGDH              1920  //å—è®©æ–¹è‚¡ä¸œå·  DTï¼šC  
+#define  FID_SRXWH              1921  //å—è®©å¸­ä½å·  DTï¼šC  
+#define  FID_HBRQ               1922  //å›æŠ¥æ—¥æœŸ  DTï¼šC  
+#define  FID_YWLX               1923  //ä¸šåŠ¡ç±»å‹  DTï¼šC  
+#define  FID_WWMC               1924  //å¤–æ–‡åç§°  DTï¼šC  
+#define  FID_TJSL               1925  //ç»Ÿè®¡æ•°é‡  DTï¼šC  
+#define  FID_SFJE               1926  //æ”¶è´¹é‡‘é¢  DTï¼šC  
+#define  FID_DJGSSF             1927  //ç™»è®°å…¬å¸æ”¶è´¹  DTï¼šC  
+#define  FID_DLJGSF             1928  //ä»£ç†æœºæ„æ”¶è´¹  DTï¼šC  
+#define  FID_SRZJBH             1929  //å—è®©è‚¡ä¸œè¯ä»¶ç¼–å·  DTï¼šC  
+#define  FID_SRGDXM             1930  //å—è®©è‚¡ä¸œå§“å  DTï¼šC  
+#define  FID_SRDZ               1931  //å—è®©æ–¹é€šè®¯åœ°å€  DTï¼šC  
+#define  FID_SRDH               1932  //å—è®©æ–¹ç”µè¯å·ç   DTï¼šC  
+#define  FID_SRYZBM             1933  //å—è®©æ–¹é‚®æ”¿ç¼–ç   DTï¼šC  
+#define  FID_SRGFXZ             1934  //å—è®©è‚¡ä»½æ€§è´¨  DTï¼šC  
+#define  FID_DFXW               1935  //å¯¹æ–¹å¸­ä½å·  DTï¼šC  
+#define  FID_DFGDH              1936  //å¯¹æ–¹è‚¡ä¸œå·  DTï¼šC  
+#define  FID_DFXZ               1937  //å¯¹æ–¹æ€§è´¨  DTï¼šC  
+#define  FID_QRBZ               1938  //ç¡®è®¤æ ‡å¿—  DTï¼šC  
+#define  FID_QQSL               1939  //ç¡®æƒæ•°é‡  DTï¼šI  
+#define  FID_ZBQS               1940  //ä¸»åŠåˆ¸å•†ä»£ç   DTï¼šC  
+#define  FID_GHSL               1941  //è¿‡æˆ·æ•°é‡  DTï¼šI  
+#define  FID_DBQS               1942  //ä»£ç åˆ¸å•†ä»£ç   DTï¼šC  
+#define  FID_GFXZSM             1943  //è‚¡ä»½æ€§è´¨è¯´æ˜  DTï¼šC  
+#define  FID_QSLB               1944  //åˆ¸å•†ç±»åˆ«  DTï¼šI  
+#define  FID_QQSF_GR            1945  //ä¸ªäººç¡®æƒæ”¶è´¹  DTï¼šC  
+#define  FID_QQSF_JG            1946  //æœºæ„ç¡®æƒæ”¶è´¹  DTï¼šC  
+#define  FID_QYZL               1947  //æƒç›Šæ€»é‡  DTï¼šI  
+#define  FID_ZBQSMC             1948  //ä¸»åŠåˆ¸å•†åç§°  DTï¼šC  
+#define  FID_DYZQDM             1949  //æŠµæŠ¼è¯åˆ¸ä»£ç   DTï¼šC  
+#define  FID_GHTS               1950  //è´­å›å¤©æ•°  DTï¼šI  
+#define  FID_JXTS               1951  //è®°æ¯å¤©æ•°  DTï¼šI  
+#define  FID_CLEARFEE           1952  //ç»“ç®—è´¹ç‡  DTï¼šR  
+#define  FID_FXJJFL             1953  //é£é™©åŸºé‡‘è´¹ç‡  DTï¼šR  
+#define  FID_ZGFL               1954  //è¯ç®¡è´¹ç‡  DTï¼šR  
+#define  FID_QTFLXX             1955  //å…¶å®ƒè´¹ç”¨ä¸‹é™  DTï¼šR  
+#define  FID_QTFLSX             1956  //å…¶å®ƒè´¹ç”¨ä¸Šé™  DTï¼šR  
+#define  FID_CJJEQD             1957  //æˆäº¤é‡‘é¢èµ·ç‚¹  DTï¼šR  
+#define  FID_SFQD               1958  //æ”¶è´¹èµ·ç‚¹  DTï¼šR  
+#define  FID_FJYRBS             1959  //éäº¤æ˜“æ—¥æ ‡è¯†  DTï¼šI  
+#define  FID_YEAR               1960  //å¹´ä»½  DTï¼šC  
+#define  FID_MBLB               1961  //æ¨¡æ¿ç±»åˆ«  DTï¼šI  
+#define  FID_ZJDS               1962  //èµ„é‡‘åº•æ•°  DTï¼šR  
+#define  FID_ZCDS               1963  //èµ„äº§åº•æ•°  DTï¼šR  
+#define  FID_DJYHZHS            1964  //å•æˆ·å…è®¸ç™»è®°çš„é“¶è¡Œå¸æˆ·æ•°  DTï¼šI  
+#define  FID_FJXYXX             1965  //é™„åŠ æ ¡éªŒä¿¡æ¯  DTï¼šC  
+#define  FID_FJYRZZBZ           1966  //éäº¤æ˜“æ—¥æ˜¯å¦å…è®¸è½¬å¸  DTï¼šI  
+#define  FID_PGJG               1967  //é…è‚¡ä»·æ ¼  DTï¼šR  
+#define  FID_GSKYE              1968  //å…¬å¸å¡ä½™é¢  DTï¼šR  
+#define  FID_JCGSKYE            1969  //æ˜¯å¦æ£€æŸ¥å…¬å¸å¡ä½™é¢  DTï¼šI  
+#define  FID_LXCZCS             1970  //è¿ç»­å†²æ­£æ¬¡æ•°  DTï¼šI  
+#define  FID_QDSJ               1971  //ç­¾åˆ°æ—¶é—´  DTï¼šC  
+#define  FID_QYZZBS             1972  //æ˜¯å¦å¯ç”¨è½¬å¸æ ‡è¯†  DTï¼šI  
+#define  FID_ZJQDRQ             1973  //æœ€è¿‘ç­¾åˆ°æ—¥æœŸ  DTï¼šI  
+#define  FID_KSWTH              1974  //å¼€å§‹å§”æ‰˜å·  DTï¼šC  
+#define  FID_JSWTH              1975  //ç»“æŸå§”æ‰˜å·  DTï¼šC  
+#define  FID_KYWTH              1976  //å¯ç”¨å§”æ‰˜å·  DTï¼šC  
+#define  FID_SQXQ               1977  //ç”³è¯·è¯¦æƒ…  DTï¼šC  DTï¼šDTï¼šT  
+#define  FID_SHZT               1978  //å®¡æ ¸çŠ¶æ€  DTï¼šI  
+#define  FID_SQGY               1979  //ç”³è¯·æŸœå‘˜  DTï¼šC  
+#define  FID_SQRQ               1980  //ç”³è¯·æ—¥æœŸ  DTï¼šI  
+#define  FID_SQSJ               1981  //ç”³è¯·æ—¶é—´  DTï¼šC  
+#define  FID_HKQX               1982  //è¿˜æ¬¾æœŸé™(å¤©)  DTï¼šI  
+#define  FID_MXTS               1983  //å…æ¯å¤©æ•°  DTï¼šI  
+#define  FID_YWSQH              1984  //ä¸šåŠ¡ç”³è¯·å·  DTï¼šI  
+#define  FID_SHRQ               1985  //å®¡æ ¸æ—¥æœŸ  DTï¼šI  
+#define  FID_SHSJ               1986  //å®¡æ ¸æ—¶é—´  DTï¼šC  
+#define  FID_YMBBH              1987  //åŸæ¨¡æ¿ç¼–å·  DTï¼šI  
+#define  FID_XSXH               1988  //æ˜¾ç¤ºåºå·  DTï¼šI  
+#define  FID_MMTB               1989  //å¯†ç åŒæ­¥æ ‡å¿—  DTï¼šI  
+#define  FID_EN_GYDM            1990  //å…è®¸æŸœå‘˜ä»£ç èŒƒå›´  DTï¼šC  
+#define  FID_KHYYB              1991  //å®¢æˆ·æ‰€å±è¥ä¸šéƒ¨  DTï¼šC  
+#define  FID_NEWJJR             1992  //æ–°ç»çºªäºº  DTï¼šC  
+#define  FID_ZPKZBZ             1993  //æ”¯ç¥¨ä½™é¢æ§åˆ¶æ ‡å¿—  DTï¼šI  
+#define  FID_DRCKKZ             1994  //å½“æ—¥å­˜æ¬¾é‡‘é¢æ§åˆ¶æ ‡å¿—  DTï¼šI  
+#define  FID_XML                1995  //XMLåŸŸ  DTï¼šC  
+#define  FID_QYDM               1996  //æƒç›Šä»£ç   DTï¼šC  
+#define  FID_QYSL               1997  //æƒç›Šæ•°é‡  DTï¼šI  
+#define  FID_QYJE               1998  //æƒç›Šé‡‘é¢  DTï¼šR  
+#define  FID_JYRBS              1999  //äº¤æ˜“æ—¥æ ‡è¯†  DTï¼šI  
+#define  FID_TIME_INIT          2000  //åˆå§‹åŒ–æ—¶é—´  DTï¼šC  DTï¼šDTï¼šYYYYMMDD HH:MM:SS  
+#define  FID_TIME_CLOSE         2001  //æ”¶ç›˜æ—¶é—´  DTï¼šC  DTï¼šDTï¼šYYYYMMDD HH:MM:SS  
+#define  FID_GQDJLSH            2002  //è‚¡æƒå†»ç»“æµæ°´å·  DTï¼šI  
+#define  FID_LDSMJG             2003  //æ¼å•æ‰«æé—´éš”  DTï¼šI  
+#define  FID_XCXZBS             2004  //å†™å‡ºé™åˆ¶ç¬”æ•°  DTï¼šI  
+#define  FID_EN_WTLB            2005  //å§”æ‰˜ç±»åˆ«èŒƒå›´  DTï¼šC  
+#define  FID_FXJ                2006  //å‘è¡Œä»·  DTï¼šR  
+#define  FID_GQDM               2007  //è‚¡æƒä»£ç   DTï¼šC  
+#define  FID_GQLB               2008  //è‚¡æƒç±»åˆ«  DTï¼šC  
+#define  FID_GQLBMC             2009  //è‚¡æƒç±»åˆ«åç§°  DTï¼šC  
+#define  FID_GQMC               2010  //è‚¡æƒåç§°  DTï¼šC  
+#define  FID_GQSL               2011  //è‚¡æƒæ•°é‡  DTï¼šI  
+#define  FID_GQZH               2012  //è‚¡æƒå¸å·  DTï¼šC  
+#define  FID_JMC_ZDCGSL         2013  //å‡€å–å‡ºæœ€ä½æŒè‚¡æ•°é‡  DTï¼šI  
+#define  FID_KSGQZH             2014  //å¼€å§‹è‚¡æƒå¸å·  DTï¼šC  
+#define  FID_KYGQZH             2015  //å¯ç”¨è‚¡æƒå¸å·  DTï¼šC  
+#define  FID_KZSX               2016  //æ§åˆ¶å±æ€§  DTï¼šI  
+#define  FID_SDLX               2017  //æ—¶æ®µç±»å‹  DTï¼šI  
+#define  FID_ROWNUM             2018  //è®°å½•è¡Œå·  DTï¼šI  
+#define  FID_ZDCGSL             2019  //æœ€ä½æŒè‚¡æ•°é‡  DTï¼šI  
+#define  FID_ZSBJFD             2020  //åšå¸‚æœŸé—´æŠ¥ä»·å¹…åº¦  DTï¼šR  
+#define  FID_ZSQBJFD            2021  //åšå¸‚å‰æŠ¥ä»·å¹…åº¦  DTï¼šR  
+#define  FID_EN_GQDM            2022  //è‚¡æƒä»£ç èŒƒå›´  DTï¼šC  
+#define  FID_EN_GQLB            2023  //è‚¡æƒç±»åˆ«èŒƒå›´  DTï¼šC  
+#define  FID_GZMZ               2024  //é¢å€¼  DTï¼šR  
+#define  FID_FXDS               2025  //å‘è¡Œåº•æ•°  DTï¼šR  
+#define  FID_MRED               2026  //ä¹°å…¥é¢åº¦  DTï¼šR  
+#define  FID_MCED               2027  //å–å‡ºé¢åº¦  DTï¼šR  
+#define  FID_PXCS               2028  //æ´¾æ¯æ¬¡æ•°  DTï¼šI  
+#define  FID_URL                2029  //ç½‘å€  DTï¼šC  
+#define  FID_ZSR                2030  //æŠ¥å‘ŠæœŸæ€»æ”¶å…¥  DTï¼šR  
+#define  FID_ZLR                2031  //æŠ¥å‘ŠæœŸæ€»åˆ©æ¶¦  DTï¼šR  
+#define  FID_JLR                2032  //æŠ¥å‘ŠæœŸå‡€åˆ©æ¶¦  DTï¼šR  
+#define  FID_MGFH               2033  //æ¯è‚¡åˆ†çº¢  DTï¼šR  
+#define  FID_FHHJZC             2034  //åˆ†çº¢åå‡€èµ„äº§  DTï¼šR  
+#define  FID_MGJZC              2035  //æ¯è‚¡å‡€èµ„äº§  DTï¼šR  
+#define  FID_PAY                2036  //å¹´è–ª  DTï¼šR  
+#define  FID_DZ_OFFICE          2037  //åŠå…¬åœ°å€  DTï¼šC  
+#define  FID_ZZJGDM             2038  //ç»„ç»‡æœºæ„ä»£ç   DTï¼šC  
+#define  FID_SFJE_GR            2039  //ä¸ªäººæ”¶è´¹é‡‘é¢  DTï¼šR  
+#define  FID_SFJE_JG            2040  //æœºæ„æ”¶è´¹é‡‘é¢  DTï¼šR  
+#define  FID_KHH_YJ             2041  //ä¸€çº§å®¢æˆ·å·  DTï¼šC  
+#define  FID_GQZH_YJ            2042  //ä¸€çº§è‚¡æƒå¸å·  DTï¼šC  
+#define  FID_SXF_ZR             2043  //è½¬å…¥æ‰‹ç»­è´¹  DTï¼šR  
+#define  FID_ZDHBSL             2044  //æœ€ä½åˆå¹¶æ•°é‡  DTï¼šC  DTï¼šDTï¼šæœ€ä½å­åŸºé‡‘ç”³æŠ¥åˆå¹¶æ•°é‡  
+#define  FID_ZDCFSL             2045  //æœ€ä½æ‹†åˆ†æ•°é‡  DTï¼šC  DTï¼šDTï¼šæœ€ä½ä¸»åŸºé‡‘ç”³æŠ¥æ‹†åˆ†æ•°é‡  
+#define  FID_RZSYLLFD           2046  //èèµ„ä½¿ç”¨åˆ©ç‡æµ®åŠ¨  DTï¼šR  
+#define  FID_RQSYLLFD           2047  //èåˆ¸ä½¿ç”¨åˆ©ç‡æµ®åŠ¨  DTï¼šR  
+#define  FID_RZEDLLFD           2048  //èèµ„é¢åº¦åˆ©ç‡æµ®åŠ¨  DTï¼šC  
+#define  FID_RQEDLLFD           2049  //èåˆ¸é¢åº¦åˆ©ç‡æµ®åŠ¨  DTï¼šC  
+#define  FID_ZDCXRQ             2050  //è‡ªåŠ¨æ’¤é”€æ—¥æœŸ  DTï¼šI  
+#define  FID_WEEK               2051  //æ˜ŸæœŸ  DTï¼šI  
+#define  FID_MILLISECOND        2052  //æ¯«ç§’  DTï¼šI  
+#define  FID_GDSL               2053  //è‚¡ä¸œæ•°é‡  DTï¼šI  
+#define  FID_CCSLXZ_JG          2054  //æœºæ„æŒä»“æ•°é‡é™åˆ¶  DTï¼šI  
+#define  FID_CCSLXZ_ZG          2055  //å†…éƒ¨èŒå·¥æŒä»“æ•°é‡é™åˆ¶  DTï¼šI  
+#define  FID_JYJS_GR_ZGG        2056  //ä¸ªäººèµ„æ ¼è‚¡äº¤æ˜“åŸºæ•°  DTï¼šI  
+#define  FID_JYJS_GR_TZG        2057  //ä¸ªäººæŠ•èµ„è‚¡äº¤æ˜“åŸºæ•°  DTï¼šI  
+#define  FID_JYJS_JG_ZGG        2058  //æœºæ„èµ„æ ¼è‚¡äº¤æ˜“åŸºæ•°  DTï¼šI  
+#define  FID_JYJS_JG_TZG        2059  //æœºæ„æŠ•èµ„è‚¡äº¤æ˜“åŸºæ•°  DTï¼šI  
+#define  FID_ZGBZ               2060  //å†…éƒ¨èŒå·¥æ ‡å¿—  DTï¼šI  
+#define  FID_QYDJRQ             2061  //æƒç›Šç™»è®°æ—¥æœŸ  DTï¼šI  
+#define  FID_KHH_ZQR            2062  //è´¨æƒäººå®¢æˆ·å·  DTï¼šC  
+#define  FID_GQZH_ZQR           2063  //è´¨æƒäººè‚¡æƒå¸å·  DTï¼šC  
+#define  FID_SXF_ZQR            2064  //è´¨æƒäººæ‰‹ç»­è´¹  DTï¼šR  
+#define  FID_GFXZ_YJ            2065  //ä¸€çº§ä»£æŒè‚¡ä»½æ€§è´¨  DTï¼šI  
+#define  FID_FXJJ               2066  //é£é™©åŸºé‡‘  DTï¼šR  
+#define  FID_RZXYED_OLD         2067  //åŸèèµ„ä¿¡ç”¨é¢åº¦  DTï¼šR  
+#define  FID_RQXYED_OLD         2068  //åŸèåˆ¸ä¿¡ç”¨é¢åº¦  DTï¼šR  
+#define  FID_EN_JGDM            2069  //å…è®¸æ“ä½œçš„æœºæ„ä»£ç èŒƒå›´  DTï¼šC  
+#define  FID_EX_JGDM            2070  //ç¦æ­¢æ“ä½œçš„æœºæ„ä»£ç èŒƒå›´  DTï¼šC  
+#define  FID_NODEID             2071  //äº¤æ˜“èŠ‚ç‚¹ç¼–ç   DTï¼šI  
+#define  FID_NODENAME           2072  //äº¤æ˜“èŠ‚ç‚¹åç§°  DTï¼šC  
+#define  FID_SEAT_SH            2073  //ä¸Šæµ·å¸­ä½  DTï¼šC  
+#define  FID_SEAT_SZ            2074  //æ·±åœ³å¸­ä½  DTï¼šC  
+#define  FID_ADDR_IP            2075  //IPåœ°å€  DTï¼šC  
+#define  FID_ADDR_MAC           2076  //MACåœ°å€  DTï¼šC  
+#define  FID_OID                2077  //å†…éƒ¨è®°å½•OIDå·  DTï¼šC  DTï¼šDTï¼šI64  
+#define  FID_LOG_POS            2078  //ç³»ç»Ÿæ—¥å¿—æ–‡ä»¶ä½ç½®  DTï¼šI  
+#define  FID_INDEX              2079  //ç´¢å¼•å·  DTï¼šI  
+#define  FID_KSSBWTH            2080  //èµ·å§‹ç”³æŠ¥å§”æ‰˜å·  DTï¼šI  
+#define  FID_DZJGSX             2081  //å¤§å®—äº¤æ˜“ä»·æ ¼ä¸Šé™  DTï¼šR  
+#define  FID_DZJGXX             2082  //å¤§å®—äº¤æ˜“ä»·æ ¼ä¸‹é™  DTï¼šR  
+#define  FID_ZCJSL              2083  //æ€»æˆäº¤æ•°é‡  DTï¼šI  
+#define  FID_DBWSXED            2084  //æ‹…ä¿ç‰©æˆä¿¡é¢åº¦  DTï¼šR  
+#define  FID_T2DJJE             2085  //T+2å†»ç»“é‡‘é¢  DTï¼šR  
+#define  FID_T2KYZJ             2086  //T+2å¯ç”¨èµ„é‡‘  DTï¼šR  
+#define  FID_SJKZR              2087  //å®é™…æ§åˆ¶äºº  DTï¼šC  
+#define  FID_SJZB               2088  //å®ç¼´èµ„æœ¬  DTï¼šC  
+#define  FID_QYGM               2089  //ä¼ä¸šè§„æ¨¡  DTï¼šC  
+#define  FID_QTZGCCSX           2090  //å…¨ä½“èŒå·¥æŒä»“ä¸Šé™  DTï¼šC  
+#define  FID_QTJGCCXX           2091  //å…¨ä½“æœºæ„æŒä»“ä¸‹é™  DTï¼šC  
+#define  FID_SBWTH_MR           2092  //ä¹°å…¥ç”³æŠ¥å§”æ‰˜å·  DTï¼šC  
+#define  FID_SBWTH_MC           2093  //å–å‡ºç”³æŠ¥å§”æ‰˜å·  DTï¼šC  
+#define  FID_SBJLH_MR           2094  //ä¹°å…¥ç”³æŠ¥è®°å½•å·  DTï¼šI  
+#define  FID_SBJLH_MC           2095  //å–å‡ºç”³æŠ¥è®°å½•å·  DTï¼šI  
+#define  FID_GSZCH              2096  //å·¥å•†æ³¨å†Œå·  DTï¼šC  
+#define  FID_GHF                2097  //è¿‡æˆ·è´¹  DTï¼šR  
+#define  FID_ZGF                2098  //è¯ç®¡è´¹  DTï¼šR  
+#define  FID_JSF                2099  //ç»“ç®—è´¹  DTï¼šR  
+#define  FID_OFSS_JZ            2100  //å¼€æ”¾å¼åŸºé‡‘å‡€å€¼  DTï¼šR  
+#define  FID_JGGF               2101  //ç›‘ç®¡è§„è´¹  DTï¼šR  
+#define  FID_DJJSHY             2102  //ç™»è®°ç»“ç®—ä¼šå‘˜  DTï¼šC  
+#define  FID_BRANCHID           2103  //åˆ¸å•†è¥ä¸šéƒ¨ç¼–å·  DTï¼šC  
+#define  FID_YXRQ_ZZJGDM        2104  //ç»„ç»‡æœºæ„ä»£ç è¯æœ‰æ•ˆæ—¥æœŸ  DTï¼šI  
+#define  FID_DXZCGL             2105  //å®šå‘èµ„äº§ç®¡ç†æ ‡è¯†  DTï¼šI  
+#define  FID_HTH_DXZCGL         2106  //å®šå‘èµ„äº§ç®¡ç†åˆåŒå·  DTï¼šC  
+#define  FID_MC_DXZCGLR         2107  //å®šå‘èµ„äº§ç®¡ç†äººåç§°  DTï¼šC  
+#define  FID_ZJLB_DXZCGLR       2108  //å®šå‘èµ„äº§ç®¡ç†äººè¯ä»¶ç±»åˆ«  DTï¼šI  
+#define  FID_ZJBH_DXZCGLR       2109  //å®šå‘èµ„äº§ç®¡ç†äººè¯ä»¶ç¼–å·  DTï¼šC  
+#define  FID_MC_DXZCTGR         2110  //å®šå‘èµ„äº§æ‰˜ç®¡äººåç§°  DTï¼šC  
+#define  FID_ZJLB_DXZCTGR       2111  //å®šå‘èµ„äº§æ‰˜ç®¡äººè¯ä»¶ç±»åˆ«  DTï¼šI  
+#define  FID_ZJBH_DXZCTGR       2112  //å®šå‘èµ„äº§æ‰˜ç®¡äººè¯ä»¶ç¼–å·  DTï¼šC  
+#define  FID_EN_ZHLB            2113  //è´¦æˆ·ç±»åˆ«èŒƒå›´  DTï¼šC  
+#define  FID_TQSH               2114  //æå‰èµå›æ ‡å¿—  DTï¼šI  
+#define  FID_SQJE               2115  //ç”³è¯·é‡‘é¢  DTï¼šR  
+#define  FID_SQFE               2116  //ç”³è¯·ä»½é¢  DTï¼šR  
+#define  FID_MRBS               2117  //ä¹°å…¥ç¬”æ•°  DTï¼šI  
+#define  FID_MCBS               2118  //å–å‡ºç¬”æ•°  DTï¼šI  
+#define  FID_EN_CPDM            2119  //äº§å“ä»£ç èŒƒå›´  DTï¼šC  
+#define  FID_WJBM               2201  //é—®å·ç¼–ç   DTï¼šC  
+#define  FID_WJMC               2202  //é—®å·åç§°  DTï¼šC  
+#define  FID_WJHM               2203  //é—®å·å·ç   DTï¼šC  
+#define  FID_TMHM               2204  //é¢˜ç›®å·ç   DTï¼šC  
+#define  FID_TMLX               2205  //é¢˜ç›®ç±»å‹  DTï¼šC  
+#define  FID_TMMS               2206  //é¢˜ç›®æè¿°  DTï¼šC  
+#define  FID_TMDA               2207  //é¢˜ç›®ç­”æ¡ˆ  DTï¼šC  
+#define  FID_SCORE              2208  //å¾—åˆ†  DTï¼šC  
+#define  FID_ZJYXQ              2209  //è¯ä»¶æœ‰æ•ˆæœŸ  DTï¼šC  
+#define  FID_ZJDZYB             2210  //è¯ä»¶åœ°å€é‚®ç¼–  DTï¼šC  
+#define  FID_ZJFZJG             2211  //è¯ä»¶å‘è¯æœºå…³  DTï¼šC  
+#define  FID_EDZ                2212  //äºŒä»£è¯æ ¡éªŒ  DTï¼šI  
+#define  FID_YYZZNJRQ           2213  //è¥ä¸šæ‰§ç…§å¹´æ£€æ—¥æœŸ  DTï¼šC  
+#define  FID_JTDZ               2214  //å®¶åº­åœ°å€  DTï¼šC  
+#define  FID_JTYB               2215  //å®¶åº­é‚®ç¼–  DTï¼šC  
+#define  FID_QTDH               2216  //å…¶ä»–ç”µè¯  DTï¼šC  
+#define  FID_QQ                 2217  //QQ  DTï¼šC  
+#define  FID_FXQHYLB            2218  //åæ´—é’±è¡Œä¸šç±»åˆ«  DTï¼šI  
+#define  FID_XQFXDJ             2219  //æ´—é’±é£é™©ç­‰çº§  DTï¼šI  
+#define  FID_FXQSZRQ            2220  //åæ´—é’±è®¾ç½®æ—¥æœŸ  DTï¼šC  
+#define  FID_HYZK               2221  //å©šå§»çŠ¶å†µ  DTï¼šC  
+#define  FID_JG                 2222  //ç±è´¯  DTï¼šC  
+#define  FID_MZDM               2223  //æ°‘æ—ä»£ç   DTï¼šI  
+#define  FID_GZDW               2224  //å·¥ä½œå•ä½  DTï¼šC  
+#define  FID_GZDWDZ             2225  //å·¥ä½œå•ä½åœ°å€  DTï¼šC  
+#define  FID_GZDWYB             2226  //å·¥ä½œå•ä½é‚®ç¼–  DTï¼šC  
+#define  FID_GZDWZW             2227  //å·¥ä½œå•ä½èŒåŠ¡  DTï¼šC  
+#define  FID_GZDWDH             2228  //å·¥ä½œå•ä½ç”µè¯  DTï¼šC  
+#define  FID_FXCSNL             2229  //é£é™©æ‰¿å—èƒ½åŠ›  DTï¼šI  
+#define  FID_FXPGRQ             2230  //é£é™©è¯„ä¼°æ—¥æœŸ  DTï¼šC  
+#define  FID_JJFXCSNL           2231  //åŸºé‡‘é£é™©æ‰¿å—èƒ½åŠ›  DTï¼šI  
+#define  FID_JJFXPGRQ           2232  //åŸºé‡‘é£é™©è¯„ä¼°æ—¥æœŸ  DTï¼šC  
+#define  FID_GPFXCSNL           2233  //è‚¡ç¥¨é£é™©æ‰¿å—èƒ½åŠ›  DTï¼šI  
+#define  FID_GPFXPGRQ           2234  //è‚¡ç¥¨é£é™©è¯„ä¼°æ—¥æœŸ  DTï¼šC  
+#define  FID_XYFXCSNL           2235  //ä¿¡ç”¨é£é™©æ‰¿å—èƒ½åŠ›  DTï¼šI  
+#define  FID_XYFXPGRQ           2236  //ä¿¡ç”¨é£é™©è¯„ä¼°æ—¥æœŸ  DTï¼šC  
+#define  FID_KHKZT              2237  //å®¢æˆ·å¡çŠ¶æ€  DTï¼šI  
+#define  FID_TBSM               2238  //ç‰¹åˆ«è¯´æ˜  DTï¼šC  
+#define  FID_ZZSHZT             2239  //èµ„è´¨å®¡æ ¸çŠ¶æ€  DTï¼šI  
+#define  FID_GSDH               2240  //å…¬å¸ç”µè¯  DTï¼šC  
+#define  FID_ZCRQ               2241  //æ³¨å†Œæ—¥æœŸ  DTï¼šC  
+#define  FID_LTGB               2242  //ä¸Šå¸‚å…¬å¸æµé€šè‚¡æœ¬  DTï¼šR  
+#define  FID_ZZJGDMYXQ          2243  //ç»„ç»‡æœºæ„ä»£ç è¯æœ‰æ•ˆæœŸ  DTï¼šC  
+#define  FID_ZZJGDMFZJG         2244  //ç»„ç»‡æœºæ„ä»£ç è¯å‘è¯æœºå…³  DTï¼šC  
+#define  FID_ZZJGDMNJRQ         2245  //ç»„ç»‡æœºæ„ä»£ç è¯å¹´æ£€æ—¥æœŸ  DTï¼šC  
+#define  FID_SWDJZ              2246  //ç¨åŠ¡ç™»è®°è¯  DTï¼šC  
+#define  FID_SWDJZYXQ           2247  //ç¨åŠ¡ç™»è®°è¯æœ‰æ•ˆæœŸ  DTï¼šC  
+#define  FID_SWDJZFZJG          2248  //ç¨åŠ¡ç™»è®°è¯å‘è¯æœºå…³  DTï¼šC  
+#define  FID_SWDJZNJRQ          2249  //ç¨åŠ¡ç™»è®°è¯å¹´æ£€æ—¥æœŸ  DTï¼šC  
+#define  FID_ZJYXQ_FRDB         2250  //è¯ä»¶æœ‰æ•ˆæœŸ(æ³•äººä»£è¡¨)  DTï¼šC  
+#define  FID_ZJYXQ_JBR          2251  //æœºæ„ç»åŠäººè¯ä»¶æœ‰æ•ˆæœŸ  DTï¼šC  
+#define  FID_DH_JBR             2252  //æœºæ„ç»åŠäººç”µè¯  DTï¼šC  
+#define  FID_MOBILE_JBR         2253  //æœºæ„ç»åŠäººç§»åŠ¨ç”µè¯  DTï¼šC  
+#define  FID_XB_JBR             2254  //æœºæ„ç»åŠäººæ€§åˆ«  DTï¼šC  
+#define  FID_FWMM               2255  //æœåŠ¡å¯†ç   DTï¼šC  
+#define  FID_HXKH               2256  //æ ¸æ–°å¼€æˆ·æ ‡å¿—  DTï¼šI  
+#define  FID_GYSX               2257  //å›½æœ‰å±æ€§  DTï¼šI  
+#define  FID_SSSX               2258  //ä¸Šå¸‚å±æ€§  DTï¼šI  
+#define  FID_ZBSX               2259  //èµ„æœ¬å±æ€§  DTï¼šI  
+#define  FID_KHFS               2260  //å¼€æˆ·æ–¹å¼  DTï¼šI  
+#define  FID_GXSJ               2261  //æ›´æ–°æ—¶é—´  DTï¼šC  
+#define  FID_SHYJ               2262  //å®¡æ ¸æ„è§  DTï¼šC  
+#define  FID_KHJGDM             2263  //å¼€æˆ·æœºæ„ä»£ç   DTï¼šC  
+#define  FID_KHWDDM             2264  //å¼€æˆ·ç½‘ç‚¹ä»£ç   DTï¼šC  
+#define  FID_YWPZBS             2265  //ä¸šåŠ¡å‡­è¯æŠ¥é€  DTï¼šC  
+#define  FID_YWPH               2266  //ä¸šåŠ¡æ‰¹å·  DTï¼šC  
+#define  FID_YMTH               2267  //ä¸€ç é€šå·  DTï¼šC  
+#define  FID_WFID               2268  //æµç¨‹ID  DTï¼šC  
+#define  FID_FZZJLB             2269  //è¾…åŠ©è¯ä»¶ç±»åˆ«  DTï¼šC  
+#define  FID_FZZJBH             2270  //è¾…åŠ©è¯ä»¶ç¼–å·  DTï¼šC  
+#define  FID_FZZJJZRQ           2271  //è¾…åŠ©è¯ä»¶æˆªæ­¢æ—¥æœŸ  DTï¼šC  
+#define  FID_FZZJDZ             2272  //è¾…åŠ©è¯ä»¶åœ°å€  DTï¼šC  
+#define  FID_GSWZ               2273  //å…¬å¸ç½‘å€  DTï¼šC  
+#define  FID_LXDZ               2274  //è”ç³»åœ°å€  DTï¼šC  
+#define  FID_LXYB               2275  //è”ç³»é‚®ç¼–  DTï¼šC  
+#define  FID_DXFWBS             2276  //å¼€é€šçŸ­ä¿¡æœåŠ¡æ ‡è¯†  DTï¼šC  
+#define  FID_WLFWBS             2277  //å¼€é€šç½‘ç»œæœåŠ¡æ ‡è¯†  DTï¼šC  
+#define  FID_WLMM               2278  //ç½‘ç»œæœåŠ¡å¯†ç   DTï¼šC  
+#define  FID_ZQZH               2279  //è¯åˆ¸è´¦å·  DTï¼šC  
+#define  FID_XYMTH              2280  //æ–°ä¸€ç é€šå·  DTï¼šC  
+#define  FID_XZJLB              2281  //æ–°è¯ä»¶ç±»åˆ«  DTï¼šC  
+#define  FID_XZJBH              2282  //æ–°è¯ä»¶ç¼–å·  DTï¼šC  
+#define  FID_PHZQZH             2283  //é…å·è¯åˆ¸è´¦å·  DTï¼šC  
+#define  FID_JSCYR              2284  //ç»“ç®—å‚ä¸äºº  DTï¼šC  
+#define  FID_JYDY               2285  //äº¤æ˜“å•å…ƒ  DTï¼šC  
+#define  FID_YYBBM              2286  //è¥ä¸šéƒ¨ç¼–ç   DTï¼šC  
+#define  FID_HHCDFS             2287  //æ‰¿æ‹…è´£ä»»æ–¹å¼  DTï¼šC  
+#define  FID_JCXZLB             2288  //è§£é™¤é™åˆ¶ç±»åˆ«  DTï¼šC  
+#define  FID_BYZD1              2289  //å¤‡ç”¨å­—æ®µ1  DTï¼šC  
+#define  FID_BYZD2              2290  //å¤‡ç”¨å­—æ®µ2  DTï¼šC  
+#define  FID_BYZD3              2291  //å¤‡ç”¨å­—æ®µ3  DTï¼šC  
+#define  FID_YMTZT              2292  //ä¸€ç é€šè´¦æˆ·çŠ¶æ€  DTï¼šC  
+#define  FID_ZQZHZT             2293  //è¯åˆ¸è´¦æˆ·çŠ¶æ€  DTï¼šC  
+#define  FID_SCJYRQ             2294  //é¦–æ¬¡äº¤æ˜“æ—¥æœŸ  DTï¼šC  
+#define  FID_SYSBRQ             2295  //ä½¿ç”¨ç”³æŠ¥æ—¥æœŸ  DTï¼šC  
+#define  FID_XFZZJLB            2296  //æ–°è¾…åŠ©è¯ä»¶ç±»åˆ«  DTï¼šC  
+#define  FID_XFZZJBH            2297  //æ–°è¾…åŠ©è¯ä»¶ç¼–å·  DTï¼šC  
+#define  FID_XKHMC              2298  //æ–°å®¢æˆ·åç§°  DTï¼šC  
+#define  FID_XGSJ               2299  //ä¿®æ”¹æ—¶é—´  DTï¼šC  
+#define  FID_HGDM               2300  //å›è´­ä»£ç   DTï¼šC  
+#define  FID_HGMC               2301  //å›è´­åç§°  DTï¼šC  
+#define  FID_DQLL               2302  //åˆ°æœŸåˆ©ç‡  DTï¼šR  
+#define  FID_TQLL               2303  //æå‰ç»ˆæ­¢åˆ©ç‡  DTï¼šR  
+#define  FID_ZED                2304  //æ€»é¢åº¦  DTï¼šI  
+#define  FID_ZYED               2305  //å ç”¨é¢åº¦  DTï¼šI  
+#define  FID_DEBS               2306  //å¤§é¢æ ‡è¯†  DTï¼šI  
+#define  FID_TQGHSX             2307  //æå‰è´­å›ä¸Šé™  DTï¼šI  
+#define  FID_GXRQ               2308  //æ›´æ–°æ—¥æœŸ  DTï¼šI  
+#define  FID_GDFJQX             2309  //è‚¡ä¸œé™„åŠ æƒé™  DTï¼šI  
+#define  FID_ZDXY               2310  //è‡ªåŠ¨ç»­çº¦  DTï¼šI  
+#define  FID_SX1                2311  //æ‰©å±•å±æ€§  DTï¼šI  
+#define  FID_SX2                2312  //æ‰©å±•å±æ€§2  DTï¼šI  
+#define  FID_HGED               2313  //å›è´­é¢åº¦  DTï¼šI  
+#define  FID_YYLB               2314  //é¢„çº¦ç±»åˆ«  DTï¼šI  
+#define  FID_XYTS               2315  //ç»­çº¦å¤©æ•°  DTï¼šI  
+#define  FID_TQXZBL             2316  //æå‰é™åˆ¶æ¯”ä¾‹  DTï¼šR  
+#define  FID_YYTQTS             2317  //é¢„çº¦æå‰å¤©æ•°  DTï¼šI  
+#define  FID_XZBL               2318  //é™åˆ¶æ¯”ä¾‹  DTï¼šR  
+#define  FID_TQYYSX             2319  //æå‰é¢„çº¦çš„ä¸Šé™  DTï¼šI  
+#define  FID_JZSJ               2320  //æˆªè‡³æ—¶é—´  DTï¼šC  
+#define  FID_SYBDBL             2321  //æ”¶ç›Šç‡å˜åŠ¨æ¯”ä¾‹  DTï¼šN  
+#define  FID_TQYYDBQS           2322  //æå‰å•ç¬”èµ·å§‹  DTï¼šI  
+#define  FID_TQDBSX             2323  //æå‰å•ç¬”ä¸Šé™  DTï¼šI  
+#define  FID_JESHBZ             2324  //å·¨é¢èµå›å¤„ç†æ–¹å¼  DTï¼šI  
+#define  FID_FXFFXCSNL          2325  //å‘è¡Œæ–¹é£é™©æ‰¿å—èƒ½åŠ›  DTï¼šI  
+#define  FID_FXFFXCSNLMC        2326  //å‘è¡Œæ–¹é£é™©æ‰¿å—èƒ½åŠ›åç§°  DTï¼šC  
+#define  FID_FXCSNLMC           2327  //é£é™©æ‰¿å—èƒ½åŠ›åç§°  DTï¼šC  
+#define  FID_FXFFXJB            2328  //å‘è¡Œæ–¹é£é™©çº§åˆ«  DTï¼šI  
+#define  FID_YYH                2329  //é¢„çº¦å·  DTï¼šC  
+#define  FID_QYFS               2330  //ç­¾çº¦æ–¹å¼  DTï¼šI  
+#define  FID_YDSQYBZ            2331  //çº¦å®šä¹¦ç­¾çº¦æ ‡å¿—  DTï¼šI  
+#define  FID_YDBZ               2332  //é˜…è¯»æ ‡å¿—  DTï¼šI  
+#define  FID_PCLX               2333  //è¯„æµ‹ç±»å‹  DTï¼šI  
+#define  FID_CPTZQX             2334  //äº§å“æŠ•èµ„æœŸé™  DTï¼šI  
+#define  FID_BSLX               2335  //æ ‡è¯†ç±»å‹  DTï¼šC  
+#define  FID_ZRFS               2336  //è½¬è®©æ–¹å¼  DTï¼šI  
+#define  FID_RGKSRQ             2337  //è®¤è´­å¼€å§‹æ—¥æœŸ  DTï¼šI  
+#define  FID_RGJSRQ             2338  //è®¤è´­ç»“æŸæ—¥æœŸ  DTï¼šI  
+#define  FID_TZPZ               2339  //æŠ•èµ„å“ç§  DTï¼šI  
+#define  FID_TZQX               2340  //æŠ•èµ„æœŸé™  DTï¼šI  
+#define  FID_SDXBZ              2341  //é€‚å½“æ€§æ ‡å¿—  DTï¼šI  
+#define  FID_SRBS               2342  //è¾“å…¥æ ‡è¯†  DTï¼šC  
+#define  FID_KHJC               2343  //å®¢æˆ·ç®€ç§°  DTï¼šC  
+#define  FID_ZJQSRQ             2344  //è¯ä»¶èµ·å§‹æ—¥æœŸ  DTï¼šC  
+#define  FID_ZJJZRQ             2345  //è¯ä»¶æˆªæ­¢æ—¥æœŸ  DTï¼šC  
+#define  FID_GJ                 2346  //å›½ç±  DTï¼šC  
+#define  FID_DWYB               2347  //å•ä½é‚®ç¼–  DTï¼šC  
+#define  FID_DWDZ               2348  //å•ä½åœ°å€  DTï¼šC  
+#define  FID_DWDH               2349  //å•ä½ç”µè¯  DTï¼šC  
+#define  FID_JTDH               2350  //å®¶åº­ç”µè¯  DTï¼šC  
+#define  FID_CZ                 2351  //ä¼ çœŸ  DTï¼šC  
+#define  FID_FQQD               2352  //å‘èµ·æ¸ é“  DTï¼šC  
+#define  FID_METHOD             2353  //æ–¹æ³•  DTï¼šC  
+#define  FID_CZZD               2354  //æ“ä½œç«™ç‚¹  DTï¼šC  
+#define  FID_IFTBZDGS           2355  //æ˜¯å¦åŒæ­¥ä¸­ç™»å…¬å¸  DTï¼šC  
+#define  FID_IFTBJJGS           2356  //æ˜¯å¦åŒæ­¥åŸºé‡‘å…¬å¸  DTï¼šC  
+#define  FID_XMM                2357  //æ–°å¯†ç   DTï¼šC  
+#define  FID_YMM                2358  //åŸå¯†ç   DTï¼šC  
+#define  FID_REMARK             2359  //å¤‡æ³¨  DTï¼šC  
+#define  FID_YHTMM              2360  //ä¸€æˆ·é€šå¯†ç   DTï¼šC  
+#define  FID_ACTION             2361  //æ‰§è¡ŒåŠ¨ä½œ  DTï¼šC  
+#define  FID_FQR                2362  //å‘èµ·äºº  DTï¼šC  
+#define  FID_YXLX               2363  //å½±åƒç±»å‹  DTï¼šC  
+#define  FID_YJFS               2364  //é‚®å¯„æ–¹å¼  DTï¼šC  
+#define  FID_SHGDZH             2365  //ä¸Šæµ·è‚¡ä¸œè´¦å·  DTï¼šC  
+#define  FID_SZGDZH             2366  //æ·±åœ³è‚¡ä¸œè´¦å·  DTï¼šC  
+#define  FID_KHQZMC             2367  //å®¢æˆ·ç¾¤ç»„åç§°  DTï¼šC  
+#define  FID_KHQZSM             2368  //å®¢æˆ·ç¾¤ç»„è¯´æ˜  DTï¼šC  
+#define  FID_JJGSQC             2369  //åŸºé‡‘å…¬å¸å…¨ç§°  DTï¼šC  
+#define  FID_YWQQCLID           2370  //ä¸šåŠ¡è¯·æ±‚å¤„ç†ID  DTï¼šC  
+#define  FID_JJGSJC             2371  //åŸºé‡‘å…¬å¸ç®€ç§°  DTï¼šC  
+#define  FID_YDSBZ              2372  //çº¦å®šä¹¦æ ‡å¿—  DTï¼šC  
+#define  FID_GDMC               2373  //è‚¡ä¸œåç§°  DTï¼šC  
+#define  FID_SYXXBZ             2374  //ä½¿ç”¨ä¿¡æ¯æ ‡å¿—  DTï¼šC  
+#define  FID_YWLSH              2375  //ä¸šåŠ¡æµæ°´å·  DTï¼šC  
+#define  FID_CLZT               2376  //å¤„ç†çŠ¶æ€  DTï¼šC  
+#define  FID_YWQQID             2377  //ä¸šåŠ¡è¯·æ±‚ID  DTï¼šC  
+#define  FID_SBLX               2378  //ç”³æŠ¥ç±»å‹  DTï¼šC  
+#define  FID_GSXWDM             2379  //å…¬å¸è¡Œä¸ºä»£ç   DTï¼šC  
+#define  FID_QYCS               2380  //æƒç›Šæ¬¡æ•°  DTï¼šC  
+#define  FID_GGBH               2381  //å…¬å‘Šç¼–å·  DTï¼šC  
+#define  FID_YABH               2382  //è®®æ¡ˆç¼–å·  DTï¼šC  
+#define  FID_ZCSL               2383  //èµæˆæ•°é‡  DTï¼šC  
+#define  FID_FDSL               2384  //åå¯¹æ•°é‡  DTï¼šC  
+#define  FID_YWFY               2385  //ä¸šåŠ¡è´¹ç”¨  DTï¼šC  
+#define  FID_ZCYMTH             2386  //è½¬å‡ºä¸€ç é€šå·  DTï¼šC  
+#define  FID_BYZD               2387  //å¤‡ç”¨å­—æ®µ  DTï¼šC  
+#define  FID_YWLY               2388  //ä¸šåŠ¡æ¥æº  DTï¼šC  
+#define  FID_ZJZP               2389  //è¯ä»¶ç…§ç‰‡  DTï¼šC  
+#define  FID_ZCBZ               2390  //æ³¨å†Œå¸ç§  DTï¼šC  
+#define  FID_ZZJGDMZJDZ         2391  //ç»„ç»‡æœºæ„ä»£ç è¯è¯ä»¶åœ°å€  DTï¼šC  
+#define  FID_EX_YWLB            2392  //ç¦æ­¢æ“ä½œçš„ä¸šåŠ¡ç±»åˆ«  DTï¼šC  
+#define  FID_RPJJG              2393  //æ—¥å¹³å‡ä»·æ ¼  DTï¼šC  
+#define  FID_FZCJSL             2394  //åˆ†é’Ÿæˆäº¤æ•°é‡  DTï¼šC  
+#define  FID_ERRCODE            2399  //é”™è¯¯ç   DTï¼šC  
+#define  FID_XYMC               2400  //åè®®åç§°  DTï¼šC  
+#define  FID_ZRSY               2401  //æ˜¨æ—¥æ”¶ç›Š  DTï¼šC  
+#define  FID_YCYRS              2402  //å·²å‚ä¸äººæ•°  DTï¼šC  
+#define  FID_KCYRS              2403  //å¯å‚ä¸äººæ•°  DTï¼šC  
+#define  FID_BLRQ               2404  //åŠç†æ—¥æœŸ  DTï¼šC  
+#define  FID_YHBH               2405  //é“¶è¡Œç¼–å·  DTï¼šC  
+#define  FID_LANGUAGE           2406  //è¯­è¨€  DTï¼šC  
+#define  FID_CYRDM              2407  //å‚ä¸äººä»£ç   DTï¼šC  
+#define  FID_ZJLB2              2410  //è¯ä»¶ç±»åˆ«2  DTï¼šC  
+#define  FID_ZJBH2              2411  //è¯ä»¶ç¼–ç 2  DTï¼šC  
+#define  FID_ZJBH2YXQ           2412  //è¯ä»¶ç¼–ç 2æœ‰æ•ˆæœŸ  DTï¼šC  
+#define  FID_ZJLB3              2413  //è¯ä»¶ç±»åˆ«3  DTï¼šC  
+#define  FID_ZJBH3              2414  //è¯ä»¶ç¼–ç 3  DTï¼šC  
+#define  FID_ZJBH3YXQ           2415  //è¯ä»¶ç¼–ç 3æœ‰æ•ˆæœŸ  DTï¼šC  
+#define  FID_YWXT               2500  //ä¸šåŠ¡ç³»ç»Ÿ  DTï¼šC  
+#define  FID_YWZH               2501  //ä¸šåŠ¡è´¦å·  DTï¼šC  
+#define  FID_CZRBM              2502  //å‡ºè´¨äººç¼–ç   DTï¼šC  
+#define  FID_CZRMC              2503  //å‡ºè´¨äººåç§°  DTï¼šC  
+#define  FID_ZQRBM              2504  //è´¨æƒäººç¼–ç   DTï¼šC  
+#define  FID_ZQRMC              2505  //è´¨æƒäººåç§°  DTï¼šC  
+#define  FID_ZYHYBH             2506  //è´¨æŠ¼åˆçº¦ç¼–å·  DTï¼šC  
+#define  FID_DKHYBH             2507  //è´·æ¬¾åˆçº¦ç¼–å·  DTï¼šC  
+#define  FID_DKJE               2508  //è´·æ¬¾é‡‘é¢  DTï¼šC  
+#define  FID_DKDQRQ             2509  //è´·æ¬¾åˆ°æœŸæ—¥  DTï¼šC  
+#define  FID_HTDJRQ             2510  //åˆåŒç™»è®°æ—¥æœŸ  DTï¼šC  
+#define  FID_WTZT               2514  //å§”æ‰˜çŠ¶æ€  DTï¼šC  
+#define  FID_ZYZH               2522  //è´¨æŠ¼å¸å·  DTï¼šC  
+#define  FID_DJBH               2523  //ç™»è®°ç¼–å·  DTï¼šC  
+#define  FID_SBLSH              2524  //ç”³æŠ¥æµæ°´å·  DTï¼šC  
+#define  FID_ZQMZ               2525  //è¯åˆ¸é¢å€¼  DTï¼šC  DTï¼šDTï¼šä¸ºå…¼å®¹ï¼Œå€¼ä¸º0æ—¶è¡¨ç¤º1.00  
+#define  FID_FU_HYQY            2600  //æœŸè´§åˆçº¦æƒç›Š  DTï¼šR  
+#define  FID_FEZH               2700  //ä»½é¢è´¦æˆ·  DTï¼šC  
+#define  FID_FESL               2701  //ä»½é¢æ•°é‡  DTï¼šN  
+#define  FID_YXRQ_ZJ            2702  //è¯ä»¶æœ‰æ•ˆæ—¥æœŸ  DTï¼šC  
+#define  FID_PBU                2703  //ç»“ç®—å•å…ƒ  DTï¼šC  
+#define  FID_HYBH               2704  //ç»“ç®—ä¼šå‘˜  DTï¼šC  
+#define  FID_ZHQC               2705  //è´¦æˆ·å…¨ç§°  DTï¼šC  
+#define  FID_USERID_FH          2706  //å¤æ ¸æŸœå‘˜  DTï¼šC  
+#define  FID_JSHYHQZ            2708  //ç»“ç®—èµ„æºå·å‰ç¼€  DTï¼šC  
+#define  FID_KYJSHYH            2709  //å¯ç”¨ç»“ç®—ä¼šå‘˜å·  DTï¼šC  
+#define  FID_JSHYLB             2710  //ç»“ç®—ä¼šå‘˜ç±»åˆ«  DTï¼šC  
+#define  FID_JSDYXZ             2711  //ç»“ç®—å•å…ƒæ€§è´¨  DTï¼šC  
+#define  FID_JSDYHQZ            2712  //ç»“ç®—å•å…ƒå‰ç¼€  DTï¼šC  
+#define  FID_KYJSDYH            2713  //å¯ç”¨ç»“ç®—å•å…ƒå·  DTï¼šC  
+#define  FID_FEZHQZ             2714  //ä»½é¢è´¦å·å‰ç¼€  DTï¼šC  
+#define  FID_KYFEZH             2715  //å¯ç”¨ä»½é¢è´¦å·  DTï¼šC  
+#define  FID_ZJMCRQ             2717  //æœ€è¿‘å–å‡ºæ—¥æœŸ  DTï¼šN  
+#define  FID_ZJMRRQ             2718  //æœ€è¿‘ä¹°å…¥æ—¥æœŸ  DTï¼šN  
+#define  FID_FEZH_ZQR           2719  //è´¨æƒäººä»½é¢è´¦æˆ·  DTï¼šC  
+#define  FID_YWLBMC             2720  //ä¸šåŠ¡ç±»åˆ«åç§°  DTï¼šC  
+#define  FID_WBYWLB             2721  //å¤–éƒ¨ä¸šåŠ¡ç±»åˆ«  DTï¼šC  
+#define  FID_YWFL               2722  //ä¸šåŠ¡åˆ†ç±»  DTï¼šC  
+#define  FID_CPXZ               2723  //äº§å“æ€§è´¨  DTï¼šI  
+#define  FID_CPXZ_ZR            2724  //è½¬å…¥äº§å“æ€§è´¨  DTï¼šI  
+#define  FID_CPXZ_YJ            2725  //ä¸€çº§ä»£æŒäº§å“æ€§è´¨  DTï¼šI  
+#define  FID_FEZH_ZR            2726  //è½¬å…¥ä»½é¢è´¦å·  DTï¼šC  
+#define  FID_FEZH_YJ            2727  //ä¸€çº§ä»£æŒä»½é¢è´¦å·  DTï¼šC  
+#define  FID_ENPBU              2728  //ç»“ç®—å•å…ƒèŒƒå›´  DTï¼šC  
+#define  FID_ENHYBH             2729  //ç»“ç®—ä¼šå‘˜èŒƒå›´  DTï¼šC  
+#define  FID_ENCPLX             2730  //äº§å“ç±»å‹èŒƒå›´  DTï¼šC  
+#define  FID_ENCPXZ             2731  //äº§å“æ€§è´¨èŒƒå›´  DTï¼šC  
+#define  FID_CPLX               2732  //äº§å“ç±»å‹  DTï¼šC  
+#define  FID_CPFL               2733  //äº§å“åˆ†ç±»  DTï¼šI  
+#define  FID_CPZT               2734  //äº§å“çŠ¶æ€  DTï¼šI  
+#define  FID_GCMC               2735  //è¿‡ç¨‹åç§°  DTï¼šC  
+#define  FID_RWMC               2736  //ä»»åŠ¡åç§°  DTï¼šC  
+#define  FID_ZXSX               2737  //æ‰§è¡Œé¡ºåº  DTï¼šC  
+#define  FID_JYMS               2738  //äº¤æ˜“æ¨¡å¼  DTï¼šC  
+#define  FID_CJLB               2739  //æˆäº¤ç±»åˆ«  DTï¼šC  
+#define  FID_ZFFS               2740  //æ”¯ä»˜æ–¹å¼  DTï¼šC  
+#define  FID_YWTH               2741  //åŸå§”æ‰˜å·  DTï¼šC  
+#define  FID_YSBWTH             2742  //åŸç”³æŠ¥å§”æ‰˜å·  DTï¼šC  
+#define  FID_ZYH                2743  //å­ç”¨æˆ·  DTï¼šC  
+#define  FID_YWQX               2744  //ä¸šåŠ¡æƒé™  DTï¼šC  
+#define  FID_DYXZ               2745  //å•å…ƒæ€§è´¨  DTï¼šI  
+#define  FID_CJJLH              2746  //æˆäº¤è®°å½•å·  DTï¼šC  
+#define  FID_MBCPDM             2747  //ç›®æ ‡äº§å“ä»£ç   DTï¼šC  
+#define  FID_CDSL_MR            2748  //ä¹°å…¥æ’¤å•æ•°é‡  DTï¼šI  
+#define  FID_CDSL_MC            2749  //å–å‡ºæ’¤å•æ•°é‡  DTï¼šI  
+#define  FID_JGLX               2752  //æœºæ„ç±»å‹  DTï¼šC  
+#define  FID_EN_PBU             2753  //æ‰©å±•ç»“ç®—é€šé“  DTï¼šC  
+#define  FID_HYJC               2754  //ä¼šå‘˜ç®€ç§°  DTï¼šC  
+#define  FID_PZJG               2755  //æ‰¹å‡†æœºå…³  DTï¼šC  
+#define  FID_PZWH               2756  //æ‰¹å‡†æ–‡å·  DTï¼šC  
+#define  FID_YWXKZH             2758  //ä¸šåŠ¡è®¸å¯è¯å·  DTï¼šC  
+#define  FID_JJYY               2759  //æ‹’ç»åŸå›   DTï¼šC  
+#define  FID_QRSL               2760  //ç¡®è®¤æ•°é‡  DTï¼šC  
+#define  FID_SYSL               2761  //å‰©ä½™æ•°é‡  DTï¼šC  
+#define  FID_ZCDJ               2801  //èµ„äº§ç­‰çº§  DTï¼šC  
+#define  FID_GSKHLX             2802  //å…¬å¸å®¢æˆ·ç±»å‹  DTï¼šC  
+#define  FID_KFYYB              2803  //å¼€å‘è¥ä¸šéƒ¨  DTï¼šC  
+#define  FID_ZJKSRQ             2804  //è¯ä»¶å¼€å§‹æ—¥æœŸ  DTï¼šC  
+#define  FID_GFXX               2805  //è§„èŒƒä¿¡æ¯  DTï¼šC  
+#define  FID_FXYSXX             2806  //é£é™©è¦ç´ ä¿¡æ¯  DTï¼šC  
+#define  FID_CBLX               2807  //æˆæœ¬ç±»å‹  DTï¼šC  
+#define  FID_LXFS               2808  //è”ç³»æ–¹å¼  DTï¼šC  
+#define  FID_LLPL               2809  //è”ç»œé¢‘ç‡  DTï¼šC  
+#define  FID_ZSLX               2810  //è¯ä¹¦ç±»å‹  DTï¼šC  
+#define  FID_XYLX               2811  //åè®®ç±»å‹  DTï¼šC  
+#define  FID_CPBZ               2812  //äº§å“æ ‡å¿—  DTï¼šC  
+#define  FID_XTID               2813  //ä¸šåŠ¡ç³»ç»ŸID  DTï¼šI  
+#define  FID_ZJLB_LXR           2814  //è”ç³»äººè¯ä»¶ç±»åˆ«  DTï¼šI  
+#define  FID_ZJBH_LXR           2815  //è”ç³»äººè¯ä»¶ç¼–å·  DTï¼šC  
+#define  FID_ZJQSR_FRDB         2816  //æ³•äººè¯ä»¶èµ·å§‹æ—¥  DTï¼šC  
+#define  FID_DH_FRDB            2817  //æ³•äººç”µè¯  DTï¼šC  
+#define  FID_ZJQSR_JBR          2818  //ç»åŠäººè¯ä»¶èµ·å§‹æ—¥  DTï¼šC  
+#define  FID_ZJQSR_LXR          2819  //è”ç³»äººè¯ä»¶èµ·å§‹æ—¥  DTï¼šC  
+#define  FID_ZZJGDMQSR          2820  //ç»„ç»‡æœºæ„ä»£ç èµ·å§‹æ—¥  DTï¼šC  
+#define  FID_ZMWJLX             2821  //è¯æ˜æ–‡ä»¶ç±»å‹  DTï¼šC  
+#define  FID_ZMWJBH             2822  //è¯æ˜æ–‡ä»¶å·ç   DTï¼šC  
+#define  FID_ZMWJQSR            2823  //è¯æ˜æ–‡ä»¶èµ·å§‹æ—¥  DTï¼šC  
+#define  FID_ZMWJYXQ            2824  //è¯æ˜æ–‡ä»¶æœ‰æ•ˆæœŸ  DTï¼šC  
+#define  FID_KGGD               2825  //æ§è‚¡è‚¡ä¸œ  DTï¼šC  
+#define  FID_ZJLB_KGGD          2826  //æ§è‚¡è‚¡ä¸œè¯ä»¶ç±»åˆ«  DTï¼šI  
+#define  FID_ZJBH_KGGD          2827  //æ§è‚¡è‚¡ä¸œè¯ä»¶ç¼–å·  DTï¼šC  
+#define  FID_ZJQSR_KGGD         2828  //æ§è‚¡è‚¡ä¸œè¯ä»¶èµ·å§‹æ—¥  DTï¼šC  
+#define  FID_ZJYXQ_KGGD         2829  //æ§è‚¡è‚¡ä¸œè¯ä»¶æœ‰æ•ˆæœŸ  DTï¼šC  
+#define  FID_FZR                2830  //è´Ÿè´£äºº  DTï¼šC  
+#define  FID_ZJLB_FZR           2831  //è´Ÿè´£äººè¯ä»¶ç±»åˆ«  DTï¼šI  
+#define  FID_ZJBH_FZR           2832  //è´Ÿè´£äººè¯ä»¶ç¼–å·  DTï¼šC  
+#define  FID_ZJQSR_FZR          2833  //è´Ÿè´£äººè¯ä»¶èµ·å§‹æ—¥  DTï¼šC  
+#define  FID_ZJYXQ_FZR          2834  //è´Ÿè´£äººè¯ä»¶æœ‰æ•ˆæœŸ  DTï¼šC  
+#define  FID_DH_FZR             2835  //è´Ÿè´£äººç”µè¯  DTï¼šC  
+#define  FID_SWDJZQSR           2836  //ç¨åŠ¡ç™»è®°è¯èµ·å§‹æ—¥  DTï¼šC  
+#define  FID_JYZTSM             2837  //ç»è¥çŠ¶æ€è¯´æ˜  DTï¼šC  
+#define  FID_SSDD               2838  //ä¸Šå¸‚åœ°ç‚¹  DTï¼šC  
+#define  FID_YYBID              2839  //è¥ä¸šéƒ¨ID  DTï¼šI  
+#define  FID_GSSWDJZ            2840  //å›½ç¨ç¨åŠ¡ç™»è®°è¯  DTï¼šC  
+#define  FID_GSSWDJZQSR         2841  //å›½ç¨ç¨åŠ¡ç™»è®°è¯èµ·å§‹æ—¥  DTï¼šC  
+#define  FID_GSSWDJZYXQ         2842  //å›½ç¨ç¨åŠ¡ç™»è®°è¯æœ‰æ•ˆæœŸ  DTï¼šC  
+#define  FID_DSSWDJZ            2843  //åœ°ç¨ç¨åŠ¡ç™»è®°è¯  DTï¼šC  
+#define  FID_DSSWDJZQSR         2844  //åœ°ç¨ç¨åŠ¡ç™»è®°è¯èµ·å§‹æ—¥  DTï¼šC  
+#define  FID_DSSWDJZYXQ         2845  //åœ°ç¨ç¨åŠ¡ç™»è®°è¯æœ‰æ•ˆæœŸ  DTï¼šC  
+#define  FID_YYZZ               2846  //è¥ä¸šæ‰§ç…§  DTï¼šC  
+#define  FID_YYZZQSR            2847  //è¥ä¸šæ‰§ç…§èµ·å§‹æ—¥  DTï¼šC  
+#define  FID_YYZZYXQ            2848  //è¥ä¸šæ‰§ç…§æœ‰æ•ˆæœŸ  DTï¼šC  
+#define  FID_ZJYXQ_LXR          2849  //è”ç³»äººè¯ä»¶æœ‰æ•ˆæœŸ  DTï¼šC  
+#define  FID_WZDZ               2850  //ç½‘ç«™åœ°å€  DTï¼šC  
+#define  FID_ZJKH               2851  //èµ„é‡‘å¡å·  DTï¼šC  
+#define  FID_ZRCDFS             2852  //è´£ä»»æ‰¿æ‹…æ–¹å¼  DTï¼šC  
+#define  FID_KZRLX              2853  //æ§åˆ¶äººç±»å‹  DTï¼šC  
+#define  FID_XZBZ               2854  //é™åˆ¶æ ‡å¿—  DTï¼šC  
+#define  FID_JWBZ               2855  //å¢ƒå¤–æ ‡å¿—  DTï¼šC  
+#define  FID_JESX2              2856  //é‡‘é¢ä¸Šé™2  DTï¼šR  
+#define  FID_JEXX2              2857  //é‡‘é¢ä¸‹é™2  DTï¼šR  
+#define  FID_QSFS               2858  //ç­¾ç½²æ–¹å¼  DTï¼šC  
+#define  FID_XYBB               2859  //åè®®ç‰ˆæœ¬  DTï¼šC  
+#define  FID_EN_HYDM            2860  //åˆçº¦ä»£ç èŒƒå›´SH.XXXX,SZ.YYYY  DTï¼šC  
+#define  FID_FXJS               2861  //ç½šæ¯åŸºæ•°  DTï¼šC  
+#define  FID_CPJC               2871  //äº§å“ç®€ç§°  DTï¼šC  
+#define  FID_CPDQR              2872  //äº§å“åˆ°æœŸæ—¥  DTï¼šC  
+#define  FID_ZCGLR              2873  //èµ„äº§ç®¡ç†äººåç§°  DTï¼šC  
+#define  FID_ZJLB_ZCGLR         2874  //èµ„äº§ç®¡ç†äººè¯ä»¶ç±»åˆ«  DTï¼šC  
+#define  FID_ZJBH_ZCGLR         2875  //èµ„äº§ç®¡ç†äººè¯ä»¶ç¼–å·  DTï¼šC  
+#define  FID_ZCTGR              2876  //èµ„äº§æ‰˜ç®¡äººåç§°  DTï¼šC  
+#define  FID_ZJLB_ZCTGR         2877  //èµ„äº§æ‰˜ç®¡äººè¯ä»¶ç±»åˆ«  DTï¼šC  
+#define  FID_ZJBH_ZCTGR         2878  //èµ„äº§æ‰˜ç®¡äººè¯ä»¶ç¼–å·  DTï¼šC  
+#define  FID_BHGBS              2879  //ä¸åˆæ ¼æ ‡è¯†  DTï¼šC  
+#define  FID_BHGJYXZ            2880  //ä¸åˆæ ¼äº¤æ˜“é™åˆ¶  DTï¼šC  
+#define  FID_BHGYYLB            2881  //ä¸åˆæ ¼åŸå› ç±»åˆ«  DTï¼šC  
+#define  FID_KHJGMC             2882  //å¼€æˆ·æœºæ„åç§°  DTï¼šC  
+#define  FID_KHWDMC             2883  //å¼€æˆ·ç½‘ç‚¹åç§°  DTï¼šC  
+#define  FID_XHJGMC             2884  //é”€æˆ·æœºæ„åç§°  DTï¼šC  
+#define  FID_GLGXBS             2885  //å…³è”å…³ç³»æ ‡è¯†  DTï¼šC  
+#define  FID_QRJGMC             2886  //ç¡®è®¤æœºæ„åç§°  DTï¼šC  
+#define  FID_ZDJGMC             2887  //æŒ‡å®šæœºæ„åç§°  DTï¼šC  
+#define  FID_CPZH               2901  //äº§å“è´¦æˆ·  DTï¼šC  
+#define  FID_CCFX               2902  //æŒä»“æ–¹å‘  DTï¼šI  
+#define  FID_DLJG               2903  //è®¢ç«‹ä»·æ ¼  DTï¼šR  
+#define  FID_CCYK               2904  //æŒä»“ç›ˆäº  DTï¼šR  
+#define  FID_ZRYK               2905  //è½¬è®©ç›ˆäº  DTï¼šR  
+#define  FID_FQHK               2906  //åˆ†æœŸè´§æ¬¾  DTï¼šR  
+#define  FID_KCWTSL             2907  //å½“æ—¥å¼€ä»“æ•°é‡  DTï¼šR  
+#define  FID_KCCJSL             2908  //å½“æ—¥å¼€ä»“æˆäº¤æ•°é‡  DTï¼šR  
+#define  FID_ZRWTSL             2909  //å½“æ—¥è½¬è®©æ•°é‡  DTï¼šR  
+#define  FID_ZRCJSL             2910  //å½“æ—¥è½¬è®©æˆäº¤æ•°é‡  DTï¼šR  
+#define  FID_CDZT               2911  //æŒå•çŠ¶æ€  DTï¼šI  
+#define  FID_JSWTSL             2912  //äº¤æ”¶å§”æ‰˜æ•°é‡  DTï¼šR  
+#define  FID_LJCCYK             2913  //ç´¯è®¡æŒä»“ç›ˆäº  DTï¼šR  
+#define  FID_LJZRYK             2914  //ç´¯è®¡è½¬è®©ç›ˆäº  DTï¼šR  
+#define  FID_MSDW               2915  //æ¯æ‰‹å•ä½  DTï¼šI  
+#define  FID_BDJW               2916  //å˜åŠ¨ä»·ä½  DTï¼šR  
+#define  FID_SBDW               2917  //ç”³æŠ¥å•ä½  DTï¼šI  
+#define  FID_PCDW               2918  //å¹³ä»“å•ä½  DTï¼šI  
+#define  FID_ZTFD               2919  //æ¶¨åœå¹…åº¦  DTï¼šR  
+#define  FID_DTFD               2920  //è·Œåœå¹…åº¦  DTï¼šR  
+#define  FID_ZTJ                2921  //æ¶¨åœä»·  DTï¼šR  
+#define  FID_DTJ                2922  //è·Œåœä»·  DTï¼šR  
+#define  FID_ZHJYR              2923  //æœ€åäº¤æ˜“æ—¥  DTï¼šI  
+#define  FID_ZHJGR              2924  //æœ€åäº¤å‰²æ—¥  DTï¼šI  
+#define  FID_CPFLAG             2925  //æ˜¯å¦å…è®¸å¼€ç©ºä»“  DTï¼šI  
+#define  FID_TKXDR              2926  //åœå¼€æ–°å•æ—¥  DTï¼šI  
+#define  FID_FLMB               2927  //è´¹åˆ©æ¨¡æ¿  DTï¼šR  
+#define  FID_TNXZ               2928  //T+Nå¤©é™åˆ¶  DTï¼šI  
+#define  FID_CLASS              2929  //äº§å“åˆ†ç±»  DTï¼šI  
+#define  FID_SUBCLASS           2930  //äº§å“å­ç±»  DTï¼šI  
+#define  FID_XHDJXM             2931  //ç°è´§å†»ç»“é¡¹ç›®æµæ°´å·  DTï¼šR  
+#define  FID_CKBM               2932  //ä»“åº“ç¼–ç   DTï¼šI  
+#define  FID_PZDJ               2933  //å“ç§ç­‰çº§  DTï¼šI  
+#define  FID_DFCPZH             2934  //å¯¹æ–¹äº§å“è´¦å·  DTï¼šC  
+#define  FID_YHTH               2935  //åŸåˆåŒå·  DTï¼šC  
+#define  FID_CHBH               2936  //å­˜è´§ç¼–å·  DTï¼šC  
+#define  FID_BCCPSL             2937  //æœ¬æ¬¡äº§å“ä½™é¢  DTï¼šR  
+#define  FID_HTXH               2938  //åˆåŒåºå·  DTï¼šC  
+#define  FID_CZMM               3002  //æ“ä½œå¯†ç   DTï¼šC  
+#define  FID_TXMM               3004  //é€šä¿¡å¯†ç   DTï¼šC  
+#define  FID_GTKHLB             3006  //æŸœå°å®¢æˆ·ç»„ç»‡ç±»åˆ«  DTï¼šC  
+#define  FID_ROUTER             3007  //è·¯ç”±è¥ä¸šéƒ¨åç§°  DTï¼šC  
+#define  FID_ENTRY              3008  //é…ç½®æ–‡ä»¶å˜é‡å  DTï¼šC  
+#define  FID_KHHQZ              3009  //å®¢æˆ·å·å‰ç¼€  DTï¼šC  
+#define  FID_CHECKBOX           3010  //CheckBox  DTï¼šC  
+#define  FID_CZLB               3011  //æ“ä½œç±»åˆ«  DTï¼šC  
+#define  FID_PUSH               3021  //æ¨é€æ ‡å¿—  DTï¼šC  
+#define  FID_ZJBL               3022  //èµ„é‡‘æ¯”ç‡  DTï¼šC  
+#define  FID_HQZD               3023  //è¡Œæƒ…æ¶¨è·Œ  DTï¼šC  
+#define  FID_ZDF                3024  //è¡Œæƒ…æ¶¨è·Œå¹…  DTï¼šR  
+#define  FID_HQZF               3027  //è¡Œæƒ…æŒ¯å¹…  DTï¼šC  
+#define  FID_HSL                3028  //æ¢æ‰‹ç‡  DTï¼šR  
+#define  FID_ICON               3029  //å›¾æ ‡å·  DTï¼šC  
+#define  FID_FZDM               3030  //å®¢æˆ·å·æ‰€å±åˆ†ç»„ä»£ç   DTï¼šC  
+#define  FID_FZMC               3031  //å®¢æˆ·å·æ‰€å±åˆ†ç»„åç§°  DTï¼šC  
+#define  FID_HFBH               3032  //å›å¤ç¼–å·  DTï¼šC  
+#define  FID_FSKHH              3033  //å‘é€å®¢æˆ·å·  DTï¼šC  
+#define  FID_FSFJBZ             3034  //å‘é€å®¢æˆ·å·é™„åŠ æ ‡å¿—  DTï¼šC  
+#define  FID_DFKHH              3035  //å¯¹æ–¹å®¢æˆ·ä»£ç   DTï¼šC  
+#define  FID_STATE              3036  //åœ¨çº¿çŠ¶æ€  DTï¼šC  
+#define  FID_DLSJ               3037  //ç™»å½•æ—¶é—´  DTï¼šC  
+#define  FID_QTSJ               3038  //ç­¾é€€æ—¶é—´  DTï¼šC  
+#define  FID_MLLB               3040  //ç›®å½•ç±»åˆ«  DTï¼šC  
+#define  FID_MLBM               3041  //ç›®å½•ç¼–ç   DTï¼šC  
+#define  FID_MLMC               3042  //ç›®å½•åç§°  DTï¼šC  
+#define  FID_MLSM               3043  //ç›®å½•è¯´æ˜  DTï¼šC  
+#define  FID_FORMAT             3044  //ç›®å½•æ ¼å¼  DTï¼šC  
+#define  FID_DEFAULT            3045  //ç¼ºçœå€¼  DTï¼šC  
+#define  FID_DATA               3046  //  DTï¼šC  
+#define  FID_JLBZ               3047  //è®°å½•æ ‡å¿—  DTï¼šå–å€¼èŒƒå›´  DTï¼šC  
+#define  FID_MBSMS              3050  //å¯¹æ–¹æ‰‹æœºå·ç   DTï¼šC  
+#define  FID_MBMAIL             3051  //å¯¹æ–¹é‚®ä»¶åœ°å€  DTï¼šC  
+#define  FID_LBMC               3053  //ç±»åˆ«åç§°  DTï¼šC  
+#define  FID_CSLX               3054  //å‚æ•°ç±»å‹  DTï¼šC  
+#define  FID_XMMC               3060  //æœåŠ¡é¡¹ç›®åç§°  DTï¼šC  
+#define  FID_FWXZ               3061  //æœåŠ¡é¡¹ç›®é™åˆ¶  DTï¼šC  
+#define  FID_RECNO              3062  //ç»“æœè®°å½•å·  DTï¼šC  
+#define  FID_YJB                3063  //é‚®ä»¶æ ‡é¢˜  DTï¼šC  
+#define  FID_CCMAIL             3064  //é™„é€Mailåœ°å€  DTï¼šC  
+#define  FID_YJXM               3065  //é¢„è­¦é¡¹ç›®  DTï¼šC  
+#define  FID_PRODUCT            3071  //äº§å“åç§°  DTï¼šC  
+#define  FID_VERSION            3072  //äº§å“ç‰ˆæœ¬å·  DTï¼šC  
+#define  FID_COMPANY            3073  //å…¬å¸åç§°  DTï¼šC  
+#define  FID_LWTIME             3075  //æ–‡ä»¶æœ€è¿‘ä¿®æ”¹æ—¶é—´  DTï¼šC  
+#define  FID_PKLEN              3076  //æ–‡ä»¶æ•°æ®åŒ…å¤§å°  DTï¼šC  
+#define  FID_PACKAGE            3077  //æ–‡ä»¶æ•°æ®åŒ…  DTï¼šC  
+#define  FID_SUBDIR             3078  //æ–‡ä»¶å­ç›®å½•  DTï¼šC  
+#define  FID_ZHBZ               3081  //å¸æˆ·æ ‡å¿—  DTï¼šC  
+#define  FID_IBY                3082  //å¤‡ç”¨åŸŸ...  DTï¼šC  
+#define  FID_BYDZ1              3085  //å¤‡ç”¨åœ°å€1  DTï¼šC  
+#define  FID_BYDZ2              3086  //å¤‡ç”¨åœ°å€2  DTï¼šC  
+#define  FID_BYDZ3              3087  //å¤‡ç”¨åœ°å€3  DTï¼šC  
+#define  FID_XH                 3090  //åºå·  DTï¼šC  
+#define  FID_DXFDED             3107  //çŸ­ä¿¡å°é¡¶é¢åº¦  DTï¼šC  
+#define  FID_YJFDED             3108  //é‚®ä»¶å°é¡¶é¢åº¦  DTï¼šC  
+#define  FID_DXFYBL             3109  //çŸ­ä¿¡è´¹ç”¨æ¯”ç‡  DTï¼šC  
+#define  FID_YJFYBL             3110  //é‚®ä»¶è´¹ç”¨æ¯”ç‡  DTï¼šC  
+#define  FID_YXSJ               3113  //æœ‰æ•ˆæ—¶é—´  DTï¼šC  
+#define  FID_LYLX               3114  //ç•™è¨€ç±»å‹  DTï¼šC  
+#define  FID_KTZT               3115  //å¼€é€šçŠ¶æ€  DTï¼šI  
+#define  FID_YWSM               3116  //ä¸šåŠ¡è¯´æ˜  DTï¼šC  
+#define  FID_WTFSDM             3200  //å§”æ‰˜æ–¹å¼ä»£ç   DTï¼šC  
+#define  FID_PRIVATEKEY         3202  //ç§é’¥ä¿æŠ¤å¯†ç   DTï¼šC  
+#define  FID_YHJS               3301  //ç”¨æˆ·è§’è‰²  DTï¼šC  
+#define  FID_YHLX               3302  //ç”¨æˆ·ç±»å‹  DTï¼šC  
+#define  FID_CZQD               3303  //æ“ä½œæ¸ é“  DTï¼šC  
+#define  FID_KTXY               3304  //å¼€é€šåè®®  DTï¼šC  
+#define  FID_GFKHBZ             3305  //è§„èŒƒå®¢æˆ·æ ‡å¿—  DTï¼šC  
+#define  FID_SXDH               3306  //é¦–é€‰ç”µè¯  DTï¼šC  
+#define  FID_SXDZ               3307  //é¦–é€‰åœ°å€  DTï¼šC  
+#define  FID_KHLY               3308  //å®¢æˆ·æ¥æº  DTï¼šC  
+#define  FID_FWDJ               3309  //æœåŠ¡ç­‰çº§  DTï¼šC  
+#define  FID_ZJLB_FSYH          3310  //å‘é€é“¶è¡Œè¯ä»¶ç±»åˆ«  DTï¼šI  
+#define  FID_KHFZ               3311  //å®¢æˆ·åˆ†ç»„  DTï¼šC  
+#define  FID_ZJKLX              3312  //è¯ä»¶å¡ç±»å‹  DTï¼šC  
+#define  FID_ZJKXYBZ            3313  //è¯ä»¶å¡æ ¡éªŒæ ‡å¿—  DTï¼šC  
+#define  FID_WCNRBS             3314  //æœªæˆå¹´äººæ ‡è¯†  DTï¼šC  
+#define  FID_ZHZB               3315  //è´¦æˆ·ç»„åˆ«  DTï¼šC  
+#define  FID_ZHJB               3316  //è´¦æˆ·çº§åˆ«  DTï¼šC  
+#define  FID_ZHLX               3317  //è´¦æˆ·ç±»å‹  DTï¼šC  
+#define  FID_FZLL               3318  //è´Ÿå€ºåˆ©ç‡  DTï¼šC  
+#define  FID_SXRQ               3319  //ç”Ÿæ•ˆæ—¥æœŸ  DTï¼šC  
+#define  FID_ZJZH_OLD           3320  //åŸèµ„é‡‘è´¦å·  DTï¼šC  
+#define  FID_QYLX               3321  //ä¼ä¸šç±»å‹  DTï¼šC  
+#define  FID_WLFW               3322  //ç½‘ç»œæœåŠ¡  DTï¼šC  
+#define  FID_KHLX               3323  //å¼€æˆ·ç±»å‹  DTï¼šC  
+#define  FID_ZYJG               3324  //æ‰§ä¸šæœºæ„  DTï¼šC  
+#define  FID_ZHYT               3325  //è´¦æˆ·ç”¨é€”  DTï¼šC  
+#define  FID_ZDDM               3326  //å­—æ®µä»£ç   DTï¼šC  
+#define  FID_KHXZ               3327  //å®¢æˆ·æ€§è´¨  DTï¼šC  
+#define  FID_YSJG               3328  //åŸå§‹æœºæ„  DTï¼šC  
+#define  FID_YSJGWD             3329  //åŸå§‹æœºæ„ç½‘ç‚¹  DTï¼šC  
+#define  FID_TGSX               3330  //æ‰˜ç®¡å±æ€§  DTï¼šC  
+#define  FID_LLLB               3331  //åˆ©ç‡ç±»åˆ«  DTï¼šC  
+#define  FID_ZZJZH              3332  //ä¸»èµ„é‡‘è´¦å·  DTï¼šC  
+#define  FID_CGZJZH             3333  //å­˜ç®¡èµ„é‡‘è´¦å·  DTï¼šC  
+#define  FID_YHZH_NEW           3334  //æ–°é“¶è¡Œè´¦å·  DTï¼šC  
+#define  FID_CGZDBZ             3335  //å­˜ç®¡æŒ‡å®šæ ‡å¿—  DTï¼šC  
+#define  FID_CGBZ               3336  //å­˜ç®¡æ ‡å¿—  DTï¼šC  
+#define  FID_YHZHQX             3337  //é“¶è¡Œè´¦æˆ·æƒé™  DTï¼šC  
+#define  FID_YHZHXZ             3338  //é“¶è¡Œè´¦æˆ·é™åˆ¶  DTï¼šC  
+#define  FID_YHCWXX             3339  //é“¶è¡Œé”™è¯¯ä¿¡æ¯  DTï¼šC  
+#define  FID_SQM                3340  //æˆæƒç   DTï¼šC  
+#define  FID_CGZJZH_ZR          3341  //è½¬å…¥å­˜ç®¡èµ„é‡‘è´¦å·  DTï¼šC  
+#define  FID_YHDM_ZR            3342  //è½¬å…¥é“¶è¡Œä»£ç   DTï¼šC  
+#define  FID_YWXTBH             3343  //ä¸šåŠ¡ç³»ç»Ÿç¼–å·  DTï¼šC  
+#define  FID_YWXTZH             3344  //ä¸šåŠ¡ç³»ç»Ÿè´¦å·  DTï¼šC  
+#define  FID_DJZCZH             3345  //ç™»è®°æ³¨å†Œè´¦å·  DTï¼šC  
+#define  FID_SCLB               3346  //å¸‚åœºç±»åˆ«  DTï¼šC  
+#define  FID_GFBS               3347  //è§„èŒƒæ ‡è¯†  DTï¼šC  
+#define  FID_SCKHRQ             3348  //é¦–æ¬¡å¼€æˆ·æ—¥æœŸ  DTï¼šC  
+#define  FID_YWBZ               3349  //ä¸šåŠ¡æ ‡å¿—  DTï¼šC  
+#define  FID_EN_YWBZ            3350  //ä¸šåŠ¡æ ‡å¿—èŒƒå›´  DTï¼šC  
+#define  FID_SJ                 3351  //å½“å‰æ—¶é—´  DTï¼šC  
+#define  FID_BDLB               3352  //å˜åŠ¨ç±»åˆ«  DTï¼šC  
+#define  FID_CPLB               3353  //äº§å“ç±»åˆ«  DTï¼šC  
+#define  FID_BDFE               3354  //å˜åŠ¨ä»½é¢  DTï¼šC  
+#define  FID_DQFE               3355  //å½“å‰ä»½é¢  DTï¼šC  
+#define  FID_KYYE               3356  //å¯ç”¨ä½™é¢  DTï¼šC  
+#define  FID_DJSSL              3357  //å¾…äº¤æ”¶æ•°é‡  DTï¼šC  
+#define  FID_KZFE               3358  //å¯è½¬ä»½é¢  DTï¼šC  
+#define  FID_JSSDFE             3359  //äº¤æ”¶é”å®šä»½é¢  DTï¼šC  
+#define  FID_TSRQ               3360  //é€€å¸‚æ—¥æœŸ  DTï¼šC  
+#define  FID_SFLX               3361  //æ”¶è´¹ç±»å‹  DTï¼šC  
+#define  FID_GLRQ               3362  //å…³è”æ—¥æœŸ  DTï¼šC  
+#define  FID_GLLSH              3363  //å…³è”æµæ°´å·  DTï¼šC  
+#define  FID_JYLSH              3364  //äº¤æ˜“æµæ°´å·  DTï¼šC  
+#define  FID_FEKZLB             3365  //ä»½é¢æ§åˆ¶ç±»åˆ«  DTï¼šC  
+#define  FID_XYSX               3366  //åè®®å±æ€§  DTï¼šC  
+#define  FID_LLLBMC             3367  //åˆ©ç‡ç±»åˆ«åç§°  DTï¼šC  
+#define  FID_SCFL               3368  //å¸‚åœºåˆ†ç±»  DTï¼šC  
+#define  FID_YYQKFS             3369  //é¢„çº¦å–æ¬¾æ–¹å¼  DTï¼šI  
+#define  FID_YYZDJE             3370  //é¢„çº¦æœ€å¤§é‡‘é¢  DTï¼šN  
+#define  FID_QRLB               3371  //ç¡®è®¤ç±»åˆ«  DTï¼šC  
+#define  FID_CGZH_NEW           3372  //æ–°å­˜ç®¡è´¦å·  DTï¼šC  
+#define  FID_FEKZSL             3373  //ä»½é¢æ§åˆ¶æ•°é‡  DTï¼šI  
+#define  FID_LYBQH              3374  //è·¯ç”±æ ‡ç­¾å·  DTï¼šI  
+#define  FID_LYBQMC             3375  //è·¯ç”±æ ‡ç­¾åç§°  DTï¼šC  
+#define  FID_ZJYE_TZJE          3376  //èµ„é‡‘ä½™é¢è°ƒæ•´é‡‘é¢  DTï¼šC  
+#define  FID_KYZJ_TZJE          3377  //å¯ç”¨èµ„é‡‘è°ƒæ•´é‡‘é¢  DTï¼šC  
+#define  FID_ZQFQCRBS           3378  //è¯åˆ¸å‘èµ·å­˜å…¥ç¬”æ•°  DTï¼šI  
+#define  FID_ZQFQCRJE           3379  //è¯åˆ¸å‘èµ·å­˜å…¥é‡‘é¢  DTï¼šR  
+#define  FID_ZQFQQCBS           3380  //è¯åˆ¸å‘èµ·å–å‡ºç¬”æ•°  DTï¼šI  
+#define  FID_ZQFQQCJE           3381  //è¯åˆ¸å‘èµ·å–å‡ºé‡‘é¢  DTï¼šR  
+#define  FID_YHFQCRBS           3382  //é“¶è¡Œå‘èµ·å­˜å…¥ç¬”æ•°  DTï¼šI  
+#define  FID_YHFQCRJE           3383  //é“¶è¡Œå‘èµ·å­˜å…¥é‡‘é¢  DTï¼šR  
+#define  FID_YHFQQCBS           3384  //é“¶è¡Œå‘èµ·å–å‡ºç¬”æ•°  DTï¼šI  
+#define  FID_YHFQQCJE           3385  //é“¶è¡Œå‘èµ·å–å‡ºé‡‘é¢  DTï¼šR  
+#define  FID_ZCRJE              3386  //æ€»å­˜å…¥é‡‘é¢  DTï¼šR  
+#define  FID_ZQCJE              3387  //æ€»å–å‡ºé‡‘é¢  DTï¼šR  
+#define  FID_DTLP               3388  //åŠ¨æ€ä»¤ç‰Œ  DTï¼šC  
+#define  FID_EN_LLLB            3389  //åˆ©ç‡ç±»åˆ«èŒƒå›´  DTï¼šC  
+#define  FID_ZHH                3390  //è´¦æˆ·å·  DTï¼šC  
+#define  FID_JJNM               3391  //åŸºé‡‘å†…ç   DTï¼šC  
+#define  FID_TAID               3392  //åŸºé‡‘å…¬å¸ID  DTï¼šI  
+#define  FID_QWRZLL             3600  //æœŸæœ›èèµ„åˆ©ç‡  DTï¼šC  
+#define  FID_QWRZCRF            3602  //æœŸæœ›èèµ„æ‰¿è¯ºè´¹  DTï¼šC  
+#define  FID_QWRZGLF            3603  //æœŸæœ›èèµ„ç®¡ç†è´¹  DTï¼šC  
+#define  FID_QWRQLX             3604  //æœŸæœ›èåˆ¸åˆ©æ¯  DTï¼šC  
+#define  FID_QWRQCRF            3605  //æœŸæœ›èåˆ¸æ‰¿è¯ºè´¹  DTï¼šC  
+#define  FID_QWRQGLF            3606  //æœŸæœ›èåˆ¸ç®¡ç†è´¹  DTï¼šC  
+#define  FID_QWFX               3607  //æœŸæœ›ç½šæ¯  DTï¼šC  
+#define  FID_MMLX               3608  //å¯†ç ç±»å‹  DTï¼šC  
+#define  FID_ZJFL               3609  //èµ„é‡‘åˆ†ç±»  DTï¼šC  
+#define  FID_ZJFZ               3610  //èµ„é‡‘åˆ†ç»„  DTï¼šC  
+#define  FID_ZJSH               3611  //èµ„é‡‘å®¤å·  DTï¼šC  
+#define  FID_ZJQX               3612  //èµ„é‡‘æƒé™  DTï¼šC  
+#define  FID_ZJDLQX             3613  //èµ„é‡‘ä»£ç†æƒé™  DTï¼šC  
+#define  FID_ZJXZ               3614  //èµ„é‡‘é™åˆ¶  DTï¼šC  
+#define  FID_ZJGZ               3615  //èµ„é‡‘è§„åˆ™  DTï¼šC  
+#define  FID_ZJMMLX             3616  //èµ„é‡‘å¯†ç ç±»å‹  DTï¼šC  
+#define  FID_ZJZJLB             3617  //èµ„é‡‘è¯ä»¶ç±»åˆ«  DTï¼šC  
+#define  FID_ZJZJBH             3618  //èµ„é‡‘è¯ä»¶ç¼–å·  DTï¼šC  
+#define  FID_GDXZ               3619  //è‚¡ä¸œé™åˆ¶  DTï¼šC  
+#define  FID_XB_LXR             3620  //è”ç³»äººæ€§åˆ«  DTï¼šC  
+#define  FID_GSDH_LXR           3622  //è”ç³»äººå…¬å¸ç”µè¯  DTï¼šC  
+#define  FID_FAX_LXR            3623  //è”ç³»äººä¼ çœŸ  DTï¼šC  
+#define  FID_ZYBM_LXR           3624  //è”ç³»äººèŒä¸š  DTï¼šC  
+#define  FID_MOBILE_LXR         3625  //è”ç³»äººæ‰‹æœº  DTï¼šC  
+#define  FID_EMAIL_LXR          3626  //è”ç³»äººemail  DTï¼šC  
+#define  FID_DZ_LXR             3627  //è”ç³»äººåœ°å€  DTï¼šC  
+#define  FID_YZBM_LXR           3628  //è”ç³»äººé‚®ç¼–  DTï¼šC  
+#define  FID_DEVICENAME         3800  //ç‰©ç†è®¾å¤‡åç§°  DTï¼šC  
+#define  FID_DATANAME           3801  //æ•°æ®åº“åç§°  DTï¼šC  
+#define  FID_DATASIZE           3802  //æ•°æ®åº“å¤§å°  DTï¼šC  
+#define  FID_DEVICESIZE         3803  //è®¾å¤‡å¤§å°  DTï¼šC  
+#define  FID_YJBCDM             3804  //åŸä»¶ä¿å­˜ä»£ç   DTï¼šC  
+#define  FID_MINIMAGESIZE       3839  //å›¾åƒæœ€å°é™åˆ¶  DTï¼šI  
+#define  FID_MAXIMAGESIZE       3840  //å›¾åƒæœ€å¤§é™åˆ¶  DTï¼šI  
+#define  FID_ALERTIMAGESIZE     3841  //å›¾åƒæœ€è­¦å‘Šå¤§å°  DTï¼šI  
+#define  FID_QZYZFS             3900  //å¼ºåˆ¶éªŒè¯æ–¹å¼  DTï¼šC  
+#define  FID_KXYZFS             3901  //å¯é€‰éªŒè¯æ–¹å¼  DTï¼šC  
+#define  FID_YZFS_SQCZR         3902  //æˆæƒæ“ä½œäººéªŒè¯æ–¹å¼  DTï¼šC  
+#define  FID_APPID              4001  //åº”ç”¨æ ‡è¯†  DTï¼šC  
+#define  FID_BCJJSL             4002  //æœ¬æ¬¡åŸºé‡‘æ•°é‡  DTï¼šR  
+#define  FID_BGFHFS             4003  //å…è®¸å˜æ›´åˆ†çº¢æ–¹å¼  DTï¼šN  
+#define  FID_BKKBZ              4004  //è¡¥æ‰£æ¬¾æ ‡å¿—  DTï¼šN  
+#define  FID_BRBZS1             4005  //æœ¬æ—¥æ ‡å‡†ä½£é‡‘  DTï¼šR  
+#define  FID_BRCKJE             4006  //æœ¬æ—¥å­˜æ¬¾é‡‘é¢  DTï¼šR  
+#define  FID_BRCXZD             4007  //æœ¬æ—¥æ’¤é”€æŒ‡å®š  DTï¼šN  
+#define  FID_BRZDJY             4008  //æœ¬æ—¥æŒ‡å®šäº¤æ˜“  DTï¼šN  
+#define  FID_CBJ                4009  //æˆæœ¬ä»·  DTï¼šR  
+#define  FID_CDYWLB             4010  //èœå•ä¸šåŠ¡ç±»åˆ«  DTï¼šN  
+#define  FID_CFBL               4011  //æ‹†åˆ†æ¯”ä¾‹  DTï¼šN  
+#define  FID_CFBZ               4012  //é‡å‘æ ‡å¿—  DTï¼šN  
+#define  FID_CFGDM              4013  //æˆä»½è‚¡ä»£ç   DTï¼šC  
+#define  FID_CFGSL              4014  //æˆä»½è‚¡æ•°é‡  DTï¼šN  
+#define  FID_CJHBNO             4015  //æˆäº¤å›æŠ¥è®°å½•  DTï¼šC  
+#define  FID_DFBZ               4016  //å¯¹æ–¹å¸ç§  DTï¼šC  
+#define  FID_DFDJSL             4017  //å¯¹æ–¹å†»ç»“æ•°é‡  DTï¼šR  
+#define  FID_DFJGDM             4018  //å¯¹æ–¹æœºæ„ä»£ç   DTï¼šC  
+#define  FID_DFJSDM             4019  //å¯¹æ–¹è§’è‰²ä»£ç   DTï¼šC  
+#define  FID_DFJSJG             4020  //å¯¹æ–¹ç»“ç®—æœºæ„  DTï¼šC  
+#define  FID_DFJSLX             4021  //å¯¹æ–¹ç»“ç®—ç±»å‹  DTï¼šN  
+#define  FID_DFJSZH             4022  //å¯¹æ–¹ç»“ç®—è´¦æˆ·  DTï¼šC  
+#define  FID_DFKHQZ             4023  //å¯¹æ–¹å®¢æˆ·ç¾¤ç»„  DTï¼šC  
+#define  FID_DFLOGINID          4024  //å¯¹æ–¹ç”¨æˆ·  DTï¼šC  
+#define  FID_DFWJSSL            4025  //å¯¹æ–¹æœªäº¤æ”¶æ•°é‡  DTï¼šR  
+#define  FID_DFWZDM             4026  //å¯¹æ–¹ä½ç½®ä»£ç   DTï¼šN  
+#define  FID_DFYHDM             4027  //å¯¹æ–¹é“¶è¡Œä»£ç   DTï¼šC  
+#define  FID_DFYHZH             4028  //å¯¹æ–¹é“¶è¡Œè´¦æˆ·  DTï¼šC  
+#define  FID_DFYWKM             4029  //å¯¹æ–¹ä¸šåŠ¡ç§‘ç›®  DTï¼šC  
+#define  FID_DFYZBM             4030  //å¯¹æ–¹é‚®ç¼–  DTï¼šC  
+#define  FID_DFZJBH             4031  //å¯¹æ–¹è¯ä»¶ç¼–å·  DTï¼šC  
+#define  FID_DFZJLB             4032  //å¯¹æ–¹è¯ä»¶ç±»åˆ«  DTï¼šC  
+#define  FID_DFZJZH             4033  //å¯¹æ–¹èµ„é‡‘è´¦æˆ·  DTï¼šC  
+#define  FID_DFZQDM             4034  //å¯¹æ–¹è¯åˆ¸ä»£ç   DTï¼šC  
+#define  FID_DFZQSL             4035  //å¯¹æ–¹è¯åˆ¸æ•°é‡  DTï¼šR  
+#define  FID_DFZY               4036  //å¯¹æ–¹æ‘˜è¦  DTï¼šC  
+#define  FID_DJYE               4037  //å†»ç»“ä½™é¢  DTï¼šR  
+#define  FID_DJYXRQ             4038  //å†»ç»“æœ‰æ•ˆæ—¥æœŸ  DTï¼šN  
+#define  FID_DLCS               4039  //ç™»å½•æ¬¡æ•°  DTï¼šN  
+#define  FID_DLKZFS             4040  //ç™»å½•æ§åˆ¶æ–¹å¼  DTï¼šN  
+#define  FID_DLSFBZ             4041  //ç™»å½•æ”¶è´¹æ ‡å‡†  DTï¼šR  
+#define  FID_DLSFFW             4042  //ç™»å½•èº«ä»½èŒƒå›´  DTï¼šC  
+#define  FID_DLSFJE             4043  //ç™»å½•æ”¶è´¹é‡‘é¢  DTï¼šR  
+#define  FID_DLSFSX             4044  //ç™»å½•æ”¶è´¹ä¸Šé™  DTï¼šR  
+#define  FID_DZLXS              4045  //å¾…è½¬åˆ©æ¯ç¨  DTï¼šR  
+#define  FID_EDKZBZ             4046  //é¢åº¦æ§åˆ¶æ ‡å¿—  DTï¼šN  
+#define  FID_EN_CJHBNO          4047  //æˆäº¤è®°å½•ä½ç½®èŒƒå›´  DTï¼šC  
+#define  FID_EN_FXDJ            4048  //é£é™©ç­‰çº§èŒƒå›´  DTï¼šC  
+#define  FID_EN_GFXZ            4049  //è‚¡ä»½æ€§è´¨èŒƒå›´  DTï¼šC  
+#define  FID_EN_JDBM            4050  //èŠ‚ç‚¹èŒƒå›´  DTï¼šC  
+#define  FID_EN_JJDM            4051  //åŸºé‡‘ä»£ç èŒƒå›´  DTï¼šC  
+#define  FID_EN_JYQX            4052  //äº¤æ˜“æƒé™èŒƒå›´  DTï¼šC  
+#define  FID_EN_SFFS            4053  //æ”¶è´¹æ–¹å¼èŒƒå›´  DTï¼šC  
+#define  FID_EN_WTFL            4054  //å§”æ‰˜åˆ†ç±»èŒƒå›´  DTï¼šC  
+#define  FID_EN_WTHQZ           4055  //å§”æ‰˜å·å‰ç¼€èŒƒå›´  DTï¼šC  
+#define  FID_EN_YHDM            4056  //é“¶è¡Œä»£ç èŒƒå›´  DTï¼šC  
+#define  FID_EN_YWDM            4057  //ä¸šåŠ¡ä»£ç èŒƒå›´  DTï¼šC  
+#define  FID_FHDM               4058  //è¿”å›ä»£ç   DTï¼šC  
+#define  FID_FHDWJE             4059  //å•ä½åˆ†çº¢  DTï¼šR  
+#define  FID_FILEID             4060  //æ–‡ä»¶ç¼–å·  DTï¼šC  
+#define  FID_FJYRJYBZ           4061  //éäº¤æ˜“æ—¥äº¤æ˜“æ ‡å¿—  DTï¼šN  
+#define  FID_FLSX               4062  //åˆ†ç±»å±æ€§  DTï¼šN  
+#define  FID_FWFL               4063  //æœåŠ¡è´¹ç‡  DTï¼šR  
+#define  FID_FWFSX              4064  //æœåŠ¡è´¹ä¸Šé™  DTï¼šR  
+#define  FID_FWFXX              4065  //æœåŠ¡è´¹ä¸‹é™  DTï¼šR  
+#define  FID_FXBL               4066  //é£é™©æ¯”ä¾‹  DTï¼šR  
+#define  FID_FXPP               4068  //é£é™©åŒ¹é…  DTï¼šN  
+#define  FID_GRZDSCRGSG         4069  //ä¸ªäººæœ€ä½é¦–æ¬¡è®¤è´­ç”³è´­  DTï¼šR  
+#define  FID_GRZDZJRGSG         4070  //ä¸ªäººæœ€ä½è¿½åŠ è®¤è´­ç”³è´­  DTï¼šR  
+#define  FID_GRZGDTSH           4071  //ä¸ªäººæœ€é«˜å½“å¤©èµå›ä»½é¢  DTï¼šR  
+#define  FID_HBJG               4072  //å›æŠ¥ç»“æœ  DTï¼šN  
+#define  FID_HGBZ               4073  //å›æ»šæ ‡å¿—  DTï¼šC  
+#define  FID_HISTORY            4074  //å†å²æ•°æ®å…è®¸æŸ¥è¯¢æ ‡å¿—  DTï¼šN  
+#define  FID_HLSYTS             4075  //çº¢åˆ©é¡ºå»¶å¤©æ•°  DTï¼šN  
+#define  FID_HQCXCS             4077  //è¡Œæƒ…æŸ¥è¯¢æ¬¡æ•°  DTï¼šN  
+#define  FID_HQMFCS             4078  //è¡Œæƒ…å…è´¹æ¬¡æ•°  DTï¼šN  
+#define  FID_HQSFBZ             4079  //è¡Œæƒ…æ”¶è´¹æ ‡å‡†  DTï¼šR  
+#define  FID_HQSFJE             4080  //è¡Œæƒ…æ”¶è´¹é‡‘é¢  DTï¼šR  
+#define  FID_HS                 4081  //æˆ·æ•°  DTï¼šN  
+#define  FID_HZSJ               4082  //å›è½¬æ—¶é—´  DTï¼šC  
+#define  FID_INI                4083  //é…ç½®  DTï¼šC  
+#define  FID_JBQXLB             4084  //åŸºæœ¬æƒé™ç±»åˆ«  DTï¼šC  
+#define  FID_DFZHMC             4085  //å¯¹æ–¹è´¦æˆ·åç§°  DTï¼šC  
+#define  FID_JFSJ               4086  //è®¡è´¹æ—¶é—´  DTï¼šN  
+#define  FID_JGZDSCRGSG         4087  //æœºæ„æœ€ä½é¦–æ¬¡è®¤è´­ç”³è´­  DTï¼šR  
+#define  FID_JGZDZJRGSG         4088  //æœºæ„æœ€ä½è¿½åŠ è®¤è´­ç”³è´­  DTï¼šR  
+#define  FID_JGZGDTSH           4089  //æœºæ„æœ€é«˜å½“å¤©èµå›ä»½é¢  DTï¼šR  
+#define  FID_JJCFZT             4090  //åŸºé‡‘æ‹†åˆ†çŠ¶æ€  DTï¼šN  
+#define  FID_JJHBZT             4091  //åŸºé‡‘åˆå¹¶çŠ¶æ€  DTï¼šN  
+#define  FID_JJKHZT             4092  //åŸºé‡‘å¼€æˆ·çŠ¶æ€  DTï¼šN  
+#define  FID_JJRGZT             4093  //åŸºé‡‘è®¤è´­çŠ¶æ€  DTï¼šN  
+#define  FID_JJSGZT             4094  //åŸºé‡‘ç”³è´­çŠ¶æ€  DTï¼šN  
+#define  FID_JJSHZT             4095  //åŸºé‡‘èµå›çŠ¶æ€  DTï¼šN  
+#define  FID_JJZHSQFS           4096  //åŸºé‡‘è´¦æˆ·ç”³è¯·æ–¹å¼  DTï¼šN  
+#define  FID_JJZHSX             4097  //åŸºé‡‘è´¦æˆ·å±æ€§  DTï¼šN  
+#define  FID_JJZHZT             4098  //åŸºé‡‘è½¬æ¢çŠ¶æ€  DTï¼šN  
+#define  FID_JSBZ               4099  //äº¤æ”¶æ ‡å¿—  DTï¼šN  
+#define  FID_JSKZFS             4100  //è®¡æ—¶æ§åˆ¶æ–¹å¼  DTï¼šN  
+#define  FID_JSSFBZ             4101  //è®¡æ—¶æ”¶è´¹æ ‡å‡†  DTï¼šR  
+#define  FID_JSSFDW             4102  //è®¡æ—¶æ”¶è´¹å•ä½  DTï¼šN  
+#define  FID_JSSFJE             4103  //è®¡æ—¶æ”¶è´¹é‡‘é¢  DTï¼šR  
+#define  FID_JSSFQD             4104  //è®¡æ—¶æ”¶è´¹èµ·ç‚¹  DTï¼šN  
+#define  FID_JSSFSX             4105  //è®¡æ—¶æ”¶è´¹ä¸Šé™  DTï¼šR  
+#define  FID_JSSJSX             4106  //è®¡æ—¶æ—¶é—´ä¸Šé™  DTï¼šN  
+#define  FID_JXJE               4107  //è®¡æ¯é‡‘é¢  DTï¼šR  
+#define  FID_JYJ                4108  //å‡€ä½£é‡‘  DTï¼šR  
+#define  FID_JYLBSX             4109  //äº¤æ˜“ç±»åˆ«å±æ€§  DTï¼šN  
+#define  FID_JYLTJFS            4110  //äº¤æ˜“é‡ç»Ÿè®¡æ–¹å¼  DTï¼šN  
+#define  FID_JYSQH              4111  //äº¤æ˜“ç”³è¯·å·  DTï¼šN  
+#define  FID_KHFL               4112  //å®¢æˆ·åˆ†ç±»  DTï¼šC  
+#define  FID_KHXMXY             4113  //å®¢æˆ·å§“åæ£€éªŒ  DTï¼šC  
+#define  FID_KWTSL              4114  //å¯å§”æ‰˜æ•°é‡  DTï¼šR  
+#define  FID_TJZC               4115  //ç´¯è®¡èµ„äº§  DTï¼šR  
+#define  FID_LLMBBH             4116  //åˆ©ç‡æ¨¡æ¿ç¼–å·  DTï¼šN  
+#define  FID_MCCJJE             4117  //å–å‡ºæˆäº¤é‡‘é¢  DTï¼šR  
+#define  FID_MCCJSL             4118  //å–å‡ºæˆäº¤æ•°é‡  DTï¼šR  
+#define  FID_MCQSJE             4119  //å–å‡ºæ¸…ç®—é‡‘é¢  DTï¼šR  
+#define  FID_MCWTJE             4120  //å–å‡ºå§”æ‰˜é‡‘é¢  DTï¼šR  
+#define  FID_MCWTSL             4121  //å–å‡ºå§”æ‰˜æ•°é‡  DTï¼šR  
+#define  FID_MMBDRQ             4122  //å¯†ç å˜åŠ¨æ—¥æœŸ  DTï¼šN  
+#define  FID_MMXZFS             4123  //å¯†ç é™åˆ¶æ–¹å¼  DTï¼šN  
+#define  FID_MRCJJE             4124  //ä¹°å…¥æˆäº¤é‡‘é¢  DTï¼šR  
+#define  FID_MRCJSL             4125  //ä¹°å…¥æˆäº¤æ•°é‡  DTï¼šR  
+#define  FID_MRFHFS             4126  //é»˜è®¤åˆ†çº¢æ–¹å¼  DTï¼šR  
+#define  FID_MRQSJE             4127  //ä¹°å…¥æ¸…ç®—é‡‘é¢  DTï¼šR  
+#define  FID_MRWTJE             4128  //ä¹°å…¥å§”æ‰˜é‡‘é¢  DTï¼šN  
+#define  FID_MRWTSL             4129  //ä¹°å…¥å§”æ‰˜æ•°é‡  DTï¼šR  
+#define  FID_MXBZ               4130  //æ˜ç»†æ ‡å¿—  DTï¼šN  
+#define  FID_ORDWTH             4131  //è®¢å•ç¼–ç ç±»å‹  DTï¼šC  
+#define  FID_OTHER              4132  //å…¶å®ƒä¸šåŠ¡å…è®¸æ ‡å¿—  DTï¼šN  
+#define  FID_PHRQ               4133  //é…å·æ—¥æœŸ  DTï¼šN  
+#define  FID_POSITION           4134  //ä½ç½®  DTï¼šN  
+#define  FID_QRLSH              4135  //ç¡®è®¤æµæ°´å·  DTï¼šC  
+#define  FID_QSRQ               4136  //æ¸…ç®—æ—¥æœŸ  DTï¼šN  
+#define  FID_QTDJ               4137  //å…¶å®ƒåŸå› å†»ç»“  DTï¼šC  
+#define  FID_QTFY               4138  //å…¶å®ƒè´¹ç”¨  DTï¼šR  
+#define  FID_QTMM               4139  //å…¶å®ƒå¯†ç   DTï¼šC  
+#define  FID_QXSX               4140  //æƒé™å±æ€§  DTï¼šN  
+#define  FID_QYRQ               4141  //ç­¾çº¦æ—¥æœŸ  DTï¼šN  
+#define  FID_RGSGJS             4142  //è®¤è´­ç”³è´­åŸºæ•°  DTï¼šN  
+#define  FID_RQJS               4143  //èåˆ¸ç§¯æ•°  DTï¼šR  
+#define  FID_RZBZ               4144  //å…¥è´¦æ ‡å¿—  DTï¼šN  
+#define  FID_RZJS               4145  //èèµ„ç§¯æ•°  DTï¼šR  
+#define  FID_S7                 4146  //æœåŠ¡è´¹  DTï¼šR  
+#define  FID_SBFS               4147  //ç”³æŠ¥æ–¹å¼  DTï¼šN  
+#define  FID_SFSX               4148  //æ”¶è´¹ä¸Šé™  DTï¼šR  
+#define  FID_SGSHDM             4149  //ç”³èµä»£ç   DTï¼šC  
+#define  FID_SMBS               4150  //æ‰«æç¬”æ•°  DTï¼šN  
+#define  FID_SPBZ               4151  //æ”¶ç›˜æ ‡å¿—  DTï¼šN  
+#define  FID_SRRQ               4152  //ä¸Šæ—¥æ—¥æœŸ  DTï¼šN  
+#define  FID_STAMP              4153  //æ—¶é—´æˆ³  DTï¼šC  
+#define  FID_SXFSX              4154  //æ‰‹ç»­è´¹ä¸Šé™  DTï¼šR  
+#define  FID_SXFXX              4155  //æ‰‹ç»­è´¹ä¸‹é™  DTï¼šR  
+#define  FID_SXYK               4156  //å®ç°ç›ˆäº  DTï¼šR  
+#define  FID_T3JS               4157  //T3äº¤æ”¶é‡‘é¢  DTï¼šR  
+#define  FID_TABM               4158  //åŸºé‡‘å…¬å¸ç¼–ç   DTï¼šC  
+#define  FID_TAKZSX             4159  //TAæ§åˆ¶å±æ€§  DTï¼šN  
+#define  FID_TEST               4160  //æµ‹è¯•çŠ¶æ€  DTï¼šN  
+#define  FID_THREAD             4161  //çº¿ç¨‹  DTï¼šN  
+#define  FID_TSYWJSSJ           4162  //ç‰¹æ®Šä¸šåŠ¡ç»“æŸæ—¶é—´  DTï¼šC  
+#define  FID_TXDZ               4163  //é€šè®¯åœ°å€  DTï¼šC  
+#define  FID_TXTS               4164  //æé†’å¤©æ•°  DTï¼šN  
+#define  FID_WJSSL_B            4165  //ä¹°å…¥æœªäº¤æ”¶  DTï¼šR  
+#define  FID_WJSSL_S            4166  //å–å‡ºæœªäº¤æ”¶  DTï¼šR  
+#define  FID_WTBZ               4167  //å§”æ‰˜æ ‡å¿—  DTï¼šC  
+#define  FID_WTDJJE             4168  //å§”æ‰˜å†»ç»“é‡‘é¢  DTï¼šR  
+#define  FID_WTHQZ              4169  //å§”æ‰˜å·å‰ç¼€  DTï¼šC  
+#define  FID_WTMARK             4170  //å§”æ‰˜è®°å·  DTï¼šC  
+#define  FID_WZDM               4171  //ä½ç½®ä»£ç   DTï¼šN  
+#define  FID_XSSL               4172  //é™å”®æ•°é‡  DTï¼šR  
+#define  FID_XTZT               4173  //ç³»ç»ŸçŠ¶æ€  DTï¼šN  
+#define  FID_XYZT               4174  //åè®®çŠ¶æ€  DTï¼šN  
+#define  FID_XZFS               4175  //é™åˆ¶æ–¹å¼  DTï¼šN  
+#define  FID_YDH                4176  //çº¦å®šå·  DTï¼šN  
+#define  FID_YGXJCE             4177  //é¢„ä¼°ç°é‡‘å·®é¢  DTï¼šR  
+#define  FID_YHKZSX             4178  //é“¶è¡Œæ§åˆ¶å±æ€§  DTï¼šN  
+#define  FID_YWBS               4179  //ä¸šåŠ¡ç¬”æ•°  DTï¼šN  
+#define  FID_YWRQ               4180  //ä¸šåŠ¡æ—¥æœŸ  DTï¼šN  
+#define  FID_YYBBH              4181  //è¥ä¸šéƒ¨ç¼–å·  DTï¼šC  
+#define  FID_ZCSMJG             4182  //æ­£å¸¸æ‰«æé—´éš”  DTï¼šN  
+#define  FID_ZCTJFS             4183  //èµ„äº§ç»Ÿè®¡æ–¹å¼  DTï¼šN  
+#define  FID_ZCZQSZ             4184  //è½¬å‡ºè¯åˆ¸å¸‚å€¼  DTï¼šR  
+#define  FID_ZDHS               4185  //æŒ‡å®šæˆ·æ•°  DTï¼šN  
+#define  FID_ZJBHXY             4186  //è¯ä»¶ç¼–å·æ£€éªŒ  DTï¼šC  
+#define  FID_ZJDM               4187  //èµ„é‡‘ä»£ç   DTï¼šC  
+#define  FID_ZJSBSJ             4188  //æœ€è¿‘ç”³æŠ¥æ—¶é—´  DTï¼šC  
+#define  FID_ZQFXDJ             4189  //è¯åˆ¸é£é™©ç­‰çº§  DTï¼šC  
+#define  FID_ZQJCLB             4190  //è¯åˆ¸åŸºç¡€ç±»åˆ«  DTï¼šC  
+#define  FID_ZQJYSX             4191  //è¯åˆ¸äº¤æ˜“å±æ€§  DTï¼šN  
+#define  FID_ZQLBXZFS           4192  //è¯åˆ¸ç±»åˆ«é™åˆ¶æ–¹å¼  DTï¼šN  
+#define  FID_ZQSXFW             4193  //è¯åˆ¸å±æ€§èŒƒå›´  DTï¼šN  
+#define  FID_ZQXZMS             4194  //è¯åˆ¸é™åˆ¶æ¨¡å¼  DTï¼šN  
+#define  FID_ZQYWDM             4195  //è¯åˆ¸ä¸šåŠ¡èŒƒå›´  DTï¼šC  
+#define  FID_ZRZQSZ             4196  //è½¬å…¥è¯åˆ¸å¸‚å€¼  DTï¼šR  
+#define  FID_ZYQDM              4197  //è´¨æŠ¼åˆ¸ä»£ç   DTï¼šC  
+#define  FID_ZZKSSJ             4198  //è½¬è´¦å¼€å§‹æ—¶é—´  DTï¼šC  
+#define  FID_ZZLB               4199  //è½¬è´¦ç±»åˆ«  DTï¼šN  
+#define  FID_ZZQDM              4200  //ä¸»è¯åˆ¸ä»£ç   DTï¼šC  
+#define  FID_LTLX               4201  //æµé€šç±»å‹  DTï¼šC  
+#define  FID_BBFUNCID           4202  //æŠ¥è¡¨å‡½æ•°åŠŸèƒ½å·  DTï¼šI  
+#define  FID_BBBSC              4203  //æŠ¥è¡¨æ ‡è¯†ä¸²  DTï¼šC  
+#define  FID_BBSORTTYPE         4204  //æŠ¥è¡¨æ•°æ®æŸ¥è¯¢çš„æ’åºæ–¹å¼  DTï¼šI  
+#define  FID_BBCXLB             4205  //æŠ¥è¡¨æŸ¥è¯¢ç±»åˆ«  DTï¼šC  
+#define  FID_BBFIELDNAME        4206  //æŠ¥è¡¨å­—æ®µå  DTï¼šC  
+#define  FID_BBTYPE             4207  //æŠ¥è¡¨å‚æ•°ç±»å‹  DTï¼šC  
+#define  FID_BBVALUE            4208  //æŠ¥è¡¨å±æ€§å€¼  DTï¼šC  
+#define  FID_BBROWNUM           4209  //æŠ¥è¡¨è®°å½•è¡Œå·  DTï¼šI  
+#define  FID_BBSJJDM            4210  //æŠ¥è¡¨æ•°æ®é›†ä»£ç   DTï¼šC  
+#define  FID_JYRQ               4211  //äº¤æ˜“æ—¥æœŸ  DTï¼šC  
+#define  FID_TDLX_BF            4212  //å¤‡ä»½é€šé“ç±»å‹  DTï¼šI  
+#define  FID_SGWTSL             4213  //ç”³è´­å§”æ‰˜æ•°é‡  DTï¼šR  
+#define  FID_DFJDBM             4214  //å¯¹æ–¹èŠ‚ç‚¹ç¼–ç   DTï¼šC  
+#define  FID_GRZDJC             4215  //ä¸ªäººæœ€å¤§å‡æŒ  DTï¼šI  
+#define  FID_JGZDJC             4216  //æœºæ„æœ€å¤§å‡æŒ  DTï¼šI  
+#define  FID_CPTX               4217  //äº§å“ç‰¹æ€§  DTï¼šI  
+#define  FID_GSJZB              4218  //å…¬å¸å‡€èµ„æœ¬  DTï¼šN  
+#define  FID_JSJE               4219  //äº¤æ”¶é‡‘é¢  DTï¼šR  
+#define  FID_DYSZ               4220  //æŠµæŠ¼å¸‚å€¼  DTï¼šR  
+#define  FID_YJGHRQ             4221  //é¢„è®¡è´­å›æ—¥æœŸ  DTï¼šN  
+#define  FID_DYKHJZD            4222  //å•ä¸€å®¢æˆ·é›†ä¸­åº¦  DTï¼šR  
+#define  FID_DYZQJZD            4223  //å•ä¸€è¯åˆ¸é›†ä¸­åº¦  DTï¼šR  
+#define  FID_DBJYJZD            4224  //å•ç¬”äº¤æ˜“é›†ä¸­åº¦  DTï¼šR  
+#define  FID_QYBH               4225  //æƒç›Šç¼–å·  DTï¼šI  
+#define  FID_SKYPE              4226  //SKYPEè´¦å·  DTï¼šC  
+#define  FID_SYR                4227  //å—ç›Šäºº  DTï¼šC  
+#define  FID_DH_LXR             4228  //è”ç³»äººç”µè¯  DTï¼šC  
+#define  FID_YXMRJ              4236  //æ„å‘ä¹°å…¥ä»·  DTï¼šR  
+#define  FID_YXMCJ              4237  //æ„å‘å–å‡ºä»·  DTï¼šR  
+#define  FID_YXMRL              4238  //æ„å‘ä¹°å…¥é‡  DTï¼šR  
+#define  FID_YXMCL              4239  //æ„å‘å–å‡ºé‡  DTï¼šR  
+#define  FID_ZFQDBH             4240  //æ”¯ä»˜æ¸ é“ç¼–å·  DTï¼šC  
+#define  FID_ZFZH               4241  //æ”¯ä»˜è´¦æˆ·  DTï¼šC  
+#define  FID_HTBH               4242  //åˆåŒç¼–å·  DTï¼šC  
+#define  FID_YCLX               4243  //å¼‚å¸¸ç±»å‹  DTï¼šC  
+#define  FID_HTLX               4244  //åˆåŒç±»å‹  DTï¼šN  
+#define  FID_HTZT               4245  //åˆåŒçŠ¶æ€  DTï¼šN  
+#define  FID_KHFXDJ             4246  //å®¢æˆ·é£é™©ç­‰çº§  DTï¼šC  
+#define  FID_CPFXDJ             4247  //äº§å“é£é™©ç­‰çº§  DTï¼šC  
+#define  FID_WFSY               4248  //æœªä»˜æ”¶ç›Š  DTï¼šC  
+#define  FID_PJBH               4249  //ç¥¨æ®ç¼–å·  DTï¼šC  
+#define  FID_WX                 4250  //å¾®ä¿¡è´¦å·  DTï¼šC  
+#define  FID_CPBM               4251  //äº§å“åˆ«å  DTï¼šC  
+#define  FID_CPGS               4252  //äº§å“å…¬å¸  DTï¼šC  
+#define  FID_MJKSRQ             4253  //å‹Ÿé›†å¼€å§‹æ—¥æœŸ  DTï¼šC  
+#define  FID_MJJSRQ             4254  //å‹Ÿé›†ç»“æŸæ—¥æœŸ  DTï¼šC  
+#define  FID_CPCLRQ             4255  //äº§å“æˆç«‹æ—¥æœŸ  DTï¼šC  
+#define  FID_CPJSRQ             4256  //äº§å“ç»“æŸæ—¥æœŸ  DTï¼šC  
+#define  FID_ZDMJJE             4257  //äº§å“æœ€ä½å‹Ÿé›†é‡‘é¢  DTï¼šC  
+#define  FID_ZGMJJE             4258  //äº§å“æœ€é«˜å‹Ÿé›†é‡‘é¢  DTï¼šC  
+#define  FID_TJKSRQ             4259  //æ¨ä»‹å¼€å§‹æ—¥æœŸ  DTï¼šC  
+#define  FID_TJJSRQ             4260  //æ¨ä»‹ç»“æŸæ—¥æœŸ  DTï¼šC  
+#define  FID_TJGM               4261  //æ¨ä»‹è§„æ¨¡  DTï¼šC  
+#define  FID_CPQX               4262  //äº§å“æœŸé™  DTï¼šC  
+#define  FID_CPPGDJ             4263  //è¯„ä¼°ç­‰çº§  DTï¼šC  
+#define  FID_FXMZ               4264  //å‘è¡Œé¢å€¼  DTï¼šC  
+#define  FID_YQSYL              4265  //é¢„æœŸæ”¶ç›Šç‡  DTï¼šC  
+#define  FID_TGYH               4266  //æ‰˜ç®¡é“¶è¡Œ  DTï¼šC  
+#define  FID_RGFL               4267  //è®¤è´­è´¹ç‡  DTï¼šC  
+#define  FID_RGRSSX             4268  //è®¤è´­äººæ•°ä¸Šé™  DTï¼šC  
+#define  FID_DRSGZDJE           4269  //å•æ—¥ç”³è´­æœ€é«˜é‡‘é¢  DTï¼šC  
+#define  FID_GRZDSGZJ           4270  //ä¸ªäººæœ€ä½ç”³è´­é‡‘é¢  DTï¼šC  
+#define  FID_JGZDSGZJ           4271  //æœºæ„æœ€ä½ç”³è´­é‡‘é¢  DTï¼šC  
+#define  FID_SHDW               4272  //èµå›æœ€å°å•ä½  DTï¼šC  
+#define  FID_SHZDFE             4273  //èµå›æœ€ä½ä»½é¢  DTï¼šC  
+#define  FID_XZLSH              4274  //åä½œæµæ°´å·  DTï¼šC  
+#define  FID_ZFZT               4275  //æ”¯ä»˜çŠ¶æ€  DTï¼šC  
+#define  FID_JZSZ               4276  //å‡€å€¼å¸‚å€¼  DTï¼šC  
+#define  FID_TZSL               4277  //æŠ•èµ„æ•°é‡  DTï¼šC  
+#define  FID_CPFZLB             4278  //äº§å“è¾…åŠ©ç±»åˆ«  DTï¼šC  
+#define  FID_PDDM               4279  //é…å¯¹ä»£ç   DTï¼šC  
+#define  FID_DKLX               4280  //å¤šç©ºç±»å‹  DTï¼šC  
+#define  FID_SZJ                4281  //å¸‚å€¼ä»·  DTï¼šC  
+#define  FID_CXMS               4282  //æŸ¥è¯¢æ¨¡å¼  DTï¼šC  
+#define  FID_YHTKHH             4283  //ä¸€æˆ·é€šå®¢æˆ·å·  DTï¼šC  
+#define  FID_KFRQ               4284  //å¼€æ”¾æ—¥æœŸ  DTï¼šC  
+#define  FID_NEWZHH             4285  //æ–°è´¦æˆ·å·  DTï¼šC  
+#define  FID_NHSYL              4286  //å¹´åŒ–æ”¶ç›Šç‡  DTï¼šC  
+#define  FID_GHLX               4287  //è¿‡æˆ·ç±»å‹  DTï¼šC  
+#define  FID_SYBS               4288  //å‰©ä½™ç¬”æ•°  DTï¼šC  
+#define  FID_SYED               4289  //å‰©ä½™é¢åº¦  DTï¼šC  
+#define  FID_LCZJZH             4290  //ç†è´¢èµ„é‡‘è´¦å·  DTï¼šC  
+#define  FID_LCZJZH_MAIN        4291  //ç†è´¢èµ„é‡‘ä¸»è´¦å·  DTï¼šC  
+#define  FID_LCZJZH_CHILD       4292  //ç†è´¢èµ„é‡‘å­è´¦å·  DTï¼šC  
+#define  FID_QQHYZH             4293  //æœŸæƒåˆçº¦è´¦å·  DTï¼šC  
+#define  FID_QQCCLX             4294  //æœŸæƒæŒä»“ç±»å‹  DTï¼šC  
+#define  FID_ZBLB               4295  //æŒ‡æ ‡ç±»åˆ«  DTï¼šC  
+#define  FID_XXFSQD             4300  //æ¶ˆæ¯å‘é€æ¸ é“  DTï¼šC  
+#define  FID_CC                 4301  //æŠ„é€  DTï¼šC  
+#define  FID_BCC                4302  //å¯†é€  DTï¼šC  
+#define  FID_CXFS               4303  //æŸ¥è¯¢æ–¹å¼  DTï¼šC  
+#define  FID_XSFY               4304  //é”€å”®è´¹ç”¨  DTï¼šC  
+#define  FID_TAFY               4305  //TAæ”¶å–çš„è´¹ç”¨  DTï¼šC  
+#define  FID_DJBM               4306  //å®šä»·ç¼–ç   DTï¼šC  
+#define  FID_QDBM               4307  //æ¸ é“ç¼–ç   DTï¼šC  
+#define  FID_QDMC               4308  //æ¸ é“åç§°  DTï¼šC  
+#define  FID_QDZH               4309  //æ¸ é“è´¦å·  DTï¼šC  
+#define  FID_ZHMC_HZQD          4310  //åˆä½œæ¸ é“è´¦æˆ·åç§°  DTï¼šC  
+#define  FID_MMZT               4311  //å¯†ç çŠ¶æ€  DTï¼šC  
+#define  FID_MMSDSJ             4312  //å¯†ç é”å®šæ—¶é—´  DTï¼šC  
+#define  FID_MJZJGM             4401  //å‹Ÿé›†èµ„é‡‘è§„æ¨¡  DTï¼šC  
+#define  FID_YXCRGFBL           4402  //æ„å‘å‡ºè®©è‚¡ä»½æ¯”ä¾‹  DTï¼šC  
+#define  FID_BFFS               4403  //æ‹¨ä»˜æ–¹å¼  DTï¼šC  
+#define  FID_LTCYJBL            4404  //é¢†æŠ•è¯šæ„é‡‘æ¯”ä¾‹  DTï¼šC  
+#define  FID_GTCYJBL            4405  //è·ŸæŠ•è¯šæ„é‡‘æ¯”ä¾‹  DTï¼šC  
+#define  FID_LTJEXX             4406  //é¢†æŠ•é‡‘é¢ä¸‹é™  DTï¼šC  
+#define  FID_LTJESX             4407  //é¢†æŠ•é‡‘é¢ä¸Šé™  DTï¼šC  
+#define  FID_GTJEXX             4408  //è·ŸæŠ•é‡‘é¢ä¸‹é™  DTï¼šC  
+#define  FID_GTJESX             4409  //è·ŸæŠ•é‡‘é¢ä¸Šé™  DTï¼šC  
+#define  FID_HBXWDM             5001  //å›æŠ¥å¸­ä½ä»£ç   DTï¼šC  
+#define  FID_JYSHTH             5002  //äº¤æ˜“æ‰€æ‰§è¡Œç¼–å·(ä¸æ˜¯æˆäº¤ç¼–å·)  DTï¼šC  
+#define  FID_CX_SBWTH           5003  //æ’¤å•ç”³æŠ¥å§”æ‰˜å·  DTï¼šC  
+#define  FID_CPQC               6000  //äº§å“å…¨ç§°  DTï¼šC  
+#define  FID_CPDM_WB            6001  //äº§å“å¤–ç   DTï¼šC  
+#define  FID_SYLX               6002  //æ”¶ç›Šç±»å‹  DTï¼šC  
+#define  FID_CPGM               6003  //äº§å“è§„æ¨¡  DTï¼šC  
+#define  FID_SFXCP              6004  //æ–°äº§å“  DTï¼šC  
+#define  FID_RGJS_JG            6005  //æœºæ„è®¤è´­åŸºæ•°  DTï¼šC  
+#define  FID_SGJS_JG            6006  //æœºæ„ç”³è´­åŸºæ•°  DTï¼šC  
+#define  FID_BFSHYEXX           6007  //éƒ¨åˆ†èµå›ä½™é¢ä¸‹é™  DTï¼šC  
+#define  FID_SFYXDCGM           6008  //æ˜¯å¦å…è®¸å¤šæ¬¡è´­ä¹°  DTï¼šC  
+#define  FID_SFYXDCYY           6009  //æ˜¯å¦å…è®¸å¤šæ¬¡é¢„çº¦  DTï¼šC  
+#define  FID_CDKZ               6010  //æ’¤å•æ§åˆ¶  DTï¼šC  
+#define  FID_FXBPPXZ            6011  //é£é™©ä¸åŒ¹é…é™åˆ¶  DTï¼šC  
+#define  FID_CCWWZS             6012  //å…è®¸æŒä»“å¤–å›´å±•ç¤º  DTï¼šC  
+#define  FID_SFTH               6013  //ç‰¹æƒ äº§å“  DTï¼šC  
+#define  FID_FXDJBM_DSF         6014  //ç¬¬ä¸‰æ–¹é£é™©ç­‰çº§ç¼–ç   DTï¼šC  
+#define  FID_SJBZ               6015  //ä¸Šæ¶æ ‡å¿—  DTï¼šC  
+#define  FID_RGJKR              6016  //è®¤è´­ç¼´æ¬¾æ—¥  DTï¼šC  
+#define  FID_SGJKR              6017  //ç”³è´­ç¼´æ¬¾æ—¥  DTï¼šC  
+#define  FID_DTJKR              6018  //å®šæŠ•ç¼´æ¬¾æ—¥  DTï¼šC  
+#define  FID_RGTKSY             6019  //å‹Ÿé›†å¤±è´¥é€€æ¬¾é¡ºå»¶  DTï¼šC  
+#define  FID_ZRJSR              6020  //è½¬è®©ç»“ç®—æ—¥  DTï¼šC  
+#define  FID_MJSBTKSY           6021  //å‹Ÿé›†å¤±è´¥é€€æ¬¾é¡ºå»¶  DTï¼šC  
+#define  FID_ZRMS               6022  //è½¬å…¥æ¨¡å¼  DTï¼šC  
+#define  FID_ZCMS               6023  //è½¬å‡ºæ¨¡å¼  DTï¼šC  
+#define  FID_MRSBCL             6024  //ä¹°å…¥å¤±è´¥å¤„ç†  DTï¼šC  
+#define  FID_MCSBCL             6025  //å–å‡ºå¤±è´¥å¤„ç†  DTï¼šC  
+#define  FID_GRRGXE             6026  //ä¸ªäººè®¤è´­é™é¢  DTï¼šC  
+#define  FID_JGRGXE             6027  //æœºæ„è®¤è´­é™é¢  DTï¼šC  
+#define  FID_YZHGTZZ            6028  //æ˜¯å¦éœ€è¦éªŒè¯åˆæ ¼æŠ•èµ„è€…  DTï¼šC  
+#define  FID_ID                 9001  //æ¡£æ¡ˆç¼–å·  DTï¼šC  
+#define  FID_MODULE             9002  //æ¨¡å—å  DTï¼šC  
+#define  FID_NAME               9003  //æ¨¡å—æ–‡ä»¶  DTï¼šC  
+#define  FID_CLASE              9004  //æ¨¡å—åˆ†ç±»  DTï¼šC  
+#define  FID_LEVEL              9006  //ä¼˜å…ˆçº§åˆ«  DTï¼šC  
+#define  FID_OLDVER             9007  //æ—§ç‰ˆæœ¬  DTï¼šC  
+#define  FID_LASTVER            9008  //æ–°ç‰ˆæœ¬  DTï¼šC  
+#define  FID_WHYS               9009  //ä¿®æ”¹åŸå›   DTï¼šC  
+#define  FID_FILEPATH           9011  //æ–‡ä»¶è·¯å¾„  DTï¼šC  
+#define  FID_MENDER             9012  //ä¿®æ”¹äºº  DTï¼šC  
+#define  FID_CONNER             9013  //æµ‹è¯•äºº  DTï¼šC  
+#define  FID_MODIRQ             9014  //ä¿®æ”¹æ—¥æœŸ  DTï¼šC  
+#define  FID_TESTRQ             9015  //æµ‹è¯•æ—¥æœŸ  DTï¼šC  
+#define  FID_CONCLUSION         9016  //æµ‹è¯•ç»“è®º  DTï¼šC  
+#define  FID_UPNOTE             9017  //å‡çº§æç¤º  DTï¼šC  
+#define  FID_STATUS             9018  //è®°å½•çŠ¶æ€  DTï¼šC  
+#define  FID_RESOLVEN           9019  //å…³è”æç¤º  DTï¼šC  
+#define  FID_FLAG               9020  //æ¡£æ¡ˆç±»å‹  DTï¼šC  
+#define  FID_DIFF               9021  //éš¾åº¦  DTï¼šC  
+#define  FID_YZJB               9022  //ä¸¥é‡çº§åˆ«  DTï¼šC  
+#define  FID_RWBH               9023  //ä»»åŠ¡ç¼–å·  DTï¼šC  
+#define  FID_DIR                9024  //è¿è¡Œç›®å½•  DTï¼šC  
+#define  FID_CPID               9025  //äº§å“ID  DTï¼šC  
+#define  FID_XQLX               9026  //éœ€æ±‚ç±»å‹  DTï¼šC  
+#define  FID_XQLY               9027  //éœ€æ±‚æ¥æº  DTï¼šC  
+#define  FID_XQMS               9028  //éœ€æ±‚æè¿°  DTï¼šC  
+#define  FID_XQLXF              9029  //éœ€æ±‚è”ç³»æ–¹  DTï¼šC  
+#define  FID_XGFA               9030  //ä¿®æ”¹æ–¹æ¡ˆ  DTï¼šC  
+#define  FID_FASP               9031  //æ–¹æ¡ˆå®¡æ‰¹äºº  DTï¼šC  
+#define  FID_FASPRQ             9032  //æ–¹æ¡ˆå®¡æ‰¹æ—¥æœŸ  DTï¼šC  
+#define  FID_JRX                9033  //å…¼å®¹æ€§  DTï¼šC  
+#define  FID_FFJH               9034  //å‘æ”¾è®¡åˆ’  DTï¼šC  
+#define  FID_XGR                9035  //ä¿®æ”¹äºº  DTï¼šC  
+#define  FID_XGJD               9036  //ä¿®æ”¹è¿›åº¦  DTï¼šC  
+#define  FID_CSR                9037  //æµ‹è¯•äºº  DTï¼šC  
+#define  FID_CSJD               9038  //æµ‹è¯•è¿›åº¦  DTï¼šC  
+#define  FID_YMTS               9039  //æºç æç¤º  DTï¼šC  
+#define  FID_XGFK               9040  //ä¿®æ”¹åé¦ˆ  DTï¼šC  
+#define  FID_XGWCRQ             9041  //ä¿®æ”¹å®Œæˆæ—¥æœŸ  DTï¼šC  
+#define  FID_CSFK               9042  //æµ‹è¯•åé¦ˆ  DTï¼šC  
+#define  FID_CSWCRQ             9043  //æµ‹è¯•å®Œæˆæ—¥æœŸ  DTï¼šC  
+#define  FID_HFYJ               9044  //å›è®¿æ„è§  DTï¼šC  
+#define  FID_HFRQ               9045  //å›è®¿æ—¥æœŸ  DTï¼šC  
+#define  FID_HFR                9046  //å›è®¿äºº  DTï¼šC  
+#define  FID_RWB                9047  //ä»»åŠ¡æ ‡é¢˜  DTï¼šC  
+#define  FID_MTYPE              9048  //ç±»å‹  DTï¼šC  
+#define  FID_GYXM               9049  //æŸœå‘˜å§“å  DTï¼šC  
+#define  FID_JLZ                9050  //è®°å½•çŠ¶æ€  DTï¼šC  
+#define  FID_GH                 9051  //å·¥å·  DTï¼šC  
+#define  FID_KHMC               9052  //å®¢æˆ·åç§°  DTï¼šC  
+#define  FID_WHR                9053  //ç»´æŠ¤äºº  DTï¼šC  
+#define  FID_XZR                9054  //ååŠ©äºº  DTï¼šC  
+#define  FID_KHID               9055  //å®¢æˆ·ID  DTï¼šC  
+#define  FID_WTMS               9056  //é—®é¢˜æè¿°  DTï¼šC  
+#define  FID_FXDW               9057  //åˆ†æå®šä½  DTï¼šC  
+#define  FID_JJFS               9058  //è§£å†³æ–¹å¼  DTï¼šC  
+#define  FID_JJGC               9059  //è§£å†³è¿‡ç¨‹  DTï¼šC  
+#define  FID_CLYS               9060  //å¤„ç†ç”¨æ—¶  DTï¼šC  
+#define  FID_FSRQ               9061  //å‘ç”Ÿæ—¥æœŸ  DTï¼šC  
+#define  FID_WTFL               9062  //  DTï¼šC  
+#define  FID_GROUP              9063  //ç»„  DTï¼šC  
+#define  FID_SECURITY           9064  //  DTï¼šC  
+#define  FID_GXQ                9065  //  DTï¼šC  
+#define  FID_CPXX               9066  //äº§å“ä¿¡æ¯  DTï¼šC  
+#define  FID_KHZB               9067  //å®¢æˆ·æ€»éƒ¨  DTï¼šC  
+#define  FID_QYZB               9068  //  DTï¼šC  
+#define  FID_ZJL                9070  //æ€»ç»ç†  DTï¼šC  
+#define  FID_ZJLDH              9071  //æ€»ç»ç†ç”µè¯  DTï¼šC  
+#define  FID_ZJLMAIL            9072  //æ€»ç»ç†EMAIL  DTï¼šC  
+#define  FID_JL                 9073  //ç»ç†  DTï¼šC  
+#define  FID_JLDH               9074  //ç»ç†ç”µè¯  DTï¼šC  
+#define  FID_JLMAIL             9075  //ç»ç†EMAIL  DTï¼šC  
+#define  FID_LXR                9076  //è”ç³»äºº  DTï¼šC  
+#define  FID_CRDATE             9077  //åˆ›å»ºæ—¥æœŸ  DTï¼šC  
+#define  FID_ENGINEERS          9078  //å·¥ç¨‹å¸ˆ  DTï¼šC  
+#define  FID_HFRQ2              9079  //æ¢å¤æ—¥æœŸ2  DTï¼šC  
+#define  FID_DJR                9080  //ç™»è®°äºº  DTï¼šC  
+#define  FID_ZW                 9081  //èŒä½  DTï¼šC  
+#define  FID_WHBT               9082  //ç»´æŠ¤æ ‡é¢˜  DTï¼šC  
+#define  FID_FLAG1              9083  //FLAG1  DTï¼šC  
+#define  FID_FLAG2              9084  //FLAG2  DTï¼šC  
+#define  FID_XQLB               9085  //éœ€æ±‚ç±»åˆ«  DTï¼šC  
+#define  FID_MSN                9086  //MSN  DTï¼šC  
+#define  FID_SPFA               9087  //å®¡æ‰¹æ–¹æ¡ˆ  DTï¼šC  
+#define  FID_SJNR               9088  //æ¶‰åŠå†…å®¹  DTï¼šC  
+#define  FID_LCRZ               9089  //æµç¨‹æ—¥å¿—  DTï¼šC  
+#define  FID_SPR                9090  //å®¡æ‰¹äºº  DTï¼šC  
+#define  FID_SPRQ               9091  //å®¡æ‰¹æ—¥æœŸ  DTï¼šC  
+#define  FID_GZR                9092  //è·Ÿè¸ªäºº  DTï¼šC  
+#define  FID_XQBT               9093  //éœ€æ±‚æ ‡é¢˜  DTï¼šC  
+#define  FID_ZPR                9094  //æŒ‡æ´¾äºº  DTï¼šC  
+#define  FID_RWMS               9095  //ä»»åŠ¡æè¿°  DTï¼šC  
+#define  FID_ZPRQ               9096  //æŒ‡æ´¾æ—¥æœŸ  DTï¼šC  
+#define  FID_GMZQ               9097  //æ›´å¯†å‘¨æœŸ  DTï¼šN  
+#define  FID_GYZT               9098  //æŸœå‘˜çŠ¶æ€  DTï¼šN  
+#define  FID_KSSJ               9099  //å¼€å§‹æ—¶é—´  DTï¼šC  
+#define  FID_JSSJ               9100  //ç»“æŸæ—¶é—´  DTï¼šC  
+#define  FID_XZQYDM             9101  //è¡Œæ”¿åŒºåŸŸä»£ç   DTï¼šC  
+#define  FID_XZQYMC             9102  //è¡Œæ”¿åŒºåŸŸåç§°  DTï¼šC  
+#define  FID_XZQYLB             9103  //è¡Œæ”¿åŒºåŸŸç±»åˆ«  DTï¼šC  
+#define  FID_SJXZQYDM           9104  //ä¸Šçº§è¡Œæ”¿åŒºåŸŸä»£ç   DTï¼šC  
+#define  FID_DHQH               9105  //ç”µè¯åŒºå·  DTï¼šN  
+#define  FID_KHBS               9106  //å®¢æˆ·æ ‡è¯†  DTï¼šC  
+#define  FID_KHZT               9107  //å®¢æˆ·çŠ¶æ€  DTï¼šN  
+#define  FID_ZT                 9108  //çŠ¶æ€  DTï¼šN  
+#define  FID_SORTTYPE           9109  //æ•°æ®æŸ¥è¯¢çš„æ’åºæ–¹å¼  DTï¼šI  
+#define  FID_ROWCOUNT           9110  //è¡Œå·  DTï¼šN  
+#define  FID_LPDM               9111  //ç¤¼å“ä»£ç   DTï¼šC  
+#define  FID_YWSHBZ             9112  //ä¸šåŠ¡å®¡æ ¸æ ‡å¿—  DTï¼šN  
+#define  FID_YWSHQD             9113  //æ˜¯å¦éœ€ä¸šåŠ¡å®¡æ ¸  DTï¼šN  
+#define  FID_LPZCDS             9114  //ç¤¼å“è½¬å­˜åº•æ•°  DTï¼šR  
+#define  FID_SRJE               9115  //æ”¶å…¥é‡‘é¢  DTï¼šR  
+#define  FID_FCJE               9116  //ä»˜å‡ºé‡‘é¢  DTï¼šR  
+#define  FID_CZBZ               9117  //å†²é”€æ ‡å¿—  DTï¼šC  
+#define  FID_JSJ                9118  //ç»“ç®—ä»·  DTï¼šR  
+#define  FID_YSJE_YJ            9119  //ä¸€çº§åº”æ”¶é‡‘é¢  DTï¼šR  
+#define  FID_JGZLLB             9120  //äº¤å‰²èµ„æ–™ç±»åˆ«  DTï¼šN  
+#define  FID_S11                9121  //ä¸€çº§ç»æ‰‹è´¹  DTï¼šR  
+#define  FID_S12                9122  //ä¸€çº§è¯ç®¡è´¹  DTï¼šR  
+#define  FID_S13                9123  //ä¸€çº§è¿‡æˆ·è´¹  DTï¼šR  
+#define  FID_S15                9124  //ä¸€çº§ç»“ç®—è´¹  DTï¼šR  
+#define  FID_S16                9125  //ä¸€çº§é£é™©åŸºé‡‘  DTï¼šR  
+#define  FID_BZQDM              9126  //æ ‡å‡†åˆ¸ä»£ç   DTï¼šC  
+#define  FID_CWLB               9127  //é”™è¯¯ç±»åˆ«  DTï¼šC  
+#define  FID_YHMM               9128  //é“¶è¡Œå¯†ç   DTï¼šC  
+#define  FID_JJDM               9129  //åŸºé‡‘ä»£ç   DTï¼šC  
+#define  FID_JJMC               9130  //åŸºé‡‘åç§°  DTï¼šC  
+#define  FID_XJTDBL             9131  //ç°é‡‘æ›¿ä»£æ¯”ä¾‹  DTï¼šR  
+#define  FID_WTJE               9132  //å§”æ‰˜é‡‘é¢  DTï¼šR  
+#define  FID_SGSHZT             9133  //ç”³è´­èµå›çŠ¶æ€  DTï¼šN  
+#define  FID_TDBZ               9134  //æ›¿ä»£æ ‡å¿—  DTï¼šN  
+#define  FID_ZDXW               9135  //æŒ‡å®šå¸­ä½  DTï¼šC  
+#define  FID_XJCE               9136  //ç°é‡‘å·®é¢  DTï¼šR  
+#define  FID_TDJE               9137  //æ›¿ä»£é‡‘é¢ï¼ˆç°é‡‘æ›¿ä»£é‡‘é¢ï¼‰  DTï¼šR  
+#define  FID_DWJZ               9138  //å•ä½å‡€å€¼  DTï¼šR  
+#define  FID_SGSHDWJZ           9139  //ç”³è´­èµå›å•ä½å‡€å€¼  DTï¼šR  
+#define  FID_CZGY               9140  //æ“ä½œæŸœå‘˜  DTï¼šC  
+#define  FID_FYBL               9141  //è´¹ç”¨æ¯”ä¾‹  DTï¼šR  
+#define  FID_JYL                9142  //äº¤æ˜“é‡  DTï¼šR  
+#define  FID_XGPZ               9143  //ç›¸å…³å“ç§  DTï¼šC  
+#define  FID_XGZH               9144  //ç›¸å…³å¸å·  DTï¼šC  
+#define  FID_JESX               9145  //é‡‘é¢ä¸Šé™  DTï¼šR  
+#define  FID_FSSL               9146  //å‘ç”Ÿæ•°é‡  DTï¼šN  
+#define  FID_LXJE               9147  //åˆ©æ¯é‡‘é¢  DTï¼šR  
+#define  FID_LXJG               9148  //åˆ©æ¯ä»·æ ¼  DTï¼šR  
+#define  FID_PLWTPCH            9149  //æ‰¹é‡å§”æ‰˜æ‰¹æ¬¡å·  DTï¼šN  
+#define  FID_SEQNO              9150  //å†å²æ•°æ®åºåˆ—å·  DTï¼šN  
+#define  FID_SBXW               9151  //ç”³æŠ¥å¸­ä½  DTï¼šC  
+#define  FID_XWDM               9152  //å¸­ä½ä»£ç   DTï¼šC  
+#define  FID_EN_JGZLLB          9153  //äº¤å‰²èµ„æ–™ç±»åˆ«èŒƒå›´  DTï¼šC  
+#define  FID_WBJGDM             9154  //å¤–éƒ¨æœºæ„ä»£ç   DTï¼šC  
+#define  FID_WBFJJYLB           9155  //å¤–éƒ¨é™„åŠ äº¤æ˜“ç±»åˆ«ï¼ˆä¸šåŠ¡ç±»åˆ«ï¼‰  DTï¼šN  
+#define  FID_CZWBSQBH           9156  //å†²æ­£å¤–éƒ¨ç”³è¯·ç¼–å·  DTï¼šC  
+#define  FID_WBSQBH             9157  //å¤–éƒ¨ç”³è¯·ç¼–å·  DTï¼šC  
+#define  FID_RWSM               9158  //ä»»åŠ¡è¯´æ˜  DTï¼šC  
+#define  FID_FHRQ               9159  //å¤æ ¸æ—¥æœŸ  DTï¼šI  
+#define  FID_FLLBFW             9160  //è´¹ç‡ç±»åˆ«èŒƒå›´  DTï¼šC  
+#define  FID_JYSFW              9161  //äº¤æ˜“æ‰€èŒƒå›´  DTï¼šC  
+#define  FID_SDSL               9162  //æ‰€å¾—ç¨ç‡  DTï¼šR  
+#define  FID_WTFSFW             9163  //å§”æ‰˜æ–¹å¼èŒƒå›´  DTï¼šI  
+#define  FID_ZDJSBZ             9164  //è‡ªåŠ¨è®¡ç®—æ ‡å¿—  DTï¼šI  
+#define  FID_JYLBFW             9165  //äº¤æ˜“ç±»åˆ«èŒƒå›´  DTï¼šC  
+#define  FID_TJZQS              9166  //ç»Ÿè®¡å‘¨æœŸæ•°  DTï¼šI  
+#define  FID_JJZHCD             9167  //åŸºé‡‘å¸å·é•¿åº¦  DTï¼šI  
+#define  FID_JYMCD              9168  //äº¤æ˜“ç é•¿åº¦  DTï¼šI  
+#define  FID_SQBHCD             9169  //ç”³è¯·ç¼–å·é•¿åº¦  DTï¼šI  
+#define  FID_JJZHSCFS           9170  //åŸºé‡‘å¸å·ç”Ÿæˆæ–¹å¼  DTï¼šI  
+#define  FID_JYZHQZ             9171  //äº¤æ˜“å¸å·å‰ç¼€  DTï¼šC  
+#define  FID_KYJJZH_GR          9172  //å¯ç”¨åŸºé‡‘å¸å·_ä¸ªäºº  DTï¼šC  
+#define  FID_KYJJZH_JG          9173  //å¯ç”¨åŸºé‡‘å¸å·_æœºæ„  DTï¼šC  
+#define  FID_FEDZZT             9174  //ä»½é¢å¯¹å¸çŠ¶æ€  DTï¼šI  
+#define  FID_HBDZBZ             9175  //åˆå¹¶å¯¹å¸æ ‡å¿—  DTï¼šI  
+#define  FID_FEDZXM             9176  //ä»½é¢å¯¹å¸é¡¹ç›®  DTï¼šI  
+#define  FID_FEDZFS             9177  //ä»½é¢å¯¹å¸æ–¹å¼  DTï¼šI  
+#define  FID_FJYGHLB            9178  //ä»£ç†éäº¤æ˜“è¿‡æˆ·ç±»åˆ«  DTï¼šI  
+#define  FID_JGSCRGZDZJ         9179  //æœºæ„é¦–æ¬¡è®¤è´­æœ€ä½é‡‘é¢  DTï¼šR  
+#define  FID_GRSCRGZDZJ         9180  //ä¸ªäººé¦–æ¬¡è®¤è´­æœ€ä½é‡‘é¢  DTï¼šR  
+#define  FID_GRZJRGZDZJ         9181  //ä¸ªäººè¿½åŠ è®¤è´­æœ€ä½é‡‘é¢  DTï¼šR  
+#define  FID_JGZJRGZDZJ         9182  //æœºæ„è¿½åŠ è®¤è´­æœ€ä½é‡‘é¢  DTï¼šR  
+#define  FID_GRZDRGZJ           9183  //ä¸ªäººæœ€ä½è®¤è´­é‡‘é¢  DTï¼šR  
+#define  FID_JGZDRGZJ           9184  //æœºæ„æœ€ä½è®¤è´­é‡‘é¢  DTï¼šR  
+#define  FID_GRSCSGZDZJ         9185  //ä¸ªäººé¦–æ¬¡ç”³è´­æœ€ä½é‡‘é¢  DTï¼šR  
+#define  FID_JGSCSGZDZJ         9186  //æœºæ„é¦–æ¬¡ç”³è´­æœ€ä½é‡‘é¢  DTï¼šR  
+#define  FID_GRZJSGZDZJ         9187  //ä¸ªäººè¿½åŠ ç”³è´­æœ€ä½é‡‘é¢  DTï¼šR  
+#define  FID_JGZJSGZDZJ         9188  //æœºæ„è¿½åŠ ç”³è´­æœ€ä½é‡‘é¢  DTï¼šR  
+#define  FID_GRSHZDFE           9189  //ä¸ªäººèµå›æœ€ä½ä»½é¢  DTï¼šR  
+#define  FID_JGSHZDFE           9190  //æœºæ„èµå›æœ€ä½ä»½é¢  DTï¼šR  
+#define  FID_GRCCZDFE           9191  //ä¸ªäººæŒä»“æœ€ä½é™é¢  DTï¼šR  
+#define  FID_JGCCZDFE           9192  //æœºæ„æŒä»“æœ€ä½é™é¢  DTï¼šR  
+#define  FID_SHSYTS             9193  //èµå›é¡ºå»¶å¤©æ•°  DTï¼šI  
+#define  FID_HLHKTS             9194  //çº¢åˆ©åˆ°æ¬¾å»¶è¿Ÿå¤©æ•°  DTï¼šI  
+#define  FID_GRZDZHFE           9195  //ä¸ªäººæœ€ä½è½¬æ¢ä»½é¢  DTï¼šR  
+#define  FID_JGZDZHFE           9196  //æœºæ„æœ€ä½è½¬æ¢ä»½é¢  DTï¼šR  
+#define  FID_SGJSBZ             9197  //æ‰‹å·¥ç»“ç®—æ ‡å¿—  DTï¼šI  
+#define  FID_TADM               9198  //åŸºé‡‘å…¬å¸ä»£ç   DTï¼šC  
+#define  FID_FQRDM              9199  //å‘èµ·äººä»£ç   DTï¼šC  
+#define  FID_FXZFE              9200  //å‘è¡Œæ€»ä»½é¢  DTï¼šR  
+#define  FID_GLRDM              9201  //ç®¡ç†äººä»£ç   DTï¼šC  
+#define  FID_JJJC               9202  //åŸºé‡‘ç®€ç§°  DTï¼šC  
+#define  FID_JJQC               9203  //åŸºé‡‘å…¨ç§°  DTï¼šC  
+#define  FID_JJJZ               9204  //åŸºé‡‘å‡€å€¼  DTï¼šR  
+#define  FID_DFJJDM             9205  //å¯¹æ–¹åŸºé‡‘ä»£ç   DTï¼šC  
+#define  FID_RGFS               9206  //è®¤è´­æ–¹å¼  DTï¼šI  
+#define  FID_RGJS               9207  //è®¤è´­åŸºæ•°  DTï¼šI  
+#define  FID_SGJS               9208  //ç”³è´­åŸºæ•°  DTï¼šI  
+#define  FID_TGRDM              9209  //æ‰˜ç®¡äººä»£ç   DTï¼šC  
+#define  FID_TDLX               9210  //é€šé“ç±»å‹  DTï¼šI  
+#define  FID_MODULE_ID          9211  //æ¨¡å—ID  DTï¼šI  
+#define  FID_ZKLX               9212  //æŠ˜æ‰£ç±»å‹  DTï¼šI  
+#define  FID_ZKL                9213  //æŠ˜æ‰£ç‡  DTï¼šR  
+#define  FID_DXBS               9214  //å¯¹è±¡æ ‡è¯†  DTï¼šC  
+#define  FID_DXLB               9215  //å¯¹è±¡ç±»åˆ«  DTï¼šI  
+#define  FID_BDKHBZ             9216  //æœ¬åœ°å¼€æˆ·æ ‡å¿—  DTï¼šI  
+#define  FID_DJYY               9217  //å†»ç»“åŸå›   DTï¼šI  
+#define  FID_DZDLB              9219  //å¯¹å¸å•ç±»åˆ«  DTï¼šI  
+#define  FID_YSQBH              9225  //åŸç”³è¯·ç¼–å·  DTï¼šC  
+#define  FID_ZJJSLX             9226  //èµ„é‡‘ç»“ç®—ç±»å‹  DTï¼šI  
+#define  FID_YYRQ               9227  //é¢„çº¦æ—¥æœŸ  DTï¼šI  
+#define  FID_JJZH               9228  //åŸºé‡‘å¸å·  DTï¼šC  
+#define  FID_JJZHXM             9229  //åŸºé‡‘å¸æˆ·å§“å  DTï¼šC  
+#define  FID_XSDM               9231  //é”€å”®ä»£ç   DTï¼šC  
+#define  FID_TJDM               9232  //ç»Ÿè®¡ä»£ç   DTï¼šC  
+#define  FID_JJFL               9233  //åŸºé‡‘åˆ†ç±»  DTï¼šI  
+#define  FID_GRZGCYBL           9234  //ä¸ªäººæœ€é«˜æŒæœ‰æ¯”ä¾‹  DTï¼šR  
+#define  FID_JGZGCYBL           9235  //æœºæ„æœ€é«˜æŒæœ‰æ¯”ä¾‹  DTï¼šR  
+#define  FID_MRFS               9236  //è®¤è´­ç”³è´­é»˜è®¤æ–¹å¼  DTï¼šI  
+#define  FID_KYSL               9237  //å¯ç”¨æ•°é‡  DTï¼šI  
+#define  FID_WTFE               9238  //å§”æ‰˜ä»½é¢  DTï¼šR  
+#define  FID_YYBZ               9239  //é¢„çº¦æ ‡å¿—  DTï¼šI  
+#define  FID_ORDERS             9240  //è®¢å•é¡ºåºå·  DTï¼šI  
+#define  FID_DFJJZH             9241  //å¯¹æ–¹åŸºé‡‘å¸å·  DTï¼šC  
+#define  FID_DFJYZH             9242  //å¯¹æ–¹äº¤æ˜“å¸å·  DTï¼šC  
+#define  FID_DFWDH              9243  //å¯¹æ–¹ç½‘ç‚¹å·  DTï¼šC  
+#define  FID_DFXSSDM            9244  //å¯¹æ–¹é”€å”®å•†ä»£ç   DTï¼šC  
+#define  FID_PZDM               9245  //å“ç§ä»£ç   DTï¼šC  
+#define  FID_DFSFFS             9246  //å¯¹æ–¹æ”¶è´¹æ–¹å¼  DTï¼šI  
+#define  FID_GHYY               9247  //è¿‡æˆ·åŸå›   DTï¼šI  
+#define  FID_JJSL               9248  //åŸºé‡‘ä»½é¢æ•°é‡  DTï¼šR  
+#define  FID_LJWYCS             9249  //ç´¯è®¡è¿çº¦æ¬¡æ•°  DTï¼šI  
+#define  FID_LXWYCS             9250  //è¿ç»­è¿çº¦æ¬¡æ•°  DTï¼šI  
+#define  FID_QQCS               9251  //æ¬ ç¼ºæ¬¡æ•°  DTï¼šI  
+#define  FID_SCKKRQ             9252  //ä¸Šæ¬¡æ‰£æ¬¾æ—¥æœŸ  DTï¼šI  
+#define  FID_MYKKRQ             9253  //æ¯æœˆæ‰£æ¬¾æ—¥æœŸ  DTï¼šI  
+#define  FID_SGJE               9254  //ç”³è´­é‡‘é¢  DTï¼šC  DTï¼šDTï¼š2  
+#define  FID_SCSGZDJE           9255  //é¦–æ¬¡ç”³è´­æœ€ä½é‡‘é¢  DTï¼šR  
+#define  FID_SGZDJE             9256  //ç”³è´­æœ€ä½é‡‘é¢  DTï¼šR  
+#define  FID_CONTENT            9257  //å†…å®¹  DTï¼šC  
+#define  FID_TITLE              9258  //æ ‡é¢˜  DTï¼šC  
+#define  FID_GGLB               9259  //å…¬å‘Šç±»åˆ«  DTï¼šI  
+#define  FID_JYZH               9260  //äº¤æ˜“å¸å·  DTï¼šC  
+#define  FID_TALSH              9261  //TAæµæ°´å·  DTï¼šC  
+#define  FID_QRRQ               9262  //ç¡®è®¤æ—¥æœŸ  DTï¼šI  
+#define  FID_QRFE               9263  //ç¡®è®¤ä»½é¢  DTï¼šR  
+#define  FID_QRJE               9264  //ç¡®è®¤é‡‘é¢  DTï¼šR  
+#define  FID_DLF                9265  //ä»£ç†é  DTï¼šR  
+#define  FID_SHF                9266  //èµå›è´¹  DTï¼šR  
+#define  FID_YHS                9267  //å°èŠ±ç¨  DTï¼šR  
+#define  FID_ZFE                9268  //æ€»ä»½é¢  DTï¼šR  
+#define  FID_DJFE               9269  //å†»ç»“ä»½é¢  DTï¼šR  
+#define  FID_KYFE               9270  //å¯ç”¨ä»½é¢  DTï¼šR  
+#define  FID_DZRQ               9271  //åˆ°å¸æ—¥æœŸ  DTï¼šI  
+#define  FID_SFHLJE             9272  //å®é™…çº¢åˆ©é‡‘é¢  DTï¼šR  
+#define  FID_HLZJE              9273  //çº¢åˆ©æ€»é‡‘é¢  DTï¼šR  
+#define  FID_FHDWFE             9274  //åˆ†çº¢å•ä½ä»½é¢  DTï¼šR  
+#define  FID_FHJJFE             9275  //åˆ†çº¢åŸºé‡‘ä»½é¢  DTï¼šR  
+#define  FID_ZTZFE              9276  //å†æŠ•èµ„ä»½é¢  DTï¼šR  
+#define  FID_DJZTZFE            9277  //å†»ç»“å†æŠ•èµ„ä»½é¢  DTï¼šR  
+#define  FID_YJKBFS             9278  //ä½£é‡‘æ†ç»‘æ–¹å¼  DTï¼šI  
+#define  FID_ZFHJE              9279  //æ€»è¿”è¿˜é‡‘é¢  DTï¼šR  
+#define  FID_HGRQFCJE           9280  //å›è´­èåˆ¸ä»˜å‡ºé‡‘é¢  DTï¼šR  
+#define  FID_HGRZSRJE           9281  //å›è´­èèµ„æ”¶å…¥é‡‘é¢  DTï¼šR  
+#define  FID_RQGHSRJE           9282  //èåˆ¸è´­å›æ”¶å…¥é‡‘é¢  DTï¼šR  
+#define  FID_RZGHFCJE           9283  //èèµ„è´­å›ä»˜å‡ºé‡‘é¢  DTï¼šR  
+#define  FID_HLPFJE             9284  //çº¢åˆ©æ´¾å‘é‡‘é¢  DTï¼šR  
+#define  FID_PGJKJE             9285  //é…è‚¡ç¼´æ¬¾é‡‘é¢  DTï¼šR  
+#define  FID_SGZQFC             9286  //ç”³è´­ä¸­ç­¾ä»˜å‡º  DTï¼šR  
+#define  FID_ZQDFJE             9287  //å€ºåˆ¸å…‘ä»˜é‡‘é¢  DTï¼šR  
+#define  FID_ZZLGJE             9288  //è½¬å€ºé›¶è‚¡èµ„é‡‘  DTï¼šR  
+#define  FID_BYSJE              9289  //ä¹°åº”æ”¶é‡‘é¢  DTï¼šR  
+#define  FID_SGKFC              9290  //ç”³è´­æ¬¾ä»˜å‡ºé‡‘é¢  DTï¼šR  
+#define  FID_SGKSR              9291  //ç”³è´­æ¬¾æ”¶å…¥é‡‘é¢  DTï¼šR  
+#define  FID_SYSJE              9292  //å–åº”æ”¶é‡‘é¢  DTï¼šR  
+#define  FID_WGHZJ              9293  //æœªè´­å›èµ„é‡‘  DTï¼šR  
+#define  FID_WHSGK              9294  //æœªå›ç”³è´­æ¬¾  DTï¼šR  
+#define  FID_BRKHSL             9295  //æœ¬æ—¥å¼€æˆ·æ•°é‡  DTï¼šI  
+#define  FID_BRXHSL             9296  //æœ¬æ—¥é”€æˆ·æ•°é‡  DTï¼šI  
+#define  FID_MCDXSL             9297  //å–å‡ºæŠµæ¶ˆæ•°é‡  DTï¼šI  
+#define  FID_MRDXSL             9298  //ä¹°å…¥æŠµæ¶ˆæ•°é‡  DTï¼šI  
+#define  FID_SGCJSL             9299  //ç”³è´­æˆäº¤æ•°é‡  DTï¼šI  
+#define  FID_SHCJSL             9300  //èµå›æˆäº¤æ•°é‡  DTï¼šI  
+#define  FID_FEMXLSH            9301  //ä»½é¢æ˜ç»†æµæ°´å·  DTï¼šC  
+#define  FID_FEDZRQ             9302  //ä»½é¢åˆ°å¸æ—¥æœŸ  DTï¼šC  
+#define  FID_ZJDZRQ             9303  //èµ„é‡‘åˆ°å¸æ—¥æœŸ  DTï¼šC  
+#define  FID_FHDJFE             9304  //åˆ†çº¢å†»ç»“ä»½é¢  DTï¼šC  
+#define  FID_FEYE               9305  //ä»½é¢ä½™é¢  DTï¼šC  
+#define  FID_RGJE               9306  //è®¤è´­é‡‘é¢  DTï¼šC  DTï¼šDTï¼šR22.2  
+#define  FID_SHFE               9307  //èµå›ä»½é¢  DTï¼šC  
+#define  FID_BRBD               9308  //æœ¬æ—¥å˜åŠ¨é‡‘é¢  DTï¼šR  
+#define  FID_XYJKFSJE           9309  //ä¿¡ç”¨å€Ÿæ¬¾å‘ç”Ÿé‡‘é¢  DTï¼šR  
+#define  FID_XYJKYE             9310  //ä¿¡ç”¨å€Ÿæ¬¾ä½™é¢  DTï¼šR  
+#define  FID_FILEZAP            9311  //æ–‡ä»¶å‹ç¼©  DTï¼šI  
+#define  FID_MZZL               9312  //é¢å€¼ç§ç±»  DTï¼šC  
+#define  FID_QX                 9313  //æœŸé™  DTï¼šI  
+#define  FID_DQBH               9314  //å½“å‰ç¼–å·  DTï¼šC  
+#define  FID_DFJG               9315  //å€ºåˆ¸å…‘ä»˜ä»·æ ¼  DTï¼šC  
+#define  FID_FXED               9316  //å€ºåˆ¸å‘è¡Œé¢åº¦  DTï¼šI  
+#define  FID_FXSL               9317  //å€ºåˆ¸å‘è¡Œæ•°é‡  DTï¼šI  
+#define  FID_TS                 9318  //å¤©æ•°  DTï¼šI  
+#define  FID_SXFL               9319  //æ‰‹ç»­è´¹ç‡  DTï¼šI  
+#define  FID_YQLL               9320  //é€¾æœŸåˆ©ç‡  DTï¼šI  
+#define  FID_TGFL               9321  //æ‰˜ç®¡è´¹ç‡  DTï¼šI  
+#define  FID_LJJZ               9322  //åŸºé‡‘ç´¯è®¡å‡€å€¼  DTï¼šD  
+#define  FID_MWFSY              9323  //æ¯ä¸‡ä»½æ”¶ç›Š  DTï¼šD  
+#define  FID_NSYL               9324  //åŸºé‡‘å¹´åŒ–æ”¶ç›Šç‡(%)  DTï¼šD  
+#define  FID_TGJE               9325  //å€ºåˆ¸è´­ä¹°é‡‘é¢  DTï¼šI  
+#define  FID_DBGBH              9326  //ä»£ä¿ç®¡ç¼–å·  DTï¼šC  
+#define  FID_DBGRQ              9327  //ä»£ä¿ç®¡æ—¥æœŸ  DTï¼šI  
+#define  FID_DFJE               9328  //å…‘ä»˜é‡‘é¢  DTï¼šD  
+#define  FID_DFLX               9329  //å…‘ä»˜åˆ©æ¯  DTï¼šD  
+#define  FID_DFGY               9330  //å…‘ä»˜æŸœå‘˜  DTï¼šC  
+#define  FID_DFYYB              9331  //å…‘ä»˜è¥ä¸šéƒ¨  DTï¼šC  
+#define  FID_GSRQ               9332  //æŒ‚å¤±æ—¥æœŸ  DTï¼šI  
+#define  FID_NBDM               9333  //å€ºåˆ¸ä»£ç   DTï¼šC  
+#define  FID_DBGGY              9334  //ä»£ä¿ç®¡æŸœå‘˜  DTï¼šC  
+#define  FID_DBGYYB             9335  //ä»£ä¿ç®¡è¥ä¸šéƒ¨  DTï¼šC  
+#define  FID_NF                 9336  //å¹´ä»½  DTï¼šI  
+#define  FID_XQJE               9337  //ç°åˆ¸é‡‘é¢  DTï¼šD  
+#define  FID_DBBC               9338  //ä»£è¡¨å˜å·®  DTï¼šI  
+#define  FID_XQBC               9339  //ç°å·®å˜å·®  DTï¼šI  
+#define  FID_DBGBD              9340  //ä»£ä¿ç®¡å˜åŠ¨  DTï¼šI  
+#define  FID_XQBD               9341  //ç°åˆ¸å˜åŠ¨  DTï¼šI  
+#define  FID_DBGSJ              9342  //ä»£ä¿ç®¡æ—¶é—´  DTï¼šC  
+#define  FID_GSSJ               9343  //æŒ‚å¤±æ—¶é—´  DTï¼šC  
+#define  FID_DFSJ               9344  //å…‘ä»˜æ—¶é—´  DTï¼šC  
+#define  FID_PLRQ               9345  //æ´¾åˆ©æ—¥æœŸ  DTï¼šI  
+#define  FID_PLSJ               9346  //æ´¾åˆ©æ—¶é—´  DTï¼šC  
+#define  FID_DBGJE              9347  //ä»£ä¿ç®¡é‡‘é¢  DTï¼šC  
+#define  FID_TGBD               9348  //æ‰˜ç®¡å˜åŠ¨  DTï¼šC  
+#define  FID_SCDBG              9349  //ä¸Šæ¬¡ä»£ä¿ç®¡  DTï¼šC  
+#define  FID_SCXQ               9350  //ä¸Šæ¬¡ç°åˆ¸  DTï¼šC  
+#define  FID_SCTG               9351  //ä¸Šæ¬¡æ‰˜ç®¡  DTï¼šC  
+#define  FID_PZSM               9352  //å“ç§è¯´æ˜  DTï¼šC  
+#define  FID_QYBZ               9353  //ç­¾çº¦æ ‡å¿—  DTï¼šI  
+#define  FID_QYJJDM             9354  //ç­¾çº¦åŸºé‡‘ä»£ç   DTï¼šC  
+#define  FID_DXDM               9355  //çŸ­ä¿¡ä»£ç   DTï¼šC  
+#define  FID_DXMC               9356  //çŸ­ä¿¡åç§°  DTï¼šC  
+#define  FID_JJFXDJ             9357  //åŸºé‡‘é£é™©ç­‰çº§  DTï¼šI  
+#define  FID_KHQR               9358  //å®¢æˆ·ç¡®è®¤æ ‡å¿—  DTï¼šI  
+#define  FID_GRRGSGDBZGJE       9359  //ä¸ªäººè®¤è´­ç”³è´­å•ç¬”æœ€é«˜é‡‘é¢  DTï¼šR  
+#define  FID_GRRGSGDTZGJE       9360  //ä¸ªäººè®¤è´­ç”³è´­å½“å¤©æœ€é«˜é‡‘é¢  DTï¼šR  
+#define  FID_MCDJSL             9361  //å–å‡ºå†»ç»“æ•°é‡  DTï¼šC  
+#define  FID_JGRGSGDBZGJE       9362  //æœºæ„è®¤è´­ç”³è´­å•ç¬”æœ€é«˜é‡‘é¢  DTï¼šR  
+#define  FID_JGRGSGDTZGJE       9363  //æœºæ„è®¤è´­ç”³è´­å½“å¤©æœ€é«˜é‡‘é¢  DTï¼šR  
+#define  FID_LCCPBZ             9364  //åŸºé‡‘ç†è´¢äº§å“æ ‡å¿—  DTï¼šI  
+#define  FID_CDYY               9365  //æ’¤å•åŸå›   DTï¼šC  DTï¼šDTï¼šç»™VIPæˆäº¤è§¦å‘ä½¿ç”¨  
+#define  FID_MRBDRQ             9366  //ä¹°å…¥å˜åŠ¨æ—¥æœŸ  DTï¼šI  
+#define  FID_MCBDRQ             9367  //å–å‡ºå˜åŠ¨æ—¥æœŸ  DTï¼šI  
+#define  FID_GRSHDBSX           9368  //ä¸ªäººèµå›å•ç¬”ä¸Šé™  DTï¼šR  
+#define  FID_GRSHDRSX           9369  //ä¸ªäººèµå›å½“æ—¥ä¸Šé™  DTï¼šR  
+#define  FID_JGSHDBSX           9370  //æœºæ„èµå›å•ç¬”ä¸Šé™  DTï¼šR  
+#define  FID_JGSHDRSX           9371  //æœºæ„èµå›å½“æ—¥ä¸Šé™  DTï¼šR  
+#define  FID_ZZHBM              9372  //å­è´¦æˆ·ç¼–ç   DTï¼šC  
+#define  FID_QQLX               9373  //æœŸæƒç±»å‹  DTï¼šC  
+#define  FID_BDZQLX             9374  //æœŸæƒæ ‡çš„è¯åˆ¸ç±»å‹  DTï¼šC  
+#define  FID_MMFX               9375  //æœŸæƒä¹°å–æ–¹å‘  DTï¼šC  
+#define  FID_QQBDBQ             9377  //æœŸæƒå¤‡å…‘æ ‡ç­¾  DTï¼šC  
+#define  FID_QQHYDM             9378  //æœŸæƒåˆçº¦ä»£ç   DTï¼šC  
+#define  FID_QQHYMC             9379  //æœŸæƒåˆçº¦åç§°  DTï¼šC  
+#define  FID_STEPEX             9380  //STEPå­—æ®µåŸŸ  DTï¼šC  
+#define  FID_ZJSJ               9381  //æ˜¨ç»“ç®—ä»·(æœŸæƒ)  DTï¼šR  
+#define  FID_BDZSP              9382  //æœŸæƒæ ‡çš„æ˜¨æ”¶ç›˜  DTï¼šR  
+#define  FID_BDZXJ              9383  //æœŸæƒæ ‡çš„æœ€æ–°ä»·  DTï¼šR  
+#define  FID_QQLA               9384  //çœ‹æ¶¨æ–¹å‘å¯å¼€ä»“é‡  DTï¼šR  
+#define  FID_QQLS               9385  //çœ‹æ¶¨æ–¹å‘å¥—ä¿å¯å¼€ä»“é‡  DTï¼šR  
+#define  FID_QQSA               9386  //çœ‹è·Œæ–¹å‘å¯å¼€ä»“é‡  DTï¼šR  
+#define  FID_QQSS               9387  //çœ‹è·Œæ–¹å‘å¥—ä¿å¯å¼€ä»“é‡  DTï¼šR  
+#define  FID_DTJG               9388  //æœŸæƒåŠ¨æ€å‚è€ƒä»·æ ¼  DTï¼šR  
+#define  FID_MMFX2              9389  //æœŸæƒä¹°å–æ–¹å‘2  DTï¼šC  
+#define  FID_QQBDBQ2            9390  //æœŸæƒå¤‡å…‘æ ‡ç­¾2  DTï¼šC  
+#define  FID_QQHYDM2            9391  //æœŸæƒåˆçº¦ä»£ç 2  DTï¼šC  
+#define  FID_MMFX3              9392  //æœŸæƒä¹°å–æ–¹å‘3  DTï¼šC  
+#define  FID_QQBDBQ3            9393  //æœŸæƒå¤‡å…‘æ ‡ç­¾3  DTï¼šC  
+#define  FID_QQHYDM3            9394  //æœŸæƒåˆçº¦ä»£ç 3  DTï¼šC  
+#define  FID_MMFX4              9395  //æœŸæƒä¹°å–æ–¹å‘4  DTï¼šC  
+#define  FID_QQBDBQ4            9396  //æœŸæƒå¤‡å…‘æ ‡ç­¾4  DTï¼šC  
+#define  FID_QQHYDM4            9397  //æœŸæƒåˆçº¦ä»£ç 4  DTï¼šC  
+#define  FID_MMFX1              9398  //æœŸæƒä¹°å–æ–¹å‘1  DTï¼šC  
+#define  FID_QQHYDM1            9399  //æœŸæƒåˆçº¦ä»£ç 1  DTï¼šC  
+#define  FID_GDZH               9402  //è‚¡ä¸œè´¦å·  DTï¼šC  
+#define  FID_WLFWBZ             9404  //ç½‘ç»œæœåŠ¡æ ‡å¿—  DTï¼šC  
+#define  FID_WLFWMM             9405  //ç½‘ç»œæœåŠ¡å¯†ç   DTï¼šC  
+#define  FID_GPNF               9406  //æŒ‚ç‰Œå¹´ä»½  DTï¼šC  
+#define  FID_SGBZ               9407  //é€è‚¡æ ‡å¿—  DTï¼šC  
+#define  FID_DXBZ               9408  //å…‘æ¯æ ‡å¿—  DTï¼šC  
+#define  FID_SLBH               9409  //å—ç†ç¼–å·  DTï¼šC  
+#define  FID_HYDM2              9410  //ä¼šå‘˜ä»£ç 2  DTï¼šC  
+#define  FID_XWH2               9411  //å¸­ä½å·2  DTï¼šC  
+#define  FID_HYLX               9412  //è¡Œä¸šç±»å‹  DTï¼šC  
+#define  FID_LXDH               9413  //è”ç³»ç”µè¯  DTï¼šC  
+#define  FID_CZH                9414  //ä¼ çœŸå·  DTï¼šC  
+#define  FID_ZQDM2              9415  //è¯åˆ¸ä»£ç 2  DTï¼šC  
+#define  FID_ZDSH               9416  //ä¸­ç™»ä¸Šæµ·  DTï¼šC  
+#define  FID_ZDSZ               9417  //ä¸­ç™»æ·±åœ³  DTï¼šC  
+#define  FID_CBM                9418  //å­—ç¬¦ç¼–ç   DTï¼šC  
+#define  FID_QRSL2              9420  //ç¡®è®¤æ•°é‡2  DTï¼šC  
+#define  FID_QRJG               9421  //ç¡®è®¤ä»·æ ¼  DTï¼šC  
+#define  FID_SLRQ               9422  //å—ç†æ—¥æœŸ  DTï¼šC  
+#define  FID_SLSJ               9423  //å—ç†æ—¶é—´  DTï¼šC  
+#define  FID_GDZH2              9424  //è‚¡ä¸œè´¦å·2  DTï¼šC  
+#define  FID_YTZRMC             9425  //åŸæŠ•èµ„äººåç§°  DTï¼šC  
+#define  FID_YZJBH              9426  //åŸè¯ä»¶ç¼–å·  DTï¼šC  
+#define  FID_SQDW               9427  //ç”³è¯·å•ä½  DTï¼šC  
+#define  FID_ZHGFLB             9428  //è´¦æˆ·è§„èŒƒç±»åˆ«  DTï¼šC  
+#define  FID_CDBZ               9429  //æ’¤å•æ ‡å¿—  DTï¼šC  
+#define  FID_LDSD               9430  //æ¼å•æ‰«æ  DTï¼šC  
+#define  FID_ZXJGLX             9431  //æ‰§è¡Œæœºå…³ç±»å‹  DTï¼šC  
+#define  FID_CLBZ_CONDITION     9432  //å¤„ç†æ ‡å¿—  DTï¼šC  
+#define  FID_LXYZBM             9434  //è”ç³»é‚®æ”¿ç¼–ç   DTï¼šC  
+#define  FID_ZZJG               9436  //ç»„ç»‡æœºæ„  DTï¼šC  
+#define  FID_JGZJYXQ            9437  //æœºæ„è¯ä»¶æœ‰æ•ˆæœŸ  DTï¼šC  
+#define  FID_YHJSZH             9438  //é“¶è¡Œç»“ç®—è´¦æˆ·  DTï¼šC  
+#define  FID_QSZY               9439  //åˆ¸å•†è‡ªç”¨  DTï¼šC  
+#define  FID_PSWD1              9440  //æœåŠ¡å¯†ç 1  DTï¼šC  
+#define  FID_PSWD2              9441  //æœåŠ¡å¯†ç 2  DTï¼šC  
+#define  FID_BYNR               9442  //å¤‡ç”¨  DTï¼šC  
+#define  FID_CGYH               9443  //å­˜ç®¡é“¶è¡Œ  DTï¼šC  
+#define  FID_BYBZ               9444  //å¤‡ç”¨æ ‡å¿—  DTï¼šC  
+#define  FID_ZXSWHHR            9446  //æ‰§è¡Œäº‹åŠ¡åˆä¼™äºº  DTï¼šC  
+#define  FID_FRDBSFZH           9447  //æ³•äººä»£è¡¨èº«ä»½è¯å·  DTï¼šC  
+#define  FID_SDXLB              9451  //é€‚å½“æ€§ç±»åˆ«  DTï¼šC  
+#define  FID_BJDZT              9500  //æŠ¥ä»·å•çŠ¶æ€  DTï¼šC  
+#define  FID_WJLZ               9501  //é—®å·æ ç»„  DTï¼šC  
+#define  FID_WJLM               9502  //é—®å·æ ç›®  DTï¼šC  
+#define  FID_DAFZ               9503  //ç­”æ¡ˆåˆ†å€¼  DTï¼šC  
+#define  FID_ZJYT               9504  //èµ„é‡‘ç”¨é€”  DTï¼šC  
+#define  FID_LJSY               9505  //ç´¯è®¡æ”¶ç›Š  DTï¼šC  
+#define  FID_YJSY               9506  //é¢„è®¡æ”¶ç›Š  DTï¼šC  
+#define  FID_BP_WTLY            9507  //æŠ¥ç›˜å§”æ‰˜æ¥æºï¼ˆè¯·ä¸è¦ä½¿ç”¨è¿™ä¸ªæ–­ï¼Œç‰¹æ®Š  ï¼‰  DTï¼šC  
+#define  FID_RGSX_GR            9508  //è®¤è´­ä¸Šé™(ä¸ªäºº)  DTï¼šC  
+#define  FID_RGSX_JG            9509  //è®¤è´­ä¸Šé™(æœºæ„)  DTï¼šC  
+#define  FID_JHBZ               9510  //æ¿€æ´»æ ‡å¿—  DTï¼šC  
+#define  FID_ZXTBZ              9998  //ä¸»ç³»ç»Ÿæ ‡å¿—  DTï¼šC  DTï¼šDTï¼šè¯·ä¸è¦ä½¿ç”¨è¿™ä¸ªæ–­ï¼Œç‰¹æ®Š  
+#define  FID_XSSDM              30510  //é”€å”®å•†ä»£ç   DTï¼šC  
+#define  FID_GJZH               30511  //å½’é›†è´¦æˆ·  DTï¼šC  
+#define  FID_KSSQH              30512  //å¼€å§‹ç”³è¯·å·  DTï¼šC  
+#define  FID_JSSQH              30513  //ç»“æŸç”³è¯·å·  DTï¼šC  
+#define  FID_YLSH               30517  //åŸæµæ°´å·  DTï¼šC  
+#define  FID_QDDM               30519  //æ¸ é“ä»£ç   DTï¼šC  
+#define  FID_SHH                30533  //å•†æˆ·å·  DTï¼šC  
+#define  FID_DEHH               30540  //å¤§é¢è¡Œå·  DTï¼šC  
+#define  FID_KHYHMC             60261  //å¼€æˆ·é“¶è¡Œåç§°  DTï¼šC  
+#define	 FID_JZRQ               10062 //å‡€å€¼æ—¥æœŸ
+#define	 FID_JZRQPY             20000 //å‡€å€¼æ—¥åç§»
+#define	 FID_SSZT				20001 //å®æ—¶çŠ¶æ€ 
+#define  FID_JSP				20002 //ä»Šæ—¥æ”¶ç›˜ä»·
+#define  FID_LGDDZT				20003 //é›¶è‚¡è®¢å•çŠ¶æ€
+#define  FID_ZSDDZT				20004 //æ•´æ‰‹è®¢å•çŠ¶æ€
+#define  FID_HQCJZH				20005 //è¡Œæƒ…é‡‡é›†å¸§å·
+#define  FID_HQTSZH             20006 //è¡Œæ¨é€å¸§å·
+#define  FID_GGTBD              20010 //æ¸¯è‚¡é€šæ ‡çš„
 
 #endif // !defined(_FIDDEF_DEFINE_H)

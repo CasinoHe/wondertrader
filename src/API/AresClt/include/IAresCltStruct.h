@@ -14,7 +14,7 @@ typedef char	char_256[256];
 
 #pragma pack(1)
 
-//ÊĞ³¡¶¨Òå(´Ë¶¨Òå½öÏŞĞĞÇéÊ¹ÓÃ)
+//å¸‚åœºå®šä¹‰(æ­¤å®šä¹‰ä»…é™è¡Œæƒ…ä½¿ç”¨)
 #define		ACLT_MARKET_UNKNOW			0
 #define		ACLT_MARKET_SSE				1
 #define		ACLT_MARKET_SZSE			2
@@ -23,39 +23,39 @@ typedef char	char_256[256];
 typedef		char	AClt_Market;
 
 //.................................................................................................................................................................................................................................
-//ÊĞ³¡Ê±¼ä
+//å¸‚åœºæ—¶é—´
 typedef struct
 {
-	int								Date;						//ÈÕÆÚ£¬ĞÎÊ½ÎªYYYYMMDD
-	int								Time;						//Ê±¼ä, ĞÎÊ½ÎªHHMMSS
+	int								Date;						//æ—¥æœŸï¼Œå½¢å¼ä¸ºYYYYMMDD
+	int								Time;						//æ—¶é—´, å½¢å¼ä¸ºHHMMSS
 }tagAClt_MarketField;
 
-//Ò»µµ
+//ä¸€æ¡£
 typedef struct
 {
-	double							Price;						//Î¯ÍĞ¼Û¸ñ
-	unsigned __int64				Volume;						//Î¯ÍĞÁ¿[¹É]
+	double							Price;						//å§”æ‰˜ä»·æ ¼
+	unsigned __int64				Volume;						//å§”æ‰˜é‡[è‚¡]
 }tagAClt_BuySell;
 
-//ĞĞÇé
+//è¡Œæƒ…
 typedef struct
 {
 	AClt_Market						Exchange;
 	char_31							Code;
-	double		 					Open;						//¿ªÅÌ¼Û
-	double		 					High;						//×î¸ß¼Û
-	double		 					Low;						//×îµÍ¼Û
-	double		 					Now;						//×îĞÂ
+	double		 					Open;						//å¼€ç›˜ä»·
+	double		 					High;						//æœ€é«˜ä»·
+	double		 					Low;						//æœ€ä½ä»·
+	double		 					Now;						//æœ€æ–°
 
-	unsigned __int64 				Volume;						//³É½»Á¿
-	double 							Amount;						//³É½»½ğ¶î(Ôª)
+	unsigned __int64 				Volume;						//æˆäº¤é‡
+	double 							Amount;						//æˆäº¤é‡‘é¢(å…ƒ)
 
-	unsigned __int64 				Position;					//³Ö²ÖÁ¿
-	double		 					SettlePrice;				//½áËã¼Û
+	unsigned __int64 				Position;					//æŒä»“é‡
+	double		 					SettlePrice;				//ç»“ç®—ä»·
 
-	tagAClt_BuySell					Buy[5];						//Âò5µµ
-	tagAClt_BuySell					Sell[5];					//Âô5µµ
-	char_8 							TradingCode;				//½»Ò××´Ì¬(ÈôÓĞ)[¼ûÎÄµµ]
+	tagAClt_BuySell					Buy[5];						//ä¹°5æ¡£
+	tagAClt_BuySell					Sell[5];					//å–5æ¡£
+	char_8 							TradingCode;				//äº¤æ˜“çŠ¶æ€(è‹¥æœ‰)[è§æ–‡æ¡£]
 }tagAClt_QuoteField;
 
 //.................................................................................................................................................................................................................................
@@ -70,97 +70,97 @@ typedef struct
 #define		AClt_INSTRTYPE_FUTURE		3
 typedef     char		ACLT_INSTRUMENT_TYPE;
 
-//¹ÉÆ±¡¢»ù½ğ»ù´¡Êı¾İ½á¹¹
+//è‚¡ç¥¨ã€åŸºé‡‘åŸºç¡€æ•°æ®ç»“æ„
 typedef struct
 {
-	tagAClt_Instrument				Instrument;					//ÊĞ³¡+´úÂë
-	char_32							Name;						//Ãû³Æor¼ò³Æ(GBK±àÂë)[×¢Òâ:ÓÉÓÚ½»Ò×Ëù¿ÉÄÜ»áÀ©Î»,À©Î»ºóµÄÃû³Æ£¬Í¨¹ıÆäËû½Ó¿Ú»ñÈ¡] 
-	double							PreClose;					//×òÊÕ¼Û
-	double							UpperLimit;					//ÕÇÍ£¼Û
-	double							LowerLimit;					//µøÍ£¼Û
+	tagAClt_Instrument				Instrument;					//å¸‚åœº+ä»£ç 
+	char_32							Name;						//åç§°orç®€ç§°(GBKç¼–ç )[æ³¨æ„:ç”±äºäº¤æ˜“æ‰€å¯èƒ½ä¼šæ‰©ä½,æ‰©ä½åçš„åç§°ï¼Œé€šè¿‡å…¶ä»–æ¥å£è·å–] 
+	double							PreClose;					//æ˜¨æ”¶ä»·
+	double							UpperLimit;					//æ¶¨åœä»·
+	double							LowerLimit;					//è·Œåœä»·
 
-	unsigned char					SubType;					//¹ÉÆ±or ETFFund
-	char_10							ProductID;					//ËùÊô²úÆ·ID
+	unsigned char					SubType;					//è‚¡ç¥¨or ETFFund
+	char_10							ProductID;					//æ‰€å±äº§å“ID
 
-	unsigned int					LotSize;					//ÊÖ±ÈÂÊ
-	unsigned int					ContractMulti;				//(ºÏÔ¼³ËÊı*ºÏÔ¼µ¥Î»)
-	double							PriceTick;					//¼Û¸ñ±ä¶¯¼ÛÎ»
-	unsigned char					ShowDot;					//ÏÔÊ¾Ğ¡ÊıÎ»Êı
-	bool							IsTrading;					//ÊÇ·ñ½»Ò×
+	unsigned int					LotSize;					//æ‰‹æ¯”ç‡
+	unsigned int					ContractMulti;				//(åˆçº¦ä¹˜æ•°*åˆçº¦å•ä½)
+	double							PriceTick;					//ä»·æ ¼å˜åŠ¨ä»·ä½
+	unsigned char					ShowDot;					//æ˜¾ç¤ºå°æ•°ä½æ•°
+	bool							IsTrading;					//æ˜¯å¦äº¤æ˜“
 }tagAClt_StockBaseData;
 
 //.................................................................................................................................................................................................................................
-//ÆÚÈ¨»ù´¡Êı¾İ½á¹¹
+//æœŸæƒåŸºç¡€æ•°æ®ç»“æ„
 typedef struct
 {
-	tagAClt_Instrument				Instrument;					//ÊĞ³¡+´úÂë(´Ë´úÂëÊÇ¿ÉÒÔÏÂµ¥µÄ´úÂë)
-	char_32							Name;					//Ãû³Æor ¼ò³Æ(GBK)		//ÖĞ½ğÌî´úÂë [×¢Òâ:ÓÉÓÚ½»Ò×Ëù¿ÉÄÜ»áÀ©Î»,À©Î»ºóµÄÃû³Æ£¬Í¨¹ıÆäËû½Ó¿Ú»ñÈ¡] 
-	char_20							ContractID;				//»¦ÉîÆÚÈ¨µÄºÏÔ¼´úÂë£¬²»ÄÜÓÃÀ´ÏÂµ¥  //ÖĞ½ğÌî¿Õ
+	tagAClt_Instrument				Instrument;					//å¸‚åœº+ä»£ç (æ­¤ä»£ç æ˜¯å¯ä»¥ä¸‹å•çš„ä»£ç )
+	char_32							Name;					//åç§°or ç®€ç§°(GBK)		//ä¸­é‡‘å¡«ä»£ç  [æ³¨æ„:ç”±äºäº¤æ˜“æ‰€å¯èƒ½ä¼šæ‰©ä½,æ‰©ä½åçš„åç§°ï¼Œé€šè¿‡å…¶ä»–æ¥å£è·å–] 
+	char_20							ContractID;				//æ²ªæ·±æœŸæƒçš„åˆçº¦ä»£ç ï¼Œä¸èƒ½ç”¨æ¥ä¸‹å•  //ä¸­é‡‘å¡«ç©º
 
-	double							PreClose;					//×òÊÕ¼Û
-	double							PreSettle;					//×ò½á¼Û
-	unsigned __int64				PrePosition;				//×ò³Ö²Ö
-	double							UpperLimit;					//ÕÇÍ£¼Û
-	double							LowerLimit;					//µøÍ£¼Û
+	double							PreClose;					//æ˜¨æ”¶ä»·
+	double							PreSettle;					//æ˜¨ç»“ä»·
+	unsigned __int64				PrePosition;				//æ˜¨æŒä»“
+	double							UpperLimit;					//æ¶¨åœä»·
+	double							LowerLimit;					//è·Œåœä»·
 
-	char							OptKind;					//ÆÚÈ¨ÖÖÀà('C' = call 'P'= put)
-	char							ExecKind;					//ĞĞÈ¨ÖÖÀà('A' = ÃÀÊ½ 'E' = Å·Ê½)
+	char							OptKind;					//æœŸæƒç§ç±»('C' = call 'P'= put)
+	char							ExecKind;					//è¡Œæƒç§ç±»('A' = ç¾å¼ 'E' = æ¬§å¼)
 
-	char_10							ProductID;					//ËùÊô²úÆ·ID
-	tagAClt_Instrument				UnderlyingCode;				//±êµÄÊĞ³¡+´úÂë
+	char_10							ProductID;					//æ‰€å±äº§å“ID
+	tagAClt_Instrument				UnderlyingCode;				//æ ‡çš„å¸‚åœº+ä»£ç 
 
-	unsigned int					LotSize;					//ÊÖ±ÈÂÊ
-	unsigned int					ContractMulti;				//(ºÏÔ¼³ËÊı*ºÏÔ¼µ¥Î»)
-	double							PriceTick;					//¼Û¸ñ±ä¶¯¼ÛÎ»
+	unsigned int					LotSize;					//æ‰‹æ¯”ç‡
+	unsigned int					ContractMulti;				//(åˆçº¦ä¹˜æ•°*åˆçº¦å•ä½)
+	double							PriceTick;					//ä»·æ ¼å˜åŠ¨ä»·ä½
 
-	double							ExecPrice;					//ĞĞÈ¨¼Û¸ñ
-	int								LastTradeDay;				//×îºó½»Ò×ÈÕ
-	int								EndDay;						//µ½ÆÚÈÕ
+	double							ExecPrice;					//è¡Œæƒä»·æ ¼
+	int								LastTradeDay;				//æœ€åäº¤æ˜“æ—¥
+	int								EndDay;						//åˆ°æœŸæ—¥
 
-	unsigned char					ShowDot;					//ÏÔÊ¾Ğ¡ÊıÎ»Êı
+	unsigned char					ShowDot;					//æ˜¾ç¤ºå°æ•°ä½æ•°
 	double							reserved;				//reserved
-	bool							IsTrading;					//ÊÇ·ñ½»Ò×
+	bool							IsTrading;					//æ˜¯å¦äº¤æ˜“
 }tagAClt_OptionBaseData;
 
-//ÆÚ»õ»ù´¡Êı¾İ½á¹¹
+//æœŸè´§åŸºç¡€æ•°æ®ç»“æ„
 typedef struct
 {
-	tagAClt_Instrument				Instrument;					//ÊĞ³¡+´úÂë
-	char_32							Name;					//Ãû³Æor ¼ò³Æ(GBK) [×¢Òâ:ÓÉÓÚ½»Ò×Ëù¿ÉÄÜ»áÀ©Î»,À©Î»ºóµÄÃû³Æ£¬Í¨¹ıÆäËû½Ó¿Ú»ñÈ¡] 
-	double							PreClose;					//×òÊÕ¼Û
-	double							PreSettle;					//×ò½á¼Û
-	unsigned __int64				PrePosition;				//×ò³Ö²Ö
-	double							UpperLimit;					//ÕÇÍ£¼Û
-	double							LowerLimit;					//µøÍ£¼Û
+	tagAClt_Instrument				Instrument;					//å¸‚åœº+ä»£ç 
+	char_32							Name;					//åç§°or ç®€ç§°(GBK) [æ³¨æ„:ç”±äºäº¤æ˜“æ‰€å¯èƒ½ä¼šæ‰©ä½,æ‰©ä½åçš„åç§°ï¼Œé€šè¿‡å…¶ä»–æ¥å£è·å–] 
+	double							PreClose;					//æ˜¨æ”¶ä»·
+	double							PreSettle;					//æ˜¨ç»“ä»·
+	unsigned __int64				PrePosition;				//æ˜¨æŒä»“
+	double							UpperLimit;					//æ¶¨åœä»·
+	double							LowerLimit;					//è·Œåœä»·
 
-	char_10							ProductID;				//ËùÊô²úÆ·ID
-	tagAClt_Instrument				UnderlyingCode;				//±êµÄÊĞ³¡+´úÂë
+	char_10							ProductID;				//æ‰€å±äº§å“ID
+	tagAClt_Instrument				UnderlyingCode;				//æ ‡çš„å¸‚åœº+ä»£ç 
 
-	unsigned int					LotSize;					//ÊÖ±ÈÂÊ
-	unsigned int					ContractMulti;				//(ºÏÔ¼³ËÊı*ºÏÔ¼µ¥Î»)
-	double							PriceTick;					//¼Û¸ñ±ä¶¯¼ÛÎ»
+	unsigned int					LotSize;					//æ‰‹æ¯”ç‡
+	unsigned int					ContractMulti;				//(åˆçº¦ä¹˜æ•°*åˆçº¦å•ä½)
+	double							PriceTick;					//ä»·æ ¼å˜åŠ¨ä»·ä½
 
-	int								LastTradeDay;				//×îºó½»Ò×ÈÕ
-	int								EndDay;						//µ½ÆÚÈÕ
-	unsigned char					ShowDot;					//ÏÔÊ¾Ğ¡ÊıÎ»Êı
-	bool							IsTrading;					//ÊÇ·ñ½»Ò×
+	int								LastTradeDay;				//æœ€åäº¤æ˜“æ—¥
+	int								EndDay;						//åˆ°æœŸæ—¥
+	unsigned char					ShowDot;					//æ˜¾ç¤ºå°æ•°ä½æ•°
+	bool							IsTrading;					//æ˜¯å¦äº¤æ˜“
 }tagAClt_FutureBaseData;
 
 
-//»ù´¡Êı¾İÈıºÏÒ»
+//åŸºç¡€æ•°æ®ä¸‰åˆä¸€
 typedef	struct
 {
-	ACLT_INSTRUMENT_TYPE			InstrType;					//ÉÌÆ·ÀàĞÍ
+	ACLT_INSTRUMENT_TYPE			InstrType;					//å•†å“ç±»å‹
 	union
 	{
-		tagAClt_StockBaseData			StockBase;					//¹ÉÆ±ĞÍ
-		tagAClt_OptionBaseData			OptionBase;					//ÆÚÈ¨ĞÍ
-		tagAClt_FutureBaseData			FutureBase;					//ÆÚ»õĞÍ
+		tagAClt_StockBaseData			StockBase;					//è‚¡ç¥¨å‹
+		tagAClt_OptionBaseData			OptionBase;					//æœŸæƒå‹
+		tagAClt_FutureBaseData			FutureBase;					//æœŸè´§å‹
 	};
 }tagAClt_CommBaseData;
 
 
-//²¹³äÊı¾İ(1.14+)
+//è¡¥å……æ•°æ®(1.14+)
 typedef struct  
 {
 	AClt_Market						Exchange;

@@ -4,812 +4,812 @@ namespace MarItpdk
 {
 
 
-//¹É¶«ºÅ
+//è‚¡ä¸œå·
 typedef struct
 {
-   char     AccountId[16];    //¿Í»§ºÅ
-   char     Market[4];        //½»Ò×Ëù
-   char     SecuAccount[12];  //¹É¶«ºÅ
-   char     HolderName[16];   //¹É¶«ĞÕÃû
-   char     FundAccount[16];  //×Ê½ğÕÊºÅ
-   char     OrgCode[8];       //»ú¹¹´úÂë--½áËãÒøĞĞ
-   char     MoneyType[4];     //±ÒÖÖ
-   char     TradeAccess[16];  //½»Ò×È¨ÏŞ
-   char     MarketingUnit[8]; //½»Ò×µ¥Ôª
-   int64    HolderType;       //¹É¶«Àà±ğ
+   char     AccountId[16];    //å®¢æˆ·å·
+   char     Market[4];        //äº¤æ˜“æ‰€
+   char     SecuAccount[12];  //è‚¡ä¸œå·
+   char     HolderName[16];   //è‚¡ä¸œå§“å
+   char     FundAccount[16];  //èµ„é‡‘å¸å·
+   char     OrgCode[8];       //æœºæ„ä»£ç --ç»“ç®—é“¶è¡Œ
+   char     MoneyType[4];     //å¸ç§
+   char     TradeAccess[16];  //äº¤æ˜“æƒé™
+   char     MarketingUnit[8]; //äº¤æ˜“å•å…ƒ
+   int64    HolderType;       //è‚¡ä¸œç±»åˆ«
 } ITPDK_XYGDH;
 
 
-//ÅäÊÛÈ¨Òæ
+//é…å”®æƒç›Š
 typedef struct
 {
-   char     AccountId[16];    //¿Í»§ºÅ
-   char     Market[4];        //½»Ò×Ëù
-   char     SecuAccount[12];  //¹É¶«ºÅ
-   int      StarQty;          //¿Æ´´°æÊıÁ¿
-   int      EquityQty;        //Ö¤È¯È¨ÒæÊıÁ¿
-   int      SettleMentDate;   //ÇåËãÈÕÆÚ
+   char     AccountId[16];    //å®¢æˆ·å·
+   char     Market[4];        //äº¤æ˜“æ‰€
+   char     SecuAccount[12];  //è‚¡ä¸œå·
+   int      StarQty;          //ç§‘åˆ›ç‰ˆæ•°é‡
+   int      EquityQty;        //è¯åˆ¸æƒç›Šæ•°é‡
+   int      SettleMentDate;   //æ¸…ç®—æ—¥æœŸ
 } ITPDK_XYPSQY;
 
 
 
-//Á½ÈÚÖ¤È¯´úÂë²éÑ¯
+//ä¸¤èè¯åˆ¸ä»£ç æŸ¥è¯¢
 typedef struct
 {
-    char     Market[4];           //½»Ò×Ëù
-    char     MoneyType[4];        //±ÒÖÖ
-    char     StockCode[12];       //Ö¤È¯´úÂë
-    char     StockName[16];       //Ö¤È¯Ãû³Æ
-    char     StockType[4];        //Ö¤È¯Àà±ğ
-    double   PriceTick;           //½»Ò×¼ÛÎ»
-    double   TradeUnit;           //½»Ò×µ¥Î»
-    int64    MaxMarketTradeAmt;        //ÊĞ¼ÛÎ¯ÍĞÉÏÏŞ
-    int64    MinMarketTradeAmt;        //ÊĞ¼ÛÎ¯ÍĞÏÂÏŞ
-    int64      MaxTradeAmt;         //Î¯ÍĞÉÏÏŞ
-    int64      MinTradeAmt;         //Î¯ÍĞÏÂÏŞ
-    double   LastClosePrice;      //×òÊÕÅÌ
-    double   HighLimitPrice;      //×î¸ß±¨¼Û--ÕÇÍ£¼Û
-    double   LowLimitPrice;       //×îµÍ±¨¼Û--µøÍ£¼Û
-    int64      NetPriceFlag;        //¹úÕ®¾»¼Û±êÖ¾
-    double   InterestPrice;       //ÀûÏ¢±¨¼Û
-    int64     BrowIndex;           //·ÖÒ³²éÑ¯¶¨Î»´®
+    char     Market[4];           //äº¤æ˜“æ‰€
+    char     MoneyType[4];        //å¸ç§
+    char     StockCode[12];       //è¯åˆ¸ä»£ç 
+    char     StockName[16];       //è¯åˆ¸åç§°
+    char     StockType[4];        //è¯åˆ¸ç±»åˆ«
+    double   PriceTick;           //äº¤æ˜“ä»·ä½
+    double   TradeUnit;           //äº¤æ˜“å•ä½
+    int64    MaxMarketTradeAmt;        //å¸‚ä»·å§”æ‰˜ä¸Šé™
+    int64    MinMarketTradeAmt;        //å¸‚ä»·å§”æ‰˜ä¸‹é™
+    int64      MaxTradeAmt;         //å§”æ‰˜ä¸Šé™
+    int64      MinTradeAmt;         //å§”æ‰˜ä¸‹é™
+    double   LastClosePrice;      //æ˜¨æ”¶ç›˜
+    double   HighLimitPrice;      //æœ€é«˜æŠ¥ä»·--æ¶¨åœä»·
+    double   LowLimitPrice;       //æœ€ä½æŠ¥ä»·--è·Œåœä»·
+    int64      NetPriceFlag;        //å›½å€ºå‡€ä»·æ ‡å¿—
+    double   InterestPrice;       //åˆ©æ¯æŠ¥ä»·
+    int64     BrowIndex;           //åˆ†é¡µæŸ¥è¯¢å®šä½ä¸²
    
 }ITPDK_XYZQDM;
 
 
-//×Ê½ğĞÅÏ¢
+//èµ„é‡‘ä¿¡æ¯
 typedef struct
 {
-   char     AccountId[16];             //¿Í»§ºÅ
-   char     FundAccount[16];           //×Ê½ğÕËºÅ
-   char     MoneyType[4];              //±ÒÖÖ
-   char     OrgCode[8];                //»ú¹¹´úÂë
-   int      MasterFlag;                //Ö÷ÕÊ»§±êÖ¾
-   int      AccountType;               //ÕÊ»§Àà±ğ
-   double   LastBalance;               //ÉÏÈÕÓà¶î
-   double   CurrentBalance;            //ÕË»§Óà¶î
-   double   FrozenBalance;             //¶³½á×Ê½ğ
-   double   T2_FrozenBalance;          //T+2¶³½á½ğ¶î
-   double   FundAvl;                   //¿ÉÓÃ×Ê½ğ
-   double   T2_FundAvl;                //T+2¿ÉÓÃ×Ê½ğ
-   double   TotalAsset;                //×Ü×Ê²ú
-   double   MarketValue;               //×îĞÂÊĞÖµ
-   double   DebtAmt;                   //¸ºÕ®½ğ¶î
-   double   CreditQuota;               //ĞÅÓÃ¶î¶È
-   double   CreditQuotaAvl;            //¿ÉÓÃĞÅÓÃ¶î¶È
-   double   UncomeBalance;             //Î´½»ÊÕ×Ê½ğ
-   double   CashBalance;               //ÏÖ½ğÓà¶î
-   double   CashAsset;                 //ÏÖ½ğ×Ê²ú
-   double   OtherAsset;                //ÆäËû×Ê²ú
-   double   FetchBalance;              //¿ÉÈ¡×Ê½ğ
-   double   DateProfit;                //±¾ÈÕÓ¯¿÷
-   double   UnclearProfit;             //¸¡¶¯Ó¯¿÷
-   double   DiluteUnclearProfit;       //Ì¯±¡¸¡¶¯Ó¯¿÷
-   double   UpdateTime;                //¸üĞÂÊ±¼ä
-   double 	SettleBalance;				// ÊµÊ±ÇåËã×Ê½ğ
-   double   ContractPosiValue;				//ºÏÔ¼³Ö²ÖÊĞÖµ(À©Õ¹²éÑ¯)
-   double   LastPositionValue;			//×òÈÕ³Ö²ÖÊĞÖµ(À©Õ¹²éÑ¯)
+   char     AccountId[16];             //å®¢æˆ·å·
+   char     FundAccount[16];           //èµ„é‡‘è´¦å·
+   char     MoneyType[4];              //å¸ç§
+   char     OrgCode[8];                //æœºæ„ä»£ç 
+   int      MasterFlag;                //ä¸»å¸æˆ·æ ‡å¿—
+   int      AccountType;               //å¸æˆ·ç±»åˆ«
+   double   LastBalance;               //ä¸Šæ—¥ä½™é¢
+   double   CurrentBalance;            //è´¦æˆ·ä½™é¢
+   double   FrozenBalance;             //å†»ç»“èµ„é‡‘
+   double   T2_FrozenBalance;          //T+2å†»ç»“é‡‘é¢
+   double   FundAvl;                   //å¯ç”¨èµ„é‡‘
+   double   T2_FundAvl;                //T+2å¯ç”¨èµ„é‡‘
+   double   TotalAsset;                //æ€»èµ„äº§
+   double   MarketValue;               //æœ€æ–°å¸‚å€¼
+   double   DebtAmt;                   //è´Ÿå€ºé‡‘é¢
+   double   CreditQuota;               //ä¿¡ç”¨é¢åº¦
+   double   CreditQuotaAvl;            //å¯ç”¨ä¿¡ç”¨é¢åº¦
+   double   UncomeBalance;             //æœªäº¤æ”¶èµ„é‡‘
+   double   CashBalance;               //ç°é‡‘ä½™é¢
+   double   CashAsset;                 //ç°é‡‘èµ„äº§
+   double   OtherAsset;                //å…¶ä»–èµ„äº§
+   double   FetchBalance;              //å¯å–èµ„é‡‘
+   double   DateProfit;                //æœ¬æ—¥ç›ˆäº
+   double   UnclearProfit;             //æµ®åŠ¨ç›ˆäº
+   double   DiluteUnclearProfit;       //æ‘Šè–„æµ®åŠ¨ç›ˆäº
+   double   UpdateTime;                //æ›´æ–°æ—¶é—´
+   double 	SettleBalance;				// å®æ—¶æ¸…ç®—èµ„é‡‘
+   double   ContractPosiValue;				//åˆçº¦æŒä»“å¸‚å€¼(æ‰©å±•æŸ¥è¯¢)
+   double   LastPositionValue;			//æ˜¨æ—¥æŒä»“å¸‚å€¼(æ‰©å±•æŸ¥è¯¢)
 } ITPDK_XYZJZH;
 
 
-//Ö¤È¯³Ö²Ö
+//è¯åˆ¸æŒä»“
 typedef struct
 {
-   char     AccountId[16];             //¿Í»§ºÅ
-   char     Market[4];                 //½»Ò×Ëù
-   char     StockCode[12];             //Ö¤È¯´úÂë
-   char     SecuAccount[12];           //¹É¶«ºÅ
-   char     FundAccount[16];           //×Ê½ğÕËºÅ
-   int64      AccountType;               //ÕË»§Àà±ğ
-   char     MoneyType[4];              //±ÒÖÖ
-   char     StockName[16];             //Ö¤È¯Ãû³Æ
-   int64      CurrentQty;                //½ñ³Ö²ÖÁ¿
-   int64      QtyAvl;                    //¿ÉÂô³öÊıÁ¿
-   double   LastPrice;                 //×îĞÂ¼Û
-   double   MarketValue;               //×îĞÂÊĞÖµ
-   double   DateProfit;                //±¾ÈÕÓ¯¿÷
-   double   CostPrice;                 //³Ö²Ö¾ù¼Û
-   double   UnclearProfit;             //¸¡¶¯Ó¯¿÷
-   double   DividendAmt;               //ºìÀû½ğ¶î
-   double   RealizeProfit;             //ÊµÏÖÓ¯¿÷
-   int64   PreQty;                    //×ò³Ö²ÖÁ¿
-   int64   FrozenQty;                 //¶³½áÊıÁ¿
-   int64    OrderFrozenQty;             //Î¯ÍĞ¶³½áÊıÁ¿
-   int64   UncomeQty;                 //Î´½»ÊÕÊıÁ¿
-   double   CostBalance;               //³Ö²Ö³É±¾
-   double   DiluteCostPrice;           //Ì¯±¡³É±¾¼Û
-   double   KeepCostPrice;             //±£±¾¼Û
-   double   AvgBuyPrice;               //ÂòÈë¾ù¼Û
-   int64   AllotmentQty;              //Åä¹ÉÊıÁ¿
-   int64   SubscribeQty;              //Éê¹ºÊıÁ¿
-   char     OpenDate[12];              //¿ª²ÖÈÕÆÚ
-   double   InterestPrice;             //ÀûÏ¢±¨¼Û
-   double   Dilutekeep_CostPrice;      //Ì¯±¡±£±¾¼Û
-   double   DiluteUnclearProfit;       //Ì¯±¡¸¡¶¯Ó¯¿÷
-   int64      TradeUnit;                 //½»Ò×µ¥Î»
-   int64      SubscribableQty;           //¿ÉÉê¹ºÊıÁ¿
-   int64      RedeemableQty;             //¿ÉÊê»ØÊıÁ¿
-   int64      RealSubsQty;               //Éê¹º³É½»ÊıÁ¿
-   int64      RealRedeQty;               //Êê»Ø³É½»ÊıÁ¿
-   int64   TotalSellQty;              //ÀÛ¼ÆÂô³öÊıÁ¿
-   int64   TotalBuyQty;               //ÀÛ¼ÆÂòÈëÊıÁ¿
-   double   TotalSellAmt;              //Âô³ö½ğ¶î
-   double   TotalBuyAmt;               //ÂòÈë½ğ¶î
-   double   AllotmentAmt;              //Åä¹É½ğ¶î
-   int64      RealBuyQty;                //µ±ÈÕÂòÈë³É½»ÊıÁ¿
-   int64      RealSellQty;               //µ±ÈÕÂô³ö³É½»ÊıÁ¿
-   double   RealBuyBalance;            //µ±ÈÕÂòÈë³É½»½ğ¶î
-   double   RealSellBalance;           //µ±ÈÕÂô³ö³É½»½ğ¶î
-   int64      BrowIndex;                 //·ÖÒ³²éÑ¯¶¨Î»´®
+   char     AccountId[16];             //å®¢æˆ·å·
+   char     Market[4];                 //äº¤æ˜“æ‰€
+   char     StockCode[12];             //è¯åˆ¸ä»£ç 
+   char     SecuAccount[12];           //è‚¡ä¸œå·
+   char     FundAccount[16];           //èµ„é‡‘è´¦å·
+   int64      AccountType;               //è´¦æˆ·ç±»åˆ«
+   char     MoneyType[4];              //å¸ç§
+   char     StockName[16];             //è¯åˆ¸åç§°
+   int64      CurrentQty;                //ä»ŠæŒä»“é‡
+   int64      QtyAvl;                    //å¯å–å‡ºæ•°é‡
+   double   LastPrice;                 //æœ€æ–°ä»·
+   double   MarketValue;               //æœ€æ–°å¸‚å€¼
+   double   DateProfit;                //æœ¬æ—¥ç›ˆäº
+   double   CostPrice;                 //æŒä»“å‡ä»·
+   double   UnclearProfit;             //æµ®åŠ¨ç›ˆäº
+   double   DividendAmt;               //çº¢åˆ©é‡‘é¢
+   double   RealizeProfit;             //å®ç°ç›ˆäº
+   int64   PreQty;                    //æ˜¨æŒä»“é‡
+   int64   FrozenQty;                 //å†»ç»“æ•°é‡
+   int64    OrderFrozenQty;             //å§”æ‰˜å†»ç»“æ•°é‡
+   int64   UncomeQty;                 //æœªäº¤æ”¶æ•°é‡
+   double   CostBalance;               //æŒä»“æˆæœ¬
+   double   DiluteCostPrice;           //æ‘Šè–„æˆæœ¬ä»·
+   double   KeepCostPrice;             //ä¿æœ¬ä»·
+   double   AvgBuyPrice;               //ä¹°å…¥å‡ä»·
+   int64   AllotmentQty;              //é…è‚¡æ•°é‡
+   int64   SubscribeQty;              //ç”³è´­æ•°é‡
+   char     OpenDate[12];              //å¼€ä»“æ—¥æœŸ
+   double   InterestPrice;             //åˆ©æ¯æŠ¥ä»·
+   double   Dilutekeep_CostPrice;      //æ‘Šè–„ä¿æœ¬ä»·
+   double   DiluteUnclearProfit;       //æ‘Šè–„æµ®åŠ¨ç›ˆäº
+   int64      TradeUnit;                 //äº¤æ˜“å•ä½
+   int64      SubscribableQty;           //å¯ç”³è´­æ•°é‡
+   int64      RedeemableQty;             //å¯èµå›æ•°é‡
+   int64      RealSubsQty;               //ç”³è´­æˆäº¤æ•°é‡
+   int64      RealRedeQty;               //èµå›æˆäº¤æ•°é‡
+   int64   TotalSellQty;              //ç´¯è®¡å–å‡ºæ•°é‡
+   int64   TotalBuyQty;               //ç´¯è®¡ä¹°å…¥æ•°é‡
+   double   TotalSellAmt;              //å–å‡ºé‡‘é¢
+   double   TotalBuyAmt;               //ä¹°å…¥é‡‘é¢
+   double   AllotmentAmt;              //é…è‚¡é‡‘é¢
+   int64      RealBuyQty;                //å½“æ—¥ä¹°å…¥æˆäº¤æ•°é‡
+   int64      RealSellQty;               //å½“æ—¥å–å‡ºæˆäº¤æ•°é‡
+   double   RealBuyBalance;            //å½“æ—¥ä¹°å…¥æˆäº¤é‡‘é¢
+   double   RealSellBalance;           //å½“æ—¥å–å‡ºæˆäº¤é‡‘é¢
+   int64      BrowIndex;                 //åˆ†é¡µæŸ¥è¯¢å®šä½ä¸²
 } ITPDK_XYZQGL;
-//µ±ÈÕÎ¯ÍĞ
+//å½“æ—¥å§”æ‰˜
 typedef struct
 {
-   char     AccountId[16];       //¿Í»§ºÅ
-   int      OrderId;             //Î¯ÍĞºÅ
-   int      CancelOrderId;       //³·ÏúÎ¯ÍĞºÅ
-   char     SBWTH[17];           //Éê±¨Î¯ÍĞºÅ
-   char     Market[4];           //½»Ò×Ëù
-   char     StockCode[12];       //Ö¤È¯´úÂë
-   char     StockName[16];       //Ö¤È¯Ãû³Æ
-   int      EntrustType;         //½»Ò×Àà±ğ
-   double   OrderPrice;          //Î¯ÍĞ¼Û¸ñ
-   int      OrderQty;            //Î¯ÍĞÊıÁ¿
-   double   MatchPrice;          //³É½»¼Û¸ñ
-   int   MatchQty;            //³É½»ÊıÁ¿
-   int      WithdrawQty;         //³·µ¥ÊıÁ¿
-   char     SecuAccount[12];     //¹É¶«ºÅ
-   int      BatchNo;             //Î¯ÍĞÅú´ÎºÅ
-   int      EntrustDate;         //Î¯ÍĞÈÕÆÚ
-   int      SerialNo;            //Á÷Ë®ºÅ
-   int      OrderType;           //¶©µ¥ÀàĞÍ
-   int      OrderType_HK;        //¸Û¹É¶©µ¥ÀàĞÍ
-   double   StopPrice;           //Ö¹ËğÏŞ¼Û
-   int      OrderStatus;         //Éê±¨½á¹û
-   char     EntrustNode[48];     //½»Ò×Õ¾µã
-   char     EntrustTime[13];     //Î¯ÍĞÊ±¼ä
-   char     ReportTime[13];      //Éê±¨Ê±¼ä
-   char     MatchTime[13];       //³É½»Ê±¼ä
-   char     KfsOrderNum[24];       //¿ª·¢ÉÌ±¨µ¥±àºÅ
-   char     WithdrawFlag[4];     //³·Ïú±êÖ¾
-   char     ResultInfo[128];     //½á¹ûËµÃ÷
-   double   MatchAmt;            //³É½»½ğ¶î
-   double   FrozenBalance;       //¶³½á×Ê½ğ
-   double   BailBalance;         //¶³½á±£Ö¤½ğ
-   double   HandingFee;          //¶³½áÊÖ¼Ì·Ñ
-   int      BrowIndex;           //·ÖÒ³²éÑ¯¶¨Î»´®
+   char     AccountId[16];       //å®¢æˆ·å·
+   int      OrderId;             //å§”æ‰˜å·
+   int      CancelOrderId;       //æ’¤é”€å§”æ‰˜å·
+   char     SBWTH[17];           //ç”³æŠ¥å§”æ‰˜å·
+   char     Market[4];           //äº¤æ˜“æ‰€
+   char     StockCode[12];       //è¯åˆ¸ä»£ç 
+   char     StockName[16];       //è¯åˆ¸åç§°
+   int      EntrustType;         //äº¤æ˜“ç±»åˆ«
+   double   OrderPrice;          //å§”æ‰˜ä»·æ ¼
+   int      OrderQty;            //å§”æ‰˜æ•°é‡
+   double   MatchPrice;          //æˆäº¤ä»·æ ¼
+   int   MatchQty;            //æˆäº¤æ•°é‡
+   int      WithdrawQty;         //æ’¤å•æ•°é‡
+   char     SecuAccount[12];     //è‚¡ä¸œå·
+   int      BatchNo;             //å§”æ‰˜æ‰¹æ¬¡å·
+   int      EntrustDate;         //å§”æ‰˜æ—¥æœŸ
+   int      SerialNo;            //æµæ°´å·
+   int      OrderType;           //è®¢å•ç±»å‹
+   int      OrderType_HK;        //æ¸¯è‚¡è®¢å•ç±»å‹
+   double   StopPrice;           //æ­¢æŸé™ä»·
+   int      OrderStatus;         //ç”³æŠ¥ç»“æœ
+   char     EntrustNode[48];     //äº¤æ˜“ç«™ç‚¹
+   char     EntrustTime[13];     //å§”æ‰˜æ—¶é—´
+   char     ReportTime[13];      //ç”³æŠ¥æ—¶é—´
+   char     MatchTime[13];       //æˆäº¤æ—¶é—´
+   char     KfsOrderNum[24];       //å¼€å‘å•†æŠ¥å•ç¼–å·
+   char     WithdrawFlag[4];     //æ’¤é”€æ ‡å¿—
+   char     ResultInfo[128];     //ç»“æœè¯´æ˜
+   double   MatchAmt;            //æˆäº¤é‡‘é¢
+   double   FrozenBalance;       //å†»ç»“èµ„é‡‘
+   double   BailBalance;         //å†»ç»“ä¿è¯é‡‘
+   double   HandingFee;          //å†»ç»“æ‰‹ç»§è´¹
+   int      BrowIndex;           //åˆ†é¡µæŸ¥è¯¢å®šä½ä¸²
 } ITPDK_XYDRWT;
 
-//·Ö±Ê³É½»
+//åˆ†ç¬”æˆäº¤
 typedef struct
 {
-   char     AccountId[16];       //¿Í»§ºÅ
-   int64      ReportSerialNo;      //»Ø±¨ĞòºÅ
-   char     Market[4];           //½»Ò×Ëù
-   char     SecuAccount[12];     //¹É¶«ºÅ
-   char     MatchSerialNo[32];   //³É½»±àºÅ
-   int64      OrderId;             //Î¯ÍĞºÅ
-   int64      EntrustType;         //½»Ò×Àà±ğ
-   char     MatchTime[13];       //³É½»Ê±¼ä
-   char     StockCode[12];       //Ö¤È¯´úÂë
-   char     StockName[16];       //Ö¤È¯Ãû³Æ
-   char     KfsOrderNum[24];       //¿ª·¢ÉÌ±¨µ¥±àºÅ
-   int64   MatchQty;            //³É½»ÊıÁ¿
-   double   MatchPrice;          //³É½»¼Û¸ñ
-   double   MatchAmt;            //³É½»½ğ¶î
-   char     MoneyType[4];        //±ÒÖÖ
-   double   clearBalance;        //ÇåËã½ğ¶î
-   int64      BatchNo;             //Î¯ÍĞÅú´ÎºÅ
-   int64      EntrustDate;         //Î¯ÍĞÈÕÆÚ
-   int64      BrowIndex;           //ÆğÊ¼¼ÇÂ¼Ë÷ÒıÖµ
-   char     WithdrawFlag[4];     //³·Ïú±êÖ¾
+   char     AccountId[16];       //å®¢æˆ·å·
+   int64      ReportSerialNo;      //å›æŠ¥åºå·
+   char     Market[4];           //äº¤æ˜“æ‰€
+   char     SecuAccount[12];     //è‚¡ä¸œå·
+   char     MatchSerialNo[32];   //æˆäº¤ç¼–å·
+   int64      OrderId;             //å§”æ‰˜å·
+   int64      EntrustType;         //äº¤æ˜“ç±»åˆ«
+   char     MatchTime[13];       //æˆäº¤æ—¶é—´
+   char     StockCode[12];       //è¯åˆ¸ä»£ç 
+   char     StockName[16];       //è¯åˆ¸åç§°
+   char     KfsOrderNum[24];       //å¼€å‘å•†æŠ¥å•ç¼–å·
+   int64   MatchQty;            //æˆäº¤æ•°é‡
+   double   MatchPrice;          //æˆäº¤ä»·æ ¼
+   double   MatchAmt;            //æˆäº¤é‡‘é¢
+   char     MoneyType[4];        //å¸ç§
+   double   clearBalance;        //æ¸…ç®—é‡‘é¢
+   int64      BatchNo;             //å§”æ‰˜æ‰¹æ¬¡å·
+   int64      EntrustDate;         //å§”æ‰˜æ—¥æœŸ
+   int64      BrowIndex;           //èµ·å§‹è®°å½•ç´¢å¼•å€¼
+   char     WithdrawFlag[4];     //æ’¤é”€æ ‡å¿—
 } ITPDK_XYSSCJ;
 
 
-//×Ê¸ñÖ¤È¯
+//èµ„æ ¼è¯åˆ¸
 typedef struct
 {
-    char     Market[4];           //½»Ò×Ëù
-    char     StockCode[12];       //Ö¤È¯´úÂë
-    char     StockName[16];       //Ö¤È¯Ãû³Æ
-    double   ConversionRate;      //ÕÛËãÂÊ
-    double   MarginBailRate;      //ÈÚ×Ê±£Ö¤½ğ±ÈÀı
-    double   ShortBailRate;       //ÈÚÈ¯±£Ö¤½ğ±ÈÀı
-    int      StockProperty;       //Ö¤È¯ÊôĞÔ 1	ÈÚ×Ê±êµÄ, 2	ÈÚÈ¯±êµÄ, 4	µ£±£Îï, 7 ÈÚ×ÊÈÚÈ¯µ£±£±êµÄ
-    int      TradeStatus;         //½»Ò××´Ì¬  0-Õı³££¬1 ½ûÖ¹ÈÚ×Ê 2 ½ûÖ¹ÈÚÈ¯ 3 ½ûÖ¹ÈÚ×ÊÈÚÈ¯
-    int      CollateralStatus;    //µ£±£×´Ì¬ 0-Õı³£ 1-ÔİÍ£ 2-×÷·Ï 3-Í¬±ê×¼ÉèÖÃ
-    int      Type;                //ÀàĞÍ£¬0-¹«Ë¾£¬1 ¸öÈË
-    int64    BrowIndex;           //·ÖÒ³²éÑ¯¶¨Î»´®
+    char     Market[4];           //äº¤æ˜“æ‰€
+    char     StockCode[12];       //è¯åˆ¸ä»£ç 
+    char     StockName[16];       //è¯åˆ¸åç§°
+    double   ConversionRate;      //æŠ˜ç®—ç‡
+    double   MarginBailRate;      //èèµ„ä¿è¯é‡‘æ¯”ä¾‹
+    double   ShortBailRate;       //èåˆ¸ä¿è¯é‡‘æ¯”ä¾‹
+    int      StockProperty;       //è¯åˆ¸å±æ€§ 1	èèµ„æ ‡çš„, 2	èåˆ¸æ ‡çš„, 4	æ‹…ä¿ç‰©, 7 èèµ„èåˆ¸æ‹…ä¿æ ‡çš„
+    int      TradeStatus;         //äº¤æ˜“çŠ¶æ€  0-æ­£å¸¸ï¼Œ1 ç¦æ­¢èèµ„ 2 ç¦æ­¢èåˆ¸ 3 ç¦æ­¢èèµ„èåˆ¸
+    int      CollateralStatus;    //æ‹…ä¿çŠ¶æ€ 0-æ­£å¸¸ 1-æš‚åœ 2-ä½œåºŸ 3-åŒæ ‡å‡†è®¾ç½®
+    int      Type;                //ç±»å‹ï¼Œ0-å…¬å¸ï¼Œ1 ä¸ªäºº
+    int64    BrowIndex;           //åˆ†é¡µæŸ¥è¯¢å®šä½ä¸²
 } ITPDK_ZGZQ;
 
-//¿Í»§¿ÉÈÚÈ¯ĞÅÏ¢
+//å®¢æˆ·å¯èåˆ¸ä¿¡æ¯
 typedef struct
 {
-    char        AccountId[16];       //¿Í»§ºÅ
-    int32       nTCXZ;      //Í·´çĞÔÖÊ£¨1ÆÕÍ¨Í·´ç 2×¨ÏîÍ·´ç£©
-    char        szTCBH[21];  //Í·´ç±àºÅ
-    char        sJYS[3];    //½»Ò×Ëù
-    char        sZQDM[11];  //Ö¤È¯´úÂë
-    char        sZQMC[21];  //Ö¤È¯Ãû³Æ
-    int64       nZQSL;      //Ö¤È¯ÊıÁ¿
-    int64       nDJSL;      //¶³½áÊıÁ¿
-    int64       nMCWTSL;    //Âô³öÎ¯ÍĞÊıÁ¿
-    int64       nDRCHSL;    //µ±ÈÕ³¥»¹ÊıÁ¿
-    int64       nRCSL;      //ÒÑÈÚ³öÊıÁ¿
-    int64       nYYSL;      //Ô¤Ô¼ÊıÁ¿
-    int64       nDRCJSL;    //µ±ÈÕ³É½»ÊıÁ¿
-    int64       nKYSL;      //¿ÉÓÃÊıÁ¿
-    int64       nHCCHSL;    //»®³ö³¥»¹ÊıÁ¿
-    float64     dRQBL;      //ÈÚÈ¯±ÈÀı
-    float64     dZSL;       //ÕÛËãÂÊ
-    int32       nJYZT;      //½»Ò××´Ì¬
-    int64       BrowIndex;           //·ÖÒ³²éÑ¯¶¨Î»´®
+    char        AccountId[16];       //å®¢æˆ·å·
+    int32       nTCXZ;      //å¤´å¯¸æ€§è´¨ï¼ˆ1æ™®é€šå¤´å¯¸ 2ä¸“é¡¹å¤´å¯¸ï¼‰
+    char        szTCBH[21];  //å¤´å¯¸ç¼–å·
+    char        sJYS[3];    //äº¤æ˜“æ‰€
+    char        sZQDM[11];  //è¯åˆ¸ä»£ç 
+    char        sZQMC[21];  //è¯åˆ¸åç§°
+    int64       nZQSL;      //è¯åˆ¸æ•°é‡
+    int64       nDJSL;      //å†»ç»“æ•°é‡
+    int64       nMCWTSL;    //å–å‡ºå§”æ‰˜æ•°é‡
+    int64       nDRCHSL;    //å½“æ—¥å¿è¿˜æ•°é‡
+    int64       nRCSL;      //å·²èå‡ºæ•°é‡
+    int64       nYYSL;      //é¢„çº¦æ•°é‡
+    int64       nDRCJSL;    //å½“æ—¥æˆäº¤æ•°é‡
+    int64       nKYSL;      //å¯ç”¨æ•°é‡
+    int64       nHCCHSL;    //åˆ’å‡ºå¿è¿˜æ•°é‡
+    float64     dRQBL;      //èåˆ¸æ¯”ä¾‹
+    float64     dZSL;       //æŠ˜ç®—ç‡
+    int32       nJYZT;      //äº¤æ˜“çŠ¶æ€
+    int64       BrowIndex;           //åˆ†é¡µæŸ¥è¯¢å®šä½ä¸²
 
 } ITPDK_RQZQ;
 
-//¿Í»§¿ÉÈÚ×Ê½ğĞÅÏ¢
+//å®¢æˆ·å¯èèµ„é‡‘ä¿¡æ¯
 typedef struct
 {
-    char        AccountId[16];       //¿Í»§ºÅ
-    int32       nTCXZ;      //Í·´çĞÔÖÊ£¨1ÆÕÍ¨Í·´ç 2×¨ÏîÍ·´ç£©
-    char        szTCBH[21];  //Í·´ç±àºÅ
-    double      dTCGM;      //Í·´ç¹æÄ£
-    double      dYRCJE;     //ÒÑÈÚ³ö½ğ¶î
-    double      dYYJE;      //Ô¤Ô¼½ğ¶î
-    double      dRCDJJE;    //µ±ÈÕÈÚ³ö¶³½á½ğ¶î
-    double      dDRCHJE;    //µ±ÈÕ³¥»¹½ğ¶î
-    double      dDJJE;      //ÁÙÊ±¶³½á½ğ¶î
-    double      dKYED;      //¿ÉÓÃ½ğ¶î
+    char        AccountId[16];       //å®¢æˆ·å·
+    int32       nTCXZ;      //å¤´å¯¸æ€§è´¨ï¼ˆ1æ™®é€šå¤´å¯¸ 2ä¸“é¡¹å¤´å¯¸ï¼‰
+    char        szTCBH[21];  //å¤´å¯¸ç¼–å·
+    double      dTCGM;      //å¤´å¯¸è§„æ¨¡
+    double      dYRCJE;     //å·²èå‡ºé‡‘é¢
+    double      dYYJE;      //é¢„çº¦é‡‘é¢
+    double      dRCDJJE;    //å½“æ—¥èå‡ºå†»ç»“é‡‘é¢
+    double      dDRCHJE;    //å½“æ—¥å¿è¿˜é‡‘é¢
+    double      dDJJE;      //ä¸´æ—¶å†»ç»“é‡‘é¢
+    double      dKYED;      //å¯ç”¨é‡‘é¢
 
 } ITPDK_KRZJXX;
 
-//ĞÅÓÃ×Ê²ú
+//ä¿¡ç”¨èµ„äº§
 typedef struct
 {
-    char   AccountId[16];                //¿Í»§ºÅ
-    double dKYBZJ;       //¿ÉÓÃ±£Ö¤½ğ
-    double dDBBL;       //µ£±£±ÈÀı
-    double dYJBL1;       //Ô¤¼ÆÎ¬³Öµ£±£±ÈÀı1£¬¿¼ÂÇµ£±£Îï»®Èë»®³ö
-    double dYJBL2;         //Ô¤¼ÆÎ¬³Öµ£±£±ÈÀı2£¬¿¼ÂÇµ£±£Îï»®³ö£¬²»¿¼ÂÇ»®Èë
-    double dZHYE;       //ÕË»§Óà¶î
-    double dKYZJ;       //¿ÉÓÃ×Ê½ğ
-    double dQSZJ;       //ÇåËã×Ê½ğ
-    double dKMDBPZJ;	//¿ÉÂòµ£±£Æ·×Ê½ğ
+    char   AccountId[16];                //å®¢æˆ·å·
+    double dKYBZJ;       //å¯ç”¨ä¿è¯é‡‘
+    double dDBBL;       //æ‹…ä¿æ¯”ä¾‹
+    double dYJBL1;       //é¢„è®¡ç»´æŒæ‹…ä¿æ¯”ä¾‹1ï¼Œè€ƒè™‘æ‹…ä¿ç‰©åˆ’å…¥åˆ’å‡º
+    double dYJBL2;         //é¢„è®¡ç»´æŒæ‹…ä¿æ¯”ä¾‹2ï¼Œè€ƒè™‘æ‹…ä¿ç‰©åˆ’å‡ºï¼Œä¸è€ƒè™‘åˆ’å…¥
+    double dZHYE;       //è´¦æˆ·ä½™é¢
+    double dKYZJ;       //å¯ç”¨èµ„é‡‘
+    double dQSZJ;       //æ¸…ç®—èµ„é‡‘
+    double dKMDBPZJ;	//å¯ä¹°æ‹…ä¿å“èµ„é‡‘
 
-    double dZQSZ_BD;    //±êµÄÖ¤È¯ÊĞÖµ
-    double dZQSZ;		    //Ö¤È¯ÊĞÖµ_¼ÆËãµ£±£±ÈÀıÊ¹ÓÃ
-    double dZQSZ_DB;    //µ£±£Ö¤È¯ÊĞÖµ
-    double dZQSZ_DBZS;	//µ£±£Ö¤È¯ÕÛËãÊĞÖµ_¼ÆËã¿ÉÓÃ±£Ö¤½ğÊ¹ÓÃ(ÒÑ¿ÛÈÚ×Ê)
-    double dZQSZ_DB_BD;//µ£±£Ö¤È¯±ä¶¯ÕÛËãÊĞÖµ_¼ÆËã¿ÉÓÃ±£Ö¤½ğÊ¹ÓÃ
-    double dZQSZ_DBZS_BD;//µ£±£Ö¤È¯±ä¶¯ÕÛËãÊĞÖµ_¼ÆËã¿ÉÓÃ±£Ö¤½ğÊ¹ÓÃ
-    double dZQSZ_YJZC;          //µ£±£Îï·µ»ØÎ´³É½»_Ô¤¹À×Ê²ú
+    double dZQSZ_BD;    //æ ‡çš„è¯åˆ¸å¸‚å€¼
+    double dZQSZ;		    //è¯åˆ¸å¸‚å€¼_è®¡ç®—æ‹…ä¿æ¯”ä¾‹ä½¿ç”¨
+    double dZQSZ_DB;    //æ‹…ä¿è¯åˆ¸å¸‚å€¼
+    double dZQSZ_DBZS;	//æ‹…ä¿è¯åˆ¸æŠ˜ç®—å¸‚å€¼_è®¡ç®—å¯ç”¨ä¿è¯é‡‘ä½¿ç”¨(å·²æ‰£èèµ„)
+    double dZQSZ_DB_BD;//æ‹…ä¿è¯åˆ¸å˜åŠ¨æŠ˜ç®—å¸‚å€¼_è®¡ç®—å¯ç”¨ä¿è¯é‡‘ä½¿ç”¨
+    double dZQSZ_DBZS_BD;//æ‹…ä¿è¯åˆ¸å˜åŠ¨æŠ˜ç®—å¸‚å€¼_è®¡ç®—å¯ç”¨ä¿è¯é‡‘ä½¿ç”¨
+    double dZQSZ_YJZC;          //æ‹…ä¿ç‰©è¿”å›æœªæˆäº¤_é¢„ä¼°èµ„äº§
 
-    double dRZFZ;       //ÈÚ×Ê¸ºÕ®
-    double dRQFZ;       //ÈÚÈ¯¸ºÕ®
-    double dRZFZ2;      //ÈÚ×Ê¸ºÕ®2
-    double dRQFZ2;      //ÈÚÈ¯¸ºÕ®2
-    double dHQWT2;      //»¹È¯Î¯ÍĞÎ´³É
-    double dXJCE;       //Ó¦¸Ã×·²¹µ½±ÈÀıÏßµÄ×Ê½ğ²î¶î
-    double dPCJE;       //Ç¿ÖÆÆ½²Ö×Ê½ğ = (×Ü¸ºÕ®*Æ½²Öµ½Î»±ÈÀı - ×Ü×Ê²ú)/(Æ½²Öµ½Î»±ÈÀı -1)
-    double dZDPCJE;     //Ö÷¶¯Æ½²Ö×Ê½ğ = (×Ü¸ºÕ®*×·±£µ½Î»±ÈÀı - ×Ü×Ê²ú)/(×·±£µ½Î»±ÈÀı -1)
-    double dKQBZ;       //¿ÉÌá×Ê²ú±ê×¼
-    double dKQZJ;       //¿ÉÈ¡×Ê½ğ
+    double dRZFZ;       //èèµ„è´Ÿå€º
+    double dRQFZ;       //èåˆ¸è´Ÿå€º
+    double dRZFZ2;      //èèµ„è´Ÿå€º2
+    double dRQFZ2;      //èåˆ¸è´Ÿå€º2
+    double dHQWT2;      //è¿˜åˆ¸å§”æ‰˜æœªæˆ
+    double dXJCE;       //åº”è¯¥è¿½è¡¥åˆ°æ¯”ä¾‹çº¿çš„èµ„é‡‘å·®é¢
+    double dPCJE;       //å¼ºåˆ¶å¹³ä»“èµ„é‡‘ = (æ€»è´Ÿå€º*å¹³ä»“åˆ°ä½æ¯”ä¾‹ - æ€»èµ„äº§)/(å¹³ä»“åˆ°ä½æ¯”ä¾‹ -1)
+    double dZDPCJE;     //ä¸»åŠ¨å¹³ä»“èµ„é‡‘ = (æ€»è´Ÿå€º*è¿½ä¿åˆ°ä½æ¯”ä¾‹ - æ€»èµ„äº§)/(è¿½ä¿åˆ°ä½æ¯”ä¾‹ -1)
+    double dKQBZ;       //å¯æèµ„äº§æ ‡å‡†
+    double dKQZJ;       //å¯å–èµ„é‡‘
 
-    double dRZLX;       //ÉĞÇ·ÀûÏ¢_ÈÚ×Ê
-    double dRQLX;       //ÉĞÇ·ÀûÏ¢_ÈÚÈ¯
-    double dYJLX;       //Ô¤¼ÆÀûÏ¢/·ÑÓÃ
-    double dZFZ;        //×Ü¸ºÕ®
-    double dZZC;        //×Ü×Ê²ú
-    double dJZC;        //¾»×Ê²ú
-    //double dZYBZJ;    //Õ¼ÓÃ±£Ö¤½ğ
-    double dZYBZJ_RZ;   //Õ¼ÓÃ±£Ö¤½ğ_ÈÚ×Ê
-    double dZYBZJ_RQ;   //Õ¼ÓÃ±£Ö¤½ğ_ÈÚÈ¯
-    double dRZYK;       //ÈÚ×ÊÓ¯¿÷
-    double dRQYK;       //ÈÚÈ¯Ó¯¿÷
-    double dRQSYZJ;     //ÈÚÈ¯Ê£Óà×Ê½ğ
-    double dRZSXF;      //ÈÚ×Ê·ÑÓÃ
-    double dRQSXF;      //ÈÚÈ¯·ÑÓÃ
-    double dDBSZ_SH;    //ÉÏº£µ£±£Ö¤È¯ÊĞÖµ
-    double dDBSZ_SZ;    //ÉîÛÚµ£±£Ö¤È¯ÊĞÖµ
-    double dRZFYZS;     //ÈÚ×Ê¸¡Ó¯ÕÛËã
-    double dRZFK;       //ÈÚ×Ê¸¡¿÷
-    double dRQFYZS;     //ÈÚÈ¯¸¡Ó¯ÕÛËã
-    double dRQFK;       //ÈÚÈ¯¸¡¿÷
-    double dRQMCJE;     //ÈÚÈ¯½ğ¶î_¸ºÕ®
+    double dRZLX;       //å°šæ¬ åˆ©æ¯_èèµ„
+    double dRQLX;       //å°šæ¬ åˆ©æ¯_èåˆ¸
+    double dYJLX;       //é¢„è®¡åˆ©æ¯/è´¹ç”¨
+    double dZFZ;        //æ€»è´Ÿå€º
+    double dZZC;        //æ€»èµ„äº§
+    double dJZC;        //å‡€èµ„äº§
+    //double dZYBZJ;    //å ç”¨ä¿è¯é‡‘
+    double dZYBZJ_RZ;   //å ç”¨ä¿è¯é‡‘_èèµ„
+    double dZYBZJ_RQ;   //å ç”¨ä¿è¯é‡‘_èåˆ¸
+    double dRZYK;       //èèµ„ç›ˆäº
+    double dRQYK;       //èåˆ¸ç›ˆäº
+    double dRQSYZJ;     //èåˆ¸å‰©ä½™èµ„é‡‘
+    double dRZSXF;      //èèµ„è´¹ç”¨
+    double dRQSXF;      //èåˆ¸è´¹ç”¨
+    double dDBSZ_SH;    //ä¸Šæµ·æ‹…ä¿è¯åˆ¸å¸‚å€¼
+    double dDBSZ_SZ;    //æ·±åœ³æ‹…ä¿è¯åˆ¸å¸‚å€¼
+    double dRZFYZS;     //èèµ„æµ®ç›ˆæŠ˜ç®—
+    double dRZFK;       //èèµ„æµ®äº
+    double dRQFYZS;     //èåˆ¸æµ®ç›ˆæŠ˜ç®—
+    double dRQFK;       //èåˆ¸æµ®äº
+    double dRQMCJE;     //èåˆ¸é‡‘é¢_è´Ÿå€º
 
-    double dRZDQSZ;     //ÈÚ×Êµ±Ç°ÊĞÖµ
-    double dRQDQSZ;     //ÈÚÈ¯µ±Ç°ÊĞÖµ
+    double dRZDQSZ;     //èèµ„å½“å‰å¸‚å€¼
+    double dRQDQSZ;     //èåˆ¸å½“å‰å¸‚å€¼
 
-    double dSYZQSZ;     //ËùÓĞÖ¤È¯ÊĞÖµ
+    double dSYZQSZ;     //æ‰€æœ‰è¯åˆ¸å¸‚å€¼
 						
 						
-						// FALG ËÍ1  À©Õ¹×Ö¶Î
-    int    nJSRQ;		//ºÏÍ¬µ½ÆÚÈÕ
-    double dRZED;		//ÈÚ×ÊÊÚĞÅ¶î¶È
-    double dRQED;       //ÈÚÈ¯ÊÚĞÅ¶î¶È
-    double dRZZY;       //ÈÚ×ÊÒÑÓÃ¶î¶È
-    double dRQZY;       //ÈÚÈ¯ÒÑÓÃ¶î¶È
-    double dHTED;       //ºÏÍ¬¶î¶È
-    double dQTZY;		//ÆäËüÕ¼ÓÃ
-    double dKYDBZJ;		//¿ÉÂòµ£±£Æ·×Ê½ğ
-    double dQTFY;       //ÆäËû·ÑÓÃ
-    double dZZCJZD;     //³Ö²ÖÕ¼×Ü×Ê²ú¼¯ÖĞ¶È
-    double dJZCJZD;     //¾»×Ê²ú¼¯ÖĞ¶È
-    double dZZCJZD_BK;  //¿Æ´´°å+´´Òµ°å°å¿é³Ö²ÖÕ¼×Ü×Ê²ú¼¯ÖĞ¶È
-    double dJZCJZD_BK;  //¿Æ´´°å+´´Òµ°å°å¿é¾»³Ö²Ö¼¯ÖĞ¶È
-    double dZZCJZD_BKCDR;//¿Æ´´°å+´´Òµ°å+¿Æ´´°åCDR+´´Òµ°åCDR°å¿é³Ö²ÖÕ¼×Ü×Ê²ú¼¯ÖĞ¶È
+						// FALG é€1  æ‰©å±•å­—æ®µ
+    int    nJSRQ;		//åˆåŒåˆ°æœŸæ—¥
+    double dRZED;		//èèµ„æˆä¿¡é¢åº¦
+    double dRQED;       //èåˆ¸æˆä¿¡é¢åº¦
+    double dRZZY;       //èèµ„å·²ç”¨é¢åº¦
+    double dRQZY;       //èåˆ¸å·²ç”¨é¢åº¦
+    double dHTED;       //åˆåŒé¢åº¦
+    double dQTZY;		//å…¶å®ƒå ç”¨
+    double dKYDBZJ;		//å¯ä¹°æ‹…ä¿å“èµ„é‡‘
+    double dQTFY;       //å…¶ä»–è´¹ç”¨
+    double dZZCJZD;     //æŒä»“å æ€»èµ„äº§é›†ä¸­åº¦
+    double dJZCJZD;     //å‡€èµ„äº§é›†ä¸­åº¦
+    double dZZCJZD_BK;  //ç§‘åˆ›æ¿+åˆ›ä¸šæ¿æ¿å—æŒä»“å æ€»èµ„äº§é›†ä¸­åº¦
+    double dJZCJZD_BK;  //ç§‘åˆ›æ¿+åˆ›ä¸šæ¿æ¿å—å‡€æŒä»“é›†ä¸­åº¦
+    double dZZCJZD_BKCDR;//ç§‘åˆ›æ¿+åˆ›ä¸šæ¿+ç§‘åˆ›æ¿CDR+åˆ›ä¸šæ¿CDRæ¿å—æŒä»“å æ€»èµ„äº§é›†ä¸­åº¦
 
-    double dRZFZ_PT;       //ÈÚ×Ê¸ºÕ®(ÆÕÍ¨Í·´ç)
-    double dRZSXF_PT;      //ÈÚ×Ê·ÑÓÃ(ÆÕÍ¨Í·´ç)
-    double dRZLX_PT;       //ÉĞÇ·ÀûÏ¢_ÈÚ×Ê(ÆÕÍ¨Í·´ç)
+    double dRZFZ_PT;       //èèµ„è´Ÿå€º(æ™®é€šå¤´å¯¸)
+    double dRZSXF_PT;      //èèµ„è´¹ç”¨(æ™®é€šå¤´å¯¸)
+    double dRZLX_PT;       //å°šæ¬ åˆ©æ¯_èèµ„(æ™®é€šå¤´å¯¸)
 
-    double dRQMCQSJE;      //ÈÚÈ¯Âô³ö¶³½áÇåËã½ğ¶î£¨°´Êµ¼Ê³É½»µÄÍ³¼Æ£©
-    double dBY1;           //±¸ÓÃ1
-    double dBY2;           //±¸ÓÃ2
+    double dRQMCQSJE;      //èåˆ¸å–å‡ºå†»ç»“æ¸…ç®—é‡‘é¢ï¼ˆæŒ‰å®é™…æˆäº¤çš„ç»Ÿè®¡ï¼‰
+    double dBY1;           //å¤‡ç”¨1
+    double dBY2;           //å¤‡ç”¨2
    
 } ITPDK_XYZC;
-//ĞÅÓÃºÏÔ¼
+//ä¿¡ç”¨åˆçº¦
 typedef struct
 {
-    char    AccountId[16];             //¿Í»§ºÅ
-    char    m_szHYBH[25];  // HYBH ºÏÔ¼±àºÅ
-    char    m_szHTBH[17];  // HTBH ºÏÍ¬±àºÅ
-    int   	m_nWTH;        // WTH	¶©µ¥±àºÅ
-    int   	m_nFSRQ;       // FSRQ	·¢ÉúÈÕÆÚ
-    char    m_szFSSJ[13];  // FSSJ ·¢ÉúÊ±¼ä
-    int     m_nJYRQ;       // JYRQ  ½»Ò×ÈÕÆÚ
-    int     m_nDQRQ;		// µ½ÆÚÈÕÆÚ
-    int     m_nHYQX;        // ºÏÔ¼ÆÚÏŞ
-    int     m_nQXRQ;        // ÆğÏ¢ÈÕÆÚ
-    int     m_nHYLB;        // ºÏÔ¼Àà±ğ
-    int     m_nHYLX;        // ºÏÔ¼ÀàĞÍ
-    char    m_szJYS[3];    // JYS ½»Ò×Ëù
-    char    m_szGDH[11];      //¹É¶«ºÅ
-    char    m_szZQDM[11];  // ZQDM Ö¤È¯´úÂë
-    char    m_szZQMC[21];  // ZQMC Ö¤È¯Ãû³Æ
-    int     m_nWTSL;       // WTSL Î¯ÍĞÊıÁ¿
-    double  m_dWTJG;     // WTJG	ÊıÍĞ¼Û¸ñ
-    int     m_nCJSL;       // CJSL	³É½»ÊıÁ¿
-    double  m_dCJJE;     // CJJE	³É½»½ğ¶î
-    double  m_dCJJG;     // CJJG 	³É½»¼Û¸ñ
-    double  m_dSXF;      // SXF	³É½»ÊÖĞø·Ñ
-    double  m_dYCHJE;    // YCHJE	 ÒÑ³¥»¹ºÏÔ¼½ğ¶î
-    double  m_dYCHSXF;   // YCHSXF ÒÑ³¥»¹½»Ò×·ÑÓÃ
-    int     m_nYCHSL;      // YCHSL ÒÑ³¥»¹ÊıÁ¿
-    double  m_dYCHLX;    // YCHLX	ÒÑ³¥»¹ÀûÏ¢
-    double  m_dYCHFX;    // YCHFX	ÒÑ³¥»¹·£Ï¢
-    double  m_dQCHYJE;   // QCHYJE	ÆÚ³õºÏÔ¼½ğ¶î
-    double  m_dQCSXF;    // QCSXF	ÆÚ³õºÏÔ¼½»Ò×·ÑÓÃ
-    double  m_dQCLX;     // QCLX	ÆÚ³õºÏÔ¼ÀûÏ¢
-    double  m_dQCFX;     // QCFX	ÆÚ³õ·£Ï¢½ğ¶î
-    int     m_nQCSL;       // QCSL	ÆÚ³õºÏÔ¼ÊıÁ¿
-    double  m_dSSHYJE;   // SSHYJE	ÊµÊ±ºÏÔ¼½ğ¶î
-    double  m_dSSSXF;    // SSSXF	ÊµÊ±ºÏÔ¼½»Ò×·ÑÓÃ
-    double  m_dSSLX;     // SSLX	ÊµÊ±ºÏÔ¼ÀûÏ¢
-    double  m_dSSFX;     // SSFX	ÊµÊ±·£Ï¢½ğ¶î
-    int     m_nSSSL;       // SSSL	ÊµÊ±ºÏÔ¼ÊıÁ¿
-    double  m_dHYLL;     // HYLL	ÀûÂÊ/·ÑÂÊ
-    double  m_dFXFL;     // FXFL	·£Ï¢ÀûÂÊ
-    double  m_dLXJS;     // LXJS	ÀûÏ¢»ùÊı
-    double  m_dFDLX;     // FDLX	·Ö¶ÎÀûÏ¢
-    double  m_dYJLX;     // YJLX	Ô¤¼ÆÀûÏ¢
-    double  m_dFXLXJS;   // FXLXJS	·£Ï¢ÀûÏ¢»ıÊı
-    double  m_dFXYJLX;   // FXYJLX	·£Ï¢Ô¤¼ÆÀûÏ¢
-    double  m_dFXFDLX;   // FXFDLX	·£Ï¢·Ö¶ÎÀûÏ¢
-    double  m_dBZJBL;    // BZJBL	±£Ö¤½ğ±ÈÀı
-    int     m_nZQCS;       // ZQCS	Õ¹ÆÚ´ÎÊı
-    int     m_nEDDJBS;     // EDDJBS¶î¶È¶³½á±êÊ¶
-    char    m_szYHYBH[25];           // YHYBH	Ô­ºÏÔ¼±àºÅ
-    char    m_szTCBH[21];             // TCBH	Í·´ç±àºÅ
-    int     m_nBCSL;       // BCSL	²¹³¥ÊıÁ¿
-    double  m_dBCJE;     // BCJE	²¹³¥½ğ¶î
-    int     m_nLXLJFS;     // LXLJFS	ÀûÏ¢ÁË½á·½Ê½
-    int     m_nFLBH;       // FLBH	·ÑÂÊ±àºÅ
+    char    AccountId[16];             //å®¢æˆ·å·
+    char    m_szHYBH[25];  // HYBH åˆçº¦ç¼–å·
+    char    m_szHTBH[17];  // HTBH åˆåŒç¼–å·
+    int   	m_nWTH;        // WTH	è®¢å•ç¼–å·
+    int   	m_nFSRQ;       // FSRQ	å‘ç”Ÿæ—¥æœŸ
+    char    m_szFSSJ[13];  // FSSJ å‘ç”Ÿæ—¶é—´
+    int     m_nJYRQ;       // JYRQ  äº¤æ˜“æ—¥æœŸ
+    int     m_nDQRQ;		// åˆ°æœŸæ—¥æœŸ
+    int     m_nHYQX;        // åˆçº¦æœŸé™
+    int     m_nQXRQ;        // èµ·æ¯æ—¥æœŸ
+    int     m_nHYLB;        // åˆçº¦ç±»åˆ«
+    int     m_nHYLX;        // åˆçº¦ç±»å‹
+    char    m_szJYS[3];    // JYS äº¤æ˜“æ‰€
+    char    m_szGDH[11];      //è‚¡ä¸œå·
+    char    m_szZQDM[11];  // ZQDM è¯åˆ¸ä»£ç 
+    char    m_szZQMC[21];  // ZQMC è¯åˆ¸åç§°
+    int     m_nWTSL;       // WTSL å§”æ‰˜æ•°é‡
+    double  m_dWTJG;     // WTJG	æ•°æ‰˜ä»·æ ¼
+    int     m_nCJSL;       // CJSL	æˆäº¤æ•°é‡
+    double  m_dCJJE;     // CJJE	æˆäº¤é‡‘é¢
+    double  m_dCJJG;     // CJJG 	æˆäº¤ä»·æ ¼
+    double  m_dSXF;      // SXF	æˆäº¤æ‰‹ç»­è´¹
+    double  m_dYCHJE;    // YCHJE	 å·²å¿è¿˜åˆçº¦é‡‘é¢
+    double  m_dYCHSXF;   // YCHSXF å·²å¿è¿˜äº¤æ˜“è´¹ç”¨
+    int     m_nYCHSL;      // YCHSL å·²å¿è¿˜æ•°é‡
+    double  m_dYCHLX;    // YCHLX	å·²å¿è¿˜åˆ©æ¯
+    double  m_dYCHFX;    // YCHFX	å·²å¿è¿˜ç½šæ¯
+    double  m_dQCHYJE;   // QCHYJE	æœŸåˆåˆçº¦é‡‘é¢
+    double  m_dQCSXF;    // QCSXF	æœŸåˆåˆçº¦äº¤æ˜“è´¹ç”¨
+    double  m_dQCLX;     // QCLX	æœŸåˆåˆçº¦åˆ©æ¯
+    double  m_dQCFX;     // QCFX	æœŸåˆç½šæ¯é‡‘é¢
+    int     m_nQCSL;       // QCSL	æœŸåˆåˆçº¦æ•°é‡
+    double  m_dSSHYJE;   // SSHYJE	å®æ—¶åˆçº¦é‡‘é¢
+    double  m_dSSSXF;    // SSSXF	å®æ—¶åˆçº¦äº¤æ˜“è´¹ç”¨
+    double  m_dSSLX;     // SSLX	å®æ—¶åˆçº¦åˆ©æ¯
+    double  m_dSSFX;     // SSFX	å®æ—¶ç½šæ¯é‡‘é¢
+    int     m_nSSSL;       // SSSL	å®æ—¶åˆçº¦æ•°é‡
+    double  m_dHYLL;     // HYLL	åˆ©ç‡/è´¹ç‡
+    double  m_dFXFL;     // FXFL	ç½šæ¯åˆ©ç‡
+    double  m_dLXJS;     // LXJS	åˆ©æ¯åŸºæ•°
+    double  m_dFDLX;     // FDLX	åˆ†æ®µåˆ©æ¯
+    double  m_dYJLX;     // YJLX	é¢„è®¡åˆ©æ¯
+    double  m_dFXLXJS;   // FXLXJS	ç½šæ¯åˆ©æ¯ç§¯æ•°
+    double  m_dFXYJLX;   // FXYJLX	ç½šæ¯é¢„è®¡åˆ©æ¯
+    double  m_dFXFDLX;   // FXFDLX	ç½šæ¯åˆ†æ®µåˆ©æ¯
+    double  m_dBZJBL;    // BZJBL	ä¿è¯é‡‘æ¯”ä¾‹
+    int     m_nZQCS;       // ZQCS	å±•æœŸæ¬¡æ•°
+    int     m_nEDDJBS;     // EDDJBSé¢åº¦å†»ç»“æ ‡è¯†
+    char    m_szYHYBH[25];           // YHYBH	åŸåˆçº¦ç¼–å·
+    char    m_szTCBH[21];             // TCBH	å¤´å¯¸ç¼–å·
+    int     m_nBCSL;       // BCSL	è¡¥å¿æ•°é‡
+    double  m_dBCJE;     // BCJE	è¡¥å¿é‡‘é¢
+    int     m_nLXLJFS;     // LXLJFS	åˆ©æ¯äº†ç»“æ–¹å¼
+    int     m_nFLBH;       // FLBH	è´¹ç‡ç¼–å·
     char    m_szDQRQHYBH[29];        // DQRQHYBH
-    int     m_nQKBZ;       // QKBZ Ç·¿î±êÖ¾
-    int     m_nQQBZ;       // QQBZ	Ç·È¯±êÖ¾
-    int     m_nZT;			//¼ì²é¸ºÕ®ÁË½á×´Ì¬£º0-Î´ÁË½á  1-ÒÑÁË½á
-    char    m_szBrowIndex[25];//·ÖÒ³Ë÷ÒıÖµ
+    int     m_nQKBZ;       // QKBZ æ¬ æ¬¾æ ‡å¿—
+    int     m_nQQBZ;       // QQBZ	æ¬ åˆ¸æ ‡å¿—
+    int     m_nZT;			//æ£€æŸ¥è´Ÿå€ºäº†ç»“çŠ¶æ€ï¼š0-æœªäº†ç»“  1-å·²äº†ç»“
+    char    m_szBrowIndex[25];//åˆ†é¡µç´¢å¼•å€¼
 } ITPDK_XYFZ;
-//µ±ÈÕĞÅÓÃºÏÔ¼±ä¶¯
+//å½“æ—¥ä¿¡ç”¨åˆçº¦å˜åŠ¨
 typedef struct
 {
-    char    AccountId[16];       //¿Í»§ºÅ
-    int     m_nLSH;        // LSH Á÷Ë®ºÅ
-    char    m_szHYBH[25];  // HYBH ºÏÔ¼±àºÅ
-    int     m_nWTH;        // WTH	¶©µ¥±àºÅ
-    int     m_nHBXH;       // HBXH  »Ø±¨ĞòºÅ
-    char    m_szJYS[3];    // JYS	½»Ò×Ëù
-    char    m_szZQDM[11];  // ZQDM	Ö¤È¯´úÂë
-    int     m_nJYRQ;       // JYRQ	½»Ò×ÈÕÆÚ
-    int     m_nFSRQ;       // FSRQ	·¢ÉúÈÕÆÚ
-    char    m_szFSSJ[13];  // FSSJ	·¢ÉúÊ±¼ä
-    int     m_nHYBDLB;     // HYBDLB ºÏÔ¼±ä¶¯Àà±ğ
-    int     m_nJYLB;       // JYLB	½»Ò×Àà±ğ
-    int     m_nHYLB;       // HYLB	ºÏÔ¼Àà±ğ
-    char    m_szHYZQDM[11];// HYZQDM	ºÏÔ¼Ö¤È¯´úÂë
-    char    m_szHYJYS[3];  // HYJYS		ºÏÔ¼½»Ò×Ëù
-    int     m_nFSHYSL;     // FSHYSL	·¢ÉúºÏÔ¼ÊıÁ¿
-    int     m_nHYSL;       // HYSL		ºóÓàÊıÁ¿
-    double  m_dFSHYJE;     // FSHYJE	·¢ÉúºÏÔ¼½ğ¶î
-    double  m_dHYJE;       // HYJE		ºóÓà½ğ¶î
-    double  m_dFSFY;       // FSFY		·¢Éú·ÑÓÃ
-    double  m_dHYFY;       // HYFY		ºóÓà·ÑÓÃ
-    double  m_dFSLX;       // FSLX		·¢ÉúÀûÏ¢
-    double  m_dHYLX;       // HYLX		ºóÓàÀûÏ¢
-    double  m_dFSFX;       // FSFX		·¢Éú·£Ï¢
-    double  m_dHYFX;       // HYFX		ºóÓà·£Ï¢
-    int     m_nZDBZ;       // ZDBZ		Ö¸¶¨»¹¿î±êÖ¾
-    int     m_nQPBZ;       // QPBZ		Ç¿Æ½±êÖ¾
-    char    m_szYHYBH[25];    // YHYBH	Ô­ºÏÔ¼±àºÅ
-    char    m_szTCBH[21];      // TCBH	Í·´ç±àºÅ
-    char    m_szZY[129];      // ZY		ÕªÒª
-    int     m_nCXBZ;         // CXBZ	³·Ïú±êÖ¾
-    int     m_nQSBZ;         // QSBZ	ÇåËã±êÖ¾
+    char    AccountId[16];       //å®¢æˆ·å·
+    int     m_nLSH;        // LSH æµæ°´å·
+    char    m_szHYBH[25];  // HYBH åˆçº¦ç¼–å·
+    int     m_nWTH;        // WTH	è®¢å•ç¼–å·
+    int     m_nHBXH;       // HBXH  å›æŠ¥åºå·
+    char    m_szJYS[3];    // JYS	äº¤æ˜“æ‰€
+    char    m_szZQDM[11];  // ZQDM	è¯åˆ¸ä»£ç 
+    int     m_nJYRQ;       // JYRQ	äº¤æ˜“æ—¥æœŸ
+    int     m_nFSRQ;       // FSRQ	å‘ç”Ÿæ—¥æœŸ
+    char    m_szFSSJ[13];  // FSSJ	å‘ç”Ÿæ—¶é—´
+    int     m_nHYBDLB;     // HYBDLB åˆçº¦å˜åŠ¨ç±»åˆ«
+    int     m_nJYLB;       // JYLB	äº¤æ˜“ç±»åˆ«
+    int     m_nHYLB;       // HYLB	åˆçº¦ç±»åˆ«
+    char    m_szHYZQDM[11];// HYZQDM	åˆçº¦è¯åˆ¸ä»£ç 
+    char    m_szHYJYS[3];  // HYJYS		åˆçº¦äº¤æ˜“æ‰€
+    int     m_nFSHYSL;     // FSHYSL	å‘ç”Ÿåˆçº¦æ•°é‡
+    int     m_nHYSL;       // HYSL		åä½™æ•°é‡
+    double  m_dFSHYJE;     // FSHYJE	å‘ç”Ÿåˆçº¦é‡‘é¢
+    double  m_dHYJE;       // HYJE		åä½™é‡‘é¢
+    double  m_dFSFY;       // FSFY		å‘ç”Ÿè´¹ç”¨
+    double  m_dHYFY;       // HYFY		åä½™è´¹ç”¨
+    double  m_dFSLX;       // FSLX		å‘ç”Ÿåˆ©æ¯
+    double  m_dHYLX;       // HYLX		åä½™åˆ©æ¯
+    double  m_dFSFX;       // FSFX		å‘ç”Ÿç½šæ¯
+    double  m_dHYFX;       // HYFX		åä½™ç½šæ¯
+    int     m_nZDBZ;       // ZDBZ		æŒ‡å®šè¿˜æ¬¾æ ‡å¿—
+    int     m_nQPBZ;       // QPBZ		å¼ºå¹³æ ‡å¿—
+    char    m_szYHYBH[25];    // YHYBH	åŸåˆçº¦ç¼–å·
+    char    m_szTCBH[21];      // TCBH	å¤´å¯¸ç¼–å·
+    char    m_szZY[129];      // ZY		æ‘˜è¦
+    int     m_nCXBZ;         // CXBZ	æ’¤é”€æ ‡å¿—
+    int     m_nQSBZ;         // QSBZ	æ¸…ç®—æ ‡å¿—
 } ITPDK_XYDRBD;
-//µ±ÈÕĞÅÓÃÈÚÈ¯¸ºÕ®»ã×Ü
+//å½“æ—¥ä¿¡ç”¨èåˆ¸è´Ÿå€ºæ±‡æ€»
 typedef struct
 {
-    char    AccountId[16];       //¿Í»§ºÅ
-    char    m_szJYS[3];         //½»Ò×Ëù
-    char    m_szZQDM[11];       //Ö¤È¯´úÂë
-    int     m_nFZSL;            //¸ºÕ®ÊıÁ¿
-    int     m_nDRRQCJSL;        //µ±ÈÕÈÚÈ¯³É½»ÊıÁ¿
-    int     m_nHQWTSL;          //»¹È¯Î¯ÍĞÊıÁ¿
-    int     m_nHQCJSL;          //»¹È¯³É½»ÊıÁ¿
-    int     m_nYQWTSL;          //ÓàÈ¯Î¯ÍĞÊıÁ¿
-    int     m_nYQSL;            //ÓàÈ¯ÊıÁ¿
-    int     m_nBrowIndex;       //·ÖÒ³Ë÷Òı
+    char    AccountId[16];       //å®¢æˆ·å·
+    char    m_szJYS[3];         //äº¤æ˜“æ‰€
+    char    m_szZQDM[11];       //è¯åˆ¸ä»£ç 
+    int     m_nFZSL;            //è´Ÿå€ºæ•°é‡
+    int     m_nDRRQCJSL;        //å½“æ—¥èåˆ¸æˆäº¤æ•°é‡
+    int     m_nHQWTSL;          //è¿˜åˆ¸å§”æ‰˜æ•°é‡
+    int     m_nHQCJSL;          //è¿˜åˆ¸æˆäº¤æ•°é‡
+    int     m_nYQWTSL;          //ä½™åˆ¸å§”æ‰˜æ•°é‡
+    int     m_nYQSL;            //ä½™åˆ¸æ•°é‡
+    int     m_nBrowIndex;       //åˆ†é¡µç´¢å¼•
 } ITPDK_XYRQFZHZ;
 
-//A¹É¿É»®²¦ÊıÁ¿²éÑ¯
+//Aè‚¡å¯åˆ’æ‹¨æ•°é‡æŸ¥è¯¢
 typedef struct
 {
-	char    AccountId[16];  //¿Í»§ºÅ
-	char    m_szJYS[3];     //½»Ò×Ëù
-	char    m_szGDH[12];     //¹É¶«ºÅ
-	char    m_szZQDM[11];   //Ö¤È¯´úÂë
-	char    m_szZQMC[21];	//Ö¤È¯Ãû³Æ
-	int64     m_nKWTSL;     //¿É»®²¦ÊıÁ¿
-	int64     m_nKMCSL;     //¿ÉÂô³öÊıÁ¿
-	int64     m_nMRCJSL;    //µ±ÌìÂòÈëÊıÁ¿
+	char    AccountId[16];  //å®¢æˆ·å·
+	char    m_szJYS[3];     //äº¤æ˜“æ‰€
+	char    m_szGDH[12];     //è‚¡ä¸œå·
+	char    m_szZQDM[11];   //è¯åˆ¸ä»£ç 
+	char    m_szZQMC[21];	//è¯åˆ¸åç§°
+	int64     m_nKWTSL;     //å¯åˆ’æ‹¨æ•°é‡
+	int64     m_nKMCSL;     //å¯å–å‡ºæ•°é‡
+	int64     m_nMRCJSL;    //å½“å¤©ä¹°å…¥æ•°é‡
 
 } ITPDK_XYDBHRSL;
 
-//×¨ÏîÍ·´çÖ¤È¯µ÷²¦
+//ä¸“é¡¹å¤´å¯¸è¯åˆ¸è°ƒæ‹¨
 typedef struct
 {
-    int64   m_nSQH;         //ÉêÇëºÅ
-    int64   m_nLSH;         //Á÷Ë®ºÅ
-    int64   m_nJCCL;        //½ñ³Ö²ÖÁ¿
-    int64   m_nKMCSL;       //¿ÉÂô³öÊıÁ¿
-    int64   m_nBDSL;        //±ä¶¯ÊıÁ¿
-    int64   m_nFSSL;        //·¢ÉúÊıÁ¿
+    int64   m_nSQH;         //ç”³è¯·å·
+    int64   m_nLSH;         //æµæ°´å·
+    int64   m_nJCCL;        //ä»ŠæŒä»“é‡
+    int64   m_nKMCSL;       //å¯å–å‡ºæ•°é‡
+    int64   m_nBDSL;        //å˜åŠ¨æ•°é‡
+    int64   m_nFSSL;        //å‘ç”Ÿæ•°é‡
 }ITPDK_ZXTCZQDB;
 
-//²éÑ¯Ö¤È¯ºÚÃûµ¥
+//æŸ¥è¯¢è¯åˆ¸é»‘åå•
 typedef struct
 {
-    int64   m_nTYPE;        //ÀàĞÍ
-    char    m_szJYS[3];     //½»Ò×Ëù
-    char    m_szZQZBZ[64];  //Ö¤È¯Ö¸±êÖµ ,ÔÚÕâÀïÊÇÖ¤È¯´úÂë
-    int64   m_nJYLB;        //½»Ò×Àà±ğ
-    char    m_szZQLB[4];    //Ö¤È¯Àà±ğ
-    char    m_szXYSX[4];    //ĞÅÓÃÊôĞÔ "01" - ¼¯ÖĞ¶È  "02" - ºÚÃûµ¥
-    char    m_szXYSXZ[64];  //ĞÅÓÃÊôĞÔÖµ£¬ÔÚÕâÀïÊÇ½»Ò×ÏŞÖÆ£¬¼´½»Ò×Àà±ğÆ´½ÓµÄ×Ö·û´®
+    int64   m_nTYPE;        //ç±»å‹
+    char    m_szJYS[3];     //äº¤æ˜“æ‰€
+    char    m_szZQZBZ[64];  //è¯åˆ¸æŒ‡æ ‡å€¼ ,åœ¨è¿™é‡Œæ˜¯è¯åˆ¸ä»£ç 
+    int64   m_nJYLB;        //äº¤æ˜“ç±»åˆ«
+    char    m_szZQLB[4];    //è¯åˆ¸ç±»åˆ«
+    char    m_szXYSX[4];    //ä¿¡ç”¨å±æ€§ "01" - é›†ä¸­åº¦  "02" - é»‘åå•
+    char    m_szXYSXZ[64];  //ä¿¡ç”¨å±æ€§å€¼ï¼Œåœ¨è¿™é‡Œæ˜¯äº¤æ˜“é™åˆ¶ï¼Œå³äº¤æ˜“ç±»åˆ«æ‹¼æ¥çš„å­—ç¬¦ä¸²
 }ITPDK_ZQHMD;
 
-//±¾ÈÕĞÂ¹ÉÉê¹º
+//æœ¬æ—¥æ–°è‚¡ç”³è´­
 typedef struct
 {
-    char     m_szJYS[4];        //½»Ò×Ëù
-    char     m_szZQDM[12];      //Ö¤È¯´úÂë
-    char     m_szZQMC[16];      //Ö¤È¯Ãû³Æ
-    int      m_nFXFS;           //·¢ĞĞ·½Ê½
-    double   m_dRGJG;           //ÈÏ¹º¼Û¸ñ
-    char     m_szRGDM[12];      //ÈÏ¹º´úÂë
-    int      m_nRGRQ;           //ÈÏ¹ºÈÕÆÚ
-    int      m_nWTSX;           //Î¯ÍĞÉÏÏŞ
-    int      m_nBDRQ;           //±ä¶¯ÈÕÆÚ
+    char     m_szJYS[4];        //äº¤æ˜“æ‰€
+    char     m_szZQDM[12];      //è¯åˆ¸ä»£ç 
+    char     m_szZQMC[16];      //è¯åˆ¸åç§°
+    int      m_nFXFS;           //å‘è¡Œæ–¹å¼
+    double   m_dRGJG;           //è®¤è´­ä»·æ ¼
+    char     m_szRGDM[12];      //è®¤è´­ä»£ç 
+    int      m_nRGRQ;           //è®¤è´­æ—¥æœŸ
+    int      m_nWTSX;           //å§”æ‰˜ä¸Šé™
+    int      m_nBDRQ;           //å˜åŠ¨æ—¥æœŸ
 } ITPDK_XGSG;
 
-//¸ºÕ®±ä¶¯Ã÷Ï¸
+//è´Ÿå€ºå˜åŠ¨æ˜ç»†
 typedef struct
 {
-    char    AccountId[16];      // KHH      ¿Í»§ºÅ
-    int     m_nLSH;             // LSH      Á÷Ë®ºÅ
-    char    m_szHYBH[25];       // HYBH     ºÏÔ¼±àºÅ
-    int     m_nWTH;             // WTH	    ¶©µ¥±àºÅ
-    int     m_nHBXH;            // HBXH     »Ø±¨ĞòºÅ
-    char    m_szJYS[3];         // JYS	    ½»Ò×Ëù
-    char    m_szZQDM[11];       // ZQDM	    Ö¤È¯´úÂë
-    int     m_nJYRQ;            // JYRQ	    ½»Ò×ÈÕÆÚ
-    int     m_nFSRQ;            // FSRQ	    ·¢ÉúÈÕÆÚ
-    char    m_szFSSJ[13];       // FSSJ	    ·¢ÉúÊ±¼ä
-    int     m_nHYBDLB;          // HYBDLB   ºÏÔ¼±ä¶¯Àà±ğ
-    int     m_nJYLB;            // JYLB	    ½»Ò×Àà±ğ
-    int     m_nHYLB;            // HYLB	    ºÏÔ¼Àà±ğ
-    char    m_szHYZQDM[11];     // HYZQDM	ºÏÔ¼Ö¤È¯´úÂë
-    char    m_szHYJYS[3];       // HYJYS	ºÏÔ¼½»Ò×Ëù
-    int     m_nFSHYSL;          // FSHYSL	·¢ÉúºÏÔ¼ÊıÁ¿
-    int     m_nHYSL;            // HYSL		ºóÓàÊıÁ¿
-    double  m_dFSHYJE;          // FSHYJE	·¢ÉúºÏÔ¼½ğ¶î
-    double  m_dHYJE;            // HYJE		ºóÓà½ğ¶î
-    double  m_dFSFY;            // FSFY		·¢Éú·ÑÓÃ
-    double  m_dHYFY;            // HYFY		ºóÓà·ÑÓÃ
-    double  m_dFSLX;            // FSLX		·¢ÉúÀûÏ¢
-    double  m_dHYLX;            // HYLX		ºóÓàÀûÏ¢
-    double  m_dFSFX;            // FSFX		·¢Éú·£Ï¢
-    double  m_dHYFX;            // HYFX		ºóÓà·£Ï¢
-    int     m_nZDBZ;            // ZDBZ		Ö¸¶¨»¹¿î±êÖ¾
-    int     m_nQPBZ;            // QPBZ		Ç¿Æ½±êÖ¾
-    char    m_szYHYBH[25];      // YHYBH	Ô­ºÏÔ¼±àºÅ
-    char    m_szTCBH[21];       // TCBH	    Í·´ç±àºÅ
-    char    m_szZY[129];        // ZY		ÕªÒª
-    int     m_nCXBZ;            // CXBZ	    ³·Ïú±êÖ¾
-    int     m_nQSBZ;            // QSBZ	    ÇåËã±êÖ¾
-    int     m_nBrowIndex;       // BrwoIndex ·ÖÒ³Ë÷Òı
+    char    AccountId[16];      // KHH      å®¢æˆ·å·
+    int     m_nLSH;             // LSH      æµæ°´å·
+    char    m_szHYBH[25];       // HYBH     åˆçº¦ç¼–å·
+    int     m_nWTH;             // WTH	    è®¢å•ç¼–å·
+    int     m_nHBXH;            // HBXH     å›æŠ¥åºå·
+    char    m_szJYS[3];         // JYS	    äº¤æ˜“æ‰€
+    char    m_szZQDM[11];       // ZQDM	    è¯åˆ¸ä»£ç 
+    int     m_nJYRQ;            // JYRQ	    äº¤æ˜“æ—¥æœŸ
+    int     m_nFSRQ;            // FSRQ	    å‘ç”Ÿæ—¥æœŸ
+    char    m_szFSSJ[13];       // FSSJ	    å‘ç”Ÿæ—¶é—´
+    int     m_nHYBDLB;          // HYBDLB   åˆçº¦å˜åŠ¨ç±»åˆ«
+    int     m_nJYLB;            // JYLB	    äº¤æ˜“ç±»åˆ«
+    int     m_nHYLB;            // HYLB	    åˆçº¦ç±»åˆ«
+    char    m_szHYZQDM[11];     // HYZQDM	åˆçº¦è¯åˆ¸ä»£ç 
+    char    m_szHYJYS[3];       // HYJYS	åˆçº¦äº¤æ˜“æ‰€
+    int     m_nFSHYSL;          // FSHYSL	å‘ç”Ÿåˆçº¦æ•°é‡
+    int     m_nHYSL;            // HYSL		åä½™æ•°é‡
+    double  m_dFSHYJE;          // FSHYJE	å‘ç”Ÿåˆçº¦é‡‘é¢
+    double  m_dHYJE;            // HYJE		åä½™é‡‘é¢
+    double  m_dFSFY;            // FSFY		å‘ç”Ÿè´¹ç”¨
+    double  m_dHYFY;            // HYFY		åä½™è´¹ç”¨
+    double  m_dFSLX;            // FSLX		å‘ç”Ÿåˆ©æ¯
+    double  m_dHYLX;            // HYLX		åä½™åˆ©æ¯
+    double  m_dFSFX;            // FSFX		å‘ç”Ÿç½šæ¯
+    double  m_dHYFX;            // HYFX		åä½™ç½šæ¯
+    int     m_nZDBZ;            // ZDBZ		æŒ‡å®šè¿˜æ¬¾æ ‡å¿—
+    int     m_nQPBZ;            // QPBZ		å¼ºå¹³æ ‡å¿—
+    char    m_szYHYBH[25];      // YHYBH	åŸåˆçº¦ç¼–å·
+    char    m_szTCBH[21];       // TCBH	    å¤´å¯¸ç¼–å·
+    char    m_szZY[129];        // ZY		æ‘˜è¦
+    int     m_nCXBZ;            // CXBZ	    æ’¤é”€æ ‡å¿—
+    int     m_nQSBZ;            // QSBZ	    æ¸…ç®—æ ‡å¿—
+    int     m_nBrowIndex;       // BrwoIndex åˆ†é¡µç´¢å¼•
 } ITPDK_FZBDMX;
 
-//ÈÚ×Ê²Öµ¥Ã÷Ï¸²éÑ¯£¨¹â´ó£©
+//èèµ„ä»“å•æ˜ç»†æŸ¥è¯¢ï¼ˆå…‰å¤§ï¼‰
 typedef struct
 {
-    char    m_sKCLSH[13];       //¿ª²ÖÁ÷Ë®ºÅ
-    char    m_sKCRQ[9];         //¿ª²ÖÈÕÆÚ
-    char    m_sCDDQR[9];        //²Öµ¥µ½ÆÚÈÕ
-    char    m_sZQDM[9];         //Ö¤È¯´úÂë
-    char    m_sZQMC[9];         //Ö¤È¯Ãû³Æ
-    double  m_dRZMRJE;          //ÈÚ×ÊÂòÈë½ğ¶î
-    double  m_dYCHJE;           //ÒÑ³¥»¹½ğ¶î
-    double  m_dRZFZJE;          //ÈÚ×Ê¸ºÕ®½ğ¶î
-    double  m_dRZMRJ;           //ÈÚ×ÊÂòÈë¼Û
-    double  m_dRZFZSZ;          //ÈÚ×Ê¸ºÕ®ÊĞÖµ
-    double  m_dRZLXYJ;          //ÈÚ×ÊÀûÏ¢ÒÑ¼Æ
-    double  m_dRZLXYH;          //ÈÚ×ÊÀûÏ¢ÒÑ»¹
-    double  m_dYQFXYJ;          //ÓâÆÚ·£Ï¢ÒÑ¼Æ
-    double  m_dYQFXYH;          //ÓâÆÚ·£Ï¢ÒÑ»¹
-    int     m_nCDZQCS;          //²Öµ¥Õ¹ÆÚ´ÎÊı
-    double  m_dHYNLL;           //ºÏÔ¼ÄêÀûÂÊ
-    char    m_sLJBS[2];         //ÁË½á±êÊ¶
-    double  m_dWJXF;            //Î´½áÏ¢·Ñ
-    double  m_dYJWFXF;          //ÒÑ½áÎ´¸¶Ï¢·Ñ
-    double  m_dRZSL;            //ÈÚ×ÊÊıÁ¿
+    char    m_sKCLSH[13];       //å¼€ä»“æµæ°´å·
+    char    m_sKCRQ[9];         //å¼€ä»“æ—¥æœŸ
+    char    m_sCDDQR[9];        //ä»“å•åˆ°æœŸæ—¥
+    char    m_sZQDM[9];         //è¯åˆ¸ä»£ç 
+    char    m_sZQMC[9];         //è¯åˆ¸åç§°
+    double  m_dRZMRJE;          //èèµ„ä¹°å…¥é‡‘é¢
+    double  m_dYCHJE;           //å·²å¿è¿˜é‡‘é¢
+    double  m_dRZFZJE;          //èèµ„è´Ÿå€ºé‡‘é¢
+    double  m_dRZMRJ;           //èèµ„ä¹°å…¥ä»·
+    double  m_dRZFZSZ;          //èèµ„è´Ÿå€ºå¸‚å€¼
+    double  m_dRZLXYJ;          //èèµ„åˆ©æ¯å·²è®¡
+    double  m_dRZLXYH;          //èèµ„åˆ©æ¯å·²è¿˜
+    double  m_dYQFXYJ;          //é€¾æœŸç½šæ¯å·²è®¡
+    double  m_dYQFXYH;          //é€¾æœŸç½šæ¯å·²è¿˜
+    int     m_nCDZQCS;          //ä»“å•å±•æœŸæ¬¡æ•°
+    double  m_dHYNLL;           //åˆçº¦å¹´åˆ©ç‡
+    char    m_sLJBS[2];         //äº†ç»“æ ‡è¯†
+    double  m_dWJXF;            //æœªç»“æ¯è´¹
+    double  m_dYJWFXF;          //å·²ç»“æœªä»˜æ¯è´¹
+    double  m_dRZSL;            //èèµ„æ•°é‡
 }ITPDK_RZCDMX;
 
-//ÈÚÈ¯²Öµ¥Ã÷Ï¸²éÑ¯£¨¹â´ó£©
+//èåˆ¸ä»“å•æ˜ç»†æŸ¥è¯¢ï¼ˆå…‰å¤§ï¼‰
 typedef struct
 {
-    char    m_sKCLSH[13];       //¿ª²ÖÁ÷Ë®ºÅ
-    char    m_sKCRQ[9];         //¿ª²ÖÈÕÆÚ
-    char    m_sCDDQR[9];        //²Öµ¥µ½ÆÚÈÕ
-    char    m_sZQDM[9];         //Ö¤È¯´úÂë
-    char    m_sZQMC[9];         //Ö¤È¯Ãû³Æ
-    int     m_dRQMCGS;          //ÈÚÈ¯Âô³ö¹ÉÊı
-    int     m_dYCHGS;           //ÒÑ³¥»¹¹ÉÊı
-    double  m_dRQFZGS;          //ÈÚÈ¯¸ºÕ®¹ÉÊı
-    double  m_dRQMCJ;           //ÈÚÈ¯Âô³ö¼Û
-    double  m_dRQFZSZ;          //ÈÚÈ¯¸ºÕ®ÊĞÖµ
-    double  m_dRQFYYJ;          //ÈÚÈ¯·ÑÓÃÒÑ¼Æ
-    double  m_dRQFYYH;          //ÈÚÈ¯·ÑÓÃÒÑ»¹
-    double  m_dYQFXYJ;          //ÓâÆÚ·£Ï¢ÒÑ¼Æ
-    double  m_dYQFXYH;          //ÓâÆÚ·£Ï¢ÒÑ»¹
-    char    m_sQYBCFS[30];      //È¨Òæ²¹³¥·½Ê½(µÚÒ»Î»±êÊ¾¡°Åä¹É³¥»¹±êÖ¾¡±£¬µÚ¶şÎ»±êÊ¾¡°ÅäÕ®³¥»¹±êÖ¾¡±£¬µÚÈıÎ»±êÊ¾¡°ÅÉ·¢È¨Ö¤³¥»¹±êÖ¾)
-                                //±êÖ¾º¬Òå£º0»ò¿Õ¸ñ:ÌáÇ°ÁË½á  1:ÏÖ½ğ²¹³¥
-    int     m_nCDZQCS;          //²Öµ¥Õ¹ÆÚ´ÎÊı
-    double  m_dHYNLL;           //ºÏÔ¼ÄêÀûÂÊ
-    double  m_dWJXF;            //Î´½áÏ¢·Ñ
-    double  m_dYJWFXF;          //ÒÑ½áÎ´¸¶Ï¢·Ñ
+    char    m_sKCLSH[13];       //å¼€ä»“æµæ°´å·
+    char    m_sKCRQ[9];         //å¼€ä»“æ—¥æœŸ
+    char    m_sCDDQR[9];        //ä»“å•åˆ°æœŸæ—¥
+    char    m_sZQDM[9];         //è¯åˆ¸ä»£ç 
+    char    m_sZQMC[9];         //è¯åˆ¸åç§°
+    int     m_dRQMCGS;          //èåˆ¸å–å‡ºè‚¡æ•°
+    int     m_dYCHGS;           //å·²å¿è¿˜è‚¡æ•°
+    double  m_dRQFZGS;          //èåˆ¸è´Ÿå€ºè‚¡æ•°
+    double  m_dRQMCJ;           //èåˆ¸å–å‡ºä»·
+    double  m_dRQFZSZ;          //èåˆ¸è´Ÿå€ºå¸‚å€¼
+    double  m_dRQFYYJ;          //èåˆ¸è´¹ç”¨å·²è®¡
+    double  m_dRQFYYH;          //èåˆ¸è´¹ç”¨å·²è¿˜
+    double  m_dYQFXYJ;          //é€¾æœŸç½šæ¯å·²è®¡
+    double  m_dYQFXYH;          //é€¾æœŸç½šæ¯å·²è¿˜
+    char    m_sQYBCFS[30];      //æƒç›Šè¡¥å¿æ–¹å¼(ç¬¬ä¸€ä½æ ‡ç¤ºâ€œé…è‚¡å¿è¿˜æ ‡å¿—â€ï¼Œç¬¬äºŒä½æ ‡ç¤ºâ€œé…å€ºå¿è¿˜æ ‡å¿—â€ï¼Œç¬¬ä¸‰ä½æ ‡ç¤ºâ€œæ´¾å‘æƒè¯å¿è¿˜æ ‡å¿—)
+                                //æ ‡å¿—å«ä¹‰ï¼š0æˆ–ç©ºæ ¼:æå‰äº†ç»“  1:ç°é‡‘è¡¥å¿
+    int     m_nCDZQCS;          //ä»“å•å±•æœŸæ¬¡æ•°
+    double  m_dHYNLL;           //åˆçº¦å¹´åˆ©ç‡
+    double  m_dWJXF;            //æœªç»“æ¯è´¹
+    double  m_dYJWFXF;          //å·²ç»“æœªä»˜æ¯è´¹
 }ITPDK_RQCDMX;
 
-//²Öµ¥±ä¸üÉêÇë¾Ü¾øÔ­Òò²éÑ¯£¨¹â´ó£©
+//ä»“å•å˜æ›´ç”³è¯·æ‹’ç»åŸå› æŸ¥è¯¢ï¼ˆå…‰å¤§ï¼‰
 typedef struct
 {
-    char    m_sSQRQ[9];         //ÉêÇëÈÕÆÚ
-    char    m_sKHH[16];         //¿Í»§ºÅ
-    char    m_sSQXH[13];        //ÉêÇëĞòºÅ
-    char    m_sCDLSH[13];       //²Öµ¥Á÷Ë®ºÅ
-    char    m_sCDFSR[9];        //²Öµ¥·¢ÉúÈÕ
-    char    m_sCDLX[2];         //²Öµ¥ÀàĞÍ£¨1:ÈÚ×Ê  2:ÈÚÈ¯£©
-    char    m_sTZLX[2];         //µ÷ÕûÀàĞÍ£¨0:ÀûÂÊµ÷Õû  1:²Öµ¥Õ¹ÆÚ£©
-    char    m_sYYB[4];          //ÓªÒµ²¿
-    char    m_sJYS[3];          //ÊĞ³¡´úÂë
-    char    m_sZQDM[9];         //Ö¤È¯´úÂë
-    char    m_sJJYY[255];       //¾Ü¾øÔ­Òò
-    char    m_sLSSCSJ[27];      //Á÷Ë®Éú³ÉÊ±¼ä
+    char    m_sSQRQ[9];         //ç”³è¯·æ—¥æœŸ
+    char    m_sKHH[16];         //å®¢æˆ·å·
+    char    m_sSQXH[13];        //ç”³è¯·åºå·
+    char    m_sCDLSH[13];       //ä»“å•æµæ°´å·
+    char    m_sCDFSR[9];        //ä»“å•å‘ç”Ÿæ—¥
+    char    m_sCDLX[2];         //ä»“å•ç±»å‹ï¼ˆ1:èèµ„  2:èåˆ¸ï¼‰
+    char    m_sTZLX[2];         //è°ƒæ•´ç±»å‹ï¼ˆ0:åˆ©ç‡è°ƒæ•´  1:ä»“å•å±•æœŸï¼‰
+    char    m_sYYB[4];          //è¥ä¸šéƒ¨
+    char    m_sJYS[3];          //å¸‚åœºä»£ç 
+    char    m_sZQDM[9];         //è¯åˆ¸ä»£ç 
+    char    m_sJJYY[255];       //æ‹’ç»åŸå› 
+    char    m_sLSSCSJ[27];      //æµæ°´ç”Ÿæˆæ—¶é—´
 }ITPDK_CDBGSQJJYYCX;
 
-//²Öµ¥±ä¸üÉêÇë²éÑ¯£¨¹â´ó£©
+//ä»“å•å˜æ›´ç”³è¯·æŸ¥è¯¢ï¼ˆå…‰å¤§ï¼‰
 typedef struct
 {
-    char    m_sSQRQ[9];         //ÉêÇëÈÕÆÚ
-    char    m_sKHH[16];         //¿Í»§ºÅ
-    char    m_sSQLSH[11];       //ÉêÇëÁ÷Ë®ºÅ
-    char    m_sTZLX[2];         //µ÷ÕûÀàĞÍ£¨0:ÀûÂÊµ÷Õû  1:²Öµ¥Õ¹ÆÚ£©
-    char    m_sHYLX[2];         //ºÏÔ¼ÀàĞÍ£¨1:ÈÚ×Ê  2:ÈÚÈ¯£©
-    char    m_sYYB[4];          //ÓªÒµ²¿
-    char    m_sSQZG[7];         //ÉêÇëÖ°¹¤
-    char    m_sSQSJ[9];         //ÉêÇëÊ±¼ä
-    char    m_sSHZG[7];         //ÉóºËÖ°¹¤
-    char    m_sSHZT[2];         //ÉóºË×´Ì¬£¨0:´ı´¦Àí  1:Í¨¹ı  2:¾Ü¾ø  3:´¦ÀíÊ§°Ü£©
-    char    m_sSHRQ[9];         //ÉóºËÈÕÆÚ
-    char    m_sSHSJ[9];         //ÉóºËÊ±¼ä
-    char    m_sKCKSRQ[9];       //¿ª²Ö¿ªÊ¼ÈÕÆÚ
-    char    m_sKCJSRQ[9];       //¿ª²Ö½áÊøÈÕÆÚ
-    char    m_sJYS[3];          //½»Ò×Ëù
-    char    m_sZQDM[9];         //Ö¤È¯´úÂë
-    int     m_dCDBS;            //²Öµ¥±ÊÊı
-    int     m_dCLBS;            //´¦Àí±ÊÊı
-    char    m_sFJSJ[41];        //¸½¼ÓÊı¾İ£¨ÀûÂÊµ÷ÕûÊ±´æ·ÅĞÂ²úÆ·±àºÅ£¬Õ¹ÆÚÊ±´æ·ÅÔ¤Õ¹ÆÚÌìÊı£©
-    char    m_sWTLY[81];        //Î¯ÍĞÀ´Ô´
-    char    m_sBZ[256];         //±¸×¢£¨ÉóºË×´Ì¬Îª 3:´¦ÀíÊ§°Ü Ê±¼ÇÂ¼Ê§°ÜÔ­Òò£©
+    char    m_sSQRQ[9];         //ç”³è¯·æ—¥æœŸ
+    char    m_sKHH[16];         //å®¢æˆ·å·
+    char    m_sSQLSH[11];       //ç”³è¯·æµæ°´å·
+    char    m_sTZLX[2];         //è°ƒæ•´ç±»å‹ï¼ˆ0:åˆ©ç‡è°ƒæ•´  1:ä»“å•å±•æœŸï¼‰
+    char    m_sHYLX[2];         //åˆçº¦ç±»å‹ï¼ˆ1:èèµ„  2:èåˆ¸ï¼‰
+    char    m_sYYB[4];          //è¥ä¸šéƒ¨
+    char    m_sSQZG[7];         //ç”³è¯·èŒå·¥
+    char    m_sSQSJ[9];         //ç”³è¯·æ—¶é—´
+    char    m_sSHZG[7];         //å®¡æ ¸èŒå·¥
+    char    m_sSHZT[2];         //å®¡æ ¸çŠ¶æ€ï¼ˆ0:å¾…å¤„ç†  1:é€šè¿‡  2:æ‹’ç»  3:å¤„ç†å¤±è´¥ï¼‰
+    char    m_sSHRQ[9];         //å®¡æ ¸æ—¥æœŸ
+    char    m_sSHSJ[9];         //å®¡æ ¸æ—¶é—´
+    char    m_sKCKSRQ[9];       //å¼€ä»“å¼€å§‹æ—¥æœŸ
+    char    m_sKCJSRQ[9];       //å¼€ä»“ç»“æŸæ—¥æœŸ
+    char    m_sJYS[3];          //äº¤æ˜“æ‰€
+    char    m_sZQDM[9];         //è¯åˆ¸ä»£ç 
+    int     m_dCDBS;            //ä»“å•ç¬”æ•°
+    int     m_dCLBS;            //å¤„ç†ç¬”æ•°
+    char    m_sFJSJ[41];        //é™„åŠ æ•°æ®ï¼ˆåˆ©ç‡è°ƒæ•´æ—¶å­˜æ”¾æ–°äº§å“ç¼–å·ï¼Œå±•æœŸæ—¶å­˜æ”¾é¢„å±•æœŸå¤©æ•°ï¼‰
+    char    m_sWTLY[81];        //å§”æ‰˜æ¥æº
+    char    m_sBZ[256];         //å¤‡æ³¨ï¼ˆå®¡æ ¸çŠ¶æ€ä¸º 3:å¤„ç†å¤±è´¥ æ—¶è®°å½•å¤±è´¥åŸå› ï¼‰
 }ITPDK_CDBGSQCX;
 
-//ĞÂ¹ÉÖĞÇ©²éÑ¯£¨¹â´ó£©
+//æ–°è‚¡ä¸­ç­¾æŸ¥è¯¢ï¼ˆå…‰å¤§ï¼‰
 typedef struct
 {
-    char    m_sFSRQ[9];         //·¢ÉúÈÕÆÚ
-    char    m_sKHYYB[5];        //¿ª»§ÓªÒµ²¿
-    char    m_sKHH[11];         //¿Í»§ºÅ
-    char    m_sGDH[16];         //¹É¶«´úÂë
-    char    m_sGDXM[21];        //¹É¶«ĞÕÃû
-    char    m_sSCDM[2];         //ÊĞ³¡´úÂë
-    char    m_sSCMC[21];        //ÊĞ³¡Ãû³Æ
-    char    m_sZQDM[9];         //Ö¤È¯´úÂë
-    char    m_sZQMC[41];        //Ö¤È¯Ãû³Æ
-    int     m_nZQSL;            //ÖĞÇ©ÊıÁ¿
-    double  m_dCJJG;            //³É½»¼Û¸ñ
-    double  m_dCJJE;            //³É½»½ğ¶î
-    int     m_nZQGS;            //ÖĞÇ©¸öÊı
-    char    m_sLSH[31];         //Á÷Ë®ºÅ
-    char    m_sKKRQ[9];         //¿Û¿îÈÕÆÚ
-    char    m_sZQLB[4];         //Ö¤È¯Àà±ğ£¨00:ÆäËû£¬01::¹ÉÆ±£¬02:Õ®È¯£©
-    char    m_sCLZT[3];         //´¦Àí×´Ì¬£¨0:Î´´¦Àí£¬1:È«²¿ÖĞÇ©¿Û¿î£¬2:²¿·ÖÖĞÇ©¿Û¿î£¬3:È«²¿·ÅÆú£©
-    char    m_sTQDJBZ[2];       //ÌáÇ°¶³½á±êÖ¾£¨0:Î´Ô¤¶³½á£¬1:Ô¤¶³½á£¬2:ÖĞÇ©´¦Àí£©
-    double  m_dSJZQSL;          //Êµ¼ÊÖĞÇ©ÊıÁ¿
-    double  m_dSJZQJE;          //Êµ¼ÊÖĞÇ©½ğ¶î
-    double  m_dFQSL;            //·ÅÆúÊıÁ¿
-    double  m_dFQJE;            //·ÅÆú½ğ¶î
+    char    m_sFSRQ[9];         //å‘ç”Ÿæ—¥æœŸ
+    char    m_sKHYYB[5];        //å¼€æˆ·è¥ä¸šéƒ¨
+    char    m_sKHH[11];         //å®¢æˆ·å·
+    char    m_sGDH[16];         //è‚¡ä¸œä»£ç 
+    char    m_sGDXM[21];        //è‚¡ä¸œå§“å
+    char    m_sSCDM[2];         //å¸‚åœºä»£ç 
+    char    m_sSCMC[21];        //å¸‚åœºåç§°
+    char    m_sZQDM[9];         //è¯åˆ¸ä»£ç 
+    char    m_sZQMC[41];        //è¯åˆ¸åç§°
+    int     m_nZQSL;            //ä¸­ç­¾æ•°é‡
+    double  m_dCJJG;            //æˆäº¤ä»·æ ¼
+    double  m_dCJJE;            //æˆäº¤é‡‘é¢
+    int     m_nZQGS;            //ä¸­ç­¾ä¸ªæ•°
+    char    m_sLSH[31];         //æµæ°´å·
+    char    m_sKKRQ[9];         //æ‰£æ¬¾æ—¥æœŸ
+    char    m_sZQLB[4];         //è¯åˆ¸ç±»åˆ«ï¼ˆ00:å…¶ä»–ï¼Œ01::è‚¡ç¥¨ï¼Œ02:å€ºåˆ¸ï¼‰
+    char    m_sCLZT[3];         //å¤„ç†çŠ¶æ€ï¼ˆ0:æœªå¤„ç†ï¼Œ1:å…¨éƒ¨ä¸­ç­¾æ‰£æ¬¾ï¼Œ2:éƒ¨åˆ†ä¸­ç­¾æ‰£æ¬¾ï¼Œ3:å…¨éƒ¨æ”¾å¼ƒï¼‰
+    char    m_sTQDJBZ[2];       //æå‰å†»ç»“æ ‡å¿—ï¼ˆ0:æœªé¢„å†»ç»“ï¼Œ1:é¢„å†»ç»“ï¼Œ2:ä¸­ç­¾å¤„ç†ï¼‰
+    double  m_dSJZQSL;          //å®é™…ä¸­ç­¾æ•°é‡
+    double  m_dSJZQJE;          //å®é™…ä¸­ç­¾é‡‘é¢
+    double  m_dFQSL;            //æ”¾å¼ƒæ•°é‡
+    double  m_dFQJE;            //æ”¾å¼ƒé‡‘é¢
 }ITPDK_XGZQ;
 
-//ÅäºÅ²éÑ¯£¨¹â´ó£©
+//é…å·æŸ¥è¯¢ï¼ˆå…‰å¤§ï¼‰
 typedef struct
 {
-    char    m_sSCDM[2];         //ÊĞ³¡´úÂë
-    char    m_sSCMC[21];        //ÊĞ³¡Ãû³Æ
-    char    m_sGDH[16];         //¹É¶«ÕËºÅ
-    char    m_sPHDM[9];         //ÅäºÅ´úÂë
-    char    m_sPHMC[41];        //ÅäºÅÃû³Æ
-    char    m_sQSPH[13];        //ÆğÊ¼ÅäºÅ
-    int     m_nPHGS;            //ÅäºÅ¸öÊı
-    char    m_sPHRQ[9];         //ÅäºÅÈÕÆÚ
-    char    m_sLSH[31];         //Á÷Ë®ºÅ
-    char    m_sCLXX[256];       //´¦ÀíĞÅÏ¢
+    char    m_sSCDM[2];         //å¸‚åœºä»£ç 
+    char    m_sSCMC[21];        //å¸‚åœºåç§°
+    char    m_sGDH[16];         //è‚¡ä¸œè´¦å·
+    char    m_sPHDM[9];         //é…å·ä»£ç 
+    char    m_sPHMC[41];        //é…å·åç§°
+    char    m_sQSPH[13];        //èµ·å§‹é…å·
+    int     m_nPHGS;            //é…å·ä¸ªæ•°
+    char    m_sPHRQ[9];         //é…å·æ—¥æœŸ
+    char    m_sLSH[31];         //æµæ°´å·
+    char    m_sCLXX[256];       //å¤„ç†ä¿¡æ¯
 }ITPDK_PHCX;
 
-//²éÑ¯ÒøÖ¤ÒµÎñÁ÷Ë®£¨¹â´ó£©
+//æŸ¥è¯¢é“¶è¯ä¸šåŠ¡æµæ°´ï¼ˆå…‰å¤§ï¼‰
 typedef struct
 {
-    char    m_sYWLB[3];         //×ªÕËÀà±ğ
-    char    m_sYWLBMC[21];      //×ªÕËÀà±ğÃû³Æ
-    double  m_dFSJE;            //½ğ¶î
-    char    m_sCLJG[13];        //×ªÕË·µ»Ø´úÂë
-    char    m_sJGSM[256];       //×ªÕËÈ·ÈÏĞÅÏ¢
-    char    m_sLSH[16];         //Á÷Ë®ºÅ
-    char    m_sYHMC[81];        //ÒøĞĞÃû³Æ
-    char    m_sYHDM[7];         //ÒøĞĞ´úÂë
-    char    m_sWTSJ[9];         //×ªÕËÊ±¼ä
-    char    m_sWTRQ[9];         //·¢ÉúÈÕÆÚ
+    char    m_sYWLB[3];         //è½¬è´¦ç±»åˆ«
+    char    m_sYWLBMC[21];      //è½¬è´¦ç±»åˆ«åç§°
+    double  m_dFSJE;            //é‡‘é¢
+    char    m_sCLJG[13];        //è½¬è´¦è¿”å›ä»£ç 
+    char    m_sJGSM[256];       //è½¬è´¦ç¡®è®¤ä¿¡æ¯
+    char    m_sLSH[16];         //æµæ°´å·
+    char    m_sYHMC[81];        //é“¶è¡Œåç§°
+    char    m_sYHDM[7];         //é“¶è¡Œä»£ç 
+    char    m_sWTSJ[9];         //è½¬è´¦æ—¶é—´
+    char    m_sWTRQ[9];         //å‘ç”Ÿæ—¥æœŸ
 }ITPDK_YZYWLS;
 
-//²éÑ¯ÒøĞĞ´úÂë£¨¹â´ó£©
+//æŸ¥è¯¢é“¶è¡Œä»£ç ï¼ˆå…‰å¤§ï¼‰
 typedef struct
 {
-    char    m_sYHDM[7];         //ÒøĞĞ´úÂë
-    char    m_sYHJC[81];        //ÒøĞĞ¼ò³Æ
-    char    m_sYHZH[41];        //ÒøĞĞÕËºÅ
-    char    m_sYHBZ[22];        //ÒøĞĞ±êÖ¾
-    char    m_sHBDM[4];         //»õ±Ò´úÂë
-    char    m_sZZYMMXX[2];      //Ö¤È¯×ªÒøĞĞÃÜÂëÑ¡Ïî£¨0:¶¼²»Êä£¬1:Ö»Êä×Ê½ğÃÜÂë£¬2:Ö»ÊäÒøĞĞÃÜÂë£¬3:Á½¸öÃÜÂë¶¼ÒªÊä£©
-    char    m_sYZZMMXX[2];      //ÒøĞĞ×ªÖ¤È¯ÃÜÂëÑ¡Ïî£¨0:¶¼²»Êä£¬1:Ö»Êä×Ê½ğÃÜÂë£¬2:Ö»ÊäÒøĞĞÃÜÂë£¬3:Á½¸öÃÜÂë¶¼ÒªÊä£©
-    char    m_sZHH[11];         //Ö÷/¸¨ÕË»§ºÅ
-    char    m_sZHLB[2];         //ÕË»§Àà±ğ£¨0:Ö÷ÕË»§£¬1:×ÓÕË»§£©
-    char    m_sZHLBMC[31];      //ÕË»§Àà±ğÃû³Æ
-    int     m_nKSQX;            //ÊÇ·ñÖ§³Ö¿ìËÙÈ¡ÏÖ£¨0:²»Ö§³Ö£¬1:Ö§³Ö£©
+    char    m_sYHDM[7];         //é“¶è¡Œä»£ç 
+    char    m_sYHJC[81];        //é“¶è¡Œç®€ç§°
+    char    m_sYHZH[41];        //é“¶è¡Œè´¦å·
+    char    m_sYHBZ[22];        //é“¶è¡Œæ ‡å¿—
+    char    m_sHBDM[4];         //è´§å¸ä»£ç 
+    char    m_sZZYMMXX[2];      //è¯åˆ¸è½¬é“¶è¡Œå¯†ç é€‰é¡¹ï¼ˆ0:éƒ½ä¸è¾“ï¼Œ1:åªè¾“èµ„é‡‘å¯†ç ï¼Œ2:åªè¾“é“¶è¡Œå¯†ç ï¼Œ3:ä¸¤ä¸ªå¯†ç éƒ½è¦è¾“ï¼‰
+    char    m_sYZZMMXX[2];      //é“¶è¡Œè½¬è¯åˆ¸å¯†ç é€‰é¡¹ï¼ˆ0:éƒ½ä¸è¾“ï¼Œ1:åªè¾“èµ„é‡‘å¯†ç ï¼Œ2:åªè¾“é“¶è¡Œå¯†ç ï¼Œ3:ä¸¤ä¸ªå¯†ç éƒ½è¦è¾“ï¼‰
+    char    m_sZHH[11];         //ä¸»/è¾…è´¦æˆ·å·
+    char    m_sZHLB[2];         //è´¦æˆ·ç±»åˆ«ï¼ˆ0:ä¸»è´¦æˆ·ï¼Œ1:å­è´¦æˆ·ï¼‰
+    char    m_sZHLBMC[31];      //è´¦æˆ·ç±»åˆ«åç§°
+    int     m_nKSQX;            //æ˜¯å¦æ”¯æŒå¿«é€Ÿå–ç°ï¼ˆ0:ä¸æ”¯æŒï¼Œ1:æ”¯æŒï¼‰
 }ITPDK_YHDM;
 
-//²éÑ¯ÒøĞĞÓà¶î£¨¹â´ó£©
+//æŸ¥è¯¢é“¶è¡Œä½™é¢ï¼ˆå…‰å¤§ï¼‰
 typedef struct
 {
-    char    m_sLSH[16];         //Á÷Ë®ºÅ
-    double  m_dYHYE;            //ÒøĞĞÓà¶î           
+    char    m_sLSH[16];         //æµæ°´å·
+    double  m_dYHYE;            //é“¶è¡Œä½™é¢           
 }ITPDK_YHYE;
 
-//²éÑ¯¿Í»§ĞÅÏ¢
+//æŸ¥è¯¢å®¢æˆ·ä¿¡æ¯
 typedef struct
 {
-    char    m_sKHH[16];         //¿Í»§ºÅ
-    char    m_sKHXM[32];        //¿Í»§ĞÕÃû
-    char    m_sYYB[8];          //ÓªÒµ²¿
-    int     m_nWTFS;            //Î¯ÍĞ·½Ê½
+    char    m_sKHH[16];         //å®¢æˆ·å·
+    char    m_sKHXM[32];        //å®¢æˆ·å§“å
+    char    m_sYYB[8];          //è¥ä¸šéƒ¨
+    int     m_nWTFS;            //å§”æ‰˜æ–¹å¼
 }ITPDK_KHXX;
 
-//²éÑ¯×Ê½ğµ÷²¦Ã÷Ï¸
+//æŸ¥è¯¢èµ„é‡‘è°ƒæ‹¨æ˜ç»†
 typedef struct
 {
-    char    m_sKHH[16];         //¿Í»§ºÅ
-    int64   m_nLSH;             //Á÷Ë®ºÅ
-    char    m_sZJZH[15];        //×Ê½ğÕËºÅ
-    char    m_sBZ[4];           //±ÒÖÖ
-    int     m_nFSRQ;            //·¢ÉúÈÕÆÚ
-    char    m_sFSSJ[13];        //·¢ÉúÊ±¼ä
-    int     m_nDJLB;            //¶³½áÀà±ğ
-    double  m_dDJJE;            //¶³½á½ğ¶î
-    int64   m_nBrowIndex;       //·ÖÒ³Ë÷ÒıÖµ
-    char    m_sZY[61];          //ÕªÒª
+    char    m_sKHH[16];         //å®¢æˆ·å·
+    int64   m_nLSH;             //æµæ°´å·
+    char    m_sZJZH[15];        //èµ„é‡‘è´¦å·
+    char    m_sBZ[4];           //å¸ç§
+    int     m_nFSRQ;            //å‘ç”Ÿæ—¥æœŸ
+    char    m_sFSSJ[13];        //å‘ç”Ÿæ—¶é—´
+    int     m_nDJLB;            //å†»ç»“ç±»åˆ«
+    double  m_dDJJE;            //å†»ç»“é‡‘é¢
+    int64   m_nBrowIndex;       //åˆ†é¡µç´¢å¼•å€¼
+    char    m_sZY[61];          //æ‘˜è¦
 }ITPDK_ZJDJMX;
 
-//A5×Ê¸ñÖ¤È¯
+//A5èµ„æ ¼è¯åˆ¸
 typedef struct
 {
-    char    m_sJYS[4];          //½»Ò×Ëù
-    char    m_sZQDM[12];        //Ö¤È¯´úÂë
-    char    m_sZQMC[25];        //Ö¤È¯Ãû³Æ
-    int     m_nRZZT;            //ÈÚ×Ê×´Ì¬
-    int     m_nBZRZZT;          //±ê×¼ÈÚ×Ê×´Ì¬
-    double  m_dBZRZBL;          //±ê×¼ÈÚ×Ê±ÈÀı
-    double  m_dRZBL;            //ÈÚ×Ê±£Ö¤½ğ±ÈÀı
-    int     m_nRQZT;            //ÈÚÈ¯×´Ì¬
-    int     m_nBZRQZT;          //±ê×¼ÈÚÈ¯×´Ì¬
-    double  m_dBZRQBL;          //±ê×¼ÈÚÈ¯±ÈÀı
-    double  m_dRQBL;            //ÈÚÈ¯±£Ö¤½ğ±ÈÀı
-    int     m_nZQQYBZ;          //ÔÊĞíÕ¹ÆÚ
-    int     m_nZQCS;            //×î´óÕ¹ÆÚ´ÎÊı
-    int     m_nQTSX;            //ÆäËûÊôĞÔ
-    int     m_nFXKZSX;          //·çÏÕ¿ØÖÆÊôĞÔ
-    int     m_nYXRQ;            //ÓĞĞ§ÈÕÆÚ
-    int     m_nDJRQ;            //µÇ¼ÇÈÕÆÚ
-    int     m_nBDRQ;            //ĞŞ¸ÄÈÕÆÚ 
-    char    m_sBrowIndex[10];   //·ÖÒ³²éÑ¯¶¨Î»´®
+    char    m_sJYS[4];          //äº¤æ˜“æ‰€
+    char    m_sZQDM[12];        //è¯åˆ¸ä»£ç 
+    char    m_sZQMC[25];        //è¯åˆ¸åç§°
+    int     m_nRZZT;            //èèµ„çŠ¶æ€
+    int     m_nBZRZZT;          //æ ‡å‡†èèµ„çŠ¶æ€
+    double  m_dBZRZBL;          //æ ‡å‡†èèµ„æ¯”ä¾‹
+    double  m_dRZBL;            //èèµ„ä¿è¯é‡‘æ¯”ä¾‹
+    int     m_nRQZT;            //èåˆ¸çŠ¶æ€
+    int     m_nBZRQZT;          //æ ‡å‡†èåˆ¸çŠ¶æ€
+    double  m_dBZRQBL;          //æ ‡å‡†èåˆ¸æ¯”ä¾‹
+    double  m_dRQBL;            //èåˆ¸ä¿è¯é‡‘æ¯”ä¾‹
+    int     m_nZQQYBZ;          //å…è®¸å±•æœŸ
+    int     m_nZQCS;            //æœ€å¤§å±•æœŸæ¬¡æ•°
+    int     m_nQTSX;            //å…¶ä»–å±æ€§
+    int     m_nFXKZSX;          //é£é™©æ§åˆ¶å±æ€§
+    int     m_nYXRQ;            //æœ‰æ•ˆæ—¥æœŸ
+    int     m_nDJRQ;            //ç™»è®°æ—¥æœŸ
+    int     m_nBDRQ;            //ä¿®æ”¹æ—¥æœŸ 
+    char    m_sBrowIndex[10];   //åˆ†é¡µæŸ¥è¯¢å®šä½ä¸²
 } ITPDK_A5ZGZQ;
 
-//A5µ£±£Ö¤È¯
+//A5æ‹…ä¿è¯åˆ¸
 typedef struct
 {
-    char    m_sJYS[4];          //½»Ò×Ëù
-    char    m_sZQDM[12];        //Ö¤È¯´úÂë
-    char    m_sZQMC[25];        //Ö¤È¯Ãû³Æ
-    int     m_nJYZT;            //½»Ò××´Ì¬
-    int     m_nBZJYZT;          //±ê×¼½»Ò××´Ì¬
-    double  m_dDBZSL;           //µ£±£ÕÛËãÂÊ
-    double  m_dBZZSL;           //±ê×¼ÕÛËãÂÊ
-    int     m_nGYQYBZ;          //ÊÇ·ñÆôÓÃ¹«ÔÊ¼Û
-    double  m_dGYJG;            //¹«ÔÊ¼Û¸ñ
-    int     m_nQTSX;            //ÆäËûÊôĞÔ
-    int     m_nFXKZSX;          //·çÏÕ¿ØÖÆÊôĞÔ
-    int     m_nYXRQ;            //ÓĞĞ§ÈÕÆÚ
-    int     m_nDJRQ;            //µÇ¼ÇÈÕÆÚ
-    int     m_nBDRQ;            //ĞŞ¸ÄÈÕÆÚ 
-    char    m_sBrowIndex[10];   //·ÖÒ³²éÑ¯¶¨Î»´®
+    char    m_sJYS[4];          //äº¤æ˜“æ‰€
+    char    m_sZQDM[12];        //è¯åˆ¸ä»£ç 
+    char    m_sZQMC[25];        //è¯åˆ¸åç§°
+    int     m_nJYZT;            //äº¤æ˜“çŠ¶æ€
+    int     m_nBZJYZT;          //æ ‡å‡†äº¤æ˜“çŠ¶æ€
+    double  m_dDBZSL;           //æ‹…ä¿æŠ˜ç®—ç‡
+    double  m_dBZZSL;           //æ ‡å‡†æŠ˜ç®—ç‡
+    int     m_nGYQYBZ;          //æ˜¯å¦å¯ç”¨å…¬å…ä»·
+    double  m_dGYJG;            //å…¬å…ä»·æ ¼
+    int     m_nQTSX;            //å…¶ä»–å±æ€§
+    int     m_nFXKZSX;          //é£é™©æ§åˆ¶å±æ€§
+    int     m_nYXRQ;            //æœ‰æ•ˆæ—¥æœŸ
+    int     m_nDJRQ;            //ç™»è®°æ—¥æœŸ
+    int     m_nBDRQ;            //ä¿®æ”¹æ—¥æœŸ 
+    char    m_sBrowIndex[10];   //åˆ†é¡µæŸ¥è¯¢å®šä½ä¸²
 } ITPDK_A5DBZQ;
 
-/////////////////////////////½Ó¿Ú³öÈë²Î½á¹¹/////////////////////////////
-//½Ó¿ÚÇëÇó - ¿Í»§ĞÅÏ¢
+/////////////////////////////æ¥å£å‡ºå…¥å‚ç»“æ„/////////////////////////////
+//æ¥å£è¯·æ±‚ - å®¢æˆ·ä¿¡æ¯
 struct ITPDK_CusReqInfo
 {
-    char     AccountId[16];       //¿Í»§ºÅ
-    char     FundAccount[16];      //×Ê½ğºÅ
-    char     SecuAccount[12];     //¹É¶«ºÅ
-    char     Password[40];        //½»Ò×ÃÜÂë
-    char     OrgCode[8];          //»ú¹¹´úÂë
-    int      TradeNodeID;         //½»Ò×½Úµã
-    char     EntrustWay[5];       //Î¯ÍĞ·½Ê½
-    char     NodeInfo[256];       //²Ù×÷Õ¾µã
-    char     OppSecuAccount[12];      //¶Ô·½¹É¶«ºÅ
-    char     OppSeat[12];           //¶Ô·½Ï¯Î»
-    int64    Token;               //µÇÂ¼ÁîÅÆ
+    char     AccountId[16];       //å®¢æˆ·å·
+    char     FundAccount[16];      //èµ„é‡‘å·
+    char     SecuAccount[12];     //è‚¡ä¸œå·
+    char     Password[40];        //äº¤æ˜“å¯†ç 
+    char     OrgCode[8];          //æœºæ„ä»£ç 
+    int      TradeNodeID;         //äº¤æ˜“èŠ‚ç‚¹
+    char     EntrustWay[5];       //å§”æ‰˜æ–¹å¼
+    char     NodeInfo[256];       //æ“ä½œç«™ç‚¹
+    char     OppSecuAccount[12];      //å¯¹æ–¹è‚¡ä¸œå·
+    char     OppSeat[12];           //å¯¹æ–¹å¸­ä½
+    int64    Token;               //ç™»å½•ä»¤ç‰Œ
 
-    int64    RetCode;             //·µ»ØÖµ
-    char     ErrMsg[256];         //´íÎóĞÅÏ¢
+    int64    RetCode;             //è¿”å›å€¼
+    char     ErrMsg[256];         //é”™è¯¯ä¿¡æ¯
 
     ITPDK_CusReqInfo()
         :AccountId{ 0 }

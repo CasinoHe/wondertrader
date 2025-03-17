@@ -16,306 +16,306 @@ using namespace MarItpdk;
 
 
 //////////////////////////////////////////////////////////////////////////
-//»ñÈ¡Ê±¼ä´ÁºÁÃë¼¶£¨½ölinux£¬winÍ¬GetTickCount64£©
+//è·å–æ—¶é—´æˆ³æ¯«ç§’çº§ï¼ˆä»…linuxï¼ŒwinåŒGetTickCount64ï¼‰
 ITPDK_API int64 MARITPDK_GetTickCount();
-//»ñÈ¡Ê±¼ä´ÁÎ¢Ãë¼¶£¨½ölinux£¬winÍ¬GetTickCount64£©
+//è·å–æ—¶é—´æˆ³å¾®ç§’çº§ï¼ˆä»…linuxï¼ŒwinåŒGetTickCount64ï¼‰
 ITPDK_API int64 MARITPDK_GetDoubleTickCount();
-//²éÑ¯ÏµÍ³½»Ò×ÈÕÆÚ
+//æŸ¥è¯¢ç³»ç»Ÿäº¤æ˜“æ—¥æœŸ
 ITPDK_API int64 MARITPDK_GetTradeDate();
-////»ñÈ¡·şÎñÆ÷ÏµÍ³ÈÕÆÚ
+////è·å–æœåŠ¡å™¨ç³»ç»Ÿæ—¥æœŸ
 ITPDK_API int64 MARITPDK_GetSystemDate();
-//»ñÈ¡ĞŞÕı¹ıµÄÊ±¼ä(°´½»Ò×·şÎñÆ÷Ê±¼äĞŞÕı)
+//è·å–ä¿®æ­£è¿‡çš„æ—¶é—´(æŒ‰äº¤æ˜“æœåŠ¡å™¨æ—¶é—´ä¿®æ­£)
 ITPDK_API int64 MARITPDK_GetReviseTimeAsLong();
-//»ñÈ¡ĞŞÕı¹ıµÄÊ±¼ä(°´½»Ò×·şÎñÆ÷Ê±¼äĞŞÕı)
+//è·å–ä¿®æ­£è¿‡çš„æ—¶é—´(æŒ‰äº¤æ˜“æœåŠ¡å™¨æ—¶é—´ä¿®æ­£)
 ITPDK_API void MARITPDK_GetReviseTime(char *buffer);
 //////////////////////////////////////////////////////////////////////////
-//ÉèÖÃÅäÖÃÎÄ¼şËùÔÚÂ·¾¶£¬ITPDK_Init º¯ÊıÇ°µ÷ÓÃÉúĞ§
+//è®¾ç½®é…ç½®æ–‡ä»¶æ‰€åœ¨è·¯å¾„ï¼ŒITPDK_Init å‡½æ•°å‰è°ƒç”¨ç”Ÿæ•ˆ
 ITPDK_API void MARITPDK_SetProfilePath(const char *path);
-// ÉèÖÃÊÇ·ñÆôÓÃITPDK×Ô¶¯ÖØÁ¬¡¢ÇĞ±¸¹¦ÄÜ£¬ITPDK_Init º¯ÊıÇ°µ÷ÓÃÉúĞ§
+// è®¾ç½®æ˜¯å¦å¯ç”¨ITPDKè‡ªåŠ¨é‡è¿ã€åˆ‡å¤‡åŠŸèƒ½ï¼ŒITPDK_Init å‡½æ•°å‰è°ƒç”¨ç”Ÿæ•ˆ
 ITPDK_API void MARITPDK_SetAutoReconnect(bool breconnect);
-//ÉèÖÃÊÇ·ñ¼ÇÂ¼ÈÕÖ¾
+//è®¾ç½®æ˜¯å¦è®°å½•æ—¥å¿—
 ITPDK_API void MARITPDK_SetWriteLog(bool bLog);
-//ÉèÖÃÊÇ·ñ¼ÇÂ¼FixÈÕÖ¾
+//è®¾ç½®æ˜¯å¦è®°å½•Fixæ—¥å¿—
 ITPDK_API void MARITPDK_SetFixWriteLog(bool bLog);
 
-//ÉèÖÃÊÇÈÕÖ¾Â·¾¶£¬ITPDK_Init º¯ÊıÇ°µ÷ÓÃÉúĞ§
+//è®¾ç½®æ˜¯æ—¥å¿—è·¯å¾„ï¼ŒITPDK_Init å‡½æ•°å‰è°ƒç”¨ç”Ÿæ•ˆ
 ITPDK_API void MARITPDK_SetLogPath(const char *path);
-//³õÊ¼»¯
+//åˆå§‹åŒ–
 ITPDK_API bool MARITPDK_Init(int commsize);
-//ÍË³ö
+//é€€å‡º
 ITPDK_API void MARITPDK_Exit();
-//»ñÈ¡×î½ü´íÎóĞÅÏ¢ºÍ´íÎóÂë
+//è·å–æœ€è¿‘é”™è¯¯ä¿¡æ¯å’Œé”™è¯¯ç 
 ITPDK_API int64 MARITPDK_GetLastError(char *result_msg);
 ITPDK_API int64 MARITPDK_GetLastError2(string& result_msg);
-//ÉèÖÃ×îĞÂ´íÎóĞÅÏ¢
+//è®¾ç½®æœ€æ–°é”™è¯¯ä¿¡æ¯
 ITPDK_API void MARITPDK_SetLastError(int64 result_code, const char *result_msg, const char* result_text = nullptr, ITPDK_CusReqInfo* cusreqinfo = nullptr);
 
-//»ñÈ¡µ±Ç°¿â°æ±¾ĞÅÏ¢
+//è·å–å½“å‰åº“ç‰ˆæœ¬ä¿¡æ¯
 ITPDK_API string MARITPDK_GetVersion();
 
 /*
-	ÉèÖÃĞÅÏ¢»Øµ÷º¯Êı
-		ÏûÏ¢Êı¾İpMsgÎªjson´®
+	è®¾ç½®ä¿¡æ¯å›è°ƒå‡½æ•°
+		æ¶ˆæ¯æ•°æ®pMsgä¸ºjsonä¸²
 
-		³·µ¥ÏûÏ¢ -- NOTIFY_PUSH_WITHDRAW
-		·Ïµ¥ÏûÏ¢ -- NOTIFY_PUSH_INVALID
-		È·ÈÏÏûÏ¢ -- NOTIFY_PUSH_ORDER
-            WTH		int64		Î¯ÍĞºÅ
-			KHH		char[]		¿Í»§ºÅ
-            YYB     char[]      ÓªÒµ²¿
-            GDH     char[]      ¹É¶«ºÅ
-			JYS		char[]		½»Ò×Ëù
-			ZQDM	char[]		Ö¤È¯´úÂë
-            XWH     char[]      Ï¯Î»ºÅ
-            BZ      char[]      ±ÒÖÖ
-            SBJG    int64        Éê±¨½á¹û
-            JYLB    int64        ½»Ò×Àà±ğ
-            CXBZ    char        ³·Ïú±êÖ¾
-            CXWTH   int64        ³·ÏúÎ¯ÍĞºÅ
-            CJBH    char[]      ³É½»±àºÅ
-            CJSJ    char[]      ³É½»Ê±¼ä
-            CJSL    int64        ³É½»ÊıÁ¿
-            CJJG    double      ³É½»¼Û¸ñ
-            CJJE    doube       ³É½»½ğ¶î
-		³É½»ÏûÏ¢ -- NOTIFY_PUSH_MATCH
-			KHH		char[]		¿Í»§ºÅ
-			JYS		char[]		½»Ò×Ëù
-			ZQDM	char[]		Ö¤È¯´úÂë
-			WTH		int64		Î¯ÍĞºÅ
-			CJSL	int64		³É½»ÊıÁ¿
-			CJJG	double		³É½»¼Û¸ñ
-		×Ê²ú±ä¶¯ÏûÏ¢ -- NOTIFY_ASSETVARY
-			KHH		char[]		¿Í»§ºÅ
-			ZJZH	char[]		×Ê½ğÕËºÅ
-			ZZC		double		×Ü×Ê²ú
-			KYZJ	double		¿ÉÓÃ×Ê½ğ
-			ZXSZ	double		×îĞÂÊĞÖµ
+		æ’¤å•æ¶ˆæ¯ -- NOTIFY_PUSH_WITHDRAW
+		åºŸå•æ¶ˆæ¯ -- NOTIFY_PUSH_INVALID
+		ç¡®è®¤æ¶ˆæ¯ -- NOTIFY_PUSH_ORDER
+            WTH		int64		å§”æ‰˜å·
+			KHH		char[]		å®¢æˆ·å·
+            YYB     char[]      è¥ä¸šéƒ¨
+            GDH     char[]      è‚¡ä¸œå·
+			JYS		char[]		äº¤æ˜“æ‰€
+			ZQDM	char[]		è¯åˆ¸ä»£ç 
+            XWH     char[]      å¸­ä½å·
+            BZ      char[]      å¸ç§
+            SBJG    int64        ç”³æŠ¥ç»“æœ
+            JYLB    int64        äº¤æ˜“ç±»åˆ«
+            CXBZ    char        æ’¤é”€æ ‡å¿—
+            CXWTH   int64        æ’¤é”€å§”æ‰˜å·
+            CJBH    char[]      æˆäº¤ç¼–å·
+            CJSJ    char[]      æˆäº¤æ—¶é—´
+            CJSL    int64        æˆäº¤æ•°é‡
+            CJJG    double      æˆäº¤ä»·æ ¼
+            CJJE    doube       æˆäº¤é‡‘é¢
+		æˆäº¤æ¶ˆæ¯ -- NOTIFY_PUSH_MATCH
+			KHH		char[]		å®¢æˆ·å·
+			JYS		char[]		äº¤æ˜“æ‰€
+			ZQDM	char[]		è¯åˆ¸ä»£ç 
+			WTH		int64		å§”æ‰˜å·
+			CJSL	int64		æˆäº¤æ•°é‡
+			CJJG	double		æˆäº¤ä»·æ ¼
+		èµ„äº§å˜åŠ¨æ¶ˆæ¯ -- NOTIFY_ASSETVARY
+			KHH		char[]		å®¢æˆ·å·
+			ZJZH	char[]		èµ„é‡‘è´¦å·
+			ZZC		double		æ€»èµ„äº§
+			KYZJ	double		å¯ç”¨èµ„é‡‘
+			ZXSZ	double		æœ€æ–°å¸‚å€¼
 
-	func		[in]		»Øµ÷º¯Êı
+	func		[in]		å›è°ƒå‡½æ•°
 */
 ITPDK_API void MARITPDK_SetMsgCallback(pMessageCallbackMethod func);
 
-// Òì²½»Øµ÷º¯Êı
+// å¼‚æ­¥å›è°ƒå‡½æ•°
 ITPDK_API void MARITPDK_SetFuncCallback(pAsyncCallbackFunc func);
 
-// Á¬½ÓµôÏß¡¢»Ö¸´ÊÂ¼ş»Øµ÷º¯Êı
+// è¿æ¥æ‰çº¿ã€æ¢å¤äº‹ä»¶å›è°ƒå‡½æ•°
 /*
 pConnEventCallback
 
-pKhh		[in]		¿Í»§ºÅ
-pConnKey	[in]		Á¬½ÓÅäÖÃÃû
-nEvent		[in]		ÊÂ¼ş:£»0£º»Ö¸´£¬1£º¶Ï¿ª
-pData       [in]        ±£Áô×Ö¶Î
+pKhh		[in]		å®¢æˆ·å·
+pConnKey	[in]		è¿æ¥é…ç½®å
+nEvent		[in]		äº‹ä»¶:ï¼›0ï¼šæ¢å¤ï¼Œ1ï¼šæ–­å¼€
+pData       [in]        ä¿ç•™å­—æ®µ
 */
 ITPDK_API void MARITPDK_SetConnEventCallback(pConnEventCallback func);
 
 
-// ÉèÖÃÕ¾µãĞÅÏ¢
+// è®¾ç½®ç«™ç‚¹ä¿¡æ¯
 ITPDK_API bool MARITPDK_SetNode(const char *val);
 
-// ÉèÖÃÎ¯ÍĞ·½Ê½
+// è®¾ç½®å§”æ‰˜æ–¹å¼
 ITPDK_API bool MARITPDK_SetWTFS(const char *val);
 
 /*
-	½»Ò×µÇÂ¼
-	lpKeyName	[in]		Ê¹ÓÃµÄÅäÖÃKeyÖµ
-	khh			[in]		¿Í»§ºÅ
-	pwd			[in]		½»Ò×ÃÜÂë
-	return				³É¹¦·µ»Ø>0£¬Ê§°Ü·µ»Ø<=0
+	äº¤æ˜“ç™»å½•
+	lpKeyName	[in]		ä½¿ç”¨çš„é…ç½®Keyå€¼
+	khh			[in]		å®¢æˆ·å·
+	pwd			[in]		äº¤æ˜“å¯†ç 
+	return				æˆåŠŸè¿”å›>0ï¼Œå¤±è´¥è¿”å›<=0
 */
 ITPDK_API int64 MARITPDK_TradeLogin(const char *lpKeyName, const char *khh, const char *pwd);
 /*
-	½»Ò×µÇÂ¼
-	lpKeyName	[in]		Ê¹ÓÃµÄÅäÖÃKeyÖµ
-	cusreqinfo	[in/out]	¿Í»§ĞÅÏ¢
-	return				³É¹¦·µ»Ø>0£¬Ê§°Ü·µ»Ø<=0
+	äº¤æ˜“ç™»å½•
+	lpKeyName	[in]		ä½¿ç”¨çš„é…ç½®Keyå€¼
+	cusreqinfo	[in/out]	å®¢æˆ·ä¿¡æ¯
+	return				æˆåŠŸè¿”å›>0ï¼Œå¤±è´¥è¿”å›<=0
 */
 ITPDK_API int64 MARITPDK_TradeLoginEx(const char* lpKeyName, ITPDK_CusReqInfo& cusreqinfo);
 
 /*
-	×Ê½ğÕËºÅµÇÂ¼
-	lpKeyName	[in]		Ê¹ÓÃµÄÅäÖÃKeyÖµ
-	zjzh		[in]		×Ê½ğÕËºÅ
-	yyb			[in]		ÓªÒµ²¿
-	pwd			[in]		½»Ò×ÃÜÂë
-	sKHH		[out]		¿Í»§ºÅ£¬µÇÂ¼³É¹¦ºó¿Í»§ºÅÍ¨¹ı´Ë²ÎÊı·µ»Ø£¬Ö®ºó½»Ò×Í¨¹ı¿Í»§ºÅ½øĞĞ½»Ò×
-	return				³É¹¦·µ»Ø>0£¬Ê§°Ü·µ»Ø<=0
+	èµ„é‡‘è´¦å·ç™»å½•
+	lpKeyName	[in]		ä½¿ç”¨çš„é…ç½®Keyå€¼
+	zjzh		[in]		èµ„é‡‘è´¦å·
+	yyb			[in]		è¥ä¸šéƒ¨
+	pwd			[in]		äº¤æ˜“å¯†ç 
+	sKHH		[out]		å®¢æˆ·å·ï¼Œç™»å½•æˆåŠŸåå®¢æˆ·å·é€šè¿‡æ­¤å‚æ•°è¿”å›ï¼Œä¹‹åäº¤æ˜“é€šè¿‡å®¢æˆ·å·è¿›è¡Œäº¤æ˜“
+	return				æˆåŠŸè¿”å›>0ï¼Œå¤±è´¥è¿”å›<=0
 */
 
 ITPDK_API int64 MARITPDK_TradeLoginByFundAcc(const char* lpKeyName, const char* zjzh, const char* yyb, const char* pwd, string& sKHH);
 /*
-	×Ê½ğÕËºÅµÇÂ¼
-	lpKeyName	[in]		Ê¹ÓÃµÄÅäÖÃKeyÖµ
-	cusreqinfo	[in/out]	¿Í»§ĞÅÏ¢
-	return				³É¹¦·µ»Ø>0£¬Ê§°Ü·µ»Ø<=0
+	èµ„é‡‘è´¦å·ç™»å½•
+	lpKeyName	[in]		ä½¿ç”¨çš„é…ç½®Keyå€¼
+	cusreqinfo	[in/out]	å®¢æˆ·ä¿¡æ¯
+	return				æˆåŠŸè¿”å›>0ï¼Œå¤±è´¥è¿”å›<=0
 */
 ITPDK_API int64 MARITPDK_TradeLoginByFundAccEx(const char* lpKeyName, ITPDK_CusReqInfo& cusreqinfo);
 
 /*
-    µÇ³ö 
-    KhhOrZjzh			[in]		¿Í»§ºÅ
+    ç™»å‡º 
+    KhhOrZjzh			[in]		å®¢æˆ·å·
 */
 ITPDK_API int64 MARITPDK_TradeLogout(const char* KhhOrZjzh);
 
 /*
-	ÃÜÂëĞŞ¸Ä
+	å¯†ç ä¿®æ”¹
 
-	lpKhh        [in]        ¿Í»§ºÅ
-	oldpwd       [in]        ¾ÉÃÜÂë
-	newpwd       [in]        ĞÂÃÜÂë
-	nType        [in]        ĞŞ¸ÄÀàĞÍ£¨0 ĞŞ¸Ä½»Ò×ÃÜÂë£©
-	return                ³É¹¦·µ»Øtrue£¬Ê§°Ü·µ»Øfalse
+	lpKhh        [in]        å®¢æˆ·å·
+	oldpwd       [in]        æ—§å¯†ç 
+	newpwd       [in]        æ–°å¯†ç 
+	nType        [in]        ä¿®æ”¹ç±»å‹ï¼ˆ0 ä¿®æ”¹äº¤æ˜“å¯†ç ï¼‰
+	return                æˆåŠŸè¿”å›trueï¼Œå¤±è´¥è¿”å›false
 */
 ITPDK_API bool MARITPDK_ModifyPwd(const char* lpKhh, const char* oldpwd, const char* newpwd, int nType);
 
 //////////////////////////////////////////////////////////
-//½»Ò×Àà½Ó¿Ú
+//äº¤æ˜“ç±»æ¥å£
 //////////////////////////////////////////////////////////
 
 /*
-	ĞÅÓÃ½»Ò×
+	ä¿¡ç”¨äº¤æ˜“
 
-	lpKhh		[in]		¿Í»§ºÅ
-	lpJys		[in]		½»Ò×Ëù
-	lpZqdm		[in]		Ö¤È¯´úÂë
-	nJylb		[in]		½»Ò×Àà±ğ(JYLB_BUY¡¢JYLB_SALE¡¢JYLB_RZMR¡¢JYLB_MQHK¡¢JYLB_MQHQ¡¢JYLB_RQMC¡¢JYLB_DBWTJ¡¢JYLB_DBWFH¡¢JYLB_HQHZ¡¢JYLB_ZJHK¡¢JYLB_PHDJMR¡¢JYLB_PHDJMC¡¢JYLB_ZZZG¡¢JYLB_PGJK¡¢JYLB_PSSG¡¢JYLB_ZZHS¡¢JYLB_KJHZHG¡¢JYLB_HSCX)
-	lWtsl		[in]		Î¯ÍĞÊıÁ¿
-	lfWtjg		[in]		Î¯ÍĞ¼Û¸ñ(¶©µ¥ÀàĞÍÎªÊĞ¼ÛÊ±£¬¸Ã²ÎÊı²»ÉúĞ§¡£½»Ò×Àà±ğÎª Ö±½Ó»¹¿îÊ±£¬»¹¿î½ğ¶îÌîµ½´Ë×Ö¶Î)
-	lDdlx		[in]		¶©µ¥ÀàĞÍ(DDLX_XJWT,DDLX_SJWT)
-	lpGdh		[in]		¹É¶«ºÅ
-	nTCLX		[in]		Í·´çÀàĞÍ  1ÆÕÍ¨Í·´ç 2×¨ÏîÍ·´ç(¿ª²Ö: ËÍ0 Ä¬ÈÏ×¨Ïî ,³¥»¹: ËÍ0 ³¥»¹ËùÓĞÀàĞÍ)
-	lpHYBH		[in]		Ö¸¶¨³¥»¹¸ºÕ®Á÷Ë®ºÅ
-	nChlx		[in]		³¥»¹ÀàĞÍ: 0-°´ÁË½á·½Ê½) 1-Ö»»¹ÀûÏ¢
-	nFlag		[in]	    ³·µ¥ÔÊĞí±êÖ¾£¨»¹È¯»®×ªÒµÎñ×¨ÓÃ£© 0´ú±íÊµÊ±Ó°Ïì¸ºÕ® 1´ú±í²»ÊµÊ±Ó°Ïì¸º -1´ú±íÃ»ÓĞËÍÈë³·µ¥ÔÊĞí±êÖ¾µÄÎ¯ÍĞ
-	return				³É¹¦·µ»ØÎ¯ÍĞºÅ£¬Ê§°Ü·µ»Ø<0
+	lpKhh		[in]		å®¢æˆ·å·
+	lpJys		[in]		äº¤æ˜“æ‰€
+	lpZqdm		[in]		è¯åˆ¸ä»£ç 
+	nJylb		[in]		äº¤æ˜“ç±»åˆ«(JYLB_BUYã€JYLB_SALEã€JYLB_RZMRã€JYLB_MQHKã€JYLB_MQHQã€JYLB_RQMCã€JYLB_DBWTJã€JYLB_DBWFHã€JYLB_HQHZã€JYLB_ZJHKã€JYLB_PHDJMRã€JYLB_PHDJMCã€JYLB_ZZZGã€JYLB_PGJKã€JYLB_PSSGã€JYLB_ZZHSã€JYLB_KJHZHGã€JYLB_HSCX)
+	lWtsl		[in]		å§”æ‰˜æ•°é‡
+	lfWtjg		[in]		å§”æ‰˜ä»·æ ¼(è®¢å•ç±»å‹ä¸ºå¸‚ä»·æ—¶ï¼Œè¯¥å‚æ•°ä¸ç”Ÿæ•ˆã€‚äº¤æ˜“ç±»åˆ«ä¸º ç›´æ¥è¿˜æ¬¾æ—¶ï¼Œè¿˜æ¬¾é‡‘é¢å¡«åˆ°æ­¤å­—æ®µ)
+	lDdlx		[in]		è®¢å•ç±»å‹(DDLX_XJWT,DDLX_SJWT)
+	lpGdh		[in]		è‚¡ä¸œå·
+	nTCLX		[in]		å¤´å¯¸ç±»å‹  1æ™®é€šå¤´å¯¸ 2ä¸“é¡¹å¤´å¯¸(å¼€ä»“: é€0 é»˜è®¤ä¸“é¡¹ ,å¿è¿˜: é€0 å¿è¿˜æ‰€æœ‰ç±»å‹)
+	lpHYBH		[in]		æŒ‡å®šå¿è¿˜è´Ÿå€ºæµæ°´å·
+	nChlx		[in]		å¿è¿˜ç±»å‹: 0-æŒ‰äº†ç»“æ–¹å¼) 1-åªè¿˜åˆ©æ¯
+	nFlag		[in]	    æ’¤å•å…è®¸æ ‡å¿—ï¼ˆè¿˜åˆ¸åˆ’è½¬ä¸šåŠ¡ä¸“ç”¨ï¼‰ 0ä»£è¡¨å®æ—¶å½±å“è´Ÿå€º 1ä»£è¡¨ä¸å®æ—¶å½±å“è´Ÿ -1ä»£è¡¨æ²¡æœ‰é€å…¥æ’¤å•å…è®¸æ ‡å¿—çš„å§”æ‰˜
+	return				æˆåŠŸè¿”å›å§”æ‰˜å·ï¼Œå¤±è´¥è¿”å›<0
 */
 ITPDK_API int64 MARITPDK_MarginEntrust(const char *lpKhh,const char *lpJys,const char *lpZqdm,int nJylb,int64 lWtsl,double lfWtjg, int64 lDdlx,const char *lpGdh,int nTCLX,const char * lpHYBH,int nChlx,int nFlag);
 ITPDK_API int64 MARITPDK_MarginEntrustEx(ITPDK_CusReqInfo& cusreqinfo, const char* lpJys, const char* lpZqdm, int nJylb, int64 lWtsl, double lfWtjg, int64 lDdlx, int nTCLX, const char* lpHYBH, int nChlx, int nFlag);
 
 /*
-	ĞÅÓÃ½»Ò×½Ó¿Ú(Òì²½)
+	ä¿¡ç”¨äº¤æ˜“æ¥å£(å¼‚æ­¥)
 
-	lpKhh		[in]		¿Í»§ºÅ
-	lpJys		[in]		½»Ò×Ëù
-	lpZqdm		[in]		Ö¤È¯´úÂë
-	nJylb		[in]		½»Ò×Àà±ğ(JYLB_BUY¡¢JYLB_SALE¡¢JYLB_RZMR¡¢JYLB_MQHK¡¢JYLB_MQHQ¡¢JYLB_RQMC¡¢JYLB_DBWTJ¡¢JYLB_DBWFH¡¢JYLB_HQHZ¡¢JYLB_ZJHK¡¢JYLB_PHDJMR¡¢JYLB_PHDJMC¡¢JYLB_ZZZG¡¢JYLB_PGJK¡¢JYLB_PSSG¡¢JYLB_ZZHS¡¢JYLB_KJHZHG¡¢JYLB_HSCX)
-	lWtsl		[in]		Î¯ÍĞÊıÁ¿
-	lfWtjg		[in]		Î¯ÍĞ¼Û¸ñ(¶©µ¥ÀàĞÍÎªÊĞ¼ÛÊ±£¬¸Ã²ÎÊı²»ÉúĞ§)
-	lDdlx		[in]		¶©µ¥ÀàĞÍ(DDLX_XJWT,DDLX_SJWT)
-	lpGdh		[in]		¹É¶«ºÅ
-	nTCLX		[in]		Í·´çÀàĞÍ  1ÆÕÍ¨Í·´ç 2×¨ÏîÍ·´ç(¿ª²Ö: ËÍ0 Ä¬ÈÏ×¨Ïî ,³¥»¹: ËÍ0 ³¥»¹ËùÓĞÀàĞÍ)
-	lpHYBH		[in]		Ö¸¶¨³¥»¹¸ºÕ®Á÷Ë®ºÅ
-	nChlx		[in]		³¥»¹ÀàĞÍ: 0-°´ÁË½á·½Ê½) 1-Ö»»¹ÀûÏ¢
-	nFlag		[in]	    ³·µ¥ÔÊĞí±êÖ¾£¨»¹È¯»®×ªÒµÎñ×¨ÓÃ£© 0´ú±íÊµÊ±Ó°Ïì¸ºÕ® 1´ú±í²»ÊµÊ±Ó°Ïì¸º
-	nKFSBDBH    [in]        ¿ª·¢ÉÌ±¾µØ±àºÅ£¬ÈôÎ´ËÍ£¬ÔòÓÉitpdk×Ô¶¯Éú³É(×Ô¶¨ÒåÎ¯ÍĞºÅ£¬ÔÚÈ·ÈÏ¡¢³É½»µÈÍÆËÍÏûÏ¢ÖĞ»á°üº¬¸ÃÖµ)
-	return				³É¹¦·µ»Ø¿ª·¢ÉÌ±¾µØ±àºÅ£¬Ê§°Ü·µ»Ø<0
+	lpKhh		[in]		å®¢æˆ·å·
+	lpJys		[in]		äº¤æ˜“æ‰€
+	lpZqdm		[in]		è¯åˆ¸ä»£ç 
+	nJylb		[in]		äº¤æ˜“ç±»åˆ«(JYLB_BUYã€JYLB_SALEã€JYLB_RZMRã€JYLB_MQHKã€JYLB_MQHQã€JYLB_RQMCã€JYLB_DBWTJã€JYLB_DBWFHã€JYLB_HQHZã€JYLB_ZJHKã€JYLB_PHDJMRã€JYLB_PHDJMCã€JYLB_ZZZGã€JYLB_PGJKã€JYLB_PSSGã€JYLB_ZZHSã€JYLB_KJHZHGã€JYLB_HSCX)
+	lWtsl		[in]		å§”æ‰˜æ•°é‡
+	lfWtjg		[in]		å§”æ‰˜ä»·æ ¼(è®¢å•ç±»å‹ä¸ºå¸‚ä»·æ—¶ï¼Œè¯¥å‚æ•°ä¸ç”Ÿæ•ˆ)
+	lDdlx		[in]		è®¢å•ç±»å‹(DDLX_XJWT,DDLX_SJWT)
+	lpGdh		[in]		è‚¡ä¸œå·
+	nTCLX		[in]		å¤´å¯¸ç±»å‹  1æ™®é€šå¤´å¯¸ 2ä¸“é¡¹å¤´å¯¸(å¼€ä»“: é€0 é»˜è®¤ä¸“é¡¹ ,å¿è¿˜: é€0 å¿è¿˜æ‰€æœ‰ç±»å‹)
+	lpHYBH		[in]		æŒ‡å®šå¿è¿˜è´Ÿå€ºæµæ°´å·
+	nChlx		[in]		å¿è¿˜ç±»å‹: 0-æŒ‰äº†ç»“æ–¹å¼) 1-åªè¿˜åˆ©æ¯
+	nFlag		[in]	    æ’¤å•å…è®¸æ ‡å¿—ï¼ˆè¿˜åˆ¸åˆ’è½¬ä¸šåŠ¡ä¸“ç”¨ï¼‰ 0ä»£è¡¨å®æ—¶å½±å“è´Ÿå€º 1ä»£è¡¨ä¸å®æ—¶å½±å“è´Ÿ
+	nKFSBDBH    [in]        å¼€å‘å•†æœ¬åœ°ç¼–å·ï¼Œè‹¥æœªé€ï¼Œåˆ™ç”±itpdkè‡ªåŠ¨ç”Ÿæˆ(è‡ªå®šä¹‰å§”æ‰˜å·ï¼Œåœ¨ç¡®è®¤ã€æˆäº¤ç­‰æ¨é€æ¶ˆæ¯ä¸­ä¼šåŒ…å«è¯¥å€¼)
+	return				æˆåŠŸè¿”å›å¼€å‘å•†æœ¬åœ°ç¼–å·ï¼Œå¤±è´¥è¿”å›<0
 */
 ITPDK_API int64 MARITPDK_MarginEntrust_ASync(const char* lpKhh, const char* lpJys, const char* lpZqdm, int nJylb, int64 lWtsl, double lfWtjg, int64 lDdlx, const char* lpGdh, int nTCLX, const char* lpHYBH, int nChlx,  int nFlag, int64 nKFSBDBH = 0);
 ITPDK_API int64 MARITPDK_MarginEntrustEx_ASync(ITPDK_CusReqInfo& cusreqinfo, const char* lpJys, const char* lpZqdm, int nJylb, int64 lWtsl, double lfWtjg, int64 lDdlx, int nTCLX, const char* lpHYBH,  int nChlx ,  int nFlag, int64 nKFSBDBH = 0);
 
 
 /*
-	ĞÅÓÃÎ¯ÍĞÆÕÍ¨³·µ¥
+	ä¿¡ç”¨å§”æ‰˜æ™®é€šæ’¤å•
 
-	lpKhh		[in]		¿Í»§ºÅ
-	lpGdh		[in]		¹É¶«ºÅ
-	lWth		[in]		Î¯ÍĞºÅ
-    nJylb       [in]       ½»Ò×Àà±ğ
-	return				³É¹¦·µ»Ø>0£¬Ê§°Ü·µ»Ø<0
+	lpKhh		[in]		å®¢æˆ·å·
+	lpGdh		[in]		è‚¡ä¸œå·
+	lWth		[in]		å§”æ‰˜å·
+    nJylb       [in]       äº¤æ˜“ç±»åˆ«
+	return				æˆåŠŸè¿”å›>0ï¼Œå¤±è´¥è¿”å›<0
 */
 ITPDK_API int64 MARITPDK_MarginOrderWithdraw(const char *lpKhh,const char *lpGdh, int64 lWth,int nJylb);
 ITPDK_API int64 MARITPDK_MarginOrderWithdrawEx(ITPDK_CusReqInfo& cusreqinfo, int64 lWth, int nJylb);
 /*
-	ĞÅÓÃÎ¯ÍĞÆÕÍ¨³·µ¥(Òì²½)
+	ä¿¡ç”¨å§”æ‰˜æ™®é€šæ’¤å•(å¼‚æ­¥)
 
-	lpKhh		[in]		¿Í»§ºÅ
-	lpGdh		[in]		¹É¶«ºÅ
-	lWth		[in]		Î¯ÍĞºÅ
-	nJylb       [in]       ½»Ò×Àà±ğ
-	nKFSBDBH	[in]        Á÷Ë®ºÅ£ºÍ¸´«×Ö¶Î£¬ÔÚ»Øµ÷º¯ÊıÖĞÍ¨¹ı¸ÃÖµÆ¥Åäµ÷ÓÃ£»
-								ÈôÎ´ËÍ¸Ã×Ö¶Î£¬ÓÉ½Ó¿ÚÄÚ²¿Éú³É¡£
-	return				³É¹¦·µ»Ø>0£¬Ê§°Ü·µ»Ø<0
+	lpKhh		[in]		å®¢æˆ·å·
+	lpGdh		[in]		è‚¡ä¸œå·
+	lWth		[in]		å§”æ‰˜å·
+	nJylb       [in]       äº¤æ˜“ç±»åˆ«
+	nKFSBDBH	[in]        æµæ°´å·ï¼šé€ä¼ å­—æ®µï¼Œåœ¨å›è°ƒå‡½æ•°ä¸­é€šè¿‡è¯¥å€¼åŒ¹é…è°ƒç”¨ï¼›
+								è‹¥æœªé€è¯¥å­—æ®µï¼Œç”±æ¥å£å†…éƒ¨ç”Ÿæˆã€‚
+	return				æˆåŠŸè¿”å›>0ï¼Œå¤±è´¥è¿”å›<0
 */
 ITPDK_API int64 MARITPDK_MarginOrderWithdraw_ASync(const char* lpKhh, const char* lpGdh, int64 lWth, int nJylb, int64 nKFSBDBH = 0);
 ITPDK_API int64 MARITPDK_MarginOrderWithdrawEx_ASync(ITPDK_CusReqInfo& cusreqinfo, int64 lWth, int nJylb, int64 nKFSBDBH = 0);
 /*
-	ĞÅÓÃÎ¯ÍĞ¿ª·¢ÉÌ´úÂë³·µ¥
+	ä¿¡ç”¨å§”æ‰˜å¼€å‘å•†ä»£ç æ’¤å•
 
-	lpKhh		[in]		¿Í»§ºÅ
-	lpGdh		[in]		¹É¶«ºÅ
-	nCxkfsbdh	[in]		³·ÏúÎ¯ÍĞºÅ
-	nJylb       [in]       ½»Ò×Àà±ğ
-	return				³É¹¦·µ»Ø>0£¬Ê§°Ü·µ»Ø<0
+	lpKhh		[in]		å®¢æˆ·å·
+	lpGdh		[in]		è‚¡ä¸œå·
+	nCxkfsbdh	[in]		æ’¤é”€å§”æ‰˜å·
+	nJylb       [in]       äº¤æ˜“ç±»åˆ«
+	return				æˆåŠŸè¿”å›>0ï¼Œå¤±è´¥è¿”å›<0
 */
 ITPDK_API int64 MARITPDK_MarginOrderKFSDMWithdraw(const char* lpKhh, const char* lpGdh, int64 nCxkfsbdh, int nJylb);
 ITPDK_API int64 MARITPDK_MarginOrderKFSDMWithdrawEx(ITPDK_CusReqInfo& cusreqinfo, int64 nCxkfsbdh, int nJylb);
 
 /*
-	ĞÅÓÃÎ¯ÍĞ¿ª·¢ÉÌ´úÂë³·µ¥(Òì²½)
+	ä¿¡ç”¨å§”æ‰˜å¼€å‘å•†ä»£ç æ’¤å•(å¼‚æ­¥)
 
-	lpKhh		[in]		¿Í»§ºÅ
-	lpGdh		[in]		¹É¶«ºÅ
-	nCxkfsbdh	[in]		³·ÏúÎ¯ÍĞºÅ
-	nJylb       [in]       ½»Ò×Àà±ğ
-	nKFSBDBH	[in]        Á÷Ë®ºÅ£ºÍ¸´«×Ö¶Î£¬ÔÚ»Øµ÷º¯ÊıÖĞÍ¨¹ı¸ÃÖµÆ¥Åäµ÷ÓÃ£»
-								ÈôÎ´ËÍ¸Ã×Ö¶Î£¬ÓÉ½Ó¿ÚÄÚ²¿Éú³É¡£
-	return				³É¹¦·µ»Ø>0£¬Ê§°Ü·µ»Ø<0
+	lpKhh		[in]		å®¢æˆ·å·
+	lpGdh		[in]		è‚¡ä¸œå·
+	nCxkfsbdh	[in]		æ’¤é”€å§”æ‰˜å·
+	nJylb       [in]       äº¤æ˜“ç±»åˆ«
+	nKFSBDBH	[in]        æµæ°´å·ï¼šé€ä¼ å­—æ®µï¼Œåœ¨å›è°ƒå‡½æ•°ä¸­é€šè¿‡è¯¥å€¼åŒ¹é…è°ƒç”¨ï¼›
+								è‹¥æœªé€è¯¥å­—æ®µï¼Œç”±æ¥å£å†…éƒ¨ç”Ÿæˆã€‚
+	return				æˆåŠŸè¿”å›>0ï¼Œå¤±è´¥è¿”å›<0
 */
 ITPDK_API int64 MARITPDK_MarginOrderKFSDMWithdraw_ASync(const char* lpKhh, const char* lpGdh, int64 nCxkfsbdh, int nJylb, int64 nKFSBDBH = 0);
 ITPDK_API int64 MARITPDK_MarginOrderKFSDMWithdrawEx_ASync(ITPDK_CusReqInfo& cusreqinfo, int64 nCxkfsbdh, int nJylb, int64 nKFSBDBH = 0);
 
 /*
-    µ£±£Æ·»®×ª£¨3rd½Ó¿Ú£©
+    æ‹…ä¿å“åˆ’è½¬ï¼ˆ3rdæ¥å£ï¼‰
 
-    lpKhh		[in]		¿Í»§ºÅ
-    lpJymm      [in]        ½»Ò×ÃÜÂë
-    lpJys       [in]        ½»Ò×Ëù
-    lpZqdm      [in]        Ö¤È¯´úÂë
-    nJylb       [in]        ½»Ò×Àà±ğ
-    lWtsl       [in]        Î¯ÍĞÊıÁ¿
-    lDdlx       [in]        ¶©µ¥ÀàĞÍ
-    lpDFGDH     [in]        ¶Ô·½¹É¶«ºÅ
-    lpDFXW      [in]        ¶Ô·½Ï¯Î»
-    lpGdh		[in]		¹É¶«ºÅ
-    return				³É¹¦·µ»Ø>0£¬Ê§°Ü·µ»Ø<0
+    lpKhh		[in]		å®¢æˆ·å·
+    lpJymm      [in]        äº¤æ˜“å¯†ç 
+    lpJys       [in]        äº¤æ˜“æ‰€
+    lpZqdm      [in]        è¯åˆ¸ä»£ç 
+    nJylb       [in]        äº¤æ˜“ç±»åˆ«
+    lWtsl       [in]        å§”æ‰˜æ•°é‡
+    lDdlx       [in]        è®¢å•ç±»å‹
+    lpDFGDH     [in]        å¯¹æ–¹è‚¡ä¸œå·
+    lpDFXW      [in]        å¯¹æ–¹å¸­ä½
+    lpGdh		[in]		è‚¡ä¸œå·
+    return				æˆåŠŸè¿”å›>0ï¼Œå¤±è´¥è¿”å›<0
 */
 ITPDK_API int64 MARITPDK_MarginGuarantyTran(const char* lpKhh, const char* lpJymm, const char *lpJys, const char *lpZqdm, int nJylb, int64 lWtsl, int64 lDdlx, const char* lpDFGDH, const char* lpDFXW, const char *lpGdh);
 ITPDK_API int64 MARITPDK_MarginGuarantyTranEx(ITPDK_CusReqInfo& cusreqinfo, const char *lpJys, const char *lpZqdm, int nJylb, int64 lWtsl, int64 lDdlx); 
 
 /*
-    µ£±£Æ·»®×ª(Òì²½)£¨3rd½Ó¿Ú£©
+    æ‹…ä¿å“åˆ’è½¬(å¼‚æ­¥)ï¼ˆ3rdæ¥å£ï¼‰
 
-    lpKhh		[in]		¿Í»§ºÅ
-    lpJymm      [in]        ½»Ò×ÃÜÂë
-    lpJys       [in]        ½»Ò×Ëù
-    lpZqdm      [in]        Ö¤È¯´úÂë
-    nJylb       [in]        ½»Ò×Àà±ğ
-    lWtsl       [in]        Î¯ÍĞÊıÁ¿
-    lDdlx       [in]        ¶©µ¥ÀàĞÍ
-    lpDFGDH     [in]        ¶Ô·½¹É¶«ºÅ
-    lpDFXW      [in]        ¶Ô·½Ï¯Î»
-    lpGdh		[in]		¹É¶«ºÅ
-    nKFSBDBH	[in]        Á÷Ë®ºÅ£ºÍ¸´«×Ö¶Î£¬ÔÚ»Øµ÷º¯ÊıÖĞÍ¨¹ı¸ÃÖµÆ¥Åäµ÷ÓÃ£»
-                                ÈôÎ´ËÍ¸Ã×Ö¶Î£¬ÓÉ½Ó¿ÚÄÚ²¿Éú³É¡£
-    return				³É¹¦·µ»Ø>0£¬Ê§°Ü·µ»Ø<0
+    lpKhh		[in]		å®¢æˆ·å·
+    lpJymm      [in]        äº¤æ˜“å¯†ç 
+    lpJys       [in]        äº¤æ˜“æ‰€
+    lpZqdm      [in]        è¯åˆ¸ä»£ç 
+    nJylb       [in]        äº¤æ˜“ç±»åˆ«
+    lWtsl       [in]        å§”æ‰˜æ•°é‡
+    lDdlx       [in]        è®¢å•ç±»å‹
+    lpDFGDH     [in]        å¯¹æ–¹è‚¡ä¸œå·
+    lpDFXW      [in]        å¯¹æ–¹å¸­ä½
+    lpGdh		[in]		è‚¡ä¸œå·
+    nKFSBDBH	[in]        æµæ°´å·ï¼šé€ä¼ å­—æ®µï¼Œåœ¨å›è°ƒå‡½æ•°ä¸­é€šè¿‡è¯¥å€¼åŒ¹é…è°ƒç”¨ï¼›
+                                è‹¥æœªé€è¯¥å­—æ®µï¼Œç”±æ¥å£å†…éƒ¨ç”Ÿæˆã€‚
+    return				æˆåŠŸè¿”å›>0ï¼Œå¤±è´¥è¿”å›<0
 */
 ITPDK_API int64 MARITPDK_MarginGuarantyTran_ASync(const char* lpKhh, const char* lpJymm, const char *lpJys, const char *lpZqdm, int nJylb, int64 lWtsl, int64 lDdlx, const char* lpDFGDH, const char* lpDFXW, const char *lpGdh, int64 nKFSBDBH = 0);
 ITPDK_API int64 MARITPDK_MarginGuarantyTranEx_ASync(ITPDK_CusReqInfo& cusreqinfo, const char *lpJys, const char *lpZqdm, int nJylb, int64 lWtsl, int64 lDdlx, int64 nKFSBDBH = 0);
 
 
 /*
-	ĞÅÓÃ¿ÉÎ¯ÍĞÊıÁ¿¼ÆËã
-	lpKhh		[in]		¿Í»§ºÅ
-	lpJys		[in]		½»Ò×Ëù
-	lpZqdm		[in]		Ö¤È¯´úÂë
-	nJylb		[in]		½»Ò×Àà±ğ(JYLB_BUY¡¢JYLB_SALE)
-	lfWtjg		[in]		Î¯ÍĞ¼Û¸ñ(¶©µ¥ÀàĞÍÎªÊĞ¼ÛÊ±£¬¸Ã²ÎÊı²»ÉúĞ§)
-	lDdlx		[in]		¶©µ¥ÀàĞÍ(DDLX_XJWT,DDLX_SJWT)
-	lpGdh		[in]		¹É¶«ºÅ
-	lpDfGdh		[in]		¶Ô·½¹É¶«ºÅ
-	nTCLX		[in]		Í·´çÀàĞÍ  1ÆÕÍ¨Í·´ç 2×¨ÏîÍ·´ç
-	nCHBZ       [in]        ³¥»¹±êÖ¾£º0-ËùÓĞ 1-ÆÕÍ¨ 2-×¨Ïî
-	lpHYBH      [in]        ºÏÔ¼±àºÅ£¨»¹È¯»®×ª¿ÉÖ¸¶¨ºÏÔ¼±àºÅ£©
+	ä¿¡ç”¨å¯å§”æ‰˜æ•°é‡è®¡ç®—
+	lpKhh		[in]		å®¢æˆ·å·
+	lpJys		[in]		äº¤æ˜“æ‰€
+	lpZqdm		[in]		è¯åˆ¸ä»£ç 
+	nJylb		[in]		äº¤æ˜“ç±»åˆ«(JYLB_BUYã€JYLB_SALE)
+	lfWtjg		[in]		å§”æ‰˜ä»·æ ¼(è®¢å•ç±»å‹ä¸ºå¸‚ä»·æ—¶ï¼Œè¯¥å‚æ•°ä¸ç”Ÿæ•ˆ)
+	lDdlx		[in]		è®¢å•ç±»å‹(DDLX_XJWT,DDLX_SJWT)
+	lpGdh		[in]		è‚¡ä¸œå·
+	lpDfGdh		[in]		å¯¹æ–¹è‚¡ä¸œå·
+	nTCLX		[in]		å¤´å¯¸ç±»å‹  1æ™®é€šå¤´å¯¸ 2ä¸“é¡¹å¤´å¯¸
+	nCHBZ       [in]        å¿è¿˜æ ‡å¿—ï¼š0-æ‰€æœ‰ 1-æ™®é€š 2-ä¸“é¡¹
+	lpHYBH      [in]        åˆçº¦ç¼–å·ï¼ˆè¿˜åˆ¸åˆ’è½¬å¯æŒ‡å®šåˆçº¦ç¼–å·ï¼‰
 
 */
 ITPDK_API int64 MARITPDK_MarginTradableQty(const char* lpKhh, const char* lpJys, const char* lpZqdm, int nJylb, double lfWtjg, int64 lDdlx, const char* lpGdh, const char* lpDfGdh, int nTCLX, int nCHBZ, const char* lpHYBH);
@@ -323,48 +323,48 @@ ITPDK_API int64 MARITPDK_MarginTradableQtyEx(ITPDK_CusReqInfo& cusreqinfo,const 
 
 
 //////////////////////////////////////////////////////////
-//²éÑ¯Àà½Ó¿Ú
+//æŸ¥è¯¢ç±»æ¥å£
 //////////////////////////////////////////////////////////
 
 
 /*
-	²éÑ¯×Ê½ğĞÅÏ¢
+	æŸ¥è¯¢èµ„é‡‘ä¿¡æ¯
 
-	khh			[in]		¿Í»§ºÅ
-	arInfo		[out]		½á¹ûÊı¾İ
-	return				·µ»Ø²éÑ¯µ½µÄ¼ÇÂ¼Êı
+	khh			[in]		å®¢æˆ·å·
+	arInfo		[out]		ç»“æœæ•°æ®
+	return				è¿”å›æŸ¥è¯¢åˆ°çš„è®°å½•æ•°
 */
 ITPDK_API int64 MARITPDK_QueryFundInfo(const char* khh, vector<ITPDK_XYZJZH>& arInfo);
 ITPDK_API int64 MARITPDK_QueryFundInfoEx(ITPDK_CusReqInfo& cusreqinfo, vector<ITPDK_XYZJZH>& arInfo);
 
 /*
-	²éÑ¯¹É¶«ĞÅÏ¢
+	æŸ¥è¯¢è‚¡ä¸œä¿¡æ¯
 
-	khh			[in]		¿Í»§ºÅ
-	arInfo		[out]		½á¹ûÊı¾İ
-	return				·µ»Ø²éÑ¯µ½µÄ¼ÇÂ¼Êı
+	khh			[in]		å®¢æˆ·å·
+	arInfo		[out]		ç»“æœæ•°æ®
+	return				è¿”å›æŸ¥è¯¢åˆ°çš„è®°å½•æ•°
 */
 ITPDK_API int64 MARITPDK_QueryAccInfo(const char* khh, vector<ITPDK_XYGDH>& arInfo);
 ITPDK_API int64 MARITPDK_QueryAccInfoEx(ITPDK_CusReqInfo& cusreqinfo, vector<ITPDK_XYGDH>& arInfo);
 
 /*
-	²éÑ¯ĞÅÓÃ¸ºÕ®
+	æŸ¥è¯¢ä¿¡ç”¨è´Ÿå€º
 
-	lpKhh		[in]		¿Í»§ºÅ
-	lpJys		[in]		½»Ò×Ëù
-	lpGdh		[in]		¹É¶«ºÅ
-	lpZqdm		[in]		Ö¤È¯´úÂë
-	lpHybh		[in]		ºÏÔ¼±àºÅ
-	nJylb		[in]		½»Ò×Àà±ğ£¨A5¹ñÌ¨ÎªºÏÔ¼Àà±ğ£º0-È«²¿£¬1-ÈÚ×Ê£¬2-ÈÚÈ¯£©
-	nRowcount	[in]		·µ»ØÌõÊı
-	nBrowindex	[in]		·ÖÒ³Ë÷ÒıºÅ
-	nKsrq		[in]		¿ªÊ¼ÈÕÆÚ
-	nJsrq		[in]		½áÊøÈÕÆÚ
-	lWth		[in]		Î¯ÍĞºÅ
-	nType		[in]		ÊÇ·ñÁË½á(0-ËùÓĞºÏÔ¼,1-ÒÑÁË½á 2-Î´ÁË½á£»A5¹ñÌ¨Îª£º0-ËùÓĞ£¬1-Ç·¿î£¬2-Ç·È¯£¬3-Î´ÁË½á£¬4-ÒÑÁË½á)
-	nTclx		[in]		Í·´çÀàĞÍ(0 ËùÓĞÀàĞÍ 1 ÆÕÍ¨ 2 ×¨Ïî)
-	arInfo		[out]		½á¹ûÊı¾İ
-	return  ·µ»ØÌõÊı
+	lpKhh		[in]		å®¢æˆ·å·
+	lpJys		[in]		äº¤æ˜“æ‰€
+	lpGdh		[in]		è‚¡ä¸œå·
+	lpZqdm		[in]		è¯åˆ¸ä»£ç 
+	lpHybh		[in]		åˆçº¦ç¼–å·
+	nJylb		[in]		äº¤æ˜“ç±»åˆ«ï¼ˆA5æŸœå°ä¸ºåˆçº¦ç±»åˆ«ï¼š0-å…¨éƒ¨ï¼Œ1-èèµ„ï¼Œ2-èåˆ¸ï¼‰
+	nRowcount	[in]		è¿”å›æ¡æ•°
+	nBrowindex	[in]		åˆ†é¡µç´¢å¼•å·
+	nKsrq		[in]		å¼€å§‹æ—¥æœŸ
+	nJsrq		[in]		ç»“æŸæ—¥æœŸ
+	lWth		[in]		å§”æ‰˜å·
+	nType		[in]		æ˜¯å¦äº†ç»“(0-æ‰€æœ‰åˆçº¦,1-å·²äº†ç»“ 2-æœªäº†ç»“ï¼›A5æŸœå°ä¸ºï¼š0-æ‰€æœ‰ï¼Œ1-æ¬ æ¬¾ï¼Œ2-æ¬ åˆ¸ï¼Œ3-æœªäº†ç»“ï¼Œ4-å·²äº†ç»“)
+	nTclx		[in]		å¤´å¯¸ç±»å‹(0 æ‰€æœ‰ç±»å‹ 1 æ™®é€š 2 ä¸“é¡¹)
+	arInfo		[out]		ç»“æœæ•°æ®
+	return  è¿”å›æ¡æ•°
 
 */
 ITPDK_API int64 MARITPDK_QueryDebts(const char* lpKhh, const char* lpJys, const char* lpGdh, const char* lpZqdm, const char* lpHybh, int64 nJylb, int64 nRowcount, const char* nBrowindex, int64 nKsrq, int64 nJsrq, int64 lWth, int64 nType, int64 nTclx, vector<ITPDK_XYFZ>& arInfo);
@@ -372,637 +372,637 @@ ITPDK_API int64 MARITPDK_QueryDebtsEx(ITPDK_CusReqInfo& cusreqinfo, const char *
 
 
 /*
-	Á½ÈÚ²éÑ¯µ±ÈÕÎ¯ÍĞ
+	ä¸¤èæŸ¥è¯¢å½“æ—¥å§”æ‰˜
 
-	khh			[in]		¿Í»§ºÅ
-	nType		[in]		ÊÇ·ñ½ö²éÑ¯¿É³·Î¯ÍĞ£¨0²éÑ¯È«²¿£¬1²éÑ¯¿É³·£©
-	nSortType	[in]		ÅÅĞò·½Ê½£¬µ±Ç°½öÖ§³ÖÄæĞò
-	nRowcount	[in]		·µ»ØÌõÊı
-	nBrowindex	[in]		·ÖÒ³Ë÷ÒıºÅ
-	jys			[in]		½»Ò×Ëù£¨Îª¿ÕÊ±²éÑ¯ËùÓĞ½»Ò×Ëù£©
-	zqdm		[in]		Ö¤È¯´úÂë£¨Îª¿ÕÊ±²éÑ¯ËùÓĞ´úÂë£©
-	nJylb		[in]		½»Ò×Àà±ğ
-	sCxbz		[in]		³·Ïú±êÖ¾
-	lWth		[in]		Î¯ÍĞºÅ£¨Îª¿ÕÊ±²éÑ¯ËùÓĞÎ¯ÍĞºÅ£©
-	arInfo		[out]		½á¹ûÊı¾İ
-	return				·µ»Ø²éÑ¯µ½µÄ¼ÇÂ¼Êı
+	khh			[in]		å®¢æˆ·å·
+	nType		[in]		æ˜¯å¦ä»…æŸ¥è¯¢å¯æ’¤å§”æ‰˜ï¼ˆ0æŸ¥è¯¢å…¨éƒ¨ï¼Œ1æŸ¥è¯¢å¯æ’¤ï¼‰
+	nSortType	[in]		æ’åºæ–¹å¼ï¼Œå½“å‰ä»…æ”¯æŒé€†åº
+	nRowcount	[in]		è¿”å›æ¡æ•°
+	nBrowindex	[in]		åˆ†é¡µç´¢å¼•å·
+	jys			[in]		äº¤æ˜“æ‰€ï¼ˆä¸ºç©ºæ—¶æŸ¥è¯¢æ‰€æœ‰äº¤æ˜“æ‰€ï¼‰
+	zqdm		[in]		è¯åˆ¸ä»£ç ï¼ˆä¸ºç©ºæ—¶æŸ¥è¯¢æ‰€æœ‰ä»£ç ï¼‰
+	nJylb		[in]		äº¤æ˜“ç±»åˆ«
+	sCxbz		[in]		æ’¤é”€æ ‡å¿—
+	lWth		[in]		å§”æ‰˜å·ï¼ˆä¸ºç©ºæ—¶æŸ¥è¯¢æ‰€æœ‰å§”æ‰˜å·ï¼‰
+	arInfo		[out]		ç»“æœæ•°æ®
+	return				è¿”å›æŸ¥è¯¢åˆ°çš„è®°å½•æ•°
 */
 ITPDK_API int64 MARITPDK_QueryOrders_MR_DRWT(const char* khh, int nType, int nSortType, int nRowcount, int64 nBrowindex, const char* jys, const char* zqdm, int nJylb, const char* sCxbz, int64 lWth, vector<ITPDK_XYDRWT>& arInfo);
 ITPDK_API int64 MARITPDK_QueryOrders_MR_DRWTEx(ITPDK_CusReqInfo& cusreqinfo, int nType, int nSortType, int nRowcount, int64 nBrowindex, const char *jys, const char *zqdm, int nJylb, const char *sCxbz, int64 lWth, vector<ITPDK_XYDRWT>& arInfo);
 
 /*
-	Á½ÈÚ²éÑ¯ÊµÊ±³É½»
+	ä¸¤èæŸ¥è¯¢å®æ—¶æˆäº¤
 
 
-	khh			[in]		¿Í»§ºÅ
-	nType		[in]		ÊÇ·ñ²éÑ¯¿É³·µ¥Î¯ÍĞ²¿·Ö£¨0²éÑ¯È«²¿£¬1 ¹ıÂË ³·µ¥ÊıÁ¿CDSL>0²¿·Ö£©  
-	nSortType	[in]		ÅÅĞò·½Ê½£¬0ÕıĞò£¬1ÄæĞò
-	nRowcount	[in]		·µ»ØÌõÊı
-	nBrowindex	[in]		·ÖÒ³Ë÷ÒıºÅ
-	jys			[in]		½»Ò×Ëù£¨Îª¿ÕÊ±²éÑ¯ËùÓĞ½»Ò×Ëù£©
-	zqdm		[in]		Ö¤È¯´úÂë£¨Îª¿ÕÊ±²éÑ¯ËùÓĞ´úÂë£©
-	nJylb		[in]		½»Ò×Àà±ğ	
-	lWth		[in]		Î¯ÍĞºÅ£¨Îª¿ÕÊ±²éÑ¯ËùÓĞÎ¯ÍĞºÅ£©
-	arInfo		[out]		½á¹ûÊı¾İ
-	return				·µ»Ø²éÑ¯µ½µÄ¼ÇÂ¼Êı
+	khh			[in]		å®¢æˆ·å·
+	nType		[in]		æ˜¯å¦æŸ¥è¯¢å¯æ’¤å•å§”æ‰˜éƒ¨åˆ†ï¼ˆ0æŸ¥è¯¢å…¨éƒ¨ï¼Œ1 è¿‡æ»¤ æ’¤å•æ•°é‡CDSL>0éƒ¨åˆ†ï¼‰  
+	nSortType	[in]		æ’åºæ–¹å¼ï¼Œ0æ­£åºï¼Œ1é€†åº
+	nRowcount	[in]		è¿”å›æ¡æ•°
+	nBrowindex	[in]		åˆ†é¡µç´¢å¼•å·
+	jys			[in]		äº¤æ˜“æ‰€ï¼ˆä¸ºç©ºæ—¶æŸ¥è¯¢æ‰€æœ‰äº¤æ˜“æ‰€ï¼‰
+	zqdm		[in]		è¯åˆ¸ä»£ç ï¼ˆä¸ºç©ºæ—¶æŸ¥è¯¢æ‰€æœ‰ä»£ç ï¼‰
+	nJylb		[in]		äº¤æ˜“ç±»åˆ«	
+	lWth		[in]		å§”æ‰˜å·ï¼ˆä¸ºç©ºæ—¶æŸ¥è¯¢æ‰€æœ‰å§”æ‰˜å·ï¼‰
+	arInfo		[out]		ç»“æœæ•°æ®
+	return				è¿”å›æŸ¥è¯¢åˆ°çš„è®°å½•æ•°
 */
 ITPDK_API int64 MARITPDK_QueryMatchs_MR_SSCJ(const char *khh, int nType, int nSortType, int nRowcount, int64 nBrowindex, const char *jys, const char *zqdm,int nJylb, int64 lWth, vector<ITPDK_XYSSCJ>& arInfo);
 ITPDK_API int64 MARITPDK_QueryMatchs_MR_SSCJEx(ITPDK_CusReqInfo& cusreqinfo, int nType, int nSortType, int nRowcount, int64 nBrowindex, const char* jys, const char* zqdm, int nJylb, int64 lWth, vector<ITPDK_XYSSCJ>& arInfo);
 
 /*
-	Á½ÈÚ²éÑ¯³Ö²Ö
+	ä¸¤èæŸ¥è¯¢æŒä»“
 
 
-	khh			[in]		¿Í»§ºÅ
-	nFlag		[in]		À©Õ¹±êÖ¾£¨0²»À©Õ¹£¬1À©Õ¹£©
-	nSortType	[in]		ÅÅĞò·½Ê½£¬µ±Ç°½öÖ§³ÖÄæĞò
-	nRowcount	[in]		·µ»ØÌõÊı
-	nBrowindex	[in]		·ÖÒ³Ë÷ÒıºÅ
-	gdh			[in]		¹É¶«ºÅ
-	jys			[in]		½»Ò×Ëù£¨Îª¿ÕÊ±²éÑ¯ËùÓĞ½»Ò×Ëù£©
-	zqdm		[in]		Ö¤È¯´úÂë£¨Îª¿ÕÊ±²éÑ¯ËùÓĞ´úÂë£©
-	arInfo		[out]		½á¹ûÊı¾İ
+	khh			[in]		å®¢æˆ·å·
+	nFlag		[in]		æ‰©å±•æ ‡å¿—ï¼ˆ0ä¸æ‰©å±•ï¼Œ1æ‰©å±•ï¼‰
+	nSortType	[in]		æ’åºæ–¹å¼ï¼Œå½“å‰ä»…æ”¯æŒé€†åº
+	nRowcount	[in]		è¿”å›æ¡æ•°
+	nBrowindex	[in]		åˆ†é¡µç´¢å¼•å·
+	gdh			[in]		è‚¡ä¸œå·
+	jys			[in]		äº¤æ˜“æ‰€ï¼ˆä¸ºç©ºæ—¶æŸ¥è¯¢æ‰€æœ‰äº¤æ˜“æ‰€ï¼‰
+	zqdm		[in]		è¯åˆ¸ä»£ç ï¼ˆä¸ºç©ºæ—¶æŸ¥è¯¢æ‰€æœ‰ä»£ç ï¼‰
+	arInfo		[out]		ç»“æœæ•°æ®
 	
-	return				·µ»Ø²éÑ¯µ½µÄ¼ÇÂ¼Êı
+	return				è¿”å›æŸ¥è¯¢åˆ°çš„è®°å½•æ•°
 */
 ITPDK_API int64 MARITPDK_QueryPosition_MR_ZQGL(const char *khh, int nFlag, int nSortType, int nRowcount, int64 nBrowindex,const char * gdh, const char *jys, const char *zqdm, vector<ITPDK_XYZQGL>& arInfo);
 ITPDK_API int64 MARITPDK_QueryPosition_MR_ZQGLEx(ITPDK_CusReqInfo& cusreqinfo, int nFlag, int nSortType, int nRowcount, int64 nBrowindex, const char* jys, const char* zqdm, vector<ITPDK_XYZQGL>& arInfo);
 
 /*
-	Á½ÈÚ²éÑ¯ĞÅÓÃ×Ê²ú
+	ä¸¤èæŸ¥è¯¢ä¿¡ç”¨èµ„äº§
 
 
-	khh			[in]		¿Í»§ºÅ
-	jys			[in]		½»Ò×Ëù
-	zqdm		[in]		Ö¤È¯´úÂë
-	nFlag		[in]		À©Õ¹±êÖ¾£¨0²»À©Õ¹£¬1À©Õ¹£©
+	khh			[in]		å®¢æˆ·å·
+	jys			[in]		äº¤æ˜“æ‰€
+	zqdm		[in]		è¯åˆ¸ä»£ç 
+	nFlag		[in]		æ‰©å±•æ ‡å¿—ï¼ˆ0ä¸æ‰©å±•ï¼Œ1æ‰©å±•ï¼‰
 	
-	arInfo		[out]		½á¹ûÊı¾İ
-	return				·µ»Ø²éÑ¯µ½µÄ¼ÇÂ¼Êı
+	arInfo		[out]		ç»“æœæ•°æ®
+	return				è¿”å›æŸ¥è¯¢åˆ°çš„è®°å½•æ•°
 */
 ITPDK_API int64 MARITPDK_QueryTradeData_MR_XYZC(const char *khh, const char* jys, const char* zqdm, int nFlag , vector<ITPDK_XYZC>& arInfo);
 ITPDK_API int64 MARITPDK_QueryTradeData_MR_XYZCEx(ITPDK_CusReqInfo& cusreqinfo, const char* jys, const char* zqdm, int nFlag, vector<ITPDK_XYZC>& arInfo);
 
 
 /*
-	Á½ÈÚ²éÑ¯¿Í»§¿ÉÈÚÈ¯ĞÅÏ¢
+	ä¸¤èæŸ¥è¯¢å®¢æˆ·å¯èåˆ¸ä¿¡æ¯
 
 
-	khh			[in]		¿Í»§ºÅ
-	jys			[in]		½»Ò×Ëù
-	zqdm		[in]		Ö¤È¯´úÂë
-	tcxz		[in]		Í·´çÀ´Ô´(1 ÆÕÍ¨Í·´ç 2 ×¨ÏîÍ·´ç)
-	nRowcount	[in]		·µ»ØÌõÊı
-	nBrowindex	[in]		·ÖÒ³Ë÷ÒıºÅ
-	arInfo		[out]		½á¹ûÊı¾İ
+	khh			[in]		å®¢æˆ·å·
+	jys			[in]		äº¤æ˜“æ‰€
+	zqdm		[in]		è¯åˆ¸ä»£ç 
+	tcxz		[in]		å¤´å¯¸æ¥æº(1 æ™®é€šå¤´å¯¸ 2 ä¸“é¡¹å¤´å¯¸)
+	nRowcount	[in]		è¿”å›æ¡æ•°
+	nBrowindex	[in]		åˆ†é¡µç´¢å¼•å·
+	arInfo		[out]		ç»“æœæ•°æ®
 
-	return				·µ»Ø²éÑ¯µ½µÄ¼ÇÂ¼Êı
+	return				è¿”å›æŸ¥è¯¢åˆ°çš„è®°å½•æ•°
 */
 ITPDK_API int64 MARITPDK_QueryTradeData_MR_KRQXX(const char* khh, const char* jys, const char* zqdm, int32 tcxz, int nRowcount, int64 nBrowindex, vector<ITPDK_RQZQ>& arInfo);
 ITPDK_API int64 MARITPDK_QueryTradeData_MR_KRQXXEx(ITPDK_CusReqInfo& cusreqinfo, const char* jys, const char* zqdm, int32 tcxz, int nRowcount, int64 nBrowindex, vector<ITPDK_RQZQ>& arInfo);
 
 /*
-	Á½ÈÚ²éÑ¯¿Í»§¿ÉÈÚ×Ê½ğĞÅÏ¢
+	ä¸¤èæŸ¥è¯¢å®¢æˆ·å¯èèµ„é‡‘ä¿¡æ¯
 
 
-	khh			[in]		¿Í»§ºÅ
-	tcxz		[in]		Í·´çÀ´Ô´(1 ÆÕÍ¨Í·´ç 2 ×¨ÏîÍ·´ç)
-	arInfo		[out]		½á¹ûÊı¾İ
+	khh			[in]		å®¢æˆ·å·
+	tcxz		[in]		å¤´å¯¸æ¥æº(1 æ™®é€šå¤´å¯¸ 2 ä¸“é¡¹å¤´å¯¸)
+	arInfo		[out]		ç»“æœæ•°æ®
 
-	return				·µ»Ø²éÑ¯µ½µÄ¼ÇÂ¼Êı
+	return				è¿”å›æŸ¥è¯¢åˆ°çš„è®°å½•æ•°
 */
 ITPDK_API int64 MARITPDK_QueryTradeData_MR_KRZJXX(const char* khh, int32 tcxz, vector<ITPDK_KRZJXX>& arInfo);
 ITPDK_API int64 MARITPDK_QueryTradeData_MR_KRZJXXEx(ITPDK_CusReqInfo& cusreqinfo, int32 tcxz, vector<ITPDK_KRZJXX>& arInfo);
 
 
 /*
-	Á½ÈÚ²éÑ¯¿Í»§ÅäÊÛÈ¨Òæ
+	ä¸¤èæŸ¥è¯¢å®¢æˆ·é…å”®æƒç›Š
 
 
-	khh			[in]		¿Í»§ºÅ
-	arInfo		[out]		½á¹ûÊı¾İ
+	khh			[in]		å®¢æˆ·å·
+	arInfo		[out]		ç»“æœæ•°æ®
 
-	return				·µ»Ø²éÑ¯µ½µÄ¼ÇÂ¼Êı
+	return				è¿”å›æŸ¥è¯¢åˆ°çš„è®°å½•æ•°
 */
 ITPDK_API int64 MARITPDK_QueryTradeData_MR_PSQY(const char* khh, vector<ITPDK_XYPSQY>& arInfo);
 ITPDK_API int64 MARITPDK_QueryTradeData_MR_PSQYEx(ITPDK_CusReqInfo& cusreqinfo, vector<ITPDK_XYPSQY>& arInfo);
 
 /*
-	·¢ĞĞÒµÎñ¿ÉÈÏ¹ºÊıÁ¿
+	å‘è¡Œä¸šåŠ¡å¯è®¤è´­æ•°é‡
 
-	lpKhh		[in]		¿Í»§ºÅ
-	lpJys		[in]		½»Ò×Ëù
-	lpZqdm		[in]		ETF´úÂë
-	nJylb		[in]		½»Ò×Àà±ğ(JYLB_PGJKÅä¹É½É¿î,JYLB_PSSGÅäÊÛÉê¹º,JYLB_BUYÔö·¢ÂòÈë)
-	lfWtjg		[in]		Î¯ÍĞ¼Û¸ñ(¶©µ¥ÀàĞÍÎªÊĞ¼ÛÊ±£¬¸Ã²ÎÊı²»ÉúĞ§)
-	lDdlx		[in]		¶©µ¥ÀàĞÍ(DDLX_XJWT,DDLX_SJWT)
-	lpGdh		[in]		¹É¶«ºÅ
-	return				³É¹¦·µ»Ø¿ÉÉê¹ºÊıÁ¿£¬Ê§°Ü·µ»Ø<0
+	lpKhh		[in]		å®¢æˆ·å·
+	lpJys		[in]		äº¤æ˜“æ‰€
+	lpZqdm		[in]		ETFä»£ç 
+	nJylb		[in]		äº¤æ˜“ç±»åˆ«(JYLB_PGJKé…è‚¡ç¼´æ¬¾,JYLB_PSSGé…å”®ç”³è´­,JYLB_BUYå¢å‘ä¹°å…¥)
+	lfWtjg		[in]		å§”æ‰˜ä»·æ ¼(è®¢å•ç±»å‹ä¸ºå¸‚ä»·æ—¶ï¼Œè¯¥å‚æ•°ä¸ç”Ÿæ•ˆ)
+	lDdlx		[in]		è®¢å•ç±»å‹(DDLX_XJWT,DDLX_SJWT)
+	lpGdh		[in]		è‚¡ä¸œå·
+	return				æˆåŠŸè¿”å›å¯ç”³è´­æ•°é‡ï¼Œå¤±è´¥è¿”å›<0
 */
 ITPDK_API int64 MARITPDK_FXYWTradableQty(const char* lpKhh, const char* lpJys, const char* lpZqdm, int nJylb, double lfWtjg, int32 lDdlx, const char* lpGdh);
 ITPDK_API int64 MARITPDK_FXYWTradableQtyEx(ITPDK_CusReqInfo& cusreqinfo, const char* lpJys, const char* lpZqdm, int nJylb, double lfWtjg, int32 lDdlx);
 
 /*
-	Á½ÈÚ²éÑ¯Ö¤È¯´úÂë
+	ä¸¤èæŸ¥è¯¢è¯åˆ¸ä»£ç 
 
 
-	jys			[in]		½»Ò×Ëù
-	zqdm		[in]		Ö¤È¯´úÂë
-	nRowcount	[in]		·µ»ØÌõÊı
-	nBrowindex	[in]		·ÖÒ³Ë÷ÒıºÅ
-	arInfo		[out]		½á¹ûÊı¾İ
+	jys			[in]		äº¤æ˜“æ‰€
+	zqdm		[in]		è¯åˆ¸ä»£ç 
+	nRowcount	[in]		è¿”å›æ¡æ•°
+	nBrowindex	[in]		åˆ†é¡µç´¢å¼•å·
+	arInfo		[out]		ç»“æœæ•°æ®
 
-	return				·µ»Ø²éÑ¯µ½µÄ¼ÇÂ¼Êı
+	return				è¿”å›æŸ¥è¯¢åˆ°çš„è®°å½•æ•°
 */
 ITPDK_API int64 MARITPDK_QueryTradeData_MR_ZQDM(const char* jys, const char* zqdm, int nRowcount, int64 nBrowindex, vector<ITPDK_XYZQDM>& arInfo);
 
 /*
-	Á½ÈÚ²éÑ¯×Ê¸ñÖ¤È¯
+	ä¸¤èæŸ¥è¯¢èµ„æ ¼è¯åˆ¸
 
 
-	jys			[in]		½»Ò×Ëù
-	zqdm		[in]		Ö¤È¯´úÂë
-	nRowcount	[in]		·µ»ØÌõÊı
-	nBrowindex	[in]		·ÖÒ³Ë÷ÒıºÅ
-	arInfo		[out]		½á¹ûÊı¾İ
+	jys			[in]		äº¤æ˜“æ‰€
+	zqdm		[in]		è¯åˆ¸ä»£ç 
+	nRowcount	[in]		è¿”å›æ¡æ•°
+	nBrowindex	[in]		åˆ†é¡µç´¢å¼•å·
+	arInfo		[out]		ç»“æœæ•°æ®
 
-	return				·µ»Ø²éÑ¯µ½µÄ¼ÇÂ¼Êı
+	return				è¿”å›æŸ¥è¯¢åˆ°çš„è®°å½•æ•°
 */
 ITPDK_API int64 MARITPDK_QueryTradeData_MR_ZGZQ(const char* jys, const char* zqdm, int nRowcount, int64 nBrowindex, vector<ITPDK_ZGZQ>& arInfo);
 
 
 /*
-	²éÑ¯¼¯ÖĞ½»Ò×¿ÉÓÃ×Ê½ğ
+	æŸ¥è¯¢é›†ä¸­äº¤æ˜“å¯ç”¨èµ„é‡‘
 
-	lpKhh		[in]		¿Í»§ºÅ
-	sJymm		[in]		½»Ò×ÃÜÂë
-	sZjzh		[in]		×Ê½ğÕËºÅ
-	dKyzj       [out]       ²éÑ¯³É¹¦,·µ»Ø¿ÉÓÃ×Ê½ğ
-	return				³É¹¦·µ»Ø>=0£¬Ê§°Ü·µ»Ø<0
+	lpKhh		[in]		å®¢æˆ·å·
+	sJymm		[in]		äº¤æ˜“å¯†ç 
+	sZjzh		[in]		èµ„é‡‘è´¦å·
+	dKyzj       [out]       æŸ¥è¯¢æˆåŠŸ,è¿”å›å¯ç”¨èµ„é‡‘
+	return				æˆåŠŸè¿”å›>=0ï¼Œå¤±è´¥è¿”å›<0
 */
 ITPDK_API int64 MARITPDK_QueryCentreFundAvl(const char* sKhh, const char* sJymm, const char* sZjzh, double& dKyzj, const char* sGyh = nullptr, const char* sGymm = nullptr);
 
-//×Ê½ğµ÷Èë
+//èµ„é‡‘è°ƒå…¥
 /*
 
-	lpKhh		[in]		¿Í»§ºÅ
-	sJymm		[in]		½»Ò×ÃÜÂë
-	dFsje		[in]		·¢Éú½ğ¶î
-	sZjzh		[in]		×Ê½ğÕËºÅ
-	sGyh        [in]		¹ñÔ±ºÅ
-	sGymm        [in]		¹ñÔ±ÃÜÂë
-	sZy		    [in]		ÕªÒª
-	return				³É¹¦·µ»Ø>=0£¬Ê§°Ü·µ»Ø<0
+	lpKhh		[in]		å®¢æˆ·å·
+	sJymm		[in]		äº¤æ˜“å¯†ç 
+	dFsje		[in]		å‘ç”Ÿé‡‘é¢
+	sZjzh		[in]		èµ„é‡‘è´¦å·
+	sGyh        [in]		æŸœå‘˜å·
+	sGymm        [in]		æŸœå‘˜å¯†ç 
+	sZy		    [in]		æ‘˜è¦
+	return				æˆåŠŸè¿”å›>=0ï¼Œå¤±è´¥è¿”å›<0
 */
 ITPDK_API int64 MARITPDK_FundTransIn(const char* sKhh, const char* sJymm, double dFsje, const char* sZjzh = nullptr, const char* sGyh = nullptr, const char* sGymm = nullptr, const char* sZy = nullptr);
-//×Ê½ğµ÷³ö
+//èµ„é‡‘è°ƒå‡º
 ITPDK_API int64 MARITPDK_FundTransOut(const char* sKhh, const char* sJymm, double dFsje, const char* sZjzh = nullptr, const char* sGyh = nullptr, const char* sGymm = nullptr, const char* sZy = nullptr);
 
 /*
-²éÑ¯A¹É¿Éµ£±£»®Èë³Ö²Ö£¨¶«±±£©
+æŸ¥è¯¢Aè‚¡å¯æ‹…ä¿åˆ’å…¥æŒä»“ï¼ˆä¸œåŒ—ï¼‰
 
 
-khh			[in]		¿Í»§ºÅ
-arInfo		[out]		½á¹ûÊı¾İ
+khh			[in]		å®¢æˆ·å·
+arInfo		[out]		ç»“æœæ•°æ®
 
-return				·µ»Ø²éÑ¯µ½µÄ¼ÇÂ¼Êı
+return				è¿”å›æŸ¥è¯¢åˆ°çš„è®°å½•æ•°
 */
 ITPDK_API int64 MARITPDK_QueryPosition_DBHR_All(const char *khh, vector<ITPDK_XYDBHRSL>& arInfo);
 
 /*
-	×¨ÏîÍ·´çÖ¤È¯µ÷²¦£¨ÖĞĞÅ£©
-	sKhh		[in]		¿Í»§ºÅ
-	sJys		[in]		½»Ò×Ëù
-	sZqdm		[in]		Ö¤È¯´úÂë
-	nFssl		[in]		µ÷²¦ÊıÁ¿
-	nYysl		[in]		Ô¤Ô¼ÊıÁ¿µ½ÆÚÔöÁ¿
-	nFlag		[in]		µ÷²¦·½Ïò,0ÎªMDBµ÷³öµ½¹ñÌ¨£¬1Î»¹ñÌ¨µ÷ÈëMDB
-	arInfo		[out]		½á¹ûÊı¾İ
+	ä¸“é¡¹å¤´å¯¸è¯åˆ¸è°ƒæ‹¨ï¼ˆä¸­ä¿¡ï¼‰
+	sKhh		[in]		å®¢æˆ·å·
+	sJys		[in]		äº¤æ˜“æ‰€
+	sZqdm		[in]		è¯åˆ¸ä»£ç 
+	nFssl		[in]		è°ƒæ‹¨æ•°é‡
+	nYysl		[in]		é¢„çº¦æ•°é‡åˆ°æœŸå¢é‡
+	nFlag		[in]		è°ƒæ‹¨æ–¹å‘,0ä¸ºMDBè°ƒå‡ºåˆ°æŸœå°ï¼Œ1ä½æŸœå°è°ƒå…¥MDB
+	arInfo		[out]		ç»“æœæ•°æ®
 
-	return				³É¹¦·µ»Ø>0£¬Ê§°Ü·µ»Ø<=0
+	return				æˆåŠŸè¿”å›>0ï¼Œå¤±è´¥è¿”å›<=0
 */
 ITPDK_API int64 MARITPDK_SpecialPosition_ZQDB(const char* sKhh, const char* sJys, const char* sZqdm, int64 nFssl, int64 nYysl, int64 nFlag, vector<ITPDK_ZXTCZQDB>& arInfo);
 
 /*
-	×¨ÏîÍ·´ç×Ê½ğµ÷²¦£¨ÖĞĞÅ£©
-	sKhh		[in]		¿Í»§ºÅ
-	dFsje		[in]		·¢Éú½ğ¶î
-	nFlag		[in]		µ÷²¦·½Ïò,0ÎªMDBµ÷³öµ½¹ñÌ¨£¬1Î»¹ñÌ¨µ÷ÈëMDB
-	arInfo		[out]		½á¹ûÊı¾İ
+	ä¸“é¡¹å¤´å¯¸èµ„é‡‘è°ƒæ‹¨ï¼ˆä¸­ä¿¡ï¼‰
+	sKhh		[in]		å®¢æˆ·å·
+	dFsje		[in]		å‘ç”Ÿé‡‘é¢
+	nFlag		[in]		è°ƒæ‹¨æ–¹å‘,0ä¸ºMDBè°ƒå‡ºåˆ°æŸœå°ï¼Œ1ä½æŸœå°è°ƒå…¥MDB
+	arInfo		[out]		ç»“æœæ•°æ®
 
-	return				³É¹¦·µ»Ø>0£¬Ê§°Ü·µ»Ø<=0
+	return				æˆåŠŸè¿”å›>0ï¼Œå¤±è´¥è¿”å›<=0
 */
 ITPDK_API int64 MARITPDK_SpecialPosition_ZJDB(const char* sKhh, double dFsje, int64 nFlag);
 
 /*
-	²éÑ¯Ö¤È¯ºÚÃûµ¥
-	sJys		[in]		½»Ò×Ëù
-	sXysx		[in]		ĞÅÓÃÊôĞÔ ĞÅÓÃÊôĞÔ "01" - ¼¯ÖĞ¶È  "02" - ºÚÃûµ¥
-	nType		[in]		ÀàĞÍ(1-¼¯ÖĞ¶ÈÖ¤È¯´úÂë 2-¼¯ÖĞ¶ÈÖ¤È¯Àà±ğ 3-Ö¤È¯ºÚÃûµ¥Ö¤È¯´úÂë)
-	arInfo		[out]		½á¹ûÊı¾İ
+	æŸ¥è¯¢è¯åˆ¸é»‘åå•
+	sJys		[in]		äº¤æ˜“æ‰€
+	sXysx		[in]		ä¿¡ç”¨å±æ€§ ä¿¡ç”¨å±æ€§ "01" - é›†ä¸­åº¦  "02" - é»‘åå•
+	nType		[in]		ç±»å‹(1-é›†ä¸­åº¦è¯åˆ¸ä»£ç  2-é›†ä¸­åº¦è¯åˆ¸ç±»åˆ« 3-è¯åˆ¸é»‘åå•è¯åˆ¸ä»£ç )
+	arInfo		[out]		ç»“æœæ•°æ®
 
-	return				³É¹¦·µ»Ø>0£¬Ê§°Ü·µ»Ø<=0
+	return				æˆåŠŸè¿”å›>0ï¼Œå¤±è´¥è¿”å›<=0
 */
 ITPDK_API int64 MARITPDK_QueryTradeData_MR_ZQHMD(const char* sJys, const char* sXysx, long nType, vector<ITPDK_ZQHMD>& arInfo);
 
 /*
-	²éÑ¯ĞÂ¹ÉÉê¹ºĞÅÏ¢
-	sJys		[in]		½»Ò×Ëù
-	sZqdm		[in]		Ö¤È¯´úÂë
-	nRgrq		[in]		ÈÏ¹ºÈÕÆÚ
-	sFxfs		[in]		·¢ĞĞ·½Ê½
-	arInfo		[out]		½á¹ûÊı¾İ
+	æŸ¥è¯¢æ–°è‚¡ç”³è´­ä¿¡æ¯
+	sJys		[in]		äº¤æ˜“æ‰€
+	sZqdm		[in]		è¯åˆ¸ä»£ç 
+	nRgrq		[in]		è®¤è´­æ—¥æœŸ
+	sFxfs		[in]		å‘è¡Œæ–¹å¼
+	arInfo		[out]		ç»“æœæ•°æ®
 
-	return				·µ»Ø²éÑ¯µ½µÄ¼ÇÂ¼Êı
+	return				è¿”å›æŸ¥è¯¢åˆ°çš„è®°å½•æ•°
 */
 ITPDK_API int64 MARITPDK_QueryNewStockInfo(const char* sJys, const char* sZqdm, int64 nRgrq, const char* sFxfs, vector<ITPDK_XGSG>& arInfo);
 
 /*
-	²éÑ¯¸ºÕ®±ä¶¯Ã÷Ï¸
-	sKhh		[in]		¿Í»§ºÅ
-	sJys		[in]		½»Ò×Ëù
-	sZqdm		[in]		Ö¤È¯´úÂë
-	nRowcount	[in]		·µ»ØÌõÊı
-	nBrowindex	[in]		·ÖÒ³Ë÷ÒıºÅ
-	arInfo		[out]		½á¹ûÊı¾İ
+	æŸ¥è¯¢è´Ÿå€ºå˜åŠ¨æ˜ç»†
+	sKhh		[in]		å®¢æˆ·å·
+	sJys		[in]		äº¤æ˜“æ‰€
+	sZqdm		[in]		è¯åˆ¸ä»£ç 
+	nRowcount	[in]		è¿”å›æ¡æ•°
+	nBrowindex	[in]		åˆ†é¡µç´¢å¼•å·
+	arInfo		[out]		ç»“æœæ•°æ®
 
-	return				·µ»Ø²éÑ¯µ½µÄ¼ÇÂ¼Êı
+	return				è¿”å›æŸ¥è¯¢åˆ°çš„è®°å½•æ•°
 */
 ITPDK_API int64 MARITPDK_QueryTradeData_MR_DRBD(const char* sKhh, const char* sJys, const char* sZqdm, int nRowcount, int nBrowindex, vector<ITPDK_FZBDMX>& arInfo);
 
 /*
-	ÈÚ×Ê²Öµ¥Ã÷Ï¸²éÑ¯£¨¹â´óÖ¤È¯£©
-	sKhh		[in]		¿Í»§ºÅ
-	sJymm		[in]		½»Ò×ÃÜÂë
-	sYyb		[in]		ÓªÒµ²¿
-	sJys		[in]		½»Ò×Ëù
-	sBz			[in]		±ÒÖÖ
-	sKsrq		[in]		¿ªÊ¼ÈÕÆÚ
-	sJsrq		[in]		½áÊøÈÕÆÚ
-	sWtfs		[in]		Î¯ÍĞ·½Ê½
-	sRqlx		[in]		ÈÕÆÚÊäÈëÀàĞÍ£¨0:²Öµ¥·¢ÉúÈÕÆÚ 1:²Öµ¥µ½ÆÚÈÕÆÚ£¬Ä¬ÈÏÎª 0£©
-	nLjbs		[in]		ÁË½á±êÊ¶
-	sFlag		[in]		ÊÇ·ñ°üº¬ÊµÊ±Î¯ÍĞ£¨0»ò¿Õ:·ñ 1:ÊÇ£©
-	arInfo		[out]		½á¹ûÊı¾İ
+	èèµ„ä»“å•æ˜ç»†æŸ¥è¯¢ï¼ˆå…‰å¤§è¯åˆ¸ï¼‰
+	sKhh		[in]		å®¢æˆ·å·
+	sJymm		[in]		äº¤æ˜“å¯†ç 
+	sYyb		[in]		è¥ä¸šéƒ¨
+	sJys		[in]		äº¤æ˜“æ‰€
+	sBz			[in]		å¸ç§
+	sKsrq		[in]		å¼€å§‹æ—¥æœŸ
+	sJsrq		[in]		ç»“æŸæ—¥æœŸ
+	sWtfs		[in]		å§”æ‰˜æ–¹å¼
+	sRqlx		[in]		æ—¥æœŸè¾“å…¥ç±»å‹ï¼ˆ0:ä»“å•å‘ç”Ÿæ—¥æœŸ 1:ä»“å•åˆ°æœŸæ—¥æœŸï¼Œé»˜è®¤ä¸º 0ï¼‰
+	nLjbs		[in]		äº†ç»“æ ‡è¯†
+	sFlag		[in]		æ˜¯å¦åŒ…å«å®æ—¶å§”æ‰˜ï¼ˆ0æˆ–ç©º:å¦ 1:æ˜¯ï¼‰
+	arInfo		[out]		ç»“æœæ•°æ®
 
-	return				·µ»Ø²éÑ¯µ½µÄ¼ÇÂ¼Êı
+	return				è¿”å›æŸ¥è¯¢åˆ°çš„è®°å½•æ•°
 */
 ITPDK_API int64 MARITPDK_QueryTradeData_MR_RZCDMX(const char* sKhh, const char* sJymm, const char* sYyb, const char* sJys, const char* sBz, const char* sKsrq, const char* sJsrq, const char* sWtfs, const char* sRqlx, int nLjbs, const char* sFlag, vector<ITPDK_RZCDMX>& arInfo);
 
 /*
-	ÈÚÈ¯²Öµ¥Ã÷Ï¸²éÑ¯£¨¹â´óÖ¤È¯£©
-	sKhh		[in]		¿Í»§ºÅ
-	sJymm		[in]		½»Ò×ÃÜÂë
-	sYyb		[in]		ÓªÒµ²¿
-	sJys		[in]		½»Ò×Ëù
-	sBz			[in]		±ÒÖÖ
-	sKsrq		[in]		¿ªÊ¼ÈÕÆÚ
-	sJsrq		[in]		½áÊøÈÕÆÚ
-	sWtfs		[in]		Î¯ÍĞ·½Ê½
-	sRqlx		[in]		ÈÕÆÚÊäÈëÀàĞÍ£¨0:²Öµ¥·¢ÉúÈÕÆÚ 1:²Öµ¥µ½ÆÚÈÕÆÚ£¬Ä¬ÈÏÎª 0£©
-	nLjbs		[in]		ÁË½á±êÊ¶
-	sFlag		[in]		ÊÇ·ñ°üº¬ÊµÊ±Î¯ÍĞ£¨0»ò¿Õ:·ñ 1:ÊÇ£©
-	arInfo		[out]		½á¹ûÊı¾İ
+	èåˆ¸ä»“å•æ˜ç»†æŸ¥è¯¢ï¼ˆå…‰å¤§è¯åˆ¸ï¼‰
+	sKhh		[in]		å®¢æˆ·å·
+	sJymm		[in]		äº¤æ˜“å¯†ç 
+	sYyb		[in]		è¥ä¸šéƒ¨
+	sJys		[in]		äº¤æ˜“æ‰€
+	sBz			[in]		å¸ç§
+	sKsrq		[in]		å¼€å§‹æ—¥æœŸ
+	sJsrq		[in]		ç»“æŸæ—¥æœŸ
+	sWtfs		[in]		å§”æ‰˜æ–¹å¼
+	sRqlx		[in]		æ—¥æœŸè¾“å…¥ç±»å‹ï¼ˆ0:ä»“å•å‘ç”Ÿæ—¥æœŸ 1:ä»“å•åˆ°æœŸæ—¥æœŸï¼Œé»˜è®¤ä¸º 0ï¼‰
+	nLjbs		[in]		äº†ç»“æ ‡è¯†
+	sFlag		[in]		æ˜¯å¦åŒ…å«å®æ—¶å§”æ‰˜ï¼ˆ0æˆ–ç©º:å¦ 1:æ˜¯ï¼‰
+	arInfo		[out]		ç»“æœæ•°æ®
 
-	return				·µ»Ø²éÑ¯µ½µÄ¼ÇÂ¼Êı
+	return				è¿”å›æŸ¥è¯¢åˆ°çš„è®°å½•æ•°
 */
 ITPDK_API int64 MARITPDK_QueryTradeData_MR_RQCDMX(const char* sKhh, const char* sJymm, const char* sYyb, const char* sJys, const char* sBz, const char* sKsrq, const char* sJsrq, const char* sWtfs, const char* sRqlx, int nLjbs, const char* sFlag, vector<ITPDK_RQCDMX>& arInfo);
 
 /*
-	ÈÚ×ÊÈÚÈ¯Õ¹ÆÚ£¨¹â´óÖ¤È¯£©
-	sKhh		[in]		¿Í»§ºÅ
-	sJymm		[in]		½»Ò×ÃÜÂë
-	sYyb		[in]		ÓªÒµ²¿
-	sJys		[in]		½»Ò×Ëù
-	sCdh		[in]		²Öµ¥ºÅ
-	sHylx		[in]		ºÏÔ¼ÀàĞÍ
-	sKcrq		[in]		¿ª²ÖÈÕÆÚ
-	sKsrq		[in]		¿ªÊ¼ÈÕÆÚ
-	sJsrq		[in]		½áÊøÈÕÆÚ
-	sWtfs		[in]		Î¯ÍĞ·½Ê½
+	èèµ„èåˆ¸å±•æœŸï¼ˆå…‰å¤§è¯åˆ¸ï¼‰
+	sKhh		[in]		å®¢æˆ·å·
+	sJymm		[in]		äº¤æ˜“å¯†ç 
+	sYyb		[in]		è¥ä¸šéƒ¨
+	sJys		[in]		äº¤æ˜“æ‰€
+	sCdh		[in]		ä»“å•å·
+	sHylx		[in]		åˆçº¦ç±»å‹
+	sKcrq		[in]		å¼€ä»“æ—¥æœŸ
+	sKsrq		[in]		å¼€å§‹æ—¥æœŸ
+	sJsrq		[in]		ç»“æŸæ—¥æœŸ
+	sWtfs		[in]		å§”æ‰˜æ–¹å¼
 
-	return				³É¹¦·µ»Ø>=0£¬Ê§°Ü·µ»Ø<0
+	return				æˆåŠŸè¿”å›>=0ï¼Œå¤±è´¥è¿”å›<0
 */
 ITPDK_API int64 MARITPDK_ContractExtension(const char* sKhh, const char* sJymm, const char* sYyb, const char* sJys, const char* sCdh, const char* sHylx, const char* sKcrq, const char* sKsrq, const char* sJsrq, const char* sWtfs);
 
 /*
-	²Öµ¥±ä¸üÉêÇë¾Ü¾øÔ­Òò²éÑ¯£¨¹â´óÖ¤È¯£©
-	sKhh		[in]		¿Í»§ºÅ
-	sJymm		[in]		½»Ò×ÃÜÂë
-	sYyb		[in]		ÓªÒµ²¿
-	sJys		[in]		½»Ò×Ëù
-	sKsrq		[in]		¿ªÊ¼ÈÕÆÚ
-	sJsrq		[in]		½áÊøÈÕÆÚ
-	sWtfs		[in]		Î¯ÍĞ·½Ê½
-	arInfo		[out]		½á¹ûÊı¾İ
+	ä»“å•å˜æ›´ç”³è¯·æ‹’ç»åŸå› æŸ¥è¯¢ï¼ˆå…‰å¤§è¯åˆ¸ï¼‰
+	sKhh		[in]		å®¢æˆ·å·
+	sJymm		[in]		äº¤æ˜“å¯†ç 
+	sYyb		[in]		è¥ä¸šéƒ¨
+	sJys		[in]		äº¤æ˜“æ‰€
+	sKsrq		[in]		å¼€å§‹æ—¥æœŸ
+	sJsrq		[in]		ç»“æŸæ—¥æœŸ
+	sWtfs		[in]		å§”æ‰˜æ–¹å¼
+	arInfo		[out]		ç»“æœæ•°æ®
 
-	return				·µ»Ø²éÑ¯µ½µÄ¼ÇÂ¼Êı
+	return				è¿”å›æŸ¥è¯¢åˆ°çš„è®°å½•æ•°
 */
 ITPDK_API int64 MARITPDK_QueryTradeData_CDBGSQ_REFUSE(const char* sKhh, const char* sJymm, const char* sYyb, const char* sJys, const char* sKsrq, const char* sJsrq, const char* sWtfs, vector<ITPDK_CDBGSQJJYYCX>& arInfo);
 
 /*
-	²Öµ¥±ä¸üÉêÇë²éÑ¯£¨¹â´óÖ¤È¯£©
-	sKhh		[in]		¿Í»§ºÅ
-	sJymm		[in]		½»Ò×ÃÜÂë
-	sYyb		[in]		ÓªÒµ²¿(Ô´)
-	sJys		[in]		½»Ò×Ëù
-	sJgdm		[in]		ÓªÒµ²¿
-	sZqdm		[in]		Ö¤È¯´úÂë
-	sKsrq		[in]		¿ªÊ¼ÈÕÆÚ
-	sJsrq		[in]		½áÊøÈÕÆÚ
-	sHylx		[in]		ºÏÔ¼ÀàĞÍ
-	sTzlx		[in]		µ÷ÕûÀàĞÍ
-	sCpbh		[in]		²úÆ·±àºÅ
-	sSqzt		[in]		ÉêÇë×´Ì¬
-	sWtfs		[in]		Î¯ÍĞ·½Ê½
-	arInfo		[out]		½á¹ûÊı¾İ
+	ä»“å•å˜æ›´ç”³è¯·æŸ¥è¯¢ï¼ˆå…‰å¤§è¯åˆ¸ï¼‰
+	sKhh		[in]		å®¢æˆ·å·
+	sJymm		[in]		äº¤æ˜“å¯†ç 
+	sYyb		[in]		è¥ä¸šéƒ¨(æº)
+	sJys		[in]		äº¤æ˜“æ‰€
+	sJgdm		[in]		è¥ä¸šéƒ¨
+	sZqdm		[in]		è¯åˆ¸ä»£ç 
+	sKsrq		[in]		å¼€å§‹æ—¥æœŸ
+	sJsrq		[in]		ç»“æŸæ—¥æœŸ
+	sHylx		[in]		åˆçº¦ç±»å‹
+	sTzlx		[in]		è°ƒæ•´ç±»å‹
+	sCpbh		[in]		äº§å“ç¼–å·
+	sSqzt		[in]		ç”³è¯·çŠ¶æ€
+	sWtfs		[in]		å§”æ‰˜æ–¹å¼
+	arInfo		[out]		ç»“æœæ•°æ®
 
-	return				·µ»Ø²éÑ¯µ½µÄ¼ÇÂ¼Êı
+	return				è¿”å›æŸ¥è¯¢åˆ°çš„è®°å½•æ•°
 */
 ITPDK_API int64 MARITPDK_QueryTradeData_CDBGSQ(const char* sKhh, const char* sJymm, const char* sYyb, const char* sJys, const char* sJgdm, const char* sZqdm, const char* sKsrq, const char* sJsrq, const char* sHylx, const char* sTzlx, const char* sCpbh, const char* sSqzt, const char* sWtfs, vector<ITPDK_CDBGSQCX>& arInfo);
 
 
 /*
-	²éÑ¯ĞÂ¹ÉÖĞÇ©£¨¹â´óÖ¤È¯£©
+	æŸ¥è¯¢æ–°è‚¡ä¸­ç­¾ï¼ˆå…‰å¤§è¯åˆ¸ï¼‰
 
-	sKhh		[in]        ¿Í»§ºÅ
-	sJymm		[in]        ½»Ò×ÃÜÂë
-	sYyb		[in]		ÓªÒµ²¿
-	sJys		[in]        ÊĞ³¡´úÂë
-	sZqdm		[in]        Ö¤È¯´úÂë
-	sKsrq		[in]        ÆğÊ¼ÈÕÆÚ
-	sJsrq		[in]        ½áÊøÈÕÆÚ
-	nRowCount   [in]        ²éÑ¯ĞĞÊı
-	sSyrq		[in]        Ë÷ÒıÈÕÆÚ
-	sSyYybdm	[in]        Ë÷ÒıÓªÒµ²¿´úÂë
-	sBrowindex	[in]        Ë÷ÒıÁ÷Ë®ºÅ
-	sWtfs		[in]        Î¯ÍĞ·½Ê½
-	arInfo      [out]       ½á¹ûÊı¾İ
+	sKhh		[in]        å®¢æˆ·å·
+	sJymm		[in]        äº¤æ˜“å¯†ç 
+	sYyb		[in]		è¥ä¸šéƒ¨
+	sJys		[in]        å¸‚åœºä»£ç 
+	sZqdm		[in]        è¯åˆ¸ä»£ç 
+	sKsrq		[in]        èµ·å§‹æ—¥æœŸ
+	sJsrq		[in]        ç»“æŸæ—¥æœŸ
+	nRowCount   [in]        æŸ¥è¯¢è¡Œæ•°
+	sSyrq		[in]        ç´¢å¼•æ—¥æœŸ
+	sSyYybdm	[in]        ç´¢å¼•è¥ä¸šéƒ¨ä»£ç 
+	sBrowindex	[in]        ç´¢å¼•æµæ°´å·
+	sWtfs		[in]        å§”æ‰˜æ–¹å¼
+	arInfo      [out]       ç»“æœæ•°æ®
 
-	return                  ·µ»Ø²éÑ¯µ½µÄ¼ÇÂ¼Êı
+	return                  è¿”å›æŸ¥è¯¢åˆ°çš„è®°å½•æ•°
 */
 ITPDK_API int64 MARITPDK_QueryTradeData_XGZQ(const char* sKhh, const char* sJymm, const char* sYyb, const char* sJys, const char* sZqdm, const char* sKsrq, const char* sJsrq, int nRowCount, const char* sSyrq, const char* sSyYybdm, const char* sBrowindex, const char* sWtfs, vector<ITPDK_XGZQ>& arInfo);
 
 /*
-	ÅäºÅ²éÑ¯£¨¹â´óÖ¤È¯£©
+	é…å·æŸ¥è¯¢ï¼ˆå…‰å¤§è¯åˆ¸ï¼‰
 
-	sKhh		[in]        ¿Í»§ºÅ
-	sJymm		[in]        ½»Ò×ÃÜÂë
-	sYyb		[in]        ÓªÒµ²¿
-	sJys		[in]        ÊĞ³¡´úÂë
-	sGdh		[in]        ¹É¶«´úÂë
-	sPhdm		[in]        ÅäºÅ´úÂë
-	sKsrq		[in]        ÆğÊ¼ÈÕÆÚ
-	sJsrq		[in]        ½áÊøÈÕÆÚ
-	nRowCount   [in]        ²éÑ¯ĞĞÊı
-	sBrowindex	[in]        Ë÷ÒıÁ÷Ë®ºÅ
-	sWtfs		[in]        Î¯ÍĞ·½Ê½
+	sKhh		[in]        å®¢æˆ·å·
+	sJymm		[in]        äº¤æ˜“å¯†ç 
+	sYyb		[in]        è¥ä¸šéƒ¨
+	sJys		[in]        å¸‚åœºä»£ç 
+	sGdh		[in]        è‚¡ä¸œä»£ç 
+	sPhdm		[in]        é…å·ä»£ç 
+	sKsrq		[in]        èµ·å§‹æ—¥æœŸ
+	sJsrq		[in]        ç»“æŸæ—¥æœŸ
+	nRowCount   [in]        æŸ¥è¯¢è¡Œæ•°
+	sBrowindex	[in]        ç´¢å¼•æµæ°´å·
+	sWtfs		[in]        å§”æ‰˜æ–¹å¼
 
-	arInfo      [out]       ½á¹ûÊı¾İ
-	return                  ·µ»Ø²éÑ¯µ½µÄ¼ÇÂ¼Êı
+	arInfo      [out]       ç»“æœæ•°æ®
+	return                  è¿”å›æŸ¥è¯¢åˆ°çš„è®°å½•æ•°
 */
 ITPDK_API int64 MARITPDK_QueryTradeData_PHCX(const char* sKhh, const char* sJymm, const char* sYyb, const char* sJys, const char* sGdh, const char* sPhdm, const char* sKsrq, const char* sJsrq, int nRowCount, const char* sBrowindex, const char* sWtfs, vector<ITPDK_PHCX>& arInfo);
 
 /*
-	²éÑ¯ÒøÖ¤ÒµÎñÁ÷Ë®£¨¹â´óÖ¤È¯£©
+	æŸ¥è¯¢é“¶è¯ä¸šåŠ¡æµæ°´ï¼ˆå…‰å¤§è¯åˆ¸ï¼‰
 
-	sKhh		[in]        ¿Í»§ºÅ
-	sJymm		[in]        ½»Ò×ÃÜÂë
-	sYyb		[in]		ÓªÒµ²¿
-	sScdm		[in]        ÊĞ³¡´úÂë
-	sYhdm		[in]        ÒøĞĞ´úÂë
-	sYhzh		[in]        ÒøĞĞÕËºÅ
-	nRowCount   [in]        ²éÑ¯ĞĞÊı
-	sLsh		[in]        Á÷Ë®ºÅ
-	sWtfs		[in]        Î¯ÍĞ·½Ê½
-	sBrowindex	[in]		Ë÷ÒıÁ÷Ë®ºÅ
-	nFlag		[in]        ÊÇ·ñÈ¡¸¨ÕË»§Á÷Ë®£¨0:·ñ 1:ÊÇ£¬Ä¬ÈÏÎª 0£©
+	sKhh		[in]        å®¢æˆ·å·
+	sJymm		[in]        äº¤æ˜“å¯†ç 
+	sYyb		[in]		è¥ä¸šéƒ¨
+	sScdm		[in]        å¸‚åœºä»£ç 
+	sYhdm		[in]        é“¶è¡Œä»£ç 
+	sYhzh		[in]        é“¶è¡Œè´¦å·
+	nRowCount   [in]        æŸ¥è¯¢è¡Œæ•°
+	sLsh		[in]        æµæ°´å·
+	sWtfs		[in]        å§”æ‰˜æ–¹å¼
+	sBrowindex	[in]		ç´¢å¼•æµæ°´å·
+	nFlag		[in]        æ˜¯å¦å–è¾…è´¦æˆ·æµæ°´ï¼ˆ0:å¦ 1:æ˜¯ï¼Œé»˜è®¤ä¸º 0ï¼‰
 
-	arInfo      [out]       ½á¹ûÊı¾İ
-	return                  ·µ»Ø²éÑ¯µ½µÄ¼ÇÂ¼Êı
+	arInfo      [out]       ç»“æœæ•°æ®
+	return                  è¿”å›æŸ¥è¯¢åˆ°çš„è®°å½•æ•°
 */
 ITPDK_API int64 MARITPDK_QueryTradeData_YZYWLS(const char* sKhh, const char* sJymm, const char* sYyb, const char* sScdm, const char* sYhdm, const char* sYhzh, int nRowCount, const char* sLsh, const char* sWtfs, const char* sBrowindex, int nFlag, vector<ITPDK_YZYWLS>& arInfo);
 
 /*
-	ÒøÖ¤×ªÕËÒµÎñ£¨¹â´óÖ¤È¯£©
+	é“¶è¯è½¬è´¦ä¸šåŠ¡ï¼ˆå…‰å¤§è¯åˆ¸ï¼‰
 
-	sKhh		[in]        ¿Í»§ºÅ
-	sJymm		[in]        ½»Ò×ÃÜÂë
-	sZjzh		[in]        ×Ê½ğÕËºÅ
-	sYyb		[in]		ÓªÒµ²¿
-	sScdm		[in]        ÊĞ³¡´úÂë
-	sYhdm		[in]        ÒøĞĞ´úÂë
-	sYhzh		[in]        ÒøĞĞÕËºÅ
-	nYwlb       [in]        ÒµÎñÀà±ğ£¨1:ÒøĞĞ×ªÖ¤È¯¡¢2:Ö¤È¯×ªÒøĞĞ£©
-	dZzje		[in]        ×ªÕË½ğ¶î
-	sYhmm		[in]        ÒøĞĞÃÜÂë
-	sQkmm		[in]        È¡¿îÃÜÂë
-	sWtfs		[in]        Î¯ÍĞ·½Ê½
+	sKhh		[in]        å®¢æˆ·å·
+	sJymm		[in]        äº¤æ˜“å¯†ç 
+	sZjzh		[in]        èµ„é‡‘è´¦å·
+	sYyb		[in]		è¥ä¸šéƒ¨
+	sScdm		[in]        å¸‚åœºä»£ç 
+	sYhdm		[in]        é“¶è¡Œä»£ç 
+	sYhzh		[in]        é“¶è¡Œè´¦å·
+	nYwlb       [in]        ä¸šåŠ¡ç±»åˆ«ï¼ˆ1:é“¶è¡Œè½¬è¯åˆ¸ã€2:è¯åˆ¸è½¬é“¶è¡Œï¼‰
+	dZzje		[in]        è½¬è´¦é‡‘é¢
+	sYhmm		[in]        é“¶è¡Œå¯†ç 
+	sQkmm		[in]        å–æ¬¾å¯†ç 
+	sWtfs		[in]        å§”æ‰˜æ–¹å¼
 
-	return				³É¹¦·µ»Ø>=0£¬Ê§°Ü·µ»Ø<0
+	return				æˆåŠŸè¿”å›>=0ï¼Œå¤±è´¥è¿”å›<0
 */
 ITPDK_API int64 MARITPDK_BankBusiness(const char* sKhh, const char* sJymm, const char* sZjzh, const char* sYyb, const char* sScdm, const char* sYhdm, const char* sYhzh, int nYwlb, double dZzje, const char* sYhmm, const char* sQkmm, const char* sWtfs);
 
 /*
-	²éÑ¯¿Í»§ÒøĞĞ´úÂë£¨¹â´óÖ¤È¯£©
+	æŸ¥è¯¢å®¢æˆ·é“¶è¡Œä»£ç ï¼ˆå…‰å¤§è¯åˆ¸ï¼‰
 
-	sKhh		[in]        ¿Í»§ºÅ
-	sJymm		[in]        ½»Ò×ÃÜÂë
-	sYyb		[in]		ÓªÒµ²¿
-	sScdm		[in]        ÊĞ³¡´úÂë
-	sWtfs		[in]        Î¯ÍĞ·½Ê½
-	nYhlb		[in]		ÒøĞĞÀà±ğ
-	nFlag		[in]		ÊÇ·ñÈ¡¸¨ÕË»§Á÷Ë®£¨0:·ñ£¬1:ÊÇ£¬Ä¬ÈÏÎª0£©
+	sKhh		[in]        å®¢æˆ·å·
+	sJymm		[in]        äº¤æ˜“å¯†ç 
+	sYyb		[in]		è¥ä¸šéƒ¨
+	sScdm		[in]        å¸‚åœºä»£ç 
+	sWtfs		[in]        å§”æ‰˜æ–¹å¼
+	nYhlb		[in]		é“¶è¡Œç±»åˆ«
+	nFlag		[in]		æ˜¯å¦å–è¾…è´¦æˆ·æµæ°´ï¼ˆ0:å¦ï¼Œ1:æ˜¯ï¼Œé»˜è®¤ä¸º0ï¼‰
 
-	arInfo      [out]       ½á¹ûÊı¾İ
-	return                  ·µ»Ø²éÑ¯µ½µÄ¼ÇÂ¼Êı
+	arInfo      [out]       ç»“æœæ•°æ®
+	return                  è¿”å›æŸ¥è¯¢åˆ°çš„è®°å½•æ•°
 */
 ITPDK_API int64 MARITPDK_QueryTradeData_YHDM(const char* sKhh, const char* sJymm, const char* sYyb, const char* sScdm, const char* sWtfs, int nYhlb, int nFlag, vector<ITPDK_YHDM>& arInfo);
 
 /*
-	²éÑ¯ÒøĞĞÓà¶î£¨¹â´óÖ¤È¯£©
+	æŸ¥è¯¢é“¶è¡Œä½™é¢ï¼ˆå…‰å¤§è¯åˆ¸ï¼‰
 
-	sKhh		[in]        ¿Í»§ºÅ
-	sJymm		[in]        ½»Ò×ÃÜÂë
-	sZjzh		[in]        ×Ê½ğÕËºÅ
-	sYhdm		[in]        ÒøĞĞ´úÂë
-	sYhzh		[in]        ÒøĞĞÕËºÅ
-	sYhmm		[in]        ÒøĞĞÃÜÂë
-	sQkmm		[in]        È¡¿îÃÜÂë
+	sKhh		[in]        å®¢æˆ·å·
+	sJymm		[in]        äº¤æ˜“å¯†ç 
+	sZjzh		[in]        èµ„é‡‘è´¦å·
+	sYhdm		[in]        é“¶è¡Œä»£ç 
+	sYhzh		[in]        é“¶è¡Œè´¦å·
+	sYhmm		[in]        é“¶è¡Œå¯†ç 
+	sQkmm		[in]        å–æ¬¾å¯†ç 
 
-	arInfo      [out]       ½á¹ûÊı¾İ
-	return                  ·µ»Ø²éÑ¯µ½µÄ¼ÇÂ¼Êı
+	arInfo      [out]       ç»“æœæ•°æ®
+	return                  è¿”å›æŸ¥è¯¢åˆ°çš„è®°å½•æ•°
 */
 ITPDK_API int64 MARITPDK_QueryTradeData_YHYE(const char* sKhh, const char* sJymm, const char* sZjzh, const char* sYhdm, const char* sYhzh, const char* sYhmm, const char* sQkmm, vector<ITPDK_YHYE>& arInfo);
 
 /*
-	²éÑ¯¿Í»§ĞÅÏ¢
+	æŸ¥è¯¢å®¢æˆ·ä¿¡æ¯
 
-	sKhh        [in]        ¿Í»§ºÅ
+	sKhh        [in]        å®¢æˆ·å·
 
-	arInfo      [out]       ½á¹ûÊı¾İ
-	return                  ·µ»Ø²éÑ¯µ½µÄ¼ÇÂ¼Êı
+	arInfo      [out]       ç»“æœæ•°æ®
+	return                  è¿”å›æŸ¥è¯¢åˆ°çš„è®°å½•æ•°
 */
 ITPDK_API int64 MARITPDK_QueryTradeData_KHXX(const char* sKhh, vector<ITPDK_KHXX>& arInfo);
 
 /*
-	²éÑ¯¿Í»§×Ê½ğ¶³½áÃ÷Ï¸
+	æŸ¥è¯¢å®¢æˆ·èµ„é‡‘å†»ç»“æ˜ç»†
 
-	sKhh		[in]        ¿Í»§ºÅ
-	sJymm		[in]        ½»Ò×ÃÜÂë
-	sZjzh		[in]        ×Ê½ğÕËºÅ
-	nDjlb		[in]        ¶³½áÀà±ğ
-	sLsh		[in]        Á÷Ë®ºÅ
-	nRowCount   [in]        ²éÑ¯ĞĞÊı
-	nBrowindex	[in]		·ÖÒ³Ë÷ÒıÖµ
+	sKhh		[in]        å®¢æˆ·å·
+	sJymm		[in]        äº¤æ˜“å¯†ç 
+	sZjzh		[in]        èµ„é‡‘è´¦å·
+	nDjlb		[in]        å†»ç»“ç±»åˆ«
+	sLsh		[in]        æµæ°´å·
+	nRowCount   [in]        æŸ¥è¯¢è¡Œæ•°
+	nBrowindex	[in]		åˆ†é¡µç´¢å¼•å€¼
 
-	arInfo      [out]       ½á¹ûÊı¾İ
-	return                  ·µ»Ø²éÑ¯µ½µÄ¼ÇÂ¼Êı
+	arInfo      [out]       ç»“æœæ•°æ®
+	return                  è¿”å›æŸ¥è¯¢åˆ°çš„è®°å½•æ•°
 */
 ITPDK_API int64 MARITPDK_QueryTradeData_ZJDJMX(const char* sKhh, const char* sJymm, const char* sZjzh, int64 nDjlb, const char* sLSH, int64 nRowCount, int64 nBrowIndex, vector<ITPDK_ZJDJMX>& arInfo);
 
 /*
-	¿Í»§ÆäËû¸ºÕ®µ÷Õû(ÖĞĞÅÖ¤È¯)
+	å®¢æˆ·å…¶ä»–è´Ÿå€ºè°ƒæ•´(ä¸­ä¿¡è¯åˆ¸)
 
-	lpKeyName	[in]		Ê¹ÓÃµÄÅäÖÃKeyÖµ
-	sKhh		[in]		¿Í»§ºÅ
-	sLogin		[in]		¹ñÔ±ÕËºÅ
-	sLoginPwd	[in]		¹ñÔ±ÃÜÂë
-	dQtfy		[in]		ÆäËû¸ºÕ®±ä¶¯½ğ¶î
+	lpKeyName	[in]		ä½¿ç”¨çš„é…ç½®Keyå€¼
+	sKhh		[in]		å®¢æˆ·å·
+	sLogin		[in]		æŸœå‘˜è´¦å·
+	sLoginPwd	[in]		æŸœå‘˜å¯†ç 
+	dQtfy		[in]		å…¶ä»–è´Ÿå€ºå˜åŠ¨é‡‘é¢
 
-	return				³É¹¦·µ»Ø>0£¬Ê§°Ü·µ»Ø<=0
+	return				æˆåŠŸè¿”å›>0ï¼Œå¤±è´¥è¿”å›<=0
 */
 ITPDK_API int64 MARITPDK_ModifyQTFY(const char* lpKeyName, const char* sKhh, const char* sLogin, const char* sLoginPwd, double dQtfy);
 
 /*
-	Á½ÈÚ²éÑ¯¿Í»§¿ÉÈÚÈ¯ĞÅÏ¢(ÖĞĞÅÖ¤È¯)
+	ä¸¤èæŸ¥è¯¢å®¢æˆ·å¯èåˆ¸ä¿¡æ¯(ä¸­ä¿¡è¯åˆ¸)
 
-	lpKeyName	[in]		Ê¹ÓÃµÄÅäÖÃKeyÖµ
-	khh			[in]		¿Í»§ºÅ
-	sLogin		[in]		¹ñÔ±ÕËºÅ
-	sLoginPwd	[in]		¹ñÔ±ÃÜÂë
-	jys			[in]		½»Ò×Ëù
-	zqdm		[in]		Ö¤È¯´úÂë
-	tcxz		[in]		Í·´çÀ´Ô´(1 ÆÕÍ¨Í·´ç 2 ×¨ÏîÍ·´ç)
-	nRowcount	[in]		·µ»ØÌõÊı
-	nBrowindex	[in]		·ÖÒ³Ë÷ÒıºÅ
-	arInfo		[out]		½á¹ûÊı¾İ
+	lpKeyName	[in]		ä½¿ç”¨çš„é…ç½®Keyå€¼
+	khh			[in]		å®¢æˆ·å·
+	sLogin		[in]		æŸœå‘˜è´¦å·
+	sLoginPwd	[in]		æŸœå‘˜å¯†ç 
+	jys			[in]		äº¤æ˜“æ‰€
+	zqdm		[in]		è¯åˆ¸ä»£ç 
+	tcxz		[in]		å¤´å¯¸æ¥æº(1 æ™®é€šå¤´å¯¸ 2 ä¸“é¡¹å¤´å¯¸)
+	nRowcount	[in]		è¿”å›æ¡æ•°
+	nBrowindex	[in]		åˆ†é¡µç´¢å¼•å·
+	arInfo		[out]		ç»“æœæ•°æ®
 
-	return				·µ»Ø²éÑ¯µ½µÄ¼ÇÂ¼Êı
+	return				è¿”å›æŸ¥è¯¢åˆ°çš„è®°å½•æ•°
 */
 ITPDK_API int64 MARITPDK_QueryTradeData_MR_KRQXX_ZX(const char* lpKeyName, const char* khh, const char* sLogin, const char* sLoginPwd, const char* jys, const char* zqdm, int32 tcxz, int nRowcount, int64 nBrowindex, vector<ITPDK_RQZQ>& arInfo);
 
 /*
-	Á½ÈÚ²éÑ¯¿Í»§¿ÉÈÚ×Ê½ğĞÅÏ¢(ÖĞĞÅÖ¤È¯)
+	ä¸¤èæŸ¥è¯¢å®¢æˆ·å¯èèµ„é‡‘ä¿¡æ¯(ä¸­ä¿¡è¯åˆ¸)
 
-	lpKeyName	[in]		Ê¹ÓÃµÄÅäÖÃKeyÖµ
-	khh			[in]		¿Í»§ºÅ
-	sLogin		[in]		¹ñÔ±ÕËºÅ
-	sLoginPwd	[in]		¹ñÔ±ÃÜÂë
-	tcxz		[in]		Í·´çÀ´Ô´(1 ÆÕÍ¨Í·´ç 2 ×¨ÏîÍ·´ç)
-	arInfo		[out]		½á¹ûÊı¾İ
+	lpKeyName	[in]		ä½¿ç”¨çš„é…ç½®Keyå€¼
+	khh			[in]		å®¢æˆ·å·
+	sLogin		[in]		æŸœå‘˜è´¦å·
+	sLoginPwd	[in]		æŸœå‘˜å¯†ç 
+	tcxz		[in]		å¤´å¯¸æ¥æº(1 æ™®é€šå¤´å¯¸ 2 ä¸“é¡¹å¤´å¯¸)
+	arInfo		[out]		ç»“æœæ•°æ®
 
-	return				·µ»Ø²éÑ¯µ½µÄ¼ÇÂ¼Êı
+	return				è¿”å›æŸ¥è¯¢åˆ°çš„è®°å½•æ•°
 */
 ITPDK_API int64 MARITPDK_QueryTradeData_MR_KRZJXX_ZX(const char* lpKeyName, const char* khh, const char* sLogin, const char* sLoginPwd, int32 tcxz, vector<ITPDK_KRZJXX>& arInfo);
 
 /*
-	×¨ÏîÍ·´çÖ¤È¯µ÷²¦£¨ÖĞĞÅÖ¤È¯£©
+	ä¸“é¡¹å¤´å¯¸è¯åˆ¸è°ƒæ‹¨ï¼ˆä¸­ä¿¡è¯åˆ¸ï¼‰
 
-	lpKeyName	[in]		Ê¹ÓÃµÄÅäÖÃKeyÖµ
-	sKhh		[in]		¿Í»§ºÅ
-	sLogin		[in]		¹ñÔ±ÕËºÅ
-	sLoginPwd	[in]		¹ñÔ±ÃÜÂë
-	sJys		[in]		½»Ò×Ëù
-	sZqdm		[in]		Ö¤È¯´úÂë
-	nFssl		[in]		µ÷²¦ÊıÁ¿
-	nYysl		[in]		Ô¤Ô¼ÊıÁ¿µ½ÆÚÔöÁ¿
-	nFlag		[in]		µ÷²¦·½Ïò,0ÎªMDBµ÷³öµ½¹ñÌ¨£¬1Î»¹ñÌ¨µ÷ÈëMDB
-	arInfo		[out]		½á¹ûÊı¾İ
+	lpKeyName	[in]		ä½¿ç”¨çš„é…ç½®Keyå€¼
+	sKhh		[in]		å®¢æˆ·å·
+	sLogin		[in]		æŸœå‘˜è´¦å·
+	sLoginPwd	[in]		æŸœå‘˜å¯†ç 
+	sJys		[in]		äº¤æ˜“æ‰€
+	sZqdm		[in]		è¯åˆ¸ä»£ç 
+	nFssl		[in]		è°ƒæ‹¨æ•°é‡
+	nYysl		[in]		é¢„çº¦æ•°é‡åˆ°æœŸå¢é‡
+	nFlag		[in]		è°ƒæ‹¨æ–¹å‘,0ä¸ºMDBè°ƒå‡ºåˆ°æŸœå°ï¼Œ1ä½æŸœå°è°ƒå…¥MDB
+	arInfo		[out]		ç»“æœæ•°æ®
 
-	return				³É¹¦·µ»Ø>0£¬Ê§°Ü·µ»Ø<=0
+	return				æˆåŠŸè¿”å›>0ï¼Œå¤±è´¥è¿”å›<=0
 */
 ITPDK_API int64 MARITPDK_SpecialPosition_ZQDB_ZX(const char* lpKeyName, const char* sKhh, const char* sLogin, const char* sLoginPwd, const char* sJys, const char* sZqdm, int64 nFssl, int64 nYysl, int64 nFlag, vector<ITPDK_ZXTCZQDB>& arInfo);
 
 /*
-	Á½ÈÚ²éÑ¯ÈÚÈ¯¸ºÕ®»ã×Ü
-	sKhh		[in]		¿Í»§ºÅ
-	sJys		[in]		½»Ò×Ëù£¨ÓëÖ¤È¯´úÂëÍ¬Ê±ËÍÉúĞ§,·ñÔò²éÑ¯È«²¿£©
-	sZqdm		[in]		Ö¤È¯´úÂë£¨Óë½»Ò×ËùÍ¬Ê±ËÍÉúĞ§,·ñÔò²éÑ¯È«²¿£©
-	nRowcount	[in]		·µ»ØÌõÊı
-	nBrowindex	[in]		·ÖÒ³Ë÷ÒıºÅ
-	arInfo		[out]		½á¹ûÊı¾İ
+	ä¸¤èæŸ¥è¯¢èåˆ¸è´Ÿå€ºæ±‡æ€»
+	sKhh		[in]		å®¢æˆ·å·
+	sJys		[in]		äº¤æ˜“æ‰€ï¼ˆä¸è¯åˆ¸ä»£ç åŒæ—¶é€ç”Ÿæ•ˆ,å¦åˆ™æŸ¥è¯¢å…¨éƒ¨ï¼‰
+	sZqdm		[in]		è¯åˆ¸ä»£ç ï¼ˆä¸äº¤æ˜“æ‰€åŒæ—¶é€ç”Ÿæ•ˆ,å¦åˆ™æŸ¥è¯¢å…¨éƒ¨ï¼‰
+	nRowcount	[in]		è¿”å›æ¡æ•°
+	nBrowindex	[in]		åˆ†é¡µç´¢å¼•å·
+	arInfo		[out]		ç»“æœæ•°æ®
 
-	return				·µ»Ø²éÑ¯µ½µÄ¼ÇÂ¼Êı
+	return				è¿”å›æŸ¥è¯¢åˆ°çš„è®°å½•æ•°
 */
 ITPDK_API int64 MARITPDK_QueryTradeData_MR_RQFZHZ(const char* sKhh, const char* sJys, const char* sZqdm, int64 nRowCount, int64 nBrowIndex, vector<ITPDK_XYRQFZHZ>& arInfo);
 
 /*
-	A5Á½ÈÚ²éÑ¯×Ê¸ñÖ¤È¯
+	A5ä¸¤èæŸ¥è¯¢èµ„æ ¼è¯åˆ¸
 
 
-	sJys		[in]		½»Ò×Ëù
-	sZqdm		[in]		Ö¤È¯´úÂë
-	nRzzt		[in]		ÈÚ×Ê×´Ì¬
-	nRqzt		[in]		ÈÚÈ¯×´Ì¬
-	nRowcount	[in]		·µ»ØÌõÊı
-	sBrowindex	[in]		·ÖÒ³Ë÷ÒıºÅ
-	arInfo		[out]		½á¹ûÊı¾İ
+	sJys		[in]		äº¤æ˜“æ‰€
+	sZqdm		[in]		è¯åˆ¸ä»£ç 
+	nRzzt		[in]		èèµ„çŠ¶æ€
+	nRqzt		[in]		èåˆ¸çŠ¶æ€
+	nRowcount	[in]		è¿”å›æ¡æ•°
+	sBrowindex	[in]		åˆ†é¡µç´¢å¼•å·
+	arInfo		[out]		ç»“æœæ•°æ®
 
-	return				·µ»Ø²éÑ¯µ½µÄ¼ÇÂ¼Êı
+	return				è¿”å›æŸ¥è¯¢åˆ°çš„è®°å½•æ•°
 */
 ITPDK_API int64 MARITPDK_QueryTradeData_A5MR_ZGZQ(const char* sJys, const char* sZqdm, int64 nRzzt, int64 nRqzt, int64 nRowcount, const char *sBrowindex, vector<ITPDK_A5ZGZQ>& arInfo);
 
 /*
-	A5Á½ÈÚ²éÑ¯µ£±£Ö¤È¯
+	A5ä¸¤èæŸ¥è¯¢æ‹…ä¿è¯åˆ¸
 
 
-	sJys		[in]		½»Ò×Ëù
-	sZqdm		[in]		Ö¤È¯´úÂë
-	nJyzt		[in]		½»Ò××´Ì¬
-	nRowcount	[in]		·µ»ØÌõÊı
-	sBrowindex	[in]		·ÖÒ³Ë÷ÒıºÅ
-	arInfo		[out]		½á¹ûÊı¾İ
+	sJys		[in]		äº¤æ˜“æ‰€
+	sZqdm		[in]		è¯åˆ¸ä»£ç 
+	nJyzt		[in]		äº¤æ˜“çŠ¶æ€
+	nRowcount	[in]		è¿”å›æ¡æ•°
+	sBrowindex	[in]		åˆ†é¡µç´¢å¼•å·
+	arInfo		[out]		ç»“æœæ•°æ®
 
-	return				·µ»Ø²éÑ¯µ½µÄ¼ÇÂ¼Êı
+	return				è¿”å›æŸ¥è¯¢åˆ°çš„è®°å½•æ•°
 */
 ITPDK_API int64 MARITPDK_QueryTradeData_A5MR_DBZQ(const char* sJys, const char* sZqdm, int64 nJyzt, int64 nRowcount, const char* sBrowindex, vector<ITPDK_A5DBZQ>& arInfo);
 
 /*
-	´ó×Ú½»Ò×Î¯ÍĞ
+	å¤§å®—äº¤æ˜“å§”æ‰˜
 
-	lpKhh		[in]		¿Í»§ºÅ
-	lpJys		[in]		½»Ò×Ëù
-	lpZqdm		[in]		Ö¤È¯´úÂë
-	nJylb		[in]		½»Ò×Àà±ğ
-	lWtsl		[in]		Î¯ÍĞÊıÁ¿
-	lfWtjg		[in]		Î¯ÍĞ¼Û¸ñ
-	lDdlx		[in]		¶©µ¥ÀàĞÍ
-	lpGdh		[in]		¹É¶«ºÅ
+	lpKhh		[in]		å®¢æˆ·å·
+	lpJys		[in]		äº¤æ˜“æ‰€
+	lpZqdm		[in]		è¯åˆ¸ä»£ç 
+	nJylb		[in]		äº¤æ˜“ç±»åˆ«
+	lWtsl		[in]		å§”æ‰˜æ•°é‡
+	lfWtjg		[in]		å§”æ‰˜ä»·æ ¼
+	lDdlx		[in]		è®¢å•ç±»å‹
+	lpGdh		[in]		è‚¡ä¸œå·
 
-	lpDfgdh		[in]		¶Ô·½¹É¶«ºÅ
-	lpDfxw		[in]		¶Ô·½Ï¯Î»
-	lpLxr		[in]		ÁªÏµÈË
-	lpLxdh		[in]		ÁªÏµµç»°
-	lpPdcj		[in]		ÊÇ·ñÅä¶Ô³É½»£º1ÎªÅä¶Ô³É½»
-	lpYdh		[in]		Ô¼¶¨ºÅ
-	lTdbz		[in]		ÌØ¶¨¹É·İ´ó×Ú½»Ò×±êÖ¾
-	return				³É¹¦·µ»ØÎ¯ÍĞºÅ£¬Ê§°Ü·µ»Ø<0
+	lpDfgdh		[in]		å¯¹æ–¹è‚¡ä¸œå·
+	lpDfxw		[in]		å¯¹æ–¹å¸­ä½
+	lpLxr		[in]		è”ç³»äºº
+	lpLxdh		[in]		è”ç³»ç”µè¯
+	lpPdcj		[in]		æ˜¯å¦é…å¯¹æˆäº¤ï¼š1ä¸ºé…å¯¹æˆäº¤
+	lpYdh		[in]		çº¦å®šå·
+	lTdbz		[in]		ç‰¹å®šè‚¡ä»½å¤§å®—äº¤æ˜“æ ‡å¿—
+	return				æˆåŠŸè¿”å›å§”æ‰˜å·ï¼Œå¤±è´¥è¿”å›<0
 */
 ITPDK_API int64 MARITPDK_BlockTrading(const char* lpKhh, const char* lpJys, const char* lpZqdm, int nJylb, long lWtsl, double lfWtjg, long lDdlx, const char* lpGdh, const char* lpDfgdh, const char* lpDfxw, const char* lpLxr, const char* lpLxdh, const char* lpPdcj, const char* lpYdh, long lTdbz);
 
 /*
-	´ó×Ú½»Ò×¿ÉÂòÂôÊıÁ¿¼ÆËã
+	å¤§å®—äº¤æ˜“å¯ä¹°å–æ•°é‡è®¡ç®—
 
-	lpKhh		[in]		¿Í»§ºÅ
-	lpJys		[in]		½»Ò×Ëù
-	lpZqdm		[in]		Ö¤È¯´úÂë
-	nJylb		[in]		½»Ò×Àà±ğ
-	lfWtjg		[in]		Î¯ÍĞ¼Û¸ñ
-	lDdlx		[in]		¶©µ¥ÀàĞÍ
-	lpGdh		[in]		¹É¶«ºÅ
+	lpKhh		[in]		å®¢æˆ·å·
+	lpJys		[in]		äº¤æ˜“æ‰€
+	lpZqdm		[in]		è¯åˆ¸ä»£ç 
+	nJylb		[in]		äº¤æ˜“ç±»åˆ«
+	lfWtjg		[in]		å§”æ‰˜ä»·æ ¼
+	lDdlx		[in]		è®¢å•ç±»å‹
+	lpGdh		[in]		è‚¡ä¸œå·
 
-	lTdbz		[in]		ÌØ¶¨¹É·İ´ó×Ú½»Ò×±êÖ¾
-	return				³É¹¦·µ»Ø¿ÉÎ¯ÍĞÊıÁ¿£¬Ê§°Ü·µ»Ø<0
+	lTdbz		[in]		ç‰¹å®šè‚¡ä»½å¤§å®—äº¤æ˜“æ ‡å¿—
+	return				æˆåŠŸè¿”å›å¯å§”æ‰˜æ•°é‡ï¼Œå¤±è´¥è¿”å›<0
 */
 ITPDK_API int64 MARITPDK_BlockTrading_TradableQty(const char* lpKhh, const char* lpJys, const char* lpZqdm, int nJylb, double lfWtjg, long lDdlx, const char* lpGdh, long lTdbz);

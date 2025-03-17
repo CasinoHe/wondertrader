@@ -1,10 +1,10 @@
 /////////////////////////////////////////////////////////////////////////
-///²úÆ· HTS
-///¹«Ë¾ ¸£½¨¶¥µãÈí¼ş¹É·İÓĞÏŞ¹«Ë¾
-///ÎÄ¼ş itpdk_dict.h
-///ÓÃÍ¾ ¶¨ÒåÁË²ÎÊı×Öµä
-///°æ±¾
-///20210910  5.1.0.0	Ö£¶«»Ô		ĞÂÔö°æ±¾ËµÃ÷
+///äº§å“ HTS
+///å…¬å¸ ç¦å»ºé¡¶ç‚¹è½¯ä»¶è‚¡ä»½æœ‰é™å…¬å¸
+///æ–‡ä»¶ itpdk_dict.h
+///ç”¨é€” å®šä¹‰äº†å‚æ•°å­—å…¸
+///ç‰ˆæœ¬
+///20210910  5.1.0.0	éƒ‘ä¸œè¾‰		æ–°å¢ç‰ˆæœ¬è¯´æ˜
 /////////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -14,180 +14,180 @@
 #define VERSION             "5230"
 
 
-//´íÎóÂë    200 - 600
-#define     ERR_CONN_INVALID            -201            //Á¬½ÓÎŞĞ§
-#define     ERR_ALLOCSESS_FAILED        -202            //·¢Æğ»á»°Ê§°Ü
-#define     ERR_NOT_LOGIN               -203            //¿Í»§Î´µÇÂ¼
-#define     ERR_REQ_FAILED              -204            //·¢ËÍÇëÇóÊ§°Ü
-#define     ERR_WRONG_ANS               -205            //½ÓÊÕµ½´íÎóÓ¦´ğÊı¾İ
-#define     ERR_READ_CONFIG_FILE        -206            //¶ÁÈ¡ÅäÖÃÎÄ¼şÊ§°Ü
+//é”™è¯¯ç     200 - 600
+#define     ERR_CONN_INVALID            -201            //è¿æ¥æ— æ•ˆ
+#define     ERR_ALLOCSESS_FAILED        -202            //å‘èµ·ä¼šè¯å¤±è´¥
+#define     ERR_NOT_LOGIN               -203            //å®¢æˆ·æœªç™»å½•
+#define     ERR_REQ_FAILED              -204            //å‘é€è¯·æ±‚å¤±è´¥
+#define     ERR_WRONG_ANS               -205            //æ¥æ”¶åˆ°é”™è¯¯åº”ç­”æ•°æ®
+#define     ERR_READ_CONFIG_FILE        -206            //è¯»å–é…ç½®æ–‡ä»¶å¤±è´¥
 
-#define     ERR_UNKNOW                  -220            //Î´Öª´íÎó
-#define     ERR_PARAM_INVALID           -221            //·Ç·¨²ÎÊı
-#define     ERR_NOT_SUPPORT             -222            //½Ó¿Ú²»Ö§³ÖµÄ²Ù×÷
-#define     ERR_SYSTEM_TYPE_INVALID     -223            //ÎŞĞ§ÏµÍ³ÀàĞÍ
-#define     ERR_NOT_FOUND_CONN_INFO     -224            //ÎŞ·¨»ñÈ¡µ½Á¬½ÓĞÅÏ¢
-#define     ERR_NO_TRADE                -225            //½ûÖ¹½»Ò×
-#define     ERR_NO_SPECIFY_NODEID       -226            //Î´Ö¸¶¨½»Ò×½Úµã
-#define     ERR_NO_NODEID_INFO          -227            //ÎŞ¿Í»§½ÚµãĞÅÏ¢
+#define     ERR_UNKNOW                  -220            //æœªçŸ¥é”™è¯¯
+#define     ERR_PARAM_INVALID           -221            //éæ³•å‚æ•°
+#define     ERR_NOT_SUPPORT             -222            //æ¥å£ä¸æ”¯æŒçš„æ“ä½œ
+#define     ERR_SYSTEM_TYPE_INVALID     -223            //æ— æ•ˆç³»ç»Ÿç±»å‹
+#define     ERR_NOT_FOUND_CONN_INFO     -224            //æ— æ³•è·å–åˆ°è¿æ¥ä¿¡æ¯
+#define     ERR_NO_TRADE                -225            //ç¦æ­¢äº¤æ˜“
+#define     ERR_NO_SPECIFY_NODEID       -226            //æœªæŒ‡å®šäº¤æ˜“èŠ‚ç‚¹
+#define     ERR_NO_NODEID_INFO          -227            //æ— å®¢æˆ·èŠ‚ç‚¹ä¿¡æ¯
 
 
-//·şÎñÆ÷ÀàĞÍ
-const char svrtype_quote[] = "QUOTE";       //ĞĞÇé·şÎñÆ÷
-const char svrtype_hts[] = "HTS";           //HTS½»Ò×·şÎñÆ÷
-//ÏµÍ³ÀàĞÍ
-#define SYSTEM_TYPE_SEC       4           //ÏÖ»õÏµÍ³
-#define SYSTEM_TYPE_MAR       7           //Á½ÈÚÏµÍ³
-#define SYSTEM_TYPE_SOP       9           //ÆÚÈ¨ÏµÍ³
-//°²È«ÈÏÖ¤·½Ê½
-#define FIX_AUTH_STYLE_DTKL   2           //¶¯Ì¬¿ÚÁî
-#define FIX_AUTH_STYLE_CERT   5           //±¾µØÖ¤Êé
-//Õ¾µãµØÖ·ÄÚÈİ
-#define FIX_NODE_TYPE_MAC     1           //MACµØÖ·
-#define FIX_NODE_TYPE_HDSN    2           //Ó²ÅÌĞòÁĞºÅ
-#define SEPARATOR_SVRADDR     ';'         //¶à¸öÖĞ¼ä¼şµØÖ··Ö¸ô·û
-#define MAX_ERRMSG_SIZE       1024        //´¦Àí½á¹ûĞÅÏ¢×Ö·û´®×î´ó³¤¶È
-#define MAX_RESULT_SIZE       128         //³É¹¦Ê±·µ»ØµÄ×Ö·û´®Êı¾İ×î´ó³¤¶È
-//ÒøÖ¤ÒµÎñÀà±ğ
-#define YWLB_YHTOZQ           1           //ÒøĞĞ×ªÖ¤È¯
-#define YWLB_ZQTOYH           2           //Ö¤È¯×ªÒøĞĞ
-#define YWLB_CXYHYE           6           //²éÒøĞĞÓà¶î
-//½Ó¿ÚÍÆËÍĞÅÏ¢ÀàĞÍ
-#define NOTIFY_CONNECT        1           //Í¨Ñ¶Á¬½Ó(ProfileKey,Message)
-#define NOTIFY_DISCONNECT     2           //Í¨Ñ¶Á¬½Ó(ProfileKey,Message)
-#define NOTIFY_LOGIN          3           //¿Í»§µÇÂ¼(ProfileKey,AccountId,Message)
-#define NOTIFY_FILEUPGRADE    4           //ÎÄ¼şÉı¼¶(ProfileKey,Message)
-#define NOTIFY_FILEUSING      5           //ÎÄ¼şÉı¼¶-ÎÄ¼ş±»Õ¼ÓÃ
-#define NOTIFY_SUBSCIBE       6           //¶©ÔÄ´¦Àí(ProfileKey,Message)
-#define NOTIFY_QUOTESUBSCIBE  7           //ĞĞÇé¶©ÔÄ(Message)
-#define NOTIFY_PUSH_ORDER     8           //Î¯ÍĞÍÆËÍ(AccountId,OrderId,Message)
-#define NOTIFY_PUSH_WITHDRAW  9           //³·µ¥ÍÆËÍ(AccountId,OrderId,Message)
-#define NOTIFY_PUSH_MATCH     10          //³É½»ÍÆËÍ(AccountId,OrderId,Message)
-#define NOTIFY_PUSH_INVALID   11          //·Ïµ¥ÍÆËÍ(AccountId,OrderId,Message)
-#define NOTIFY_PUSH_MODIFYPWD 12          //¿Í»§ÔÚÆäËûµØ·½ĞŞ¸ÄÃÜÂë
-#define NOTIFY_PUSH_BULLETIN  13          //¹«¸æ--±¸ÓÃ
-#define NOTIFY_PUSH_MESSAGE   14          //ÏûÏ¢--±¸ÓÃ
-#define NOTIFY_ASSETVARY      20          //×Ê²ú±ä¶¯(AccountId,FundAccount,Message)--±È½ÏÆµ·±£¬²»½¨Òé×÷ÎªÏÔÊ¾ĞÅÏ¢¡£
-#define NOTIFY_QUOTEVARY      21          //ĞĞÇé±ä¶¯({Market,StockCode,varys}) varsÎªĞĞÇé±ä¶¯±êÖ¾µÄÎ»×éºÏ
-                                          //         ÀıÈç£ºSH,600600,00000006£¬±íÊ¾SH600600µÄ×îĞÂ¼ÛºÍ³É½»ÊıÁ¿ÓĞ±ä¶¯
-                                          //ĞĞÇé±ä¶¯ÍÆËÍ·Ç³£Æµ·±£¬²»½¨Òé×÷ÎªÏÔÊ¾ĞÅÏ¢¡£
-#define NOTIFY_BANKTRANSFER   22          //ÒøĞĞ×ªÕË½á¹û(ProfileKey,AccountId,Message)
-#define NOTIFY_PUSH_DEBETS_CHANGE   23          //¸ºÕ®±ä¶¯ÍÆËÍ
-#define NOTIFY_PUSH_QUOTE     24          //Ë«±ß±¨¼ÛÎ¯ÍĞÈ·ÈÏÍÆËÍ(AccountId,OrderId,Message)
-#define NOTIFY_CONNEVENT_MGR  25          //¹ÜÀíÁ¬½Ó
-#define NOTIFY_CONNEVENT_TRADE  26        //½»Ò×Á¬½Ó
-#define NOTIFY_CONNEVENT_QUERY  27        //²éÑ¯Á¬½Ó
-#define NOTIFY_CONNEVENT_SUBS   28        //¶©ÔÄÁ¬½Ó
-//½»Ò×Àà±ğ
-#define JYLB_BUY              1           //ÂòÈë
-#define JYLB_SALE             2           //Âô³ö
-#define JYLB_PGJK             3           //Åä¹É½É¿î
-#define JYLB_HGRZ             4           //»Ø¹ºÈÚ×Ê
-#define JYLB_HGRQ             5           //»Ø¹ºÈÚÈ¯
-#define JYLB_BONUS            6           //ºìÀû
-#define JYLB_ZTG              7           //ÉîÛÚ×ªÍĞ¹Ü
-#define JYLB_XGPH             8           //ĞÂ¹ÉÅäºÅ
-#define JYLB_ZDJY             9           //ÉÏº£Ö¸¶¨½»Ò×
-#define JYLB_CZJY             10          //ÉÏº£³·Ö¸½»Ò×
-#define JYLB_ZZZG             11          //×ªÕ®×ª¹É
-#define JYLB_ZZHS             12          //×ªÕ®»ØÊÛ
-#define JYLB_ZZSH             13          //×ªÕ®Êê»Ø
-#define JYLB_PSSG             14          //ÅäÊÛÉê¹º
-#define JYLB_RGFX             15          //ÈÏ¹º·¢ĞĞ
-#define JYLB_SG               16          //ËÍ¹É
-#define JYLB_DF               17          //¶Ò¸¶
-#define JYLB_PSFQ             24          //ÅäÊÛ·ÅÆú
-#define JYLB_ETFSG            29          //ETFÉê¹º
-#define JYLB_ETFSH            30          //ETFÊê»Ø
-#define JYLB_ZYQRK            37          //ÖÊÑºÈ¯Èë¿â
-#define JYLB_ZYQCK            38          //ÖÊÑºÈ¯³ö¿â
-#define JYLB_JJRG             41          //»ù½ğÈÏ¹º
-#define JYLB_JJSG             42          //»ù½ğÉê¹º
-#define JYLB_JJSH             43          //»ù½ğÊê»Ø
-#define JYLB_JJFHSZ           44          //»ù½ğ·ÖºìÉèÖÃ
-#define JYLB_JJZH             46          //»ù½ğ×ª»»
-#define JYLB_JJFC             47          //»ù½ğ·Ö²ğ
-#define JYLB_JJHB             48          //»ù½ğºÏ²¢
-#define JYLB_YXMR             55          //ÒâÏòÂòÈë
-#define JYLB_YXMC             56          //ÒâÏòÂô³ö
-#define JYLB_DJMR             57          //¶¨¼ÛÂòÈë
-#define JYLB_DJMC             58          //¶¨¼ÛÂô³ö
-#define JYLB_MRQR             59          //ÂòÈëÈ·ÈÏ
-#define JYLB_MCQR             60          //Âô³öÈ·ÈÏ
-#define JYLB_PHMR             78          //ÅÌºóÂòÈë
-#define JYLB_PHMC             79          //ÅÌºóÂô³ö
-#define JYLB_RZMR             61          //ÈÚ×ÊÂòÈë
-#define JYLB_MQHK             62          //ÂôÈ¯»¹¿î
-#define JYLB_MQHQ             63          //ÂòÈ¯»¹È¯
-#define JYLB_RQMC             64          //ÈÚÈ¯Âô³ö
-#define JYLB_DBWTJ            65          //µ£±£»®Èë
-#define JYLB_DBWFH            66          //µ£±£»®³ö
-#define JYLB_QYHR             67          //È¯Ô´»®Èë
-#define JYLB_QYHC             68          //È¯Ô´»®³ö
-#define JYLB_YQHZ             69          //ÓàÈ¯»®×ª
-#define JYLB_HQHZ             70          //»¹È¯»®×ª
-#define JYLB_RZQP             71          //ÈÚ×ÊÇ¿Æ½
-#define JYLB_RQQP             72          //ÈÚÈ¯Ç¿Æ½
-#define JYLB_ZJHK             73          //Ö±½Ó»¹¿î
-#define JYLB_YSYY             76          //Ô¤ÊÜÒªÔ¼
-#define JYLB_JCYS             77          //½â³ıÔ¤ÊÜÒªÔ¼
-#define JYLB_ZFMR			  101		  //Ôö·¢ÂòÈë
-#define JYLB_PHDJMR           178         //ÅÌºó¶¨¼ÛÂòÈë
-#define JYLB_PHDJMC           179         //ÅÌºó¶¨¼ÛÂô³ö
-#define JYLB_HSCX             212         //»ØÊÛ³åÏú
-#define JYLB_SHJJRG           241         //»ù½ğÈÏ¹º
-#define JYLB_SHJJSG           242         //»ù½ğÉê¹º
-#define JYLB_SHJJSH           243         //»ù½ğÊê»Ø
-#define JYLB_SHJJFHSZ         244         //»ù½ğ·ÖºìÉèÖÃ
-#define JYLB_SHJJZH           246         //»ù½ğ×ª»»
-#define JYLB_SHJJFC           247         //»ù½ğ·Ö²ğ
-#define JYLB_SHJJHB           248         //»ù½ğºÏ²¢
-//¶©µ¥ÀàĞÍ
-#define DDLX_XJWT                  0           //ÏŞ¼Û
-// ÉÏº£ÊĞ¼Û
-#define DDLX_SHHB_ZYWDSYCX         1           //×îÓÅÎåµµ¼´Ê±³É½»Ê£Óà³·Ïú
-#define DDLX_SHHB_ZYWDSYZXJ        2           //×îÓÅÎåµµ¼´Ê±³É½»Ê£Óà×ªÏŞ¼Û
-#define DDLX_SHHB_DSFZYJ           4           //¶ÔÊÖ·½×îÓÅ¼Û¸ñ
-#define DDLX_SHHB_BFZYJ            5           //±¾·½×îÓÅ¼Û¸ñ
-#define DDLX_SHHB_PHDJDZJYSPJ      6           //ÅÌºó¶¨¼Û´ó×Ú½»Ò×ÊÕÅÌ¼Û
-// ÉîÛÚÊĞ¼Û
-#define DDLX_SZSB_DSFZYJ           101         //¶ÔÊÖ·½×îÓÅ¼Û¸ñ
-#define DDLX_SZSB_BFZYJ            102         //±¾·½×îÓÅ¼Û¸ñ
-#define DDLX_SZSB_SYCX             103         //¼´Ê±³É½»Ê£Óà³·Ïú
-#define DDLX_SZSB_ZYWDSYCX         104         //×îÓÅÎåµµ¼´Ê±³É½»Ê£Óà³·Ïú
-#define DDLX_SZSB_QECJCX           105         //È«¶î³É½»»ò³·Ïú
-#define DDLX_SZSB_PHDJDZJYSPJ      106         //ÅÌºó¶¨¼Û´ó×Ú½»Ò×ÊÕÅÌ¼Û
-#define DDLX_SZSB_PHDJDZJYSJ       107         //ÅÌºó¶¨¼Û´ó×Ú½»Ò×Æ½¾ù¼Û
+//æœåŠ¡å™¨ç±»å‹
+const char svrtype_quote[] = "QUOTE";       //è¡Œæƒ…æœåŠ¡å™¨
+const char svrtype_hts[] = "HTS";           //HTSäº¤æ˜“æœåŠ¡å™¨
+//ç³»ç»Ÿç±»å‹
+#define SYSTEM_TYPE_SEC       4           //ç°è´§ç³»ç»Ÿ
+#define SYSTEM_TYPE_MAR       7           //ä¸¤èç³»ç»Ÿ
+#define SYSTEM_TYPE_SOP       9           //æœŸæƒç³»ç»Ÿ
+//å®‰å…¨è®¤è¯æ–¹å¼
+#define FIX_AUTH_STYLE_DTKL   2           //åŠ¨æ€å£ä»¤
+#define FIX_AUTH_STYLE_CERT   5           //æœ¬åœ°è¯ä¹¦
+//ç«™ç‚¹åœ°å€å†…å®¹
+#define FIX_NODE_TYPE_MAC     1           //MACåœ°å€
+#define FIX_NODE_TYPE_HDSN    2           //ç¡¬ç›˜åºåˆ—å·
+#define SEPARATOR_SVRADDR     ';'         //å¤šä¸ªä¸­é—´ä»¶åœ°å€åˆ†éš”ç¬¦
+#define MAX_ERRMSG_SIZE       1024        //å¤„ç†ç»“æœä¿¡æ¯å­—ç¬¦ä¸²æœ€å¤§é•¿åº¦
+#define MAX_RESULT_SIZE       128         //æˆåŠŸæ—¶è¿”å›çš„å­—ç¬¦ä¸²æ•°æ®æœ€å¤§é•¿åº¦
+//é“¶è¯ä¸šåŠ¡ç±»åˆ«
+#define YWLB_YHTOZQ           1           //é“¶è¡Œè½¬è¯åˆ¸
+#define YWLB_ZQTOYH           2           //è¯åˆ¸è½¬é“¶è¡Œ
+#define YWLB_CXYHYE           6           //æŸ¥é“¶è¡Œä½™é¢
+//æ¥å£æ¨é€ä¿¡æ¯ç±»å‹
+#define NOTIFY_CONNECT        1           //é€šè®¯è¿æ¥(ProfileKey,Message)
+#define NOTIFY_DISCONNECT     2           //é€šè®¯è¿æ¥(ProfileKey,Message)
+#define NOTIFY_LOGIN          3           //å®¢æˆ·ç™»å½•(ProfileKey,AccountId,Message)
+#define NOTIFY_FILEUPGRADE    4           //æ–‡ä»¶å‡çº§(ProfileKey,Message)
+#define NOTIFY_FILEUSING      5           //æ–‡ä»¶å‡çº§-æ–‡ä»¶è¢«å ç”¨
+#define NOTIFY_SUBSCIBE       6           //è®¢é˜…å¤„ç†(ProfileKey,Message)
+#define NOTIFY_QUOTESUBSCIBE  7           //è¡Œæƒ…è®¢é˜…(Message)
+#define NOTIFY_PUSH_ORDER     8           //å§”æ‰˜æ¨é€(AccountId,OrderId,Message)
+#define NOTIFY_PUSH_WITHDRAW  9           //æ’¤å•æ¨é€(AccountId,OrderId,Message)
+#define NOTIFY_PUSH_MATCH     10          //æˆäº¤æ¨é€(AccountId,OrderId,Message)
+#define NOTIFY_PUSH_INVALID   11          //åºŸå•æ¨é€(AccountId,OrderId,Message)
+#define NOTIFY_PUSH_MODIFYPWD 12          //å®¢æˆ·åœ¨å…¶ä»–åœ°æ–¹ä¿®æ”¹å¯†ç 
+#define NOTIFY_PUSH_BULLETIN  13          //å…¬å‘Š--å¤‡ç”¨
+#define NOTIFY_PUSH_MESSAGE   14          //æ¶ˆæ¯--å¤‡ç”¨
+#define NOTIFY_ASSETVARY      20          //èµ„äº§å˜åŠ¨(AccountId,FundAccount,Message)--æ¯”è¾ƒé¢‘ç¹ï¼Œä¸å»ºè®®ä½œä¸ºæ˜¾ç¤ºä¿¡æ¯ã€‚
+#define NOTIFY_QUOTEVARY      21          //è¡Œæƒ…å˜åŠ¨({Market,StockCode,varys}) varsä¸ºè¡Œæƒ…å˜åŠ¨æ ‡å¿—çš„ä½ç»„åˆ
+                                          //         ä¾‹å¦‚ï¼šSH,600600,00000006ï¼Œè¡¨ç¤ºSH600600çš„æœ€æ–°ä»·å’Œæˆäº¤æ•°é‡æœ‰å˜åŠ¨
+                                          //è¡Œæƒ…å˜åŠ¨æ¨é€éå¸¸é¢‘ç¹ï¼Œä¸å»ºè®®ä½œä¸ºæ˜¾ç¤ºä¿¡æ¯ã€‚
+#define NOTIFY_BANKTRANSFER   22          //é“¶è¡Œè½¬è´¦ç»“æœ(ProfileKey,AccountId,Message)
+#define NOTIFY_PUSH_DEBETS_CHANGE   23          //è´Ÿå€ºå˜åŠ¨æ¨é€
+#define NOTIFY_PUSH_QUOTE     24          //åŒè¾¹æŠ¥ä»·å§”æ‰˜ç¡®è®¤æ¨é€(AccountId,OrderId,Message)
+#define NOTIFY_CONNEVENT_MGR  25          //ç®¡ç†è¿æ¥
+#define NOTIFY_CONNEVENT_TRADE  26        //äº¤æ˜“è¿æ¥
+#define NOTIFY_CONNEVENT_QUERY  27        //æŸ¥è¯¢è¿æ¥
+#define NOTIFY_CONNEVENT_SUBS   28        //è®¢é˜…è¿æ¥
+//äº¤æ˜“ç±»åˆ«
+#define JYLB_BUY              1           //ä¹°å…¥
+#define JYLB_SALE             2           //å–å‡º
+#define JYLB_PGJK             3           //é…è‚¡ç¼´æ¬¾
+#define JYLB_HGRZ             4           //å›è´­èèµ„
+#define JYLB_HGRQ             5           //å›è´­èåˆ¸
+#define JYLB_BONUS            6           //çº¢åˆ©
+#define JYLB_ZTG              7           //æ·±åœ³è½¬æ‰˜ç®¡
+#define JYLB_XGPH             8           //æ–°è‚¡é…å·
+#define JYLB_ZDJY             9           //ä¸Šæµ·æŒ‡å®šäº¤æ˜“
+#define JYLB_CZJY             10          //ä¸Šæµ·æ’¤æŒ‡äº¤æ˜“
+#define JYLB_ZZZG             11          //è½¬å€ºè½¬è‚¡
+#define JYLB_ZZHS             12          //è½¬å€ºå›å”®
+#define JYLB_ZZSH             13          //è½¬å€ºèµå›
+#define JYLB_PSSG             14          //é…å”®ç”³è´­
+#define JYLB_RGFX             15          //è®¤è´­å‘è¡Œ
+#define JYLB_SG               16          //é€è‚¡
+#define JYLB_DF               17          //å…‘ä»˜
+#define JYLB_PSFQ             24          //é…å”®æ”¾å¼ƒ
+#define JYLB_ETFSG            29          //ETFç”³è´­
+#define JYLB_ETFSH            30          //ETFèµå›
+#define JYLB_ZYQRK            37          //è´¨æŠ¼åˆ¸å…¥åº“
+#define JYLB_ZYQCK            38          //è´¨æŠ¼åˆ¸å‡ºåº“
+#define JYLB_JJRG             41          //åŸºé‡‘è®¤è´­
+#define JYLB_JJSG             42          //åŸºé‡‘ç”³è´­
+#define JYLB_JJSH             43          //åŸºé‡‘èµå›
+#define JYLB_JJFHSZ           44          //åŸºé‡‘åˆ†çº¢è®¾ç½®
+#define JYLB_JJZH             46          //åŸºé‡‘è½¬æ¢
+#define JYLB_JJFC             47          //åŸºé‡‘åˆ†æ‹†
+#define JYLB_JJHB             48          //åŸºé‡‘åˆå¹¶
+#define JYLB_YXMR             55          //æ„å‘ä¹°å…¥
+#define JYLB_YXMC             56          //æ„å‘å–å‡º
+#define JYLB_DJMR             57          //å®šä»·ä¹°å…¥
+#define JYLB_DJMC             58          //å®šä»·å–å‡º
+#define JYLB_MRQR             59          //ä¹°å…¥ç¡®è®¤
+#define JYLB_MCQR             60          //å–å‡ºç¡®è®¤
+#define JYLB_PHMR             78          //ç›˜åä¹°å…¥
+#define JYLB_PHMC             79          //ç›˜åå–å‡º
+#define JYLB_RZMR             61          //èèµ„ä¹°å…¥
+#define JYLB_MQHK             62          //å–åˆ¸è¿˜æ¬¾
+#define JYLB_MQHQ             63          //ä¹°åˆ¸è¿˜åˆ¸
+#define JYLB_RQMC             64          //èåˆ¸å–å‡º
+#define JYLB_DBWTJ            65          //æ‹…ä¿åˆ’å…¥
+#define JYLB_DBWFH            66          //æ‹…ä¿åˆ’å‡º
+#define JYLB_QYHR             67          //åˆ¸æºåˆ’å…¥
+#define JYLB_QYHC             68          //åˆ¸æºåˆ’å‡º
+#define JYLB_YQHZ             69          //ä½™åˆ¸åˆ’è½¬
+#define JYLB_HQHZ             70          //è¿˜åˆ¸åˆ’è½¬
+#define JYLB_RZQP             71          //èèµ„å¼ºå¹³
+#define JYLB_RQQP             72          //èåˆ¸å¼ºå¹³
+#define JYLB_ZJHK             73          //ç›´æ¥è¿˜æ¬¾
+#define JYLB_YSYY             76          //é¢„å—è¦çº¦
+#define JYLB_JCYS             77          //è§£é™¤é¢„å—è¦çº¦
+#define JYLB_ZFMR			  101		  //å¢å‘ä¹°å…¥
+#define JYLB_PHDJMR           178         //ç›˜åå®šä»·ä¹°å…¥
+#define JYLB_PHDJMC           179         //ç›˜åå®šä»·å–å‡º
+#define JYLB_HSCX             212         //å›å”®å†²é”€
+#define JYLB_SHJJRG           241         //åŸºé‡‘è®¤è´­
+#define JYLB_SHJJSG           242         //åŸºé‡‘ç”³è´­
+#define JYLB_SHJJSH           243         //åŸºé‡‘èµå›
+#define JYLB_SHJJFHSZ         244         //åŸºé‡‘åˆ†çº¢è®¾ç½®
+#define JYLB_SHJJZH           246         //åŸºé‡‘è½¬æ¢
+#define JYLB_SHJJFC           247         //åŸºé‡‘åˆ†æ‹†
+#define JYLB_SHJJHB           248         //åŸºé‡‘åˆå¹¶
+//è®¢å•ç±»å‹
+#define DDLX_XJWT                  0           //é™ä»·
+// ä¸Šæµ·å¸‚ä»·
+#define DDLX_SHHB_ZYWDSYCX         1           //æœ€ä¼˜äº”æ¡£å³æ—¶æˆäº¤å‰©ä½™æ’¤é”€
+#define DDLX_SHHB_ZYWDSYZXJ        2           //æœ€ä¼˜äº”æ¡£å³æ—¶æˆäº¤å‰©ä½™è½¬é™ä»·
+#define DDLX_SHHB_DSFZYJ           4           //å¯¹æ‰‹æ–¹æœ€ä¼˜ä»·æ ¼
+#define DDLX_SHHB_BFZYJ            5           //æœ¬æ–¹æœ€ä¼˜ä»·æ ¼
+#define DDLX_SHHB_PHDJDZJYSPJ      6           //ç›˜åå®šä»·å¤§å®—äº¤æ˜“æ”¶ç›˜ä»·
+// æ·±åœ³å¸‚ä»·
+#define DDLX_SZSB_DSFZYJ           101         //å¯¹æ‰‹æ–¹æœ€ä¼˜ä»·æ ¼
+#define DDLX_SZSB_BFZYJ            102         //æœ¬æ–¹æœ€ä¼˜ä»·æ ¼
+#define DDLX_SZSB_SYCX             103         //å³æ—¶æˆäº¤å‰©ä½™æ’¤é”€
+#define DDLX_SZSB_ZYWDSYCX         104         //æœ€ä¼˜äº”æ¡£å³æ—¶æˆäº¤å‰©ä½™æ’¤é”€
+#define DDLX_SZSB_QECJCX           105         //å…¨é¢æˆäº¤æˆ–æ’¤é”€
+#define DDLX_SZSB_PHDJDZJYSPJ      106         //ç›˜åå®šä»·å¤§å®—äº¤æ˜“æ”¶ç›˜ä»·
+#define DDLX_SZSB_PHDJDZJYSJ       107         //ç›˜åå®šä»·å¤§å®—äº¤æ˜“å¹³å‡ä»·
 
-//ÉÏº£ÆÚÈ¨¶©µ¥ÀàĞÍ
-#define DDLX_SHQQ_XJGFD         0           //ÏŞ¼ÛGFD
-#define DDLX_SHQQ_SJIOC         1           //ÊĞ¼ÛIOC
-#define DDLX_SHQQ_SJZXJGFD      2           //ÊĞ¼ÛÊ£Óà×ªÏŞ¼ÛGFD
-#define DDLX_SHQQ_XJFOK         4           //ÏŞ¼ÛFOK
-#define DDLX_SHQQ_SJFOK         5           //ÊĞ¼ÛFOK
-//ÉîÛÚÆÚÈ¨¶©µ¥ÀàĞÍ
-#define DDLX_SZQQ_XJGFD         0           //ÏŞ¼ÛÎ¯ÍĞ
-#define DDLX_SZQQ_XJFOK         4           //ÏŞ¼ÛÈ«¶î³É½»»ò³·Ïú
-#define DDLX_SZQQ_DSFZYJ        101         //¶ÔÊÖ·½×îÓÅÊ£Óà×ªÏŞ¼Û
-#define DDLX_SZQQ_BFZYJ         102         //±¾·½×îÓÅ
-#define DDLX_SZQQ_SYCX          103         //ÊĞ¼ÛÁ¢¼´³É½»Ê£Óà³·Ïú
-#define DDLX_SZQQ_ZYWDSYCX      104         //ÊĞ¼Û×îÓÅÎåµµÈ«¶î³É½»Ê£Óà³·Ïú
-#define DDLX_SZQQ_QECJCX        105         //ÊĞ¼ÛÈ«¶î³É½»»ò³·Ïú
+//ä¸Šæµ·æœŸæƒè®¢å•ç±»å‹
+#define DDLX_SHQQ_XJGFD         0           //é™ä»·GFD
+#define DDLX_SHQQ_SJIOC         1           //å¸‚ä»·IOC
+#define DDLX_SHQQ_SJZXJGFD      2           //å¸‚ä»·å‰©ä½™è½¬é™ä»·GFD
+#define DDLX_SHQQ_XJFOK         4           //é™ä»·FOK
+#define DDLX_SHQQ_SJFOK         5           //å¸‚ä»·FOK
+//æ·±åœ³æœŸæƒè®¢å•ç±»å‹
+#define DDLX_SZQQ_XJGFD         0           //é™ä»·å§”æ‰˜
+#define DDLX_SZQQ_XJFOK         4           //é™ä»·å…¨é¢æˆäº¤æˆ–æ’¤é”€
+#define DDLX_SZQQ_DSFZYJ        101         //å¯¹æ‰‹æ–¹æœ€ä¼˜å‰©ä½™è½¬é™ä»·
+#define DDLX_SZQQ_BFZYJ         102         //æœ¬æ–¹æœ€ä¼˜
+#define DDLX_SZQQ_SYCX          103         //å¸‚ä»·ç«‹å³æˆäº¤å‰©ä½™æ’¤é”€
+#define DDLX_SZQQ_ZYWDSYCX      104         //å¸‚ä»·æœ€ä¼˜äº”æ¡£å…¨é¢æˆäº¤å‰©ä½™æ’¤é”€
+#define DDLX_SZQQ_QECJCX        105         //å¸‚ä»·å…¨é¢æˆäº¤æˆ–æ’¤é”€
 
-//¶©µ¥½»Ò×ÏŞÖÆ
-#define OT_ALO                1           //¾º¼ÛÏŞ¼ÛÅÌ At-auction Limit Order(Pre-opening Session and Closing Auction Session)
-#define OT_ELO                2           //ÔöÇ¿ÏŞ¼ÛÅÌ Enhanced Limit Order(Continuous Trading Session)
-//ĞĞÇé±ä»¯±êÖ¾
-#define QV_TPBZ               0x00000001  //Í£ÅÆ±êÖ¾
-#define QV_ZXJ                0x00000002  //×îĞÂ¼Û
-#define QV_ZSP                0x00000004  //×òÊÕÅÌ
-#define QV_CJSL               0x00000008  //³É½»ÊıÁ¿(³É½»½ğ¶î)
-#define QV_CCL                0x00000010  //³Ö²ÖÁ¿
-#define QV_ZGZDJ              0x00000020  //×î¸ß×îµÍ¼Û
-#define QV_MRJG1              0x00000100  //ÂòÈë¼Û¸ñ1
-#define QV_MCJG1              0x00000200  //Âô³ö¼Û¸ñ1
-#define QV_MRSL1              0x00000400  //ÂòÈëÊıÁ¿1
-#define QV_MCSL1              0x00000800  //Âô³öÊıÁ¿1
+//è®¢å•äº¤æ˜“é™åˆ¶
+#define OT_ALO                1           //ç«ä»·é™ä»·ç›˜ At-auction Limit Order(Pre-opening Session and Closing Auction Session)
+#define OT_ELO                2           //å¢å¼ºé™ä»·ç›˜ Enhanced Limit Order(Continuous Trading Session)
+//è¡Œæƒ…å˜åŒ–æ ‡å¿—
+#define QV_TPBZ               0x00000001  //åœç‰Œæ ‡å¿—
+#define QV_ZXJ                0x00000002  //æœ€æ–°ä»·
+#define QV_ZSP                0x00000004  //æ˜¨æ”¶ç›˜
+#define QV_CJSL               0x00000008  //æˆäº¤æ•°é‡(æˆäº¤é‡‘é¢)
+#define QV_CCL                0x00000010  //æŒä»“é‡
+#define QV_ZGZDJ              0x00000020  //æœ€é«˜æœ€ä½ä»·
+#define QV_MRJG1              0x00000100  //ä¹°å…¥ä»·æ ¼1
+#define QV_MCJG1              0x00000200  //å–å‡ºä»·æ ¼1
+#define QV_MRSL1              0x00000400  //ä¹°å…¥æ•°é‡1
+#define QV_MCSL1              0x00000800  //å–å‡ºæ•°é‡1
 #define QV_MRJG2              0x00001000
 #define QV_MCJG2              0x00002000
 #define QV_MRSL2              0x00004000
@@ -204,136 +204,136 @@ const char svrtype_hts[] = "HTS";           //HTS½»Ò×·şÎñÆ÷
 #define QV_MCJG5              0x02000000
 #define QV_MRSL5              0x04000000
 #define QV_MCSL5              0x08000000
-//²éÑ¯½á¹¹ÅÅĞò·½Ê½
-#define SORT_TYPE_DESC        0        //ÄæĞò
-#define SORT_TYPE_AES         1        //ÕıĞò
+//æŸ¥è¯¢ç»“æ„æ’åºæ–¹å¼
+#define SORT_TYPE_DESC        0        //é€†åº
+#define SORT_TYPE_AES         1        //æ­£åº
 
-//Éê±¨½á¹û¶¨Òå
-#define  SBJG_WAITING                0       //´ı±¨
-#define  SBJG_SENDING                1       //Õı±¨
-#define  SBJG_CONFIRM                2       //ÒÑ±¨
-#define  SBJG_INVALID                3       //·Ç·¨Î¯ÍĞ
-#define  SBJG_FUNDREQ                4       //×Ê½ğÉêÇëÖĞ
-#define  SBJG_PARTTRADE              5       //²¿·Ö³É½»
-#define  SBJG_COMPLETE               6       //È«²¿³É½»
-#define  SBJG_PTADPWTD               7       //²¿³É²¿³·
-#define  SBJG_WITHDRAW               8       //È«²¿³·µ¥
-#define  SBJG_WTDFAIL                9       //³·µ¥Î´³É
-#define  SBJG_MANUAL                 10      //µÈ´ıÈË¹¤Éê±¨
+//ç”³æŠ¥ç»“æœå®šä¹‰
+#define  SBJG_WAITING                0       //å¾…æŠ¥
+#define  SBJG_SENDING                1       //æ­£æŠ¥
+#define  SBJG_CONFIRM                2       //å·²æŠ¥
+#define  SBJG_INVALID                3       //éæ³•å§”æ‰˜
+#define  SBJG_FUNDREQ                4       //èµ„é‡‘ç”³è¯·ä¸­
+#define  SBJG_PARTTRADE              5       //éƒ¨åˆ†æˆäº¤
+#define  SBJG_COMPLETE               6       //å…¨éƒ¨æˆäº¤
+#define  SBJG_PTADPWTD               7       //éƒ¨æˆéƒ¨æ’¤
+#define  SBJG_WITHDRAW               8       //å…¨éƒ¨æ’¤å•
+#define  SBJG_WTDFAIL                9       //æ’¤å•æœªæˆ
+#define  SBJG_MANUAL                 10      //ç­‰å¾…äººå·¥ç”³æŠ¥
 
-// Òì²½»Øµ÷º¯Êı½»Ò×ÀàĞÍ
-//      ÆÚÈ¨ÀàĞÍ
-#define FUNC_CALLBACK_KPJY                  0         //¿ªÆ½½»Ò×
-#define FUNC_CALLBACK_KPJY_WITHDRAW         1         //¿ªÆ½½»Ò×³·µ¥
-#define FUNC_CALLBACK_ORDERPETRUST_BJ       2       //±¨¼Û
-#define FUNC_CALLBACK_KPJY_WITHDRAW_ALL     3         //¿ªÆ½½»Ò×È«²¿³·µ¥
-#define FUNC_CALLBACK_BJ_WITHDRAW_ALL       4         //±¨¼ÛÈ«²¿³·µ¥
-//      ÏÖ»õÀàĞÍ
-#define FUNC_CALLBACK_PTMM          30       //ÆÕÍ¨ÂòÂô
-#define FUNC_CALLBACK_ETFSG         31       //ETFÉê¹º
-#define FUNC_CALLBACK_ETFSH         32       //ETFÊê»Ø
-#define FUNC_CALLBACK_ZQHG          33       //Õ®È¯»Ø¹º
-#define FUNC_CALLBACK_ZQCRK         34       //Õ®È¯³öÈë¿â
-#define FUNC_CALLBACK_LOF           35       //LOF»ù½ğ
-#define FUNC_CALLBACK_PHDJ          36       //ÅÌºó¶¨¼ÛÂòÂô
-#define FUNC_CALLBACK_FXYW          37       //·¢ĞĞÒµÎñ
-#define FUNC_CALLBACK_FJY           38       //·Ç½»Ò×ÒµÎñ
-#define FUNC_CALLBACK_WD_PTMM       40       //ÆÕÍ¨ÂòÂô³·µ¥
-#define FUNC_CALLBACK_WD_BATCH      41       //ÅúÁ¿ÂòÂô³·µ¥
-#define FUNC_CALLBACK_WD_ETF        42       //ETF³·µ¥
-#define FUNC_CALLBACK_WD_ZQ         43       //Õ®È¯»Ø¹º³·µ¥
-#define FUNC_CALLBACK_WD_LOF        44       //LOF³·µ¥
-#define FUNC_CALLBACK_WD_PHDJ       45       //ÅÌºó¶¨¼Û³·µ¥
-#define FUNC_CALLBACK_WD_FXYW       46       //·¢ĞĞÒµÎñ³·µ¥
+// å¼‚æ­¥å›è°ƒå‡½æ•°äº¤æ˜“ç±»å‹
+//      æœŸæƒç±»å‹
+#define FUNC_CALLBACK_KPJY                  0         //å¼€å¹³äº¤æ˜“
+#define FUNC_CALLBACK_KPJY_WITHDRAW         1         //å¼€å¹³äº¤æ˜“æ’¤å•
+#define FUNC_CALLBACK_ORDERPETRUST_BJ       2       //æŠ¥ä»·
+#define FUNC_CALLBACK_KPJY_WITHDRAW_ALL     3         //å¼€å¹³äº¤æ˜“å…¨éƒ¨æ’¤å•
+#define FUNC_CALLBACK_BJ_WITHDRAW_ALL       4         //æŠ¥ä»·å…¨éƒ¨æ’¤å•
+//      ç°è´§ç±»å‹
+#define FUNC_CALLBACK_PTMM          30       //æ™®é€šä¹°å–
+#define FUNC_CALLBACK_ETFSG         31       //ETFç”³è´­
+#define FUNC_CALLBACK_ETFSH         32       //ETFèµå›
+#define FUNC_CALLBACK_ZQHG          33       //å€ºåˆ¸å›è´­
+#define FUNC_CALLBACK_ZQCRK         34       //å€ºåˆ¸å‡ºå…¥åº“
+#define FUNC_CALLBACK_LOF           35       //LOFåŸºé‡‘
+#define FUNC_CALLBACK_PHDJ          36       //ç›˜åå®šä»·ä¹°å–
+#define FUNC_CALLBACK_FXYW          37       //å‘è¡Œä¸šåŠ¡
+#define FUNC_CALLBACK_FJY           38       //éäº¤æ˜“ä¸šåŠ¡
+#define FUNC_CALLBACK_WD_PTMM       40       //æ™®é€šä¹°å–æ’¤å•
+#define FUNC_CALLBACK_WD_BATCH      41       //æ‰¹é‡ä¹°å–æ’¤å•
+#define FUNC_CALLBACK_WD_ETF        42       //ETFæ’¤å•
+#define FUNC_CALLBACK_WD_ZQ         43       //å€ºåˆ¸å›è´­æ’¤å•
+#define FUNC_CALLBACK_WD_LOF        44       //LOFæ’¤å•
+#define FUNC_CALLBACK_WD_PHDJ       45       //ç›˜åå®šä»·æ’¤å•
+#define FUNC_CALLBACK_WD_FXYW       46       //å‘è¡Œä¸šåŠ¡æ’¤å•
 
-//      Á½ÈÚÀàĞÍ
-#define MR_FUNC_CALLBACK_XYMM          100       //ĞÅÓÃÂòÂô
-#define MR_FUNC_CALLBACK_RZRQ          101       //ÈÚ×ÊÈÚÈ¯
-#define MR_FUNC_CALLBACK_CHYW          102       //³¥»¹ÒµÎñ(ÂôÈ¯»¹¿î¡¢ÂòÈ¯»¹È¯)
-#define MR_FUNC_CALLBACK_FJYYW         103       //·Ç½»Ò×ÒµÎñ(µ£±£ÎïÌá½»¡¢µ£±£Îï·µ»¹¡¢»¹È¯»®×ª)
-#define MR_FUNC_CALLBACK_FXYW          104       //·¢ĞĞÒµÎñ(ÅäÊÛÉê¹º¡¢Åä¹É½É¿î)
-#define MR_FUNC_CALLBACK_PHDJ          105       //ÅÌºó¶¨¼Û
-#define MR_FUNC_CALLBACK_WD_XYMM       120       //ĞÅÓÃÂòÂô³·µ¥
-#define MR_FUNC_CALLBACK_WD_RZRQ       121       //ÈÚ×ÊÈÚÈ¯³·µ¥
-#define MR_FUNC_CALLBACK_WD_CHYW       122       //³¥»¹ÒµÎñ³·µ¥(ÂôÈ¯»¹¿î¡¢ÂòÈ¯»¹È¯)
-#define MR_FUNC_CALLBACK_WD_FJYYW      123       //·Ç½»Ò×ÒµÎñ³·µ¥(µ£±£ÎïÌá½»¡¢µ£±£Îï·µ»¹¡¢»¹È¯»®×ª)
-#define MR_FUNC_CALLBACK_WD_FXYW       124       //·¢ĞĞÒµÎñ³·µ¥(ÅäÊÛÉê¹º¡¢Åä¹É½É¿î)
-#define MR_FUNC_CALLBACK_WD_PHDJ       125       //ÅÌºó¶¨¼Û³·µ¥
+//      ä¸¤èç±»å‹
+#define MR_FUNC_CALLBACK_XYMM          100       //ä¿¡ç”¨ä¹°å–
+#define MR_FUNC_CALLBACK_RZRQ          101       //èèµ„èåˆ¸
+#define MR_FUNC_CALLBACK_CHYW          102       //å¿è¿˜ä¸šåŠ¡(å–åˆ¸è¿˜æ¬¾ã€ä¹°åˆ¸è¿˜åˆ¸)
+#define MR_FUNC_CALLBACK_FJYYW         103       //éäº¤æ˜“ä¸šåŠ¡(æ‹…ä¿ç‰©æäº¤ã€æ‹…ä¿ç‰©è¿”è¿˜ã€è¿˜åˆ¸åˆ’è½¬)
+#define MR_FUNC_CALLBACK_FXYW          104       //å‘è¡Œä¸šåŠ¡(é…å”®ç”³è´­ã€é…è‚¡ç¼´æ¬¾)
+#define MR_FUNC_CALLBACK_PHDJ          105       //ç›˜åå®šä»·
+#define MR_FUNC_CALLBACK_WD_XYMM       120       //ä¿¡ç”¨ä¹°å–æ’¤å•
+#define MR_FUNC_CALLBACK_WD_RZRQ       121       //èèµ„èåˆ¸æ’¤å•
+#define MR_FUNC_CALLBACK_WD_CHYW       122       //å¿è¿˜ä¸šåŠ¡æ’¤å•(å–åˆ¸è¿˜æ¬¾ã€ä¹°åˆ¸è¿˜åˆ¸)
+#define MR_FUNC_CALLBACK_WD_FJYYW      123       //éäº¤æ˜“ä¸šåŠ¡æ’¤å•(æ‹…ä¿ç‰©æäº¤ã€æ‹…ä¿ç‰©è¿”è¿˜ã€è¿˜åˆ¸åˆ’è½¬)
+#define MR_FUNC_CALLBACK_WD_FXYW       124       //å‘è¡Œä¸šåŠ¡æ’¤å•(é…å”®ç”³è´­ã€é…è‚¡ç¼´æ¬¾)
+#define MR_FUNC_CALLBACK_WD_PHDJ       125       //ç›˜åå®šä»·æ’¤å•
 
-//±íÃû--»º´æÊı¾İÃû×Ö
-const char table_khh[] = "tKHH";      //¿Í»§ºÅ
-const char table_bz[] = "tBZ";       //±ÒÖÖ
-const char table_jys[] = "tJYS";      //½»Ò×Ëù
-const char table_xtdm[] = "tXTDM";     //ÏµÍ³´úÂë
-const char table_zqjysx[] = "tZQJYSX";   //Ö¤È¯½»Ò×ÊôĞÔ
-const char table_jylb[] = "tJYLB";     //½»Ò×Àà±ğ
-const char table_jgdm[] = "tJGDM";     //»ú¹¹´úÂë
-const char table_yhcs[] = "tYHCS";     //ÒøĞĞ²ÎÊı
-const char table_etfxx[] = "tETFXX";    //ETFĞÅÏ¢
-const char table_etfmx[] = "tETFMX";    //ETF³É·Ö¹ÉÃ÷Ï¸
-const char table_jjhq[] = "tJJHQ";     //»ù½ğĞÅÏ¢
-const char table_fjjj[] = "tFJJJ";     //·Ö¼¶»ù½ğ
-const char table_xgsg[] = "tXGSG";     //±¾ÈÕĞÂ¹ÉÉê¹º
-const char table_hlcs[] = "tHLCS";     //»ãÂÊ²ÎÊı
-const char table_zqhq[] = "tZQHQ";     //Ö¤È¯ĞĞÇé
-const char table_jyjw[] = "tJYJW";     //½»Ò×¼ÛÎ»
-const char table_zjzh[] = "tZJZH";     //×Ê½ğÕËºÅ
-const char table_zcxx[] = "tZCXX";     //×Ê²úÍ³¼Æ
-const char table_gdh[] = "tGDH";      //¹É¶«ºÅ
-const char table_yhzh[] = "tYHZH";     //ÒøĞĞÕËºÅ
-const char table_zqgl[] = "tZQGL";     //Ö¤È¯³Ö²Ö
-const char table_drwt[] = "tDRWT";     //µ±ÈÕÎ¯ÍĞ
-const char table_sscj[] = "tSSCJ";     //ÊµÊ±³É½»
-const char table_zzsq[] = "tZZSQ";     //Ö¤È¯·¢ÆğµÄ×ªÕËÉêÇë
-const char table_jgmx[] = "tJGMX";     //½»¸îÁ÷Ë®
-const char table_wtls[] = "tWTLS";     //ÀúÊ·Î¯ÍĞ
-const char table_zjls[] = "tZJLS";     //×Ê½ğÁ÷Ë®
-const char table_zqjk[] = "tZQJK";     //ÖĞÇ©½É¿î
-const char table_sodrwt[] = "tSODRWT";   //ÆÚÈ¨µ±ÈÕÎ¯ÍĞ
-const char table_sohycc[] = "tSOHYCC";   //ÆÚÈ¨ºÏÔ¼³Ö²Ö
-const char table_sobdzqcc[] = "tSOBDZQCC";   //ÆÚÈ¨±¸¶ÒÖ¤È¯³Ö²Ö
-const char table_sozhclcc[] = "tSOZHCLCC";   //ÆÚÈ¨×éºÏ²ßÂÔ³Ö²Ö
-const char table_sobzjxx[] = "tSOBZJXX";  //ÆÚÈ¨±£Ö¤½ğ
-const char table_sosscj[] = "tSOSSCJ";     //ÆÚÈ¨ÊµÊ±³É½»
-const char table_sofbcj[] = "tSOFBCJ";     //ÆÚÈ¨·Ö±Ê³É½»
-const char table_sohydm[] = "tSOHYDM";     //ÆÚÈ¨ºÏÔ¼´úÂë
-const char table_sohyzh[] = "tSOHYZH";     //ÆÚÈ¨ºÏÔ¼ÕË»§
-const char table_sokhjykzxx[] = "tSOKHJYKZXX";     //ÆÚÈ¨¿Í»§½»Ò×¿ØÖÆĞÅÏ¢
-const char table_sokhxqdjszjqk[] = "tSOKHXQDJSZJQK";     //ÆÚÈ¨¿Í»§ĞĞÈ¨´ı½»ÊÕ×Ê½ğÈ±¿Ú
-const char table_sokhxqdjszqqk[] = "tSOKHXQDJSZQQK";     //ÆÚÈ¨¿Í»§ĞĞÈ¨´ı½»ÊÕÖ¤È¯È±¿Ú
-const char table_sokhxqzpxx[] = "tSOKHXQZPXX";     //ÆÚÈ¨¿Í»§ĞĞÈ¨Ö¸ÅÉĞÅÏ¢
-const char table_sokhbdzqbz[] = "tSOKHBDZQBZ";     //ÆÚÈ¨¿Í»§±¸¶ÒÖ¤È¯²»×ã
-const char table_sokhbcxx[] = "tSOKHBCXX";     //ÆÚÈ¨¿Í»§²¹³äĞÅÏ¢
+//è¡¨å--ç¼“å­˜æ•°æ®åå­—
+const char table_khh[] = "tKHH";      //å®¢æˆ·å·
+const char table_bz[] = "tBZ";       //å¸ç§
+const char table_jys[] = "tJYS";      //äº¤æ˜“æ‰€
+const char table_xtdm[] = "tXTDM";     //ç³»ç»Ÿä»£ç 
+const char table_zqjysx[] = "tZQJYSX";   //è¯åˆ¸äº¤æ˜“å±æ€§
+const char table_jylb[] = "tJYLB";     //äº¤æ˜“ç±»åˆ«
+const char table_jgdm[] = "tJGDM";     //æœºæ„ä»£ç 
+const char table_yhcs[] = "tYHCS";     //é“¶è¡Œå‚æ•°
+const char table_etfxx[] = "tETFXX";    //ETFä¿¡æ¯
+const char table_etfmx[] = "tETFMX";    //ETFæˆåˆ†è‚¡æ˜ç»†
+const char table_jjhq[] = "tJJHQ";     //åŸºé‡‘ä¿¡æ¯
+const char table_fjjj[] = "tFJJJ";     //åˆ†çº§åŸºé‡‘
+const char table_xgsg[] = "tXGSG";     //æœ¬æ—¥æ–°è‚¡ç”³è´­
+const char table_hlcs[] = "tHLCS";     //æ±‡ç‡å‚æ•°
+const char table_zqhq[] = "tZQHQ";     //è¯åˆ¸è¡Œæƒ…
+const char table_jyjw[] = "tJYJW";     //äº¤æ˜“ä»·ä½
+const char table_zjzh[] = "tZJZH";     //èµ„é‡‘è´¦å·
+const char table_zcxx[] = "tZCXX";     //èµ„äº§ç»Ÿè®¡
+const char table_gdh[] = "tGDH";      //è‚¡ä¸œå·
+const char table_yhzh[] = "tYHZH";     //é“¶è¡Œè´¦å·
+const char table_zqgl[] = "tZQGL";     //è¯åˆ¸æŒä»“
+const char table_drwt[] = "tDRWT";     //å½“æ—¥å§”æ‰˜
+const char table_sscj[] = "tSSCJ";     //å®æ—¶æˆäº¤
+const char table_zzsq[] = "tZZSQ";     //è¯åˆ¸å‘èµ·çš„è½¬è´¦ç”³è¯·
+const char table_jgmx[] = "tJGMX";     //äº¤å‰²æµæ°´
+const char table_wtls[] = "tWTLS";     //å†å²å§”æ‰˜
+const char table_zjls[] = "tZJLS";     //èµ„é‡‘æµæ°´
+const char table_zqjk[] = "tZQJK";     //ä¸­ç­¾ç¼´æ¬¾
+const char table_sodrwt[] = "tSODRWT";   //æœŸæƒå½“æ—¥å§”æ‰˜
+const char table_sohycc[] = "tSOHYCC";   //æœŸæƒåˆçº¦æŒä»“
+const char table_sobdzqcc[] = "tSOBDZQCC";   //æœŸæƒå¤‡å…‘è¯åˆ¸æŒä»“
+const char table_sozhclcc[] = "tSOZHCLCC";   //æœŸæƒç»„åˆç­–ç•¥æŒä»“
+const char table_sobzjxx[] = "tSOBZJXX";  //æœŸæƒä¿è¯é‡‘
+const char table_sosscj[] = "tSOSSCJ";     //æœŸæƒå®æ—¶æˆäº¤
+const char table_sofbcj[] = "tSOFBCJ";     //æœŸæƒåˆ†ç¬”æˆäº¤
+const char table_sohydm[] = "tSOHYDM";     //æœŸæƒåˆçº¦ä»£ç 
+const char table_sohyzh[] = "tSOHYZH";     //æœŸæƒåˆçº¦è´¦æˆ·
+const char table_sokhjykzxx[] = "tSOKHJYKZXX";     //æœŸæƒå®¢æˆ·äº¤æ˜“æ§åˆ¶ä¿¡æ¯
+const char table_sokhxqdjszjqk[] = "tSOKHXQDJSZJQK";     //æœŸæƒå®¢æˆ·è¡Œæƒå¾…äº¤æ”¶èµ„é‡‘ç¼ºå£
+const char table_sokhxqdjszqqk[] = "tSOKHXQDJSZQQK";     //æœŸæƒå®¢æˆ·è¡Œæƒå¾…äº¤æ”¶è¯åˆ¸ç¼ºå£
+const char table_sokhxqzpxx[] = "tSOKHXQZPXX";     //æœŸæƒå®¢æˆ·è¡ŒæƒæŒ‡æ´¾ä¿¡æ¯
+const char table_sokhbdzqbz[] = "tSOKHBDZQBZ";     //æœŸæƒå®¢æˆ·å¤‡å…‘è¯åˆ¸ä¸è¶³
+const char table_sokhbcxx[] = "tSOKHBCXX";     //æœŸæƒå®¢æˆ·è¡¥å……ä¿¡æ¯
 
-//Á½ÈÚÏà¹Ø±í
-const char table_xyxgsg[] = "tXYXGSG";   //ĞÅÓÃ±¾ÈÕĞÂ¹ÉÉê¹º
-const char table_xygdh[] = "tXYGDH";    //ĞÅÓÃ¹É¶«ºÅ
-const char table_xyzjzh[] = "tXYZJZH";   //ĞÅÓÃ×Ê½ğÕËºÅ
-const char table_xyzqgl[] = "tXYZQGL";   //ĞÅÓÃÖ¤È¯³Ö²Ö
-const char table_xydrwt[] = "tXYDRWT";   //ĞÅÓÃµ±ÈÕÎ¯ÍĞ
-const char table_xysscj[] = "tXYSSCJ";   //ĞÅÓÃÊµÊ±³É½»
-const char table_xyzc[] = "tXYZC";     //ĞÅÓÃ×Ê²ú
-const char table_xyfz[] = "tXYFZ";     //ĞÅÓÃ¸ºÕ®
-const char table_xypsqy[] = "tXYPSQY";   //ĞÅÓÃÅäÊÛÈ¨Òæ
-const char table_zgzq[] = "tZGZQ";     //×Ê¸ñÖ¤È¯
-const char table_rqzq[] = "tRQZQ";     //±êµÄÖ¤È¯£¬ÈÚÈ¯Óà¶î
-const char table_xydrbd[] = "tXYDRBD";   //µ±ÈÕĞÅÓÃ¸ºÕ®±ä¶¯Ã÷Ï¸
-const char table_xyrqfzhz[] = "tXYRQFZHZ";   //µ±ÈÕĞÅÓÃÈÚÈ¯¸ºÕ®»ã×Ü
-const char table_xyfzls[] = "tXYFZLS";   //ĞÅÓÃ¸ºÕ®±ä¶¯Ã÷Ï¸
-const char table_xyzqdm[] = "tXYZQDM";     //ĞÅÓÃÖ¤È¯´úÂë
+//ä¸¤èç›¸å…³è¡¨
+const char table_xyxgsg[] = "tXYXGSG";   //ä¿¡ç”¨æœ¬æ—¥æ–°è‚¡ç”³è´­
+const char table_xygdh[] = "tXYGDH";    //ä¿¡ç”¨è‚¡ä¸œå·
+const char table_xyzjzh[] = "tXYZJZH";   //ä¿¡ç”¨èµ„é‡‘è´¦å·
+const char table_xyzqgl[] = "tXYZQGL";   //ä¿¡ç”¨è¯åˆ¸æŒä»“
+const char table_xydrwt[] = "tXYDRWT";   //ä¿¡ç”¨å½“æ—¥å§”æ‰˜
+const char table_xysscj[] = "tXYSSCJ";   //ä¿¡ç”¨å®æ—¶æˆäº¤
+const char table_xyzc[] = "tXYZC";     //ä¿¡ç”¨èµ„äº§
+const char table_xyfz[] = "tXYFZ";     //ä¿¡ç”¨è´Ÿå€º
+const char table_xypsqy[] = "tXYPSQY";   //ä¿¡ç”¨é…å”®æƒç›Š
+const char table_zgzq[] = "tZGZQ";     //èµ„æ ¼è¯åˆ¸
+const char table_rqzq[] = "tRQZQ";     //æ ‡çš„è¯åˆ¸ï¼Œèåˆ¸ä½™é¢
+const char table_xydrbd[] = "tXYDRBD";   //å½“æ—¥ä¿¡ç”¨è´Ÿå€ºå˜åŠ¨æ˜ç»†
+const char table_xyrqfzhz[] = "tXYRQFZHZ";   //å½“æ—¥ä¿¡ç”¨èåˆ¸è´Ÿå€ºæ±‡æ€»
+const char table_xyfzls[] = "tXYFZLS";   //ä¿¡ç”¨è´Ÿå€ºå˜åŠ¨æ˜ç»†
+const char table_xyzqdm[] = "tXYZQDM";     //ä¿¡ç”¨è¯åˆ¸ä»£ç 
 
-//½»Ò×Ëù
-const char dict_jys_dl[] = "DL";        //´óÁ¬
-const char dict_jys_sq[] = "SQ";        //ÉÏÆÚ
-const char dict_jys_zj[] = "ZJ";        //ÖĞ½ğ
-const char dict_jys_zz[] = "ZZ";        //Ö£Öİ
-const char dict_jys_sn[] = "SN";        //Ô­ÓÍ
-const char dict_jys_sh[] = "SH";        //ÉÏº£
-const char dict_jys_sz[] = "SZ";        //ÉîÛÚ
-const char dict_jys_hk_sh[] = "HK";        //»¦¸Û
-const char dict_jys_hk_sz[] = "SK";        //Éî¸Û
-//±ÒÖÖ
-const char dict_bz_rmb[] = "RMB";       //ÈËÃñ±Ò
-const char dict_bz_hkd[] = "HKD";       //¸Û±Ò
-const char dict_bz_usd[] = "USD";       //ÃÀÔª
+//äº¤æ˜“æ‰€
+const char dict_jys_dl[] = "DL";        //å¤§è¿
+const char dict_jys_sq[] = "SQ";        //ä¸ŠæœŸ
+const char dict_jys_zj[] = "ZJ";        //ä¸­é‡‘
+const char dict_jys_zz[] = "ZZ";        //éƒ‘å·
+const char dict_jys_sn[] = "SN";        //åŸæ²¹
+const char dict_jys_sh[] = "SH";        //ä¸Šæµ·
+const char dict_jys_sz[] = "SZ";        //æ·±åœ³
+const char dict_jys_hk_sh[] = "HK";        //æ²ªæ¸¯
+const char dict_jys_hk_sz[] = "SK";        //æ·±æ¸¯
+//å¸ç§
+const char dict_bz_rmb[] = "RMB";       //äººæ°‘å¸
+const char dict_bz_hkd[] = "HKD";       //æ¸¯å¸
+const char dict_bz_usd[] = "USD";       //ç¾å…ƒ
 

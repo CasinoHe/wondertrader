@@ -1,10 +1,10 @@
 /////////////////////////////////////////////////////////////////////////
-///²úÆ· HTS
-///¹«Ë¾ ¸£½¨¶¥µãÈí¼ş¹É·İÓĞÏŞ¹«Ë¾
-///ÎÄ¼ş itpdk_typedef.h
-///ÓÃÍ¾ ¶¨ÒåÁËÀàĞÍ
-///°æ±¾
-///20210910  5.1.0.0	Ö£¶«»Ô		ĞÂÔö°æ±¾ËµÃ÷
+///äº§å“ HTS
+///å…¬å¸ ç¦å»ºé¡¶ç‚¹è½¯ä»¶è‚¡ä»½æœ‰é™å…¬å¸
+///æ–‡ä»¶ itpdk_typedef.h
+///ç”¨é€” å®šä¹‰äº†ç±»å‹
+///ç‰ˆæœ¬
+///20210910  5.1.0.0	éƒ‘ä¸œè¾‰		æ–°å¢ç‰ˆæœ¬è¯´æ˜
 /////////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -17,15 +17,15 @@
 #endif
 
 
-//¶¨ÒåÍÆËÍ»Øµ÷º¯Êı
+//å®šä¹‰æ¨é€å›è°ƒå‡½æ•°
 typedef void(*pMessageCallbackMethod)(const char* pTime, const char* pMsg, int nType);
-//¶¨ÒåÒì²½»Øµ÷º¯Êı
+//å®šä¹‰å¼‚æ­¥å›è°ƒå‡½æ•°
 typedef void(*pAsyncCallbackFunc)(const char* pTime, const char* pMsg, int nType);
-//¶¨ÒåµôÏß¡¢ÖØÁ¬»Øµ÷º¯Êı
+//å®šä¹‰æ‰çº¿ã€é‡è¿å›è°ƒå‡½æ•°
 typedef void(*pConnEventCallback)(const char* pKhh, const char* pConnKey, int nEvent, int nType);
 
 
-//»ù±¾ÀàĞÍ
+//åŸºæœ¬ç±»å‹
 #if defined(__APPLE__)
 
 typedef signed char    int8;
@@ -120,7 +120,7 @@ typedef size64    vsize_t;
 #endif
 
 
-//»ùÀàÀàĞÍÖµ·¶Î§
+//åŸºç±»ç±»å‹å€¼èŒƒå›´
 static const int8  kMinInt8 = -128;
 static const int8  kMaxInt8 = 127;
 static const uint8 kMaxUInt8 = 255U;

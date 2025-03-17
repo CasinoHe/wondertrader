@@ -4,9 +4,9 @@
 class IAresCltSpi
 {
 public:
-	//Í¨Öª£ºÊĞ³¡ÈÕÆÚºÍÊ±¼ä
+	//é€šçŸ¥ï¼šå¸‚åœºæ—¥æœŸå’Œæ—¶é—´
 	virtual		void			OnMarketTime(AClt_Market cMarket, tagAClt_MarketField*) = 0;
-	//Í¨Öª£ºĞĞÇé¿ìÕÕ
+	//é€šçŸ¥ï¼šè¡Œæƒ…å¿«ç…§
 	virtual		void			OnMarketData(AClt_Market cMarket, tagAClt_QuoteField*) = 0;
 
 };
@@ -14,18 +14,18 @@ public:
 class IAresExchange
 {
 public:
-	// È¡½»Ò×ËùÉÌÆ·Âë±í¸öÊı
+	// å–äº¤æ˜“æ‰€å•†å“ç è¡¨ä¸ªæ•°
 	virtual		int				GetCommodityCount() = 0;
-	// È¡½»Ò×ËùÉÌÆ·Âë±í
+	// å–äº¤æ˜“æ‰€å•†å“ç è¡¨
 	virtual		int				GetCommodityData(tagAClt_Instrument* pArr, int nCount) = 0;
-	// È¡Ä³Ò»ÉÌÆ·»ù´¡Êı¾İ
+	// å–æŸä¸€å•†å“åŸºç¡€æ•°æ®
 	virtual		int				GetOneStaticData(tagAClt_Instrument* pInstrument, tagAClt_CommBaseData* pData) = 0;
-	// È¡½»Ò×ËùÉÌÆ·»ù´¡Êı¾İ
+	// å–äº¤æ˜“æ‰€å•†å“åŸºç¡€æ•°æ®
 	virtual		int				GetStaticData(tagAClt_CommBaseData* pArr, int nCount) = 0;
 
-	// È¡Ä³Ò»ÉÌÆ·µÄ²¹³äÊı¾İ(1.14+)
+	// å–æŸä¸€å•†å“çš„è¡¥å……æ•°æ®(1.14+)
 	virtual		int				GetOneSupplementData(tagAClt_Instrument* pInstrument, tagAClt_SupplementData* pData) = 0;
-	// È¡½»Ò×ËùÉÌÆ·²¹³äÊı¾İ(1.14+)
+	// å–äº¤æ˜“æ‰€å•†å“è¡¥å……æ•°æ®(1.14+)
 	virtual		int				GetSupplementData(tagAClt_SupplementData* pArr, int nCount) = 0;
 
 };
@@ -33,15 +33,15 @@ public:
 class IAresCltApi
 {
 public:
-	//×¢²áĞĞÇéÍ¨ÖªSpi
+	//æ³¨å†Œè¡Œæƒ…é€šçŸ¥Spi
 	virtual		void			RegisterSpi(IAresCltSpi*) = 0;
-	//Æô¶¯¹¤×÷
+	//å¯åŠ¨å·¥ä½œ
 	virtual		int				StartWork() = 0;
-	//Í£Ö¹¹¤×÷
+	//åœæ­¢å·¥ä½œ
 	virtual		void			EndWork() = 0;
 
 public:
-	//»ñÈ¡ÊĞ³¡ÁĞ±í
+	//è·å–å¸‚åœºåˆ—è¡¨
 	virtual	 IAresExchange*		GetExchPtr(AClt_Market cMarket) = 0;
 
 };

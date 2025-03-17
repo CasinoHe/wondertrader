@@ -2,13 +2,13 @@
 //  baseDefine.h
 //  zsApi
 //
-//  Created by ºØÕÜ on 2018/4/24.
-//  Copyright ? 2018Äê ÖĞÉ½Ö¤È¯ÓĞÏŞÔğÈÎ¹«Ë¾. All rights reserved.
+//  Created by è´ºå“² on 2018/4/24.
+//  Copyright ? 2018å¹´ ä¸­å±±è¯åˆ¸æœ‰é™è´£ä»»å…¬å¸. All rights reserved.
 //
 //----------------------------------------------------------------------------
-// ĞŞ¸ÄÈÕÆÚ      °æ±¾          ×÷Õß            ±¸×¢
+// ä¿®æ”¹æ—¥æœŸ      ç‰ˆæœ¬          ä½œè€…            å¤‡æ³¨
 //----------------------------------------------------------------------------
-// 2018-04-24    1.0           ºØÕÜ            ĞÂ½¨
+// 2018-04-24    1.0           è´ºå“²            æ–°å»º
 //----------------------------------------------------------------------------
 
 #if !defined(__BASE_DEFINE_H__)
@@ -41,9 +41,9 @@ typedef long long LONGLONG;
 
 
 //////////////////////////////////////////////////////////////////////////
-// µÇÂ¼×´Ì¬¶¨Òå
-#define LOGIN_OFFLINE                       '0'       //Î´µÇÂ¼
-#define LOGIN_ONLINE                        '1'       //ÒÑµÇÂ¼
+// ç™»å½•çŠ¶æ€å®šä¹‰
+#define LOGIN_OFFLINE                       '0'       //æœªç™»å½•
+#define LOGIN_ONLINE                        '1'       //å·²ç™»å½•
 
 
 #define ADRRESS_MAX                   128
@@ -53,21 +53,21 @@ typedef long long LONGLONG;
 
 #pragma pack(4)
 
-// ÇëÇó¹Ì¶¨²ÎÊı
+// è¯·æ±‚å›ºå®šå‚æ•°
 struct STReqFix
 {
-    char          szUserName[USER_MAX];       // ÓÃ»§Ãû
-    LONGLONG      llAcctCode;                 // ×Ê²úÕË»§
-    int           iFunction;                  // ¹¦ÄÜ´úÂë
-    char          chOpRole;                   // ÓÃ»§½ÇÉ«
-    char          szSession[128];             // »á»°Æ¾Ö¤
+    char          szUserName[USER_MAX];       // ç”¨æˆ·å
+    LONGLONG      llAcctCode;                 // èµ„äº§è´¦æˆ·
+    int           iFunction;                  // åŠŸèƒ½ä»£ç 
+    char          chOpRole;                   // ç”¨æˆ·è§’è‰²
+    char          szSession[128];             // ä¼šè¯å‡­è¯
 };
 
-// µÚ1½á¹û¼¯ÄÚÈİ
+// ç¬¬1ç»“æœé›†å†…å®¹
 struct STFirstSet
 {
-    int           iCode;                      //´íÎóÂë
-    char          szText[ERR_MSG_SIZE];       //´íÎóÎÄ±¾
+    int           iCode;                      //é”™è¯¯ç 
+    char          szText[ERR_MSG_SIZE];       //é”™è¯¯æ–‡æœ¬
 };
 
 #pragma pack()

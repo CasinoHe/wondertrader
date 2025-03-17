@@ -1,4 +1,4 @@
-﻿/*! @mainpage  东吴证券股份有限公司易驰统一接入SDK V 1.0
+/*! @mainpage  东吴证券股份有限公司易驰统一接入SDK V 1.0
 * @author 吴宏兵 wuhb@dwzq.com.cn
 * @section 介绍
 * - 接口介绍:\n

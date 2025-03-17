@@ -1,17 +1,17 @@
 //----------------------------------------------------------------------------
-// °æÈ¨ÉùÃ÷£º±¾³ÌĞòÄ£¿éÊôÓÚ½ğÖ¤Î¢ÄÚºË¼Ü¹¹Æ½Ì¨(KMAP)µÄÒ»²¿·Ö
-//           ½ğÖ¤¿Æ¼¼¹É·İÓĞÏŞ¹«Ë¾  °æÈ¨ËùÓĞ
+// ç‰ˆæƒå£°æ˜ï¼šæœ¬ç¨‹åºæ¨¡å—å±äºé‡‘è¯å¾®å†…æ ¸æ¶æ„å¹³å°(KMAP)çš„ä¸€éƒ¨åˆ†
+//           é‡‘è¯ç§‘æŠ€è‚¡ä»½æœ‰é™å…¬å¸  ç‰ˆæƒæ‰€æœ‰
 //
-// ÎÄ¼şÃû³Æ£ºmaCliOptTradeApi.h
-// Ä£¿éÃû³Æ£º¹ÉÆ±ÆÚÈ¨½»Ò×API C++ Class
-// Ä£¿éÃèÊö£º
-// ¿ª·¢×÷Õß£ººÎÍò¸Õ
-// ´´½¨ÈÕÆÚ£º2012-12-23
-// Ä£¿é°æ±¾£º001.000.000
+// æ–‡ä»¶åç§°ï¼šmaCliOptTradeApi.h
+// æ¨¡å—åç§°ï¼šè‚¡ç¥¨æœŸæƒäº¤æ˜“API C++ Class
+// æ¨¡å—æè¿°ï¼š
+// å¼€å‘ä½œè€…ï¼šä½•ä¸‡åˆš
+// åˆ›å»ºæ—¥æœŸï¼š2012-12-23
+// æ¨¡å—ç‰ˆæœ¬ï¼š001.000.000
 //----------------------------------------------------------------------------
-// ĞŞ¸ÄÈÕÆÚ      °æ±¾          ×÷Õß            ±¸×¢
+// ä¿®æ”¹æ—¥æœŸ      ç‰ˆæœ¬          ä½œè€…            å¤‡æ³¨
 //----------------------------------------------------------------------------
-// 2012-12-23    1.0          ºÎÍò¸Õ          ³õ´´
+// 2012-12-23    1.0          ä½•ä¸‡åˆš          åˆåˆ›
 //----------------------------------------------------------------------------
 #if !defined(__MA_CLI_OPT_TRADE_API_H__)
 #define __MA_CLI_OPT_TRADE_API_H__
@@ -24,588 +24,588 @@ BGN_NAMESPACE_MACLI
 class MATRADEAPI CCliOptTradeSpi : virtual public CCliTradeSpi
 {
 public:
-  // ÓÃ»§µÇÂ¼ÇëÇóÏìÓ¦
+  // ç”¨æˆ·ç™»å½•è¯·æ±‚å“åº”
   virtual int OnRspUserLogin(CFirstSetField* p_pFirstSetField, CRspOptUserLoginField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ÆÚÈ¨»ù´¡ĞÅÏ¢²éÑ¯ÏìÓ¦
+  // æœŸæƒåŸºç¡€ä¿¡æ¯æŸ¥è¯¢å“åº”
   virtual int OnRspQryBaseInfo(CFirstSetField* p_pFirstSetField, CRspOptBaseInfoField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ¸ö¹ÉÆÚÈ¨Î¯ÍĞÉê±¨ÏìÓ¦
+  // ä¸ªè‚¡æœŸæƒå§”æ‰˜ç”³æŠ¥å“åº”
   virtual int OnRspOrder(CFirstSetField* p_pFirstSetField, CRspOptOrderField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
   
-  // ¸ö¹ÉÆÚÈ¨Î¯ÍĞ³·µ¥ÏìÓ¦
+  // ä¸ªè‚¡æœŸæƒå§”æ‰˜æ’¤å•å“åº”
   virtual int OnRspCancelOrder(CFirstSetField* p_pFirstSetField, CRspOptCancelOrderField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ¸ö¹ÉÆÚÈ¨Î¯ÍĞÉê±¨ÏìÓ¦(¼«ËÙ)
+  // ä¸ªè‚¡æœŸæƒå§”æ‰˜ç”³æŠ¥å“åº”(æé€Ÿ)
   virtual int OnRspOrderFlash(CFirstSetField* p_pFirstSetField, CRspOptOrderFlashField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ¸ö¹ÉÆÚÈ¨Î¯ÍĞ³·µ¥ÏìÓ¦(¼«ËÙ)
+  // ä¸ªè‚¡æœŸæƒå§”æ‰˜æ’¤å•å“åº”(æé€Ÿ)
   virtual int OnRspCancelOrderFlash(CFirstSetField* p_pFirstSetField, CRspOptCancelOrderFlashField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ¸ö¹ÉÆÚÈ¨±êµÄÖ¤È¯Ëø¶¨½âËøÏìÓ¦
+  // ä¸ªè‚¡æœŸæƒæ ‡çš„è¯åˆ¸é”å®šè§£é”å“åº”
   virtual int OnRspUndlStkLock(CFirstSetField* p_pFirstSetField, CRspOptUndlStkLockField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
   
-  // ¼ÆËã¸ö¹ÉÆÚÈ¨×î´ó¿É½»Ò×ÊıÁ¿ÏìÓ¦
+  // è®¡ç®—ä¸ªè‚¡æœŸæƒæœ€å¤§å¯äº¤æ˜“æ•°é‡å“åº”
   virtual int OnRspMaxTradeQty(CFirstSetField* p_pFirstSetField, CRspOptMaxTradeQtyField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ¿ÉÓÃ×Ê½ğ²éÑ¯ÏìÓ¦
+  // å¯ç”¨èµ„é‡‘æŸ¥è¯¢å“åº”
   virtual int OnRspQryExpendableFund(CFirstSetField* p_pFirstSetField, CRspOptExpendableFundField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ¿ÉÓÃºÏÔ¼×Ê²ú²éÑ¯ÏìÓ¦
+  // å¯ç”¨åˆçº¦èµ„äº§æŸ¥è¯¢å“åº”
   virtual int OnRspQryExpendableCu(CFirstSetField* p_pFirstSetField, CRspOptExpendableCuField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ¿ÉÓÃ±¸¶Ò¹É·İ²éÑ¯ÏìÓ¦
+  // å¯ç”¨å¤‡å…‘è‚¡ä»½æŸ¥è¯¢å“åº”
   virtual int OnRspQryExpendableCvdStk(CFirstSetField* p_pFirstSetField, CRspOptExpendableCvdStkField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ¸ö¹ÉÆÚÈ¨µ±ÈÕÎ¯ÍĞ²éÑ¯ÏìÓ¦
+  // ä¸ªè‚¡æœŸæƒå½“æ—¥å§”æ‰˜æŸ¥è¯¢å“åº”
   virtual int OnRspQryCurrDayOrder(CFirstSetField* p_pFirstSetField, CRspOptCurrDayOrderField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ¸ö¹ÉÆÚÈ¨µ±ÈÕ³É½»²éÑ¯ÏìÓ¦
+  // ä¸ªè‚¡æœŸæƒå½“æ—¥æˆäº¤æŸ¥è¯¢å“åº”
   virtual int OnRspQryCurrDayFill(CFirstSetField* p_pFirstSetField, CRspOptCurrDayFillField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ¸ö¹ÉÆÚÈ¨ºÏÔ¼ÕË»§²éÑ¯ÏìÓ¦
+  // ä¸ªè‚¡æœŸæƒåˆçº¦è´¦æˆ·æŸ¥è¯¢å“åº”
   virtual int OnRspQryAcct(CFirstSetField* p_pFirstSetField, CRspOptAcctField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
   
-  // ¸ö¹ÉÆÚÈ¨¿É³·Î¯ÍĞ²éÑ¯ÏìÓ¦
+  // ä¸ªè‚¡æœŸæƒå¯æ’¤å§”æ‰˜æŸ¥è¯¢å“åº”
   virtual int OnRspQryCanWithdrawOrder(CFirstSetField* p_pFirstSetField, CRspOptCanWithdrawOrderField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // È·ÈÏ»Ø±¨
+  // ç¡®è®¤å›æŠ¥
   virtual int OnRtnOrderConfirm(CRtnOptOrderConfirmField* p_pRtnField) {return 0;}
 
-  // ³É½»»Ø±¨
+  // æˆäº¤å›æŠ¥
   virtual int OnRtnOrderFill(CRtnOptOrderFillField* p_pRtnField) { return 0; }
 
-  // ³É½»»Ø±¨--Î¯ÍĞĞÅÏ¢
+  // æˆäº¤å›æŠ¥--å§”æ‰˜ä¿¡æ¯
   virtual int OnRtnOrder(CRtnOptOrderField* p_pRtnField) {return 0;}
 
-  // ³É½»»Ø±¨--ºÏÔ¼ĞÅÏ¢
+  // æˆäº¤å›æŠ¥--åˆçº¦ä¿¡æ¯
   virtual int OnRtnContract(CRtnOptContractField* p_pRtnField) {return 0;}
 
-  // È·ÈÏ»Ø±¨(¼«ËÙ)
+  // ç¡®è®¤å›æŠ¥(æé€Ÿ)
   virtual int OnRtnOrderConfirmFlash(CRtnOptOrderConfirmFlashField* p_pRtnField) {return 0;}
 
-  // ³É½»»Ø±¨(¼«ËÙ)
+  // æˆäº¤å›æŠ¥(æé€Ÿ)
   virtual int OnRtnOrderFillFlash(CRtnOptOrderFillFlashField* p_pRtnField) {return 0;}
 
   //////////////////////////////////////////////////////////////////////////////
   
-  //×éºÏ²ßÂÔÎÄ¼ş²éÑ¯ÏìÓ¦ 2015/8/3
+  //ç»„åˆç­–ç•¥æ–‡ä»¶æŸ¥è¯¢å“åº” 2015/8/3
   virtual int OnRspQryCombStra(CFirstSetField* p_pFirstSetField,CRspOptCombStraField* p_pRspField,LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
   
-  //×éºÏ±£Ö¤½ğÎ¯ÍĞÏìÓ¦ 2015/8/5
+  //ç»„åˆä¿è¯é‡‘å§”æ‰˜å“åº” 2015/8/5
   virtual int OnRspCombStraOrder(CFirstSetField* p_pFirstSetField,CRspOptCombStraOrderField* p_pRspField,LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
   
-  //¿ÉÓÃ×éºÏ³Ö²Ö²éÑ¯ÏìÓ¦ 2015/8/5
+  //å¯ç”¨ç»„åˆæŒä»“æŸ¥è¯¢å“åº” 2015/8/5
   virtual int OnRspQryCombStraPos(CFirstSetField* p_pFirstSetField,CRspOptCombStraPosField* p_pRspField,LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
   
-  //¿ÉÓÃ×éºÏ³Ö²ÖÃ÷Ï¸²éÑ¯ÏìÓ¦ 2015/8/5
+  //å¯ç”¨ç»„åˆæŒä»“æ˜ç»†æŸ¥è¯¢å“åº” 2015/8/5
   virtual int OnRspQryCombStraPosDetail(CFirstSetField* p_pFirstSetField,CRspOptCombStraPosDetailField* p_pRspField,LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
   
-  //¸ö¹ÉÆÚÈ¨³õÊ¼±£Ö¤½ğ 2015/8/10
+  //ä¸ªè‚¡æœŸæƒåˆå§‹ä¿è¯é‡‘ 2015/8/10
   virtual int OnRspIniMargin(CFirstSetField* p_pFirstSetField,CRspOptIniMarginField* p_pRspField,LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  //ĞĞÈ¨Ö¸ÅÉÇ·×Ê     2015/8/10
+  //è¡ŒæƒæŒ‡æ´¾æ¬ èµ„     2015/8/10
   virtual int OnRspQryExeDebt(CFirstSetField* p_pFirstSetField,CRspOptExeDebtField* p_pRspField,LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  //ĞĞÈ¨Ö¸ÅÉÇ·È¯       2015/8/10
+  //è¡ŒæƒæŒ‡æ´¾æ¬ åˆ¸       2015/8/10
   virtual int OnRspQryExeStkDebt(CFirstSetField* p_pFirstSetField,CRspOptExeStkDebtField* p_pRspField,LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  //¿Í»§·çÏÕ¶È         2015/8/10
+  //å®¢æˆ·é£é™©åº¦         2015/8/10
   virtual int OnRspQryRiskLvl(CFirstSetField* p_pFirstSetField,CRspOptRiskLvlField* p_pRspField,LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  //¿Í»§½áËãµ¥²éÑ¯ 2015/8/6
+  //å®¢æˆ·ç»“ç®—å•æŸ¥è¯¢ 2015/8/6
   virtual int OnRspQrySettList(CFirstSetField* p_pFirstSetField,CRspOptSettListField* p_pRspField,LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
   
-  //¿Í»§½áËãµ¥È·ÈÏ 2015/8/6
+  //å®¢æˆ·ç»“ç®—å•ç¡®è®¤ 2015/8/6
   virtual int OnRspSettListConfirm(CFirstSetField* p_pFirstSetField,CRspOptSettListConfirmField* p_pRspField,LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  //ÒøÑÜ×ªÕËÏìÓ¦ 2015/8/3
+  //é“¶è¡è½¬è´¦å“åº” 2015/8/3
   virtual int OnRspBankDeriTrans(CFirstSetField* p_pFirstSetField,CRspOptBankDeriTransField* p_pRspField,LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex){return 0;}
   
-  //²éÑ¯ÒøÑÜ½»Ò×ÅäÖÃĞÅÏ¢ÏìÓ¦ 2015/8/7
+  //æŸ¥è¯¢é“¶è¡äº¤æ˜“é…ç½®ä¿¡æ¯å“åº” 2015/8/7
   virtual int OnRspBankDeriInfo(CFirstSetField* p_pFirstSetField,CRspOptBankDeriInfoField* p_pRspField,LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex){return 0;}
 
-  //²éÑ¯¿Í»§Ç©Ô¼ÒøĞĞ´úÂëÏìÓ¦ 2015/8/7
+  //æŸ¥è¯¢å®¢æˆ·ç­¾çº¦é“¶è¡Œä»£ç å“åº” 2015/8/7
   virtual int OnRspUserBank(CFirstSetField* p_pFirstSetField,CRspOptUserBankField* p_pRspField,LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex){return 0;}
 
-  //¶ÔÕËµ¥ĞĞÈ¨½»¸îÁ÷Ë®²éÑ¯ÏìÓ¦ 2015/8/7
+  //å¯¹è´¦å•è¡Œæƒäº¤å‰²æµæ°´æŸ¥è¯¢å“åº” 2015/8/7
   virtual int OnRspStateDeliHis(CFirstSetField* p_pFirstSetField,CRspOptStateDeliHisField* p_pRspField,LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex){return 0;}
 
-  //ÒøÑÜ×ªÕËÁ÷Ë®²éÑ¯ÏìÓ¦ 2015/8/7
+  //é“¶è¡è½¬è´¦æµæ°´æŸ¥è¯¢å“åº” 2015/8/7
   virtual int OnRspBankDeriTransHis(CFirstSetField* p_pFirstSetField,CRspOptBankDeriTransHisField* p_pRspField,LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex){return 0;}
 
-  //ÒøĞĞÓà¶î²éÑ¯ÏìÓ¦ 2015/8/7
+  //é“¶è¡Œä½™é¢æŸ¥è¯¢å“åº” 2015/8/7
   virtual int OnRspBankBala(CFirstSetField* p_pFirstSetField,CRspOptBankBalaField* p_pRspField,LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex){return 0;}
 
-  //ÃÜÂëĞŞ¸ÄÏìÓ¦ 2015/8/3
+  //å¯†ç ä¿®æ”¹å“åº” 2015/8/3
   virtual int OnRspChangePwd(CFirstSetField* p_pFirstSetField,CRspOptChangePwdField* p_pRspField,LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex){return 0;}
 
-  // ¿ÉËø¶¨¹É·İ²éÑ¯
+  // å¯é”å®šè‚¡ä»½æŸ¥è¯¢
   virtual int OnRspQryCanLockStk(CFirstSetField* p_pFirstSetField, CRspOptCanLockStkField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ¿Í»§ÊÊµ±ĞÔÆ¥Åä²úÆ·ĞÅÏ¢²éÑ¯
+  // å®¢æˆ·é€‚å½“æ€§åŒ¹é…äº§å“ä¿¡æ¯æŸ¥è¯¢
   virtual int OnRspQryCustAppropriateMatchInfo(CFirstSetField* p_pFirstSetField, CRspOptQryCustAppropriateMatchInfoField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ¿Í»§ÊÊµ±ĞÔĞÅÏ¢²éÑ¯
+  // å®¢æˆ·é€‚å½“æ€§ä¿¡æ¯æŸ¥è¯¢
   virtual int OnRspQryCustAppropriateInfo(CFirstSetField* p_pFirstSetField, CRspOptQryCustAppropriateInfoField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ¿Í»§·çÏÕ¾¯Ê¾ÊéÇ©Êğ
+  // å®¢æˆ·é£é™©è­¦ç¤ºä¹¦ç­¾ç½²
   virtual int OnRspCustRiskSign(CFirstSetField* p_pFirstSetField, CRspOptCustRiskSignField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
   
-  // ¹ÉÆ±ÆÚÈ¨ĞĞÈ¨Ö¸ÁîºÏ²¢Éê±¨Î¯ÍĞÏìÓ¦
+  // è‚¡ç¥¨æœŸæƒè¡ŒæƒæŒ‡ä»¤åˆå¹¶ç”³æŠ¥å§”æ‰˜å“åº”
   virtual int OnRspCombExe(CFirstSetField *p_pFirstSetField, CRspOptCombExeField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ĞĞÈ¨Ö¸ÁîºÏ²¢Éê±¨³É·İºÏÔ¼²éÑ¯ÏìÓ¦
+  // è¡ŒæƒæŒ‡ä»¤åˆå¹¶ç”³æŠ¥æˆä»½åˆçº¦æŸ¥è¯¢å“åº”
   virtual int OnRspQryCombExeLegNum(CFirstSetField *p_pFirstSetField, CRspOptQryCombExeLegNumField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ¹ÉÆ±ÆÚÈ¨µ±ÈÕÎ¯ÍĞ²éÑ¯[ÓÅ»¯]ÏìÓ¦
+  // è‚¡ç¥¨æœŸæƒå½“æ—¥å§”æ‰˜æŸ¥è¯¢[ä¼˜åŒ–]å“åº”
   virtual int OnRspQryCurrDayOrderEx(CFirstSetField *p_pFirstSetField, CRspOptQryCurrDayOrderExField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ¹ÉÆ±ÆÚÈ¨µ±ÈÕ³É½»²éÑ¯[ÓÅ»¯]ÏìÓ¦
+  // è‚¡ç¥¨æœŸæƒå½“æ—¥æˆäº¤æŸ¥è¯¢[ä¼˜åŒ–]å“åº”
   virtual int OnRspQryCurrDayFillEx(CFirstSetField *p_pFirstSetField, CRspOptQryCurrDayFillExField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ¿ÉÓÃ×Ê½ğ²éÑ¯[ÓÅ»¯]ÏìÓ¦
+  // å¯ç”¨èµ„é‡‘æŸ¥è¯¢[ä¼˜åŒ–]å“åº”
   virtual int OnRspQryExpendableFundEx(CFirstSetField *p_pFirstSetField, CRspOptQryExpendableFundExField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ¿ÉÈ¡×Ê½ğ²éÑ¯[ÓÅ»¯]ÏìÓ¦
+  // å¯å–èµ„é‡‘æŸ¥è¯¢[ä¼˜åŒ–]å“åº”
   virtual int OnRspQryDrawFundEx(CFirstSetField *p_pFirstSetField, CRspOptQryDrawFundExField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ¿ÉÓÃºÏÔ¼×Ê²ú²éÑ¯[ÓÅ»¯]ÏìÓ¦
+  // å¯ç”¨åˆçº¦èµ„äº§æŸ¥è¯¢[ä¼˜åŒ–]å“åº”
   virtual int OnRspQryExpendableCuEx(CFirstSetField *p_pFirstSetField, CRspOptQryExpendableCuExField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ÀúÊ·Î¯ÍĞ²éÑ¯(RPC)ÏìÓ¦
+  // å†å²å§”æ‰˜æŸ¥è¯¢(RPC)å“åº”
   virtual int OnRspQryHisOrder(CFirstSetField* p_pFirstSetField, CRspOptQryHisOrderField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ÀúÊ·³É½»²éÑ¯(RPC)ÏìÓ¦
+  // å†å²æˆäº¤æŸ¥è¯¢(RPC)å“åº”
   virtual int OnRspQryHisFill(CFirstSetField* p_pFirstSetField, CRspOptQryHisFillField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ¿Í»§½áËãµ¥(ÎÄ¼ş)²éÑ¯ÏìÓ¦
+  // å®¢æˆ·ç»“ç®—å•(æ–‡ä»¶)æŸ¥è¯¢å“åº”
   virtual int OnRspQrySettListFile(CFirstSetField* p_pFirstSetField, CRspOptQrySettListFileField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ¸ö¹ÉÆÚÈ¨Î¯ÍĞÉê±¨(ÓÅ»¯)ÏìÓ¦
+  // ä¸ªè‚¡æœŸæƒå§”æ‰˜ç”³æŠ¥(ä¼˜åŒ–)å“åº”
   virtual int OnRspOrderEx(CFirstSetField* p_pFirstSetField, CRspOptOrderExField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ÆÚÈ¨×öÊĞË«±ß±¨¼Û£¨ÉîÛÚ£©ÏìÓ¦
+  // æœŸæƒåšå¸‚åŒè¾¹æŠ¥ä»·ï¼ˆæ·±åœ³ï¼‰å“åº”
   virtual int OnRspBilateralQuote(CFirstSetField* p_pFirstSetField, CRspOptBilateralQuoteField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ÆÚÈ¨×öÊĞË«±ß±¨¼Û³·µ¥£¨ÉîÛÚ£©ÏìÓ¦
+  // æœŸæƒåšå¸‚åŒè¾¹æŠ¥ä»·æ’¤å•ï¼ˆæ·±åœ³ï¼‰å“åº”
   virtual int OnRspBilateralQuotationKill(CFirstSetField* p_pFirstSetField, CRspOptBilateralQuotationKillField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // Ö¤È¯ĞÅÏ¢²éÑ¯£¨ÆÚÈ¨£©ÏìÓ¦
+  // è¯åˆ¸ä¿¡æ¯æŸ¥è¯¢ï¼ˆæœŸæƒï¼‰å“åº”
   virtual int OnRspQryStkInfo(CFirstSetField* p_pFirstSetField, CRspOptQryStkInfoField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ÆÚÈ¨¿Í»§µÇÂ¼(ĞÂ)ÏìÓ¦
+  // æœŸæƒå®¢æˆ·ç™»å½•(æ–°)å“åº”
   virtual int OnRspRpcUserLogin(CFirstSetField* p_pFirstSetField, CRspOptRpcUserLoginField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ¿ìËÙ¶©µ¥×Ê½ğ»®²¦ÏìÓ¦
+  // å¿«é€Ÿè®¢å•èµ„é‡‘åˆ’æ‹¨å“åº”
   virtual int OnRspRpcFundingTransfer(CFirstSetField* p_pFirstSetField, CRspOptRpcFundingTransferField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ¿ìËÙ¶©µ¥¿É»®Èë×Ê½ğ²éÑ¯ÏìÓ¦
+  // å¿«é€Ÿè®¢å•å¯åˆ’å…¥èµ„é‡‘æŸ¥è¯¢å“åº”
   virtual int OnRspQryRpcFundingTransfer(CFirstSetField* p_pFirstSetField, CRspOptQryRpcFundingTransferField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ¿ìËÙ¶©µ¥×Ê½ğ»®²¦Á÷Ë®²éÑ¯ÏìÓ¦
+  // å¿«é€Ÿè®¢å•èµ„é‡‘åˆ’æ‹¨æµæ°´æŸ¥è¯¢å“åº”
   virtual int OnRspQryRpcFundingTransferFlow(CFirstSetField* p_pFirstSetField, CRspOptQryRpcFundingTransferFlowField* p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
   
-  // ÁÙ½üµ½ÆÚºÏÔ¼×Ê²ú²éÑ¯ÏìÓ¦
+  // ä¸´è¿‘åˆ°æœŸåˆçº¦èµ„äº§æŸ¥è¯¢å“åº”
   virtual int OnRspQryExpendableCuOfCloseToExpireDate(CFirstSetField *p_pFirstSetField, CRspOptQryExpendableCuOfCloseToExpireDateField *p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
   
-  // ¹ÉÆ±ÆÚÈ¨ĞĞÈ¨Ö¸ÅÉÃ÷Ï¸²éÑ¯ÏìÓ¦
+  // è‚¡ç¥¨æœŸæƒè¡ŒæƒæŒ‡æ´¾æ˜ç»†æŸ¥è¯¢å“åº”
   virtual int OnRspQryRpcExeDetail(CFirstSetField *p_pFirstSetField, CRspOptQryRpcExeDetailField *p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
   
-  // ¹ÉÆ±ÆÚÈ¨µ±ÈÕ·çÏÕÍ¨Öª²éÑ¯ÏìÓ¦
+  // è‚¡ç¥¨æœŸæƒå½“æ—¥é£é™©é€šçŸ¥æŸ¥è¯¢å“åº”
   virtual int OnRspQryRpcCurrDayRiskNotify(CFirstSetField *p_pFirstSetField, CRspOptQryRpcCurrDayRiskNotifyField *p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
   
-  // ¹ÉÆ±ÆÚÈ¨ÀúÊ··çÏÕÍ¨Öª²éÑ¯ÏìÓ¦
+  // è‚¡ç¥¨æœŸæƒå†å²é£é™©é€šçŸ¥æŸ¥è¯¢å“åº”
   virtual int OnRspQryRpcHisRiskNotify(CFirstSetField *p_pFirstSetField, CRspOptQryRpcHisRiskNotifyField *p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
   
-  // ¹ÉÆ±ÆÚÈ¨µ±ÈÕ·çÏÕÍ¨Öª²éÑ¯£¨·ç¿ØÏµÍ³×¨ÓÃ£©ÏìÓ¦
+  // è‚¡ç¥¨æœŸæƒå½“æ—¥é£é™©é€šçŸ¥æŸ¥è¯¢ï¼ˆé£æ§ç³»ç»Ÿä¸“ç”¨ï¼‰å“åº”
   virtual int OnRspQryRpcCurrDayRiskSysNotify(CFirstSetField *p_pFirstSetField, CRspOptQryRpcCurrDayRiskSysNotifyField *p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
   
-  // ¹ÉÆ±ÆÚÈ¨ÀúÊ··çÏÕÍ¨Öª²éÑ¯£¨·ç¿ØÏµÍ³×¨ÓÃ£©ÏìÓ¦
+  // è‚¡ç¥¨æœŸæƒå†å²é£é™©é€šçŸ¥æŸ¥è¯¢ï¼ˆé£æ§ç³»ç»Ÿä¸“ç”¨ï¼‰å“åº”
   virtual int OnRspQryRpcHisRiskSysNotify(CFirstSetField *p_pFirstSetField, CRspOptQryRpcHisRiskSysNotifyField *p_pRspField, LONGLONG p_llRequestId, int p_iFieldNum, int p_iFieldIndex) {return 0;}
 
-  // ¿Í»§ÏŞ²Ö¶î¶È²éÑ¯ÏìÓ¦
+  // å®¢æˆ·é™ä»“é¢åº¦æŸ¥è¯¢å“åº”
   virtual int OnRspQryPositionLimit(CFirstSetField *p_pFirstSetField, CRspOptQryPositionLimitField *p_pRspField, LONGLONG  p_llRequestId, int p_iFieldNum, int p_iFieldIndex) { return 0; }
 };
 
 class MATRADEAPI CCliOptTradeApi : virtual public CCliTradeApi
 {
 public:
-  // Ä¬ÈÏ¹¹Ôìº¯Êı
+  // é»˜è®¤æ„é€ å‡½æ•°
   CCliOptTradeApi(void);
 
-  // Îö¹¹º¯Êı
+  // ææ„å‡½æ•°
   virtual ~CCliOptTradeApi(void);
 
-  // ÓÃ»§µÇÂ¼ÇëÇó
+  // ç”¨æˆ·ç™»å½•è¯·æ±‚
   virtual int ReqUserLogin(CReqOptUserLoginField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ÆÚÈ¨»ù´¡ĞÅÏ¢²éÑ¯
+  // æœŸæƒåŸºç¡€ä¿¡æ¯æŸ¥è¯¢
   virtual int ReqQryBaseInfo(CReqOptBaseInfoField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ¸ö¹ÉÆÚÈ¨Î¯ÍĞÉê±¨
+  // ä¸ªè‚¡æœŸæƒå§”æ‰˜ç”³æŠ¥
   virtual int ReqOrder(CReqOptOrderField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ¸ö¹ÉÆÚÈ¨Î¯ÍĞ³·µ¥
+  // ä¸ªè‚¡æœŸæƒå§”æ‰˜æ’¤å•
   virtual int ReqCancelOrder(CReqOptCancelOrderField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ¸ö¹ÉÆÚÈ¨Î¯ÍĞÉê±¨(¼«ËÙ)
+  // ä¸ªè‚¡æœŸæƒå§”æ‰˜ç”³æŠ¥(æé€Ÿ)
   virtual int ReqOrderFlash(CReqOptOrderFlashField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ¸ö¹ÉÆÚÈ¨Î¯ÍĞ³·µ¥(¼«ËÙ)
+  // ä¸ªè‚¡æœŸæƒå§”æ‰˜æ’¤å•(æé€Ÿ)
   virtual int ReqCancelOrderFlash(CReqOptCancelOrderFlashField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ¸ö¹ÉÆÚÈ¨±êµÄÖ¤È¯Ëø¶¨½âËø
+  // ä¸ªè‚¡æœŸæƒæ ‡çš„è¯åˆ¸é”å®šè§£é”
   virtual int ReqUndlStkLock(CReqOptUndlStkLockField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ¼ÆËã¸ö¹ÉÆÚÈ¨×î´ó¿É½»Ò×ÊıÁ¿
+  // è®¡ç®—ä¸ªè‚¡æœŸæƒæœ€å¤§å¯äº¤æ˜“æ•°é‡
   virtual int ReqMaxTradeQty(CReqOptMaxTradeQtyField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ¿ÉÓÃ×Ê½ğ²éÑ¯
+  // å¯ç”¨èµ„é‡‘æŸ¥è¯¢
   virtual int ReqQryExpendableFund(CReqOptExpendableFundField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ¿ÉÓÃºÏÔ¼×Ê²ú²éÑ¯
+  // å¯ç”¨åˆçº¦èµ„äº§æŸ¥è¯¢
   virtual int ReqQryExpendableCu(CReqOptExpendableCuField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ¿ÉÓÃ±¸¶Ò¹É·İ²éÑ¯
+  // å¯ç”¨å¤‡å…‘è‚¡ä»½æŸ¥è¯¢
   virtual int ReqQryExpendableCvdStk(CReqOptExpendableCvdStkField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ¸ö¹ÉÆÚÈ¨µ±ÈÕÎ¯ÍĞ²éÑ¯
+  // ä¸ªè‚¡æœŸæƒå½“æ—¥å§”æ‰˜æŸ¥è¯¢
   virtual int ReqQryCurrDayOrder(CReqOptCurrDayOrderField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ¸ö¹ÉÆÚÈ¨µ±ÈÕ³É½»²éÑ¯
+  // ä¸ªè‚¡æœŸæƒå½“æ—¥æˆäº¤æŸ¥è¯¢
   virtual int ReqQryCurrDayFill(CReqOptCurrDayFillField *p_pReqField, LONGLONG p_llRequestId);
  
-  // ¸ö¹ÉÆÚÈ¨ºÏÔ¼ÕË»§²éÑ¯
+  // ä¸ªè‚¡æœŸæƒåˆçº¦è´¦æˆ·æŸ¥è¯¢
   virtual int ReqQryAcct(CReqOptAcctField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ¸ö¹ÉÆÚÈ¨¿É³·Î¯ÍĞ²éÑ¯
+  // ä¸ªè‚¡æœŸæƒå¯æ’¤å§”æ‰˜æŸ¥è¯¢
   virtual int ReqQryCanWithdrawOrder(CReqOptCanWithdrawOrderField *p_pReqField, LONGLONG p_llRequestId);
 
   /////////////////////////////////////////////////////////////////////////////////////////////////
   
-  //×éºÏ²ßÂÔÎÄ¼ş²éÑ¯ 2015/8/3
+  //ç»„åˆç­–ç•¥æ–‡ä»¶æŸ¥è¯¢ 2015/8/3
   virtual int ReqQryCombStra(CReqOptCombStraField * p_pReqField,LONGLONG p_llRequestId);
 
-  //×éºÏ±£Ö¤½ğÎ¯ÍĞ 2015/8/5 
+  //ç»„åˆä¿è¯é‡‘å§”æ‰˜ 2015/8/5 
   virtual int ReqCombStraOrder(CReqOptCombStraOrderField* p_pReqField,LONGLONG p_llRequestId);
   
-  //¿ÉÓÃ×éºÏ³Ö²Ö²éÑ¯ 2015/8/5 
+  //å¯ç”¨ç»„åˆæŒä»“æŸ¥è¯¢ 2015/8/5 
   virtual int ReqQryCombStraPos(CReqOptCombStraPosField* p_pReqField,LONGLONG p_llRequestId);
  
-  //¿ÉÓÃ×éºÏ³Ö²ÖÃ÷Ï¸²éÑ¯ 2015/8/5 
+  //å¯ç”¨ç»„åˆæŒä»“æ˜ç»†æŸ¥è¯¢ 2015/8/5 
   virtual int ReqQryCombStraPosDetail(CReqOptCombStraPosDetailField* p_pReqField,LONGLONG p_llRequestId);
   
-  //¸ö¹ÉÆÚÈ¨³õÊ¼±£Ö¤½ğ 2015/8/10
+  //ä¸ªè‚¡æœŸæƒåˆå§‹ä¿è¯é‡‘ 2015/8/10
   virtual int ReqIniMargin(CReqOptIniMarginField* p_pReqField,LONGLONG p_llRequestId);
 
-  //ĞĞÈ¨Ö¸ÅÉÇ·×Ê     2015/8/10
+  //è¡ŒæƒæŒ‡æ´¾æ¬ èµ„     2015/8/10
   virtual int ReqQryExeDebt(CReqOptExeDebtField* p_pReqField,LONGLONG p_llRequestId);
 
-  //ĞĞÈ¨Ö¸ÅÉÇ·È¯       2015/8/10
+  //è¡ŒæƒæŒ‡æ´¾æ¬ åˆ¸       2015/8/10
   virtual int ReqQryExeStkDebt(CReqOptExeStkDebtField* p_pReqField,LONGLONG p_llRequestId);
 
-  //¿Í»§·çÏÕ¶È         2015/8/10
+  //å®¢æˆ·é£é™©åº¦         2015/8/10
   virtual int ReqQryRiskLvl(CReqOptRiskLvlField* p_pReqField,LONGLONG p_llRequestId);
   
-  //¿Í»§½áËãµ¥²éÑ¯ 2015/8/6
+  //å®¢æˆ·ç»“ç®—å•æŸ¥è¯¢ 2015/8/6
   virtual int ReqQrySettList(CReqOptSettListField* p_pReqField,LONGLONG p_llRequestId);
 
-  //¿Í»§½áËãµ¥È·ÈÏ 2015/8/6
+  //å®¢æˆ·ç»“ç®—å•ç¡®è®¤ 2015/8/6
   virtual int ReqSettListConfirm(CReqOptSettListConfirmField* p_pReqField,LONGLONG p_llRequestId);
 
-  //ÒøÑÜ×ªÕË 2015/8/3
+  //é“¶è¡è½¬è´¦ 2015/8/3
   virtual int ReqBankDeriTrans(CReqOptBankDeriTransField* p_pReqField,LONGLONG p_llRequestId);
   
-  //²éÑ¯ÒøÑÜ½»Ò×ÅäÖÃĞÅÏ¢ 2015/8/7
+  //æŸ¥è¯¢é“¶è¡äº¤æ˜“é…ç½®ä¿¡æ¯ 2015/8/7
   virtual int ReqBankDeriInfo(CReqOptBankDeriInfoField* p_pReqField,LONGLONG p_llRequestId);
 
-  //²éÑ¯¿Í»§Ç©Ô¼ÒøĞĞ´úÂë 2015/8/7
+  //æŸ¥è¯¢å®¢æˆ·ç­¾çº¦é“¶è¡Œä»£ç  2015/8/7
   virtual int ReqUserBank(CReqOptUserBankField* p_pReqField,LONGLONG p_llRequestId);
 
-  //¶ÔÕËµ¥ĞĞÈ¨½»¸îÁ÷Ë®²éÑ¯ 2015/8/7
+  //å¯¹è´¦å•è¡Œæƒäº¤å‰²æµæ°´æŸ¥è¯¢ 2015/8/7
   virtual int ReqStateDeliHis(CReqOptStateDeliHisField* p_pReqField,LONGLONG p_llRequestId);
 
-  //ÒøÑÜ×ªÕËÁ÷Ë®²éÑ¯ 2015/8/7
+  //é“¶è¡è½¬è´¦æµæ°´æŸ¥è¯¢ 2015/8/7
   virtual int ReqBankDeriTransHis(CReqOptBankDeriTransHisField* p_pReqField,LONGLONG p_llRequestId);
 
-  //ÒøĞĞÓà¶î²éÑ¯ 2015/8/7
+  //é“¶è¡Œä½™é¢æŸ¥è¯¢ 2015/8/7
   virtual int ReqBankBala(CReqOptBankBalaField* p_pReqField,LONGLONG p_llRequestId);
 
-  //ÃÜÂëĞŞ¸Ä 2015/8/3
+  //å¯†ç ä¿®æ”¹ 2015/8/3
   virtual int ReqChangePwd(CReqOptChangePwdField* p_pReqField,LONGLONG p_llRequestId);
 
-  // ¿ÉËø¶¨¹É·İ²éÑ¯
+  // å¯é”å®šè‚¡ä»½æŸ¥è¯¢
   virtual int ReqQryCanLockStk(CReqOptCanLockStkField* p_pReqField, LONGLONG p_llRequestId);
 
-  // ¿Í»§ÊÊµ±ĞÔÆ¥Åä²úÆ·ĞÅÏ¢²éÑ¯
+  // å®¢æˆ·é€‚å½“æ€§åŒ¹é…äº§å“ä¿¡æ¯æŸ¥è¯¢
   virtual int ReqQryCustAppropriateMatchInfo(CReqOptQryCustAppropriateMatchInfoField* p_pReqField, LONGLONG p_llRequestId);
 
-  // ¿Í»§ÊÊµ±ĞÔĞÅÏ¢²éÑ¯
+  // å®¢æˆ·é€‚å½“æ€§ä¿¡æ¯æŸ¥è¯¢
   virtual int ReqQryCustAppropriateInfo(CReqOptQryCustAppropriateInfoField* p_pReqField, LONGLONG p_llRequestId);
 
-  // ¿Í»§·çÏÕ¾¯Ê¾ÊéÇ©Êğ
+  // å®¢æˆ·é£é™©è­¦ç¤ºä¹¦ç­¾ç½²
   virtual int ReqCustRiskSign(CReqOptCustRiskSignField* p_pReqField, LONGLONG p_llRequestId);
 
-  // ¹ÉÆ±ÆÚÈ¨ĞĞÈ¨Ö¸ÁîºÏ²¢Éê±¨Î¯ÍĞÇëÇó
+  // è‚¡ç¥¨æœŸæƒè¡ŒæƒæŒ‡ä»¤åˆå¹¶ç”³æŠ¥å§”æ‰˜è¯·æ±‚
   virtual int ReqCombExe(CReqOptCombExeField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ĞĞÈ¨Ö¸ÁîºÏ²¢Éê±¨³É·İºÏÔ¼²éÑ¯ÇëÇó
+  // è¡ŒæƒæŒ‡ä»¤åˆå¹¶ç”³æŠ¥æˆä»½åˆçº¦æŸ¥è¯¢è¯·æ±‚
   virtual int ReqQryCombExeLegNum(CReqOptQryCombExeLegNumField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ¹ÉÆ±ÆÚÈ¨µ±ÈÕÎ¯ÍĞ²éÑ¯[ÓÅ»¯]ÇëÇó
+  // è‚¡ç¥¨æœŸæƒå½“æ—¥å§”æ‰˜æŸ¥è¯¢[ä¼˜åŒ–]è¯·æ±‚
   virtual int ReqQryCurrDayOrderEx(CReqOptQryCurrDayOrderExField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ¹ÉÆ±ÆÚÈ¨µ±ÈÕ³É½»²éÑ¯[ÓÅ»¯]ÇëÇó
+  // è‚¡ç¥¨æœŸæƒå½“æ—¥æˆäº¤æŸ¥è¯¢[ä¼˜åŒ–]è¯·æ±‚
   virtual int ReqQryCurrDayFillEx(CReqOptQryCurrDayFillExField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ¿ÉÓÃ×Ê½ğ²éÑ¯[ÓÅ»¯]ÇëÇó
+  // å¯ç”¨èµ„é‡‘æŸ¥è¯¢[ä¼˜åŒ–]è¯·æ±‚
   virtual int ReqQryExpendableFundEx(CReqOptQryExpendableFundExField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ¿ÉÈ¡×Ê½ğ²éÑ¯[ÓÅ»¯]ÇëÇó
+  // å¯å–èµ„é‡‘æŸ¥è¯¢[ä¼˜åŒ–]è¯·æ±‚
   virtual int ReqQryDrawFundEx(CReqOptQryDrawFundExField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ¿ÉÓÃºÏÔ¼×Ê²ú²éÑ¯[ÓÅ»¯]ÇëÇó
+  // å¯ç”¨åˆçº¦èµ„äº§æŸ¥è¯¢[ä¼˜åŒ–]è¯·æ±‚
   virtual int ReqQryExpendableCuEx(CReqOptQryExpendableCuExField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ÀúÊ·Î¯ÍĞ²éÑ¯(RPC)ÇëÇó
+  // å†å²å§”æ‰˜æŸ¥è¯¢(RPC)è¯·æ±‚
   virtual int ReqQryHisOrder(CReqOptQryHisOrderField* p_pRspField, LONGLONG p_llRequestId);
 
-  // ÀúÊ·³É½»²éÑ¯(RPC)ÇëÇó
+  // å†å²æˆäº¤æŸ¥è¯¢(RPC)è¯·æ±‚
   virtual int ReqQryHisFill(CReqOptQryHisFillField* p_pRspField, LONGLONG p_llRequestId);
 
-  // ¿Í»§½áËãµ¥(ÎÄ¼ş)²éÑ¯ÇëÇó
+  // å®¢æˆ·ç»“ç®—å•(æ–‡ä»¶)æŸ¥è¯¢è¯·æ±‚
   virtual int ReqQrySettListFile(CReqOptQrySettListFileField* p_pRspField, LONGLONG p_llRequestId);
 
-  // ¸ö¹ÉÆÚÈ¨Î¯ÍĞÉê±¨(ÓÅ»¯)
+  // ä¸ªè‚¡æœŸæƒå§”æ‰˜ç”³æŠ¥(ä¼˜åŒ–)
   virtual int ReqOrderEx(CReqOptOrderExField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ÆÚÈ¨×öÊĞË«±ß±¨¼Û£¨ÉîÛÚ£©
+  // æœŸæƒåšå¸‚åŒè¾¹æŠ¥ä»·ï¼ˆæ·±åœ³ï¼‰
   virtual int ReqBilateralQuote(CReqOptBilateralQuoteField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ÆÚÈ¨×öÊĞË«±ß±¨¼Û³·µ¥£¨ÉîÛÚ£©
+  // æœŸæƒåšå¸‚åŒè¾¹æŠ¥ä»·æ’¤å•ï¼ˆæ·±åœ³ï¼‰
   virtual int ReqBilateralQuotationKill(CReqOptBilateralQuotationKillField *p_pReqField, LONGLONG p_llRequestId);
 
-  // Ö¤È¯ĞÅÏ¢²éÑ¯£¨ÆÚÈ¨£©
+  // è¯åˆ¸ä¿¡æ¯æŸ¥è¯¢ï¼ˆæœŸæƒï¼‰
   virtual int ReqQryStkInfo(CReqOptQryStkInfoField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ÆÚÈ¨¿Í»§µÇÂ¼(ĞÂ)
+  // æœŸæƒå®¢æˆ·ç™»å½•(æ–°)
   virtual int ReqRpcUserLogin(CReqOptRpcUserLoginField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ¿ìËÙ¶©µ¥×Ê½ğ»®²¦ÇëÇó
+  // å¿«é€Ÿè®¢å•èµ„é‡‘åˆ’æ‹¨è¯·æ±‚
   virtual int ReqRpcFundingTransfer(CReqOptRpcFundingTransferField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ¿ìËÙ¶©µ¥¿É»®Èë×Ê½ğ²éÑ¯ÇëÇó
+  // å¿«é€Ÿè®¢å•å¯åˆ’å…¥èµ„é‡‘æŸ¥è¯¢è¯·æ±‚
   virtual int ReqQryRpcFundingTransfer(CReqOptQryRpcFundingTransferField *p_pReqField, LONGLONG p_llRequestId);
   
-  // ¿ìËÙ¶©µ¥×Ê½ğ»®²¦Á÷Ë®²éÑ¯ÇëÇó
+  // å¿«é€Ÿè®¢å•èµ„é‡‘åˆ’æ‹¨æµæ°´æŸ¥è¯¢è¯·æ±‚
   virtual int ReqQryRpcFundingTransferFlow(CReqOptQryRpcFundingTransferFlowField *p_pReqField, LONGLONG p_llRequestId);
   
-  // ÁÙ½üµ½ÆÚºÏÔ¼×Ê²ú²éÑ¯ÇëÇó
+  // ä¸´è¿‘åˆ°æœŸåˆçº¦èµ„äº§æŸ¥è¯¢è¯·æ±‚
   virtual int ReqQryExpendableCuOfCloseToExpireDate(CReqOptQryExpendableCuOfCloseToExpireDateField *p_pReqField, LONGLONG p_llRequestId);
   
-  // ¹ÉÆ±ÆÚÈ¨ĞĞÈ¨Ö¸ÅÉÃ÷Ï¸²éÑ¯ÇëÇó
+  // è‚¡ç¥¨æœŸæƒè¡ŒæƒæŒ‡æ´¾æ˜ç»†æŸ¥è¯¢è¯·æ±‚
   virtual int ReqQryRpcExeDetail(CReqOptQryRpcExeDetailField *p_pReqField, LONGLONG p_llRequestId);
   
-  // ¹ÉÆ±ÆÚÈ¨µ±ÈÕ·çÏÕÍ¨Öª²éÑ¯ÇëÇó
+  // è‚¡ç¥¨æœŸæƒå½“æ—¥é£é™©é€šçŸ¥æŸ¥è¯¢è¯·æ±‚
   virtual int ReqQryRpcCurrDayRiskNotify(CReqOptQryRpcCurrDayRiskNotifyField *p_pReqField, LONGLONG p_llRequestId);
   
-  // ¹ÉÆ±ÆÚÈ¨ÀúÊ··çÏÕÍ¨Öª²éÑ¯ÇëÇó
+  // è‚¡ç¥¨æœŸæƒå†å²é£é™©é€šçŸ¥æŸ¥è¯¢è¯·æ±‚
   virtual int ReqQryRpcHisRiskNotify(CReqOptQryRpcHisRiskNotifyField *p_pReqField, LONGLONG p_llRequestId);
   
-  // ¹ÉÆ±ÆÚÈ¨µ±ÈÕ·çÏÕÍ¨Öª²éÑ¯£¨·ç¿ØÏµÍ³×¨ÓÃ£©ÇëÇó
+  // è‚¡ç¥¨æœŸæƒå½“æ—¥é£é™©é€šçŸ¥æŸ¥è¯¢ï¼ˆé£æ§ç³»ç»Ÿä¸“ç”¨ï¼‰è¯·æ±‚
   virtual int ReqQryRpcCurrDayRiskSysNotify(CReqOptQryRpcCurrDayRiskSysNotifyField *p_pReqField, LONGLONG p_llRequestId);
   
-  // ¹ÉÆ±ÆÚÈ¨ÀúÊ··çÏÕÍ¨Öª²éÑ¯£¨·ç¿ØÏµÍ³×¨ÓÃ£©ÇëÇó
+  // è‚¡ç¥¨æœŸæƒå†å²é£é™©é€šçŸ¥æŸ¥è¯¢ï¼ˆé£æ§ç³»ç»Ÿä¸“ç”¨ï¼‰è¯·æ±‚
   virtual int ReqQryRpcHisRiskSysNotify(CReqOptQryRpcHisRiskSysNotifyField *p_pReqField, LONGLONG p_llRequestId);
 
-  // ¿Í»§ÏŞ²Ö¶î¶È²éÑ¯ÇëÇó
+  // å®¢æˆ·é™ä»“é¢åº¦æŸ¥è¯¢è¯·æ±‚
   virtual int ReqQryPositionLimit(CReqOptQryPositionLimitField *p_pReqField, LONGLONG p_llRequestId);
 
 public:
-  // Òì²½»Øµ÷º¯Êı
+  // å¼‚æ­¥å›è°ƒå‡½æ•°
   void OnArCallback(const char *p_pszMsgId, const unsigned char *p_pszDataBuff, int p_iDataLen);
 
-  // ·¢²¼»Øµ÷º¯Êı
+  // å‘å¸ƒå›è°ƒå‡½æ•°
   void OnPsCallback(const char *p_pszAcceptSn, const unsigned char *p_pszDataBuff, int p_iDataLen);
 
 private:
-  // ÓÃ»§µÇÂ¼ÇëÇóÏìÓ¦
+  // ç”¨æˆ·ç™»å½•è¯·æ±‚å“åº”
   void OnRspUserLogin(CFirstSetField* p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ÆÚÈ¨»ù´¡ĞÅÏ¢²éÑ¯ÏìÓ¦
+  // æœŸæƒåŸºç¡€ä¿¡æ¯æŸ¥è¯¢å“åº”
   void OnRspQryBaseInfo(CFirstSetField* p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ¸ö¹ÉÆÚÈ¨Î¯ÍĞÉê±¨ÏìÓ¦
+  // ä¸ªè‚¡æœŸæƒå§”æ‰˜ç”³æŠ¥å“åº”
   void OnRspOrder(CFirstSetField* p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ¸ö¹ÉÆÚÈ¨Î¯ÍĞ³·µ¥ÏìÓ¦
+  // ä¸ªè‚¡æœŸæƒå§”æ‰˜æ’¤å•å“åº”
   void OnRspCancelOrder(CFirstSetField* p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ¸ö¹ÉÆÚÈ¨±êµÄÖ¤È¯Ëø¶¨½âËøÏìÓ¦
+  // ä¸ªè‚¡æœŸæƒæ ‡çš„è¯åˆ¸é”å®šè§£é”å“åº”
   void OnRspUndlStkLock(CFirstSetField* p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ¼ÆËã¸ö¹ÉÆÚÈ¨×î´ó¿É½»Ò×ÊıÁ¿ÏìÓ¦
+  // è®¡ç®—ä¸ªè‚¡æœŸæƒæœ€å¤§å¯äº¤æ˜“æ•°é‡å“åº”
   void OnRspMaxTradeQty(CFirstSetField* p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ¿ÉÓÃ×Ê½ğ²éÑ¯ÏìÓ¦
+  // å¯ç”¨èµ„é‡‘æŸ¥è¯¢å“åº”
   void OnRspQryExpendableFund(CFirstSetField* p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ¿ÉÓÃºÏÔ¼×Ê²ú²éÑ¯ÏìÓ¦
+  // å¯ç”¨åˆçº¦èµ„äº§æŸ¥è¯¢å“åº”
   void OnRspQryExpendableCu(CFirstSetField* p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ¿ÉÓÃ±¸¶Ò¹É·İ²éÑ¯ÏìÓ¦
+  // å¯ç”¨å¤‡å…‘è‚¡ä»½æŸ¥è¯¢å“åº”
   void OnRspQryExpendableCvdStk(CFirstSetField* p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ¸ö¹ÉÆÚÈ¨µ±ÈÕÎ¯ÍĞ²éÑ¯ÏìÓ¦
+  // ä¸ªè‚¡æœŸæƒå½“æ—¥å§”æ‰˜æŸ¥è¯¢å“åº”
   void OnRspQryCurrDayOrder(CFirstSetField* p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ¸ö¹ÉÆÚÈ¨µ±ÈÕ³É½»²éÑ¯ÏìÓ¦
+  // ä¸ªè‚¡æœŸæƒå½“æ—¥æˆäº¤æŸ¥è¯¢å“åº”
   void OnRspQryCurrDayFill(CFirstSetField* p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ¸ö¹ÉÆÚÈ¨ºÏÔ¼ÕË»§²éÑ¯ÏìÓ¦
+  // ä¸ªè‚¡æœŸæƒåˆçº¦è´¦æˆ·æŸ¥è¯¢å“åº”
   void OnRspQryAcct(CFirstSetField* p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ¸ö¹ÉÆÚÈ¨¿É³·Î¯ÍĞ²éÑ¯ÏìÓ¦
+  // ä¸ªè‚¡æœŸæƒå¯æ’¤å§”æ‰˜æŸ¥è¯¢å“åº”
   void OnRspQryCanWithdrawOrder(CFirstSetField* p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
   ////////////////////////////////////////////////////////////////////////////////////////
-  //×éºÏ²ßÂÔÎÄ¼ş²éÑ¯ÏìÓ¦  2015/8/5
+  //ç»„åˆç­–ç•¥æ–‡ä»¶æŸ¥è¯¢å“åº”  2015/8/5
   void OnRspQryCombStra(CFirstSetField* p_pFirstSetField,LONGLONG p_llRequestId,int p_iFieldNum);
 
-  //×éºÏ±£Ö¤½ğÎ¯ÍĞÏìÓ¦  2015/8/3
+  //ç»„åˆä¿è¯é‡‘å§”æ‰˜å“åº”  2015/8/3
   void OnRspCombStraOrder(CFirstSetField* p_pFirstSetField,LONGLONG p_llRequestId,int p_iFieldNum);
   
-  //¿ÉÓÃ×éºÏ³Ö²Ö²éÑ¯ÏìÓ¦  2015/8/5
+  //å¯ç”¨ç»„åˆæŒä»“æŸ¥è¯¢å“åº”  2015/8/5
   void OnRspQryCombStraPos(CFirstSetField* p_pFirstSetField,LONGLONG p_llRequestId,int p_iFieldNum);
   
-  //¿ÉÓÃ×éºÏ³Ö²ÖÃ÷Ï¸²éÑ¯ÏìÓ¦  2015/8/5
+  //å¯ç”¨ç»„åˆæŒä»“æ˜ç»†æŸ¥è¯¢å“åº”  2015/8/5
   void OnRspQryCombStraPosDetail(CFirstSetField* p_pFirstSetField,LONGLONG p_llRequestId,int p_iFieldNum); 
   
-  //¸ö¹ÉÆÚÈ¨³õÊ¼±£Ö¤½ğ 2015/8/10
+  //ä¸ªè‚¡æœŸæƒåˆå§‹ä¿è¯é‡‘ 2015/8/10
   void OnRspIniMargin(CFirstSetField* p_pFirstSetField,LONGLONG p_llRequestId,int p_iFieldNum);
 
-  //ĞĞÈ¨Ö¸ÅÉÇ·×Ê²éÑ¯     2015/8/10
+  //è¡ŒæƒæŒ‡æ´¾æ¬ èµ„æŸ¥è¯¢     2015/8/10
   void OnRspQryExeDebt(CFirstSetField* p_pFirstSetField,LONGLONG p_llRequestId,int p_iFieldNum);
 
-  //ĞĞÈ¨Ö¸ÅÉÇ·È¯²éÑ¯      2015/8/10
+  //è¡ŒæƒæŒ‡æ´¾æ¬ åˆ¸æŸ¥è¯¢      2015/8/10
   void OnRspQryExeStkDebt(CFirstSetField* p_pFirstSetField,LONGLONG p_llRequestId,int p_iFieldNum);
 
-  //¿Í»§·çÏÕ¶È²éÑ¯         2015/8/10
+  //å®¢æˆ·é£é™©åº¦æŸ¥è¯¢         2015/8/10
   void OnRspQryRiskLvl(CFirstSetField* p_pFirstSetField,LONGLONG p_llRequestId,int p_iFieldNum);
   
-  //¿Í»§½áËãµ¥²éÑ¯ 2015/8/6
+  //å®¢æˆ·ç»“ç®—å•æŸ¥è¯¢ 2015/8/6
   void OnRspQrySettList(CFirstSetField* p_pFirstSetField,LONGLONG p_llRequestId,int p_iFieldNum); 
   
-  //¿Í»§½áËãµ¥È·ÈÏ 2015/8/6
+  //å®¢æˆ·ç»“ç®—å•ç¡®è®¤ 2015/8/6
   void OnRspSettListConfirm(CFirstSetField* p_pFirstSetField,LONGLONG p_llRequestId,int p_iFieldNum); 
    
-  //ÒøÑÜ×ªÕËÏìÓ¦ 2015/8/3
+  //é“¶è¡è½¬è´¦å“åº” 2015/8/3
   void OnRspBankDeriTrans(CFirstSetField* p_pFirstSetField,LONGLONG p_llRequestId,int p_iFieldNum);
   
-  //²éÑ¯ÒøÑÜ½»Ò×ÅäÖÃĞÅÏ¢ÏìÓ¦ 2015/8/7
+  //æŸ¥è¯¢é“¶è¡äº¤æ˜“é…ç½®ä¿¡æ¯å“åº” 2015/8/7
   void OnRspBankDeriInfo(CFirstSetField* p_pFirstSetField,LONGLONG p_llRequestId,int p_iFieldNum);
 
-  //²éÑ¯¿Í»§Ç©Ô¼ÒøĞĞ´úÂëÏìÓ¦ 2015/8/7
+  //æŸ¥è¯¢å®¢æˆ·ç­¾çº¦é“¶è¡Œä»£ç å“åº” 2015/8/7
   void OnRspUserBank(CFirstSetField* p_pFirstSetField,LONGLONG p_llRequestId,int p_iFieldNum);
 
-  //¶ÔÕËµ¥ĞĞÈ¨½»¸îÁ÷Ë®²éÑ¯ÏìÓ¦ 2015/8/7
+  //å¯¹è´¦å•è¡Œæƒäº¤å‰²æµæ°´æŸ¥è¯¢å“åº” 2015/8/7
   void OnRspStateDeliHis(CFirstSetField* p_pFirstSetField,LONGLONG p_llRequestId,int p_iFieldNum);
 
-  //ÒøÑÜ×ªÕËÁ÷Ë®²éÑ¯ÏìÓ¦ 2015/8/7
+  //é“¶è¡è½¬è´¦æµæ°´æŸ¥è¯¢å“åº” 2015/8/7
   void OnRspBankDeriTransHis(CFirstSetField* p_pFirstSetField,LONGLONG p_llRequestId,int p_iFieldNum);
 
-  //ÒøĞĞÓà¶î²éÑ¯ÏìÓ¦ 2015/8/7
+  //é“¶è¡Œä½™é¢æŸ¥è¯¢å“åº” 2015/8/7
   void OnRspBankBala(CFirstSetField* p_pFirstSetField,LONGLONG p_llRequestId,int p_iFieldNum);
 
-  //ÃÜÂëĞŞ¸ÄÏìÓ¦ 2015/8/3
+  //å¯†ç ä¿®æ”¹å“åº” 2015/8/3
   void OnRspChangePwd(CFirstSetField* p_pFirstSetField,LONGLONG p_llRequestId,int p_iFieldNum);
 
-  // ¿ÉËø¶¨¹É·İ²éÑ¯ÏìÓ¦
+  // å¯é”å®šè‚¡ä»½æŸ¥è¯¢å“åº”
   void OnRspQryCanLockStk(CFirstSetField* p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ¿Í»§ÊÊµ±ĞÔÆ¥Åä²úÆ·ĞÅÏ¢²éÑ¯ÏìÓ¦
+  // å®¢æˆ·é€‚å½“æ€§åŒ¹é…äº§å“ä¿¡æ¯æŸ¥è¯¢å“åº”
   void OnRspQryCustAppropriateMatchInfo(CFirstSetField* p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ¿Í»§ÊÊµ±ĞÔĞÅÏ¢²éÑ¯ÏìÓ¦
+  // å®¢æˆ·é€‚å½“æ€§ä¿¡æ¯æŸ¥è¯¢å“åº”
   void OnRspQryCustAppropriateInfo(CFirstSetField* p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ¿Í»§·çÏÕ¾¯Ê¾ÊéÇ©ÊğÏìÓ¦
+  // å®¢æˆ·é£é™©è­¦ç¤ºä¹¦ç­¾ç½²å“åº”
   void OnRspCustRiskSign(CFirstSetField* p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ¹ÉÆ±ÆÚÈ¨ĞĞÈ¨Ö¸ÁîºÏ²¢Éê±¨Î¯ÍĞÏìÓ¦
+  // è‚¡ç¥¨æœŸæƒè¡ŒæƒæŒ‡ä»¤åˆå¹¶ç”³æŠ¥å§”æ‰˜å“åº”
   void OnRspCombExe(CFirstSetField *p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
   
-  // ĞĞÈ¨Ö¸ÁîºÏ²¢Éê±¨³É·İºÏÔ¼²éÑ¯ÏìÓ¦
+  // è¡ŒæƒæŒ‡ä»¤åˆå¹¶ç”³æŠ¥æˆä»½åˆçº¦æŸ¥è¯¢å“åº”
   void OnRspQryCombExeLegNum(CFirstSetField *p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ¹ÉÆ±ÆÚÈ¨µ±ÈÕÎ¯ÍĞ²éÑ¯[ÓÅ»¯]ÏìÓ¦
+  // è‚¡ç¥¨æœŸæƒå½“æ—¥å§”æ‰˜æŸ¥è¯¢[ä¼˜åŒ–]å“åº”
   void OnRspQryCurrDayOrderEx(CFirstSetField *p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ¹ÉÆ±ÆÚÈ¨µ±ÈÕ³É½»²éÑ¯[ÓÅ»¯]ÏìÓ¦
+  // è‚¡ç¥¨æœŸæƒå½“æ—¥æˆäº¤æŸ¥è¯¢[ä¼˜åŒ–]å“åº”
   void OnRspQryCurrDayFillEx(CFirstSetField *p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ¿ÉÓÃ×Ê½ğ²éÑ¯[ÓÅ»¯]ÏìÓ¦
+  // å¯ç”¨èµ„é‡‘æŸ¥è¯¢[ä¼˜åŒ–]å“åº”
   void OnRspQryExpendableFundEx(CFirstSetField *p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ¿ÉÈ¡×Ê½ğ²éÑ¯[ÓÅ»¯]ÏìÓ¦
+  // å¯å–èµ„é‡‘æŸ¥è¯¢[ä¼˜åŒ–]å“åº”
   void OnRspQryDrawFundEx(CFirstSetField *p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ¿ÉÓÃºÏÔ¼×Ê²ú²éÑ¯[ÓÅ»¯]ÏìÓ¦
+  // å¯ç”¨åˆçº¦èµ„äº§æŸ¥è¯¢[ä¼˜åŒ–]å“åº”
   void OnRspQryExpendableCuEx(CFirstSetField *p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ÀúÊ·Î¯ÍĞ²éÑ¯(RPC)ÏìÓ¦
+  // å†å²å§”æ‰˜æŸ¥è¯¢(RPC)å“åº”
   void OnRspQryHisOrder(CFirstSetField* p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ÀúÊ·³É½»²éÑ¯(RPC)ÏìÓ¦
+  // å†å²æˆäº¤æŸ¥è¯¢(RPC)å“åº”
   void OnRspQryHisFill(CFirstSetField* p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ¿Í»§½áËãµ¥(ÎÄ¼ş)²éÑ¯ÏìÓ¦
+  // å®¢æˆ·ç»“ç®—å•(æ–‡ä»¶)æŸ¥è¯¢å“åº”
   void OnRspQrySettListFile(CFirstSetField* p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ¸ö¹ÉÆÚÈ¨Î¯ÍĞÉê±¨(ÓÅ»¯)ÏìÓ¦
+  // ä¸ªè‚¡æœŸæƒå§”æ‰˜ç”³æŠ¥(ä¼˜åŒ–)å“åº”
   void OnRspOrderEx(CFirstSetField* p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ÆÚÈ¨×öÊĞË«±ß±¨¼Û£¨ÉîÛÚ£©ÏìÓ¦
+  // æœŸæƒåšå¸‚åŒè¾¹æŠ¥ä»·ï¼ˆæ·±åœ³ï¼‰å“åº”
   void OnRspBilateralQuote(CFirstSetField* p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ÆÚÈ¨×öÊĞË«±ß±¨¼Û³·µ¥£¨ÉîÛÚ£©ÏìÓ¦
+  // æœŸæƒåšå¸‚åŒè¾¹æŠ¥ä»·æ’¤å•ï¼ˆæ·±åœ³ï¼‰å“åº”
   void OnRspBilateralQuotationKill(CFirstSetField* p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // Ö¤È¯ĞÅÏ¢²éÑ¯£¨ÆÚÈ¨£©ÏìÓ¦
+  // è¯åˆ¸ä¿¡æ¯æŸ¥è¯¢ï¼ˆæœŸæƒï¼‰å“åº”
   void OnRspQryStkInfo(CFirstSetField* p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ÆÚÈ¨¿Í»§µÇÂ¼(ĞÂ)ÏìÓ¦
+  // æœŸæƒå®¢æˆ·ç™»å½•(æ–°)å“åº”
   void OnRspRpcUserLogin(CFirstSetField* p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ¿ìËÙ¶©µ¥×Ê½ğ»®²¦ÏìÓ¦
+  // å¿«é€Ÿè®¢å•èµ„é‡‘åˆ’æ‹¨å“åº”
   void OnRspRpcFundingTransfer(CFirstSetField* p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ¿ìËÙ¶©µ¥¿É»®Èë×Ê½ğ²éÑ¯ÏìÓ¦
+  // å¿«é€Ÿè®¢å•å¯åˆ’å…¥èµ„é‡‘æŸ¥è¯¢å“åº”
   void OnRspQryRpcFundingTransfer(CFirstSetField* p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 
-  // ¿ìËÙ¶©µ¥×Ê½ğ»®²¦Á÷Ë®²éÑ¯ÏìÓ¦
+  // å¿«é€Ÿè®¢å•èµ„é‡‘åˆ’æ‹¨æµæ°´æŸ¥è¯¢å“åº”
   void OnRspQryRpcFundingTransferFlow(CFirstSetField* p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
   
-  // ÁÙ½üµ½ÆÚºÏÔ¼×Ê²ú²éÑ¯ÏìÓ¦
+  // ä¸´è¿‘åˆ°æœŸåˆçº¦èµ„äº§æŸ¥è¯¢å“åº”
   void OnRspQryExpendableCuOfCloseToExpireDate(CFirstSetField *p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
   
-  // ¹ÉÆ±ÆÚÈ¨ĞĞÈ¨Ö¸ÅÉÃ÷Ï¸²éÑ¯ÏìÓ¦
+  // è‚¡ç¥¨æœŸæƒè¡ŒæƒæŒ‡æ´¾æ˜ç»†æŸ¥è¯¢å“åº”
   void OnRspQryRpcExeDetail(CFirstSetField *p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
   
-  // ¹ÉÆ±ÆÚÈ¨µ±ÈÕ·çÏÕÍ¨Öª²éÑ¯ÏìÓ¦
+  // è‚¡ç¥¨æœŸæƒå½“æ—¥é£é™©é€šçŸ¥æŸ¥è¯¢å“åº”
   void OnRspQryRpcCurrDayRiskNotify(CFirstSetField *p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
   
-  // ¹ÉÆ±ÆÚÈ¨ÀúÊ··çÏÕÍ¨Öª²éÑ¯ÏìÓ¦
+  // è‚¡ç¥¨æœŸæƒå†å²é£é™©é€šçŸ¥æŸ¥è¯¢å“åº”
   void OnRspQryRpcHisRiskNotify(CFirstSetField *p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
   
-  // ¹ÉÆ±ÆÚÈ¨µ±ÈÕ·çÏÕÍ¨Öª²éÑ¯£¨·ç¿ØÏµÍ³×¨ÓÃ£©ÏìÓ¦
+  // è‚¡ç¥¨æœŸæƒå½“æ—¥é£é™©é€šçŸ¥æŸ¥è¯¢ï¼ˆé£æ§ç³»ç»Ÿä¸“ç”¨ï¼‰å“åº”
   void OnRspQryRpcCurrDayRiskSysNotify(CFirstSetField *p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
   
-  // ¹ÉÆ±ÆÚÈ¨ÀúÊ··çÏÕÍ¨Öª²éÑ¯£¨·ç¿ØÏµÍ³×¨ÓÃ£©ÏìÓ¦
+  // è‚¡ç¥¨æœŸæƒå†å²é£é™©é€šçŸ¥æŸ¥è¯¢ï¼ˆé£æ§ç³»ç»Ÿä¸“ç”¨ï¼‰å“åº”
   void OnRspQryRpcHisRiskSysNotify(CFirstSetField *p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
   
-  // ¿Í»§ÏŞ²Ö¶î¶È²éÑ¯ÏìÓ¦
+  // å®¢æˆ·é™ä»“é¢åº¦æŸ¥è¯¢å“åº”
   void OnRspQryPositionLimit(CFirstSetField *p_pFirstSetField, LONGLONG p_llRequestId, int p_iFieldNum);
 };
 

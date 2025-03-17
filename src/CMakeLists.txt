@@ -51,6 +51,8 @@ add_subdirectory(LoaderRunner)
 
 # uft engine
 add_subdirectory(WtUftCore)
+add_subdirectory(WtUftStraFact)
+add_subdirectory(WtUftRunner)
 
 #contract Loade through ctp channel
 add_subdirectory(CTPLoader)
@@ -84,14 +86,14 @@ add_subdirectory(WtDtServo)
 # #quote date processor
 add_subdirectory(QuoteFactory)
 
-add_subdirectory(TraderATP)
-# add_subdirectory(TraderCTP)
-# add_subdirectory(TraderCTPMini)
-# add_subdirectory(TraderCTPOpt)
+# add_subdirectory(TraderATP)
+add_subdirectory(TraderCTP)
+add_subdirectory(TraderCTPMini)
+add_subdirectory(TraderCTPOpt)
 # add_subdirectory(TraderDD)
-# add_subdirectory(TraderFemas)
-# add_subdirectory(TraderHuaX)
-# add_subdirectory(TraderMocker)
+add_subdirectory(TraderFemas)
+add_subdirectory(TraderHuaX)
+add_subdirectory(TraderMocker)
 # add_subdirectory(TraderOES)
 # add_subdirectory(TraderXTP)
 # add_subdirectory(TraderXTPXAlgo)
@@ -103,10 +105,6 @@ add_subdirectory(WtRunner)
 
 add_subdirectory(WtExeFact)
 add_subdirectory(WtExecMon)
-
-# #uft
-add_subdirectory(WtUftStraFact)
-add_subdirectory(WtUftRunner)
 
 add_subdirectory(WtLatencyHFT)
 add_subdirectory(WtLatencyUFT)

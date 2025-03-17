@@ -1062,6 +1062,7 @@ inline WTSPriceType TraderHuaX::wrapPriceType(TTORATstpDirectionType priceType)
 		return WPT_BESTPRICE;
 	else
 		write_log(_sink, LL_WARN, "[TraderHuaX] unsupport priceType {}", priceType);
+		return WPT_ANYPRICE;
 }
 
 inline WTSOrderState TraderHuaX::wrapOrderState(TTORATstpOrderStatusType orderState)

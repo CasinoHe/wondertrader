@@ -6,7 +6,7 @@ file(GLOB SRCS *.cpp)
 file(GLOB HDRS *.h)
 
 IF(MSVC)
-	list (APPEND SRCS ../Common/mdump.cpp)
+	list (APPEND SRCS ${SRC_ROOT_DIR}/Common/mdump.cpp)
 ENDIF()
 
 add_executable(${PROJECT_NAME} ${SRCS} ${HDRS})

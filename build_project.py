@@ -132,6 +132,7 @@ class BuildDependencies(BuildBase):
 class BuildProject(BuildBase):
     def __init__(self, args, parser=None):
         super(__class__, self).__init__(args, parser)
+        self.build_test = "ON" if self.args.build_test else "OFF"
 
     def configure_project(self):
         print("Start building project...")
@@ -154,6 +155,7 @@ class BuildProject(BuildBase):
             f"-DVCPKG_TARGET_TRIPLET={triplet}",
             f"-DVCPKG_MANIFEST_INSTALL={manifest_install}",
             f"-DCMAKE_BUILD_TYPE={variant}",
+            f"-DBUILD_TEST={self.build_test}",
             f"{self.src_root}"
         ]
 
@@ -209,6 +211,7 @@ def parse_args(args):
     project_parser.add_argument("--enable-install", action="store_true", default=False, help="Enable auto install vcpkg dependencies")
     project_parser.add_argument("--triplet", type=str, required=False, help="Set vcpkg triplet, example: x64-windows-static")
     project_parser.add_argument("--clean", action="store_true", default=False, help="Clean build directory")
+    project_parser.add_argument("--build-test", action="store_true", default=False, help="build test executable")
 
     return parser.parse_args(args), parser
 
